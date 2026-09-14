@@ -1,0 +1,75 @@
+﻿{
+  "name": "RADAR_01_DISCOVERY",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "0f128c56-b043-4b54-b157-001000000001",
+      "name": "ESCANEAR AHORA",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://remotive.com/api/remote-jobs",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "0f128c56-b043-4b54-b157-001000000002",
+      "name": "DESCARGAR OPORTUNIDADES",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        260,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const payload = $input.first().json;\nconst jobs = Array.isArray(payload.jobs) ? payload.jobs : [];\n\nconst skills = [\n  ['n8n', 22],\n  ['automation', 18],\n  ['automations', 18],\n  ['workflow', 12],\n  ['artificial intelligence', 15],\n  [' ai ', 12],\n  ['llm', 16],\n  ['agent', 10],\n  ['api', 15],\n  ['javascript', 16],\n  ['typescript', 12],\n  ['python', 16],\n  ['web developer', 14],\n  ['frontend', 12],\n  ['backend', 12],\n  ['full stack', 13],\n  ['bot', 12],\n  ['scraping', 16],\n  ['integration', 15],\n  ['unity', 18],\n  ['roblox', 18],\n  ['blender', 18],\n  ['3d', 12],\n  ['design', 9],\n  ['ui/ux', 10],\n  ['data', 7]\n];\n\nconst valuableSignals = [\n  'freelance', 'contract', 'contractor', 'part-time',\n  'project', 'consultant', 'consulting', 'developer'\n];\n\nconst badSignals = [\n  'unpaid', 'volunteer', 'internship unpaid'\n];\n\nfunction cleanHtml(value = '') {\n  return String(value)\n    .replace(/<[^>]*>/g, ' ')\n    .replace(/&nbsp;/g, ' ')\n    .replace(/&amp;/g, '&')\n    .replace(/\\s+/g, ' ')\n    .trim();\n}\n\nconst results = [];\n\nfor (const job of jobs) {\n  const description = cleanHtml(job.description || '');\n  const text = `${job.title || ''} ${job.category || ''} ${job.job_type || ''} ${description}`.toLowerCase();\n\n  let score = 0;\n  const matches = [];\n\n  for (const [term, points] of skills) {\n    if (text.includes(term)) {\n      score += points;\n      matches.push(term.trim());\n    }\n  }\n\n  for (const signal of valuableSignals) {\n    if (text.includes(signal)) score += 4;\n  }\n\n  for (const signal of badSignals) {\n    if (text.includes(signal)) score -= 40;\n  }\n\n  if (job.salary && String(job.salary).trim()) score += 12;\n  if (job.candidate_required_location === 'Worldwide') score += 8;\n\n  const published = job.publication_date ? new Date(job.publication_date) : null;\n  if (published && !Number.isNaN(published.getTime())) {\n    const ageHours = (Date.now() - published.getTime()) / 3600000;\n    if (ageHours <= 24) score += 12;\n    else if (ageHours <= 72) score += 8;\n    else if (ageHours <= 168) score += 4;\n  }\n\n  if (matches.length === 0) continue;\n\n  score = Math.max(0, Math.min(100, score));\n\n  let decision = 'OBSERVAR';\n  if (score >= 80) decision = 'PRIORIDAD';\n  else if (score >= 60) decision = 'INVESTIGAR';\n  else if (score < 35) decision = 'DESCARTAR';\n\n  results.push({\n    radar_score: score,\n    decision,\n    title: job.title || '',\n    company: job.company_name || '',\n    category: job.category || '',\n    type: job.job_type || '',\n    salary: job.salary || 'No publicado',\n    location: job.candidate_required_location || '',\n    published: job.publication_date || '',\n    matches: [...new Set(matches)],\n    url: job.url || '',\n    source: 'Remotive',\n    radar_note:\n      score >= 80 ? 'Alta coincidencia. Revisar primero.' :\n      score >= 60 ? 'Puede valer la pena. Investigar requisitos y pago.' :\n      'Coincidencia parcial. No priorizar todavía.'\n  });\n}\n\nresults.sort((a, b) => b.radar_score - a.radar_score);\n\nreturn results.slice(0, 30).map(result => ({ json: result }));"
+      },
+      "id": "0f128c56-b043-4b54-b157-001000000003",
+      "name": "MOTOR RADAR",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        540,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "ESCANEAR AHORA": {
+      "main": [
+        [
+          {
+            "node": "DESCARGAR OPORTUNIDADES",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DESCARGAR OPORTUNIDADES": {
+      "main": [
+        [
+          {
+            "node": "MOTOR RADAR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "tags": []
+}

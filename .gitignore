@@ -1,0 +1,15 @@
+﻿# Node
+node_modules/
+n8n/node_modules/
+
+# n8n instance cache & lock files
+n8n/instance/.cache/
+n8n/instance/.n8n/*.sqlite-wal
+n8n/instance/.n8n/*.sqlite-shm
+n8n/instance/.n8n/n8nEventLog.log
+
+# Logs & temp
+logs/*.log
+*.log
+.DS_Store
+Thumbs.db
