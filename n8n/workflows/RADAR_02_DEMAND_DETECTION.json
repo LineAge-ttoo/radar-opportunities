@@ -1,0 +1,66 @@
+﻿{
+  "name": "RADAR_02_DEMAND_DETECTION",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "1f228c56-b043-4b54-b157-002000000001",
+      "name": "DETECCION DE DEMANDA MANUAL",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "url": "https://www.reddit.com/r/automation+nocode/new.json?limit=25",
+        "options": {
+          "timeout": 20000
+        }
+      },
+      "id": "1f228c56-b043-4b54-b157-002000000002",
+      "name": "DESCARGAR SENALES PUBLICAS",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [260, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "const payload = $input.first().json;\nconst posts = payload?.data?.children || [];\n\nconst painKeywords = [\n  'how to automate', 'looking for a tool', 'is there a bot',\n  'any tool that', 'manual work', 'spend hours', 'sync between',\n  'connect api', 'alternative to', 'need a script', 'scrape data'\n];\n\nconst results = [];\n\nfor (const post of posts) {\n  const data = post.data || {};\n  const text = `${data.title || ''} ${data.selftext || ''}`.toLowerCase();\n\n  const matchedPains = painKeywords.filter(kw => text.includes(kw));\n  if (matchedPains.length === 0) continue;\n\n  results.push({\n    opportunity_id: `demand_reddit_${data.id}`,\n    source: 'Reddit Public Signal',\n    source_url: `https://reddit.com${data.permalink}`,\n    discovered_at: new Date().toISOString(),\n    title: `[DEMANDA] ${data.title}`,\n    organization: `u/${data.author}`,\n    opportunity_type: 'demand_signal',\n    decision: 'CONSTRUIR_Y_VENDER',\n    observed_data: {\n      pain_statement: data.title,\n      frustration_signals: matchedPains,\n      upvotes: data.ups,\n      num_comments: data.num_comments\n    },\n    estimated_data: {\n      proposed_solution_type: 'Plantilla n8n / Script de integración / Bot',\n      build_complexity: 'Baja a Media (<16h)',\n      scalability_rating: 85,\n      reusability_score: 90\n    },\n    overall_score: 80,\n    reasoning: `Problema recurrente expresado por usuarios: ${matchedPains.join(', ')}`,\n    next_action: 'Diseñar prototipo de solución y evaluar mercado de compradores similares.'\n  });\n}\n\nreturn results.map(r => ({ json: r }));"
+      },
+      "id": "1f228c56-b043-4b54-b157-002000000003",
+      "name": "ANALIZADOR DE DEMANDA RADAR",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [540, 0]
+    }
+  ],
+  "connections": {
+    "DETECCION DE DEMANDA MANUAL": {
+      "main": [
+        [
+          {
+            "node": "DESCARGAR SENALES PUBLICAS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DESCARGAR SENALES PUBLICAS": {
+      "main": [
+        [
+          {
+            "node": "ANALIZADOR DE DEMANDA RADAR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "tags": []
+}

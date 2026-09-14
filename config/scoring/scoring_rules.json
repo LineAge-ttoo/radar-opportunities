@@ -1,0 +1,60 @@
+﻿{
+  "skills": [
+    {"keyword": "n8n", "weight": 25, "category": "automation"},
+    {"keyword": "automation", "weight": 20, "category": "automation"},
+    {"keyword": "automations", "weight": 20, "category": "automation"},
+    {"keyword": "workflow", "weight": 14, "category": "automation"},
+    {"keyword": "artificial intelligence", "weight": 18, "category": "ai"},
+    {"keyword": " ai ", "weight": 14, "category": "ai"},
+    {"keyword": "llm", "weight": 18, "category": "ai"},
+    {"keyword": "agent", "weight": 14, "category": "ai"},
+    {"keyword": "api", "weight": 16, "category": "integration"},
+    {"keyword": "apis", "weight": 16, "category": "integration"},
+    {"keyword": "bot", "weight": 16, "category": "automation"},
+    {"keyword": "scraping", "weight": 18, "category": "data"},
+    {"keyword": "crawler", "weight": 14, "category": "data"},
+    {"keyword": "python", "weight": 18, "category": "programming"},
+    {"keyword": "javascript", "weight": 16, "category": "programming"},
+    {"keyword": "typescript", "weight": 16, "category": "programming"},
+    {"keyword": "node", "weight": 15, "category": "programming"},
+    {"keyword": "react", "weight": 14, "category": "web"},
+    {"keyword": "vue", "weight": 12, "category": "web"},
+    {"keyword": "web developer", "weight": 15, "category": "web"},
+    {"keyword": "frontend", "weight": 13, "category": "web"},
+    {"keyword": "backend", "weight": 14, "category": "web"},
+    {"keyword": "full stack", "weight": 15, "category": "web"},
+    {"keyword": "unity", "weight": 22, "category": "gamedev_3d"},
+    {"keyword": "roblox", "weight": 22, "category": "gamedev_3d"},
+    {"keyword": "blender", "weight": 22, "category": "gamedev_3d"},
+    {"keyword": "3d", "weight": 16, "category": "gamedev_3d"},
+    {"keyword": "ui/ux", "weight": 15, "category": "design"},
+    {"keyword": "ui design", "weight": 14, "category": "design"},
+    {"keyword": "ux design", "weight": 14, "category": "design"},
+    {"keyword": "figma", "weight": 12, "category": "design"}
+  ],
+  "opportunity_signals": {
+    "positive": [
+      {"keyword": "bounty", "boost": 15, "type": "bounty"},
+      {"keyword": "freelance", "boost": 12, "type": "freelance"},
+      {"keyword": "contract", "boost": 10, "type": "contract"},
+      {"keyword": "contractor", "boost": 10, "type": "contract"},
+      {"keyword": "part-time", "boost": 8, "type": "freelance"},
+      {"keyword": "project-based", "boost": 12, "type": "project"},
+      {"keyword": "consultant", "boost": 8, "type": "consulting"}
+    ],
+    "negative": [
+      {"keyword": "unpaid", "penalty": 50},
+      {"keyword": "volunteer", "penalty": 40},
+      {"keyword": "equity only", "penalty": 40},
+      {"keyword": "commission only", "penalty": 30},
+      {"keyword": "unpaid internship", "penalty": 50}
+    ]
+  },
+  "weights": {
+    "fit": 0.35,
+    "money": 0.20,
+    "trust": 0.15,
+    "reusability": 0.15,
+    "competition_inverse": 0.15
+  }
+}

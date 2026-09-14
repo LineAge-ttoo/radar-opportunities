@@ -1,0 +1,35 @@
+﻿{
+  "sources": [
+    {
+      "id": "remotive",
+      "name": "Remotive Remote Tech",
+      "type": "api",
+      "enabled": true,
+      "url": "https://remotive.com/api/remote-jobs",
+      "category": "software-dev",
+      "timeout_seconds": 30,
+      "rate_limit_delay_seconds": 1,
+      "legal_notes": "Official public API provided by Remotive for job seekers."
+    },
+    {
+      "id": "arbeitnow",
+      "name": "Arbeitnow Job Board",
+      "type": "api",
+      "enabled": true,
+      "url": "https://www.arbeitnow.com/api/job-board-api",
+      "timeout_seconds": 30,
+      "rate_limit_delay_seconds": 1,
+      "legal_notes": "Official public API provided by Arbeitnow."
+    },
+    {
+      "id": "github_bounties",
+      "name": "GitHub Paid Bounties & Open Issues",
+      "type": "api",
+      "enabled": true,
+      "url": "https://api.github.com/search/issues?q=label:bounty+state:open&sort=created&order=desc&per_page=20",
+      "timeout_seconds": 20,
+      "rate_limit_delay_seconds": 2,
+      "legal_notes": "Public GitHub REST API search for open-source bounty issues."
+    }
+  ]
+}

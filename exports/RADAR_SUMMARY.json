@@ -1,0 +1,17 @@
+{
+  "scan_id": "scan_20260913_220828_da12d2",
+  "started_at": "2026-09-13T22:08:28.743344",
+  "finished_at": "2026-09-13T22:08:35.215071",
+  "sources_consulted": [
+    "Remotive",
+    "Arbeitnow",
+    "GitHub Bounties"
+  ],
+  "total_found": 146,
+  "prioridad_count": 1,
+  "construir_vender_count": 2,
+  "investigar_count": 42,
+  "observar_count": 37,
+  "descartar_count": 64,
+  "execution_notes": "Scan completado exitosamente con persistencia y análisis multi-fuente."
+}

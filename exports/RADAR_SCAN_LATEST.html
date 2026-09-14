@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RADAR Intelligence Report</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --text-bright: #f0f6fc;
+            --priority: #238636;
+            --build: #8957e5;
+            --investigate: #1f6feb;
+            --observe: #8b949e;
+            --accent: #58a6ff;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 16px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: var(--text-bright);
+            margin-top: 0;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-bright);
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .badge-build { background: rgba(137, 87, 229, 0.2); color: #d2a8ff; border: 1px solid #8957e5; }
+        .badge-priority { background: rgba(35, 134, 54, 0.2); color: #7ee787; border: 1px solid #238636; }
+        .badge-investigate { background: rgba(31, 111, 235, 0.2); color: #79c0ff; border: 1px solid #1f6feb; }
+        .badge-observe { background: rgba(139, 148, 158, 0.2); color: #c9d1d9; border: 1px solid #8b949e; }
+        .score-pill {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--text-bright);
+            background: rgba(255, 255, 255, 0.08);
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+        .card-title {
+            color: var(--text-bright);
+            margin: 0 0 6px 0;
+            font-size: 1.2rem;
+        }
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        .pago-box {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7ee787;
+            margin-bottom: 10px;
+        }
+        .skills-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+        .skill-pill {
+            background: rgba(88, 166, 255, 0.15);
+            color: #79c0ff;
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 0.75rem;
+        }
+        .analysis-box {
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+        .analysis-box p {
+            margin: 4px 0;
+        }
+        .next-action {
+            color: #ffa657;
+            font-weight: 500;
+        }
+        .btn-link {
+            display: inline-block;
+            background: #21262d;
+            border: 1px solid var(--border);
+            color: var(--accent);
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .btn-link:hover {
+            background: #30363d;
+            border-color: #8b949e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RADAR Intelligence Scan</h1>
+            <div><strong>Ejecución:</strong> 2026-09-13T22:08:28.743344</div>
+            <div><strong>Fuentes:</strong> Remotive, Arbeitnow, GitHub Bounties</div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-value">146</div><div class="stat-label">Total</div></div>
+                <div class="stat-card"><div class="stat-value" style="color: #7ee787;">1</div><div class="stat-label">Prioridad</div></div>
+                <div class="stat-card"><div class="stat-value" style="color: #d2a8ff;">2</div><div class="stat-label">Construir y Vender</div></div>
+                <div class="stat-card"><div class="stat-value" style="color: #79c0ff;">42</div><div class="stat-label">Investigar</div></div>
+                <div class="stat-card"><div class="stat-value" style="color: #8b949e;">37</div><div class="stat-label">Observar</div></div>
+            </div>
+        </header>
+
+        <main>
+            
+            <div class="card card-prioridad">
+                <div class="card-header">
+                    <span class="badge badge-priority">PRIORIDAD</span>
+                    <span class="score-pill">Score: 79.2</span>
+                </div>
+                <h3 class="card-title">Tech Lead Full-Stack Rails Engineer</h3>
+                <div class="card-meta">
+                    <strong>Mitre Media</strong> | 
+                    <span>Remotive</span> | 
+                    <span>USA, Canada, USA timezones</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD 170000.0 - 200000.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span><span class='skill-pill'>workflow</span><span class='skill-pill'>javascript</span><span class='skill-pill'>react</span><span class='skill-pill'>api</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Alta afinidad técnica (workflow, ai, llm) con buen balance de viabilidad y pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=full_time, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Inspeccionar URL original, verificar requisitos y preparar propuesta técnica personalizada.</p>
+                </div>
+                <a href="https://remotive.com/remote-jobs/software-development/tech-lead-full-stack-rails-engineer-2069746" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-construir_y_vender">
+                <div class="card-header">
+                    <span class="badge badge-build">CONSTRUIR Y VENDER</span>
+                    <span class="score-pill">Score: 71.5</span>
+                </div>
+                <h3 class="card-title">Head of Marketing & Communications</h3>
+                <div class="card-meta">
+                    <strong>garden3d</strong> | 
+                    <span>Remotive</span> | 
+                    <span>Worldwide</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD 150000.0 - 230000.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>workflow</span><span class='skill-pill'>figma</span><span class='skill-pill'>ai</span><span class='skill-pill'>ui/ux</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Fuerte señal de automatización/producto reutilizable (workflow, ai, ui/ux). Puede empaquetarse y replicarse.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=contract, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA_ALTA, Tiempo=20 a 80 horas, Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Analizar requerimientos y empaquetar una solución/plantilla vendible.</p>
+                </div>
+                <a href="https://remotive.com/remote-jobs/marketing/head-of-marketing-communications-2091068" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 71.0</span>
+                </div>
+                <h3 class="card-title">Senior React Full-stack Developer</h3>
+                <div class="card-meta">
+                    <strong>Lemon.io</strong> | 
+                    <span>Remotive</span> | 
+                    <span>LATAM, Europe, USA, Canada, APAC</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>llm</span><span class='skill-pill'>python</span><span class='skill-pill'>ai</span><span class='skill-pill'>automation</span><span class='skill-pill'>javascript</span><span class='skill-pill'>react</span><span class='skill-pill'>vue</span><span class='skill-pill'>unity</span><span class='skill-pill'>ui/ux</span><span class='skill-pill'>ux design</span><span class='skill-pill'>agent</span><span class='skill-pill'>node</span><span class='skill-pill'>backend</span><span class='skill-pill'>typescript</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=full_time, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://remotive.com/remote-jobs/software-development/senior-react-full-stack-developer-2091101" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 71.0</span>
+                </div>
+                <h3 class="card-title">Senior QA Engineer</h3>
+                <div class="card-meta">
+                    <strong>Lemon.io</strong> | 
+                    <span>Remotive</span> | 
+                    <span>Europe</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>llm</span><span class='skill-pill'>python</span><span class='skill-pill'>ai</span><span class='skill-pill'>automation</span><span class='skill-pill'>javascript</span><span class='skill-pill'>react</span><span class='skill-pill'>vue</span><span class='skill-pill'>unity</span><span class='skill-pill'>ui/ux</span><span class='skill-pill'>ux design</span><span class='skill-pill'>agent</span><span class='skill-pill'>node</span><span class='skill-pill'>typescript</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=full_time, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://remotive.com/remote-jobs/qa/senior-qa-engineer-2091100" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 71.0</span>
+                </div>
+                <h3 class="card-title">Senior DevOps Engineer</h3>
+                <div class="card-meta">
+                    <strong>Lemon.io</strong> | 
+                    <span>Remotive</span> | 
+                    <span>LATAM, Europe, USA, Canada, APAC</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>llm</span><span class='skill-pill'>python</span><span class='skill-pill'>ai</span><span class='skill-pill'>automation</span><span class='skill-pill'>javascript</span><span class='skill-pill'>react</span><span class='skill-pill'>vue</span><span class='skill-pill'>unity</span><span class='skill-pill'>ui/ux</span><span class='skill-pill'>ux design</span><span class='skill-pill'>agent</span><span class='skill-pill'>node</span><span class='skill-pill'>typescript</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=full_time, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://remotive.com/remote-jobs/devops/senior-devops-engineer-2091099" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 71.0</span>
+                </div>
+                <h3 class="card-title">Senior Golang Developer</h3>
+                <div class="card-meta">
+                    <strong>Lemon.io</strong> | 
+                    <span>Remotive</span> | 
+                    <span>Europe, USA, UK, Canada, Australia, Singapore</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span><span class='skill-pill'>automation</span><span class='skill-pill'>python</span><span class='skill-pill'>javascript</span><span class='skill-pill'>react</span><span class='skill-pill'>vue</span><span class='skill-pill'>unity</span><span class='skill-pill'>ui/ux</span><span class='skill-pill'>ux design</span><span class='skill-pill'>agent</span><span class='skill-pill'>artificial intelligence</span><span class='skill-pill'>api</span><span class='skill-pill'>node</span><span class='skill-pill'>typescript</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (automation, artificial intelligence). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=full_time, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://remotive.com/remote-jobs/software-development/senior-golang-developer-2091098" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 71.0</span>
+                </div>
+                <h3 class="card-title">Senior Data Engineer</h3>
+                <div class="card-meta">
+                    <strong>Lemon.io</strong> | 
+                    <span>Remotive</span> | 
+                    <span>LATAM, Europe, USA, Canada, APAC</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>llm</span><span class='skill-pill'>python</span><span class='skill-pill'>ai</span><span class='skill-pill'>automation</span><span class='skill-pill'>javascript</span><span class='skill-pill'>react</span><span class='skill-pill'>vue</span><span class='skill-pill'>unity</span><span class='skill-pill'>ui/ux</span><span class='skill-pill'>ux design</span><span class='skill-pill'>agent</span><span class='skill-pill'>node</span><span class='skill-pill'>typescript</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=full_time, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://remotive.com/remote-jobs/software-development/senior-data-engineer-2091097" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 70.3</span>
+                </div>
+                <h3 class="card-title">Senior Backend Engineer (Python) - Remote</h3>
+                <div class="card-meta">
+                    <strong>Breathment</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Munich</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>python</span><span class='skill-pill'>workflow</span><span class='skill-pill'>api</span><span class='skill-pill'>backend</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (workflow, api). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Contract, professional / experienced, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA_ALTA, Tiempo=20 a 80 horas, Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/breathment/senior-backend-engineer-python-remote-munich-2605" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 69.5</span>
+                </div>
+                <h3 class="card-title">Senior Backend Engineer (Go) (m/w/d)</h3>
+                <div class="card-meta">
+                    <strong>Recare Deutschland GmbH</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Remote job</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>ai</span><span class='skill-pill'>automation</span><span class='skill-pill'>workflow</span><span class='skill-pill'>api</span><span class='skill-pill'>backend</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (automation, workflow). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, fulltime permanent, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/recare-deutschland-gmbh/remote-senior-backend-engineer-go-berlin-391760" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 69.5</span>
+                </div>
+                <h3 class="card-title">Senior Full Stack Engineer — TypeScript / Next.js (100%, m/f/d)</h3>
+                <div class="card-meta">
+                    <strong>LeaseTeq</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>LTQ-DE | Berlin</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span><span class='skill-pill'>automation</span><span class='skill-pill'>frontend</span><span class='skill-pill'>workflow</span><span class='skill-pill'>javascript</span><span class='skill-pill'>react</span><span class='skill-pill'>agent</span><span class='skill-pill'>api</span><span class='skill-pill'>full stack</span><span class='skill-pill'>backend</span><span class='skill-pill'>typescript</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (automation, workflow). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/leaseteq/senior-full-stack-engineer-typescript-nextjs-100-ltq-de-berlin-142987" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 69.5</span>
+                </div>
+                <h3 class="card-title">Forward Deployed Engineer, DACH</h3>
+                <div class="card-meta">
+                    <strong>Telnyx</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Munich</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span><span class='skill-pill'>automation</span><span class='skill-pill'>python</span><span class='skill-pill'>agent</span><span class='skill-pill'>api</span><span class='skill-pill'>node</span><span class='skill-pill'>typescript</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/telnyx/forward-deployed-engineer-dach-munich-178293" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 69.0</span>
+                </div>
+                <h3 class="card-title">Senior Independent AI Engineer / Architect</h3>
+                <div class="card-meta">
+                    <strong>A.Team</strong> | 
+                    <span>Remotive</span> | 
+                    <span>Americas, Europe, Israel</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD 120.0 - 170.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span><span class='skill-pill'>ui/ux</span><span class='skill-pill'>agent</span><span class='skill-pill'>api</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=contract, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA_ALTA, Tiempo=20 a 80 horas, Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://remotive.com/remote-jobs/software-development/senior-independent-ai-engineer-architect-1919266" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 67.5</span>
+                </div>
+                <h3 class="card-title">[Bounty][$0][Search] error-signature 索引（#1562）：先方案后实现</h3>
+                <div class="card-meta">
+                    <strong>Ikalus1988/MisakaNet</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD  - 1988.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>ai</span><span class='skill-pill'>agent</span><span class='skill-pill'>api</span><span class='skill-pill'>node</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, agent). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://github.com/Ikalus1988/MisakaNet/issues/1654" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 67.2</span>
+                </div>
+                <h3 class="card-title">Director AI & Automation</h3>
+                <div class="card-meta">
+                    <strong>Onemedia Consulting</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Onemedia Germany, Munich</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span><span class='skill-pill'>automation</span><span class='skill-pill'>python</span><span class='skill-pill'>api</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/onemedia-consulting/director-ai-automation-onemedia-germany-munich-249102" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 67.2</span>
+                </div>
+                <h3 class="card-title">Senior GenAI Solution Engineer (all genders)</h3>
+                <div class="card-meta">
+                    <strong>Eraneos</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Hamburg, München, Düsseldorf, remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span><span class='skill-pill'>python</span><span class='skill-pill'>agent</span><span class='skill-pill'>api</span><span class='skill-pill'>backend</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/eraneos/remote-senior-genai-solution-engineer-all-genders-440579" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 67.2</span>
+                </div>
+                <h3 class="card-title">AI Engineer (m/w/d)</h3>
+                <div class="card-meta">
+                    <strong>Nerdware</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Nürnberg</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span><span class='skill-pill'>python</span><span class='skill-pill'>agent</span><span class='skill-pill'>api</span><span class='skill-pill'>typescript</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/nerdware/ai-engineer-nurnberg-427997" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 65.0</span>
+                </div>
+                <h3 class="card-title">Senior Technical Architect – Hybrid (Product / Platform) (m/f/d)</h3>
+                <div class="card-meta">
+                    <strong>Implico Gmbh</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Hamburg</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span><span class='skill-pill'>api</span><span class='skill-pill'>node</span><span class='skill-pill'>typescript</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/implico-gmbh/senior-technical-architect-hybrid-product-platform-hamburg-81456" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 65.0</span>
+                </div>
+                <h3 class="card-title">Staff Engineer (m/f/d)</h3>
+                <div class="card-meta">
+                    <strong>Solactive</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Berlin</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>python</span><span class='skill-pill'>frontend</span><span class='skill-pill'>react</span><span class='skill-pill'>api</span><span class='skill-pill'>backend</span><span class='skill-pill'>typescript</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (api, apis). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/solactive/staff-engineer-berlin-396577" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 65.0</span>
+                </div>
+                <h3 class="card-title">Senior Fullstack Software Engineer, Analyze & Report (f/m/d)</h3>
+                <div class="card-meta">
+                    <strong>Solactive</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Berlin</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>ai</span><span class='skill-pill'>python</span><span class='skill-pill'>frontend</span><span class='skill-pill'>api</span><span class='skill-pill'>artificial intelligence</span><span class='skill-pill'>backend</span><span class='skill-pill'>typescript</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (artificial intelligence, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/solactive/senior-fullstack-software-engineer-analyze-report-berlin-425045" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 63.9</span>
+                </div>
+                <h3 class="card-title">Founding Account Executive, DACH</h3>
+                <div class="card-meta">
+                    <strong>Telnyx</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Munich</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>ai</span><span class='skill-pill'>workflow</span><span class='skill-pill'>agent</span><span class='skill-pill'>api</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/telnyx/founding-account-executive-dach-munich-302728" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-construir_y_vender">
+                <div class="card-header">
+                    <span class="badge badge-build">CONSTRUIR Y VENDER</span>
+                    <span class="score-pill">Score: 63.3</span>
+                </div>
+                <h3 class="card-title">Team Lead AI Engineering (f/m/d)</h3>
+                <div class="card-meta">
+                    <strong>Vestigas</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>München (Hybrid)</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>workflow</span><span class='skill-pill'>python</span><span class='skill-pill'>ai</span><span class='skill-pill'>automation</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Fuerte señal de automatización/producto reutilizable (automation, workflow, ai). Puede empaquetarse y replicarse.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Analizar requerimientos y empaquetar una solución/plantilla vendible.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/vestigas/team-lead-ai-engineering-munchen-hybrid-153688" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 63.0</span>
+                </div>
+                <h3 class="card-title">Data Engineer (all genders)</h3>
+                <div class="card-meta">
+                    <strong>Eraneos</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Hamburg, München, Düsseldorf, remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>ai</span><span class='skill-pill'>python</span><span class='skill-pill'>workflow</span><span class='skill-pill'>api</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/eraneos/remote-data-engineer-all-genders-12735" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 62.2</span>
+                </div>
+                <h3 class="card-title">[Bounty][$0][Search] 分诊辅助：把 intake 标题规范化为检索 query 并判定覆盖率</h3>
+                <div class="card-meta">
+                    <strong>Ikalus1988/MisakaNet</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD  - 2026.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>agent</span><span class='skill-pill'>api</span><span class='skill-pill'>apis</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, agent). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://github.com/Ikalus1988/MisakaNet/issues/1673" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 62.2</span>
+                </div>
+                <h3 class="card-title">[Bounty][$0][Lessons] 把 intake #1472 + #1473（Vertex/Gemini 模型 ID 命名）转成课程</h3>
+                <div class="card-meta">
+                    <strong>Ikalus1988/MisakaNet</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD  - 2026.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>agent</span><span class='skill-pill'>api</span><span class='skill-pill'>apis</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, agent). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://github.com/Ikalus1988/MisakaNet/issues/1665" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 61.6</span>
+                </div>
+                <h3 class="card-title">Principal Analytics Engineer (f/m/d)</h3>
+                <div class="card-meta">
+                    <strong>Trusted Shops SE (DE)</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Berlin, Berlin, Germany</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>apis</span><span class='skill-pill'>ai</span><span class='skill-pill'>workflow</span><span class='skill-pill'>agent</span><span class='skill-pill'>api</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, fulltime permanent, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/trusted-shops-se-de/principal-analytics-engineer-berlin-225855" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 60.6</span>
+                </div>
+                <h3 class="card-title">Working Student – Graphic Design E-Commerce (all genders)</h3>
+                <div class="card-meta">
+                    <strong>Niboline Gmbh</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Berlin</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>3d</span><span class='skill-pill'>ai</span><span class='skill-pill'>figma</span><span class='skill-pill'>ui/ux</span><span class='skill-pill'>workflow</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Entry, Intern, Full or part time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/niboline-gmbh/working-student-graphic-design-e-commerce-all-genders-berlin-195997" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 60.5</span>
+                </div>
+                <h3 class="card-title">[Bounty][$0][Ops] 重建 lessons/index.md 并加 --check 门禁（当前 181 条里 25 条悬空、136 条标题不符）</h3>
+                <div class="card-meta">
+                    <strong>Ikalus1988/MisakaNet</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD  - 2026.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>agent</span><span class='skill-pill'>workflow</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://github.com/Ikalus1988/MisakaNet/issues/1661" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 59.0</span>
+                </div>
+                <h3 class="card-title">Senior AI-Native Data Engineer (f/m/x)</h3>
+                <div class="card-meta">
+                    <strong>exmox</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Hamburg</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>agent</span><span class='skill-pill'>workflow</span><span class='skill-pill'>python</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/exmox/senior-ai-native-data-engineer-hamburg-424655" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 59.0</span>
+                </div>
+                <h3 class="card-title">Senior AI Data Expert (f/m/x)</h3>
+                <div class="card-meta">
+                    <strong>exmox</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Hamburg</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>agent</span><span class='skill-pill'>workflow</span><span class='skill-pill'>python</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/exmox/senior-ai-data-expert-hamburg-332905" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 58.1</span>
+                </div>
+                <h3 class="card-title">Senior Cloud Consultant - Data & AI Engineer (f/m/d, 4-Days-Week), German Speaking</h3>
+                <div class="card-meta">
+                    <strong>Auvaria</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>München</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>agent</span><span class='skill-pill'>python</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/auvaria/senior-cloud-consultant-data-ai-engineer-4-days-week-german-speaking-munchen-183706" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 58.1</span>
+                </div>
+                <h3 class="card-title">Senior Cloud Consultant - Data & AI Engineer (f/m/d, 4-Days-Week), German Speaking</h3>
+                <div class="card-meta">
+                    <strong>Auvaria</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Hamburg</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>agent</span><span class='skill-pill'>python</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/auvaria/senior-cloud-consultant-data-ai-engineer-4-days-week-german-speaking-hamburg-340121" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 54.8</span>
+                </div>
+                <h3 class="card-title">Senior Technical Product Manager (f/m/x)</h3>
+                <div class="card-meta">
+                    <strong>exmox</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Hamburg</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>api</span><span class='skill-pill'>apis</span><span class='skill-pill'>ai</span><span class='skill-pill'>ui/ux</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, api). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/exmox/senior-technical-product-manager-hamburg-88855" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 54.7</span>
+                </div>
+                <h3 class="card-title">[Bounty] 让 workflow 的 shell 步骤能在本地跑起来：scripts/check_workflow_scripts.py</h3>
+                <div class="card-meta">
+                    <strong>Ikalus1988/MisakaNet</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD  - 2026.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>workflow</span><span class='skill-pill'>python</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (workflow, python). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://github.com/Ikalus1988/MisakaNet/issues/1640" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 54.1</span>
+                </div>
+                <h3 class="card-title">Senior AI Engineer (f/m/d)</h3>
+                <div class="card-meta">
+                    <strong>Vestigas</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>München (Hybrid)</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>workflow</span><span class='skill-pill'>python</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/vestigas/senior-ai-engineer-munchen-hybrid-465151" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 54.0</span>
+                </div>
+                <h3 class="card-title">Test Engineer</h3>
+                <div class="card-meta">
+                    <strong>Asteralabs</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Aachen, North Rhine-Westphalia</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>python</span><span class='skill-pill'>ai</span><span class='skill-pill'>automation</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/asteralabs/test-engineer-aachen-north-rhine-westphalia-173430" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 53.8</span>
+                </div>
+                <h3 class="card-title">[Bounty][$0][Lessons] 把 intake #1635（LLM 成本遥测少计：模型归因错 + 重试未记账）转成课程</h3>
+                <div class="card-meta">
+                    <strong>Ikalus1988/MisakaNet</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD  - 2026.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>agent</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://github.com/Ikalus1988/MisakaNet/issues/1672" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 53.8</span>
+                </div>
+                <h3 class="card-title">[Bounty][$0][Lessons] 把 intake #1574（LLM 代替用户发言 / god-moding）转成课程</h3>
+                <div class="card-meta">
+                    <strong>Ikalus1988/MisakaNet</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD  - 1988.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>agent</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://github.com/Ikalus1988/MisakaNet/issues/1650" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 53.2</span>
+                </div>
+                <h3 class="card-title">AI Response Evaluator</h3>
+                <div class="card-meta">
+                    <strong>iMerit Technology</strong> | 
+                    <span>Remotive</span> | 
+                    <span>France, Japan, Turkey, Vietnam, Mexico, Norway</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD 10000.0 - 20000.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>artificial intelligence</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (artificial intelligence, ai). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=freelance, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA_ALTA, Tiempo=20 a 80 horas, Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://remotive.com/remote-jobs/artificial-intelligence/ai-response-evaluator-2091126" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 53.2</span>
+                </div>
+                <h3 class="card-title">AI Solution Architect (m/w/d)</h3>
+                <div class="card-meta">
+                    <strong>virtual7 GmbH</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Homeoffice</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>python</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, fulltime permanent, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/virtual7-gmbh/remote-ai-solution-architect-nurnberg-mittelfranken-236690" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 53.2</span>
+                </div>
+                <h3 class="card-title">Forward Deployed Engineer (all genders)</h3>
+                <div class="card-meta">
+                    <strong>Eraneos</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Hamburg, München, Düsseldorf, remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>python</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/eraneos/remote-forward-deployed-engineer-all-genders-99442" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 53.2</span>
+                </div>
+                <h3 class="card-title">Principal Software Developer (f/m/d) - Market Data</h3>
+                <div class="card-meta">
+                    <strong>Solactive</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Frankfurt am Main</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>api</span><span class='skill-pill'>apis</span><span class='skill-pill'>python</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (api, apis). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/solactive/principal-software-developer-market-data-frankfurt-am-main-60368" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 51.0</span>
+                </div>
+                <h3 class="card-title">AI Research Engineer (f/m/d)</h3>
+                <div class="card-meta">
+                    <strong>Sonarsource</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Bochum</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>python</span><span class='skill-pill'>llm</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Employee / Full-Time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/sonarsource/ai-research-engineer-bochum-139653" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 51.0</span>
+                </div>
+                <h3 class="card-title">Product Manager - Local Payments (Portuguese + Spanish)</h3>
+                <div class="card-meta">
+                    <strong>Ppro</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Berlin</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>api</span><span class='skill-pill'>apis</span><span class='skill-pill'>automation</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (automation, api). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Permanent - full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/ppro/product-manager-local-payments-portuguese-spanish-berlin-292806" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 51.0</span>
+                </div>
+                <h3 class="card-title">Werkstudent (m/w/d) KI & Automatisierung Stuttgart</h3>
+                <div class="card-meta">
+                    <strong>Hws</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Stuttgart</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>api</span><span class='skill-pill'>apis</span><span class='skill-pill'>python</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (api, apis). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Student, Intern, Part time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/hws/werkstudent-ki-automatisierung-stuttgart-168851" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-investigar">
+                <div class="card-header">
+                    <span class="badge badge-investigate">INVESTIGAR</span>
+                    <span class="score-pill">Score: 51.0</span>
+                </div>
+                <h3 class="card-title">Werkstudent (m/w/d) – Finance Process Automatisation bis zu 20 Stunden/Woche</h3>
+                <div class="card-meta">
+                    <strong>Ecotel</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Düsseldorf</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>api</span><span class='skill-pill'>apis</span><span class='skill-pill'>python</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Afinidad prometedora (api, apis). Requiere clarificar términos de contratación o pago.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Student, Working student, Part time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> Evaluar viabilidad remota o alcance para proponer solución directa.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/ecotel/werkstudent-finance-process-automatisation-bis-zu-20-stunden-woche-dusseldorf-286400" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 49.9</span>
+                </div>
+                <h3 class="card-title">New Business Account Executive (DACH market)</h3>
+                <div class="card-meta">
+                    <strong>Vivid</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Germany</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>ai</span><span class='skill-pill'>automation</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/vivid/new-business-account-executive-dach-market-germany-98297" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 49.9</span>
+                </div>
+                <h3 class="card-title">Founding SDR (DACH market)</h3>
+                <div class="card-meta">
+                    <strong>Vivid</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Berlin</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>ai</span><span class='skill-pill'>automation</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/vivid/founding-sdr-dach-market-berlin-82894" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 49.9</span>
+                </div>
+                <h3 class="card-title">Dealer Account Manager</h3>
+                <div class="card-meta">
+                    <strong>AIM</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>ai</span><span class='skill-pill'>automation</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Full Time, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/aim/remote-dealer-account-manager-409116" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 49.6</span>
+                </div>
+                <h3 class="card-title">Management Consultant Enterprise Architecture (all genders)</h3>
+                <div class="card-meta">
+                    <strong>Eraneos</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Hamburg, München, Düsseldorf, remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>api</span><span class='skill-pill'>apis</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/eraneos/remote-management-consultant-enterprise-architecture-all-genders-154966" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 47.6</span>
+                </div>
+                <h3 class="card-title">Senior Sourcing Specialist – Germany Operations & Manufacturing</h3>
+                <div class="card-meta">
+                    <strong>Asteralabs</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Aachen, North Rhine-Westphalia</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>ai</span><span class='skill-pill'>automation</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/asteralabs/senior-sourcing-specialist-germany-operations-manufacturing-aachen-north-rhine-westphalia-97307" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 47.5</span>
+                </div>
+                <h3 class="card-title">[Bounty][$0][Lessons] 把 intake #1618 + #1619（写成功但数据静默丢失）转成课程</h3>
+                <div class="card-meta">
+                    <strong>Ikalus1988/MisakaNet</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD  - 2026.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>agent</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/Ikalus1988/MisakaNet/issues/1666" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 47.5</span>
+                </div>
+                <h3 class="card-title">[Bounty][$0][Lessons] 把 intake #1643（NPC 外派 + 间接提及 → 说话人/地点错位）转成课程</h3>
+                <div class="card-meta">
+                    <strong>Ikalus1988/MisakaNet</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD  - 1988.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>agent</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/Ikalus1988/MisakaNet/issues/1655" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 47.5</span>
+                </div>
+                <h3 class="card-title">[Bounty][$0][Lessons] 把 intake #1553（alembic upgrade 失败）转成课程</h3>
+                <div class="card-meta">
+                    <strong>Ikalus1988/MisakaNet</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD  - 1988.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>agent</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/Ikalus1988/MisakaNet/issues/1652" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 47.5</span>
+                </div>
+                <h3 class="card-title">[Bounty][$0][Lessons] 把 intake #1555（nano-gpt.com SSE 流式调用失败）转成课程</h3>
+                <div class="card-meta">
+                    <strong>Ikalus1988/MisakaNet</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD  - 1988.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>agent</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/Ikalus1988/MisakaNet/issues/1651" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 43.6</span>
+                </div>
+                <h3 class="card-title">Senior Principal ASIC Design Engineer</h3>
+                <div class="card-meta">
+                    <strong>Asteralabs</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span></span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>node</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/asteralabs/senior-principal-asic-design-engineer-172376" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 43.5</span>
+                </div>
+                <h3 class="card-title">Remote Office Assistant</h3>
+                <div class="card-meta">
+                    <strong>Coalition Technologies</strong> | 
+                    <span>Remotive</span> | 
+                    <span>Worldwide</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD 52000.0 - 312000.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>frontend</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=full_time, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://remotive.com/remote-jobs/marketing/remote-office-assistant-1680495" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 42.5</span>
+                </div>
+                <h3 class="card-title">Senior Java Fullstack Developer (m/w/d)</h3>
+                <div class="card-meta">
+                    <strong>virtual7 GmbH</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Kaarst, Nordrhein-Westfalen, Deutschland</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>workflow</span><span class='skill-pill'>backend</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, fulltime permanent, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/virtual7-gmbh/senior-java-fullstack-developer-kaarst-477433" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 41.2</span>
+                </div>
+                <h3 class="card-title">Associate, Paid Social</h3>
+                <div class="card-meta">
+                    <strong>Angi</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Hybrid - Germany - Berlin</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>artificial intelligence</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Full Time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/angi/associate-paid-social-berlin-414277" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 41.2</span>
+                </div>
+                <h3 class="card-title">Head of Marketing</h3>
+                <div class="card-meta">
+                    <strong>Almetra</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Munich</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>artificial intelligence</span><span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Full Time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/almetra/head-of-marketing-munich-119980" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 39.0</span>
+                </div>
+                <h3 class="card-title">Freelance Copywriter</h3>
+                <div class="card-meta">
+                    <strong>Coalition Technologies</strong> | 
+                    <span>Remotive</span> | 
+                    <span>Worldwide</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD 20000.0 - 35000.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=freelance, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA_ALTA, Tiempo=20 a 80 horas, Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://remotive.com/remote-jobs/writing/freelance-copywriter-1749306" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 39.0</span>
+                </div>
+                <h3 class="card-title">[Bounty] [Bounty $7500] Remove legacy sqrt/rsqrt/reciprocal compatibility paths</h3>
+                <div class="card-meta">
+                    <strong>zhangjiayang6835-cyber/bounty-plaza</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD 16.0 - 56277.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1472" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 38.9</span>
+                </div>
+                <h3 class="card-title">Content Reviewer - English US</h3>
+                <div class="card-meta">
+                    <strong>TELUS Digital</strong> | 
+                    <span>Remotive</span> | 
+                    <span>USA</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD 14.0 - 14.0
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=part_time, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=Por definir según alcance, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://remotive.com/remote-jobs/all-others/content-reviewer-english-us-2091105" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 38.2</span>
+                </div>
+                <h3 class="card-title">Solution Architect – Client Solutions (m/w/d)</h3>
+                <div class="card-meta">
+                    <strong>Fincite Gmbh</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Frankfurt am Main</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>api</span><span class='skill-pill'>apis</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/fincite-gmbh/solution-architect-client-solutions-frankfurt-am-main-324534" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 38.2</span>
+                </div>
+                <h3 class="card-title">Senior IT Architect (m/w/d)</h3>
+                <div class="card-meta">
+                    <strong>virtual7 GmbH</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Homeoffice</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>api</span><span class='skill-pill'>apis</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, fulltime permanent, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/virtual7-gmbh/remote-senior-it-architect-karlsruhe-252149" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 37.1</span>
+                </div>
+                <h3 class="card-title">Praktikant*in Brand & Product Marketing (m/w/d)</h3>
+                <div class="card-meta">
+                    <strong>Amperecloud GmbH</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Berlin , Berlin, Germany</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>ai</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Student college, fulltime fixed term, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/amperecloud-gmbh/praktikantin-brand-product-marketing-berlin-373886" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[radar] SN open bounty 2026-09-14T00:58</h3>
+                <div class="card-meta">
+                    <strong>relayhop/sn-monetization-runtime</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> - 1570125.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/relayhop/sn-monetization-runtime/issues/1103" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[radar] SN open bounty 2026-09-13T22:21</h3>
+                <div class="card-meta">
+                    <strong>relayhop/sn-monetization-runtime</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> 2.0 - 1570125.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/relayhop/sn-monetization-runtime/issues/1101" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[radar] SN open bounty 2026-09-13T19:22</h3>
+                <div class="card-meta">
+                    <strong>relayhop/sn-monetization-runtime</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> 2.0 - 1570125.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/relayhop/sn-monetization-runtime/issues/1099" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[radar] SN open bounty 2026-09-13T16:09</h3>
+                <div class="card-meta">
+                    <strong>relayhop/sn-monetization-runtime</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> 2.0 - 1570125.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/relayhop/sn-monetization-runtime/issues/1097" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[Bounty] $999999999999999999999999 BOUNTY - URGENT</h3>
+                <div class="card-meta">
+                    <strong>zhangjiayang6835-cyber/bounty-plaza</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD 786.0 - 1.2499999999999998e+24
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1548" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[radar] SN open bounty 2026-09-12T22:12</h3>
+                <div class="card-meta">
+                    <strong>relayhop/sn-monetization-runtime</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> 1.0 - 1568946.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/relayhop/sn-monetization-runtime/issues/1091" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[radar] SN open bounty 2026-09-12T19:13</h3>
+                <div class="card-meta">
+                    <strong>relayhop/sn-monetization-runtime</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> 1.0 - 1568946.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/relayhop/sn-monetization-runtime/issues/1064" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[radar] SN open bounty 2026-09-12T17:00</h3>
+                <div class="card-meta">
+                    <strong>relayhop/sn-monetization-runtime</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> - 1568946.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/relayhop/sn-monetization-runtime/issues/1063" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[radar] SN open bounty 2026-09-12T14:01</h3>
+                <div class="card-meta">
+                    <strong>relayhop/sn-monetization-runtime</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> 1.0 - 1568946.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/relayhop/sn-monetization-runtime/issues/1061" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[radar] SN open bounty 2026-09-12T10:38</h3>
+                <div class="card-meta">
+                    <strong>relayhop/sn-monetization-runtime</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> 1.0 - 1568946.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/relayhop/sn-monetization-runtime/issues/1058" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[radar] SN open bounty 2026-09-12T10:38</h3>
+                <div class="card-meta">
+                    <strong>relayhop/sn-monetization-runtime</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> 1.0 - 1568946.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/relayhop/sn-monetization-runtime/issues/1057" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[radar] SN open bounty 2026-09-12T05:39</h3>
+                <div class="card-meta">
+                    <strong>relayhop/sn-monetization-runtime</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> 1.0 - 1568946.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/relayhop/sn-monetization-runtime/issues/1054" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[radar] SN open bounty 2026-09-12T00:10</h3>
+                <div class="card-meta">
+                    <strong>relayhop/sn-monetization-runtime</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> - 1568946.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/relayhop/sn-monetization-runtime/issues/1053" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[radar] SN open bounty 2026-09-11T21:40</h3>
+                <div class="card-meta">
+                    <strong>relayhop/sn-monetization-runtime</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> 0.5 - 1568946.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/relayhop/sn-monetization-runtime/issues/1052" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[Bounty] [Bounty $500] ttnn.quantize/requantize uint8 lower-bound saturation</h3>
+                <div class="card-meta">
+                    <strong>zhangjiayang6835-cyber/bounty-plaza</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD  - 56290.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1509" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.8</span>
+                </div>
+                <h3 class="card-title">[Bounty $500] ttnn.quantize/requantize uint8 lower-bound saturation</h3>
+                <div class="card-meta">
+                    <strong>tenstorrent/tt-metal</strong> | 
+                    <span>GitHub Bounties</span> | 
+                    <span>Worldwide / Remote</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> USD  - 51304.0
+                </div>
+                <div class="skills-box">
+                    
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Bounty Issue, Remoto=Sí</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=MEDIA, Tiempo=4 a 20 horas, Potencial=MEDIO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://github.com/tenstorrent/tt-metal/issues/56290" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+            <div class="card card-observar">
+                <div class="card-header">
+                    <span class="badge badge-observe">OBSERVAR</span>
+                    <span class="score-pill">Score: 36.3</span>
+                </div>
+                <h3 class="card-title">Senior Photonik-Charakterisierungsingenieur (m/w/d)</h3>
+                <div class="card-meta">
+                    <strong>pmX Group</strong> | 
+                    <span>Arbeitnow</span> | 
+                    <span>Stuttgart</span>
+                </div>
+                <div class="pago-box">
+                    <strong>Pago:</strong> No publicado
+                </div>
+                <div class="skills-box">
+                    <span class='skill-pill'>python</span>
+                </div>
+                <div class="analysis-box">
+                    <p><strong>Por qué apareció:</strong> Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.</p>
+                    <p><strong>Qué sabemos:</strong> Tipo=Experienced, Permanent, Full time, Remoto=No</p>
+                    <p><strong>Qué estimamos:</strong> Dificultad=ALTA, Tiempo=Dedicación continua (>160h/mes), Potencial=ALTO</p>
+                    <p class="next-action"><strong>Qué haríamos:</strong> No priorizar acción inmediata.</p>
+                </div>
+                <a href="https://www.arbeitnow.com/jobs/companies/pmx-group/senior-photonik-charakterisierungsingenieur-stuttgart-434457" target="_blank" rel="noopener noreferrer" class="btn-link">Ver Oportunidad Original ↗</a>
+            </div>
+            
+        </main>
+    </div>
+</body>
+</html>
