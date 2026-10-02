@@ -38,6 +38,8 @@ def init_db(db_path=DEFAULT_DB_PATH):
         raw_data_json TEXT,
         observed_data_json TEXT,
         estimated_data_json TEXT,
+        proposal_json TEXT,
+        blueprint_json TEXT,
         fit_score REAL,
         money_score REAL,
         difficulty_score REAL,
@@ -51,9 +53,27 @@ def init_db(db_path=DEFAULT_DB_PATH):
         next_action TEXT,
         first_seen_at TEXT,
         last_seen_at TEXT,
-        status TEXT DEFAULT 'NEW'
+        contacted_at TEXT,
+        notes TEXT,
+        status TEXT DEFAULT 'NUEVA'
     )
     ''')
+
+    # Add columns if migrating from earlier schema
+    columns_to_check = [
+        ('proposal_json', 'TEXT'),
+        ('blueprint_json', 'TEXT'),
+        ('contacted_at', 'TEXT'),
+        ('notes', 'TEXT')
+    ]
+    cur.execute("PRAGMA table_info(opportunities);")
+    existing_cols = [row['name'] for row in cur.fetchall()]
+    for col_name, col_type in columns_to_check:
+        if col_name not in existing_cols:
+            try:
+                cur.execute(f"ALTER TABLE opportunities ADD COLUMN {col_name} {col_type};")
+            except Exception:
+                pass
 
     cur.execute('''
     CREATE INDEX IF NOT EXISTS idx_opp_decision ON opportunities(decision);
@@ -63,6 +83,9 @@ def init_db(db_path=DEFAULT_DB_PATH):
     ''')
     cur.execute('''
     CREATE INDEX IF NOT EXISTS idx_opp_source ON opportunities(source);
+    ''')
+    cur.execute('''
+    CREATE INDEX IF NOT EXISTS idx_opp_status ON opportunities(status);
     ''')
 
     cur.execute('''
@@ -99,10 +122,11 @@ def save_opportunities(opportunities, scan_id=None, db_path=DEFAULT_DB_PATH, jso
             opp_id = opp['opportunity_id']
             jf.write(json.dumps(opp, ensure_ascii=False) + '\n')
 
-            cur.execute('SELECT opportunity_id, first_seen_at FROM opportunities WHERE opportunity_id = ?', (opp_id,))
+            cur.execute('SELECT opportunity_id, first_seen_at, status FROM opportunities WHERE opportunity_id = ?', (opp_id,))
             row = cur.fetchone()
 
             first_seen = row['first_seen_at'] if row else now_iso
+            current_status = row['status'] if row else 'NUEVA'
             last_seen = now_iso
 
             cur.execute('''
@@ -111,10 +135,11 @@ def save_opportunities(opportunities, scan_id=None, db_path=DEFAULT_DB_PATH, jso
                 title, organization, description, category, opportunity_type,
                 payment_min, payment_max, currency, location, remote,
                 skills_json, raw_data_json, observed_data_json, estimated_data_json,
+                proposal_json, blueprint_json,
                 fit_score, money_score, difficulty_score, trust_score,
                 reusability_score, scalability_score, competition_score, overall_score,
-                decision, reasoning, next_action, first_seen_at, last_seen_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                decision, reasoning, next_action, first_seen_at, last_seen_at, status
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(opportunity_id) DO UPDATE SET
                 title = excluded.title,
                 organization = excluded.organization,
@@ -125,6 +150,8 @@ def save_opportunities(opportunities, scan_id=None, db_path=DEFAULT_DB_PATH, jso
                 skills_json = excluded.skills_json,
                 observed_data_json = excluded.observed_data_json,
                 estimated_data_json = excluded.estimated_data_json,
+                proposal_json = excluded.proposal_json,
+                blueprint_json = excluded.blueprint_json,
                 fit_score = excluded.fit_score,
                 money_score = excluded.money_score,
                 difficulty_score = excluded.difficulty_score,
@@ -157,6 +184,8 @@ def save_opportunities(opportunities, scan_id=None, db_path=DEFAULT_DB_PATH, jso
                 json.dumps(opp.get('raw_data', {}), ensure_ascii=False),
                 json.dumps(opp.get('observed_data', {}), ensure_ascii=False),
                 json.dumps(opp.get('estimated_data', {}), ensure_ascii=False),
+                json.dumps(opp.get('proposal', {}), ensure_ascii=False) if opp.get('proposal') else None,
+                json.dumps(opp.get('blueprint', {}), ensure_ascii=False) if opp.get('blueprint') else None,
                 opp.get('fit_score', 0.0),
                 opp.get('money_score', 0.0),
                 opp.get('difficulty_score', 0.0),
@@ -169,7 +198,8 @@ def save_opportunities(opportunities, scan_id=None, db_path=DEFAULT_DB_PATH, jso
                 opp.get('reasoning', ''),
                 opp.get('next_action', ''),
                 first_seen,
-                last_seen
+                last_seen,
+                current_status
             ))
             if row:
                 updated_count += 1
@@ -179,6 +209,28 @@ def save_opportunities(opportunities, scan_id=None, db_path=DEFAULT_DB_PATH, jso
     conn.commit()
     conn.close()
     return saved_count, updated_count
+
+def update_opportunity_status(opp_id, new_status, notes=None, db_path=DEFAULT_DB_PATH):
+    init_db(db_path)
+    conn = get_connection(db_path)
+    cur = conn.cursor()
+    now_iso = datetime.now().isoformat()
+
+    if new_status in ['PROPUESTA_ENVIADA', 'EN_NEGOCIACION']:
+        cur.execute('''
+        UPDATE opportunities 
+        SET status = ?, notes = COALESCE(?, notes), contacted_at = COALESCE(contacted_at, ?)
+        WHERE opportunity_id = ?
+        ''', (new_status, notes, now_iso, opp_id))
+    else:
+        cur.execute('''
+        UPDATE opportunities 
+        SET status = ?, notes = COALESCE(?, notes)
+        WHERE opportunity_id = ?
+        ''', (new_status, notes, opp_id))
+    
+    conn.commit()
+    conn.close()
 
 def log_scan_run(scan_data, db_path=DEFAULT_DB_PATH):
     init_db(db_path)
@@ -205,3 +257,62 @@ def log_scan_run(scan_data, db_path=DEFAULT_DB_PATH):
     ))
     conn.commit()
     conn.close()
+
+def get_all_opportunities(filter_decision=None, filter_status=None, limit=200, db_path=DEFAULT_DB_PATH):
+    init_db(db_path)
+    conn = get_connection(db_path)
+    cur = conn.cursor()
+
+    query = 'SELECT * FROM opportunities'
+    params = []
+    conditions = []
+
+    if filter_decision:
+        conditions.append('decision = ?')
+        params.append(filter_decision)
+    if filter_status:
+        conditions.append('status = ?')
+        params.append(filter_status)
+
+    if conditions:
+        query += ' WHERE ' + ' AND '.join(conditions)
+
+    query += ' ORDER BY overall_score DESC LIMIT ?'
+    params.append(limit)
+
+    cur.execute(query, params)
+    rows = cur.fetchall()
+    
+    results = []
+    for r in rows:
+        d = dict(r)
+        d['skills'] = json.loads(d.get('skills_json') or '[]')
+        d['observed_data'] = json.loads(d.get('observed_data_json') or '{}')
+        d['estimated_data'] = json.loads(d.get('estimated_data_json') or '{}')
+        d['proposal'] = json.loads(d.get('proposal_json') or '{}') if d.get('proposal_json') else None
+        d['blueprint'] = json.loads(d.get('blueprint_json') or '{}') if d.get('blueprint_json') else None
+        results.append(d)
+
+    conn.close()
+    return results
+
+def get_stats(db_path=DEFAULT_DB_PATH):
+    init_db(db_path)
+    conn = get_connection(db_path)
+    cur = conn.cursor()
+
+    cur.execute('SELECT COUNT(*) FROM opportunities;')
+    total = cur.fetchone()[0]
+
+    cur.execute('SELECT decision, COUNT(*) FROM opportunities GROUP BY decision;')
+    by_decision = dict(cur.fetchall())
+
+    cur.execute('SELECT status, COUNT(*) FROM opportunities GROUP BY status;')
+    by_status = dict(cur.fetchall())
+
+    conn.close()
+    return {
+        'total': total,
+        'by_decision': by_decision,
+        'by_status': by_status
+    }

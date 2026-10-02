@@ -4,6 +4,9 @@ sys.path.append(r'C:\Radar')
 
 from scripts.collectors.remotive_collector import RemotiveCollector
 from scripts.collectors.arbeitnow_collector import ArbeitnowCollector
+from scripts.collectors.remoteok_collector import RemoteOKCollector
+from scripts.collectors.weworkremotely_collector import WeWorkRemotelyCollector
+from scripts.collectors.hackernews_collector import HackerNewsCollector
 from scripts.collectors.github_bounties_collector import GitHubBountiesCollector
 
 class CollectorManager:
@@ -11,6 +14,9 @@ class CollectorManager:
         self.collectors = [
             RemotiveCollector(),
             ArbeitnowCollector(),
+            RemoteOKCollector(),
+            WeWorkRemotelyCollector(),
+            HackerNewsCollector(),
             GitHubBountiesCollector()
         ]
 
@@ -18,6 +24,14 @@ class CollectorManager:
         results = {}
         for collector in self.collectors:
             name = collector.NAME
-            res = collector.collect()
-            results[name] = res
+            try:
+                res = collector.collect()
+                results[name] = res
+            except Exception as e:
+                results[name] = {
+                    'success': False,
+                    'source': name,
+                    'items': [],
+                    'error': str(e)
+                }
         return results

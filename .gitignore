@@ -1,4 +1,4 @@
-﻿# Node
+# Node
 node_modules/
 n8n/node_modules/
 
@@ -16,3 +16,6 @@ logs/*.log
 *.log
 .DS_Store
 Thumbs.db
+__pycache__/
+*.pyc
+

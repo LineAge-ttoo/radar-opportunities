@@ -1,157 +1,131 @@
-﻿# ESTADO DEL PROYECTO: RADAR
-**Fecha de última actualización:** 2026-09-13  
+# ESTADO DEL PROYECTO: RADAR
+**Fecha de última actualización:** 2026-10-02  
 **Root Canónico:** `C:\Radar`  
-**Estado General:** OPERATIVO / V1 IMPLEMENTADO Y VERIFICADO  
+**Estado General:** TOTALMENTE OPERATIVO / MOTOR DE GENERACIÓN DE INGRESOS ACTIVO  
 
 ---
 
 ## 1. OBJETIVO DEL PROYECTO
-RADAR es un motor personal de inteligencia de oportunidades para descubrir, analizar, puntuar, almacenar y presentar opciones legítimas de generación de ingresos mediante:
-- Programación & Automatización (Python, JavaScript/TypeScript, n8n, APIs, bots, scraping legal)
-- Inteligencia Artificial & Agentes (LLMs, agentes autónomos, integraciones)
-- Desarrollo Web & Aplicaciones
-- Desarrollo 3D & Gaming (Blender, Unity, Roblox)
-- Diseño Digital & UI/UX
-- Tareas técnicas pagadas, freelance, contratos, bounties y proyectos cortos
-- **Construir y Vender**: Detección de problemas repetitivos y demanda desatendida para empaquetar soluciones de software reutilizables.
-
-### Dos Clases Principales de Oportunidades:
-- **Clase A: Dinero Publicado**: Ofertas directas de trabajo, contrato, bounty o pago explícito.
-- **Clase B: Demanda Detectada**: Señales públicas de dolor o ineficiencia para construir y vender herramientas.
+RADAR es un motor personal de inteligencia y monetización para descubrir, analizar, estructurar propuestas comerciales y cerrar oportunidades de ingresos en:
+- **Automatización & n8n**: Flujos de trabajo, webhooks, bots, integraciones multi-SaaS y eliminación de tareas manuales.
+- **Python & Scraping Legal**: Extracción estructurada, APIs personalizadas y scripts de datos.
+- **Inteligencia Artificial**: Agentes, llamadas a herramientas (function calling), flujos con LLMs y extracción estructurada.
+- **Desarrollo Web & Backend**: Full-stack, React, TypeScript, Node.js y APIs REST.
+- **3D & Videojuegos**: Unity, Roblox, Blender y pipelines de activos 3D.
+- **Construir y Vender**: Blueprints de productos digitales, plantillas y micro-servicios empaquetados para vender múltiples veces.
 
 ---
 
-## 2. VERSIONES Y ENTORNO DEL SISTEMA
-- **Sistema Operativo:** Windows 11 / Windows Server (PowerShell 5.1 / UTF-8)
-- **Node.js:** v24.15.0
-- **npm:** 11.12.1
-- **Git:** 2.55.0.windows.2
-- **Python:** 3.14.6
-- **n8n:** 2.38.7 (Instalación local en `C:\Radar\n8n`, datos en `C:\Radar\n8n\instance\.n8n`)
-- **Editor Local n8n:** `http://127.0.0.1:5678` (Activo y respondiendo)
-
----
-
-## 3. ARQUITECTURA ACTUAL DE ARCHIVOS
+## 2. ARQUITECTURA TÉCNICA IMPLEMENTADA
 
 ```
 C:\Radar
-│   .gitignore                        -> Exclusiones seguras de git (node_modules, cache, logs)
-│   PROJECT_STATE.md                  -> Estado canónico del proyecto (este archivo)
-│   README.md                         -> Resumen general del pipeline
-│   START_RADAR.bat                   -> Lanzador bat para iniciar n8n
-│   START_RADAR.ps1                   -> Lanzador powershell con variables seguras
+│   .gitignore                        -> Exclusiones seguras de git
+│   PROJECT_STATE.md                  -> Estado canónico del proyecto
+│   README.md                         -> Resumen general
+│   START_RADAR.bat                   -> Lanzador turnkey (Inicia App 8080 + n8n 5678)
+│   START_RADAR.ps1                   -> Script PowerShell de orquestación dual
+│
+├── app                               -> APLICACIÓN WEB INTERACTIVA (Local & Móvil)
+│   ├── index.html                    -> Dashboard SPA responsivo con pitches y CRM
+│   └── server.py                     -> Servidor HTTP API en puerto 8080 (0.0.0.0)
 │
 ├── config
-│   ├── radar.config.json             -> Configuración global de rutas, umbrales y seguridad
+│   ├── radar.config.json             -> Ajustes globales y umbrales
 │   ├── scoring
-│   │   └── scoring_rules.json        -> Reglas de habilidades, señales y pesos del scoring
+│   │   └── scoring_rules.json        -> Reglas y ponderaciones de habilidades
 │   └── sources
-│       └── sources.json              -> Definición y parámetros de colectores activos
+│       └── sources.json              -> Metadatos de fuentes
 │
 ├── data
-│   ├── archive                       -> Histórico de scans anteriores
-│   ├── incoming                      -> Respuestas JSON crudas por colector para auditoría
-│   ├── opportunities
-│   │   ├── latest_scan.json          -> Snapshot completo del último scan
-│   │   ├── opportunities.jsonl       -> Stream append-only para auditoría continua
-│   │   └── radar.db                  -> Base SQLite maestra de oportunidades (ACID / WAL)
-│   └── rejected                      -> Registro de oportunidades descartadas
+│   ├── incoming                      -> Respuestas crudas de APIs para trazabilidad
+│   └── opportunities
+│       ├── latest_scan.json          -> Snapshot JSON del último escaneo
+│       ├── opportunities.jsonl       -> Stream append-only histórico
+│       └── radar.db                  -> SQLite maestro con CRM y propuestas
 │
 ├── docs
-│   ├── DECISIONS.md                  -> Registro de Decisiones de Arquitectura (ADR)
-│   └── RADAR_02_DEMAND_DETECTION_SPEC.md -> Especificación para detección de demanda
+│   ├── DECISIONS.md                  -> ADRs del sistema
+│   └── RADAR_02_DEMAND_DETECTION_SPEC.md -> Especificación de demanda oculta
 │
 ├── exports
-│   ├── RADAR_SCAN_LATEST.html        -> Dashboard web responsivo para consulta móvil y local
-│   ├── RADAR_SCAN_LATEST.md          -> Reporte detallado en Markdown
-│   └── RADAR_SUMMARY.json            -> Resumen métrico del último scan
-│
-├── logs
-│   └── radar.log                     -> Logs de ejecución
+│   ├── RADAR_SCAN_LATEST.html        -> Reporte exportable estático
+│   ├── RADAR_SCAN_LATEST.md          -> Reporte Markdown
+│   └── RADAR_SUMMARY.json            -> Resumen métrico
 │
 ├── n8n
-│   ├── backup
-│   │   └── RADAR_01_DISCOVERY_v0.json-> Respaldo del workflow original
-│   ├── instance
-│   │   └── .n8n
-│   │       └── database.sqlite       -> Base interna de n8n (workflows y usuarios)
+│   ├── instance/.n8n                 -> Datos persistentes de n8n
 │   └── workflows
-│       ├── RADAR_01_DISCOVERY.json   -> Workflow v1 normalizado y probado
-│       └── RADAR_02_DEMAND_DETECTION.json -> Workflow v1 de demanda latente
+│       ├── RADAR_01_DISCOVERY.json   -> Workflow v1 en n8n
+│       └── RADAR_02_DEMAND_DETECTION.json -> Workflow v1 de demanda en n8n
 │
 └── scripts
     ├── analyzers
-    │   ├── normalizer.py             -> Normalización a esquema canónico (limpieza HTML, sueldos)
-    │   └── scoring_engine.py         -> Motor de puntuación (fit, dinero, confianza, reusabilidad)
+    │   ├── blueprint_generator.py    -> Generador de planes "Construir y Vender"
+    │   ├── normalizer.py             -> Normalizador multi-fuente (6 canales)
+    │   ├── proposal_generator.py     -> Generador de propuestas técnicas (Sniper Pitch)
+    │   └── scoring_engine.py         -> Motor de puntuación (Fit, Dinero, Reusabilidad)
     ├── collectors
-    │   ├── arbeitnow_collector.py    -> Colector API de Arbeitnow
-    │   ├── collector_manager.py      -> Orquestador tolerante a fallos de colectores
-    │   ├── github_bounties_collector.py -> Colector API de GitHub Issues Bounties
-    │   └── remotive_collector.py     -> Colector API de Remotive
-    ├── run_radar_scan.py             -> Script maestro de escaneo integral
+    │   ├── arbeitnow_collector.py    -> Colector Arbeitnow API
+    │   ├── collector_manager.py      -> Orquestador tolerante a fallos
+    │   ├── github_bounties_collector.py -> Colector GitHub Bounties
+    │   ├── hackernews_collector.py   -> Colector Hacker News Algolia API
+    │   ├── remoteok_collector.py     -> Colector RemoteOK API (Salarios explícitos)
+    │   ├── remotive_collector.py     -> Colector Remotive API
+    │   └── weworkremotely_collector.py -> Colector WeWorkRemotely RSS
+    ├── run_radar_scan.py             -> Runner de escaneo integral
     └── utilities
-        ├── db.py                     -> Módulo de persistencia SQLite y JSONL
-        ├── presenter.py              -> Generador de reportes Markdown y HTML responsivo
-        ├── register_radar02.py       -> Registro sincronizado de workflows en SQLite de n8n
-        └── update_n8n_workflow.py    -> Sincronizador de RADAR_01 en SQLite de n8n
+        ├── backfill_proposals.py     -> Utilidad de backfill
+        ├── db.py                     -> Capa de persistencia SQLite + CRM
+        └── presenter.py              -> Exportador HTML y Markdown
 ```
 
 ---
 
-## 4. WORKFLOWS REGISTRADOS EN N8N
-1. **`RADAR_01_DISCOVERY` (ID: `RADAR01DISCOV01`)**:
-   - **Trigger:** Manual (`ESCANEAR AHORA`)
-   - **Nodo HTTP:** Descarga de ofertas de Remotive (`https://remotive.com/api/remote-jobs`)
-   - **Nodo Código:** Motor normalizador, cálculo de 5 dimensiones de score, clasificación en `PRIORIDAD`, `CONSTRUIR_Y_VENDER`, `INVESTIGAR`, `OBSERVAR`, `DESCARTAR`, y separación entre datos observados y estimados.
-   - **Estado en n8n:** Registrado y visible en el editor local en `http://127.0.0.1:5678`.
-
-2. **`RADAR_02_DEMAND_DETECTION` (ID: `RADAR02DEMAND01`)**:
-   - **Trigger:** Manual (`DETECCION DE DEMANDA MANUAL`)
-   - **Nodo HTTP:** Captura de señales públicas en foros de discusión y automatización
-   - **Nodo Código:** Extractor de fricción operativa y generador de propuestas de software reutilizable.
-   - **Estado en n8n:** Registrado y visible en el editor local.
+## 3. CANALES DE GENERACIÓN DE INGRESOS ACTIVOS (6 FUENTES)
+1. **RemoteOK**: Empleos remotos de alta compensación con salarios comprobados en USD ($70K - $250K).
+2. **WeWorkRemotely**: Contratos y puestos de programación e infraestructura remota.
+3. **Remotive**: Empleos remotos internacionales y posiciones de software/automatización.
+4. **Arbeitnow**: Feed masivo de posiciones técnicas y de automatización.
+5. **Hacker News (Algolia API)**: Comentarios directos de fundadores y CTOs contratando freelancers y consultores sin intermediarios.
+6. **GitHub Bounties**: Tareas y recompensas de código abierto con pagos por issue.
 
 ---
 
-## 5. COLECTORES Y FUENTES ACTIVAS
-- **Remotive (`remotive_collector.py`)**: API pública y legal de empleos tecnológicos remotos.
-- **Arbeitnow (`arbeitnow_collector.py`)**: API pública de empleo con foco en tech, desarrollo e ingeniería remota.
-- **GitHub Bounties (`github_bounties_collector.py`)**: Búsqueda pública por API de GitHub de issues abiertas con etiqueta `bounty` en repositorios de código abierto.
+## 4. MOTOR DE CIERRE: PROPUESTAS TÉCNICAS (SNIPER PITCH)
+Para cada oportunidad en estado `PRIORIDAD`, `INVESTIGAR` o `CONSTRUIR_Y_VENDER`, RADAR genera automáticamente:
+- **Asunto de alto impacto**: Específico y profesional.
+- **Apertura de entendimiento técnico**: Mapeo directo a los dolores del cliente.
+- **Arquitectura de solución**: Propuesta de cómo se construirá (n8n, Python, webhooks, reintentos, validación de datos).
+- **Tiempo de entrega estimado**: 48 a 72 horas para MVP o primer hito.
+- **Llamado a la acción de baja fricción**: Invitación a llamada rápida o demo en Loom.
+- **Botón de copia rápida (1-click copy)** en el dashboard.
 
 ---
 
-## 6. ESQUEMA DE DATOS CANÓNICO
-Cada oportunidad persistida en `radar.db` contiene:
-- `opportunity_id` (Identificador determinístico único)
-- `source` & `source_url` (Fuente y enlace original intacto)
-- `discovered_at` & `published_at`
-- `title`, `organization`, `category`, `opportunity_type`, `location`, `remote`
-- `payment_min`, `payment_max`, `currency` (Números reales parseados; `NULL` si no están publicados)
-- `skills` (Lista JSON de tecnologías coincidentes)
-- `raw_data` (Snippet original de la fuente)
-- `observed_data` (Datos fácticos textuales comprobados en la oferta)
-- `estimated_data` (Estimación analítica de RADAR: horas, dificultad, potencial económico, nivel de competencia, viabilidad de automatización)
-- `fit_score`, `money_score`, `difficulty_score`, `trust_score`, `reusability_score`, `scalability_score`, `competition_score`, `overall_score`
-- `decision` (`PRIORIDAD`, `INVESTIGAR`, `OBSERVAR`, `DESCARTAR`, `CONSTRUIR_Y_VENDER`)
-- `reasoning` (Explicación honesta de 1 a 2 líneas de por qué fue seleccionada o clasificada)
-- `next_action` (Paso táctico inmediato recomendado)
+## 5. PIPELINE "CONSTRUIR Y VENDER" (PRODUCTIZACIÓN)
+Para oportunidades donde una necesidad se repite y puede convertirse en producto:
+- **Concepto de Producto**: Plantilla n8n, micro-herramienta Python, bot o dataset.
+- **Entregable Concreto**: JSON exportable, script Dockerizado o repositorio con documentación.
+- **Público Objetivo**: Perfil exacto de empresas que sufren el mismo cuello de botella.
+- **Precio Sugerido**: $49 a $299 USD (pago único o suscripción).
+- **Guión de Prospección en Frío**: Mensaje listo para enviar a 10-20 negocios similares.
 
 ---
 
-## 7. BLOQUEOS
-- **Ninguno actualmente.** Todo el pipeline corre de punta a punta de forma desatendida.
+## 6. SISTEMA CRM DE SEGUIMIENTO LOCAL
+Estados gestionables desde el Dashboard:
+- `NUEVA`: Hallazgo reciente pendiente de revisión.
+- `REVISADA`: Oportunidad leída y evaluada.
+- `PROPUESTA_ENVIADA`: Pitch enviado al cliente/oferente.
+- `EN_NEGOCIACION`: Conversación o prueba técnica activa.
+- `GANADA`: ¡Contrato cerrado / Ingreso generado!
+- `DESCARTADA`: Archivada sin interés.
 
 ---
 
-## 8. DEUDA TÉCNICA REGISTRADA
-- **Advertencia de Docker en n8n:** n8n 2.38.7 emite una advertencia de que versiones futuras requerirán Docker. Actualmente opera de forma local y estable sobre Node.js 24 en Windows. No se migrará a Docker hasta que sea estrictamente indispensable y aprobado por el usuario.
-- **Concurrencia en SQLite de n8n:** Cuando n8n está arrancando o ejecutando, la base interna `C:\Radar\n8n\instance\.n8n\database.sqlite` adquiere bloqueos de lectura/escritura. Las operaciones sobre esa base deben realizarse de forma atómica o con el servicio detenido. La base de oportunidades `data/opportunities/radar.db` es independiente y opera en WAL sin interferir con n8n.
-- **Límites de Rate Limit en APIs públicas sin autenticación:** La API de búsqueda de GitHub sin token tiene un límite de 10 requests por minuto. Si se escala la frecuencia de escaneo de bounties, se requerirá configurar un `GITHUB_TOKEN` opcional en `config/sources/sources.json`.
-
----
-
-## 9. PRÓXIMOS PASOS RECOMENDADOS
-1. Probar la ejecución manual del workflow desde la interfaz web de n8n (`http://127.0.0.1:5678`) presionando "Test step" en `RADAR_01_DISCOVERY`.
-2. Añadir nuevos colectores públicos (p. ej., feeds RSS de HackerNews Who is Hiring, Upwork RSS público si está disponible, o agregadores especializados en bots y Python).
-3. Programar el escaneo automático periódico (vía Windows Task Scheduler o n8n cron trigger) llamando a `python C:\Radar\scripts\run_radar_scan.py`.
+## 7. ACCESO Y PUNTOS DE ENTRADA
+- **Dashboard Web Principal (PC):** `http://127.0.0.1:8080`
+- **Dashboard Web Móvil (Mismo Wi-Fi):** `http://192.168.0.106:8080` (Ajustado dinámicamente)
+- **Editor Visual n8n:** `http://127.0.0.1:5678`
+- **Lanzador de un solo clic:** `C:\Radar\START_RADAR.bat`

@@ -1,0 +1,178 @@
+﻿import sys
+import os
+import json
+import sqlite3
+import subprocess
+import threading
+from urllib.parse import urlparse, parse_qs
+from http.server import HTTPServer, BaseHTTPRequestHandler
+import socket
+
+sys.path.append(r'C:\Radar')
+from scripts.utilities.db import get_all_opportunities, update_opportunity_status, get_stats
+
+PORT = 8080
+APP_DIR = r'C:\Radar\app'
+HTML_FILE = os.path.join(APP_DIR, 'index.html')
+
+is_scanning = False
+last_scan_result = None
+
+def get_local_ip():
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        ip = s.getsockname()[0]
+        s.close()
+        return ip
+    except Exception:
+        return "127.0.0.1"
+
+class RadarHttpHandler(BaseHTTPRequestHandler):
+    def log_message(self, format, *args):
+        # Suppress noisy console access logs
+        return
+
+    def send_json(self, data, status_code=200):
+        self.send_response(status_code)
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.end_headers()
+        self.wfile.write(json.dumps(data, ensure_ascii=False).encode('utf-8'))
+
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.end_headers()
+
+    def do_GET(self):
+        parsed = urlparse(self.path)
+        path = parsed.path
+        query = parse_qs(parsed.query)
+
+        if path in ['/', '/index.html']:
+            if os.path.exists(HTML_FILE):
+                self.send_response(200)
+                self.send_header('Content-Type', 'text/html; charset=utf-8')
+                self.end_headers()
+                with open(HTML_FILE, 'rb') as f:
+                    self.wfile.write(f.read())
+            else:
+                self.send_error(404, "index.html not found")
+
+        elif path == '/api/stats':
+            stats = get_stats()
+            stats['local_ip'] = get_local_ip()
+            stats['port'] = PORT
+            stats['is_scanning'] = is_scanning
+            self.send_json(stats)
+
+        elif path == '/api/opportunities':
+            decision = query.get('decision', [None])[0]
+            status = query.get('status', [None])[0]
+            search = query.get('search', [None])[0]
+            limit = int(query.get('limit', [150])[0])
+
+            opps = get_all_opportunities(filter_decision=decision, filter_status=status, limit=limit)
+            
+            if search:
+                s_lower = search.lower()
+                opps = [
+                    o for o in opps 
+                    if s_lower in o.get('title', '').lower() 
+                    or s_lower in o.get('organization', '').lower()
+                    or any(s_lower in s.lower() for s in o.get('skills', []))
+                    or s_lower in o.get('description', '').lower()
+                ]
+
+            self.send_json({'count': len(opps), 'opportunities': opps})
+
+        elif path == '/api/scan/status':
+            self.send_json({
+                'is_scanning': is_scanning,
+                'last_scan': last_scan_result
+            })
+
+        else:
+            self.send_error(404, "Endpoint not found")
+
+    def do_POST(self):
+        global is_scanning, last_scan_result
+        parsed = urlparse(self.path)
+        path = parsed.path
+
+        content_length = int(self.headers.get('Content-Length', 0))
+        raw_b = self.rfile.read(content_length) if content_length > 0 else b'{}'
+        try:
+            body = raw_b.decode('utf-8')
+        except Exception:
+            body = raw_b.decode('cp1252', errors='replace')
+        try:
+            payload = json.loads(body)
+        except Exception:
+            payload = {}
+
+        if path == '/api/scan':
+            if is_scanning:
+                self.send_json({'error': 'Scan already in progress'}, status_code=409)
+                return
+
+            def background_scan():
+                global is_scanning, last_scan_result
+                is_scanning = True
+                try:
+                    res = subprocess.run(
+                        ['python', r'C:\Radar\scripts\run_radar_scan.py'],
+                        capture_output=True,
+                        text=True,
+                        cwd=r'C:\Radar'
+                    )
+                    last_scan_result = {
+                        'success': res.returncode == 0,
+                        'stdout': res.stdout[-800:] if res.stdout else '',
+                        'stderr': res.stderr[-400:] if res.stderr else ''
+                    }
+                except Exception as e:
+                    last_scan_result = {'success': False, 'error': str(e)}
+                finally:
+                    is_scanning = False
+
+            t = threading.Thread(target=background_scan, daemon=True)
+            t.start()
+            self.send_json({'message': 'Scan triggered successfully', 'is_scanning': True})
+
+        elif path == '/api/opportunity/status':
+            opp_id = payload.get('opportunity_id')
+            new_status = payload.get('status')
+            notes = payload.get('notes')
+
+            if not opp_id or not new_status:
+                self.send_json({'error': 'Missing opportunity_id or status'}, status_code=400)
+                return
+
+            update_opportunity_status(opp_id, new_status, notes=notes)
+            self.send_json({'success': True, 'opportunity_id': opp_id, 'new_status': new_status})
+
+        else:
+            self.send_error(404, "Endpoint not found")
+
+def run_server():
+    server_address = ('0.0.0.0', PORT)
+    httpd = HTTPServer(server_address, RadarHttpHandler)
+    local_ip = get_local_ip()
+    print("="*55)
+    print(" RADAR OPPORTUNITY INTELLIGENCE APP SERVER")
+    print("="*55)
+    print(f"Local Access:    http://127.0.0.1:{PORT}")
+    print(f"Network Access:  http://{local_ip}:{PORT} (Para tu teléfono o laptop)")
+    print("Zero-dependency high performance server active.")
+    print("="*55)
+    httpd.serve_forever()
+
+if __name__ == '__main__':
+    run_server()
+

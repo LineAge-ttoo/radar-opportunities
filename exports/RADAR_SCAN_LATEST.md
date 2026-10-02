@@ -1,856 +1,1231 @@
 # RADAR SCAN REPORT
-**Fecha / Hora:** 2026-09-13T22:08:28.743344
-**Fuentes Consultadas:** Remotive, Arbeitnow, GitHub Bounties
-**Hallazgos Totales:** 146
-- **PRIORIDAD:** 1
-- **CONSTRUIR Y VENDER:** 2
-- **INVESTIGAR:** 42
-- **OBSERVAR:** 37
-- **DESCARTAR:** 64
+**Fecha / Hora:** 2026-10-02T14:24:42.333695
+**Fuentes Consultadas:** Remotive, Arbeitnow, RemoteOK, WeWorkRemotely, HackerNews, GitHub Bounties
+**Hallazgos Totales:** 247
+- **PRIORIDAD:** 7
+- **CONSTRUIR Y VENDER:** 0
+- **INVESTIGAR:** 53
+- **OBSERVAR:** 63
+- **DESCARTAR:** 124
 
 ---
 
-## SECCIÓN: CONSTRUIR_Y_VENDER (2 oportunidades)
+## SECCIÓN: PRIORIDAD (7 oportunidades)
 
-### 1. Head of Marketing & Communications | garden3d [71.5 pts]
-- **Fuente:** Remotive
-- **Pago:** USD 150000.0 - 230000.0
-- **Score:** 71.5 / 100 (Fit: 65.0, Reusabilidad: 75.0)
+### 1. Senior People & Talent Operations Partner | TestGorilla [79.2 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 70000.0 - 80000.0
+- **Score:** 79.2 / 100 (Fit: 89.0, Reusabilidad: 60.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** automation, ai, automations, n8n
+- **Por qué apareció:** Alta afinidad técnica (n8n, automation, automations) con buen balance de viabilidad y pago.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Inspeccionar URL original, verificar requisitos y preparar propuesta técnica personalizada.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-senior-people-talent-operations-partner-testgorilla-1137378](https://remoteOK.com/remote-jobs/remote-senior-people-talent-operations-partner-testgorilla-1137378)
+
+### 2. Senior Software Engineer | AccuLynx [79.2 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** 10000.0 - 10000.0
+- **Score:** 79.2 / 100 (Fit: 100.0, Reusabilidad: 60.0)
 - **Dificultad:** MEDIA_ALTA
 - **Tiempo estimado:** 20 a 80 horas
-- **Compatibilidad (Skills):** workflow, figma, ai, ui/ux
-- **Por qué apareció:** Fuerte señal de automatización/producto reutilizable (workflow, ai, ui/ux). Puede empaquetarse y replicarse.
-- **Qué sabemos (Datos Observados):** Tipo=contract, Ubicación=Worldwide, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Analizar requerimientos y empaquetar una solución/plantilla vendible.
-- **Enlace original:** [https://remotive.com/remote-jobs/marketing/head-of-marketing-communications-2091068](https://remotive.com/remote-jobs/marketing/head-of-marketing-communications-2091068)
-
-### 2. Team Lead AI Engineering (f/m/d) | Vestigas [63.3 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 63.3 / 100 (Fit: 76.0, Reusabilidad: 75.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** workflow, python, ai, automation
-- **Por qué apareció:** Fuerte señal de automatización/producto reutilizable (automation, workflow, ai). Puede empaquetarse y replicarse.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=München (Hybrid), Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Analizar requerimientos y empaquetar una solución/plantilla vendible.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/vestigas/team-lead-ai-engineering-munchen-hybrid-153688](https://www.arbeitnow.com/jobs/companies/vestigas/team-lead-ai-engineering-munchen-hybrid-153688)
-
-## SECCIÓN: PRIORIDAD (1 oportunidades)
-
-### 1. Tech Lead Full-Stack Rails Engineer | Mitre Media [79.2 pts]
-- **Fuente:** Remotive
-- **Pago:** USD 170000.0 - 200000.0
-- **Score:** 79.2 / 100 (Fit: 100.0, Reusabilidad: 45.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** apis, llm, ai, workflow, javascript, react, api
-- **Por qué apareció:** Alta afinidad técnica (workflow, ai, llm) con buen balance de viabilidad y pago.
-- **Qué sabemos (Datos Observados):** Tipo=full_time, Ubicación=USA, Canada, USA timezones, Remoto=Sí
+- **Compatibilidad (Skills):** workflow, vue, automation, api, frontend, ai, backend, apis
+- **Por qué apareció:** Alta afinidad técnica (automation, workflow, ai) con buen balance de viabilidad y pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
 - **Qué haríamos (Siguiente Acción):** Inspeccionar URL original, verificar requisitos y preparar propuesta técnica personalizada.
-- **Enlace original:** [https://remotive.com/remote-jobs/software-development/tech-lead-full-stack-rails-engineer-2069746](https://remotive.com/remote-jobs/software-development/tech-lead-full-stack-rails-engineer-2069746)
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/acculynx-senior-software-engineer](https://weworkremotely.com/remote-jobs/acculynx-senior-software-engineer)
 
-## SECCIÓN: INVESTIGAR (42 oportunidades)
-
-### 1. Senior React Full-stack Developer | Lemon.io [71.0 pts]
-- **Fuente:** Remotive
-- **Pago:** No publicado / Por negociar
-- **Score:** 71.0 / 100 (Fit: 100.0, Reusabilidad: 45.0)
+### 3. Staff Software Engineer | Samsara [74.8 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** 4000.0 - 25000.0
+- **Score:** 74.8 / 100 (Fit: 100.0, Reusabilidad: 30.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** llm, python, ai, automation, javascript, react, vue, unity, ui/ux, ux design, agent, node, backend, typescript
-- **Por qué apareció:** Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=full_time, Ubicación=LATAM, Europe, USA, Canada, APAC, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://remotive.com/remote-jobs/software-development/senior-react-full-stack-developer-2091101](https://remotive.com/remote-jobs/software-development/senior-react-full-stack-developer-2091101)
+- **Compatibilidad (Skills):** javascript, typescript, react, python, llm, api, frontend, ai, backend, apis
+- **Por qué apareció:** Alta afinidad técnica (ai, llm, api) con buen balance de viabilidad y pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Qué haríamos (Siguiente Acción):** Inspeccionar URL original, verificar requisitos y preparar propuesta técnica personalizada.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/samsara-staff-software-engineer](https://weworkremotely.com/remote-jobs/samsara-staff-software-engineer)
 
-### 2. Senior QA Engineer | Lemon.io [71.0 pts]
-- **Fuente:** Remotive
-- **Pago:** No publicado / Por negociar
-- **Score:** 71.0 / 100 (Fit: 100.0, Reusabilidad: 45.0)
+### 4. Senior Shopify Developer | Sanctuary Computer [74.0 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 80000.0 - 250000.0
+- **Score:** 74.0 / 100 (Fit: 100.0, Reusabilidad: 45.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** llm, python, ai, automation, javascript, react, vue, unity, ui/ux, ux design, agent, node, typescript
-- **Por qué apareció:** Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=full_time, Ubicación=Europe, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://remotive.com/remote-jobs/qa/senior-qa-engineer-2091100](https://remotive.com/remote-jobs/qa/senior-qa-engineer-2091100)
+- **Compatibilidad (Skills):** workflow, typescript, ui/ux, api, figma, 3d, node, frontend, backend, apis
+- **Por qué apareció:** Alta afinidad técnica (workflow, api, apis) con buen balance de viabilidad y pago.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Inspeccionar URL original, verificar requisitos y preparar propuesta técnica personalizada.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-senior-shopify-developer-sanctuary-computer-1137405](https://remoteOK.com/remote-jobs/remote-senior-shopify-developer-sanctuary-computer-1137405)
 
-### 3. Senior DevOps Engineer | Lemon.io [71.0 pts]
-- **Fuente:** Remotive
-- **Pago:** No publicado / Por negociar
-- **Score:** 71.0 / 100 (Fit: 100.0, Reusabilidad: 45.0)
+### 5. Staff Software Development Engineer SDM | Delinea [73.5 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 150000.0 - 185000.0
+- **Score:** 73.5 / 100 (Fit: 90.0, Reusabilidad: 45.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** llm, python, ai, automation, javascript, react, vue, unity, ui/ux, ux design, agent, node, typescript
-- **Por qué apareció:** Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=full_time, Ubicación=LATAM, Europe, USA, Canada, APAC, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://remotive.com/remote-jobs/devops/senior-devops-engineer-2091099](https://remotive.com/remote-jobs/devops/senior-devops-engineer-2091099)
+- **Compatibilidad (Skills):** automation, api, backend, ai, apis
+- **Por qué apareció:** Alta afinidad técnica (automation, ai, api) con buen balance de viabilidad y pago.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=Redwood City, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Inspeccionar URL original, verificar requisitos y preparar propuesta técnica personalizada.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-staff-software-development-engineer-sdm-delinea-1136796](https://remoteOK.com/remote-jobs/remote-staff-software-development-engineer-sdm-delinea-1136796)
 
-### 4. Senior Golang Developer | Lemon.io [71.0 pts]
-- **Fuente:** Remotive
-- **Pago:** No publicado / Por negociar
-- **Score:** 71.0 / 100 (Fit: 100.0, Reusabilidad: 45.0)
+### 6. Senior .NET Full-stack Developer | Lemon.io [72.8 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** USD 11.0 - 11.0
+- **Score:** 72.8 / 100 (Fit: 100.0, Reusabilidad: 45.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** apis, llm, ai, automation, python, javascript, react, vue, unity, ui/ux, ux design, agent, artificial intelligence, api, node, typescript
-- **Por qué apareció:** Afinidad prometedora (automation, artificial intelligence). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=full_time, Ubicación=Europe, USA, UK, Canada, Australia, Singapore, Remoto=Sí
+- **Compatibilidad (Skills):** javascript, typescript, ui/ux, react, python, unity, vue, llm, automation, agent, node, ai, ux design
+- **Por qué apareció:** Alta afinidad técnica (automation, ai, llm) con buen balance de viabilidad y pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://remotive.com/remote-jobs/software-development/senior-golang-developer-2091098](https://remotive.com/remote-jobs/software-development/senior-golang-developer-2091098)
+- **Qué haríamos (Siguiente Acción):** Inspeccionar URL original, verificar requisitos y preparar propuesta técnica personalizada.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/lemon-io-senior-net-full-stack-developer-1](https://weworkremotely.com/remote-jobs/lemon-io-senior-net-full-stack-developer-1)
 
-### 5. Senior Data Engineer | Lemon.io [71.0 pts]
-- **Fuente:** Remotive
-- **Pago:** No publicado / Por negociar
-- **Score:** 71.0 / 100 (Fit: 100.0, Reusabilidad: 45.0)
+### 7. Senior React Native Developer | Lemon.io [72.8 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** USD 11.0 - 11.0
+- **Score:** 72.8 / 100 (Fit: 100.0, Reusabilidad: 45.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** llm, python, ai, automation, javascript, react, vue, unity, ui/ux, ux design, agent, node, typescript
-- **Por qué apareció:** Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=full_time, Ubicación=LATAM, Europe, USA, Canada, APAC, Remoto=Sí
+- **Compatibilidad (Skills):** javascript, typescript, ui/ux, react, python, unity, vue, llm, automation, agent, node, ai, ux design
+- **Por qué apareció:** Alta afinidad técnica (automation, ai, llm) con buen balance de viabilidad y pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://remotive.com/remote-jobs/software-development/senior-data-engineer-2091097](https://remotive.com/remote-jobs/software-development/senior-data-engineer-2091097)
+- **Qué haríamos (Siguiente Acción):** Inspeccionar URL original, verificar requisitos y preparar propuesta técnica personalizada.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/lemon-io-senior-react-native-developer-1](https://weworkremotely.com/remote-jobs/lemon-io-senior-react-native-developer-1)
 
-### 6. Senior Backend Engineer (Python) - Remote | Breathment [70.3 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 70.3 / 100 (Fit: 88.0, Reusabilidad: 60.0)
+## SECCIÓN: INVESTIGAR (53 oportunidades)
+
+### 1. Senior Backend Developer (Node.js / Nest.js) | Proxify AB [71.8 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** 3000.0 - 5000.0
+- **Score:** 71.8 / 100 (Fit: 100.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA_ALTA
 - **Tiempo estimado:** 20 a 80 horas
-- **Compatibilidad (Skills):** apis, python, workflow, api, backend
-- **Por qué apareció:** Afinidad prometedora (workflow, api). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Contract, professional / experienced, Ubicación=Munich, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/breathment/senior-backend-engineer-python-remote-munich-2605](https://www.arbeitnow.com/jobs/companies/breathment/senior-backend-engineer-python-remote-munich-2605)
-
-### 7. Senior Backend Engineer (Go) (m/w/d) | Recare Deutschland GmbH [69.5 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 69.5 / 100 (Fit: 100.0, Reusabilidad: 60.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** apis, ai, automation, workflow, api, backend
-- **Por qué apareció:** Afinidad prometedora (automation, workflow). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, fulltime permanent, Ubicación=Remote job, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/recare-deutschland-gmbh/remote-senior-backend-engineer-go-berlin-391760](https://www.arbeitnow.com/jobs/companies/recare-deutschland-gmbh/remote-senior-backend-engineer-go-berlin-391760)
-
-### 8. Senior Full Stack Engineer — TypeScript / Next.js (100%, m/f/d) | LeaseTeq [69.5 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 69.5 / 100 (Fit: 100.0, Reusabilidad: 60.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** apis, llm, ai, automation, frontend, workflow, javascript, react, agent, api, full stack, backend, typescript
-- **Por qué apareció:** Afinidad prometedora (automation, workflow). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=LTQ-DE | Berlin, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/leaseteq/senior-full-stack-engineer-typescript-nextjs-100-ltq-de-berlin-142987](https://www.arbeitnow.com/jobs/companies/leaseteq/senior-full-stack-engineer-typescript-nextjs-100-ltq-de-berlin-142987)
-
-### 9. Forward Deployed Engineer, DACH | Telnyx [69.5 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 69.5 / 100 (Fit: 100.0, Reusabilidad: 60.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** apis, llm, ai, automation, python, agent, api, node, typescript
-- **Por qué apareció:** Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=Munich, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/telnyx/forward-deployed-engineer-dach-munich-178293](https://www.arbeitnow.com/jobs/companies/telnyx/forward-deployed-engineer-dach-munich-178293)
-
-### 10. Senior Independent AI Engineer / Architect | A.Team [69.0 pts]
-- **Fuente:** Remotive
-- **Pago:** USD 120.0 - 170.0
-- **Score:** 69.0 / 100 (Fit: 100.0, Reusabilidad: 30.0)
-- **Dificultad:** MEDIA_ALTA
-- **Tiempo estimado:** 20 a 80 horas
-- **Compatibilidad (Skills):** apis, llm, ai, ui/ux, agent, api
-- **Por qué apareció:** Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=contract, Ubicación=Americas, Europe, Israel, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://remotive.com/remote-jobs/software-development/senior-independent-ai-engineer-architect-1919266](https://remotive.com/remote-jobs/software-development/senior-independent-ai-engineer-architect-1919266)
-
-### 11. [Bounty][$0][Search] error-signature 索引（#1562）：先方案后实现 | Ikalus1988/MisakaNet [67.5 pts]
-- **Fuente:** GitHub Bounties
-- **Pago:** USD  - 1988.0
-- **Score:** 67.5 / 100 (Fit: 85.0, Reusabilidad: 30.0)
-- **Dificultad:** MEDIA
-- **Tiempo estimado:** 4 a 20 horas
-- **Compatibilidad (Skills):** apis, ai, agent, api, node
-- **Por qué apareció:** Afinidad prometedora (ai, agent). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=NO
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://github.com/Ikalus1988/MisakaNet/issues/1654](https://github.com/Ikalus1988/MisakaNet/issues/1654)
-
-### 12. Director AI & Automation | Onemedia Consulting [67.2 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 67.2 / 100 (Fit: 100.0, Reusabilidad: 45.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** apis, llm, ai, automation, python, api
-- **Por qué apareció:** Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Onemedia Germany, Munich, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/onemedia-consulting/director-ai-automation-onemedia-germany-munich-249102](https://www.arbeitnow.com/jobs/companies/onemedia-consulting/director-ai-automation-onemedia-germany-munich-249102)
-
-### 13. Senior GenAI Solution Engineer (all genders) | Eraneos [67.2 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 67.2 / 100 (Fit: 100.0, Reusabilidad: 45.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** apis, llm, ai, python, agent, api, backend
-- **Por qué apareció:** Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Hamburg, München, Düsseldorf, remote, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/eraneos/remote-senior-genai-solution-engineer-all-genders-440579](https://www.arbeitnow.com/jobs/companies/eraneos/remote-senior-genai-solution-engineer-all-genders-440579)
-
-### 14. AI Engineer (m/w/d) | Nerdware [67.2 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 67.2 / 100 (Fit: 100.0, Reusabilidad: 45.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** apis, llm, ai, python, agent, api, typescript
-- **Por qué apareció:** Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Nürnberg, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/nerdware/ai-engineer-nurnberg-427997](https://www.arbeitnow.com/jobs/companies/nerdware/ai-engineer-nurnberg-427997)
-
-### 15. Senior Technical Architect – Hybrid (Product / Platform) (m/f/d) | Implico Gmbh [65.0 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 65.0 / 100 (Fit: 100.0, Reusabilidad: 30.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** apis, llm, ai, api, node, typescript
-- **Por qué apareció:** Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Hamburg, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/implico-gmbh/senior-technical-architect-hybrid-product-platform-hamburg-81456](https://www.arbeitnow.com/jobs/companies/implico-gmbh/senior-technical-architect-hybrid-product-platform-hamburg-81456)
-
-### 16. Staff Engineer (m/f/d) | Solactive [65.0 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 65.0 / 100 (Fit: 100.0, Reusabilidad: 30.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** apis, python, frontend, react, api, backend, typescript
+- **Compatibilidad (Skills):** javascript, typescript, api, node, backend, apis
 - **Por qué apareció:** Afinidad prometedora (api, apis). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Berlin, Remoto=No
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/proxify-ab-senior-backend-developer-node-js-nest-js-3](https://weworkremotely.com/remote-jobs/proxify-ab-senior-backend-developer-node-js-nest-js-3)
+
+### 2. Senior Java & React Developer | Lemon.io [70.5 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** USD 11.0 - 11.0
+- **Score:** 70.5 / 100 (Fit: 100.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** javascript, typescript, react, python, unity, llm, node, ai
+- **Por qué apareció:** Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/lemon-io-senior-java-react-developer](https://weworkremotely.com/remote-jobs/lemon-io-senior-java-react-developer)
+
+### 3. Senior Frontend Engineer (gn) | Ingestro [69.5 pts]
+- **Fuente:** Arbeitnow
+- **Pago:** No publicado / Por negociar
+- **Score:** 69.5 / 100 (Fit: 100.0, Reusabilidad: 60.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** workflow, typescript, react, api, frontend, ai, backend, apis
+- **Por qué apareció:** Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time permanent, experienced, Ubicación=Berlin, Remoto=No
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/ingestro/senior-frontend-engineer-gn-berlin-317742](https://www.arbeitnow.com/jobs/companies/ingestro/senior-frontend-engineer-gn-berlin-317742)
+
+### 4. Intern (m/f/d) Software Test Automation | Agilerobotsse [67.2 pts]
+- **Fuente:** Arbeitnow
+- **Pago:** No publicado / Por negociar
+- **Score:** 67.2 / 100 (Fit: 100.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** javascript, react, python, artificial intelligence, automation, api, frontend, ai, backend, apis
+- **Por qué apareció:** Afinidad prometedora (automation, artificial intelligence). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=Munich, Bavaria, Remoto=No
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/agilerobotsse/intern-software-test-automation-munich-bavaria-68883](https://www.arbeitnow.com/jobs/companies/agilerobotsse/intern-software-test-automation-munich-bavaria-68883)
+
+### 5. Developer Advocate - Service Management EMEA | Datadog [67.2 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 67.2 / 100 (Fit: 100.0, Reusabilidad: 60.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** workflow, python, automation, agent, api, node, ai, apis
+- **Por qué apareció:** Afinidad prometedora (automation, workflow). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/datadog-developer-advocate-service-management-emea](https://weworkremotely.com/remote-jobs/datadog-developer-advocate-service-management-emea)
+
+### 6. Developer Advocate - Service Management | Datadog [67.2 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 67.2 / 100 (Fit: 100.0, Reusabilidad: 60.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** workflow, python, automation, agent, api, node, ai, apis
+- **Por qué apareció:** Afinidad prometedora (automation, workflow). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/datadog-developer-advocate-service-management](https://weworkremotely.com/remote-jobs/datadog-developer-advocate-service-management)
+
+### 7. Senior Software Engineer Case Execution | Pivotal Health [66.5 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 190000.0 - 220000.0
+- **Score:** 66.5 / 100 (Fit: 70.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** python, ai, workflow, backend
+- **Por qué apareció:** Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=New York City, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-senior-software-engineer-case-execution-pivotal-health-1136795](https://remoteOK.com/remote-jobs/remote-senior-software-engineer-case-execution-pivotal-health-1136795)
+
+### 8. Senior Staff Machine Learning Platform Engineer | Faire [66.5 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 66.5 / 100 (Fit: 100.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** python, unity, llm, artificial intelligence, ai
+- **Por qué apareció:** Afinidad prometedora (artificial intelligence, ai). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/faire-senior-staff-machine-learning-platform-engineer](https://weworkremotely.com/remote-jobs/faire-senior-staff-machine-learning-platform-engineer)
+
+### 9. Security Operations Analyst | Huntress [66.3 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** USD 4.0 - 125000.0
+- **Score:** 66.3 / 100 (Fit: 76.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** python, ai, javascript, artificial intelligence
+- **Por qué apareció:** Afinidad prometedora (artificial intelligence, ai). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/solactive/staff-engineer-berlin-396577](https://www.arbeitnow.com/jobs/companies/solactive/staff-engineer-berlin-396577)
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/huntress-security-operations-analyst](https://weworkremotely.com/remote-jobs/huntress-security-operations-analyst)
 
-### 17. Senior Fullstack Software Engineer, Analyze & Report (f/m/d) | Solactive [65.0 pts]
+### 10. Founding Engineer | Treehouze [66.2 pts]
+- **Fuente:** Arbeitnow
+- **Pago:** No publicado / Por negociar
+- **Score:** 66.2 / 100 (Fit: 97.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** workflow, api, frontend, ai, backend, apis
+- **Por qué apareció:** Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Permanent employment (unbefristeter arbeitsvertrag), professional / experienced, Ubicación=Berlin, Remoto=No
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/treehouze/founding-engineer-berlin-427510](https://www.arbeitnow.com/jobs/companies/treehouze/founding-engineer-berlin-427510)
+
+### 11. Software Developer (m/w/d) – WebApp / PWA | Agentur für Haushaltshilfe GmbH [65.0 pts]
 - **Fuente:** Arbeitnow
 - **Pago:** No publicado / Por negociar
 - **Score:** 65.0 / 100 (Fit: 100.0, Reusabilidad: 30.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** apis, ai, python, frontend, api, artificial intelligence, backend, typescript
-- **Por qué apareció:** Afinidad prometedora (artificial intelligence, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Berlin, Remoto=No
+- **Compatibilidad (Skills):** typescript, ui/ux, react, python, vue, api, frontend, backend, apis
+- **Por qué apareció:** Afinidad prometedora (api, apis). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Mid, fulltime permanent, Ubicación=Neuss, Nordrhein-Westfalen, Deutschland, Remoto=No
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/solactive/senior-fullstack-software-engineer-analyze-report-berlin-425045](https://www.arbeitnow.com/jobs/companies/solactive/senior-fullstack-software-engineer-analyze-report-berlin-425045)
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/agentur-fur-haushaltshilfe-gmbh/software-developer-webapp-pwa-neuss-296628](https://www.arbeitnow.com/jobs/companies/agentur-fur-haushaltshilfe-gmbh/software-developer-webapp-pwa-neuss-296628)
 
-### 18. Founding Account Executive, DACH | Telnyx [63.9 pts]
+### 12. Backend Engineer - Agentic AI (m/w/d) | Getpress Gmbh [65.0 pts]
 - **Fuente:** Arbeitnow
 - **Pago:** No publicado / Por negociar
-- **Score:** 63.9 / 100 (Fit: 84.0, Reusabilidad: 60.0)
+- **Score:** 65.0 / 100 (Fit: 100.0, Reusabilidad: 30.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** apis, ai, workflow, agent, api
-- **Por qué apareció:** Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=Munich, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Compatibilidad (Skills):** typescript, python, agent, api, backend, ai, apis
+- **Por qué apareció:** Afinidad prometedora (ai, agent). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Berlin, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/telnyx/founding-account-executive-dach-munich-302728](https://www.arbeitnow.com/jobs/companies/telnyx/founding-account-executive-dach-munich-302728)
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/getpress-gmbh/remote-backend-engineer-agentic-ai-berlin-371659](https://www.arbeitnow.com/jobs/companies/getpress-gmbh/remote-backend-engineer-agentic-ai-berlin-371659)
 
-### 19. Data Engineer (all genders) | Eraneos [63.0 pts]
+### 13. AI Product Engineer (m/w/d) | Getpress Gmbh [65.0 pts]
 - **Fuente:** Arbeitnow
 - **Pago:** No publicado / Por negociar
-- **Score:** 63.0 / 100 (Fit: 88.0, Reusabilidad: 45.0)
+- **Score:** 65.0 / 100 (Fit: 100.0, Reusabilidad: 30.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** apis, ai, python, workflow, api
-- **Por qué apareció:** Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Hamburg, München, Düsseldorf, remote, Remoto=No
+- **Compatibilidad (Skills):** typescript, python, agent, api, backend, ai, apis
+- **Por qué apareció:** Afinidad prometedora (ai, agent). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Berlin, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/getpress-gmbh/remote-ai-product-engineer-berlin-20956](https://www.arbeitnow.com/jobs/companies/getpress-gmbh/remote-ai-product-engineer-berlin-20956)
+
+### 14. Applied AI & Backend Engineer (m/w/d) | odacova UG (haftungsbeschränkt) [65.0 pts]
+- **Fuente:** Arbeitnow
+- **Pago:** No publicado / Por negociar
+- **Score:** 65.0 / 100 (Fit: 100.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** python, llm, api, backend, ai, apis
+- **Por qué apareció:** Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=berufseinstieg, Ubicación=Dortmund, Remoto=No
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/odacova-ug-haftungsbeschrankt/applied-ai-backend-engineer-dortmund-247309](https://www.arbeitnow.com/jobs/companies/odacova-ug-haftungsbeschrankt/applied-ai-backend-engineer-dortmund-247309)
+
+### 15. Chief Architect | Legion [65.0 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 65.0 / 100 (Fit: 100.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** python, llm, automation, api, backend, ai, apis
+- **Por qué apareció:** Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/eraneos/remote-data-engineer-all-genders-12735](https://www.arbeitnow.com/jobs/companies/eraneos/remote-data-engineer-all-genders-12735)
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/legion-chief-architect](https://weworkremotely.com/remote-jobs/legion-chief-architect)
 
-### 20. [Bounty][$0][Search] 分诊辅助：把 intake 标题规范化为检索 query 并判定覆盖率 | Ikalus1988/MisakaNet [62.2 pts]
+### 16. Software Engineer | CircleCI [65.0 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 65.0 / 100 (Fit: 100.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** typescript, react, full stack, agent, api, backend, ai, apis
+- **Por qué apareció:** Afinidad prometedora (ai, agent). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/circleci-software-engineer](https://weworkremotely.com/remote-jobs/circleci-software-engineer)
+
+### 17. Expose a useful machine-readable schema for serialized primitive artifacts | AstralDeep/AstralPrimitives [64.5 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** USD  - 2026.0
-- **Score:** 62.2 / 100 (Fit: 70.0, Reusabilidad: 30.0)
+- **Pago:** - 1159.0
+- **Score:** 64.5 / 100 (Fit: 70.0, Reusabilidad: 45.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
-- **Compatibilidad (Skills):** agent, api, apis, ai
+- **Compatibilidad (Skills):** apis, ai, agent, api
 - **Por qué apareció:** Afinidad prometedora (ai, agent). Requiere clarificar términos de contratación o pago.
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://github.com/Ikalus1988/MisakaNet/issues/1673](https://github.com/Ikalus1988/MisakaNet/issues/1673)
+- **Enlace original:** [https://github.com/AstralDeep/AstralPrimitives/issues/11](https://github.com/AstralDeep/AstralPrimitives/issues/11)
 
-### 21. [Bounty][$0][Lessons] 把 intake #1472 + #1473（Vertex/Gemini 模型 ID 命名）转成课程 | Ikalus1988/MisakaNet [62.2 pts]
-- **Fuente:** GitHub Bounties
-- **Pago:** USD  - 2026.0
-- **Score:** 62.2 / 100 (Fit: 70.0, Reusabilidad: 30.0)
-- **Dificultad:** MEDIA
-- **Tiempo estimado:** 4 a 20 horas
-- **Compatibilidad (Skills):** agent, api, apis, ai
+### 18. AI agent engineer | Sticker Mule [64.2 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 150000.0 - 250000.0
+- **Score:** 64.2 / 100 (Fit: 70.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** javascript, ai, agent, typescript
 - **Por qué apareció:** Afinidad prometedora (ai, agent). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=NO
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://github.com/Ikalus1988/MisakaNet/issues/1665](https://github.com/Ikalus1988/MisakaNet/issues/1665)
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-ai-agent-engineer-sticker-mule-1137399](https://remoteOK.com/remote-jobs/remote-ai-agent-engineer-sticker-mule-1137399)
 
-### 22. Principal Analytics Engineer (f/m/d) | Trusted Shops SE (DE) [61.6 pts]
+### 19. Lead Product Designer | HighLevel [63.8 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 63.8 / 100 (Fit: 90.0, Reusabilidad: 60.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** workflow, automation, api, ai, apis
+- **Por qué apareció:** Afinidad prometedora (automation, workflow). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=India, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-lead-product-designer-highlevel-1136841](https://remoteOK.com/remote-jobs/remote-lead-product-designer-highlevel-1136841)
+
+### 20. Billing Systems Architect | Platform.sh [63.8 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 63.8 / 100 (Fit: 90.0, Reusabilidad: 60.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** automation, api, backend, ai, apis
+- **Por qué apareció:** Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/platform-sh-billing-systems-architect](https://weworkremotely.com/remote-jobs/platform-sh-billing-systems-architect)
+
+### 21. Frontend Engineer | Bjak [62.8 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 62.8 / 100 (Fit: 100.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** javascript, typescript, react, api, node, frontend, ai, backend, apis
+- **Por qué apareció:** Afinidad prometedora (ai, api). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=Singapore, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-frontend-engineer-bjak-1137420](https://remoteOK.com/remote-jobs/remote-frontend-engineer-bjak-1137420)
+
+### 22. Frontend Engineer | Bjak [62.8 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 62.8 / 100 (Fit: 100.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** javascript, typescript, react, api, node, frontend, ai, backend, apis
+- **Por qué apareció:** Afinidad prometedora (ai, api). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=Ireland, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-frontend-engineer-bjak-1137410](https://remoteOK.com/remote-jobs/remote-frontend-engineer-bjak-1137410)
+
+### 23. DESARROLLADOR FULL STACK | Kruger NearShore LLC - Rekluti [62.8 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 62.8 / 100 (Fit: 100.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** python, frontend, full stack, api, backend, apis
+- **Por qué apareció:** Afinidad prometedora (api, apis). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-desarrollador-full-stack-kruger-nearshore-llc-rekluti-1137062](https://remoteOK.com/remote-jobs/remote-desarrollador-full-stack-kruger-nearshore-llc-rekluti-1137062)
+
+### 24. Director Technical Project Management / Delivery Lead | wongdoody [62.3 pts]
+- **Fuente:** Arbeitnow
+- **Pago:** No publicado / Por negociar
+- **Score:** 62.3 / 100 (Fit: 86.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ui/ux, frontend, automation, backend, ai
+- **Por qué apareció:** Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=Berlin, DE, Remoto=No
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/wongdoody/director-technical-project-management-delivery-lead-berlin-de-124489](https://www.arbeitnow.com/jobs/companies/wongdoody/director-technical-project-management-delivery-lead-berlin-de-124489)
+
+### 25. Senior Software Engineer (Backend) - Global Marts | wolt [61.6 pts]
 - **Fuente:** Arbeitnow
 - **Pago:** No publicado / Por negociar
 - **Score:** 61.6 / 100 (Fit: 84.0, Reusabilidad: 45.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** apis, ai, workflow, agent, api
+- **Compatibilidad (Skills):** workflow, api, backend, ai, apis
 - **Por qué apareció:** Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, fulltime permanent, Ubicación=Berlin, Berlin, Germany, Remoto=No
+- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=Berlin, Remoto=No
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/trusted-shops-se-de/principal-analytics-engineer-berlin-225855](https://www.arbeitnow.com/jobs/companies/trusted-shops-se-de/principal-analytics-engineer-berlin-225855)
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/wolt/senior-software-engineer-backend-global-marts-berlin-398815](https://www.arbeitnow.com/jobs/companies/wolt/senior-software-engineer-backend-global-marts-berlin-398815)
 
-### 23. Working Student – Graphic Design E-Commerce (all genders) | Niboline Gmbh [60.6 pts]
-- **Fuente:** Arbeitnow
+### 26. Principal Infrastructure Architect: Data Platform | ZoomInfo Technologies LLC [61.1 pts]
+- **Fuente:** WeWorkRemotely
 - **Pago:** No publicado / Por negociar
-- **Score:** 60.6 / 100 (Fit: 81.0, Reusabilidad: 45.0)
+- **Score:** 61.1 / 100 (Fit: 76.0, Reusabilidad: 75.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** 3d, ai, figma, ui/ux, workflow
-- **Por qué apareció:** Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Entry, Intern, Full or part time, Ubicación=Berlin, Remoto=No
+- **Compatibilidad (Skills):** automation, ai, agent, llm
+- **Por qué apareció:** Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/niboline-gmbh/working-student-graphic-design-e-commerce-all-genders-berlin-195997](https://www.arbeitnow.com/jobs/companies/niboline-gmbh/working-student-graphic-design-e-commerce-all-genders-berlin-195997)
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/zoominfo-technologies-llc-principal-infrastructure-architect-data-platform](https://weworkremotely.com/remote-jobs/zoominfo-technologies-llc-principal-infrastructure-architect-data-platform)
 
-### 24. [Bounty][$0][Ops] 重建 lessons/index.md 并加 --check 门禁（当前 181 条里 25 条悬空、136 条标题不符） | Ikalus1988/MisakaNet [60.5 pts]
+### 27. Mechatronics and Hardware Test Engineer (m/f/d) | Agilerobotsse [60.2 pts]
+- **Fuente:** Arbeitnow
+- **Pago:** No publicado / Por negociar
+- **Score:** 60.2 / 100 (Fit: 80.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** automation, ai, python, artificial intelligence
+- **Por qué apareció:** Afinidad prometedora (automation, artificial intelligence). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=Munich, Bavaria, Remoto=No
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/agilerobotsse/mechatronics-and-hardware-test-engineer-munich-bavaria-120242](https://www.arbeitnow.com/jobs/companies/agilerobotsse/mechatronics-and-hardware-test-engineer-munich-bavaria-120242)
+
+### 28. Senior Data Engineer – AWS Data Lake & Pipeline Architecture | Toptal [60.2 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 60.2 / 100 (Fit: 80.0, Reusabilidad: 60.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** automation, apis, api, python
+- **Por qué apareció:** Afinidad prometedora (automation, api). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/toptal-senior-data-engineer-aws-data-lake-pipeline-architecture](https://weworkremotely.com/remote-jobs/toptal-senior-data-engineer-aws-data-lake-pipeline-architecture)
+
+### 29. FULL TIME: Software Engineer Position - React and Rest | Yooli [59.8 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 59.8 / 100 (Fit: 100.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** typescript, react, api, node, backend, apis
+- **Por qué apareció:** Afinidad prometedora (api, apis). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/yooli-full-time-software-engineer-position-react-and-rest-1](https://weworkremotely.com/remote-jobs/yooli-full-time-software-engineer-position-react-and-rest-1)
+
+### 30. Make the exported ChartDataset helper directly usable by chart constructors | AstralDeep/AstralPrimitives [58.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** USD  - 2026.0
-- **Score:** 60.5 / 100 (Fit: 52.0, Reusabilidad: 60.0)
+- **Pago:** - 1159.0
+- **Score:** 58.8 / 100 (Fit: 60.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
-- **Compatibilidad (Skills):** agent, workflow, ai
-- **Por qué apareció:** Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.
+- **Compatibilidad (Skills):** apis, python, api
+- **Por qué apareció:** Afinidad prometedora (api, apis). Requiere clarificar términos de contratación o pago.
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=SI
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=PARCIAL
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://github.com/Ikalus1988/MisakaNet/issues/1661](https://github.com/Ikalus1988/MisakaNet/issues/1661)
+- **Enlace original:** [https://github.com/AstralDeep/AstralPrimitives/issues/13](https://github.com/AstralDeep/AstralPrimitives/issues/13)
 
-### 25. Senior AI-Native Data Engineer (f/m/x) | exmox [59.0 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 59.0 / 100 (Fit: 70.0, Reusabilidad: 60.0)
+### 31. Software engineer | Sticker Mule [58.6 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** 9000.0 - 9000.0
+- **Score:** 58.6 / 100 (Fit: 54.0, Reusabilidad: 30.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** agent, workflow, python, ai
-- **Por qué apareció:** Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Hamburg, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/exmox/senior-ai-native-data-engineer-hamburg-424655](https://www.arbeitnow.com/jobs/companies/exmox/senior-ai-native-data-engineer-hamburg-424655)
-
-### 26. Senior AI Data Expert (f/m/x) | exmox [59.0 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 59.0 / 100 (Fit: 70.0, Reusabilidad: 60.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** agent, workflow, python, ai
-- **Por qué apareció:** Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Hamburg, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/exmox/senior-ai-data-expert-hamburg-332905](https://www.arbeitnow.com/jobs/companies/exmox/senior-ai-data-expert-hamburg-332905)
-
-### 27. Senior Cloud Consultant - Data & AI Engineer (f/m/d, 4-Days-Week), German Speaking | Auvaria [58.1 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 58.1 / 100 (Fit: 74.0, Reusabilidad: 45.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** agent, python, llm, ai
-- **Por qué apareció:** Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=München, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/auvaria/senior-cloud-consultant-data-ai-engineer-4-days-week-german-speaking-munchen-183706](https://www.arbeitnow.com/jobs/companies/auvaria/senior-cloud-consultant-data-ai-engineer-4-days-week-german-speaking-munchen-183706)
-
-### 28. Senior Cloud Consultant - Data & AI Engineer (f/m/d, 4-Days-Week), German Speaking | Auvaria [58.1 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 58.1 / 100 (Fit: 74.0, Reusabilidad: 45.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** agent, python, llm, ai
-- **Por qué apareció:** Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Hamburg, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/auvaria/senior-cloud-consultant-data-ai-engineer-4-days-week-german-speaking-hamburg-340121](https://www.arbeitnow.com/jobs/companies/auvaria/senior-cloud-consultant-data-ai-engineer-4-days-week-german-speaking-hamburg-340121)
-
-### 29. Senior Technical Product Manager (f/m/x) | exmox [54.8 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 54.8 / 100 (Fit: 71.0, Reusabilidad: 30.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** api, apis, ai, ui/ux
-- **Por qué apareció:** Afinidad prometedora (ai, api). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Hamburg, Remoto=No
+- **Compatibilidad (Skills):** ai, typescript, react
+- **Por qué apareció:** Afinidad prometedora (ai, typescript). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/exmox/senior-technical-product-manager-hamburg-88855](https://www.arbeitnow.com/jobs/companies/exmox/senior-technical-product-manager-hamburg-88855)
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/sticker-mule-software-engineer-3](https://weworkremotely.com/remote-jobs/sticker-mule-software-engineer-3)
 
-### 30. [Bounty] 让 workflow 的 shell 步骤能在本地跑起来：scripts/check_workflow_scripts.py | Ikalus1988/MisakaNet [54.7 pts]
-- **Fuente:** GitHub Bounties
-- **Pago:** USD  - 2026.0
-- **Score:** 54.7 / 100 (Fit: 42.0, Reusabilidad: 45.0)
-- **Dificultad:** MEDIA
-- **Tiempo estimado:** 4 a 20 horas
-- **Compatibilidad (Skills):** workflow, python
-- **Por qué apareció:** Afinidad prometedora (workflow, python). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://github.com/Ikalus1988/MisakaNet/issues/1640](https://github.com/Ikalus1988/MisakaNet/issues/1640)
-
-### 31. Senior AI Engineer (f/m/d) | Vestigas [54.1 pts]
-- **Fuente:** Arbeitnow
+### 32. CPS Solution Architect | Collibra [58.0 pts]
+- **Fuente:** WeWorkRemotely
 - **Pago:** No publicado / Por negociar
-- **Score:** 54.1 / 100 (Fit: 56.0, Reusabilidad: 60.0)
+- **Score:** 58.0 / 100 (Fit: 80.0, Reusabilidad: 45.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** workflow, python, ai
-- **Por qué apareció:** Afinidad prometedora (workflow, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=München (Hybrid), Remoto=No
+- **Compatibilidad (Skills):** automation, apis, api, python
+- **Por qué apareció:** Afinidad prometedora (automation, api). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/vestigas/senior-ai-engineer-munchen-hybrid-465151](https://www.arbeitnow.com/jobs/companies/vestigas/senior-ai-engineer-munchen-hybrid-465151)
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/collibra-cps-solution-architect-1](https://weworkremotely.com/remote-jobs/collibra-cps-solution-architect-1)
 
-### 32. Test Engineer | Asteralabs [54.0 pts]
-- **Fuente:** Arbeitnow
+### 33. CPS Solution Architect | Collibra [58.0 pts]
+- **Fuente:** WeWorkRemotely
 - **Pago:** No publicado / Por negociar
-- **Score:** 54.0 / 100 (Fit: 62.0, Reusabilidad: 45.0)
+- **Score:** 58.0 / 100 (Fit: 80.0, Reusabilidad: 45.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** python, ai, automation
-- **Por qué apareció:** Afinidad prometedora (automation, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=Aachen, North Rhine-Westphalia, Remoto=No
+- **Compatibilidad (Skills):** automation, apis, api, python
+- **Por qué apareció:** Afinidad prometedora (automation, api). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/asteralabs/test-engineer-aachen-north-rhine-westphalia-173430](https://www.arbeitnow.com/jobs/companies/asteralabs/test-engineer-aachen-north-rhine-westphalia-173430)
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/collibra-cps-solution-architect](https://weworkremotely.com/remote-jobs/collibra-cps-solution-architect)
 
-### 33. [Bounty][$0][Lessons] 把 intake #1635（LLM 成本遥测少计：模型归因错 + 重试未记账）转成课程 | Ikalus1988/MisakaNet [53.8 pts]
-- **Fuente:** GitHub Bounties
-- **Pago:** USD  - 2026.0
-- **Score:** 53.8 / 100 (Fit: 46.0, Reusabilidad: 30.0)
-- **Dificultad:** MEDIA
-- **Tiempo estimado:** 4 a 20 horas
-- **Compatibilidad (Skills):** agent, llm, ai
-- **Por qué apareció:** Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=NO
+### 34. Senior .NET Software Engineer | OkWhen [57.8 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 57.8 / 100 (Fit: 86.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** typescript, api, backend, ai, apis
+- **Por qué apareció:** Afinidad prometedora (ai, api). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://github.com/Ikalus1988/MisakaNet/issues/1672](https://github.com/Ikalus1988/MisakaNet/issues/1672)
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-senior-net-software-engineer-okwhen-1137411](https://remoteOK.com/remote-jobs/remote-senior-net-software-engineer-okwhen-1137411)
 
-### 34. [Bounty][$0][Lessons] 把 intake #1574（LLM 代替用户发言 / god-moding）转成课程 | Ikalus1988/MisakaNet [53.8 pts]
-- **Fuente:** GitHub Bounties
-- **Pago:** USD  - 1988.0
-- **Score:** 53.8 / 100 (Fit: 46.0, Reusabilidad: 30.0)
-- **Dificultad:** MEDIA
-- **Tiempo estimado:** 4 a 20 horas
-- **Compatibilidad (Skills):** agent, llm, ai
-- **Por qué apareció:** Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=NO
+### 35. Full-Stack Product Engineer - Agentic First | Wonderdog [57.0 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** 40.0 - 40.0
+- **Score:** 57.0 / 100 (Fit: 72.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** apis, ai, api, typescript
+- **Por qué apareció:** Afinidad prometedora (ai, api). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://github.com/Ikalus1988/MisakaNet/issues/1650](https://github.com/Ikalus1988/MisakaNet/issues/1650)
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/wonderdog-full-stack-product-engineer-agentic-first](https://weworkremotely.com/remote-jobs/wonderdog-full-stack-product-engineer-agentic-first)
 
-### 35. AI Response Evaluator | iMerit Technology [53.2 pts]
-- **Fuente:** Remotive
-- **Pago:** USD 10000.0 - 20000.0
-- **Score:** 53.2 / 100 (Fit: 32.0, Reusabilidad: 30.0)
+### 36. Sr Solutions Architect | ExtraHop [56.6 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 56.6 / 100 (Fit: 76.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** apis, python, javascript, api
+- **Por qué apareció:** Afinidad prometedora (api, apis). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-sr-solutions-architect-extrahop-1137394](https://remoteOK.com/remote-jobs/remote-sr-solutions-architect-extrahop-1137394)
+
+### 37. Lead Developer — Rebuild, Modernize, & Scale (Social Good SaaS, Remote) | Track it Forward [56.2 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** 15000.0 - 15000.0
+- **Score:** 56.2 / 100 (Fit: 70.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA_ALTA
 - **Tiempo estimado:** 20 a 80 horas
-- **Compatibilidad (Skills):** artificial intelligence, ai
-- **Por qué apareció:** Afinidad prometedora (artificial intelligence, ai). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=freelance, Ubicación=France, Japan, Turkey, Vietnam, Mexico, Norway, Remoto=Sí
+- **Compatibilidad (Skills):** react, python, api, frontend, ai, backend, apis
+- **Por qué apareció:** Afinidad prometedora (ai, api). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/track-it-forward-lead-developer-rebuild-modernize-scale-social-good-saas-remote](https://weworkremotely.com/remote-jobs/track-it-forward-lead-developer-rebuild-modernize-scale-social-good-saas-remote)
+
+### 38. Senior Fullstack Developer (React.js / Node.js) | Proxify AB [55.3 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** 5000.0 - 5000.0
+- **Score:** 55.3 / 100 (Fit: 53.0, Reusabilidad: 30.0)
+- **Dificultad:** MEDIA_ALTA
+- **Tiempo estimado:** 20 a 80 horas
+- **Compatibilidad (Skills):** backend, react, node
+- **Por qué apareció:** Afinidad prometedora (node, react). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/proxify-ab-senior-fullstack-developer-react-js-node-js-4](https://weworkremotely.com/remote-jobs/proxify-ab-senior-fullstack-developer-react-js-node-js-4)
+
+### 39. Senior Backend Developer (Python) | Proxify AB [54.5 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** 5000.0 - 5000.0
+- **Score:** 54.5 / 100 (Fit: 42.0, Reusabilidad: 30.0)
+- **Dificultad:** MEDIA_ALTA
+- **Tiempo estimado:** 20 a 80 horas
+- **Compatibilidad (Skills):** python, backend
+- **Por qué apareció:** Afinidad prometedora (python, backend). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/proxify-ab-senior-backend-developer-python-10](https://weworkremotely.com/remote-jobs/proxify-ab-senior-backend-developer-python-10)
+
+### 40. Senior Independent AI Engineer / Architect | A.Team [53.8 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** USD 200.0 - 2020.0
+- **Score:** 53.8 / 100 (Fit: 46.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai, agent, llm
+- **Por qué apareció:** Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://remotive.com/remote-jobs/artificial-intelligence/ai-response-evaluator-2091126](https://remotive.com/remote-jobs/artificial-intelligence/ai-response-evaluator-2091126)
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/a-team-senior-independent-ai-engineer-architect](https://weworkremotely.com/remote-jobs/a-team-senior-independent-ai-engineer-architect)
 
-### 36. AI Solution Architect (m/w/d) | virtual7 GmbH [53.2 pts]
-- **Fuente:** Arbeitnow
+### 41. Technical Product Manager AI Stockbroking App | Bjak [53.6 pts]
+- **Fuente:** RemoteOK
 - **Pago:** No publicado / Por negociar
-- **Score:** 53.2 / 100 (Fit: 60.0, Reusabilidad: 45.0)
+- **Score:** 53.6 / 100 (Fit: 74.0, Reusabilidad: 30.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** python, llm, ai
+- **Compatibilidad (Skills):** apis, ai, api, llm
 - **Por qué apareció:** Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, fulltime permanent, Ubicación=Homeoffice, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=Germany, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/virtual7-gmbh/remote-ai-solution-architect-nurnberg-mittelfranken-236690](https://www.arbeitnow.com/jobs/companies/virtual7-gmbh/remote-ai-solution-architect-nurnberg-mittelfranken-236690)
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-technical-product-manager-ai-stockbroking-app-bjak-1137421](https://remoteOK.com/remote-jobs/remote-technical-product-manager-ai-stockbroking-app-bjak-1137421)
 
-### 37. Forward Deployed Engineer (all genders) | Eraneos [53.2 pts]
-- **Fuente:** Arbeitnow
+### 42. Technical Product Lead AI Finance App | Bjak [53.6 pts]
+- **Fuente:** RemoteOK
 - **Pago:** No publicado / Por negociar
-- **Score:** 53.2 / 100 (Fit: 60.0, Reusabilidad: 45.0)
+- **Score:** 53.6 / 100 (Fit: 74.0, Reusabilidad: 30.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** python, llm, ai
+- **Compatibilidad (Skills):** apis, ai, api, llm
 - **Por qué apareció:** Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Hamburg, München, Düsseldorf, remote, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=Seoul, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/eraneos/remote-forward-deployed-engineer-all-genders-99442](https://www.arbeitnow.com/jobs/companies/eraneos/remote-forward-deployed-engineer-all-genders-99442)
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-technical-product-lead-ai-finance-app-bjak-1137388](https://remoteOK.com/remote-jobs/remote-technical-product-lead-ai-finance-app-bjak-1137388)
 
-### 38. Principal Software Developer (f/m/d) - Market Data | Solactive [53.2 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 53.2 / 100 (Fit: 60.0, Reusabilidad: 45.0)
+### 43. Sales Development Representative - Mid-Market | Huntress [53.2 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** USD 2015.0 - 78000.0
+- **Score:** 53.2 / 100 (Fit: 32.0, Reusabilidad: 45.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** api, apis, python
-- **Por qué apareció:** Afinidad prometedora (api, apis). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Frankfurt am Main, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Compatibilidad (Skills):** ai, artificial intelligence
+- **Por qué apareció:** Afinidad prometedora (artificial intelligence, ai). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/solactive/principal-software-developer-market-data-frankfurt-am-main-60368](https://www.arbeitnow.com/jobs/companies/solactive/principal-software-developer-market-data-frankfurt-am-main-60368)
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/huntress-sales-development-representative-mid-market](https://weworkremotely.com/remote-jobs/huntress-sales-development-representative-mid-market)
 
-### 39. AI Research Engineer (f/m/d) | Sonarsource [51.0 pts]
+### 44. HR Operations Specialist | Law Offices of Sabrina Li [52.5 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 52.5 / 100 (Fit: 58.0, Reusabilidad: 60.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** automation, ai, workflow
+- **Por qué apareció:** Afinidad prometedora (automation, workflow). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-hr-operations-specialist-law-offices-of-sabrina-li-1137386](https://remoteOK.com/remote-jobs/remote-hr-operations-specialist-law-offices-of-sabrina-li-1137386)
+
+### 45. Digital Workplace & Automation Specialist | Dreem Health [52.4 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 52.4 / 100 (Fit: 64.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** automation, ai, automations
+- **Por qué apareció:** Afinidad prometedora (automation, automations). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=United States, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-digital-workplace-automation-specialist-dreem-health-1136948](https://remoteOK.com/remote-jobs/remote-digital-workplace-automation-specialist-dreem-health-1136948)
+
+### 46. Senior PeopleSoft Developer/Analyst II | Princeton University [52.0 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** 2.0 - 7.0
+- **Score:** 52.0 / 100 (Fit: 58.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** javascript, ai, artificial intelligence
+- **Por qué apareció:** Afinidad prometedora (artificial intelligence, ai). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/princeton-university-senior-peoplesoft-developer-analyst-ii](https://weworkremotely.com/remote-jobs/princeton-university-senior-peoplesoft-developer-analyst-ii)
+
+### 47. Provide a thin, tested MCP integration profile for protected tool execution | AstralDeep/LETS [51.8 pts]
+- **Fuente:** GitHub Bounties
+- **Pago:** 1.0 - 13500260.0
+- **Score:** 51.8 / 100 (Fit: 28.0, Reusabilidad: 45.0)
+- **Dificultad:** MEDIA
+- **Tiempo estimado:** 4 a 20 horas
+- **Compatibilidad (Skills):** ai, agent
+- **Por qué apareció:** Afinidad prometedora (ai, agent). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://github.com/AstralDeep/LETS/issues/71](https://github.com/AstralDeep/LETS/issues/71)
+
+### 48. Power Platform Solutions Architect | Toptal [51.6 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 51.6 / 100 (Fit: 56.0, Reusabilidad: 45.0)
+- **Dificultad:** MEDIA_ALTA
+- **Tiempo estimado:** 20 a 80 horas
+- **Compatibilidad (Skills):** apis, workflow, api
+- **Por qué apareció:** Afinidad prometedora (workflow, api). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/toptal-power-platform-solutions-architect](https://weworkremotely.com/remote-jobs/toptal-power-platform-solutions-architect)
+
+### 49. Software Engineer (m/f/d) Industrial Robot Control | Agilerobotsse [51.0 pts]
 - **Fuente:** Arbeitnow
 - **Pago:** No publicado / Por negociar
 - **Score:** 51.0 / 100 (Fit: 60.0, Reusabilidad: 30.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** python, llm, ai
-- **Por qué apareció:** Afinidad prometedora (ai, llm). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Employee / Full-Time, Ubicación=Bochum, Remoto=No
+- **Compatibilidad (Skills):** python, ai, artificial intelligence
+- **Por qué apareció:** Afinidad prometedora (artificial intelligence, ai). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=Munich, Bavaria, Remoto=No
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/sonarsource/ai-research-engineer-bochum-139653](https://www.arbeitnow.com/jobs/companies/sonarsource/ai-research-engineer-bochum-139653)
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/agilerobotsse/software-engineer-industrial-robot-control-munich-bavaria-17126](https://www.arbeitnow.com/jobs/companies/agilerobotsse/software-engineer-industrial-robot-control-munich-bavaria-17126)
 
-### 40. Product Manager - Local Payments (Portuguese + Spanish) | Ppro [51.0 pts]
+### 50. Lead Technical Product Manager, Rail Integrations (all genders) | Distribusion Technologies [51.0 pts]
 - **Fuente:** Arbeitnow
 - **Pago:** No publicado / Por negociar
 - **Score:** 51.0 / 100 (Fit: 62.0, Reusabilidad: 45.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** api, apis, automation
+- **Compatibilidad (Skills):** automation, apis, api
 - **Por qué apareció:** Afinidad prometedora (automation, api). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Permanent - full time, Ubicación=Berlin, Remoto=No
+- **Qué sabemos (Datos Observados):** Tipo=Manager, fulltime permanent, Ubicación=Remote job, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=SI
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/ppro/product-manager-local-payments-portuguese-spanish-berlin-292806](https://www.arbeitnow.com/jobs/companies/ppro/product-manager-local-payments-portuguese-spanish-berlin-292806)
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/distribusion-technologies/remote-lead-technical-product-manager-rail-integrations-all-genders-berlin-261229](https://www.arbeitnow.com/jobs/companies/distribusion-technologies/remote-lead-technical-product-manager-rail-integrations-all-genders-berlin-261229)
 
-### 41. Werkstudent (m/w/d) KI & Automatisierung Stuttgart | Hws [51.0 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 51.0 / 100 (Fit: 60.0, Reusabilidad: 30.0)
+### 51. People Operations Coordinator | Ashby [51.0 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 55000.0 - 80000.0
+- **Score:** 51.0 / 100 (Fit: 32.0, Reusabilidad: 30.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** api, apis, python
-- **Por qué apareció:** Afinidad prometedora (api, apis). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Student, Intern, Part time, Ubicación=Stuttgart, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Compatibilidad (Skills):** ai, artificial intelligence
+- **Por qué apareció:** Afinidad prometedora (artificial intelligence, ai). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/hws/werkstudent-ki-automatisierung-stuttgart-168851](https://www.arbeitnow.com/jobs/companies/hws/werkstudent-ki-automatisierung-stuttgart-168851)
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-people-operations-coordinator-ashby-1137412](https://remoteOK.com/remote-jobs/remote-people-operations-coordinator-ashby-1137412)
 
-### 42. Werkstudent (m/w/d) – Finance Process Automatisation bis zu 20 Stunden/Woche | Ecotel [51.0 pts]
+### 52. Retail Sales Manager / Vertriebsmitarbeiter (m/w/d) | wolt [50.8 pts]
 - **Fuente:** Arbeitnow
 - **Pago:** No publicado / Por negociar
-- **Score:** 51.0 / 100 (Fit: 60.0, Reusabilidad: 30.0)
+- **Score:** 50.8 / 100 (Fit: 53.0, Reusabilidad: 45.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** api, apis, python
-- **Por qué apareció:** Afinidad prometedora (api, apis). Requiere clarificar términos de contratación o pago.
-- **Qué sabemos (Datos Observados):** Tipo=Student, Working student, Part time, Ubicación=Düsseldorf, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Compatibilidad (Skills):** ai, agent, node
+- **Por qué apareció:** Afinidad prometedora (ai, agent). Requiere clarificar términos de contratación o pago.
+- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=Berlin, Remoto=No
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/ecotel/werkstudent-finance-process-automatisation-bis-zu-20-stunden-woche-dusseldorf-286400](https://www.arbeitnow.com/jobs/companies/ecotel/werkstudent-finance-process-automatisation-bis-zu-20-stunden-woche-dusseldorf-286400)
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/wolt/retail-sales-manager-vertriebsmitarbeiter-berlin-130577](https://www.arbeitnow.com/jobs/companies/wolt/retail-sales-manager-vertriebsmitarbeiter-berlin-130577)
 
-## SECCIÓN: OBSERVAR (37 oportunidades)
-
-### 1. New Business Account Executive (DACH market) | Vivid [49.9 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 49.9 / 100 (Fit: 44.0, Reusabilidad: 60.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** ai, automation
-- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Germany, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/vivid/new-business-account-executive-dach-market-germany-98297](https://www.arbeitnow.com/jobs/companies/vivid/new-business-account-executive-dach-market-germany-98297)
-
-### 2. Founding SDR (DACH market) | Vivid [49.9 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 49.9 / 100 (Fit: 44.0, Reusabilidad: 60.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** ai, automation
-- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Berlin, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/vivid/founding-sdr-dach-market-berlin-82894](https://www.arbeitnow.com/jobs/companies/vivid/founding-sdr-dach-market-berlin-82894)
-
-### 3. Dealer Account Manager | AIM [49.9 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 49.9 / 100 (Fit: 44.0, Reusabilidad: 60.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** ai, automation
-- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=Full Time, Ubicación=Remote, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/aim/remote-dealer-account-manager-409116](https://www.arbeitnow.com/jobs/companies/aim/remote-dealer-account-manager-409116)
-
-### 4. Management Consultant Enterprise Architecture (all genders) | Eraneos [49.6 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 49.6 / 100 (Fit: 56.0, Reusabilidad: 30.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** api, apis, ai
-- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Hamburg, München, Düsseldorf, remote, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
-- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/eraneos/remote-management-consultant-enterprise-architecture-all-genders-154966](https://www.arbeitnow.com/jobs/companies/eraneos/remote-management-consultant-enterprise-architecture-all-genders-154966)
-
-### 5. Senior Sourcing Specialist – Germany Operations & Manufacturing | Asteralabs [47.6 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 47.6 / 100 (Fit: 44.0, Reusabilidad: 45.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** ai, automation
-- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=Aachen, North Rhine-Westphalia, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/asteralabs/senior-sourcing-specialist-germany-operations-manufacturing-aachen-north-rhine-westphalia-97307](https://www.arbeitnow.com/jobs/companies/asteralabs/senior-sourcing-specialist-germany-operations-manufacturing-aachen-north-rhine-westphalia-97307)
-
-### 6. [Bounty][$0][Lessons] 把 intake #1618 + #1619（写成功但数据静默丢失）转成课程 | Ikalus1988/MisakaNet [47.5 pts]
+### 53. Qualify source-distribution installs as independent consumer artifacts | AstralDeep/AstralPrimitives [50.3 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** USD  - 2026.0
-- **Score:** 47.5 / 100 (Fit: 28.0, Reusabilidad: 30.0)
+- **Pago:** - 1159.0
+- **Score:** 50.3 / 100 (Fit: 38.0, Reusabilidad: 45.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
-- **Compatibilidad (Skills):** agent, ai
-- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Compatibilidad (Skills):** backend, workflow
+- **Por qué apareció:** Afinidad prometedora (workflow, backend). Requiere clarificar términos de contratación o pago.
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=NO
-- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/Ikalus1988/MisakaNet/issues/1666](https://github.com/Ikalus1988/MisakaNet/issues/1666)
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** Evaluar viabilidad remota o alcance para proponer solución directa.
+- **Enlace original:** [https://github.com/AstralDeep/AstralPrimitives/issues/14](https://github.com/AstralDeep/AstralPrimitives/issues/14)
 
-### 7. [Bounty][$0][Lessons] 把 intake #1643（NPC 外派 + 间接提及 → 说话人/地点错位）转成课程 | Ikalus1988/MisakaNet [47.5 pts]
-- **Fuente:** GitHub Bounties
-- **Pago:** USD  - 1988.0
-- **Score:** 47.5 / 100 (Fit: 28.0, Reusabilidad: 30.0)
-- **Dificultad:** MEDIA
-- **Tiempo estimado:** 4 a 20 horas
-- **Compatibilidad (Skills):** agent, ai
-- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=NO
-- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/Ikalus1988/MisakaNet/issues/1655](https://github.com/Ikalus1988/MisakaNet/issues/1655)
+## SECCIÓN: OBSERVAR (63 oportunidades)
 
-### 8. [Bounty][$0][Lessons] 把 intake #1553（alembic upgrade 失败）转成课程 | Ikalus1988/MisakaNet [47.5 pts]
-- **Fuente:** GitHub Bounties
-- **Pago:** USD  - 1988.0
-- **Score:** 47.5 / 100 (Fit: 28.0, Reusabilidad: 30.0)
-- **Dificultad:** MEDIA
-- **Tiempo estimado:** 4 a 20 horas
-- **Compatibilidad (Skills):** agent, ai
-- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=NO
-- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/Ikalus1988/MisakaNet/issues/1652](https://github.com/Ikalus1988/MisakaNet/issues/1652)
-
-### 9. [Bounty][$0][Lessons] 把 intake #1555（nano-gpt.com SSE 流式调用失败）转成课程 | Ikalus1988/MisakaNet [47.5 pts]
-- **Fuente:** GitHub Bounties
-- **Pago:** USD  - 1988.0
-- **Score:** 47.5 / 100 (Fit: 28.0, Reusabilidad: 30.0)
-- **Dificultad:** MEDIA
-- **Tiempo estimado:** 4 a 20 horas
-- **Compatibilidad (Skills):** agent, ai
-- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=NO
-- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/Ikalus1988/MisakaNet/issues/1651](https://github.com/Ikalus1988/MisakaNet/issues/1651)
-
-### 10. Senior Principal ASIC Design Engineer | Asteralabs [43.6 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 43.6 / 100 (Fit: 39.0, Reusabilidad: 30.0)
+### 1. VP Pricing & Packaging | Delinea [49.5 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 300000.0 - 340000.0
+- **Score:** 49.5 / 100 (Fit: 28.0, Reusabilidad: 30.0)
 - **Dificultad:** ALTA
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** node, ai
+- **Compatibilidad (Skills):** ai, agent
 - **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=, Remoto=No
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=Redwood City, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/asteralabs/senior-principal-asic-design-engineer-172376](https://www.arbeitnow.com/jobs/companies/asteralabs/senior-principal-asic-design-engineer-172376)
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-vp-pricing-packaging-delinea-1137407](https://remoteOK.com/remote-jobs/remote-vp-pricing-packaging-delinea-1137407)
 
-### 11. Remote Office Assistant | Coalition Technologies [43.5 pts]
-- **Fuente:** Remotive
-- **Pago:** USD 52000.0 - 312000.0
-- **Score:** 43.5 / 100 (Fit: 13.0, Reusabilidad: 30.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** frontend
-- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=full_time, Ubicación=Worldwide, Remoto=Sí
-- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=NO
-- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://remotive.com/remote-jobs/marketing/remote-office-assistant-1680495](https://remotive.com/remote-jobs/marketing/remote-office-assistant-1680495)
-
-### 12. Senior Java Fullstack Developer (m/w/d) | virtual7 GmbH [42.5 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 42.5 / 100 (Fit: 38.0, Reusabilidad: 45.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** workflow, backend
-- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, fulltime permanent, Ubicación=Kaarst, Nordrhein-Westfalen, Deutschland, Remoto=No
-- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=SI
-- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/virtual7-gmbh/senior-java-fullstack-developer-kaarst-477433](https://www.arbeitnow.com/jobs/companies/virtual7-gmbh/senior-java-fullstack-developer-kaarst-477433)
-
-### 13. Associate, Paid Social | Angi [41.2 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 41.2 / 100 (Fit: 32.0, Reusabilidad: 30.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** artificial intelligence, ai
-- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=Full Time, Ubicación=Hybrid - Germany - Berlin, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
-- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/angi/associate-paid-social-berlin-414277](https://www.arbeitnow.com/jobs/companies/angi/associate-paid-social-berlin-414277)
-
-### 14. Head of Marketing | Almetra [41.2 pts]
-- **Fuente:** Arbeitnow
-- **Pago:** No publicado / Por negociar
-- **Score:** 41.2 / 100 (Fit: 32.0, Reusabilidad: 30.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** artificial intelligence, ai
-- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=Full Time, Ubicación=Munich, Remoto=No
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
-- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/almetra/head-of-marketing-munich-119980](https://www.arbeitnow.com/jobs/companies/almetra/head-of-marketing-munich-119980)
-
-### 15. Freelance Copywriter | Coalition Technologies [39.0 pts]
-- **Fuente:** Remotive
-- **Pago:** USD 20000.0 - 35000.0
-- **Score:** 39.0 / 100 (Fit: 0.0, Reusabilidad: 30.0)
+### 2. Bilingual Channel Account Manager, Arabic (MEA) - UK | Keeper Security [49.5 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** 23.0 - 150.0
+- **Score:** 49.5 / 100 (Fit: 38.0, Reusabilidad: 60.0)
 - **Dificultad:** MEDIA_ALTA
 - **Tiempo estimado:** 20 a 80 horas
-- **Compatibilidad (Skills):** General
+- **Compatibilidad (Skills):** ai, workflow
 - **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=freelance, Ubicación=Worldwide, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/keeper-security-bilingual-channel-account-manager-arabic-mea-uk](https://weworkremotely.com/remote-jobs/keeper-security-bilingual-channel-account-manager-arabic-mea-uk)
+
+### 3. Director, Channel & Partnerships | Prove [48.2 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** 1000.0 - 1000.0
+- **Score:** 48.2 / 100 (Fit: 32.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** apis, api
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://remotive.com/remote-jobs/writing/freelance-copywriter-1749306](https://remotive.com/remote-jobs/writing/freelance-copywriter-1749306)
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/prove-director-channel-partnerships](https://weworkremotely.com/remote-jobs/prove-director-channel-partnerships)
 
-### 16. [Bounty] [Bounty $7500] Remove legacy sqrt/rsqrt/reciprocal compatibility paths | zhangjiayang6835-cyber/bounty-plaza [39.0 pts]
+### 4. Validate successful SDK response envelopes before returning typed mappings | AstralDeep/LETS [48.0 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** USD 16.0 - 56277.0
-- **Score:** 39.0 / 100 (Fit: 0.0, Reusabilidad: 45.0)
+- **Pago:** 1.0 - 13500260.0
+- **Score:** 48.0 / 100 (Fit: 32.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
-- **Compatibilidad (Skills):** General
+- **Compatibilidad (Skills):** apis, api
 - **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1472](https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1472)
+- **Enlace original:** [https://github.com/AstralDeep/LETS/issues/70](https://github.com/AstralDeep/LETS/issues/70)
 
-### 17. Content Reviewer - English US | TELUS Digital [38.9 pts]
-- **Fuente:** Remotive
-- **Pago:** USD 14.0 - 14.0
-- **Score:** 38.9 / 100 (Fit: 14.0, Reusabilidad: 30.0)
-- **Dificultad:** MEDIA
-- **Tiempo estimado:** Por definir según alcance
+### 5. Principal Product Manager | DomainTools [47.3 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 47.3 / 100 (Fit: 56.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** apis, ai, api
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-principal-product-manager-domaintools-1137396](https://remoteOK.com/remote-jobs/remote-principal-product-manager-domaintools-1137396)
+
+### 6. AI Engineer Data APIs | Benzinga [47.3 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 47.3 / 100 (Fit: 56.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** apis, ai, api
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-ai-engineer-data-apis-benzinga-1137224](https://remoteOK.com/remote-jobs/remote-ai-engineer-data-apis-benzinga-1137224)
+
+### 7. Client Advisor | Toptal [46.9 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 10000.0 - 50000.0
+- **Score:** 46.9 / 100 (Fit: 14.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
 - **Compatibilidad (Skills):** ai
 - **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=part_time, Ubicación=USA, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-client-advisor-toptal-1137439](https://remoteOK.com/remote-jobs/remote-client-advisor-toptal-1137439)
+
+### 8. Solutions Delivery Manager | Benchling [46.9 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 150000.0 - 200000.0
+- **Score:** 46.9 / 100 (Fit: 14.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=Boston, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-solutions-delivery-manager-benchling-1136937](https://remoteOK.com/remote-jobs/remote-solutions-delivery-manager-benchling-1136937)
+
+### 9. Senior Software Engineer, Application Security | Discord [46.8 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 46.8 / 100 (Fit: 48.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** automation, python
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/discord-senior-software-engineer-application-security](https://weworkremotely.com/remote-jobs/discord-senior-software-engineer-application-security)
+
+### 10. Senior SRE - Networks | Fastly [46.8 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 46.8 / 100 (Fit: 48.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** automation, python
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/fastly-senior-sre-networks](https://weworkremotely.com/remote-jobs/fastly-senior-sre-networks)
+
+### 11. AI agent engineer | Sticker Mule [46.6 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 46.6 / 100 (Fit: 54.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai, agent, typescript
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/sticker-mule-ai-agent-engineer](https://weworkremotely.com/remote-jobs/sticker-mule-ai-agent-engineer)
+
+### 12. Junior Payroll Assistant | Sleek [45.4 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 45.4 / 100 (Fit: 44.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** automation, ai
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-junior-payroll-assistant-sleek-1137391](https://remoteOK.com/remote-jobs/remote-junior-payroll-assistant-sleek-1137391)
+
+### 13. Video Data Annotator | iMerit Technology [44.6 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 70000.0 - 80000.0
+- **Score:** 44.6 / 100 (Fit: 14.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-video-data-annotator-imerit-technology-1137428](https://remoteOK.com/remote-jobs/remote-video-data-annotator-imerit-technology-1137428)
+
+### 14. AI Trainer Image QA Evaluator | iMerit Technology [44.6 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 30000.0 - 40000.0
+- **Score:** 44.6 / 100 (Fit: 14.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-ai-trainer-image-qa-evaluator-imerit-technology-1137398](https://remoteOK.com/remote-jobs/remote-ai-trainer-image-qa-evaluator-imerit-technology-1137398)
+
+### 15. AI Response Analyst | iMerit Technology [44.6 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 20000.0 - 20000.0
+- **Score:** 44.6 / 100 (Fit: 14.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-ai-response-analyst-imerit-technology-1137309](https://remoteOK.com/remote-jobs/remote-ai-response-analyst-imerit-technology-1137309)
+
+### 16. Define and enforce JSON-native values in arbitrary primitive payloads | AstralDeep/AstralPrimitives [44.0 pts]
+- **Fuente:** GitHub Bounties
+- **Pago:** - 1159.0
+- **Score:** 44.0 / 100 (Fit: 18.0, Reusabilidad: 30.0)
+- **Dificultad:** MEDIA
+- **Tiempo estimado:** 4 a 20 horas
+- **Compatibilidad (Skills):** python
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=PARCIAL
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://github.com/AstralDeep/AstralPrimitives/issues/9](https://github.com/AstralDeep/AstralPrimitives/issues/9)
+
+### 17. Junior Digital Assets Operations Analyst | Omega Enterprises [43.9 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 60000.0 - 80000.0
+- **Score:** 43.9 / 100 (Fit: 14.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** workflow
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-junior-digital-assets-operations-analyst-omega-enterprises-1137418](https://remoteOK.com/remote-jobs/remote-junior-digital-assets-operations-analyst-omega-enterprises-1137418)
+
+### 18. [Bounty] Test the 2.40.0 browser half in your own DSH host (6 seats, screenshot + probe evidence) | Ikalus1988/MisakaNet [43.8 pts]
+- **Fuente:** GitHub Bounties
+- **Pago:** USD  - 6.0
+- **Score:** 43.8 / 100 (Fit: 28.0, Reusabilidad: 45.0)
+- **Dificultad:** MEDIA
+- **Tiempo estimado:** 4 a 20 horas
+- **Compatibilidad (Skills):** ai, agent
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://remotive.com/remote-jobs/all-others/content-reviewer-english-us-2091105](https://remotive.com/remote-jobs/all-others/content-reviewer-english-us-2091105)
+- **Enlace original:** [https://github.com/Ikalus1988/MisakaNet/issues/2593](https://github.com/Ikalus1988/MisakaNet/issues/2593)
 
-### 18. Solution Architect – Client Solutions (m/w/d) | Fincite Gmbh [38.2 pts]
+### 19. Senior SAP HCM Solution & Integration Architect - Freelance | Sidekick Network GmbH & Co. KG [43.2 pts]
 - **Fuente:** Arbeitnow
 - **Pago:** No publicado / Por negociar
-- **Score:** 38.2 / 100 (Fit: 32.0, Reusabilidad: 30.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** api, apis
+- **Score:** 43.2 / 100 (Fit: 32.0, Reusabilidad: 30.0)
+- **Dificultad:** MEDIA_ALTA
+- **Tiempo estimado:** 20 a 80 horas
+- **Compatibilidad (Skills):** apis, api
 - **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Frankfurt am Main, Remoto=No
+- **Qué sabemos (Datos Observados):** Tipo=Freelance, professional / experienced, Ubicación=Bonn, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/fincite-gmbh/solution-architect-client-solutions-frankfurt-am-main-324534](https://www.arbeitnow.com/jobs/companies/fincite-gmbh/solution-architect-client-solutions-frankfurt-am-main-324534)
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/sidekick-network-gmbh-co-kg/senior-sap-hcm-solution-integration-architect-freelance-bonn-416412](https://www.arbeitnow.com/jobs/companies/sidekick-network-gmbh-co-kg/senior-sap-hcm-solution-integration-architect-freelance-bonn-416412)
 
-### 19. Senior IT Architect (m/w/d) | virtual7 GmbH [38.2 pts]
+### 20. Senior IT Architect (m/w/d) | virtual7 GmbH [43.2 pts]
 - **Fuente:** Arbeitnow
 - **Pago:** No publicado / Por negociar
-- **Score:** 38.2 / 100 (Fit: 32.0, Reusabilidad: 30.0)
-- **Dificultad:** ALTA
-- **Tiempo estimado:** Dedicación continua (>160h/mes)
-- **Compatibilidad (Skills):** api, apis
+- **Score:** 43.2 / 100 (Fit: 32.0, Reusabilidad: 30.0)
+- **Dificultad:** MEDIA_ALTA
+- **Tiempo estimado:** 20 a 80 horas
+- **Compatibilidad (Skills):** apis, api
 - **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, fulltime permanent, Ubicación=Homeoffice, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Experienced, freelance, Ubicación=Homeoffice, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/virtual7-gmbh/remote-senior-it-architect-karlsruhe-252149](https://www.arbeitnow.com/jobs/companies/virtual7-gmbh/remote-senior-it-architect-karlsruhe-252149)
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/virtual7-gmbh/remote-senior-it-architect-bonn-247683](https://www.arbeitnow.com/jobs/companies/virtual7-gmbh/remote-senior-it-architect-bonn-247683)
 
-### 20. Praktikant*in Brand & Product Marketing (m/w/d) | Amperecloud GmbH [37.1 pts]
+### 21. Fail fast when custom primitives collide with an existing wire type | AstralDeep/AstralPrimitives [42.6 pts]
+- **Fuente:** GitHub Bounties
+- **Pago:** - 1159.0
+- **Score:** 42.6 / 100 (Fit: 14.0, Reusabilidad: 30.0)
+- **Dificultad:** MEDIA
+- **Tiempo estimado:** 4 a 20 horas
+- **Compatibilidad (Skills):** ai
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=MEDIO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://github.com/AstralDeep/AstralPrimitives/issues/10](https://github.com/AstralDeep/AstralPrimitives/issues/10)
+
+### 22. (Senior) Technical Program Manager (m/f/d) | Agilerobotsse [41.2 pts]
+- **Fuente:** Arbeitnow
+- **Pago:** No publicado / Por negociar
+- **Score:** 41.2 / 100 (Fit: 32.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai, artificial intelligence
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=Munich, Bavaria, Remoto=No
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/agilerobotsse/senior-technical-program-manager-munich-bavaria-432718](https://www.arbeitnow.com/jobs/companies/agilerobotsse/senior-technical-program-manager-munich-bavaria-432718)
+
+### 23. (Senior) Electronics Engineer (m/f/d) | Agilerobotsse [41.2 pts]
+- **Fuente:** Arbeitnow
+- **Pago:** No publicado / Por negociar
+- **Score:** 41.2 / 100 (Fit: 32.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai, artificial intelligence
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=Munich, Bavaria, Remoto=No
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/agilerobotsse/senior-electronics-engineer-munich-bavaria-42800](https://www.arbeitnow.com/jobs/companies/agilerobotsse/senior-electronics-engineer-munich-bavaria-42800)
+
+### 24. Commercial Account Manager | Salesloft [41.2 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 41.2 / 100 (Fit: 32.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai, artificial intelligence
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/salesloft-commercial-account-manager](https://weworkremotely.com/remote-jobs/salesloft-commercial-account-manager)
+
+### 25. Senior Backend Engineer Build AI Agents | Salesforge [41.0 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 41.0 / 100 (Fit: 38.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** backend, ai
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-senior-backend-engineer-build-ai-agents-salesforge-1137114](https://remoteOK.com/remote-jobs/remote-senior-backend-engineer-build-ai-agents-salesforge-1137114)
+
+### 26. Java Developer | Clera [41.0 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 41.0 / 100 (Fit: 38.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** backend, ai
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=Los Angeles, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-java-developer-clera-1136188](https://remoteOK.com/remote-jobs/remote-java-developer-clera-1136188)
+
+### 27. Backend Engineer, IAM | Reddit [40.9 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** 130.0 - 100000.0
+- **Score:** 40.9 / 100 (Fit: 26.0, Reusabilidad: 30.0)
+- **Dificultad:** MEDIA_ALTA
+- **Tiempo estimado:** 20 a 80 horas
+- **Compatibilidad (Skills):** backend, ai, artificial intelligence
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/reddit-backend-engineer-iam](https://weworkremotely.com/remote-jobs/reddit-backend-engineer-iam)
+
+### 28. Software Engineer | Prenosis [39.0 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 39.0 / 100 (Fit: 32.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai, artificial intelligence
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-software-engineer-prenosis-1137427](https://remoteOK.com/remote-jobs/remote-software-engineer-prenosis-1137427)
+
+### 29. HN Gig / Contract by gremlinsinc | HN: gremlinsinc [39.0 pts]
+- **Fuente:** HackerNews
+- **Pago:** No publicado / Por negociar
+- **Score:** 39.0 / 100 (Fit: 20.0, Reusabilidad: 45.0)
+- **Dificultad:** MEDIA_ALTA
+- **Tiempo estimado:** 20 a 80 horas
+- **Compatibilidad (Skills):** automation
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Direct Freelance / Contract, Ubicación=Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://news.ycombinator.com/item?id=35019896](https://news.ycombinator.com/item?id=35019896)
+
+### 30. Strategic Account Executive Lodging | FreedomPay [38.2 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 38.2 / 100 (Fit: 32.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** apis, api
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=Select USA Remote Locations, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-strategic-account-executive-lodging-freedompay-1136797](https://remoteOK.com/remote-jobs/remote-strategic-account-executive-lodging-freedompay-1136797)
+
+### 31. Member of Technical Staff Engineering | Physical Superintelligence [37.5 pts]
+- **Fuente:** RemoteOK
+- **Pago:** No publicado / Por negociar
+- **Score:** 37.5 / 100 (Fit: 28.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai, agent
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=Boston, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-member-of-technical-staff-engineering-physical-superintelligence-1136798](https://remoteOK.com/remote-jobs/remote-member-of-technical-staff-engineering-physical-superintelligence-1136798)
+
+### 32. Solutions Architect -Spanish Speaking | Fin [37.5 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 37.5 / 100 (Fit: 28.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai, agent
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/fin-solutions-architect-spanish-speaking](https://weworkremotely.com/remote-jobs/fin-solutions-architect-spanish-speaking)
+
+### 33. Senior Solutions Engineer- LATAM | Fin [37.5 pts]
+- **Fuente:** WeWorkRemotely
+- **Pago:** No publicado / Por negociar
+- **Score:** 37.5 / 100 (Fit: 28.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai, agent
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Remote Role, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://weworkremotely.com/remote-jobs/fin-senior-solutions-engineer-latam](https://weworkremotely.com/remote-jobs/fin-senior-solutions-engineer-latam)
+
+### 34. Senior Recruiter | zscaler [37.1 pts]
 - **Fuente:** Arbeitnow
 - **Pago:** No publicado / Por negociar
 - **Score:** 37.1 / 100 (Fit: 14.0, Reusabilidad: 45.0)
@@ -858,14 +1233,79 @@
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
 - **Compatibilidad (Skills):** ai
 - **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=Student college, fulltime fixed term, Ubicación=Berlin , Berlin, Germany, Remoto=No
+- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=, Remoto=No
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/amperecloud-gmbh/praktikantin-brand-product-marketing-berlin-373886](https://www.arbeitnow.com/jobs/companies/amperecloud-gmbh/praktikantin-brand-product-marketing-berlin-373886)
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/zscaler/senior-recruiter-277707](https://www.arbeitnow.com/jobs/companies/zscaler/senior-recruiter-277707)
 
-### 21. [radar] SN open bounty 2026-09-14T00:58 | relayhop/sn-monetization-runtime [36.8 pts]
+### 35. Senior Account Executive / Market Lead DACH | Aquablu B.V [37.1 pts]
+- **Fuente:** Arbeitnow
+- **Pago:** No publicado / Por negociar
+- **Score:** 37.1 / 100 (Fit: 14.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time fixed-term, experienced, Ubicación=Frankfurt, Remoto=No
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/aquablu-bv/senior-account-executive-market-lead-dach-frankfurt-8231](https://www.arbeitnow.com/jobs/companies/aquablu-bv/senior-account-executive-market-lead-dach-frankfurt-8231)
+
+### 36. Enterprise Sales Development Representative | Toptal [36.8 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 10000.0 - 50000.0
+- **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** General
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-enterprise-sales-development-representative-toptal-1137451](https://remoteOK.com/remote-jobs/remote-enterprise-sales-development-representative-toptal-1137451)
+
+### 37. Junior Crypto Analyst & Trader | Empire Assets [36.8 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 60000.0 - 80000.0
+- **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** General
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-junior-crypto-analyst-trader-empire-assets-1137307](https://remoteOK.com/remote-jobs/remote-junior-crypto-analyst-trader-empire-assets-1137307)
+
+### 38. Customer Support & Success Specialist | Warehance [36.8 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 50000.0 - 70000.0
+- **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** General
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-customer-support-success-specialist-warehance-1137302](https://remoteOK.com/remote-jobs/remote-customer-support-success-specialist-warehance-1137302)
+
+### 39. HN Gig / Contract by mgkimsal | HN: mgkimsal [36.8 pts]
+- **Fuente:** HackerNews
+- **Pago:** USD 1099.0 - 450000.0
+- **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
+- **Dificultad:** MEDIA_ALTA
+- **Tiempo estimado:** 20 a 80 horas
+- **Compatibilidad (Skills):** General
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Direct Freelance / Contract, Ubicación=Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://news.ycombinator.com/item?id=1972069](https://news.ycombinator.com/item?id=1972069)
+
+### 40. [Bounty] [Bounty $1,000] FP32 ttnn.cumsum returns NaN after infinity or overflow | zhangjiayang6835-cyber/bounty-plaza [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** - 1570125.0
+- **Pago:** USD  - 58986.0
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -874,11 +1314,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1103](https://github.com/relayhop/sn-monetization-runtime/issues/1103)
+- **Enlace original:** [https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1728](https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1728)
 
-### 22. [radar] SN open bounty 2026-09-13T22:21 | relayhop/sn-monetization-runtime [36.8 pts]
+### 41. [radar] SN open bounty 2026-10-02T16:13 | relayhop/sn-monetization-runtime [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** 2.0 - 1570125.0
+- **Pago:** 1.0 - 1586028.0
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -887,11 +1327,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1101](https://github.com/relayhop/sn-monetization-runtime/issues/1101)
+- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1235](https://github.com/relayhop/sn-monetization-runtime/issues/1235)
 
-### 23. [radar] SN open bounty 2026-09-13T19:22 | relayhop/sn-monetization-runtime [36.8 pts]
+### 42. [radar] SN open bounty 2026-10-02T15:02 | relayhop/sn-monetization-runtime [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** 2.0 - 1570125.0
+- **Pago:** 1.0 - 1586028.0
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -900,11 +1340,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1099](https://github.com/relayhop/sn-monetization-runtime/issues/1099)
+- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1233](https://github.com/relayhop/sn-monetization-runtime/issues/1233)
 
-### 24. [radar] SN open bounty 2026-09-13T16:09 | relayhop/sn-monetization-runtime [36.8 pts]
+### 43. [Bounty $1,000] FP32 ttnn.cumsum returns NaN after infinity or overflow | tenstorrent/tt-metal [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** 2.0 - 1570125.0
+- **Pago:** USD  - 56811.0
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -913,11 +1353,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1097](https://github.com/relayhop/sn-monetization-runtime/issues/1097)
+- **Enlace original:** [https://github.com/tenstorrent/tt-metal/issues/58986](https://github.com/tenstorrent/tt-metal/issues/58986)
 
-### 25. [Bounty] $999999999999999999999999 BOUNTY - URGENT | zhangjiayang6835-cyber/bounty-plaza [36.8 pts]
+### 44. [radar] SN open bounty 2026-10-02T12:23 | relayhop/sn-monetization-runtime [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** USD 786.0 - 1.2499999999999998e+24
+- **Pago:** 1.0 - 1586028.0
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -926,11 +1366,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1548](https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1548)
+- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1231](https://github.com/relayhop/sn-monetization-runtime/issues/1231)
 
-### 26. [radar] SN open bounty 2026-09-12T22:12 | relayhop/sn-monetization-runtime [36.8 pts]
+### 45. [radar] SN open bounty 2026-10-02T09:38 | relayhop/sn-monetization-runtime [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** 1.0 - 1568946.0
+- **Pago:** 1.0 - 1586028.0
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -939,11 +1379,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1091](https://github.com/relayhop/sn-monetization-runtime/issues/1091)
+- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1230](https://github.com/relayhop/sn-monetization-runtime/issues/1230)
 
-### 27. [radar] SN open bounty 2026-09-12T19:13 | relayhop/sn-monetization-runtime [36.8 pts]
+### 46. [radar] SN open bounty 2026-10-02T08:38 | relayhop/sn-monetization-runtime [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** 1.0 - 1568946.0
+- **Pago:** 1.0 - 1586028.0
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -952,11 +1392,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1064](https://github.com/relayhop/sn-monetization-runtime/issues/1064)
+- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1228](https://github.com/relayhop/sn-monetization-runtime/issues/1228)
 
-### 28. [radar] SN open bounty 2026-09-12T17:00 | relayhop/sn-monetization-runtime [36.8 pts]
+### 47. [radar] SN open bounty 2026-10-02T02:17 | relayhop/sn-monetization-runtime [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** - 1568946.0
+- **Pago:** 1.0 - 1586028.0
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -965,11 +1405,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1063](https://github.com/relayhop/sn-monetization-runtime/issues/1063)
+- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1226](https://github.com/relayhop/sn-monetization-runtime/issues/1226)
 
-### 29. [radar] SN open bounty 2026-09-12T14:01 | relayhop/sn-monetization-runtime [36.8 pts]
+### 48. [radar] SN open bounty 2026-10-02T02:11 | relayhop/sn-monetization-runtime [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** 1.0 - 1568946.0
+- **Pago:** 1.0 - 1586028.0
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -978,11 +1418,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1061](https://github.com/relayhop/sn-monetization-runtime/issues/1061)
+- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1225](https://github.com/relayhop/sn-monetization-runtime/issues/1225)
 
-### 30. [radar] SN open bounty 2026-09-12T10:38 | relayhop/sn-monetization-runtime [36.8 pts]
+### 49. [radar] SN open bounty 2026-10-01T23:13 | relayhop/sn-monetization-runtime [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** 1.0 - 1568946.0
+- **Pago:** 1.0 - 1586028.0
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -991,11 +1431,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1058](https://github.com/relayhop/sn-monetization-runtime/issues/1058)
+- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1224](https://github.com/relayhop/sn-monetization-runtime/issues/1224)
 
-### 31. [radar] SN open bounty 2026-09-12T10:38 | relayhop/sn-monetization-runtime [36.8 pts]
+### 50. [radar] SN open bounty 2026-10-01T23:06 | relayhop/sn-monetization-runtime [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** 1.0 - 1568946.0
+- **Pago:** 1.0 - 1586028.0
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -1004,11 +1444,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1057](https://github.com/relayhop/sn-monetization-runtime/issues/1057)
+- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1223](https://github.com/relayhop/sn-monetization-runtime/issues/1223)
 
-### 32. [radar] SN open bounty 2026-09-12T05:39 | relayhop/sn-monetization-runtime [36.8 pts]
+### 51. [radar] SN open bounty 2026-10-01T19:03 | relayhop/sn-monetization-runtime [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** 1.0 - 1568946.0
+- **Pago:** 1.0 - 1586028.0
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -1017,11 +1457,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1054](https://github.com/relayhop/sn-monetization-runtime/issues/1054)
+- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1222](https://github.com/relayhop/sn-monetization-runtime/issues/1222)
 
-### 33. [radar] SN open bounty 2026-09-12T00:10 | relayhop/sn-monetization-runtime [36.8 pts]
+### 52. [radar] SN open bounty 2026-10-01T18:48 | relayhop/sn-monetization-runtime [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** - 1568946.0
+- **Pago:** 1.0 - 1586028.0
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -1030,11 +1470,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1053](https://github.com/relayhop/sn-monetization-runtime/issues/1053)
+- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1221](https://github.com/relayhop/sn-monetization-runtime/issues/1221)
 
-### 34. [radar] SN open bounty 2026-09-11T21:40 | relayhop/sn-monetization-runtime [36.8 pts]
+### 53. [BOUNTY] Suggestion #1248 | SPLURT-Station/S.P.L.U.R.T-tg [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** 0.5 - 1568946.0
+- **Pago:** - 1.5552479538100306e+18
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -1043,11 +1483,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1052](https://github.com/relayhop/sn-monetization-runtime/issues/1052)
+- **Enlace original:** [https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/1271](https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/1271)
 
-### 35. [Bounty] [Bounty $500] ttnn.quantize/requantize uint8 lower-bound saturation | zhangjiayang6835-cyber/bounty-plaza [36.8 pts]
+### 54. [BOUNTY] Suggestion #1250 | SPLURT-Station/S.P.L.U.R.T-tg [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** USD  - 56290.0
+- **Pago:** - 1.5552478453411433e+18
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -1056,11 +1496,11 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1509](https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1509)
+- **Enlace original:** [https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/1270](https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/issues/1270)
 
-### 36. [Bounty $500] ttnn.quantize/requantize uint8 lower-bound saturation | tenstorrent/tt-metal [36.8 pts]
+### 55. [radar] SN open bounty 2026-10-01T13:46 | relayhop/sn-monetization-runtime [36.8 pts]
 - **Fuente:** GitHub Bounties
-- **Pago:** USD  - 51304.0
+- **Pago:** 0.8 - 1586028.0
 - **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
 - **Dificultad:** MEDIA
 - **Tiempo estimado:** 4 a 20 horas
@@ -1069,9 +1509,74 @@
 - **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
 - **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://github.com/tenstorrent/tt-metal/issues/56290](https://github.com/tenstorrent/tt-metal/issues/56290)
+- **Enlace original:** [https://github.com/relayhop/sn-monetization-runtime/issues/1220](https://github.com/relayhop/sn-monetization-runtime/issues/1220)
 
-### 37. Senior Photonik-Charakterisierungsingenieur (m/w/d) | pmX Group [36.3 pts]
+### 56. Replace client deadline performance assertions with deterministic contract tests | AstralDeep/LETS [36.8 pts]
+- **Fuente:** GitHub Bounties
+- **Pago:** 0.4 - 13500260.0
+- **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
+- **Dificultad:** MEDIA
+- **Tiempo estimado:** 4 a 20 horas
+- **Compatibilidad (Skills):** General
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://github.com/AstralDeep/LETS/issues/73](https://github.com/AstralDeep/LETS/issues/73)
+
+### 57. Include serialized-client admission wait in the advertised total deadline | AstralDeep/LETS [36.8 pts]
+- **Fuente:** GitHub Bounties
+- **Pago:** 2.0 - 13500260.0
+- **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
+- **Dificultad:** MEDIA
+- **Tiempo estimado:** 4 a 20 horas
+- **Compatibilidad (Skills):** General
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://github.com/AstralDeep/LETS/issues/68](https://github.com/AstralDeep/LETS/issues/68)
+
+### 58. Preserve ownership of injected HTTP clients when total deadlines expire | AstralDeep/LETS [36.8 pts]
+- **Fuente:** GitHub Bounties
+- **Pago:** 2.0 - 13500260.0
+- **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
+- **Dificultad:** MEDIA
+- **Tiempo estimado:** 4 a 20 horas
+- **Compatibilidad (Skills):** General
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://github.com/AstralDeep/LETS/issues/67](https://github.com/AstralDeep/LETS/issues/67)
+
+### 59. Validate finite, correctly typed SDK deadline and retry limits | AstralDeep/LETS [36.8 pts]
+- **Fuente:** GitHub Bounties
+- **Pago:** - 13500260.0
+- **Score:** 36.8 / 100 (Fit: 0.0, Reusabilidad: 30.0)
+- **Dificultad:** MEDIA
+- **Tiempo estimado:** 4 a 20 horas
+- **Compatibilidad (Skills):** General
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Bounty Issue, Ubicación=Worldwide / Remote, Remoto=Sí
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=MEDIO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://github.com/AstralDeep/LETS/issues/66](https://github.com/AstralDeep/LETS/issues/66)
+
+### 60. Oracle Fusion Cloud Lead â Logistics & Supply Chain Management | Tessera Labs [36.6 pts]
+- **Fuente:** RemoteOK
+- **Pago:** USD 30.0 - 36.0
+- **Score:** 36.6 / 100 (Fit: 14.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** ai
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Full-time, Ubicación=, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=NO
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://remoteOK.com/remote-jobs/remote-oracle-fusion-cloud-lead-logistics-supply-chain-management-tessera-labs-1137155](https://remoteOK.com/remote-jobs/remote-oracle-fusion-cloud-lead-logistics-supply-chain-management-tessera-labs-1137155)
+
+### 61. Softwareentwickler Client-Server-Anwendungen (m/w/d) | MY Humancapital GmbH [36.3 pts]
 - **Fuente:** Arbeitnow
 - **Pago:** No publicado / Por negociar
 - **Score:** 36.3 / 100 (Fit: 18.0, Reusabilidad: 30.0)
@@ -1079,7 +1584,33 @@
 - **Tiempo estimado:** Dedicación continua (>160h/mes)
 - **Compatibilidad (Skills):** python
 - **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
-- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Stuttgart, Remoto=No
+- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=Munich, Remoto=No
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
 - **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
-- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/pmx-group/senior-photonik-charakterisierungsingenieur-stuttgart-434457](https://www.arbeitnow.com/jobs/companies/pmx-group/senior-photonik-charakterisierungsingenieur-stuttgart-434457)
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/my-humancapital-gmbh/softwareentwickler-client-server-anwendungen-munich-35252](https://www.arbeitnow.com/jobs/companies/my-humancapital-gmbh/softwareentwickler-client-server-anwendungen-munich-35252)
+
+### 62. Softwarearchitekt Embedded Systems (m/w/d) Dresden | MY Humancapital GmbH [36.3 pts]
+- **Fuente:** Arbeitnow
+- **Pago:** No publicado / Por negociar
+- **Score:** 36.3 / 100 (Fit: 18.0, Reusabilidad: 30.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** python
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=, Ubicación=Dresden, Remoto=No
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=ALTO, Automatizable=PARCIAL
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/my-humancapital-gmbh/softwarearchitekt-embedded-systems-dresden-440593](https://www.arbeitnow.com/jobs/companies/my-humancapital-gmbh/softwarearchitekt-embedded-systems-dresden-440593)
+
+### 63. Mechanical Engineer in Production [Mid-Senior; F/M/D] | Project Eaden - Personio [36.2 pts]
+- **Fuente:** Arbeitnow
+- **Pago:** No publicado / Por negociar
+- **Score:** 36.2 / 100 (Fit: 20.0, Reusabilidad: 45.0)
+- **Dificultad:** ALTA
+- **Tiempo estimado:** Dedicación continua (>160h/mes)
+- **Compatibilidad (Skills):** automation
+- **Por qué apareció:** Coincidencia parcial o demanda estándar con alta competencia. Mantener en radar pasivo.
+- **Qué sabemos (Datos Observados):** Tipo=Experienced, Permanent, Full time, Ubicación=Berlin - Kreuzberg, Remoto=No
+- **Qué estamos estimando:** Competencia=ALTA, Potencial Económico=ALTO, Automatizable=SI
+- **Qué haríamos (Siguiente Acción):** No priorizar acción inmediata.
+- **Enlace original:** [https://www.arbeitnow.com/jobs/companies/project-eaden-personio/mechanical-engineer-in-production-mid-senior-berlin-kreuzberg-137298](https://www.arbeitnow.com/jobs/companies/project-eaden-personio/mechanical-engineer-in-production-mid-senior-berlin-kreuzberg-137298)

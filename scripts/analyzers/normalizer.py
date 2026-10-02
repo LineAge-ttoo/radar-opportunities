@@ -53,10 +53,7 @@ class OpportunityNormalizer:
         now_iso = datetime.now().isoformat()
         job_id = str(item.get('id', ''))
         url = item.get('url', '')
-        if job_id:
-            opp_id = f'remotive_{job_id}'
-        else:
-            opp_id = 'remotive_' + hashlib.md5(url.encode()).hexdigest()[:12]
+        opp_id = f'remotive_{job_id}' if job_id else f'remotive_{hashlib.md5(url.encode()).hexdigest()[:12]}'
         
         salary_str = item.get('salary', '')
         p_min, p_max, curr = parse_salary_string(salary_str)
@@ -101,10 +98,7 @@ class OpportunityNormalizer:
         now_iso = datetime.now().isoformat()
         slug = item.get('slug', '')
         url = item.get('url', '')
-        if slug:
-            opp_id = f'arbeitnow_{slug}'
-        else:
-            opp_id = 'arbeitnow_' + hashlib.md5(url.encode()).hexdigest()[:12]
+        opp_id = f'arbeitnow_{slug}' if slug else f'arbeitnow_{hashlib.md5(url.encode()).hexdigest()[:12]}'
         
         clean_desc = clean_html(item.get('description', ''))
         job_types = [str(t).lower() for t in item.get('job_types', [])]
@@ -141,14 +135,162 @@ class OpportunityNormalizer:
         }
 
     @staticmethod
+    def normalize_remoteok(item):
+        now_iso = datetime.now().isoformat()
+        job_id = str(item.get('id', ''))
+        url = item.get('url', '')
+        if not url and job_id:
+            url = f"https://remoteok.com/remote-jobs/{job_id}"
+        opp_id = f'remoteok_{job_id}' if job_id else f'remoteok_{hashlib.md5(url.encode()).hexdigest()[:12]}'
+        
+        clean_desc = clean_html(item.get('description', ''))
+        
+        # Explicit salaries from RemoteOK
+        p_min = None
+        p_max = None
+        try:
+            if item.get('salary_min'):
+                p_min = float(item['salary_min'])
+            if item.get('salary_max'):
+                p_max = float(item['salary_max'])
+        except (ValueError, TypeError):
+            pass
+
+        stated_salary = None
+        if p_min or p_max:
+            stated_salary = f"USD {int(p_min or 0):,} - {int(p_max or 0):,}"
+
+        tags = item.get('tags', [])
+        is_contract = any(t.lower() in ['contract', 'freelance'] for t in tags)
+        opp_type = 'contract' if is_contract else 'full_time'
+
+        return {
+            'opportunity_id': opp_id,
+            'source': 'RemoteOK',
+            'source_url': url,
+            'discovered_at': now_iso,
+            'published_at': item.get('date'),
+            'title': (item.get('position') or '').strip(),
+            'organization': (item.get('company') or '').strip(),
+            'description': clean_desc,
+            'category': 'Remote Tech',
+            'opportunity_type': opp_type,
+            'payment_min': p_min,
+            'payment_max': p_max,
+            'currency': 'USD' if (p_min or p_max) else None,
+            'location': item.get('location') or 'Worldwide',
+            'remote': True,
+            'raw_data': {
+                'id': item.get('id'),
+                'company': item.get('company'),
+                'tags': tags,
+                'salary_min': item.get('salary_min'),
+                'salary_max': item.get('salary_max')
+            },
+            'observed_data': {
+                'stated_salary': stated_salary,
+                'stated_location': item.get('location'),
+                'stated_job_type': 'Contract' if is_contract else 'Full-time',
+                'tags': tags
+            }
+        }
+
+    @staticmethod
+    def normalize_weworkremotely(item):
+        now_iso = datetime.now().isoformat()
+        link = item.get('link', '')
+        opp_id = f'wwr_{hashlib.md5(link.encode()).hexdigest()[:12]}'
+        
+        full_title = (item.get('title') or '').strip()
+        parts = full_title.split(': ', 1)
+        if len(parts) == 2:
+            org, title = parts[0].strip(), parts[1].strip()
+        else:
+            org, title = 'WeWorkRemotely', full_title
+
+        clean_desc = clean_html(item.get('description', ''))
+        p_min, p_max, curr = parse_salary_string(clean_desc[:500])
+
+        return {
+            'opportunity_id': opp_id,
+            'source': 'WeWorkRemotely',
+            'source_url': link,
+            'discovered_at': now_iso,
+            'published_at': item.get('pubDate'),
+            'title': title,
+            'organization': org,
+            'description': clean_desc,
+            'category': 'Remote Tech',
+            'opportunity_type': 'contract' if 'contract' in clean_desc.lower() else 'full_time',
+            'payment_min': p_min,
+            'payment_max': p_max,
+            'currency': curr,
+            'location': 'Worldwide',
+            'remote': True,
+            'raw_data': {
+                'guid': item.get('guid'),
+                'feed': item.get('feed_source')
+            },
+            'observed_data': {
+                'stated_salary': f"{curr} {p_min} - {p_max}" if p_min else None,
+                'stated_location': 'Worldwide / Remote',
+                'stated_job_type': 'Remote Role',
+                'tags': []
+            }
+        }
+
+    @staticmethod
+    def normalize_hackernews(item):
+        now_iso = datetime.now().isoformat()
+        object_id = str(item.get('objectID', ''))
+        url = f"https://news.ycombinator.com/item?id={object_id}"
+        opp_id = f'hn_{object_id}' if object_id else f'hn_{hashlib.md5(url.encode()).hexdigest()[:12]}'
+
+        author = item.get('author', 'HN Founder')
+        clean_desc = clean_html(item.get('comment_text', ''))
+        
+        # Extract title from the first line or first 100 characters
+        lines = [l.strip() for l in clean_desc.split('\n') if l.strip()]
+        first_line = lines[0] if lines else clean_desc[:90]
+        title = first_line if len(first_line) < 100 else f"HN Gig / Contract by {author}"
+
+        p_min, p_max, curr = parse_salary_string(clean_desc)
+
+        return {
+            'opportunity_id': opp_id,
+            'source': 'HackerNews',
+            'source_url': url,
+            'discovered_at': now_iso,
+            'published_at': item.get('created_at'),
+            'title': title,
+            'organization': f"HN: {author}",
+            'description': clean_desc,
+            'category': 'Founder / Direct Contract',
+            'opportunity_type': 'freelance',
+            'payment_min': p_min,
+            'payment_max': p_max,
+            'currency': curr,
+            'location': 'Remote / Worldwide',
+            'remote': True,
+            'raw_data': {
+                'objectID': object_id,
+                'author': author,
+                'story_id': item.get('story_id')
+            },
+            'observed_data': {
+                'stated_salary': f"{curr} {p_min} - {p_max}" if p_min else None,
+                'stated_location': 'Remote',
+                'stated_job_type': 'Direct Freelance / Contract',
+                'tags': ['hacker_news', 'direct_founder']
+            }
+        }
+
+    @staticmethod
     def normalize_github_bounty(item):
         now_iso = datetime.now().isoformat()
         issue_id = str(item.get('id', ''))
         url = item.get('html_url', '')
-        if issue_id:
-            opp_id = f'github_bounty_{issue_id}'
-        else:
-            opp_id = 'github_bounty_' + hashlib.md5(url.encode()).hexdigest()[:12]
+        opp_id = f'github_bounty_{issue_id}' if issue_id else f'github_bounty_{hashlib.md5(url.encode()).hexdigest()[:12]}'
         
         body = item.get('body', '') or ''
         clean_desc = clean_html(body)[:2000]
