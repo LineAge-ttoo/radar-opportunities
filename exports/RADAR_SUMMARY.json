@@ -1,17 +1,19 @@
 {
-  "scan_id": "scan_20261019_193336_a90200",
-  "started_at": "2026-10-19T19:33:36.106506+00:00",
-  "finished_at": "2026-10-19T19:33:45.250692+00:00",
+  "scan_id": "scan_20261019_225256_5ef4b7",
+  "started_at": "2026-10-19T22:52:56.411342+00:00",
+  "finished_at": "2026-10-19T22:53:19.648189+00:00",
   "sources_consulted": [
+    "San Agustín Huila · Guadua · Alcaldía & Estudiantes",
     "Clientes Colombia (Instagram & Facebook)",
     "Workana Colombia & LATAM",
     "Freelancer.co (Tareas & Proyectos)"
   ],
-  "total_found": 100,
-  "prioridad_count": 51,
-  "construir_vender_count": 16,
-  "investigar_count": 33,
+  "total_found": 127,
+  "prioridad_count": 81,
+  "construir_vender_count": 19,
+  "investigar_count": 27,
   "observar_count": 0,
-  "descartar_count": 8,
-  "execution_notes": "Escaneo orientado a Clientes en Colombia (Instagram, Facebook, Workana CO) y tareas prácticas (Automatizaciones, Planos, 3D, Web) sin contratos legales."
+  "descartar_count": 4,
+  "whatsapp_target": "573222739034",
+  "execution_notes": "Escaneo diario multi-horario enfocado en San Agustín Huila, Cabañas en Guadua, Alcaldías (SECOP II), Estudiantes/Universitarios, Blender 3D y Clientes en Colombia."
 }

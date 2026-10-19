@@ -1,15 +1,15 @@
-name: RADAR Live Auto-Scanner (Every 6 Hours)
+name: "que hay pa hacer! — Auto-Update Diario Multi-Horario (San Agustín Huila & Colombia)"
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 */4 * * *' # Se ejecuta automáticamente 6 veces al día (cada 4 horas)
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  live-opportunity-scan:
+  scan-and-publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -20,16 +20,20 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run Live Multi-Source Opportunity Scan
-        run: |
-          python scripts/run_radar_scan.py
-          cp app/index.html index.html
-          cp app/manifest.json manifest.json
-          cp app/latest_scan.json latest_scan.json
+      - name: Install dependencies
+        run: pip install requests
 
-      - name: Commit & Push Fresh Opportunities to Main (Auto-Deploys Pages & Vercel)
+      - name: Run San Agustín Huila, Guadua, SECOP II & Colombia Live Scan
+        run: python scripts/run_radar_scan.py
+
+      - name: Sync Web & Portable App
         run: |
-          git config user.name "RADAR Auto-Scanner"
-          git config user.email "radar-bot@users.noreply.github.com"
-          git add latest_scan.json app/latest_scan.json data/opportunities/latest_scan.json exports/ || true
-          git diff --staged --quiet || (git commit -m "chore(scan): automated live opportunity refresh" && git push)
+          python -c "import shutil, json; shutil.copy('app/index.html', 'index.html'); html = open('app/index.html', encoding='utf-8').read(); data = json.load(open('app/latest_scan.json', encoding='utf-8')); portable = html.replace('</head>', '<script>window.__RADAR_EMBEDDED_DATA__ = ' + json.dumps(data.get('opportunities', []), ensure_ascii=False) + ';</script>\n</head>'); open('exports/RADAR_Portable_Safari.html', 'w', encoding='utf-8').write(portable)"
+
+      - name: Commit and Push Live Updates
+        run: |
+          git config user.name "que-hay-pa-hacer-bot"
+          git config user.email "bot@radar-colombia.local"
+          git add data/opportunities/latest_scan.json data/opportunities/whatsapp_alert_3222739034.json app/latest_scan.json latest_scan.json exports/
+          git diff --staged --quiet || git commit -m "chore(auto-scan): actualizacion diaria multi-horario San Agustin Huila, Guadua, Estudiantes y Colombia"
+          git push

@@ -212,3 +212,43 @@ class OpportunityNormalizer:
                 'tags': jobs
             }
         }
+
+    @staticmethod
+    def normalize_san_agustin_huila(item):
+        now_iso = datetime.now(timezone.utc).isoformat()
+        opp_id = item.get('id') or f"huila_{hashlib.md5(str(item.get('url','')).encode()).hexdigest()[:10]}"
+        p_min = float(item.get('budget_min', 250000))
+        p_max = float(item.get('budget_max', 2500000))
+        curr = item.get('currency', 'COP')
+        stated_sal = f"{curr} ${int(p_min):,} — ${int(p_max):,}".replace(',', '.')
+        loc = item.get('location', '📍 San Agustín, Huila')
+        skills = item.get('skills', ['San Agustín Huila', 'Guadua & Cabañas', 'Blender 3D'])
+
+        return {
+            'opportunity_id': opp_id,
+            'source': 'San Agustín · Huila · Guadua',
+            'source_url': item.get('url', 'https://www.sanagustin-huila.gov.co'),
+            'discovered_at': now_iso,
+            'published_at': item.get('published_at') or now_iso,
+            'title': item.get('title', 'Proyecto San Agustín Huila'),
+            'organization': item.get('organization', 'San Agustín Huila'),
+            'description': item.get('description', ''),
+            'category': item.get('category_hint', 'guadua_cabanas'),
+            'opportunity_type': 'san_agustin_huila_prioridad',
+            'payment_min': p_min,
+            'payment_max': p_max,
+            'currency': curr,
+            'location': loc,
+            'remote': True,
+            'skills': skills,
+            'raw_data': item,
+            'observed_data': {
+                'stated_salary': stated_sal,
+                'stated_location': loc,
+                'stated_job_type': 'Prioridad Zona San Agustín / Huila',
+                'whatsapp_phone': item.get('whatsapp_phone') or '',
+                'category_hint': item.get('category_hint', 'guadua_cabanas'),
+                'tags': skills + ['san agustin', 'huila', 'guadua', 'blender', 'estudiantes']
+            }
+        }
+

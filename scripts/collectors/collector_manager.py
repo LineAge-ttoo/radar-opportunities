@@ -1,34 +1,29 @@
-import sys
-import os
+from .san_agustin_huila_collector import SanAgustinHuilaCollector
+from .colombia_social_collector import ColombiaSocialCollector
+from .workana_collector import WorkanaCollector
+from .freelancer_collector import FreelancerCollector
 
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-if BASE_DIR not in sys.path:
-    sys.path.append(BASE_DIR)
-
-from scripts.collectors.colombia_social_collector import ColombiaSocialCollector
-from scripts.collectors.workana_collector import WorkanaCollector
-from scripts.collectors.freelancer_collector import FreelancerCollector
 
 class CollectorManager:
     def __init__(self):
         self.collectors = [
+            SanAgustinHuilaCollector(),
             ColombiaSocialCollector(),
             WorkanaCollector(),
             FreelancerCollector()
         ]
 
-    def run_all(self):
+    def run_all(self) -> dict:
         results = {}
-        for collector in self.collectors:
-            name = collector.NAME
+        for c in self.collectors:
+            source_name = getattr(c, 'NAME', c.__class__.__name__)
             try:
-                res = collector.collect()
-                results[name] = res
+                res = c.collect()
+                results[source_name] = res
             except Exception as e:
-                results[name] = {
-                    'success': False,
-                    'source': name,
-                    'items': [],
-                    'error': str(e)
+                results[source_name] = {
+                    "success": False,
+                    "error": str(e),
+                    "items": []
                 }
         return results

@@ -1,64 +1,119 @@
 class TechnicalProposalGenerator:
     """
-    Genera mensajes directos (WhatsApp / Instagram DM / Facebook / Workana)
-    100% en español, prácticos, sin tecnicismos de ingeniería ni contratos legales.
+    Genera mensajes directos (WhatsApp / Instagram DM / Facebook / Workana / Alcaldía / Estudiantes)
+    100% en español, prácticos, destacando el perfil de Maestro en Construcción en Guadua Certificado,
+    Diseño de Cabañas, Blender 3D, Planos AutoCAD y Automatizaciones en San Agustín Huila y Colombia.
     """
 
     @classmethod
     def generate_pitch(cls, opp):
         title = opp.get('title', 'Proyecto')
         org = opp.get('organization', 'Cliente').replace('(🇨🇴 Colombia)', '').strip()
-        skills_text = ' '.join(opp.get('skills', [])).lower()
+        skills_text = f"{title} {opp.get('description', '')} {' '.join(opp.get('skills', []))}".lower()
         obs = opp.get('observed_data', {})
         offer_type = obs.get('offer_type', '')
+        cat_hint = obs.get('category_hint', '')
         wa_phone = obs.get('whatsapp_phone')
         p_min = opp.get('payment_min')
         p_max = opp.get('payment_max')
         curr = opp.get('currency') or 'COP'
 
-        # 1. Clientes directos en Instagram / Facebook Colombia
+        # 1. Cabañas en Guadua / Maestro Certificado en Guadua / San Agustín Huila
+        if cat_hint == 'guadua_cabanas' or 'guadua' in skills_text or 'cabaña' in skills_text or 'bamb' in skills_text:
+            subject = f"Diseño 3D y Construcción en Guadua Certificada — {org}"
+            body = f"""¡Hola {org}! 👋 Un gusto saludarte desde San Agustín, Huila.
+
+Vi su proyecto relacionado con **{title}** y me pongo a su disposición: soy **Maestro en Construcción en Guadua Certificado** y además realizo el **modelado arquitectónico en Blender 3D y planos técnicos 2D/3D**.
+
+✅ Diseño de cabañas, glampings, malokas, kioscos y estructuras bioclimáticas en guadua inmunizada.
+✅ Entrega de renders realistas en Blender 3D + cortes y despiece para saber exactamente cuánta guadua y material se necesita antes de construir.
+✅ Disponibilidad inmediata en **San Agustín, Pitalito, Isnos y todo el Huila** (o envío de planos y modelos 3D a cualquier parte de Colombia).
+
+¿Agendamos una llamada o visita rápida por WhatsApp al **322 273 9034** para mostrarles diseños de cabañas y presupuestos?"""
+            pricing = f"COP ${int(p_min or 650000):,} — ${int(p_max or 3800000):,} (Diseño 3D / Obra a convenir)".replace(',', '.')
+            turnaround = "Boceto 3D en 24-48 horas · Visita en San Agustín / Huila"
+            return {
+                'language': 'es',
+                'subject': subject,
+                'body': body,
+                'pricing_recommendation': pricing,
+                'turnaround': turnaround,
+                'whatsapp_phone': wa_phone
+            }
+
+        # 2. Alcaldía de San Agustín Huila / Alcaldías Cercanas / SECOP II
+        if cat_hint == 'alcaldia_huila' or 'alcaldía' in skills_text or 'alcaldia' in skills_text or 'secop' in skills_text:
+            subject = f"Propuesta Técnica Local (San Agustín / Huila): {title}"
+            body = f"""Cordial saludo, equipo de **{org}**:
+
+Desde **San Agustín, Huila**, presento manifestación de interés y disponibilidad técnica inmediata para el proceso/proyecto **"{title}"**.
+
+Cuento con certificación como **Maestro en Construcción en Guadua**, experiencia en diseño y adecuación de infraestructura turística/cultural, elaboración de planos 2D/3D, modelado en Blender y apoyo técnico operativo en el Sur del Huila.
+
+📞 Contacto directo en San Agustín Huila: **+57 322 273 9034**
+Quedo atento a los requisitos de mínima cuantía o apoyo técnico para radicar propuesta formal hoy mismo."""
+            pricing = f"COP ${int(p_min or 1500000):,} — ${int(p_max or 15000000):,}".replace(',', '.')
+            turnaround = "Radicación inmediata en San Agustín / Huila"
+            return {
+                'language': 'es',
+                'subject': subject,
+                'body': body,
+                'pricing_recommendation': pricing,
+                'turnaround': turnaround,
+                'whatsapp_phone': wa_phone
+            }
+
+        # 3. Estudiantes y Universitarios (Tareas, Entregas de Arquitectura/Ingeniería, Blender 3D, AutoCAD)
+        if cat_hint == 'estudiantes_tareas' or 'estudiante' in skills_text or 'universitari' in skills_text or 'sena' in skills_text or 'unad' in skills_text:
+            subject = f"Entrega Rápida de Planos, Blender 3D y Tareas Universitarias"
+            body = f"""¡Hola! 👋 Vi que necesitas apoyo con **"{title}"**.
+
+Te ayudo a sacar tu entrega universitaria o proyecto práctico a tiempo y con excelente presentación:
+✅ **Modelado y Renders en Blender 3D** (arquitectura, cabañas en guadua, objetos, animación).
+✅ **Planos 2D/3D en AutoCAD (.DWG y PDF listos para plotear)**.
+✅ **Detalles constructivos en Guadua / Bambú**, maquetas digitales y tareas prácticas (SENA / UNAD / Universidad).
+
+Te muestro avances por WhatsApp en menos de 24 horas y manejamos precios accesibles para estudiantes por Nequi o Bancolombia.
+📲 Escríbeme directo a mi WhatsApp: **+57 322 273 9034** y lo revisamos ya mismo."""
+            pricing = f"COP ${int(p_min or 90000):,} — ${int(p_max or 380000):,} (Tarifa Estudiante · Nequi)".replace(',', '.')
+            turnaround = "12 a 24 horas (Entregas urgentes)"
+            return {
+                'language': 'es',
+                'subject': subject,
+                'body': body,
+                'pricing_recommendation': pricing,
+                'turnaround': turnaround,
+                'whatsapp_phone': wa_phone
+            }
+
+        # 4. Clientes directos en Instagram / Facebook Colombia
         if opp.get('opportunity_type') == 'cliente_directo_colombia':
             if offer_type == 'planos_3d' or 'planos' in skills_text or '3d' in skills_text:
-                subject = f"Apoyo en Planos 2D/3D y Renders para {org}"
-                body = f"""¡Hola equipo de {org}! 👋 ¿Cómo están?
+                subject = f"Planos 2D/3D, Blender Renders y Guadua para {org}"
+                body = f"""¡Hola equipo de {org}! 👋
 
-Vi sus proyectos en redes y me gustó mucho su trabajo. Escribo porque elaboro **planos arquitectónicos 2D/3D, distribución de espacios, despieces de mobiliario y renders realistas** de entrega rápida para mostrarle al cliente cómo quedará su obra antes de iniciar.
+Vi sus proyectos en redes y me gustó mucho su trabajo. Elaboro **planos arquitectónicos 2D/3D, renders en Blender, diseños de cabañas en guadua certificada y despieces de mobiliario** en 24-48 horas por proyecto (sin contratos ni mensualidades, pago por Nequi / Bancolombia).
 
-✅ Trabajo por tarea/proyecto puntual (sin contratos complicados ni mensualidades).
-✅ Entrego boceto / vista previa en 24-48 horas.
-✅ Pago fácil en Colombia (Nequi / Bancolombia / transferencia).
-
-¿Les gustaría que les envíe un par de muestras de planos y renders 3D por aquí para que me tengan a la mano en su próxima cotización?"""
-                pricing = f"COP ${int(p_min or 250000):,} - ${int(p_max or 850000):,} por proyecto (50% inicio / 50% entrega)".replace(',', '.')
-                turnaround = "24 a 48 horas por plano / render"
-
+¿Les envío un par de muestras de planos y renders 3D a su WhatsApp? (Mi línea directa: +57 322 273 9034)."""
+                pricing = f"COP ${int(p_min or 250000):,} — ${int(p_max or 850000):,}".replace(',', '.')
+                turnaround = "24 a 48 horas"
             elif offer_type == 'whatsapp_bot' or 'whatsapp' in skills_text:
-                subject = f"Automatización de WhatsApp y Citas 24/7 para {org}"
-                body = f"""¡Hola {org}! 👋 ¿Cómo van?
-
-Los encontré en redes y noté que atienden a sus clientes por WhatsApp / mensajes directos. 
-
-Implemento **asistentes automáticos de WhatsApp e Instagram** que:
-1. Responden preguntas frecuentes, precios y ubicación al instante (24/7).
-2. Filtran a los clientes realmente interesados y agendan citas/visitas solas.
-3. Te evitan perder clientes cuando están ocupados o fuera de horario.
-
-No requiere contratos largos: lo dejo funcionando en 48 horas con un pago único accesible (Nequi / Bancolombia). ¿Te envío un video corto de 1 minuto por WhatsApp mostrando cómo respondería para tu negocio?"""
-                pricing = f"COP ${int(p_min or 300000):,} - ${int(p_max or 900000):,} pago único por montaje".replace(',', '.')
-                turnaround = "48 horas listo y funcionando"
-
-            else:
-                subject = f"Catálogo Digital Interactivo con Pedidos a WhatsApp para {org}"
+                subject = f"Bot de WhatsApp y Citas 24/7 para {org}"
                 body = f"""¡Hola {org}! 👋
 
-Vi su página en redes y quería proponerles algo muy práctico para vender más rápido: les armo un **Catálogo Digital / Página Web Interactiva** donde sus clientes ven fotos, precios actualizados, eligen lo que quieren y el pedido te llega armado directo a tu WhatsApp listo para despachar o reservar.
+Noté que atienden clientes por WhatsApp e Instagram. Implemento **asistentes automáticos 24/7** que responden precios, ubicación y agendan citas solos para no perder clientes fuera de horario.
 
-✅ Sin comisiones por venta ni contratos complicados.
-✅ Listo en 2 a 3 días.
-✅ Pago en Colombia (Nequi / Bancolombia).
+Lo entrego funcionando en 48 horas con pago único en Colombia (Nequi / Bancolombia). ¿Te envío una demostración rápida? (WhatsApp: +57 322 273 9034)."""
+                pricing = f"COP ${int(p_min or 300000):,} — ${int(p_max or 850000):,}".replace(',', '.')
+                turnaround = "48 horas"
+            else:
+                subject = f"Catálogo Digital con Pedidos a WhatsApp para {org}"
+                body = f"""¡Hola {org}! 👋
 
-¿Te paso un enlace de demostración por aquí para que veas cómo se ve desde el celular?"""
-                pricing = f"COP ${int(p_min or 250000):,} - ${int(p_max or 800000):,} pago único".replace(',', '.')
+Les armo un **Catálogo Digital / Web Interactiva** donde sus clientes eligen productos o reservan cabañas desde el celular y el pedido llega listo a su WhatsApp.
+
+Listo en 2 días, sin mensualidades ni comisiones (pago por Nequi / Bancolombia). ¿Te muestro un ejemplo en vivo? (WhatsApp: +57 322 273 9034)."""
+                pricing = f"COP ${int(p_min or 250000):,} — ${int(p_max or 750000):,}".replace(',', '.')
                 turnaround = "2 a 3 días"
 
             return {
@@ -70,36 +125,27 @@ Vi su página en redes y quería proponerles algo muy práctico para vender más
                 'whatsapp_phone': wa_phone
             }
 
-        # 2. Tareas en Workana / Freelancer.co
-        if 'planos' in skills_text or '3d' in skills_text or 'autocad' in skills_text:
-            hook = "Tengo experiencia práctica haciendo **planos 2D/3D, modelado (AutoCAD / Blender / STL / DWG) y renders listos para fabricación o presentación**."
-            turnaround = "24 a 48 horas para el primer avance / vista previa"
+        # 5. Proyectos en Workana / Freelancer.co
+        if 'planos' in skills_text or '3d' in skills_text or 'blender' in skills_text or 'autocad' in skills_text:
+            hook = "Soy especialista en **modelado 3D en Blender, planos 2D/3D en AutoCAD y diseño estructural de cabañas/espacios (Maestro Certificado en Guadua)**."
+            turnaround = "24 horas para el primer avance 3D / plano"
         elif 'whatsapp' in skills_text or 'automatizaci' in skills_text or 'bot' in skills_text:
-            hook = "Me dedico a armar **automatizaciones prácticas y bots de WhatsApp / n8n / IA** que quedan funcionando rápido, sin complicar la operación."
-            turnaround = "24 a 48 horas funcionando y probado"
-        elif 'web' in skills_text or 'catálogo' in skills_text or 'diseño' in skills_text:
-            hook = "Desarrollo **páginas web rápidas, catálogos interactivos, vectorizaciones y piezas visuales limpias** listas para usar en móvil y PC."
-            turnaround = "24 a 72 horas para entrega completa"
+            hook = "Configuro **bots de WhatsApp y automatizaciones prácticas (n8n / IA)** listas en 24-48 horas."
+            turnaround = "24 a 48 horas"
         else:
-            hook = "Puedo encargarme de esta tarea de forma práctica, rápida y cuidando cada detalle de lo que necesitas."
+            hook = "Me encargo de este proyecto de forma rápida, práctica y entregando archivos editables listos."
             turnaround = "24 a 48 horas"
 
-        if p_min and p_max:
-            pricing = f"Presupuesto: {curr} {int(p_min):,} - {int(p_max):,} (Pago por entregable)"
-        else:
-            pricing = "Precio fijo cerrado por tarea terminada"
-
-        subject = f"Propuesta directa y entrega rápida: {title}"
-        body = f"""¡Hola! Revisé lo que necesitas para **"{title}"** y puedo empezar hoy mismo.
+        pricing = f"{curr} {int(p_min):,} — {int(p_max):,}" if (p_min and p_max) else "Precio cerrado por entregable"
+        subject = f"Entrega en 24-48h: {title}"
+        body = f"""¡Hola! Revisé tu encargo **"{title}"** y puedo comenzar hoy mismo.
 
 {hook}
 
-**Cómo lo trabajamos fácil y rápido:**
-1. Me pasas los detalles o archivos base hoy.
-2. En **menos de 24-48 horas** te envío el primer avance real para que veas cómo va quedando y ajustemos lo que quieras.
-3. Te entrego los archivos finales editables y listos para usar.
+1. En **menos de 24 horas** te envío el primer avance real para validar cada detalle.
+2. Entrega rápida sin trámites complicados (Contacto directo en Colombia: +57 322 273 9034).
 
-Escríbeme por aquí para confirmar un par de detalles y arrancar de una vez. ¡Un saludo!"""
+¿Me compartes los detalles por aquí para arrancar de inmediato?"""
 
         return {
             'language': 'es',
