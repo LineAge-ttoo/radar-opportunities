@@ -1,118 +1,111 @@
-﻿import re
-
 class TechnicalProposalGenerator:
     """
-    Generates high-conversion, value-first technical proposals tailored
-    to the specific skills, problem, and requirements of each opportunity.
+    Genera mensajes directos (WhatsApp / Instagram DM / Facebook / Workana)
+    100% en español, prácticos, sin tecnicismos de ingeniería ni contratos legales.
     """
-
-    @staticmethod
-    def is_english(text):
-        common_en = ['the', 'and', 'with', 'for', 'you', 'are', 'looking', 'developer', 'experience']
-        common_es = ['el', 'la', 'para', 'con', 'experiencia', 'desarrollador', 'buscamos', 'equipo']
-        
-        lower = text.lower()
-        en_count = sum(1 for w in common_en if re.search(r'\b' + w + r'\b', lower))
-        es_count = sum(1 for w in common_es if re.search(r'\b' + w + r'\b', lower))
-        return en_count >= es_count
 
     @classmethod
     def generate_pitch(cls, opp):
-        title = opp.get('title', 'Project')
-        org = opp.get('organization', 'Client')
-        skills = opp.get('skills', [])
-        skills_str = ', '.join(skills[:3]) if skills else 'Automation & Software Development'
-        desc = opp.get('description', '')
+        title = opp.get('title', 'Proyecto')
+        org = opp.get('organization', 'Cliente').replace('(🇨🇴 Colombia)', '').strip()
+        skills_text = ' '.join(opp.get('skills', [])).lower()
+        obs = opp.get('observed_data', {})
+        offer_type = obs.get('offer_type', '')
+        wa_phone = obs.get('whatsapp_phone')
         p_min = opp.get('payment_min')
         p_max = opp.get('payment_max')
-        curr = opp.get('currency') or 'USD'
+        curr = opp.get('currency') or 'COP'
 
-        is_en = cls.is_english(f"{title} {desc}")
+        # 1. Clientes directos en Instagram / Facebook Colombia
+        if opp.get('opportunity_type') == 'cliente_directo_colombia':
+            if offer_type == 'planos_3d' or 'planos' in skills_text or '3d' in skills_text:
+                subject = f"Apoyo en Planos 2D/3D y Renders para {org}"
+                body = f"""¡Hola equipo de {org}! 👋 ¿Cómo están?
 
-        # Determine technical architecture hook
-        if any(s in skills for s in ['n8n', 'automation', 'workflow', 'bot']):
-            arch_hook_en = "I can architect this using an automated workflow with webhook triggers, automated validation, and retry logic to eliminate manual overhead completely."
-            arch_hook_es = "Puedo estructurar esto mediante un flujo automatizado con disparadores webhook, validación de datos y lógica de reintento para eliminar la fricción manual por completo."
-        elif any(s in skills for s in ['ai', 'llm', 'agent']):
-            arch_hook_en = "I can implement this with structured JSON outputs, robust function calling, and prompt grounding to ensure zero hallucination and production reliability."
-            arch_hook_es = "Puedo implementar esto con salidas estructuradas en JSON, llamadas a funciones y validación estricta para garantizar fiabilidad en producción."
-        elif any(s in skills for s in ['scraping', 'crawler']):
-            arch_hook_en = "I can build a resilient extraction pipeline with rate-limit evasion, automated proxy rotation, and structured database output."
-            arch_hook_es = "Puedo construir un pipeline de extracción resistente con gestión de límites de tasa y volcado estructurado directo a base de datos."
-        elif any(s in skills for s in ['unity', 'roblox', 'blender', '3d']):
-            arch_hook_en = "I can deliver optimized assets and clean scripting tailored to performance budgets and smooth gameplay interaction."
-            arch_hook_es = "Puedo entregar activos optimizados y código limpio ajustado a los límites de rendimiento para una experiencia fluida."
+Vi sus proyectos en redes y me gustó mucho su trabajo. Escribo porque elaboro **planos arquitectónicos 2D/3D, distribución de espacios, despieces de mobiliario y renders realistas** de entrega rápida para mostrarle al cliente cómo quedará su obra antes de iniciar.
+
+✅ Trabajo por tarea/proyecto puntual (sin contratos complicados ni mensualidades).
+✅ Entrego boceto / vista previa en 24-48 horas.
+✅ Pago fácil en Colombia (Nequi / Bancolombia / transferencia).
+
+¿Les gustaría que les envíe un par de muestras de planos y renders 3D por aquí para que me tengan a la mano en su próxima cotización?"""
+                pricing = f"COP ${int(p_min or 250000):,} - ${int(p_max or 850000):,} por proyecto (50% inicio / 50% entrega)".replace(',', '.')
+                turnaround = "24 a 48 horas por plano / render"
+
+            elif offer_type == 'whatsapp_bot' or 'whatsapp' in skills_text:
+                subject = f"Automatización de WhatsApp y Citas 24/7 para {org}"
+                body = f"""¡Hola {org}! 👋 ¿Cómo van?
+
+Los encontré en redes y noté que atienden a sus clientes por WhatsApp / mensajes directos. 
+
+Implemento **asistentes automáticos de WhatsApp e Instagram** que:
+1. Responden preguntas frecuentes, precios y ubicación al instante (24/7).
+2. Filtran a los clientes realmente interesados y agendan citas/visitas solas.
+3. Te evitan perder clientes cuando están ocupados o fuera de horario.
+
+No requiere contratos largos: lo dejo funcionando en 48 horas con un pago único accesible (Nequi / Bancolombia). ¿Te envío un video corto de 1 minuto por WhatsApp mostrando cómo respondería para tu negocio?"""
+                pricing = f"COP ${int(p_min or 300000):,} - ${int(p_max or 900000):,} pago único por montaje".replace(',', '.')
+                turnaround = "48 horas listo y funcionando"
+
+            else:
+                subject = f"Catálogo Digital Interactivo con Pedidos a WhatsApp para {org}"
+                body = f"""¡Hola {org}! 👋
+
+Vi su página en redes y quería proponerles algo muy práctico para vender más rápido: les armo un **Catálogo Digital / Página Web Interactiva** donde sus clientes ven fotos, precios actualizados, eligen lo que quieren y el pedido te llega armado directo a tu WhatsApp listo para despachar o reservar.
+
+✅ Sin comisiones por venta ni contratos complicados.
+✅ Listo en 2 a 3 días.
+✅ Pago en Colombia (Nequi / Bancolombia).
+
+¿Te paso un enlace de demostración por aquí para que veas cómo se ve desde el celular?"""
+                pricing = f"COP ${int(p_min or 250000):,} - ${int(p_max or 800000):,} pago único".replace(',', '.')
+                turnaround = "2 a 3 días"
+
+            return {
+                'language': 'es',
+                'subject': subject,
+                'body': body,
+                'pricing_recommendation': pricing,
+                'turnaround': turnaround,
+                'whatsapp_phone': wa_phone
+            }
+
+        # 2. Tareas en Workana / Freelancer.co
+        if 'planos' in skills_text or '3d' in skills_text or 'autocad' in skills_text:
+            hook = "Tengo experiencia práctica haciendo **planos 2D/3D, modelado (AutoCAD / Blender / STL / DWG) y renders listos para fabricación o presentación**."
+            turnaround = "24 a 48 horas para el primer avance / vista previa"
+        elif 'whatsapp' in skills_text or 'automatizaci' in skills_text or 'bot' in skills_text:
+            hook = "Me dedico a armar **automatizaciones prácticas y bots de WhatsApp / n8n / IA** que quedan funcionando rápido, sin complicar la operación."
+            turnaround = "24 a 48 horas funcionando y probado"
+        elif 'web' in skills_text or 'catálogo' in skills_text or 'diseño' in skills_text:
+            hook = "Desarrollo **páginas web rápidas, catálogos interactivos, vectorizaciones y piezas visuales limpias** listas para usar en móvil y PC."
+            turnaround = "24 a 72 horas para entrega completa"
         else:
-            arch_hook_en = "I can deliver a clean, modular, and well-tested implementation focusing on maintainability and speed to delivery."
-            arch_hook_es = "Puedo entregar una implementación limpia, modular y bien probada enfocada en mantenibilidad y rapidez de entrega."
+            hook = "Puedo encargarme de esta tarea de forma práctica, rápida y cuidando cada detalle de lo que necesitas."
+            turnaround = "24 a 48 horas"
 
-        # Pricing proposal
-        if p_max:
-            pricing_en = f"Target Budget: {curr} {int(p_max):,} (Milestone-based delivery)"
-            pricing_es = f"Presupuesto objetivo: {curr} {int(p_max):,} (Entrega por hitos)"
-        elif p_min:
-            pricing_en = f"Target Rate: {curr} {int(p_min):,} per milestone"
-            pricing_es = f"Tarifa objetivo: {curr} {int(p_min):,} por hito"
+        if p_min and p_max:
+            pricing = f"Presupuesto: {curr} {int(p_min):,} - {int(p_max):,} (Pago por entregable)"
         else:
-            pricing_en = "Flat-rate per milestone or flexible hourly rate depending on scope"
-            pricing_es = "Precio cerrado por hito o tarifa horaria flexible según alcance"
+            pricing = "Precio fijo cerrado por tarea terminada"
 
-        turnaround_en = "48 to 72 hours for initial working prototype / milestone 1"
-        turnaround_es = "48 a 72 horas para prototipo inicial funcional / hito 1"
+        subject = f"Propuesta directa y entrega rápida: {title}"
+        body = f"""¡Hola! Revisé lo que necesitas para **"{title}"** y puedo empezar hoy mismo.
 
-        if is_en:
-            subject = f"Technical Proposal: {title} | Solution & Architecture"
-            body = f"""Hi {org} Team,
+{hook}
 
-I came across your opening for "{title}" and reviewed your technical requirements.
+**Cómo lo trabajamos fácil y rápido:**
+1. Me pasas los detalles o archivos base hoy.
+2. En **menos de 24-48 horas** te envío el primer avance real para que veas cómo va quedando y ajustemos lo que quieras.
+3. Te entrego los archivos finales editables y listos para usar.
 
-### Why this is a great fit:
-I specialize in {skills_str}. {arch_hook_en}
-
-### Proposed Implementation Plan:
-1. **Scope & Architecture (Day 1):** Define core inputs/outputs and map integrations/data models.
-2. **Core Implementation (Days 2-3):** Build the functional system with full error-handling and automated tests.
-3. **Deployment & Handoff (Day 4):** Verify edge cases, provide concise documentation, and deploy.
-
-### Estimated Turnaround:
-{turnaround_en}.
-
-### Next Step:
-If you have 5 minutes, let me know when works for a brief chat or reply here, and I'd be glad to share a quick architecture diagram tailored to your needs.
-
-Best regards,
-David
-Software & Automation Specialist
-"""
-        else:
-            subject = f"Propuesta Técnica: {title} | Arquitectura y Entrega Rápida"
-            body = f"""Hola equipo de {org},
-
-Revisé con detalle los requerimientos para "{title}".
-
-### Ajuste Técnico y Solución:
-Me especializo en {skills_str}. {arch_hook_es}
-
-### Plan de Trabajo Propuesto:
-1. **Definición y Arquitectura (Día 1):** Mapeo de entradas, salidas y estructura de datos.
-2. **Desarrollo del Core (Días 2-3):** Implementación de la solución con manejo robusto de errores y pruebas.
-3. **Entrega y Documentación (Día 4):** Puesta en marcha, validación de casos borde y transferencia.
-
-### Tiempo Estimado de Entrega:
-{turnaround_es}.
-
-### Siguiente Paso:
-¿Podemos coordinar una breve conversación de 5 minutos o responder por aquí para compartirte una demo o diagrama de la solución?
-
-Saludos cordiales,
-David
-Especialista en Software y Automatización
-"""
+Escríbeme por aquí para confirmar un par de detalles y arrancar de una vez. ¡Un saludo!"""
 
         return {
-            'language': 'en' if is_en else 'es',
+            'language': 'es',
             'subject': subject,
-            'body': body.strip(),
-            'pricing_recommendation': pricing_en if is_en else pricing_es,
-            'turnaround': turnaround_en if is_en else turnaround_es
+            'body': body,
+            'pricing_recommendation': pricing,
+            'turnaround': turnaround,
+            'whatsapp_phone': None
         }

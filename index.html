@@ -5,33 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="RADAR">
-    <meta name="theme-color" content="#090d16">
+    <meta name="apple-mobile-web-app-title" content="RADAR CO">
+    <meta name="theme-color" content="#070b14">
     <link rel="manifest" href="./manifest.json">
-    <title>RADAR v2 — Motor de Oportunidades & Ingresos en Vivo</title>
+    <title>RADAR Colombia — Automatizaciones, Planos 3D, Web & Tareas Reales</title>
     <style>
         :root {
             --bg-base: #070b14;
             --bg-surface: #111827;
             --bg-card: #162033;
-            --bg-card-hover: #1c2942;
+            --bg-card-hover: #1d2b44;
             --border: #24324d;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --accent: #3b82f6;
-            --accent-glow: rgba(59, 130, 246, 0.25);
             --priority: #10b981;
             --priority-glow: rgba(16, 185, 129, 0.2);
             --build: #a855f7;
             --build-glow: rgba(168, 85, 247, 0.2);
             --investigate: #0ea5e9;
             --gold: #f59e0b;
-            --danger: #ef4444;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }
         body { background: var(--bg-base); color: var(--text-main); min-height: 100vh; padding-bottom: 80px; line-height: 1.45; }
         header {
-            background: rgba(17, 24, 39, 0.92);
+            background: rgba(17, 24, 39, 0.94);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
@@ -55,22 +53,15 @@
             background: var(--priority);
             border-radius: 50%;
             box-shadow: 0 0 12px var(--priority);
-            animation: pulseAnim 2s infinite;
-        }
-        @keyframes pulseAnim {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            50% { transform: scale(1.15); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0.8; }
         }
         .title {
-            font-size: 1.25rem;
+            font-size: 1.22rem;
             font-weight: 800;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #34d399, #60a5fa, #c084fc);
+            background: linear-gradient(135deg, #fbbf24, #34d399, #60a5fa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .subtitle { font-size: 0.68rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.04em; }
+        .subtitle { font-size: 0.68rem; color: var(--text-muted); font-weight: 600; }
         .actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
         .btn-action {
             background: var(--bg-card);
@@ -78,13 +69,12 @@
             color: var(--text-main);
             padding: 8px 12px;
             border-radius: 8px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.15s ease;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             text-decoration: none;
         }
         .btn-action:hover { border-color: var(--accent); background: var(--bg-card-hover); }
@@ -92,16 +82,13 @@
             background: linear-gradient(135deg, #10b981, #2563eb);
             color: #fff;
             border: none;
-            padding: 9px 16px;
+            padding: 9px 15px;
             border-radius: 8px;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 700;
             cursor: pointer;
             box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
-            transition: opacity 0.15s ease;
         }
-        .btn-scan:hover { opacity: 0.92; }
-        .btn-scan:disabled { opacity: 0.6; cursor: wait; }
         .container { max-width: 1280px; margin: 0 auto; padding: 16px; }
         .status-banner {
             background: rgba(16, 185, 129, 0.08);
@@ -117,6 +104,30 @@
             font-size: 0.8rem;
             color: #d1fae5;
         }
+        /* Buscador Directo de Clientes en Colombia (Instagram / Facebook / Maps) */
+        .social-hunter {
+            background: linear-gradient(135deg, rgba(22, 32, 51, 0.95), rgba(30, 27, 75, 0.85));
+            border: 1px solid #3b82f6;
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 16px;
+        }
+        .sh-title { font-size: 0.88rem; font-weight: 800; color: #fbbf24; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+        .sh-grid { display: grid; grid-template-columns: 1fr 1.3fr auto auto auto; gap: 8px; align-items: center; }
+        @media (max-width: 820px) { .sh-grid { grid-template-columns: 1fr; } }
+        .sh-select {
+            background: var(--bg-base);
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 9px 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .btn-ig { background: linear-gradient(135deg, #ec4899, #8b5cf6); color: #fff; border: none; padding: 9px 12px; border-radius: 8px; font-size: 0.78rem; font-weight: 700; cursor: pointer; }
+        .btn-fb { background: #1877f2; color: #fff; border: none; padding: 9px 12px; border-radius: 8px; font-size: 0.78rem; font-weight: 700; cursor: pointer; }
+        .btn-maps { background: #059669; color: #fff; border: none; padding: 9px 12px; border-radius: 8px; font-size: 0.78rem; font-weight: 700; cursor: pointer; }
+
         .kpis {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -132,7 +143,7 @@
             transition: transform 0.12s ease, border-color 0.12s ease;
         }
         .kpi:hover { transform: translateY(-2px); border-color: var(--accent); }
-        .kpi-val { font-size: 1.55rem; font-weight: 800; }
+        .kpi-val { font-size: 1.5rem; font-weight: 800; }
         .kpi-lbl { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; margin-top: 2px; }
         .panel {
             background: var(--bg-surface);
@@ -147,9 +158,7 @@
             gap: 10px;
             margin-bottom: 12px;
         }
-        @media (max-width: 640px) {
-            .search-row { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 640px) { .search-row { grid-template-columns: 1fr; } }
         .search-box {
             width: 100%;
             background: var(--bg-card);
@@ -160,16 +169,14 @@
             font-size: 0.88rem;
             outline: none;
         }
-        .search-box:focus { border-color: var(--accent); }
         .sort-select {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 10px 12px;
             color: #fff;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            outline: none;
             cursor: pointer;
         }
         .pills {
@@ -177,7 +184,6 @@
             gap: 8px;
             overflow-x: auto;
             padding-bottom: 6px;
-            scrollbar-width: thin;
         }
         .pill {
             background: var(--bg-card);
@@ -189,39 +195,14 @@
             font-weight: 600;
             cursor: pointer;
             white-space: nowrap;
-            transition: all 0.15s ease;
         }
-        .pill:hover { color: #fff; border-color: var(--accent); }
         .pill.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-        .quick-skills {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid rgba(255,255,255,0.06);
-        }
-        .qskill-lbl { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; margin-right: 4px; }
-        .qskill {
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.25);
-            color: #93c5fd;
-            padding: 3px 9px;
-            border-radius: 6px;
-            font-size: 0.72rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        .qskill:hover { background: var(--accent); color: #fff; }
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 16px;
         }
-        @media (max-width: 400px) {
-            .grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 400px) { .grid { grid-template-columns: 1fr; } }
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -230,9 +211,9 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: border-color 0.15s ease, transform 0.15s ease;
+            transition: border-color 0.15s ease;
         }
-        .card:hover { border-color: #3b82f6; transform: translateY(-2px); }
+        .card:hover { border-color: #3b82f6; }
         .card-prio { border-left: 4px solid var(--priority); }
         .card-build { border-left: 4px solid var(--build); }
         .card-inv { border-left: 4px solid var(--investigate); }
@@ -242,12 +223,10 @@
             padding: 3px 8px;
             border-radius: 5px;
             text-transform: uppercase;
-            letter-spacing: 0.03em;
         }
         .badge-prio { background: var(--priority-glow); color: #34d399; border: 1px solid #10b981; }
         .badge-build { background: var(--build-glow); color: #c084fc; border: 1px solid #a855f7; }
         .badge-inv { background: rgba(14, 165, 233, 0.2); color: #38bdf8; border: 1px solid #0ea5e9; }
-        .badge-obs { background: rgba(100, 116, 139, 0.2); color: #94a3b8; border: 1px solid #64748b; }
         .fresh-tag {
             font-size: 0.7rem;
             font-weight: 700;
@@ -258,10 +237,10 @@
             border: 1px solid rgba(245, 158, 11, 0.3);
         }
         .salary {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.25);
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.3);
             color: #34d399;
-            padding: 6px 10px;
+            padding: 7px 10px;
             border-radius: 7px;
             font-size: 0.82rem;
             font-weight: 700;
@@ -290,9 +269,8 @@
             color: #cbd5e1;
             margin-bottom: 12px;
         }
-        .insights p + p { margin-top: 4px; }
         .desc-preview {
-            font-size: 0.75rem;
+            font-size: 0.76rem;
             color: var(--text-muted);
             margin-bottom: 10px;
             display: -webkit-box;
@@ -311,17 +289,17 @@
             justify-content: center;
             padding: 8px 10px;
             border-radius: 7px;
-            font-size: 0.76rem;
+            font-size: 0.75rem;
             font-weight: 700;
             text-decoration: none;
             cursor: pointer;
             border: none;
             text-align: center;
         }
+        .cbtn-wa { background: #25d366; color: #042f16; }
         .cbtn-pitch { background: linear-gradient(135deg, #10b981, #059669); color: #fff; }
         .cbtn-bp { background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: #fff; }
         .cbtn-link { background: var(--bg-surface); border: 1px solid var(--border); color: #fff; }
-        .cbtn-link:hover { border-color: var(--accent); }
         .cselect {
             width: 100%;
             background: var(--bg-surface);
@@ -339,7 +317,6 @@
             inset: 0;
             background: rgba(0, 0, 0, 0.82);
             backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
             display: none;
             align-items: center;
             justify-content: center;
@@ -364,8 +341,8 @@
             border-bottom: 1px solid var(--border);
             padding-bottom: 10px;
         }
-        .mtitle { font-size: 1.1rem; color: #fff; font-weight: 800; }
-        .mclose { background: none; border: none; color: #94a3b8; font-size: 1.5rem; cursor: pointer; line-height: 1; }
+        .mtitle { font-size: 1.08rem; color: #fff; font-weight: 800; }
+        .mclose { background: none; border: none; color: #94a3b8; font-size: 1.5rem; cursor: pointer; }
         .field { margin-bottom: 14px; }
         .flbl {
             font-size: 0.74rem;
@@ -396,7 +373,6 @@
             font-weight: 700;
             cursor: pointer;
         }
-        .btn-cp:hover { background: var(--accent); color: #fff; }
         .toast {
             position: fixed;
             bottom: 24px;
@@ -419,84 +395,92 @@
             <div class="brand">
                 <div class="pulse"></div>
                 <div>
-                    <div class="title">RADAR ENGINE v2</div>
-                    <div class="subtitle">LIVE OPPORTUNITY & INCOME DISCOVERY (WEB • SAFARI • CLOUD)</div>
+                    <div class="title">🇨🇴 RADAR COLOMBIA & TAREAS PRÁCTICAS</div>
+                    <div class="subtitle">AUTOMATIZACIONES • PLANOS & 3D • PÁGINAS WEB • SIN CONTRATOS LEGALES</div>
                 </div>
             </div>
             <div class="actions">
                 <button class="btn-action" onclick="openSafariModal()">📲 Safari / Móvil</button>
                 <button class="btn-action" onclick="downloadOfflineApp()">📥 Descargar App</button>
-                <button class="btn-action" onclick="exportCSV()">📊 Exportar CSV</button>
-                <button id="btnScan" class="btn-scan" onclick="triggerLiveScan()">⚡ Buscar Ofertas Nuevas en Vivo</button>
+                <button class="btn-action" onclick="exportCSV()">📊 Exportar Excel/CSV</button>
+                <button id="btnScan" class="btn-scan" onclick="triggerLiveScan()">⚡ Buscar Nuevos Clientes y Tareas</button>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <div class="status-banner" id="statusBanner">
+        <div class="status-banner">
             <div>
-                <strong>🟢 RADAR Activo:</strong> <span id="statusText">Cargando oportunidades reales...</span>
+                <strong>🟢 Modo Práctico Activo (Cero Ingeniería de Sistemas):</strong> <span id="statusText">Cargando clientes en Colombia, Instagram, Facebook, Workana y tareas rápidas...</span>
             </div>
-            <div style="font-size:0.74rem;color:#93c5fd;" id="lastScanTime">Sincronizado</div>
+            <div style="font-size:0.74rem;color:#93c5fd;" id="lastScanTime">Actualizado hoy</div>
+        </div>
+
+        <!-- Buscador Directo en Instagram, Facebook y Google Maps Colombia -->
+        <div class="social-hunter">
+            <div class="sh-title">🔎 Buscador Directo de Clientes en Colombia (Instagram, Facebook y Google Maps) — Copia el mensaje y abre perfiles reales:</div>
+            <div class="sh-grid">
+                <select id="shCity" class="sh-select">
+                    <option value="Colombia">📍 Toda Colombia</option>
+                    <option value="Bogotá">📍 Bogotá</option>
+                    <option value="Medellín">📍 Medellín</option>
+                    <option value="Cali">📍 Cali</option>
+                    <option value="Neiva Huila">📍 Neiva / Huila</option>
+                    <option value="Barranquilla">📍 Barranquilla</option>
+                    <option value="Bucaramanga">📍 Bucaramanga</option>
+                    <option value="Pereira">📍 Pereira / Eje Cafetero</option>
+                </select>
+                <select id="shService" class="sh-select">
+                    <option value="planos">📐 Vender Planos 2D/3D y Renders (a Remodeladores, Arquitectos y Cocinas)</option>
+                    <option value="whatsapp">🤖 Vender Bot de WhatsApp 24/7 (a Clínicas, Estéticas e Inmobiliarias)</option>
+                    <option value="catalogo">🌐 Vender Catálogo Digital / Web con Pedidos a WhatsApp (a Tiendas, Glampings y Restaurantes)</option>
+                </select>
+                <button class="btn-ig" onclick="launchSocialHunt('instagram')">📸 Buscar en Instagram</button>
+                <button class="btn-fb" onclick="launchSocialHunt('facebook')">📘 Buscar en Facebook</button>
+                <button class="btn-maps" onclick="launchSocialHunt('maps')">🗺️ Buscar en Maps CO</button>
+            </div>
         </div>
 
         <div class="kpis">
-            <div class="kpi" onclick="setDec('', document.getElementById('pillAll'))">
+            <div class="kpi" onclick="setSpec('', document.getElementById('pillAll'))">
                 <div class="kpi-val" id="kpiTotal">0</div>
-                <div class="kpi-lbl">Oportunidades Activas</div>
+                <div class="kpi-lbl">Trabajos & Clientes</div>
             </div>
-            <div class="kpi" style="border-top:3px solid var(--priority);" onclick="setDec('PRIORIDAD', document.getElementById('pillPrio'))">
-                <div class="kpi-val" id="kpiPrio" style="color:#34d399;">0</div>
-                <div class="kpi-lbl">🚀 Prioridad</div>
+            <div class="kpi" style="border-top:3px solid #fbbf24;" onclick="setSpec('colombia', document.getElementById('pillCol'))">
+                <div class="kpi-val" id="kpiCol" style="color:#fbbf24;">0</div>
+                <div class="kpi-lbl">🇨🇴 Clientes Colombia</div>
             </div>
-            <div class="kpi" style="border-top:3px solid var(--build);" onclick="setDec('CONSTRUIR_Y_VENDER', document.getElementById('pillBuild'))">
-                <div class="kpi-val" id="kpiBuild" style="color:#c084fc;">0</div>
-                <div class="kpi-lbl">💡 Construir y Vender</div>
+            <div class="kpi" style="border-top:3px solid var(--priority);" onclick="setSpec('planos', document.getElementById('pillPlanos'))">
+                <div class="kpi-val" id="kpiPlanos" style="color:#34d399;">0</div>
+                <div class="kpi-lbl">📐 Planos & 3D</div>
             </div>
-            <div class="kpi" style="border-top:3px solid var(--investigate);" onclick="setDec('INVESTIGAR', document.getElementById('pillInv'))">
-                <div class="kpi-val" id="kpiInv" style="color:#38bdf8;">0</div>
-                <div class="kpi-lbl">🔍 Investigar</div>
+            <div class="kpi" style="border-top:3px solid var(--build);" onclick="setSpec('auto', document.getElementById('pillAuto'))">
+                <div class="kpi-val" id="kpiAuto" style="color:#c084fc;">0</div>
+                <div class="kpi-lbl">🤖 Bots WhatsApp & IA</div>
             </div>
-            <div class="kpi" style="border-top:3px solid var(--gold);" onclick="setSpec('fresh', document.getElementById('pillFresh'))">
-                <div class="kpi-val" id="kpiFresh" style="color:#fbbf24;">0</div>
-                <div class="kpi-lbl">🔥 Nuevas (< 72h)</div>
+            <div class="kpi" style="border-top:3px solid var(--investigate);" onclick="setSpec('web', document.getElementById('pillWeb'))">
+                <div class="kpi-val" id="kpiWeb" style="color:#38bdf8;">0</div>
+                <div class="kpi-lbl">🌐 Web, Diseño & Tareas</div>
             </div>
         </div>
 
         <div class="panel">
             <div class="search-row">
-                <input type="text" id="sInput" class="search-box" placeholder="Buscar por tecnología, empresa o problema (ej: n8n, python, ai, bot, scraping, react, unity, 3d)..." oninput="filterData()">
+                <input type="text" id="sInput" class="search-box" placeholder="Filtrar por palabra (ej: planos, whatsapp, remodelaciones, 3d, render, colombia, catalogo, bot, diseño)..." oninput="filterData()">
                 <select id="sortSelect" class="sort-select" onchange="filterData()">
-                    <option value="smart">🔥 Orden: Smart Radar (Nuevas + Score)</option>
-                    <option value="newest">🕒 Orden: Más Novedosas Primero</option>
-                    <option value="score">⭐ Orden: Mayor Score Técnico</option>
-                    <option value="pay">💰 Orden: Mayor Pago Confirmado</option>
+                    <option value="colombia">🇨🇴 Orden: Clientes Colombia Primero</option>
+                    <option value="newest">🔥 Orden: Más Recientes Primero</option>
+                    <option value="score">⭐ Orden: Más Fáciles y Mejor Pagados</option>
                 </select>
             </div>
             <div class="pills">
-                <button id="pillAll" class="pill active" onclick="setDec('', this)">Todas</button>
-                <button id="pillPrio" class="pill" onclick="setDec('PRIORIDAD', this)">🚀 Prioridad</button>
-                <button id="pillBuild" class="pill" onclick="setDec('CONSTRUIR_Y_VENDER', this)">💡 Construir y Vender</button>
-                <button id="pillInv" class="pill" onclick="setDec('INVESTIGAR', this)">🔍 Investigar</button>
-                <button id="pillFresh" class="pill" onclick="setSpec('fresh', this)">🔥 Recientes (< 72h)</button>
-                <button class="pill" onclick="setSpec('paid', this)">💰 Con Pago Explícito</button>
-                <button class="pill" onclick="setSpec('freelance', this)">⚡ Contratos / Freelance</button>
-                <button class="pill" onclick="setSpec('bounty', this)">🎯 Bounties</button>
+                <button id="pillAll" class="pill active" onclick="setSpec('', this)">Todas las Oportunidades</button>
+                <button id="pillCol" class="pill" onclick="setSpec('colombia', this)">🇨🇴 Clientes en Colombia (IG / FB / Workana CO)</button>
+                <button id="pillPlanos" class="pill" onclick="setSpec('planos', this)">📐 Planos, AutoCAD, 3D & Renders</button>
+                <button id="pillAuto" class="pill" onclick="setSpec('auto', this)">🤖 Bots de WhatsApp & Automatización</button>
+                <button id="pillWeb" class="pill" onclick="setSpec('web', this)">🌐 Páginas Web, Catálogos & Diseño</button>
+                <button class="pill" onclick="setSpec('social', this)">📸 Solo Instagram & Facebook Colombia</button>
                 <button class="pill" onclick="setSpec('saved', this)">📌 En Seguimiento CRM</button>
-            </div>
-            <div class="quick-skills">
-                <span class="qskill-lbl">Filtro Rápido:</span>
-                <span class="qskill" onclick="fsk('n8n')">n8n</span>
-                <span class="qskill" onclick="fsk('automation')">automation</span>
-                <span class="qskill" onclick="fsk('python')">python</span>
-                <span class="qskill" onclick="fsk('ai')">AI / LLM</span>
-                <span class="qskill" onclick="fsk('scraping')">scraping</span>
-                <span class="qskill" onclick="fsk('bot')">bots</span>
-                <span class="qskill" onclick="fsk('api')">APIs</span>
-                <span class="qskill" onclick="fsk('typescript')">typescript</span>
-                <span class="qskill" onclick="fsk('react')">react</span>
-                <span class="qskill" onclick="fsk('unity')">unity / 3D</span>
-                <span class="qskill" style="background:rgba(239,68,68,0.15);color:#fca5a5;border-color:rgba(239,68,68,0.3);" onclick="fsk('')">✕ Limpiar</span>
             </div>
         </div>
 
@@ -508,29 +492,29 @@
         <div class="mbox" onclick="event.stopPropagation()">
             <div class="mhead">
                 <div>
-                    <h3 class="mtitle" id="pmTitle">Propuesta Técnica (Sniper Pitch)</h3>
+                    <h3 class="mtitle" id="pmTitle">Mensaje Listo para Enviar (Sin Contratos Legales)</h3>
                     <div id="pmTarget" style="font-size:0.76rem;color:#93c5fd;margin-top:2px;"></div>
                 </div>
                 <button class="mclose" onclick="closeMDirect()">&times;</button>
             </div>
             <div class="field">
                 <div class="flbl">
-                    <span>ASUNTO RECOMENDADO</span>
-                    <button class="btn-cp" onclick="cp('pmSub')">📋 Copiar Asunto</button>
+                    <span>ASUNTO / TÍTULO CORTO</span>
+                    <button class="btn-cp" onclick="cp('pmSub')">📋 Copiar</button>
                 </div>
                 <div id="pmSub" class="fbody"></div>
             </div>
             <div class="field">
                 <div class="flbl">
-                    <span>CUERPO DE LA PROPUESTA (LISTA PARA ENVIAR)</span>
-                    <button class="btn-cp" onclick="cp('pmBody')">📋 Copiar Propuesta</button>
+                    <span>MENSAJE PARA WHATSAPP / INSTAGRAM DM / PROPUESTA</span>
+                    <button class="btn-cp" onclick="cp('pmBody')">📋 Copiar Mensaje</button>
                 </div>
                 <div id="pmBody" class="fbody"></div>
             </div>
             <div style="font-size:0.78rem;color:var(--text-muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);">
-                <div>💰 Tarifa sugerida: <strong id="pmRate" style="color:#34d399;"></strong></div>
-                <div>⏱️ Entrega MVP: <strong id="pmTurn" style="color:#60a5fa;"></strong></div>
-                <a id="pmLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-cp" style="text-decoration:none;background:#2563eb;color:#fff;">↗ Ir a Postular Ahora</a>
+                <div>💰 Cobro sugerido: <strong id="pmRate" style="color:#34d399;"></strong></div>
+                <div>⏱️ Entrega: <strong id="pmTurn" style="color:#60a5fa;"></strong></div>
+                <a id="pmLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-cp" style="text-decoration:none;background:#2563eb;color:#fff;">↗ Abrir Perfil / Proyecto</a>
             </div>
         </div>
     </div>
@@ -540,55 +524,47 @@
         <div class="mbox" onclick="event.stopPropagation()">
             <div class="mhead">
                 <div>
-                    <h3 class="mtitle" id="bpTitle">Blueprint de Producto</h3>
-                    <div style="font-size:0.76rem;color:#c084fc;margin-top:2px;">Construir Una Vez y Vender Múltiples Veces</div>
+                    <h3 class="mtitle" id="bpTitle">Paquete Listo para Vender en Colombia</h3>
+                    <div style="font-size:0.76rem;color:#c084fc;margin-top:2px;">Armar una vez y vender por Nequi / Bancolombia</div>
                 </div>
                 <button class="mclose" onclick="closeMDirect()">&times;</button>
             </div>
             <div class="field">
-                <div class="flbl"><span>CONCEPTO Y ENTREGABLE CONCRETO</span></div>
+                <div class="flbl"><span>QUÉ ENTREGAS EXACTAMENTE</span></div>
                 <div id="bpDeliv" class="fbody"></div>
             </div>
             <div class="field">
-                <div class="flbl"><span>MERCADO OBJETIVO Y PRECIO SUGERIDO</span></div>
+                <div class="flbl"><span>A QUIÉN SE LO VENDES Y CUÁNTO COBRAR EN PESOS (COP)</span></div>
                 <div id="bpMarket" class="fbody"></div>
             </div>
             <div class="field">
                 <div class="flbl">
-                    <span>GUIÓN DE PROSPECCIÓN EN FRÍO (OUTREACH)</span>
-                    <button class="btn-cp" onclick="cp('bpOut')">📋 Copiar Guión</button>
+                    <span>MENSAJE CORTO DE WHATSAPP / INSTAGRAM DM</span>
+                    <button class="btn-cp" onclick="cp('bpOut')">📋 Copiar Mensaje</button>
                 </div>
                 <div id="bpOut" class="fbody"></div>
             </div>
         </div>
     </div>
 
-    <!-- Safari / Mobile & Cloud Info Modal -->
+    <!-- Safari / Mobile Modal -->
     <div id="safariModal" class="modal" onclick="closeM(event)">
         <div class="mbox" onclick="event.stopPropagation()">
             <div class="mhead">
                 <div>
-                    <h3 class="mtitle">📲 Acceso Universal: Safari, iPhone, Vercel & GitHub</h3>
-                    <div style="font-size:0.76rem;color:#34d399;margin-top:2px;">Abre, instala o descarga RADAR en cualquier momento</div>
+                    <h3 class="mtitle">📲 Usar en Safari (iPhone / iPad / Mac) o Descargar</h3>
                 </div>
                 <button class="mclose" onclick="closeMDirect()">&times;</button>
             </div>
             <div class="field">
-                <div class="flbl"><span>1. ENLACE WEB EN LA NUBE (24/7 SIN DEPENDER DE LA PC)</span></div>
-                <div class="fbody" id="cloudLinksBox">• Web App Pública (GitHub Pages): https://lineage-ttoo.github.io/radar-opportunities/
-• Repositorio GitHub: https://github.com/LineAge-ttoo/radar-opportunities
-• Red Local (Mismo Wi-Fi): http://<span id="modalIp">127.0.0.1</span>:8080</div>
+                <div class="flbl"><span>ENLACE PÚBLICO 24/7</span></div>
+                <div class="fbody">https://lineage-ttoo.github.io/radar-opportunities/</div>
             </div>
             <div class="field">
-                <div class="flbl"><span>2. CÓMO INSTALAR EN SAFARI (iPHONE / iPAD / MAC)</span></div>
-                <div class="fbody">1. Abre el enlace de RADAR en Safari.
-2. Toca el botón "Compartir" (icono de cuadrado con flecha hacia arriba ⬆️).
-3. Selecciona "Agregar a la pantalla de inicio" (Add to Home Screen).
-4. ¡Listo! Tendrás el ícono de RADAR como una aplicación nativa y podrás pulsar "⚡ Buscar Ofertas Nuevas en Vivo" en cualquier momento para consultar las APIs directamente desde tu teléfono.</div>
-            </div>
-            <div class="field">
-                <div class="flbl"><span>3. MODO DESCARGABLE AUTÓNOMO (OFFLINE)</span></div>
-                <div class="fbody">Haz clic en el botón "📥 Descargar App" arriba en la barra superior para guardar un archivo HTML único con todas las ofertas y propuestas actuales integradas. Funciona incluso sin internet.</div>
+                <div class="flbl"><span>INSTALAR EN SAFARI (PANTALLA DE INICIO)</span></div>
+                <div class="fbody">1. Abre el enlace en Safari en tu iPhone o iPad.
+2. Toca el botón Compartir (⬆️) y elige "Agregar a la pantalla de inicio".
+3. También puedes tocar "📥 Descargar App" arriba para bajar el archivo HTML completo a tu teléfono o computador y abrirlo sin internet.</div>
             </div>
         </div>
     </div>
@@ -597,10 +573,8 @@
 
     <script>
         let opps = [];
-        let curDec = '';
         let curSpec = '';
-        const STORAGE_KEY_STATUS = 'radar_crm_statuses_v2';
-        const STORAGE_KEY_LIVE_OPPS = 'radar_live_cached_opps_v2';
+        const STORAGE_KEY_STATUS = 'radar_co_statuses_v3';
 
         function getSavedStatuses() {
             try { return JSON.parse(localStorage.getItem(STORAGE_KEY_STATUS) || '{}'); }
@@ -615,117 +589,6 @@
             } catch (e) {}
         }
 
-        function computeFreshness(pubDateStr) {
-            if (!pubDateStr) return { ageHours: 48, label: '⚡ Reciente', bonus: 8 };
-            const ts = Date.parse(pubDateStr);
-            if (isNaN(ts)) return { ageHours: 48, label: '⚡ Reciente', bonus: 8 };
-            const ageHours = Math.max(0.5, (Date.now() - ts) / 3600000);
-            if (ageHours <= 8) return { ageHours, label: '🔥 Hace ' + Math.max(1, Math.round(ageHours)) + 'h', bonus: 18 };
-            if (ageHours <= 24) return { ageHours, label: '🔥 Publicado Hoy', bonus: 15 };
-            if (ageHours <= 72) return { ageHours, label: '⚡ Hace ' + Math.max(1, Math.floor(ageHours / 24)) + 'd', bonus: 10 };
-            if (ageHours <= 168) return { ageHours, label: '🟢 Hace ' + Math.floor(ageHours / 24) + 'd', bonus: 5 };
-            return { ageHours, label: 'Hace ' + Math.floor(ageHours / 24) + 'd', bonus: 0 };
-        }
-
-        function applyLocalStatusesAndFreshness(list) {
-            const savedMap = getSavedStatuses();
-            const seen = new Set();
-            const clean = [];
-            for (const o of list) {
-                if (!o || !o.opportunity_id || seen.has(o.opportunity_id)) continue;
-                seen.add(o.opportunity_id);
-                if (savedMap[o.opportunity_id]) {
-                    o.status = savedMap[o.opportunity_id];
-                } else if (!o.status || o.status === 'NEW') {
-                    o.status = 'NUEVA';
-                }
-                const fr = computeFreshness(o.published_at || o.discovered_at);
-                if (!o.estimated_data) o.estimated_data = {};
-                o.estimated_data.age_hours = fr.ageHours;
-                o.estimated_data.freshness_label = fr.label;
-                clean.push(o);
-            }
-            return clean;
-        }
-
-        async function loadInitialData() {
-            // If offline standalone snapshot is embedded in window.__RADAR_EMBEDDED_DATA__
-            if (window.__RADAR_EMBEDDED_DATA__ && Array.isArray(window.__RADAR_EMBEDDED_DATA__)) {
-                opps = applyLocalStatusesAndFreshness(window.__RADAR_EMBEDDED_DATA__);
-                updateDashboardCounts();
-                filterData();
-                document.getElementById('statusText').innerText = opps.length + ' oportunidades cargadas (Modo Portátil Autónomo). Pulsa "Buscar Ofertas Nuevas en Vivo" para actualizar.';
-                return;
-            }
-
-            const candidateUrls = [
-                '/api/opportunities?limit=250',
-                './latest_scan.json',
-                './app/latest_scan.json',
-                './data/opportunities/latest_scan.json'
-            ];
-
-            let loaded = false;
-            for (const url of candidateUrls) {
-                try {
-                    const res = await fetch(url, { cache: 'no-store' });
-                    if (res.ok) {
-                        const data = await res.json();
-                        const fetchedOpps = data.opportunities || [];
-                        if (fetchedOpps.length > 0) {
-                            // Merge with any browser-discovered live opportunities stored locally
-                            let cachedLive = [];
-                            try { cachedLive = JSON.parse(localStorage.getItem(STORAGE_KEY_LIVE_OPPS) || '[]'); } catch (e) {}
-                            opps = applyLocalStatusesAndFreshness([...cachedLive, ...fetchedOpps]);
-                            loaded = true;
-                            if (data.meta && data.meta.started_at) {
-                                const d = new Date(data.meta.started_at);
-                                document.getElementById('lastScanTime').innerText = 'Último scan: ' + d.toLocaleString();
-                            }
-                            break;
-                        }
-                    }
-                } catch (e) {}
-            }
-
-            if (loaded) {
-                updateDashboardCounts();
-                filterData();
-                document.getElementById('statusText').innerText = opps.length + ' oportunidades reales listas para postular (6 fuentes activas).';
-                fetchServerIp();
-            } else {
-                document.getElementById('statusText').innerText = 'Conectando en directo a las fuentes globales de oportunidades...';
-                await triggerLiveScan();
-            }
-        }
-
-        async function fetchServerIp() {
-            try {
-                const res = await fetch('/api/stats');
-                if (res.ok) {
-                    const s = await res.json();
-                    if (s.local_ip) {
-                        const el = document.getElementById('modalIp');
-                        if (el) el.innerText = s.local_ip;
-                    }
-                }
-            } catch (e) {}
-        }
-
-        function updateDashboardCounts() {
-            const total = opps.length;
-            const prio = opps.filter(o => o.decision === 'PRIORIDAD').length;
-            const build = opps.filter(o => o.decision === 'CONSTRUIR_Y_VENDER').length;
-            const inv = opps.filter(o => o.decision === 'INVESTIGAR').length;
-            const fresh = opps.filter(o => (o.estimated_data?.age_hours || 999) <= 72).length;
-
-            document.getElementById('kpiTotal').innerText = total;
-            document.getElementById('kpiPrio').innerText = prio;
-            document.getElementById('kpiBuild').innerText = build;
-            document.getElementById('kpiInv').innerText = inv;
-            document.getElementById('kpiFresh').innerText = fresh;
-        }
-
         function escapeHtml(str) {
             return String(str || '')
                 .replace(/&/g, '&amp;')
@@ -734,69 +597,149 @@
                 .replace(/"/g, '&quot;');
         }
 
+        function prepareOpportunities(list) {
+            const savedMap = getSavedStatuses();
+            const seen = new Set();
+            const clean = [];
+            for (const o of list) {
+                if (!o || !o.opportunity_id || seen.has(o.opportunity_id)) continue;
+                seen.add(o.opportunity_id);
+                if (savedMap[o.opportunity_id]) o.status = savedMap[o.opportunity_id];
+                else if (!o.status || o.status === 'NEW') o.status = 'NUEVA';
+                clean.push(o);
+            }
+            return clean;
+        }
+
+        async function loadInitialData() {
+            if (window.__RADAR_EMBEDDED_DATA__ && Array.isArray(window.__RADAR_EMBEDDED_DATA__)) {
+                opps = prepareOpportunities(window.__RADAR_EMBEDDED_DATA__);
+                updateCounts();
+                filterData();
+                document.getElementById('statusText').innerText = opps.length + ' clientes y tareas prácticas cargadas (Modo Descargado).';
+                return;
+            }
+
+            const urls = [
+                '/api/opportunities?limit=200',
+                './latest_scan.json',
+                './app/latest_scan.json',
+                './data/opportunities/latest_scan.json'
+            ];
+
+            for (const u of urls) {
+                try {
+                    const res = await fetch(u + (u.includes('?') ? '&' : '?') + '_t=' + Date.now(), { cache: 'no-store' });
+                    if (res.ok) {
+                        const data = await res.json();
+                        if (data.opportunities && data.opportunities.length) {
+                            opps = prepareOpportunities(data.opportunities);
+                            updateCounts();
+                            filterData();
+                            document.getElementById('statusText').innerText = opps.length + ' clientes en Colombia (Instagram/Facebook/Workana) y tareas prácticas listas.';
+                            return;
+                        }
+                    }
+                } catch (e) {}
+            }
+        }
+
+        function isColombiaItem(o) {
+            const txt = `${o.source} ${o.location} ${o.organization} ${(o.skills || []).join(' ')}`.toLowerCase();
+            return txt.includes('colombia') || o.currency === 'COP' || o.opportunity_type === 'cliente_directo_colombia';
+        }
+
+        function isPlanosItem(o) {
+            const txt = `${o.title} ${o.description} ${(o.skills || []).join(' ')}`.toLowerCase();
+            return /plano|autocad|3d|render|blender|arquitect|remodelaci|interior|mobiliario|cocina|dwg|stl/.test(txt);
+        }
+
+        function isAutoItem(o) {
+            const txt = `${o.title} ${o.description} ${(o.skills || []).join(' ')}`.toLowerCase();
+            return /whatsapp|automatiz|bot|n8n|ia|agente|citas/.test(txt);
+        }
+
+        function isWebItem(o) {
+            const txt = `${o.title} ${o.description} ${(o.skills || []).join(' ')}`.toLowerCase();
+            return /web|catálogo|catalogo|landing|diseño|diseno|infograf|vector|ilustraci|tienda|menu|glamping/.test(txt);
+        }
+
+        function updateCounts() {
+            document.getElementById('kpiTotal').innerText = opps.length;
+            document.getElementById('kpiCol').innerText = opps.filter(isColombiaItem).length;
+            document.getElementById('kpiPlanos').innerText = opps.filter(isPlanosItem).length;
+            document.getElementById('kpiAuto').innerText = opps.filter(isAutoItem).length;
+            document.getElementById('kpiWeb').innerText = opps.filter(isWebItem).length;
+        }
+
         function render(list) {
             const c = document.getElementById('cards');
             if (!list.length) {
-                c.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;background:var(--bg-surface);border:1px solid var(--border);border-radius:12px;color:var(--text-muted);">No hay ofertas con este filtro exacto. Prueba limpiar la búsqueda o pulsa <strong>"⚡ Buscar Ofertas Nuevas en Vivo"</strong>.</div>';
+                c.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;background:var(--bg-surface);border:1px solid var(--border);border-radius:12px;color:var(--text-muted);">No hay elementos con ese filtro. Pulsa "Todas las Oportunidades" o usa el Buscador Directo de arriba.</div>';
                 return;
             }
-            c.innerHTML = list.map((o) => {
-                const idx = opps.findIndex(item => item.opportunity_id === o.opportunity_id);
-                const d = o.decision || 'OBSERVAR';
-                const bclass = d === 'PRIORIDAD' ? 'badge-prio' : (d === 'CONSTRUIR_Y_VENDER' ? 'badge-build' : (d === 'INVESTIGAR' ? 'badge-inv' : 'badge-obs'));
-                const cclass = d === 'PRIORIDAD' ? 'card-prio' : (d === 'CONSTRUIR_Y_VENDER' ? 'card-build' : (d === 'INVESTIGAR' ? 'card-inv' : ''));
-                let sal = 'Pago a convenir / Ver oferta';
-                if (o.payment_min || o.payment_max) {
+            c.innerHTML = list.map(o => {
+                const idx = opps.findIndex(x => x.opportunity_id === o.opportunity_id);
+                const d = o.decision || 'PRIORIDAD';
+                const bclass = d === 'PRIORIDAD' ? 'badge-prio' : (d === 'CONSTRUIR_Y_VENDER' ? 'badge-build' : 'badge-inv');
+                const cclass = d === 'PRIORIDAD' ? 'card-prio' : (d === 'CONSTRUIR_Y_VENDER' ? 'card-build' : 'card-inv');
+
+                let sal = o.observed_data?.stated_salary || 'Por cotizar';
+                if (!o.observed_data?.stated_salary && (o.payment_min || o.payment_max)) {
                     const cu = o.currency || 'USD';
-                    if (o.payment_min && o.payment_max && o.payment_min !== o.payment_max) {
-                        sal = `${cu} ${Number(o.payment_min).toLocaleString()} - ${Number(o.payment_max).toLocaleString()}`;
-                    } else {
-                        sal = `${cu} ${Number(o.payment_max || o.payment_min).toLocaleString()}`;
-                    }
-                } else if (o.observed_data?.stated_salary) {
-                    sal = o.observed_data.stated_salary;
+                    sal = `${cu} ${Number(o.payment_min || 0).toLocaleString()} - ${Number(o.payment_max || 0).toLocaleString()}`;
                 }
-                const freshLabel = o.estimated_data?.freshness_label || '⚡ Reciente';
-                const sk = (o.skills || []).slice(0, 7).map(s => `<span class="stag" onclick="fsk('${escapeHtml(s)}')">${escapeHtml(s)}</span>`).join('');
-                const descShort = escapeHtml((o.description || '').slice(0, 220)) + ((o.description || '').length > 220 ? '...' : '');
+
+                const waPhone = o.observed_data?.whatsapp_phone || o.proposal?.whatsapp_phone;
+                const waText = encodeURIComponent(o.proposal?.body || `Hola, vi su perfil y me gustaría ofrecerles mis servicios de automatización / planos 3D / catálogo web.`);
+                const waBtn = waPhone
+                    ? `<a href="https://wa.me/${escapeHtml(waPhone)}?text=${waText}" target="_blank" rel="noopener noreferrer" class="cbtn cbtn-wa">💬 WhatsApp (+${escapeHtml(waPhone)})</a>`
+                    : '';
+
+                const freshLabel = o.estimated_data?.freshness_label || '🔥 Reciente';
+                const sk = (o.skills || []).map(s => `<span class="stag" onclick="fsk('${escapeHtml(s)}')">${escapeHtml(s)}</span>`).join('');
+                const descShort = escapeHtml((o.description || '').slice(0, 240));
+                const linkLabel = (o.source || '').includes('Instagram') ? '📸 Abrir Instagram' : ((o.source || '').includes('Facebook') ? '📘 Abrir Facebook' : '↗ Abrir Proyecto');
+
                 return `
                 <div class="card ${cclass}">
                     <div>
                         <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
-                            <span class="badge ${bclass}">${escapeHtml(d.replace(/_/g, ' '))}</span>
+                            <span class="badge ${bclass}">${escapeHtml(o.source || d)}</span>
                             <div style="display:flex;align-items:center;gap:6px;">
                                 <span class="fresh-tag">${escapeHtml(freshLabel)}</span>
-                                <span style="font-size:0.76rem;font-weight:800;color:#60a5fa;">${o.overall_score || 0} pts</span>
+                                <span style="font-size:0.75rem;font-weight:800;color:#34d399;">${o.overall_score || 90} pts</span>
                             </div>
                         </div>
                         <h4 style="font-size:1.02rem;color:#fff;margin-bottom:4px;font-weight:700;">${escapeHtml(o.title)}</h4>
                         <div style="font-size:0.78rem;color:var(--text-muted);margin-bottom:8px;">
-                            <strong>${escapeHtml(o.organization || 'Cliente Directo')}</strong> • <span>${escapeHtml(o.source || '')}</span> • <span>${escapeHtml(o.observed_data?.stated_location || 'Remoto')}</span>
+                            <strong>${escapeHtml(o.organization || 'Cliente Directo')}</strong> • <span>${escapeHtml(o.observed_data?.stated_location || '🇨🇴 Colombia')}</span>
                         </div>
                         <div class="salary">
                             <span>💰 ${escapeHtml(sal)}</span>
-                            <span style="font-size:0.7rem;opacity:0.85;">${escapeHtml(o.opportunity_type || 'remoto')}</span>
+                            <span style="font-size:0.7rem;">Sin contrato legal</span>
                         </div>
                         <div class="skills">${sk}</div>
                         <div class="desc-preview">${descShort}</div>
                         <div class="insights">
-                            <p><strong>Por qué vale la pena:</strong> ${escapeHtml(o.reasoning || '')}</p>
-                            <p><strong>Entrega est.:</strong> ${escapeHtml(o.estimated_data?.estimated_hours || '15-40h')} | <strong>Competencia:</strong> ${escapeHtml(o.estimated_data?.competition_level || 'MEDIA')}</p>
+                            <p><strong>Por qué te sirve:</strong> ${escapeHtml(o.reasoning || '')}</p>
+                            <p><strong>Qué hacer:</strong> ${escapeHtml(o.next_action || '')}</p>
                         </div>
                     </div>
                     <div>
                         <div class="card-btns">
-                            ${o.blueprint ? `<button class="cbtn cbtn-bp" onclick="openBp(${idx})">💡 Blueprint</button>` : ''}
-                            ${o.proposal ? `<button class="cbtn cbtn-pitch" onclick="openP(${idx})">📝 Ver Pitch</button>` : ''}
-                            <a href="${escapeHtml(o.source_url)}" target="_blank" rel="noopener noreferrer" class="cbtn cbtn-link">↗ Abrir Oferta</a>
+                            ${waBtn}
+                            <button class="cbtn cbtn-pitch" onclick="openP(${idx})">📋 Mensaje Listo</button>
+                            <button class="cbtn cbtn-bp" onclick="openBp(${idx})">💡 Paquete COP</button>
+                            <a href="${escapeHtml(o.source_url)}" target="_blank" rel="noopener noreferrer" class="cbtn cbtn-link">${linkLabel}</a>
                         </div>
                         <select class="cselect" onchange="chgSt('${escapeHtml(o.opportunity_id)}', this.value)">
-                            <option value="NUEVA" ${o.status==='NUEVA'?'selected':''}>📌 Estado: Nueva</option>
+                            <option value="NUEVA" ${o.status==='NUEVA'?'selected':''}>📌 Estado: Pendiente por escribirle</option>
                             <option value="REVISADA" ${o.status==='REVISADA'?'selected':''}>👀 Estado: Revisada</option>
-                            <option value="PROPUESTA_ENVIADA" ${o.status==='PROPUESTA_ENVIADA'?'selected':''}>📤 Propuesta Enviada</option>
-                            <option value="EN_NEGOCIACION" ${o.status==='EN_NEGOCIACION'?'selected':''}>💬 En Negociación</option>
-                            <option value="GANADA" ${o.status==='GANADA'?'selected':''}>🎉 ¡Ganada / Cerrada!</option>
-                            <option value="DESCARTADA" ${o.status==='DESCARTADA'?'selected':''}>❌ Descartada</option>
+                            <option value="PROPUESTA_ENVIADA" ${o.status==='PROPUESTA_ENVIADA'?'selected':''}>📤 Mensaje / Propuesta Enviada</option>
+                            <option value="EN_NEGOCIACION" ${o.status==='EN_NEGOCIACION'?'selected':''}>💬 Cliente Respondió / Negociando</option>
+                            <option value="GANADA" ${o.status==='GANADA'?'selected':''}>🎉 ¡Trabajo Cerrado / Cobrado!</option>
+                            <option value="DESCARTADA" ${o.status==='DESCARTADA'?'selected':''}>❌ Descartar</option>
                         </select>
                     </div>
                 </div>`;
@@ -808,11 +751,11 @@
             const sortMode = document.getElementById('sortSelect').value;
             let f = opps.filter(o => o.status !== 'DESCARTADA' || curSpec === 'saved');
 
-            if (curDec) f = f.filter(o => o.decision === curDec);
-            if (curSpec === 'fresh') f = f.filter(o => (o.estimated_data?.age_hours || 999) <= 72);
-            else if (curSpec === 'paid') f = f.filter(o => o.payment_min || o.payment_max);
-            else if (curSpec === 'freelance') f = f.filter(o => ['freelance', 'contract'].includes(o.opportunity_type));
-            else if (curSpec === 'bounty') f = f.filter(o => o.opportunity_type === 'bounty' || o.source === 'GitHub Bounties');
+            if (curSpec === 'colombia') f = f.filter(isColombiaItem);
+            else if (curSpec === 'planos') f = f.filter(isPlanosItem);
+            else if (curSpec === 'auto') f = f.filter(isAutoItem);
+            else if (curSpec === 'web') f = f.filter(isWebItem);
+            else if (curSpec === 'social') f = f.filter(o => o.opportunity_type === 'cliente_directo_colombia');
             else if (curSpec === 'saved') f = f.filter(o => o.status && o.status !== 'NUEVA');
 
             if (q) {
@@ -826,54 +769,77 @@
             }
 
             f.sort((a, b) => {
-                const ageA = a.estimated_data?.age_hours ?? 999;
-                const ageB = b.estimated_data?.age_hours ?? 999;
-                const scoreA = a.overall_score || 0;
-                const scoreB = b.overall_score || 0;
-                const payA = a.payment_max || a.payment_min || 0;
-                const payB = b.payment_max || b.payment_min || 0;
-
-                if (sortMode === 'newest') return ageA - ageB;
-                if (sortMode === 'score') return scoreB - scoreA;
-                if (sortMode === 'pay') return payB - payA || scoreB - scoreA;
-                // Smart Radar: combines score + recency boost
-                const smartA = scoreA + (ageA <= 24 ? 18 : (ageA <= 72 ? 10 : 0));
-                const smartB = scoreB + (ageB <= 24 ? 18 : (ageB <= 72 ? 10 : 0));
-                return smartB - smartA;
+                if (sortMode === 'colombia') {
+                    const colA = isColombiaItem(a) ? 1 : 0;
+                    const colB = isColombiaItem(b) ? 1 : 0;
+                    if (colA !== colB) return colB - colA;
+                    return (b.overall_score || 0) - (a.overall_score || 0);
+                }
+                if (sortMode === 'newest') {
+                    return (a.estimated_data?.age_hours ?? 99) - (b.estimated_data?.age_hours ?? 99);
+                }
+                return (b.overall_score || 0) - (a.overall_score || 0);
             });
 
             render(f);
         }
 
-        function setDec(d, btn) {
-            curDec = d; curSpec = '';
-            document.querySelectorAll('.pill').forEach(b => b.classList.remove('active'));
-            if (btn) btn.classList.add('active');
-            filterData();
-        }
-
         function setSpec(s, btn) {
-            curSpec = s; curDec = '';
+            curSpec = s;
             document.querySelectorAll('.pill').forEach(b => b.classList.remove('active'));
             if (btn) btn.classList.add('active');
             filterData();
         }
 
         function fsk(skill) {
-            document.getElementById('sInput').value = skill;
+            document.getElementById('sInput').value = skill.replace('🇨🇴 ', '');
             filterData();
+        }
+
+        // Buscador Directo de Clientes en Instagram, Facebook y Google Maps Colombia
+        function launchSocialHunt(platform) {
+            const city = document.getElementById('shCity').value;
+            const srv = document.getElementById('shService').value;
+
+            let keywords = '';
+            let pitch = '';
+            if (srv === 'planos') {
+                keywords = `remodelaciones OR arquitectura OR "cocinas integrales" OR constructora ${city} whatsapp`;
+                pitch = `¡Hola! 👋 Vi sus proyectos en ${city} y me encantó su trabajo. Elaboro planos 2D/3D, despieces de mobiliario y renders realistas en 24-48h por proyecto (sin contratos ni mensualidades, pago por Nequi/Bancolombia) para que sus clientes vean cómo quedará la obra antes de construir. ¿Les envío un par de muestras por aquí?`;
+            } else if (srv === 'whatsapp') {
+                keywords = `clinica odontologia OR estetica OR inmobiliaria ${city} "agenda tu cita" OR whatsapp`;
+                pitch = `¡Hola! 👋 Los vi en redes en ${city} y noté que agendan por WhatsApp. Armo asistentes automáticos de WhatsApp e Instagram que responden precios 24/7 y agendan citas solos para que no pierdan clientes fuera de horario. Lo dejo listo en 48h con pago único accesible. ¿Te paso un video corto de 1 min mostrando cómo funciona?`;
+            } else {
+                keywords = `glamping OR restaurante OR tienda OR "pedidos por whatsapp" ${city}`;
+                pitch = `¡Hola! 👋 Vi su negocio en ${city} y quería proponerles armarles un Catálogo Digital / Menú Interactivo donde sus clientes ven fotos y precios desde el celular y el pedido llega listo a su WhatsApp. Queda listo en 2 días, sin mensualidades ni comisiones. ¿Te envío un ejemplo por aquí?`;
+            }
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(pitch).catch(() => {});
+            }
+
+            let targetUrl = '';
+            if (platform === 'instagram') {
+                targetUrl = 'https://www.google.com/search?q=' + encodeURIComponent(`site:instagram.com ${keywords}`);
+            } else if (platform === 'facebook') {
+                targetUrl = 'https://www.google.com/search?q=' + encodeURIComponent(`site:facebook.com ${keywords}`);
+            } else {
+                targetUrl = 'https://www.google.com/maps/search/' + encodeURIComponent(`${srv === 'planos' ? 'remodelaciones arquitectura cocinas' : (srv === 'whatsapp' ? 'clinica odontologica estetica inmobiliaria' : 'glamping restaurante tienda')} ${city}`);
+            }
+
+            toast('¡Mensaje en COP copiado al portapapeles! Abriendo clientes reales...');
+            setTimeout(() => { window.open(targetUrl, '_blank'); }, 400);
         }
 
         function openP(i) {
             const o = opps[i];
-            if (!o) return;
-            const p = o.proposal || generateClientPitch(o);
+            if (!o || !o.proposal) return;
             document.getElementById('pmTitle').innerText = o.title;
-            document.getElementById('pmTarget').innerText = `${o.organization || 'Cliente'} • ${o.source} • ${o.estimated_data?.freshness_label || ''}`;
-            document.getElementById('pmSub').innerText = p.subject || '';
-            document.getElementById('pmBody').innerText = p.body || '';
-            document.getElementById('pmRate').innerText = p.pricing_recommendation || 'Por hito / A convenir';
-            document.getElementById('pmTurn').innerText = p.turnaround || '48 a 72 horas';
+            document.getElementById('pmTarget').innerText = `${o.organization} • ${o.source}`;
+            document.getElementById('pmSub').innerText = o.proposal.subject || '';
+            document.getElementById('pmBody').innerText = o.proposal.body || '';
+            document.getElementById('pmRate').innerText = o.proposal.pricing_recommendation || 'A convenir';
+            document.getElementById('pmTurn').innerText = o.proposal.turnaround || '24 a 48 horas';
             document.getElementById('pmLink').href = o.source_url || '#';
             document.getElementById('pitchModal').style.display = 'flex';
         }
@@ -882,17 +848,14 @@
             const o = opps[i];
             if (!o || !o.blueprint) return;
             const b = o.blueprint;
-            document.getElementById('bpTitle').innerText = b.product_type || 'Producto Reutilizable';
-            document.getElementById('bpDeliv').innerText = (b.deliverable || '') + '\n\nCanales de Distribución: ' + (b.distribution_channels || '');
-            document.getElementById('bpMarket').innerText = 'Público Objetivo: ' + (b.target_audience || '') + '\n\nPrecio Sugerido: ' + (b.suggested_pricing || '');
+            document.getElementById('bpTitle').innerText = b.product_type || 'Paquete en Colombia';
+            document.getElementById('bpDeliv').innerText = (b.deliverable || '') + '\n\nCómo conseguir clientes: ' + (b.distribution_channels || '');
+            document.getElementById('bpMarket').innerText = 'Clientes ideales: ' + (b.target_audience || '') + '\n\nPrecio sugerido: ' + (b.suggested_pricing || '');
             document.getElementById('bpOut').innerText = b.outreach_template || '';
             document.getElementById('bpModal').style.display = 'flex';
         }
 
-        function openSafariModal() {
-            document.getElementById('safariModal').style.display = 'flex';
-        }
-
+        function openSafariModal() { document.getElementById('safariModal').style.display = 'flex'; }
         function closeM(e) { if (e.target.classList.contains('modal')) closeMDirect(); }
         function closeMDirect() {
             document.getElementById('pitchModal').style.display = 'none';
@@ -904,7 +867,7 @@
             saveLocalStatus(id, st);
             const o = opps.find(x => x.opportunity_id === id);
             if (o) o.status = st;
-            toast('Estado actualizado: ' + st);
+            toast('Estado guardado: ' + st);
             try {
                 await fetch('/api/opportunity/status', {
                     method: 'POST',
@@ -915,222 +878,118 @@
             filterData();
         }
 
-        // Client-side Live Pitch & Scoring Engine so Safari / Vercel / GitHub Pages can scan in real time without a PC backend!
-        const CLIENT_SKILL_RULES = [
-            { kw: 'n8n', w: 30 }, { kw: 'automation', w: 25 }, { kw: 'workflow', w: 18 },
-            { kw: 'python', w: 22 }, { kw: 'scraping', w: 24 }, { kw: 'bot', w: 22 },
-            { kw: 'ai', w: 22 }, { kw: 'llm', w: 24 }, { kw: 'agent', w: 22 },
-            { kw: 'api', w: 16 }, { kw: 'typescript', w: 18 }, { kw: 'javascript', w: 15 },
-            { kw: 'react', w: 16 }, { kw: 'node', w: 16 }, { kw: 'unity', w: 25 },
-            { kw: 'roblox', w: 25 }, { kw: 'blender', w: 25 }, { kw: '3d', w: 20 }, { kw: 'figma', w: 15 }
-        ];
-
-        function generateClientPitch(o) {
-            const sk = (o.skills && o.skills.length) ? o.skills.slice(0, 3).join(', ') : 'Automation, Python & Full-Stack Development';
-            return {
-                subject: `Technical Proposal: ${o.title} | Fast Prototype & Architecture`,
-                body: `Hi ${o.organization || 'Team'},\n\nI just saw your recent post for "${o.title}" and reviewed your technical requirements.\n\n### How I can solve this quickly:\nI specialize in ${sk}. I can architect a clean, production-ready solution with automated validation, error handling, and full documentation.\n\n### Proposed Plan:\n1. Day 1: Architecture & input/output mapping.\n2. Days 2-3: Core implementation & live testing.\n3. Day 4: Deployment & handoff.\n\nI can have an initial working prototype ready within 48-72 hours. Would you be open to a quick 5-minute chat or message here to align on scope?\n\nBest regards,\nDavid\nSoftware & Automation Specialist`,
-                pricing_recommendation: o.payment_max ? `USD ${o.payment_max.toLocaleString()}` : 'Milestone-based flat rate or flexible hourly',
-                turnaround: '48 to 72 hours for initial MVP'
-            };
-        }
-
-        function scoreClientItem(item) {
-            const text = `${item.title} ${item.description} ${(item.skills || []).join(' ')}`.toLowerCase();
-            const detected = [];
-            let fit = 0;
-            for (const rule of CLIENT_SKILL_RULES) {
-                const reg = new RegExp(`\\b${rule.kw}\\b`, 'i');
-                if (reg.test(text)) {
-                    detected.push(rule.kw);
-                    fit += reg.test(item.title || '') ? rule.w * 1.3 : rule.w;
-                }
-            }
-            if (!detected.length) return null;
-            fit = Math.min(100, Math.round(fit));
-            const fr = computeFreshness(item.published_at);
-            if (fr.ageHours > 1080) return null; // skip > 45 days old
-
-            const money = (item.payment_min || item.payment_max) ? 85 : (['bounty', 'freelance', 'contract'].includes(item.opportunity_type) ? 68 : 45);
-            const reusa = detected.some(k => ['n8n', 'automation', 'bot', 'scraping', 'ai', 'agent'].includes(k)) ? 80 : 45;
-            const overall = Math.min(99, Math.round((fit * 0.42 + money * 0.23 + reusa * 0.2 + 15) + fr.bonus * 0.5));
-
-            let decision = 'INVESTIGAR';
-            if (reusa >= 75 && fit >= 60) decision = 'CONSTRUIR_Y_VENDER';
-            else if (overall >= 70 && fit >= 45) decision = 'PRIORIDAD';
-            else if (overall < 50) decision = 'OBSERVAR';
-
-            item.skills = detected;
-            item.fit_score = fit;
-            item.overall_score = overall;
-            item.decision = decision;
-            item.status = 'NUEVA';
-            item.reasoning = `[${fr.label}] Detectada en vivo (${detected.slice(0, 4).join(', ')}).`;
-            item.estimated_data = {
-                age_hours: fr.ageHours,
-                freshness_label: fr.label,
-                estimated_hours: item.opportunity_type === 'bounty' ? '4 a 16h' : '15 a 50h',
-                competition_level: reusa >= 75 ? 'BAJA' : 'MEDIA'
-            };
-            item.proposal = generateClientPitch(item);
-            if (decision === 'CONSTRUIR_Y_VENDER') {
-                item.blueprint = {
-                    product_type: 'Solución / Plantilla Reutilizable (' + detected.slice(0, 2).join(' + ') + ')',
-                    deliverable: 'Flujo automatizado / micro-servicio listo para desplegar en múltiples clientes.',
-                    target_audience: 'Empresas y equipos con el mismo cuello de botella operativo.',
-                    suggested_pricing: 'USD $99 - $249 por implementación',
-                    distribution_channels: 'Outreach directo, comunidades técnicas y Gumroad.',
-                    outreach_template: `Hola equipo de ${item.organization},\nVi su requerimiento sobre ${item.title}. Tengo listo un módulo automatizado de ${detected.slice(0,2).join('/')} que resuelve esto en horas. ¿Les envío un video corto de 2 min mostrando cómo funciona?`
-                };
-            }
-            return item;
-        }
-
         async function triggerLiveScan() {
             const b = document.getElementById('btnScan');
             b.disabled = true;
-            b.innerText = '🔄 Buscando Ofertas Novedosas...';
-            toast('Consultando APIs en vivo (Remotive, HN, GitHub Bounties, Arbeitnow)...');
+            b.innerText = '🔄 Buscando en Colombia y Plataformas...';
+            toast('Buscando clientes en Instagram/Facebook Colombia, Workana CO y Freelancer...');
 
-            let liveFound = [];
-            const thirtyDaysAgo = Math.floor(Date.now() / 1000) - (30 * 86400);
-
-            // 1. Try local backend scan if running on PC
+            // 1. Try local server scan if running
             try {
                 const r = await fetch('/api/scan', { method: 'POST' });
                 if (r.ok) {
-                    // Poll local server for up to 18s
-                    for (let i = 0; i < 6; i++) {
+                    for (let i = 0; i < 7; i++) {
                         await new Promise(res => setTimeout(res, 2500));
                         const st = await (await fetch('/api/scan/status')).json();
                         if (!st.is_scanning) {
-                            const freshRes = await (await fetch('/api/opportunities?limit=250')).json();
-                            if (freshRes.opportunities && freshRes.opportunities.length) {
-                                opps = applyLocalStatusesAndFreshness(freshRes.opportunities);
-                                updateDashboardCounts();
-                                filterData();
-                                b.disabled = false;
-                                b.innerText = '⚡ Buscar Ofertas Nuevas en Vivo';
-                                document.getElementById('lastScanTime').innerText = 'Actualizado: ' + new Date().toLocaleTimeString();
-                                toast('¡Escaneo completado! ' + opps.length + ' ofertas activas.');
-                                return;
-                            }
-                            break;
+                            await loadInitialData();
+                            b.disabled = false;
+                            b.innerText = '⚡ Buscar Nuevos Clientes y Tareas';
+                            toast('¡Nuevos clientes y tareas en Colombia actualizados!');
+                            return;
                         }
                     }
                 }
             } catch (e) {}
 
-            // 2. Direct Browser Live Fetch (Works 24/7 on Safari iOS, Vercel, GitHub Pages, or Offline-to-Online!)
-            const tasks = [
-                // HackerNews Algolia (100% CORS enabled)
-                fetch(`https://hn.algolia.com/api/v1/search_by_date?query=freelance+remote&tags=comment&numericFilters=created_at_i>${thirtyDaysAgo}&hitsPerPage=25`)
-                    .then(r => r.json())
-                    .then(d => (d.hits || []).forEach(h => {
-                        const clean = (h.comment_text || '').replace(/<[^>]+>/g, ' ');
-                        const scored = scoreClientItem({
-                            opportunity_id: 'hn_' + h.objectID,
-                            source: 'HackerNews',
-                            source_url: 'https://news.ycombinator.com/item?id=' + h.objectID,
-                            published_at: h.created_at,
-                            title: clean.slice(0, 85) + '...',
-                            organization: 'HN: ' + (h.author || 'Founder'),
-                            description: clean,
-                            opportunity_type: 'freelance',
-                            observed_data: { stated_location: 'Remote' }
-                        });
-                        if (scored) liveFound.push(scored);
-                    })).catch(() => {}),
-
-                // GitHub Open Bounties (100% CORS enabled)
-                fetch('https://api.github.com/search/issues?q=label:bounty+state:open+is:issue&sort=created&order=desc&per_page=25')
-                    .then(r => r.json())
-                    .then(d => (d.items || []).forEach(it => {
-                        const body = (it.body || '').replace(/<[^>]+>/g, ' ');
-                        const m = (it.title + ' ' + body).match(/\$\s*(\d[\d,]*)/);
-                        const pay = m ? parseFloat(m[1].replace(/,/g, '')) : null;
-                        const scored = scoreClientItem({
-                            opportunity_id: 'github_bounty_' + it.id,
-                            source: 'GitHub Bounties',
-                            source_url: it.html_url,
-                            published_at: it.created_at,
-                            title: it.title,
-                            organization: (it.repository_url || '').split('/').slice(-2).join('/') || 'GitHub',
-                            description: body.slice(0, 1200),
-                            opportunity_type: 'bounty',
-                            payment_min: pay,
-                            payment_max: pay,
-                            currency: pay ? 'USD' : null,
-                            observed_data: { stated_location: 'Worldwide', stated_salary: pay ? 'USD ' + pay : 'Bounty Abierto' }
-                        });
-                        if (scored) liveFound.push(scored);
-                    })).catch(() => {}),
-
-                // Remotive API (CORS enabled)
-                fetch('https://remotive.com/api/remote-jobs?limit=40')
-                    .then(r => r.json())
-                    .then(d => (d.jobs || []).forEach(j => {
-                        const clean = (j.description || '').replace(/<[^>]+>/g, ' ');
-                        const scored = scoreClientItem({
-                            opportunity_id: 'remotive_' + j.id,
-                            source: 'Remotive',
-                            source_url: j.url,
-                            published_at: j.publication_date,
-                            title: j.title,
-                            organization: j.company_name,
-                            description: clean.slice(0, 1200),
-                            opportunity_type: (j.job_type || '').includes('contract') ? 'contract' : 'full_time',
-                            observed_data: { stated_location: j.candidate_required_location || 'Worldwide', stated_salary: j.salary || null }
-                        });
-                        if (scored) liveFound.push(scored);
-                    })).catch(() => {})
-            ];
-
-            await Promise.allSettled(tasks);
-
-            if (liveFound.length > 0) {
-                try {
-                    localStorage.setItem(STORAGE_KEY_LIVE_OPPS, JSON.stringify(liveFound.slice(0, 80)));
-                } catch (e) {}
-                opps = applyLocalStatusesAndFreshness([...liveFound, ...opps]);
-                updateDashboardCounts();
-                filterData();
-                document.getElementById('lastScanTime').innerText = 'Scan en vivo: ' + new Date().toLocaleTimeString();
-                document.getElementById('statusText').innerText = '¡Escaneo en vivo exitoso! ' + opps.length + ' oportunidades activas (' + liveFound.length + ' consultadas en directo).';
-                toast('¡' + liveFound.length + ' ofertas frescas verificadas en directo!');
-            } else {
-                toast('Datos sincronizados con el último snapshot.');
-            }
+            // 2. Direct Browser Live Fetch from Freelancer.co Public API (Spanish & Planos/3D/Bots)
+            try {
+                const urls = [
+                    'https://www.freelancer.com/api/projects/0.1/projects/active/?languages[]=es&limit=25&full_description=true',
+                    'https://www.freelancer.com/api/projects/0.1/projects/active/?query=autocad%20planos%203d%20render%20whatsapp%20bot&limit=20&full_description=true'
+                ];
+                const newItems = [];
+                for (const u of urls) {
+                    const r = await fetch(u);
+                    if (r.ok) {
+                        const d = await r.json();
+                        const projs = (d.result && d.result.projects) || [];
+                        for (const p of projs) {
+                            const txt = `${p.title || ''} ${p.description || ''}`;
+                            if (!/plano|autocad|3d|render|blender|whatsapp|automatiz|bot|web|landing|catalogo|diseño|diseno|infograf|vector|logo|tienda/i.test(txt)) continue;
+                            const bMin = p.budget?.minimum || 30;
+                            const bMax = p.budget?.maximum || 250;
+                            if (bMax > 3000) continue;
+                            const cu = p.currency?.code || 'USD';
+                            newItems.push({
+                                opportunity_id: 'fl_' + p.id,
+                                source: 'Freelancer.co (En Vivo)',
+                                source_url: 'https://www.freelancer.co/projects/' + (p.seo_url || p.id),
+                                published_at: new Date((p.submitdate || Date.now()/1000) * 1000).toISOString(),
+                                title: p.title,
+                                organization: 'Proyecto Directo',
+                                description: (p.description || '').slice(0, 600),
+                                opportunity_type: 'tarea_directa',
+                                payment_min: bMin,
+                                payment_max: bMax,
+                                currency: cu,
+                                overall_score: 88,
+                                decision: 'PRIORIDAD',
+                                skills: ['Tarea Práctica', 'Entrega Rápida'],
+                                observed_data: { stated_salary: `${cu} ${bMin} - ${bMax}`, stated_location: 'Remoto (Sin Contrato)' },
+                                estimated_data: { age_hours: 1, freshness_label: '🔥 En Vivo' },
+                                reasoning: 'Tarea práctica detectada en vivo lista para realizar sin contratos complejos.',
+                                next_action: 'Copiar propuesta en español y postular ahora.',
+                                proposal: {
+                                    subject: 'Propuesta directa y entrega en 24-48h: ' + p.title,
+                                    body: `¡Hola! Revisé tu proyecto "${p.title}" y puedo encargarme de inmediato.\n\nTe envío un primer avance/boceto real en menos de 24 a 48 horas para que verifiques que quede exactamente como lo necesitas.\n\n¿Me compartes los detalles por aquí para empezar hoy mismo?`,
+                                    pricing_recommendation: `${cu} ${bMin} - ${bMax}`,
+                                    turnaround: '24 a 48 horas'
+                                },
+                                blueprint: {
+                                    product_type: 'Servicio Práctico Repetible',
+                                    deliverable: 'Archivo editable y entregable final listo para usar.',
+                                    target_audience: 'Clientes directos en Colombia y Latinoamérica.',
+                                    suggested_pricing: 'COP $200.000 - $750.000',
+                                    distribution_channels: 'WhatsApp, Instagram DM y Workana.',
+                                    outreach_template: '¡Hola! Hago este tipo de entregas en 24-48h sin contratos complicados. ¿Te envío una muestra?'
+                                }
+                            });
+                        }
+                    }
+                }
+                if (newItems.length) {
+                    opps = prepareOpportunities([...newItems, ...opps]);
+                    updateCounts();
+                    filterData();
+                    toast('¡' + newItems.length + ' tareas prácticas verificadas en directo!');
+                }
+            } catch (e) {}
 
             b.disabled = false;
-            b.innerText = '⚡ Buscar Ofertas Nuevas en Vivo';
+            b.innerText = '⚡ Buscar Nuevos Clientes y Tareas';
         }
 
         function downloadOfflineApp() {
-            const embeddedScript = `<script>window.__RADAR_EMBEDDED_DATA__ = ${JSON.stringify(opps)};<\/script>`;
+            const embeddedScript = '<' + 'script>window.__RADAR_EMBEDDED_DATA__ = ' + JSON.stringify(opps) + ';<' + '/script>';
             const fullHtml = document.documentElement.outerHTML.replace('</head>', embeddedScript + '\n</head>');
             const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8' });
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
-            a.download = `RADAR_App_Portatil_${new Date().toISOString().slice(0, 10)}.html`;
+            a.download = `RADAR_Colombia_App_${new Date().toISOString().slice(0, 10)}.html`;
             a.click();
-            toast('¡App portátil descargada! Ábrela en Safari, iPhone o PC.');
+            toast('¡App descargada! Ábrela en Safari o tu PC cuando quieras.');
         }
 
         function exportCSV() {
-            const headers = ['ID', 'Decision', 'Score', 'Frescura', 'Titulo', 'Organizacion', 'Fuente', 'Pago_Min', 'Pago_Max', 'Moneda', 'Skills', 'Estado_CRM', 'URL'];
+            const headers = ['ID', 'Fuente', 'Titulo', 'Cliente', 'Pago', 'WhatsApp', 'Estado_CRM', 'URL'];
             const rows = opps.map(o => [
                 o.opportunity_id,
-                o.decision,
-                o.overall_score,
-                o.estimated_data?.freshness_label || '',
+                `"${(o.source || '').replace(/"/g, '""')}"`,
                 `"${(o.title || '').replace(/"/g, '""')}"`,
                 `"${(o.organization || '').replace(/"/g, '""')}"`,
-                o.source,
-                o.payment_min || '',
-                o.payment_max || '',
-                o.currency || '',
-                `"${(o.skills || []).join(', ')}"`,
+                `"${(o.observed_data?.stated_salary || '').replace(/"/g, '""')}"`,
+                o.observed_data?.whatsapp_phone || '',
                 o.status || 'NUEVA',
                 o.source_url
             ].join(','));
@@ -1138,23 +997,15 @@
             const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
-            a.download = `RADAR_Oportunidades_${new Date().toISOString().slice(0, 10)}.csv`;
+            a.download = `RADAR_Clientes_Colombia_${new Date().toISOString().slice(0, 10)}.csv`;
             a.click();
-            toast('¡CSV exportado correctamente!');
+            toast('¡Excel/CSV descargado!');
         }
 
         function cp(id) {
             const text = document.getElementById(id).innerText;
             if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(text).then(() => toast('¡Copiado al portapapeles!'));
-            } else {
-                const ta = document.createElement('textarea');
-                ta.value = text;
-                document.body.appendChild(ta);
-                ta.select();
-                document.execCommand('copy');
-                document.body.removeChild(ta);
-                toast('¡Copiado al portapapeles!');
+                navigator.clipboard.writeText(text).then(() => toast('¡Mensaje copiado!'));
             }
         }
 

@@ -1,20 +1,17 @@
 {
-  "scan_id": "scan_20261019_171526_c8325b",
-  "started_at": "2026-10-19T17:15:26.847566+00:00",
-  "finished_at": "2026-10-19T17:15:44.715305+00:00",
+  "scan_id": "scan_20261019_193336_a90200",
+  "started_at": "2026-10-19T19:33:36.106506+00:00",
+  "finished_at": "2026-10-19T19:33:45.250692+00:00",
   "sources_consulted": [
-    "Remotive",
-    "Arbeitnow",
-    "RemoteOK",
-    "WeWorkRemotely",
-    "HackerNews",
-    "GitHub Bounties"
+    "Clientes Colombia (Instagram & Facebook)",
+    "Workana Colombia & LATAM",
+    "Freelancer.co (Tareas & Proyectos)"
   ],
-  "total_found": 338,
-  "prioridad_count": 52,
-  "construir_vender_count": 15,
-  "investigar_count": 55,
-  "observar_count": 29,
-  "descartar_count": 187,
-  "execution_notes": "Scan multi-fuente (Remotive, Arbeitnow, RemoteOK, WeWorkRemotely, HackerNews, GitHub Bounties) con motor v2 (Freshness + Sniper Pitch + Blueprint)."
+  "total_found": 100,
+  "prioridad_count": 51,
+  "construir_vender_count": 16,
+  "investigar_count": 33,
+  "observar_count": 0,
+  "descartar_count": 8,
+  "execution_notes": "Escaneo orientado a Clientes en Colombia (Instagram, Facebook, Workana CO) y tareas prácticas (Automatizaciones, Planos, 3D, Web) sin contratos legales."
 }

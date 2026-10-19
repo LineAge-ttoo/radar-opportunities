@@ -5,22 +5,16 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 if BASE_DIR not in sys.path:
     sys.path.append(BASE_DIR)
 
-from scripts.collectors.remotive_collector import RemotiveCollector
-from scripts.collectors.arbeitnow_collector import ArbeitnowCollector
-from scripts.collectors.remoteok_collector import RemoteOKCollector
-from scripts.collectors.weworkremotely_collector import WeWorkRemotelyCollector
-from scripts.collectors.hackernews_collector import HackerNewsCollector
-from scripts.collectors.github_bounties_collector import GitHubBountiesCollector
+from scripts.collectors.colombia_social_collector import ColombiaSocialCollector
+from scripts.collectors.workana_collector import WorkanaCollector
+from scripts.collectors.freelancer_collector import FreelancerCollector
 
 class CollectorManager:
     def __init__(self):
         self.collectors = [
-            RemotiveCollector(),
-            ArbeitnowCollector(),
-            RemoteOKCollector(),
-            WeWorkRemotelyCollector(),
-            HackerNewsCollector(),
-            GitHubBountiesCollector()
+            ColombiaSocialCollector(),
+            WorkanaCollector(),
+            FreelancerCollector()
         ]
 
     def run_all(self):
