@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="RADAR">
+    <meta name="theme-color" content="#090d16">
+    <link rel="manifest" href="./manifest.json">
+    <title>RADAR v2 — Motor de Oportunidades & Ingresos en Vivo</title>
+    <style>
+        :root {
+            --bg-base: #070b14;
+            --bg-surface: #111827;
+            --bg-card: #162033;
+            --bg-card-hover: #1c2942;
+            --border: #24324d;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.25);
+            --priority: #10b981;
+            --priority-glow: rgba(16, 185, 129, 0.2);
+            --build: #a855f7;
+            --build-glow: rgba(168, 85, 247, 0.2);
+            --investigate: #0ea5e9;
+            --gold: #f59e0b;
+            --danger: #ef4444;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }
+        body { background: var(--bg-base); color: var(--text-main); min-height: 100vh; padding-bottom: 80px; line-height: 1.45; }
+        header {
+            background: rgba(17, 24, 39, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 60;
+            padding: 12px 16px;
+        }
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .brand { display: flex; align-items: center; gap: 10px; }
+        .pulse {
+            width: 12px; height: 12px;
+            background: var(--priority);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--priority);
+            animation: pulseAnim 2s infinite;
+        }
+        @keyframes pulseAnim {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        .title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #34d399, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle { font-size: 0.68rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.04em; }
+        .actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .btn-action {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+        .btn-action:hover { border-color: var(--accent); background: var(--bg-card-hover); }
+        .btn-scan {
+            background: linear-gradient(135deg, #10b981, #2563eb);
+            color: #fff;
+            border: none;
+            padding: 9px 16px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+            transition: opacity 0.15s ease;
+        }
+        .btn-scan:hover { opacity: 0.92; }
+        .btn-scan:disabled { opacity: 0.6; cursor: wait; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 16px; }
+        .status-banner {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: #d1fae5;
+        }
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .kpi {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 14px;
+            cursor: pointer;
+            transition: transform 0.12s ease, border-color 0.12s ease;
+        }
+        .kpi:hover { transform: translateY(-2px); border-color: var(--accent); }
+        .kpi-val { font-size: 1.55rem; font-weight: 800; }
+        .kpi-lbl { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; margin-top: 2px; }
+        .panel {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 18px;
+        }
+        .search-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        @media (max-width: 640px) {
+            .search-row { grid-template-columns: 1fr; }
+        }
+        .search-box {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: #fff;
+            font-size: 0.88rem;
+            outline: none;
+        }
+        .search-box:focus { border-color: var(--accent); }
+        .sort-select {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: #fff;
+            font-size: 0.82rem;
+            font-weight: 600;
+            outline: none;
+            cursor: pointer;
+        }
+        .pills {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            scrollbar-width: thin;
+        }
+        .pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 6px 13px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }
+        .pill:hover { color: #fff; border-color: var(--accent); }
+        .pill.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+        .quick-skills {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .qskill-lbl { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; margin-right: 4px; }
+        .qskill {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            color: #93c5fd;
+            padding: 3px 9px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .qskill:hover { background: var(--accent); color: #fff; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 16px;
+        }
+        @media (max-width: 400px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.15s ease, transform 0.15s ease;
+        }
+        .card:hover { border-color: #3b82f6; transform: translateY(-2px); }
+        .card-prio { border-left: 4px solid var(--priority); }
+        .card-build { border-left: 4px solid var(--build); }
+        .card-inv { border-left: 4px solid var(--investigate); }
+        .badge {
+            font-size: 0.68rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .badge-prio { background: var(--priority-glow); color: #34d399; border: 1px solid #10b981; }
+        .badge-build { background: var(--build-glow); color: #c084fc; border: 1px solid #a855f7; }
+        .badge-inv { background: rgba(14, 165, 233, 0.2); color: #38bdf8; border: 1px solid #0ea5e9; }
+        .badge-obs { background: rgba(100, 116, 139, 0.2); color: #94a3b8; border: 1px solid #64748b; }
+        .fresh-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 5px;
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        .salary {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            color: #34d399;
+            padding: 6px 10px;
+            border-radius: 7px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .skills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+        .stag {
+            background: rgba(59, 130, 246, 0.15);
+            color: #93c5fd;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 5px;
+            padding: 2px 7px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .insights {
+            background: rgba(7, 11, 20, 0.55);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 9px 10px;
+            font-size: 0.76rem;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+        }
+        .insights p + p { margin-top: 4px; }
+        .desc-preview {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .card-btns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+            gap: 7px;
+        }
+        .cbtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 10px;
+            border-radius: 7px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+        .cbtn-pitch { background: linear-gradient(135deg, #10b981, #059669); color: #fff; }
+        .cbtn-bp { background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: #fff; }
+        .cbtn-link { background: var(--bg-surface); border: 1px solid var(--border); color: #fff; }
+        .cbtn-link:hover { border-color: var(--accent); }
+        .cselect {
+            width: 100%;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            color: #cbd5e1;
+            font-size: 0.74rem;
+            font-weight: 600;
+            padding: 6px 8px;
+            border-radius: 6px;
+            margin-top: 8px;
+            cursor: pointer;
+        }
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.82);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            padding: 16px;
+        }
+        .mbox {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            max-width: 640px;
+            width: 100%;
+            max-height: 88vh;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        .mhead {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 14px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+        .mtitle { font-size: 1.1rem; color: #fff; font-weight: 800; }
+        .mclose { background: none; border: none; color: #94a3b8; font-size: 1.5rem; cursor: pointer; line-height: 1; }
+        .field { margin-bottom: 14px; }
+        .flbl {
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: #93c5fd;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .fbody {
+            background: var(--bg-base);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: #e2e8f0;
+            white-space: pre-wrap;
+        }
+        .btn-cp {
+            background: var(--bg-card);
+            border: 1px solid var(--accent);
+            color: #60a5fa;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .btn-cp:hover { background: var(--accent); color: #fff; }
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #10b981;
+            color: #052e16;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.84rem;
+            font-weight: 800;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            display: none;
+            z-index: 200;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="brand">
+                <div class="pulse"></div>
+                <div>
+                    <div class="title">RADAR ENGINE v2</div>
+                    <div class="subtitle">LIVE OPPORTUNITY & INCOME DISCOVERY (WEB • SAFARI • CLOUD)</div>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="btn-action" onclick="openSafariModal()">📲 Safari / Móvil</button>
+                <button class="btn-action" onclick="downloadOfflineApp()">📥 Descargar App</button>
+                <button class="btn-action" onclick="exportCSV()">📊 Exportar CSV</button>
+                <button id="btnScan" class="btn-scan" onclick="triggerLiveScan()">⚡ Buscar Ofertas Nuevas en Vivo</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="status-banner" id="statusBanner">
+            <div>
+                <strong>🟢 RADAR Activo:</strong> <span id="statusText">Cargando oportunidades reales...</span>
+            </div>
+            <div style="font-size:0.74rem;color:#93c5fd;" id="lastScanTime">Sincronizado</div>
+        </div>
+
+        <div class="kpis">
+            <div class="kpi" onclick="setDec('', document.getElementById('pillAll'))">
+                <div class="kpi-val" id="kpiTotal">0</div>
+                <div class="kpi-lbl">Oportunidades Activas</div>
+            </div>
+            <div class="kpi" style="border-top:3px solid var(--priority);" onclick="setDec('PRIORIDAD', document.getElementById('pillPrio'))">
+                <div class="kpi-val" id="kpiPrio" style="color:#34d399;">0</div>
+                <div class="kpi-lbl">🚀 Prioridad</div>
+            </div>
+            <div class="kpi" style="border-top:3px solid var(--build);" onclick="setDec('CONSTRUIR_Y_VENDER', document.getElementById('pillBuild'))">
+                <div class="kpi-val" id="kpiBuild" style="color:#c084fc;">0</div>
+                <div class="kpi-lbl">💡 Construir y Vender</div>
+            </div>
+            <div class="kpi" style="border-top:3px solid var(--investigate);" onclick="setDec('INVESTIGAR', document.getElementById('pillInv'))">
+                <div class="kpi-val" id="kpiInv" style="color:#38bdf8;">0</div>
+                <div class="kpi-lbl">🔍 Investigar</div>
+            </div>
+            <div class="kpi" style="border-top:3px solid var(--gold);" onclick="setSpec('fresh', document.getElementById('pillFresh'))">
+                <div class="kpi-val" id="kpiFresh" style="color:#fbbf24;">0</div>
+                <div class="kpi-lbl">🔥 Nuevas (< 72h)</div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="search-row">
+                <input type="text" id="sInput" class="search-box" placeholder="Buscar por tecnología, empresa o problema (ej: n8n, python, ai, bot, scraping, react, unity, 3d)..." oninput="filterData()">
+                <select id="sortSelect" class="sort-select" onchange="filterData()">
+                    <option value="smart">🔥 Orden: Smart Radar (Nuevas + Score)</option>
+                    <option value="newest">🕒 Orden: Más Novedosas Primero</option>
+                    <option value="score">⭐ Orden: Mayor Score Técnico</option>
+                    <option value="pay">💰 Orden: Mayor Pago Confirmado</option>
+                </select>
+            </div>
+            <div class="pills">
+                <button id="pillAll" class="pill active" onclick="setDec('', this)">Todas</button>
+                <button id="pillPrio" class="pill" onclick="setDec('PRIORIDAD', this)">🚀 Prioridad</button>
+                <button id="pillBuild" class="pill" onclick="setDec('CONSTRUIR_Y_VENDER', this)">💡 Construir y Vender</button>
+                <button id="pillInv" class="pill" onclick="setDec('INVESTIGAR', this)">🔍 Investigar</button>
+                <button id="pillFresh" class="pill" onclick="setSpec('fresh', this)">🔥 Recientes (< 72h)</button>
+                <button class="pill" onclick="setSpec('paid', this)">💰 Con Pago Explícito</button>
+                <button class="pill" onclick="setSpec('freelance', this)">⚡ Contratos / Freelance</button>
+                <button class="pill" onclick="setSpec('bounty', this)">🎯 Bounties</button>
+                <button class="pill" onclick="setSpec('saved', this)">📌 En Seguimiento CRM</button>
+            </div>
+            <div class="quick-skills">
+                <span class="qskill-lbl">Filtro Rápido:</span>
+                <span class="qskill" onclick="fsk('n8n')">n8n</span>
+                <span class="qskill" onclick="fsk('automation')">automation</span>
+                <span class="qskill" onclick="fsk('python')">python</span>
+                <span class="qskill" onclick="fsk('ai')">AI / LLM</span>
+                <span class="qskill" onclick="fsk('scraping')">scraping</span>
+                <span class="qskill" onclick="fsk('bot')">bots</span>
+                <span class="qskill" onclick="fsk('api')">APIs</span>
+                <span class="qskill" onclick="fsk('typescript')">typescript</span>
+                <span class="qskill" onclick="fsk('react')">react</span>
+                <span class="qskill" onclick="fsk('unity')">unity / 3D</span>
+                <span class="qskill" style="background:rgba(239,68,68,0.15);color:#fca5a5;border-color:rgba(239,68,68,0.3);" onclick="fsk('')">✕ Limpiar</span>
+            </div>
+        </div>
+
+        <div id="cards" class="grid"></div>
+    </div>
+
+    <!-- Pitch Modal -->
+    <div id="pitchModal" class="modal" onclick="closeM(event)">
+        <div class="mbox" onclick="event.stopPropagation()">
+            <div class="mhead">
+                <div>
+                    <h3 class="mtitle" id="pmTitle">Propuesta Técnica (Sniper Pitch)</h3>
+                    <div id="pmTarget" style="font-size:0.76rem;color:#93c5fd;margin-top:2px;"></div>
+                </div>
+                <button class="mclose" onclick="closeMDirect()">&times;</button>
+            </div>
+            <div class="field">
+                <div class="flbl">
+                    <span>ASUNTO RECOMENDADO</span>
+                    <button class="btn-cp" onclick="cp('pmSub')">📋 Copiar Asunto</button>
+                </div>
+                <div id="pmSub" class="fbody"></div>
+            </div>
+            <div class="field">
+                <div class="flbl">
+                    <span>CUERPO DE LA PROPUESTA (LISTA PARA ENVIAR)</span>
+                    <button class="btn-cp" onclick="cp('pmBody')">📋 Copiar Propuesta</button>
+                </div>
+                <div id="pmBody" class="fbody"></div>
+            </div>
+            <div style="font-size:0.78rem;color:var(--text-muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);">
+                <div>💰 Tarifa sugerida: <strong id="pmRate" style="color:#34d399;"></strong></div>
+                <div>⏱️ Entrega MVP: <strong id="pmTurn" style="color:#60a5fa;"></strong></div>
+                <a id="pmLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-cp" style="text-decoration:none;background:#2563eb;color:#fff;">↗ Ir a Postular Ahora</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blueprint Modal -->
+    <div id="bpModal" class="modal" onclick="closeM(event)">
+        <div class="mbox" onclick="event.stopPropagation()">
+            <div class="mhead">
+                <div>
+                    <h3 class="mtitle" id="bpTitle">Blueprint de Producto</h3>
+                    <div style="font-size:0.76rem;color:#c084fc;margin-top:2px;">Construir Una Vez y Vender Múltiples Veces</div>
+                </div>
+                <button class="mclose" onclick="closeMDirect()">&times;</button>
+            </div>
+            <div class="field">
+                <div class="flbl"><span>CONCEPTO Y ENTREGABLE CONCRETO</span></div>
+                <div id="bpDeliv" class="fbody"></div>
+            </div>
+            <div class="field">
+                <div class="flbl"><span>MERCADO OBJETIVO Y PRECIO SUGERIDO</span></div>
+                <div id="bpMarket" class="fbody"></div>
+            </div>
+            <div class="field">
+                <div class="flbl">
+                    <span>GUIÓN DE PROSPECCIÓN EN FRÍO (OUTREACH)</span>
+                    <button class="btn-cp" onclick="cp('bpOut')">📋 Copiar Guión</button>
+                </div>
+                <div id="bpOut" class="fbody"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Safari / Mobile & Cloud Info Modal -->
+    <div id="safariModal" class="modal" onclick="closeM(event)">
+        <div class="mbox" onclick="event.stopPropagation()">
+            <div class="mhead">
+                <div>
+                    <h3 class="mtitle">📲 Acceso Universal: Safari, iPhone, Vercel & GitHub</h3>
+                    <div style="font-size:0.76rem;color:#34d399;margin-top:2px;">Abre, instala o descarga RADAR en cualquier momento</div>
+                </div>
+                <button class="mclose" onclick="closeMDirect()">&times;</button>
+            </div>
+            <div class="field">
+                <div class="flbl"><span>1. ENLACE WEB EN LA NUBE (24/7 SIN DEPENDER DE LA PC)</span></div>
+                <div class="fbody" id="cloudLinksBox">• Web App Pública (GitHub Pages): https://lineage-ttoo.github.io/radar-opportunities/
+• Repositorio GitHub: https://github.com/LineAge-ttoo/radar-opportunities
+• Red Local (Mismo Wi-Fi): http://<span id="modalIp">127.0.0.1</span>:8080</div>
+            </div>
+            <div class="field">
+                <div class="flbl"><span>2. CÓMO INSTALAR EN SAFARI (iPHONE / iPAD / MAC)</span></div>
+                <div class="fbody">1. Abre el enlace de RADAR en Safari.
+2. Toca el botón "Compartir" (icono de cuadrado con flecha hacia arriba ⬆️).
+3. Selecciona "Agregar a la pantalla de inicio" (Add to Home Screen).
+4. ¡Listo! Tendrás el ícono de RADAR como una aplicación nativa y podrás pulsar "⚡ Buscar Ofertas Nuevas en Vivo" en cualquier momento para consultar las APIs directamente desde tu teléfono.</div>
+            </div>
+            <div class="field">
+                <div class="flbl"><span>3. MODO DESCARGABLE AUTÓNOMO (OFFLINE)</span></div>
+                <div class="fbody">Haz clic en el botón "📥 Descargar App" arriba en la barra superior para guardar un archivo HTML único con todas las ofertas y propuestas actuales integradas. Funciona incluso sin internet.</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">¡Copiado!</div>
+
+    <script>
+        let opps = [];
+        let curDec = '';
+        let curSpec = '';
+        const STORAGE_KEY_STATUS = 'radar_crm_statuses_v2';
+        const STORAGE_KEY_LIVE_OPPS = 'radar_live_cached_opps_v2';
+
+        function getSavedStatuses() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY_STATUS) || '{}'); }
+            catch (e) { return {}; }
+        }
+
+        function saveLocalStatus(id, st) {
+            try {
+                const map = getSavedStatuses();
+                map[id] = st;
+                localStorage.setItem(STORAGE_KEY_STATUS, JSON.stringify(map));
+            } catch (e) {}
+        }
+
+        function computeFreshness(pubDateStr) {
+            if (!pubDateStr) return { ageHours: 48, label: '⚡ Reciente', bonus: 8 };
+            const ts = Date.parse(pubDateStr);
+            if (isNaN(ts)) return { ageHours: 48, label: '⚡ Reciente', bonus: 8 };
+            const ageHours = Math.max(0.5, (Date.now() - ts) / 3600000);
+            if (ageHours <= 8) return { ageHours, label: '🔥 Hace ' + Math.max(1, Math.round(ageHours)) + 'h', bonus: 18 };
+            if (ageHours <= 24) return { ageHours, label: '🔥 Publicado Hoy', bonus: 15 };
+            if (ageHours <= 72) return { ageHours, label: '⚡ Hace ' + Math.max(1, Math.floor(ageHours / 24)) + 'd', bonus: 10 };
+            if (ageHours <= 168) return { ageHours, label: '🟢 Hace ' + Math.floor(ageHours / 24) + 'd', bonus: 5 };
+            return { ageHours, label: 'Hace ' + Math.floor(ageHours / 24) + 'd', bonus: 0 };
+        }
+
+        function applyLocalStatusesAndFreshness(list) {
+            const savedMap = getSavedStatuses();
+            const seen = new Set();
+            const clean = [];
+            for (const o of list) {
+                if (!o || !o.opportunity_id || seen.has(o.opportunity_id)) continue;
+                seen.add(o.opportunity_id);
+                if (savedMap[o.opportunity_id]) {
+                    o.status = savedMap[o.opportunity_id];
+                } else if (!o.status || o.status === 'NEW') {
+                    o.status = 'NUEVA';
+                }
+                const fr = computeFreshness(o.published_at || o.discovered_at);
+                if (!o.estimated_data) o.estimated_data = {};
+                o.estimated_data.age_hours = fr.ageHours;
+                o.estimated_data.freshness_label = fr.label;
+                clean.push(o);
+            }
+            return clean;
+        }
+
+        async function loadInitialData() {
+            // If offline standalone snapshot is embedded in window.__RADAR_EMBEDDED_DATA__
+            if (window.__RADAR_EMBEDDED_DATA__ && Array.isArray(window.__RADAR_EMBEDDED_DATA__)) {
+                opps = applyLocalStatusesAndFreshness(window.__RADAR_EMBEDDED_DATA__);
+                updateDashboardCounts();
+                filterData();
+                document.getElementById('statusText').innerText = opps.length + ' oportunidades cargadas (Modo Portátil Autónomo). Pulsa "Buscar Ofertas Nuevas en Vivo" para actualizar.';
+                return;
+            }
+
+            const candidateUrls = [
+                '/api/opportunities?limit=250',
+                './latest_scan.json',
+                './app/latest_scan.json',
+                './data/opportunities/latest_scan.json'
+            ];
+
+            let loaded = false;
+            for (const url of candidateUrls) {
+                try {
+                    const res = await fetch(url, { cache: 'no-store' });
+                    if (res.ok) {
+                        const data = await res.json();
+                        const fetchedOpps = data.opportunities || [];
+                        if (fetchedOpps.length > 0) {
+                            // Merge with any browser-discovered live opportunities stored locally
+                            let cachedLive = [];
+                            try { cachedLive = JSON.parse(localStorage.getItem(STORAGE_KEY_LIVE_OPPS) || '[]'); } catch (e) {}
+                            opps = applyLocalStatusesAndFreshness([...cachedLive, ...fetchedOpps]);
+                            loaded = true;
+                            if (data.meta && data.meta.started_at) {
+                                const d = new Date(data.meta.started_at);
+                                document.getElementById('lastScanTime').innerText = 'Último scan: ' + d.toLocaleString();
+                            }
+                            break;
+                        }
+                    }
+                } catch (e) {}
+            }
+
+            if (loaded) {
+                updateDashboardCounts();
+                filterData();
+                document.getElementById('statusText').innerText = opps.length + ' oportunidades reales listas para postular (6 fuentes activas).';
+                fetchServerIp();
+            } else {
+                document.getElementById('statusText').innerText = 'Conectando en directo a las fuentes globales de oportunidades...';
+                await triggerLiveScan();
+            }
+        }
+
+        async function fetchServerIp() {
+            try {
+                const res = await fetch('/api/stats');
+                if (res.ok) {
+                    const s = await res.json();
+                    if (s.local_ip) {
+                        const el = document.getElementById('modalIp');
+                        if (el) el.innerText = s.local_ip;
+                    }
+                }
+            } catch (e) {}
+        }
+
+        function updateDashboardCounts() {
+            const total = opps.length;
+            const prio = opps.filter(o => o.decision === 'PRIORIDAD').length;
+            const build = opps.filter(o => o.decision === 'CONSTRUIR_Y_VENDER').length;
+            const inv = opps.filter(o => o.decision === 'INVESTIGAR').length;
+            const fresh = opps.filter(o => (o.estimated_data?.age_hours || 999) <= 72).length;
+
+            document.getElementById('kpiTotal').innerText = total;
+            document.getElementById('kpiPrio').innerText = prio;
+            document.getElementById('kpiBuild').innerText = build;
+            document.getElementById('kpiInv').innerText = inv;
+            document.getElementById('kpiFresh').innerText = fresh;
+        }
+
+        function escapeHtml(str) {
+            return String(str || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        function render(list) {
+            const c = document.getElementById('cards');
+            if (!list.length) {
+                c.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;background:var(--bg-surface);border:1px solid var(--border);border-radius:12px;color:var(--text-muted);">No hay ofertas con este filtro exacto. Prueba limpiar la búsqueda o pulsa <strong>"⚡ Buscar Ofertas Nuevas en Vivo"</strong>.</div>';
+                return;
+            }
+            c.innerHTML = list.map((o) => {
+                const idx = opps.findIndex(item => item.opportunity_id === o.opportunity_id);
+                const d = o.decision || 'OBSERVAR';
+                const bclass = d === 'PRIORIDAD' ? 'badge-prio' : (d === 'CONSTRUIR_Y_VENDER' ? 'badge-build' : (d === 'INVESTIGAR' ? 'badge-inv' : 'badge-obs'));
+                const cclass = d === 'PRIORIDAD' ? 'card-prio' : (d === 'CONSTRUIR_Y_VENDER' ? 'card-build' : (d === 'INVESTIGAR' ? 'card-inv' : ''));
+                let sal = 'Pago a convenir / Ver oferta';
+                if (o.payment_min || o.payment_max) {
+                    const cu = o.currency || 'USD';
+                    if (o.payment_min && o.payment_max && o.payment_min !== o.payment_max) {
+                        sal = `${cu} ${Number(o.payment_min).toLocaleString()} - ${Number(o.payment_max).toLocaleString()}`;
+                    } else {
+                        sal = `${cu} ${Number(o.payment_max || o.payment_min).toLocaleString()}`;
+                    }
+                } else if (o.observed_data?.stated_salary) {
+                    sal = o.observed_data.stated_salary;
+                }
+                const freshLabel = o.estimated_data?.freshness_label || '⚡ Reciente';
+                const sk = (o.skills || []).slice(0, 7).map(s => `<span class="stag" onclick="fsk('${escapeHtml(s)}')">${escapeHtml(s)}</span>`).join('');
+                const descShort = escapeHtml((o.description || '').slice(0, 220)) + ((o.description || '').length > 220 ? '...' : '');
+                return `
+                <div class="card ${cclass}">
+                    <div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+                            <span class="badge ${bclass}">${escapeHtml(d.replace(/_/g, ' '))}</span>
+                            <div style="display:flex;align-items:center;gap:6px;">
+                                <span class="fresh-tag">${escapeHtml(freshLabel)}</span>
+                                <span style="font-size:0.76rem;font-weight:800;color:#60a5fa;">${o.overall_score || 0} pts</span>
+                            </div>
+                        </div>
+                        <h4 style="font-size:1.02rem;color:#fff;margin-bottom:4px;font-weight:700;">${escapeHtml(o.title)}</h4>
+                        <div style="font-size:0.78rem;color:var(--text-muted);margin-bottom:8px;">
+                            <strong>${escapeHtml(o.organization || 'Cliente Directo')}</strong> • <span>${escapeHtml(o.source || '')}</span> • <span>${escapeHtml(o.observed_data?.stated_location || 'Remoto')}</span>
+                        </div>
+                        <div class="salary">
+                            <span>💰 ${escapeHtml(sal)}</span>
+                            <span style="font-size:0.7rem;opacity:0.85;">${escapeHtml(o.opportunity_type || 'remoto')}</span>
+                        </div>
+                        <div class="skills">${sk}</div>
+                        <div class="desc-preview">${descShort}</div>
+                        <div class="insights">
+                            <p><strong>Por qué vale la pena:</strong> ${escapeHtml(o.reasoning || '')}</p>
+                            <p><strong>Entrega est.:</strong> ${escapeHtml(o.estimated_data?.estimated_hours || '15-40h')} | <strong>Competencia:</strong> ${escapeHtml(o.estimated_data?.competition_level || 'MEDIA')}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-btns">
+                            ${o.blueprint ? `<button class="cbtn cbtn-bp" onclick="openBp(${idx})">💡 Blueprint</button>` : ''}
+                            ${o.proposal ? `<button class="cbtn cbtn-pitch" onclick="openP(${idx})">📝 Ver Pitch</button>` : ''}
+                            <a href="${escapeHtml(o.source_url)}" target="_blank" rel="noopener noreferrer" class="cbtn cbtn-link">↗ Abrir Oferta</a>
+                        </div>
+                        <select class="cselect" onchange="chgSt('${escapeHtml(o.opportunity_id)}', this.value)">
+                            <option value="NUEVA" ${o.status==='NUEVA'?'selected':''}>📌 Estado: Nueva</option>
+                            <option value="REVISADA" ${o.status==='REVISADA'?'selected':''}>👀 Estado: Revisada</option>
+                            <option value="PROPUESTA_ENVIADA" ${o.status==='PROPUESTA_ENVIADA'?'selected':''}>📤 Propuesta Enviada</option>
+                            <option value="EN_NEGOCIACION" ${o.status==='EN_NEGOCIACION'?'selected':''}>💬 En Negociación</option>
+                            <option value="GANADA" ${o.status==='GANADA'?'selected':''}>🎉 ¡Ganada / Cerrada!</option>
+                            <option value="DESCARTADA" ${o.status==='DESCARTADA'?'selected':''}>❌ Descartada</option>
+                        </select>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        function filterData() {
+            const q = document.getElementById('sInput').value.toLowerCase().trim();
+            const sortMode = document.getElementById('sortSelect').value;
+            let f = opps.filter(o => o.status !== 'DESCARTADA' || curSpec === 'saved');
+
+            if (curDec) f = f.filter(o => o.decision === curDec);
+            if (curSpec === 'fresh') f = f.filter(o => (o.estimated_data?.age_hours || 999) <= 72);
+            else if (curSpec === 'paid') f = f.filter(o => o.payment_min || o.payment_max);
+            else if (curSpec === 'freelance') f = f.filter(o => ['freelance', 'contract'].includes(o.opportunity_type));
+            else if (curSpec === 'bounty') f = f.filter(o => o.opportunity_type === 'bounty' || o.source === 'GitHub Bounties');
+            else if (curSpec === 'saved') f = f.filter(o => o.status && o.status !== 'NUEVA');
+
+            if (q) {
+                f = f.filter(o =>
+                    (o.title || '').toLowerCase().includes(q) ||
+                    (o.organization || '').toLowerCase().includes(q) ||
+                    (o.description || '').toLowerCase().includes(q) ||
+                    (o.source || '').toLowerCase().includes(q) ||
+                    (o.skills || []).some(s => s.toLowerCase().includes(q))
+                );
+            }
+
+            f.sort((a, b) => {
+                const ageA = a.estimated_data?.age_hours ?? 999;
+                const ageB = b.estimated_data?.age_hours ?? 999;
+                const scoreA = a.overall_score || 0;
+                const scoreB = b.overall_score || 0;
+                const payA = a.payment_max || a.payment_min || 0;
+                const payB = b.payment_max || b.payment_min || 0;
+
+                if (sortMode === 'newest') return ageA - ageB;
+                if (sortMode === 'score') return scoreB - scoreA;
+                if (sortMode === 'pay') return payB - payA || scoreB - scoreA;
+                // Smart Radar: combines score + recency boost
+                const smartA = scoreA + (ageA <= 24 ? 18 : (ageA <= 72 ? 10 : 0));
+                const smartB = scoreB + (ageB <= 24 ? 18 : (ageB <= 72 ? 10 : 0));
+                return smartB - smartA;
+            });
+
+            render(f);
+        }
+
+        function setDec(d, btn) {
+            curDec = d; curSpec = '';
+            document.querySelectorAll('.pill').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            filterData();
+        }
+
+        function setSpec(s, btn) {
+            curSpec = s; curDec = '';
+            document.querySelectorAll('.pill').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            filterData();
+        }
+
+        function fsk(skill) {
+            document.getElementById('sInput').value = skill;
+            filterData();
+        }
+
+        function openP(i) {
+            const o = opps[i];
+            if (!o) return;
+            const p = o.proposal || generateClientPitch(o);
+            document.getElementById('pmTitle').innerText = o.title;
+            document.getElementById('pmTarget').innerText = `${o.organization || 'Cliente'} • ${o.source} • ${o.estimated_data?.freshness_label || ''}`;
+            document.getElementById('pmSub').innerText = p.subject || '';
+            document.getElementById('pmBody').innerText = p.body || '';
+            document.getElementById('pmRate').innerText = p.pricing_recommendation || 'Por hito / A convenir';
+            document.getElementById('pmTurn').innerText = p.turnaround || '48 a 72 horas';
+            document.getElementById('pmLink').href = o.source_url || '#';
+            document.getElementById('pitchModal').style.display = 'flex';
+        }
+
+        function openBp(i) {
+            const o = opps[i];
+            if (!o || !o.blueprint) return;
+            const b = o.blueprint;
+            document.getElementById('bpTitle').innerText = b.product_type || 'Producto Reutilizable';
+            document.getElementById('bpDeliv').innerText = (b.deliverable || '') + '\n\nCanales de Distribución: ' + (b.distribution_channels || '');
+            document.getElementById('bpMarket').innerText = 'Público Objetivo: ' + (b.target_audience || '') + '\n\nPrecio Sugerido: ' + (b.suggested_pricing || '');
+            document.getElementById('bpOut').innerText = b.outreach_template || '';
+            document.getElementById('bpModal').style.display = 'flex';
+        }
+
+        function openSafariModal() {
+            document.getElementById('safariModal').style.display = 'flex';
+        }
+
+        function closeM(e) { if (e.target.classList.contains('modal')) closeMDirect(); }
+        function closeMDirect() {
+            document.getElementById('pitchModal').style.display = 'none';
+            document.getElementById('bpModal').style.display = 'none';
+            document.getElementById('safariModal').style.display = 'none';
+        }
+
+        async function chgSt(id, st) {
+            saveLocalStatus(id, st);
+            const o = opps.find(x => x.opportunity_id === id);
+            if (o) o.status = st;
+            toast('Estado actualizado: ' + st);
+            try {
+                await fetch('/api/opportunity/status', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ opportunity_id: id, status: st })
+                });
+            } catch (e) {}
+            filterData();
+        }
+
+        // Client-side Live Pitch & Scoring Engine so Safari / Vercel / GitHub Pages can scan in real time without a PC backend!
+        const CLIENT_SKILL_RULES = [
+            { kw: 'n8n', w: 30 }, { kw: 'automation', w: 25 }, { kw: 'workflow', w: 18 },
+            { kw: 'python', w: 22 }, { kw: 'scraping', w: 24 }, { kw: 'bot', w: 22 },
+            { kw: 'ai', w: 22 }, { kw: 'llm', w: 24 }, { kw: 'agent', w: 22 },
+            { kw: 'api', w: 16 }, { kw: 'typescript', w: 18 }, { kw: 'javascript', w: 15 },
+            { kw: 'react', w: 16 }, { kw: 'node', w: 16 }, { kw: 'unity', w: 25 },
+            { kw: 'roblox', w: 25 }, { kw: 'blender', w: 25 }, { kw: '3d', w: 20 }, { kw: 'figma', w: 15 }
+        ];
+
+        function generateClientPitch(o) {
+            const sk = (o.skills && o.skills.length) ? o.skills.slice(0, 3).join(', ') : 'Automation, Python & Full-Stack Development';
+            return {
+                subject: `Technical Proposal: ${o.title} | Fast Prototype & Architecture`,
+                body: `Hi ${o.organization || 'Team'},\n\nI just saw your recent post for "${o.title}" and reviewed your technical requirements.\n\n### How I can solve this quickly:\nI specialize in ${sk}. I can architect a clean, production-ready solution with automated validation, error handling, and full documentation.\n\n### Proposed Plan:\n1. Day 1: Architecture & input/output mapping.\n2. Days 2-3: Core implementation & live testing.\n3. Day 4: Deployment & handoff.\n\nI can have an initial working prototype ready within 48-72 hours. Would you be open to a quick 5-minute chat or message here to align on scope?\n\nBest regards,\nDavid\nSoftware & Automation Specialist`,
+                pricing_recommendation: o.payment_max ? `USD ${o.payment_max.toLocaleString()}` : 'Milestone-based flat rate or flexible hourly',
+                turnaround: '48 to 72 hours for initial MVP'
+            };
+        }
+
+        function scoreClientItem(item) {
+            const text = `${item.title} ${item.description} ${(item.skills || []).join(' ')}`.toLowerCase();
+            const detected = [];
+            let fit = 0;
+            for (const rule of CLIENT_SKILL_RULES) {
+                const reg = new RegExp(`\\b${rule.kw}\\b`, 'i');
+                if (reg.test(text)) {
+                    detected.push(rule.kw);
+                    fit += reg.test(item.title || '') ? rule.w * 1.3 : rule.w;
+                }
+            }
+            if (!detected.length) return null;
+            fit = Math.min(100, Math.round(fit));
+            const fr = computeFreshness(item.published_at);
+            if (fr.ageHours > 1080) return null; // skip > 45 days old
+
+            const money = (item.payment_min || item.payment_max) ? 85 : (['bounty', 'freelance', 'contract'].includes(item.opportunity_type) ? 68 : 45);
+            const reusa = detected.some(k => ['n8n', 'automation', 'bot', 'scraping', 'ai', 'agent'].includes(k)) ? 80 : 45;
+            const overall = Math.min(99, Math.round((fit * 0.42 + money * 0.23 + reusa * 0.2 + 15) + fr.bonus * 0.5));
+
+            let decision = 'INVESTIGAR';
+            if (reusa >= 75 && fit >= 60) decision = 'CONSTRUIR_Y_VENDER';
+            else if (overall >= 70 && fit >= 45) decision = 'PRIORIDAD';
+            else if (overall < 50) decision = 'OBSERVAR';
+
+            item.skills = detected;
+            item.fit_score = fit;
+            item.overall_score = overall;
+            item.decision = decision;
+            item.status = 'NUEVA';
+            item.reasoning = `[${fr.label}] Detectada en vivo (${detected.slice(0, 4).join(', ')}).`;
+            item.estimated_data = {
+                age_hours: fr.ageHours,
+                freshness_label: fr.label,
+                estimated_hours: item.opportunity_type === 'bounty' ? '4 a 16h' : '15 a 50h',
+                competition_level: reusa >= 75 ? 'BAJA' : 'MEDIA'
+            };
+            item.proposal = generateClientPitch(item);
+            if (decision === 'CONSTRUIR_Y_VENDER') {
+                item.blueprint = {
+                    product_type: 'Solución / Plantilla Reutilizable (' + detected.slice(0, 2).join(' + ') + ')',
+                    deliverable: 'Flujo automatizado / micro-servicio listo para desplegar en múltiples clientes.',
+                    target_audience: 'Empresas y equipos con el mismo cuello de botella operativo.',
+                    suggested_pricing: 'USD $99 - $249 por implementación',
+                    distribution_channels: 'Outreach directo, comunidades técnicas y Gumroad.',
+                    outreach_template: `Hola equipo de ${item.organization},\nVi su requerimiento sobre ${item.title}. Tengo listo un módulo automatizado de ${detected.slice(0,2).join('/')} que resuelve esto en horas. ¿Les envío un video corto de 2 min mostrando cómo funciona?`
+                };
+            }
+            return item;
+        }
+
+        async function triggerLiveScan() {
+            const b = document.getElementById('btnScan');
+            b.disabled = true;
+            b.innerText = '🔄 Buscando Ofertas Novedosas...';
+            toast('Consultando APIs en vivo (Remotive, HN, GitHub Bounties, Arbeitnow)...');
+
+            let liveFound = [];
+            const thirtyDaysAgo = Math.floor(Date.now() / 1000) - (30 * 86400);
+
+            // 1. Try local backend scan if running on PC
+            try {
+                const r = await fetch('/api/scan', { method: 'POST' });
+                if (r.ok) {
+                    // Poll local server for up to 18s
+                    for (let i = 0; i < 6; i++) {
+                        await new Promise(res => setTimeout(res, 2500));
+                        const st = await (await fetch('/api/scan/status')).json();
+                        if (!st.is_scanning) {
+                            const freshRes = await (await fetch('/api/opportunities?limit=250')).json();
+                            if (freshRes.opportunities && freshRes.opportunities.length) {
+                                opps = applyLocalStatusesAndFreshness(freshRes.opportunities);
+                                updateDashboardCounts();
+                                filterData();
+                                b.disabled = false;
+                                b.innerText = '⚡ Buscar Ofertas Nuevas en Vivo';
+                                document.getElementById('lastScanTime').innerText = 'Actualizado: ' + new Date().toLocaleTimeString();
+                                toast('¡Escaneo completado! ' + opps.length + ' ofertas activas.');
+                                return;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (e) {}
+
+            // 2. Direct Browser Live Fetch (Works 24/7 on Safari iOS, Vercel, GitHub Pages, or Offline-to-Online!)
+            const tasks = [
+                // HackerNews Algolia (100% CORS enabled)
+                fetch(`https://hn.algolia.com/api/v1/search_by_date?query=freelance+remote&tags=comment&numericFilters=created_at_i>${thirtyDaysAgo}&hitsPerPage=25`)
+                    .then(r => r.json())
+                    .then(d => (d.hits || []).forEach(h => {
+                        const clean = (h.comment_text || '').replace(/<[^>]+>/g, ' ');
+                        const scored = scoreClientItem({
+                            opportunity_id: 'hn_' + h.objectID,
+                            source: 'HackerNews',
+                            source_url: 'https://news.ycombinator.com/item?id=' + h.objectID,
+                            published_at: h.created_at,
+                            title: clean.slice(0, 85) + '...',
+                            organization: 'HN: ' + (h.author || 'Founder'),
+                            description: clean,
+                            opportunity_type: 'freelance',
+                            observed_data: { stated_location: 'Remote' }
+                        });
+                        if (scored) liveFound.push(scored);
+                    })).catch(() => {}),
+
+                // GitHub Open Bounties (100% CORS enabled)
+                fetch('https://api.github.com/search/issues?q=label:bounty+state:open+is:issue&sort=created&order=desc&per_page=25')
+                    .then(r => r.json())
+                    .then(d => (d.items || []).forEach(it => {
+                        const body = (it.body || '').replace(/<[^>]+>/g, ' ');
+                        const m = (it.title + ' ' + body).match(/\$\s*(\d[\d,]*)/);
+                        const pay = m ? parseFloat(m[1].replace(/,/g, '')) : null;
+                        const scored = scoreClientItem({
+                            opportunity_id: 'github_bounty_' + it.id,
+                            source: 'GitHub Bounties',
+                            source_url: it.html_url,
+                            published_at: it.created_at,
+                            title: it.title,
+                            organization: (it.repository_url || '').split('/').slice(-2).join('/') || 'GitHub',
+                            description: body.slice(0, 1200),
+                            opportunity_type: 'bounty',
+                            payment_min: pay,
+                            payment_max: pay,
+                            currency: pay ? 'USD' : null,
+                            observed_data: { stated_location: 'Worldwide', stated_salary: pay ? 'USD ' + pay : 'Bounty Abierto' }
+                        });
+                        if (scored) liveFound.push(scored);
+                    })).catch(() => {}),
+
+                // Remotive API (CORS enabled)
+                fetch('https://remotive.com/api/remote-jobs?limit=40')
+                    .then(r => r.json())
+                    .then(d => (d.jobs || []).forEach(j => {
+                        const clean = (j.description || '').replace(/<[^>]+>/g, ' ');
+                        const scored = scoreClientItem({
+                            opportunity_id: 'remotive_' + j.id,
+                            source: 'Remotive',
+                            source_url: j.url,
+                            published_at: j.publication_date,
+                            title: j.title,
+                            organization: j.company_name,
+                            description: clean.slice(0, 1200),
+                            opportunity_type: (j.job_type || '').includes('contract') ? 'contract' : 'full_time',
+                            observed_data: { stated_location: j.candidate_required_location || 'Worldwide', stated_salary: j.salary || null }
+                        });
+                        if (scored) liveFound.push(scored);
+                    })).catch(() => {})
+            ];
+
+            await Promise.allSettled(tasks);
+
+            if (liveFound.length > 0) {
+                try {
+                    localStorage.setItem(STORAGE_KEY_LIVE_OPPS, JSON.stringify(liveFound.slice(0, 80)));
+                } catch (e) {}
+                opps = applyLocalStatusesAndFreshness([...liveFound, ...opps]);
+                updateDashboardCounts();
+                filterData();
+                document.getElementById('lastScanTime').innerText = 'Scan en vivo: ' + new Date().toLocaleTimeString();
+                document.getElementById('statusText').innerText = '¡Escaneo en vivo exitoso! ' + opps.length + ' oportunidades activas (' + liveFound.length + ' consultadas en directo).';
+                toast('¡' + liveFound.length + ' ofertas frescas verificadas en directo!');
+            } else {
+                toast('Datos sincronizados con el último snapshot.');
+            }
+
+            b.disabled = false;
+            b.innerText = '⚡ Buscar Ofertas Nuevas en Vivo';
+        }
+
+        function downloadOfflineApp() {
+            const embeddedScript = `<script>window.__RADAR_EMBEDDED_DATA__ = ${JSON.stringify(opps)};<\/script>`;
+            const fullHtml = document.documentElement.outerHTML.replace('</head>', embeddedScript + '\n</head>');
+            const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `RADAR_App_Portatil_${new Date().toISOString().slice(0, 10)}.html`;
+            a.click();
+            toast('¡App portátil descargada! Ábrela en Safari, iPhone o PC.');
+        }
+
+        function exportCSV() {
+            const headers = ['ID', 'Decision', 'Score', 'Frescura', 'Titulo', 'Organizacion', 'Fuente', 'Pago_Min', 'Pago_Max', 'Moneda', 'Skills', 'Estado_CRM', 'URL'];
+            const rows = opps.map(o => [
+                o.opportunity_id,
+                o.decision,
+                o.overall_score,
+                o.estimated_data?.freshness_label || '',
+                `"${(o.title || '').replace(/"/g, '""')}"`,
+                `"${(o.organization || '').replace(/"/g, '""')}"`,
+                o.source,
+                o.payment_min || '',
+                o.payment_max || '',
+                o.currency || '',
+                `"${(o.skills || []).join(', ')}"`,
+                o.status || 'NUEVA',
+                o.source_url
+            ].join(','));
+            const csv = '\uFEFF' + [headers.join(','), ...rows].join('\n');
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `RADAR_Oportunidades_${new Date().toISOString().slice(0, 10)}.csv`;
+            a.click();
+            toast('¡CSV exportado correctamente!');
+        }
+
+        function cp(id) {
+            const text = document.getElementById(id).innerText;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => toast('¡Copiado al portapapeles!'));
+            } else {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                toast('¡Copiado al portapapeles!');
+            }
+        }
+
+        function toast(m) {
+            const t = document.getElementById('toast');
+            t.innerText = m;
+            t.style.display = 'block';
+            setTimeout(() => { t.style.display = 'none'; }, 2800);
+        }
+
+        window.addEventListener('DOMContentLoaded', loadInitialData);
+    </script>
+</body>
+</html>

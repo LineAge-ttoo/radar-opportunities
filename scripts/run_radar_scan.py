@@ -1,22 +1,24 @@
-﻿import sys
+import sys
 import os
 import json
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 
-sys.path.append(r'C:\Radar')
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if BASE_DIR not in sys.path:
+    sys.path.append(BASE_DIR)
 
 from scripts.collectors.collector_manager import CollectorManager
 from scripts.analyzers.normalizer import OpportunityNormalizer
 from scripts.analyzers.scoring_engine import ScoringEngine
 from scripts.analyzers.proposal_generator import TechnicalProposalGenerator
 from scripts.analyzers.blueprint_generator import BlueprintGenerator
-from scripts.utilities.db import save_opportunities, log_scan_run
+from scripts.utilities.db import save_opportunities, log_scan_run, get_all_opportunities, get_stats
 from scripts.utilities.presenter import RadarPresenter
 
 def run_scan():
-    scan_id = f"scan_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{str(uuid.uuid4())[:6]}"
-    started_at = datetime.now().isoformat()
+    scan_id = f"scan_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}_{str(uuid.uuid4())[:6]}"
+    started_at = datetime.now(timezone.utc).isoformat()
 
     print(f"=== RADAR SCAN INICIADO [{scan_id}] ===")
     print(f"Hora de inicio: {started_at}")
@@ -32,7 +34,7 @@ def run_scan():
     for source_name, result in raw_results.items():
         sources_consulted.append(source_name)
         if not result['success']:
-            print(f"Advertencia: Fuente '{source_name}' reportó: {result.get('error')}")
+            print(f"Advertencia: Fuente '{source_name}' reporto: {result.get('error')}")
             continue
 
         items = result['items']
@@ -74,24 +76,28 @@ def run_scan():
         dec = scored.get('decision', 'OBSERVAR')
         counts[dec] = counts.get(dec, 0) + 1
 
-        # Generate proposal pitch for actionable opportunities
-        if dec in ['PRIORIDAD', 'INVESTIGAR', 'CONSTRUIR_Y_VENDER']:
+        if dec in ['PRIORIDAD', 'INVESTIGAR', 'CONSTRUIR_Y_VENDER', 'OBSERVAR']:
             scored['proposal'] = TechnicalProposalGenerator.generate_pitch(scored)
         else:
             scored['proposal'] = None
 
-        # Generate commercialization blueprint for productizable opportunities
-        if dec == 'CONSTRUIR_Y_VENDER':
+        if dec in ['CONSTRUIR_Y_VENDER', 'PRIORIDAD']:
             scored['blueprint'] = BlueprintGenerator.generate_blueprint(scored)
         else:
             scored['blueprint'] = None
 
         scored_list.append(scored)
 
-    # 4. Sort by overall_score DESC
-    scored_list.sort(key=lambda x: x.get('overall_score', 0), reverse=True)
+    # 4. Sort by overall_score DESC, then freshness
+    scored_list.sort(
+        key=lambda x: (
+            x.get('overall_score', 0),
+            -float(x.get('estimated_data', {}).get('age_hours', 9999))
+        ),
+        reverse=True
+    )
 
-    finished_at = datetime.now().isoformat()
+    finished_at = datetime.now(timezone.utc).isoformat()
 
     scan_meta = {
         'scan_id': scan_id,
@@ -104,54 +110,60 @@ def run_scan():
         'investigar_count': counts.get('INVESTIGAR', 0),
         'observar_count': counts.get('OBSERVAR', 0),
         'descartar_count': counts.get('DESCARTAR', 0),
-        'execution_notes': f"Scan multi-fuente ejecutado ({', '.join(sources_consulted)}) con generador de propuestas y blueprints activado."
+        'execution_notes': f"Scan multi-fuente ({', '.join(sources_consulted)}) con motor v2 (Freshness + Sniper Pitch + Blueprint)."
     }
 
     # 5. Persist to DB, JSONL, latest JSON
     saved_count, updated_count = save_opportunities(scored_list, scan_id=scan_id)
     log_scan_run(scan_meta)
 
-    # Save latest scan JSON
-    latest_json_path = r'C:\Radar\data\opportunities\latest_scan.json'
-    with open(latest_json_path, 'w', encoding='utf-8') as f:
-        json.dump({
-            'meta': scan_meta,
-            'opportunities': scored_list
-        }, f, ensure_ascii=False, indent=2)
+    # Filter actionable opportunities for web export (exclude DESCARTAR noise)
+    actionable_opps = [o for o in scored_list if o.get('decision') != 'DESCARTAR']
+    db_stats = get_stats()
+
+    payload_out = {
+        'meta': scan_meta,
+        'stats': db_stats,
+        'opportunities': actionable_opps[:250]
+    }
+
+    # Save latest scan JSON in data/opportunities, app/, and root for static web hosting (Vercel / GitHub Pages)
+    for rel_target in [
+        os.path.join('data', 'opportunities', 'latest_scan.json'),
+        os.path.join('app', 'latest_scan.json'),
+        'latest_scan.json'
+    ]:
+        target_p = os.path.join(BASE_DIR, rel_target)
+        os.makedirs(os.path.dirname(target_p) or BASE_DIR, exist_ok=True)
+        with open(target_p, 'w', encoding='utf-8') as f:
+            json.dump(payload_out, f, ensure_ascii=False, indent=2)
 
     # Save summary JSON
-    summary_path = r'C:\Radar\exports\RADAR_SUMMARY.json'
+    summary_path = os.path.join(BASE_DIR, 'exports', 'RADAR_SUMMARY.json')
+    os.makedirs(os.path.dirname(summary_path), exist_ok=True)
     with open(summary_path, 'w', encoding='utf-8') as f:
         json.dump(scan_meta, f, ensure_ascii=False, indent=2)
 
     # 6. Generate Markdown and HTML presentations
-    presenter = RadarPresenter()
-    md_file = presenter.generate_markdown(scan_meta, scored_list)
-    html_file = presenter.generate_html(scan_meta, scored_list)
+    presenter = RadarPresenter(export_dir=os.path.join(BASE_DIR, 'exports'))
+    md_file = presenter.generate_markdown(scan_meta, actionable_opps)
+    html_file = presenter.generate_html(scan_meta, actionable_opps)
 
-    # 7. Print Terminal Summary
-    print("\n" + "="*48)
-    print(" RADAR SCAN SUMMARY (MULTI-SOURCE REVENUE ENGINE)")
-    print("="*48)
+    print("\n" + "="*52)
+    print(" RADAR SCAN SUMMARY v2 (FRESHNESS & REVENUE ENGINE)")
+    print("="*52)
     print(f"Fecha / Hora:           {started_at}")
     print(f"Fuentes Consultadas:    {', '.join(sources_consulted)}")
-    print(f"Hallazgos Totales:      {len(scored_list)}")
+    print(f"Hallazgos Totales:      {len(scored_list)} (Accionables: {len(actionable_opps)})")
     print(f"  - CONSTRUIR Y VENDER:  {counts.get('CONSTRUIR_Y_VENDER', 0)}")
     print(f"  - PRIORIDAD:           {counts.get('PRIORIDAD', 0)}")
     print(f"  - INVESTIGAR:          {counts.get('INVESTIGAR', 0)}")
     print(f"  - OBSERVAR:            {counts.get('OBSERVAR', 0)}")
     print(f"  - DESCARTAR:           {counts.get('DESCARTAR', 0)}")
-    print(f"Persistencia:")
-    print(f"  - SQLite DB:          C:\\Radar\\data\\opportunities\\radar.db")
-    print(f"  - Nuevas guardadas:   {saved_count} (Actualizadas: {updated_count})")
-    print(f"  - JSONL historial:    C:\\Radar\\data\\opportunities\\opportunities.jsonl")
-    print(f"  - JSON último scan:   {latest_json_path}")
-    print(f"Reportes generados:")
-    print(f"  - Markdown:           {md_file}")
-    print(f"  - HTML (Móvil/Web):   {html_file}")
-    print("="*48 + "\n")
+    print(f"Nuevas guardadas:       {saved_count} (Actualizadas: {updated_count})")
+    print("="*52 + "\n")
 
-    return scan_meta, scored_list
+    return scan_meta, actionable_opps
 
 if __name__ == '__main__':
     run_scan()

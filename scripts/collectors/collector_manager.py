@@ -1,6 +1,9 @@
-﻿import sys
+import sys
 import os
-sys.path.append(r'C:\Radar')
+
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+if BASE_DIR not in sys.path:
+    sys.path.append(BASE_DIR)
 
 from scripts.collectors.remotive_collector import RemotiveCollector
 from scripts.collectors.arbeitnow_collector import ArbeitnowCollector

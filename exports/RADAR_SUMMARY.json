@@ -1,7 +1,7 @@
 {
-  "scan_id": "scan_20261002_142442_1a85fc",
-  "started_at": "2026-10-02T14:24:42.333695",
-  "finished_at": "2026-10-02T14:26:30.293656",
+  "scan_id": "scan_20261019_171526_c8325b",
+  "started_at": "2026-10-19T17:15:26.847566+00:00",
+  "finished_at": "2026-10-19T17:15:44.715305+00:00",
   "sources_consulted": [
     "Remotive",
     "Arbeitnow",
@@ -10,11 +10,11 @@
     "HackerNews",
     "GitHub Bounties"
   ],
-  "total_found": 247,
-  "prioridad_count": 7,
-  "construir_vender_count": 0,
-  "investigar_count": 53,
-  "observar_count": 63,
-  "descartar_count": 124,
-  "execution_notes": "Scan multi-fuente ejecutado (Remotive, Arbeitnow, RemoteOK, WeWorkRemotely, HackerNews, GitHub Bounties) con generador de propuestas y blueprints activado."
+  "total_found": 338,
+  "prioridad_count": 52,
+  "construir_vender_count": 15,
+  "investigar_count": 55,
+  "observar_count": 29,
+  "descartar_count": 187,
+  "execution_notes": "Scan multi-fuente (Remotive, Arbeitnow, RemoteOK, WeWorkRemotely, HackerNews, GitHub Bounties) con motor v2 (Freshness + Sniper Pitch + Blueprint)."
 }

@@ -1,19 +1,23 @@
-﻿import sys
+import sys
 import os
 import json
-import sqlite3
 import subprocess
 import threading
 from urllib.parse import urlparse, parse_qs
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import socket
 
-sys.path.append(r'C:\Radar')
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if BASE_DIR not in sys.path:
+    sys.path.append(BASE_DIR)
+
 from scripts.utilities.db import get_all_opportunities, update_opportunity_status, get_stats
 
-PORT = 8080
-APP_DIR = r'C:\Radar\app'
+PORT = int(os.environ.get('PORT', 8080))
+APP_DIR = os.path.join(BASE_DIR, 'app')
 HTML_FILE = os.path.join(APP_DIR, 'index.html')
+MANIFEST_FILE = os.path.join(APP_DIR, 'manifest.json')
+SNAPSHOT_FILE = os.path.join(APP_DIR, 'latest_scan.json')
 
 is_scanning = False
 last_scan_result = None
@@ -30,12 +34,12 @@ def get_local_ip():
 
 class RadarHttpHandler(BaseHTTPRequestHandler):
     def log_message(self, format, *args):
-        # Suppress noisy console access logs
         return
 
     def send_json(self, data, status_code=200):
         self.send_response(status_code)
         self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
         self.send_header('Access-Control-Allow-Origin', '*')
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
         self.send_header('Access-Control-Allow-Headers', 'Content-Type')
@@ -54,15 +58,38 @@ class RadarHttpHandler(BaseHTTPRequestHandler):
         path = parsed.path
         query = parse_qs(parsed.query)
 
-        if path in ['/', '/index.html']:
+        if path in ['/', '/index.html', '/app', '/app/index.html']:
             if os.path.exists(HTML_FILE):
                 self.send_response(200)
                 self.send_header('Content-Type', 'text/html; charset=utf-8')
+                self.send_header('Cache-Control', 'no-cache')
                 self.end_headers()
                 with open(HTML_FILE, 'rb') as f:
                     self.wfile.write(f.read())
             else:
                 self.send_error(404, "index.html not found")
+
+        elif path in ['/manifest.json', '/app/manifest.json']:
+            if os.path.exists(MANIFEST_FILE):
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/manifest+json; charset=utf-8')
+                self.end_headers()
+                with open(MANIFEST_FILE, 'rb') as f:
+                    self.wfile.write(f.read())
+            else:
+                self.send_error(404, "manifest.json not found")
+
+        elif path in ['/latest_scan.json', '/app/latest_scan.json', '/data/opportunities/latest_scan.json']:
+            if os.path.exists(SNAPSHOT_FILE):
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.send_header('Cache-Control', 'no-cache')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                with open(SNAPSHOT_FILE, 'rb') as f:
+                    self.wfile.write(f.read())
+            else:
+                self.send_error(404, "latest_scan.json not found")
 
         elif path == '/api/stats':
             stats = get_stats()
@@ -75,7 +102,7 @@ class RadarHttpHandler(BaseHTTPRequestHandler):
             decision = query.get('decision', [None])[0]
             status = query.get('status', [None])[0]
             search = query.get('search', [None])[0]
-            limit = int(query.get('limit', [150])[0])
+            limit = int(query.get('limit', [250])[0])
 
             opps = get_all_opportunities(filter_decision=decision, filter_status=status, limit=limit)
             
@@ -118,18 +145,19 @@ class RadarHttpHandler(BaseHTTPRequestHandler):
 
         if path == '/api/scan':
             if is_scanning:
-                self.send_json({'error': 'Scan already in progress'}, status_code=409)
+                self.send_json({'error': 'Scan already in progress', 'is_scanning': True}, status_code=409)
                 return
 
             def background_scan():
                 global is_scanning, last_scan_result
                 is_scanning = True
                 try:
+                    scan_script = os.path.join(BASE_DIR, 'scripts', 'run_radar_scan.py')
                     res = subprocess.run(
-                        ['python', r'C:\Radar\scripts\run_radar_scan.py'],
+                        [sys.executable, scan_script],
                         capture_output=True,
                         text=True,
-                        cwd=r'C:\Radar'
+                        cwd=BASE_DIR
                     )
                     last_scan_result = {
                         'success': res.returncode == 0,
@@ -164,15 +192,13 @@ def run_server():
     server_address = ('0.0.0.0', PORT)
     httpd = HTTPServer(server_address, RadarHttpHandler)
     local_ip = get_local_ip()
-    print("="*55)
-    print(" RADAR OPPORTUNITY INTELLIGENCE APP SERVER")
-    print("="*55)
-    print(f"Local Access:    http://127.0.0.1:{PORT}")
-    print(f"Network Access:  http://{local_ip}:{PORT} (Para tu teléfono o laptop)")
-    print("Zero-dependency high performance server active.")
-    print("="*55)
+    print("="*58)
+    print(" RADAR v2 - OPPORTUNITY & REVENUE INTELLIGENCE SERVER")
+    print("="*58)
+    print(f"PC Local:        http://127.0.0.1:{PORT}")
+    print(f"Safari / Movil:  http://{local_ip}:{PORT}")
+    print("="*58)
     httpd.serve_forever()
 
 if __name__ == '__main__':
     run_server()
-

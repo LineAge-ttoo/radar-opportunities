@@ -1,11 +1,12 @@
-﻿import sqlite3
+import sqlite3
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
-DEFAULT_DB_PATH = r'C:\Radar\data\opportunities\radar.db'
-DEFAULT_JSONL_PATH = r'C:\Radar\data\opportunities\opportunities.jsonl'
-DEFAULT_LATEST_JSON = r'C:\Radar\data\opportunities\latest_scan.json'
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+DEFAULT_DB_PATH = os.path.join(BASE_DIR, 'data', 'opportunities', 'radar.db')
+DEFAULT_JSONL_PATH = os.path.join(BASE_DIR, 'data', 'opportunities', 'opportunities.jsonl')
+DEFAULT_LATEST_JSON = os.path.join(BASE_DIR, 'data', 'opportunities', 'latest_scan.json')
 
 def get_connection(db_path=DEFAULT_DB_PATH):
     os.makedirs(os.path.dirname(db_path), exist_ok=True)
@@ -59,7 +60,6 @@ def init_db(db_path=DEFAULT_DB_PATH):
     )
     ''')
 
-    # Add columns if migrating from earlier schema
     columns_to_check = [
         ('proposal_json', 'TEXT'),
         ('blueprint_json', 'TEXT'),
@@ -75,18 +75,10 @@ def init_db(db_path=DEFAULT_DB_PATH):
             except Exception:
                 pass
 
-    cur.execute('''
-    CREATE INDEX IF NOT EXISTS idx_opp_decision ON opportunities(decision);
-    ''')
-    cur.execute('''
-    CREATE INDEX IF NOT EXISTS idx_opp_score ON opportunities(overall_score DESC);
-    ''')
-    cur.execute('''
-    CREATE INDEX IF NOT EXISTS idx_opp_source ON opportunities(source);
-    ''')
-    cur.execute('''
-    CREATE INDEX IF NOT EXISTS idx_opp_status ON opportunities(status);
-    ''')
+    cur.execute('CREATE INDEX IF NOT EXISTS idx_opp_decision ON opportunities(decision);')
+    cur.execute('CREATE INDEX IF NOT EXISTS idx_opp_score ON opportunities(overall_score DESC);')
+    cur.execute('CREATE INDEX IF NOT EXISTS idx_opp_source ON opportunities(source);')
+    cur.execute('CREATE INDEX IF NOT EXISTS idx_opp_status ON opportunities(status);')
 
     cur.execute('''
     CREATE TABLE IF NOT EXISTS scans (
@@ -111,7 +103,7 @@ def save_opportunities(opportunities, scan_id=None, db_path=DEFAULT_DB_PATH, jso
     init_db(db_path)
     conn = get_connection(db_path)
     cur = conn.cursor()
-    now_iso = datetime.now().isoformat()
+    now_iso = datetime.now(timezone.utc).isoformat()
 
     saved_count = 0
     updated_count = 0
@@ -126,7 +118,7 @@ def save_opportunities(opportunities, scan_id=None, db_path=DEFAULT_DB_PATH, jso
             row = cur.fetchone()
 
             first_seen = row['first_seen_at'] if row else now_iso
-            current_status = row['status'] if row else 'NUEVA'
+            current_status = row['status'] if (row and row['status'] not in ['NEW', None, '']) else 'NUEVA'
             last_seen = now_iso
 
             cur.execute('''
@@ -144,6 +136,7 @@ def save_opportunities(opportunities, scan_id=None, db_path=DEFAULT_DB_PATH, jso
                 title = excluded.title,
                 organization = excluded.organization,
                 description = excluded.description,
+                published_at = excluded.published_at,
                 payment_min = excluded.payment_min,
                 payment_max = excluded.payment_max,
                 currency = excluded.currency,
@@ -163,7 +156,8 @@ def save_opportunities(opportunities, scan_id=None, db_path=DEFAULT_DB_PATH, jso
                 decision = excluded.decision,
                 reasoning = excluded.reasoning,
                 next_action = excluded.next_action,
-                last_seen_at = excluded.last_seen_at
+                last_seen_at = excluded.last_seen_at,
+                status = CASE WHEN opportunities.status = 'NEW' THEN 'NUEVA' ELSE opportunities.status END
             ''', (
                 opp_id,
                 opp.get('source', 'Unknown'),
@@ -214,7 +208,7 @@ def update_opportunity_status(opp_id, new_status, notes=None, db_path=DEFAULT_DB
     init_db(db_path)
     conn = get_connection(db_path)
     cur = conn.cursor()
-    now_iso = datetime.now().isoformat()
+    now_iso = datetime.now(timezone.utc).isoformat()
 
     if new_status in ['PROPUESTA_ENVIADA', 'EN_NEGOCIACION']:
         cur.execute('''
@@ -245,7 +239,7 @@ def log_scan_run(scan_data, db_path=DEFAULT_DB_PATH):
     ''', (
         scan_data['scan_id'],
         scan_data['started_at'],
-        scan_data.get('finished_at', datetime.now().isoformat()),
+        scan_data.get('finished_at', datetime.now(timezone.utc).isoformat()),
         json.dumps(scan_data.get('sources_consulted', []), ensure_ascii=False),
         scan_data.get('total_found', 0),
         scan_data.get('prioridad_count', 0),
@@ -258,17 +252,17 @@ def log_scan_run(scan_data, db_path=DEFAULT_DB_PATH):
     conn.commit()
     conn.close()
 
-def get_all_opportunities(filter_decision=None, filter_status=None, limit=200, db_path=DEFAULT_DB_PATH):
+def get_all_opportunities(filter_decision=None, filter_status=None, limit=250, db_path=DEFAULT_DB_PATH):
     init_db(db_path)
     conn = get_connection(db_path)
     cur = conn.cursor()
 
     query = 'SELECT * FROM opportunities'
     params = []
-    conditions = []
+    conditions = ["decision != 'DESCARTAR'"]
 
     if filter_decision:
-        conditions.append('decision = ?')
+        conditions = ['decision = ?']
         params.append(filter_decision)
     if filter_status:
         conditions.append('status = ?')
@@ -277,7 +271,7 @@ def get_all_opportunities(filter_decision=None, filter_status=None, limit=200, d
     if conditions:
         query += ' WHERE ' + ' AND '.join(conditions)
 
-    query += ' ORDER BY overall_score DESC LIMIT ?'
+    query += ' ORDER BY overall_score DESC, published_at DESC LIMIT ?'
     params.append(limit)
 
     cur.execute(query, params)

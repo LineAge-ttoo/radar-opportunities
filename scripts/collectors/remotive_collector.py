@@ -1,20 +1,22 @@
-﻿import urllib.request
+import urllib.request
 import json
 import os
 from datetime import datetime
 
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+
 class RemotiveCollector:
     NAME = 'Remotive'
-    URL = 'https://remotive.com/api/remote-jobs'
+    URL = 'https://remotive.com/api/remote-jobs?limit=100'
 
     def __init__(self, timeout=25):
         self.timeout = timeout
 
-    def collect(self, limit=None):
+    def collect(self, limit=100):
         req = urllib.request.Request(
             self.URL,
             headers={
-                'User-Agent': 'RADAR-Intelligence/1.0 (Opportunity Discovery Engine)',
+                'User-Agent': 'RADAR-Intelligence/2.0 (Opportunity Discovery Engine)',
                 'Accept': 'application/json'
             }
         )
@@ -25,11 +27,15 @@ class RemotiveCollector:
                 if limit:
                     jobs = jobs[:limit]
 
-                os.makedirs(r'C:\Radar\data\incoming', exist_ok=True)
-                timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-                dump_path = os.path.join(r'C:\Radar\data\incoming', f'remotive_{timestamp}.json')
-                with open(dump_path, 'w', encoding='utf-8') as f:
-                    json.dump(jobs, f, ensure_ascii=False, indent=2)
+                try:
+                    incoming_dir = os.path.join(BASE_DIR, 'data', 'incoming')
+                    os.makedirs(incoming_dir, exist_ok=True)
+                    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+                    dump_path = os.path.join(incoming_dir, f'remotive_{timestamp}.json')
+                    with open(dump_path, 'w', encoding='utf-8') as f:
+                        json.dump(jobs, f, ensure_ascii=False, indent=2)
+                except Exception:
+                    pass
 
                 return {
                     'success': True,

@@ -1,0 +1,72 @@
+name: RADAR Live Scan & Cloud Deploy
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  scan-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Live Multi-Source Opportunity Scan
+        run: |
+          python scripts/run_radar_scan.py
+          cp app/index.html index.html
+          cp app/manifest.json manifest.json
+          cp app/latest_scan.json latest_scan.json
+
+      - name: Commit updated opportunities if scheduled or manual
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "RADAR Auto-Scanner"
+          git config user.email "radar-bot@users.noreply.github.com"
+          git add latest_scan.json app/latest_scan.json data/opportunities/latest_scan.json exports/ || true
+          git diff --staged --quiet || git commit -m "chore(scan): automated live opportunity refresh"
+          git push || true
+
+      - name: Prepare Pages Artifact
+        run: |
+          mkdir -p _site/app _site/data/opportunities _site/exports
+          cp index.html _site/index.html
+          cp manifest.json _site/manifest.json
+          cp latest_scan.json _site/latest_scan.json
+          cp app/index.html _site/app/index.html
+          cp app/manifest.json _site/app/manifest.json
+          cp app/latest_scan.json _site/app/latest_scan.json
+          cp data/opportunities/latest_scan.json _site/data/opportunities/latest_scan.json
+          cp exports/RADAR_SCAN_LATEST.html _site/exports/RADAR_SCAN_LATEST.html || true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
