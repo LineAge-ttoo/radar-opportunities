@@ -1,15 +1,15 @@
 {
-  "name": "RADAR Colombia — Clientes & Tareas Prácticas",
-  "short_name": "RADAR CO",
-  "description": "Motor de clientes en Colombia (Instagram, Facebook, Workana) y tareas prácticas de automatización, planos 2D/3D, renders y diseño sin contratos.",
+  "name": "que hay pa´ hacer!",
+  "short_name": "pa´ hacer!",
+  "description": "Estudio creativo para descubrir encargos reales de planos, 3D, automatización, bots y diseño en Colombia.",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#050609",
-  "theme_color": "#050609",
+  "background_color": "#0C0B0A",
+  "theme_color": "#0C0B0A",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><rect width='120' height='120' rx='28' fill='%23050609'/><circle cx='60' cy='60' r='44' fill='none' stroke='%2310b981' stroke-width='6' stroke-opacity='0.35'/><circle cx='60' cy='60' r='28' fill='none' stroke='%236366f1' stroke-width='5' stroke-opacity='0.6'/><circle cx='60' cy='60' r='10' fill='%2310b981'/><line x1='60' y1='60' x2='92' y2='28' stroke='%2310b981' stroke-width='7' stroke-linecap='round'/><circle cx='92' cy='28' r='5' fill='%23f59e0b'/></svg>",
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><rect width='120' height='120' rx='28' fill='%230C0B0A'/><circle cx='60' cy='60' r='44' fill='%23FF3E1D'/><path d='M60 24 L67 53 L96 60 L67 67 L60 96 L53 67 L24 60 L53 53 Z' fill='%23F4EFE6'/></svg>",
       "sizes": "192x192 512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"
