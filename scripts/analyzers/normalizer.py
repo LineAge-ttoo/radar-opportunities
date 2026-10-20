@@ -66,8 +66,14 @@ class OpportunityNormalizer:
         cop_max = float(item.get('cop_max', 850000))
         wa_phone = item.get('whatsapp_phone')
 
-        if offer_type == 'planos_3d':
-            action_title = f"📐 Hacer Planos / Render 3D para: {biz_name}"
+        if offer_type == 'bioconstruccion_guadua':
+            action_title = f"🎋 Cabañas en Guadua, Muro Tendinoso & Vidrio para: {biz_name}"
+        elif offer_type == 'metal_soldadura':
+            action_title = f"🔩 Estructuras en Metal, Soldadura & Remodelación para: {biz_name}"
+        elif offer_type == 'informales_manualidades':
+            action_title = f"🛠️ [2do Tiempo & Manualidades] Lámparas, Vidrio y Guadua para: {biz_name}"
+        elif offer_type == 'planos_3d':
+            action_title = f"📐 Hacer Planos / Render 3D y Remodelación para: {biz_name}"
         elif offer_type == 'whatsapp_bot':
             action_title = f"🤖 Automatizar WhatsApp / Citas para: {biz_name}"
         else:
@@ -76,6 +82,9 @@ class OpportunityNormalizer:
         desc = f"{item.get('service_pitch', '')} | Perfil detectado en {platform}: {item.get('snippet', '')}"
         if wa_phone:
             desc = f"📱 WhatsApp Directo Detectado: +{wa_phone} | " + desc
+
+        approx_place = item.get('approx_place') or f"Perfil activo en {platform} (Colombia)"
+        contractor_info = item.get('contractor_info') or f"Contratante / Negocio: {biz_name} en {platform}. {item.get('snippet', '')[:160]}"
 
         return {
             'opportunity_id': opp_id,
@@ -92,6 +101,8 @@ class OpportunityNormalizer:
             'payment_max': cop_max,
             'currency': 'COP',
             'location': 'Colombia',
+            'approx_place': approx_place,
+            'contractor_info': contractor_info,
             'remote': True,
             'skills': item.get('skills', ['automatizacion', 'whatsapp', 'planos', '3d']),
             'contact_phone': f"+{wa_phone}" if wa_phone and not str(wa_phone).startswith('+') else (wa_phone or ''),
@@ -102,7 +113,10 @@ class OpportunityNormalizer:
                 'stated_location': '🇨🇴 Colombia',
                 'stated_job_type': 'Cliente Directo (Sin Contrato Legal)',
                 'whatsapp_phone': wa_phone,
+                'approx_place': approx_place,
+                'contractor_info': contractor_info,
                 'offer_type': offer_type,
+                'category_hint': offer_type,
                 'tags': item.get('skills', []) + ['colombia', platform.lower()]
             }
         }
@@ -241,6 +255,11 @@ class OpportunityNormalizer:
             'payment_max': p_max,
             'currency': curr,
             'location': loc,
+            'approx_place': item.get('approx_place') or loc,
+            'contractor_info': item.get('contractor_info') or f"Contratante verificado: {item.get('organization', 'San Agustín Huila')}",
+            'lat': item.get('lat', 1.8792),
+            'lon': item.get('lon', -76.2706),
+            'distance_km': item.get('distance_km', 0.5),
             'remote': True,
             'skills': skills,
             'contact_phone': item.get('contact_phone') or item.get('whatsapp_phone') or '',
@@ -257,8 +276,13 @@ class OpportunityNormalizer:
                 'contact_whatsapp_url': item.get('contact_whatsapp_url') or '',
                 'circular_code': item.get('circular_code') or '',
                 'contact_email': item.get('contact_email') or '',
+                'approx_place': item.get('approx_place') or loc,
+                'contractor_info': item.get('contractor_info') or f"Contratante verificado: {item.get('organization', 'San Agustín Huila')}",
+                'lat': item.get('lat', 1.8792),
+                'lon': item.get('lon', -76.2706),
+                'distance_km': item.get('distance_km', 0.5),
                 'category_hint': item.get('category_hint', 'guadua_cabanas'),
-                'tags': skills + ['san agustin', 'huila', 'guadua', 'blender', 'estudiantes']
+                'tags': skills + ['san agustin', 'huila', 'guadua', 'bioconstruccion', 'muro tendinoso', 'metal', 'soldadura', 'blender', 'estudiantes']
             }
         }
 

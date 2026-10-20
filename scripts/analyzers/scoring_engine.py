@@ -4,11 +4,14 @@ from datetime import datetime, timezone
 
 class ScoringEngine:
     PRACTICAL_SKILLS = [
-        ('guadua / cabañas', r'\b(guadua|bamb[uú]|caba[ñn]as?|glamping|eco-?lodge|maloka|mirador|kiosco|bioconstrucci\w*)\b', 42, 'guadua_cabanas'),
+        ('guadua / bioconstrucción', r'\b(guadua|bamb[uú]|caba[ñn]as?|glamping|eco-?lodge|maloka|mirador|kiosco|bioconstrucci\w*|tendinoso|botellas?|muros?\s+en\s+vidrio|vitral\w*)\b', 44, 'guadua_cabanas'),
+        ('estructuras metal / soldadura', r'\b(estructuras?\s+met[aá]licas?|metal\w*|soldadura|soldador|cerchas?|cubiertas?|portones?|barandas?|ornamentaci\w*|hierro|acero|remodelaci\w*)\b', 42, 'metal_soldadura'),
+        ('informales / 2do tiempo / manualidades', r'\b(manualidad\w*|artesan[ií]as?|2do\s+tiempo|segundo\s+tiempo|l[aá]mparas?|decoraci[oó]n\s+r[uú]stica|reparaciones?|informal\w*|trabajos?\s+varios?)\b', 38, 'informales_manualidades'),
+        ('grupos redes / whatsapp', r'\b(grupos?\s+de\s+redes|facebook\s+groups?|comunidad|clasificados)\b', 36, 'grupos_redes'),
         ('san agustín / huila', r'\b(san\s+agust[ií]n|pitalito|isnos|huila|timan[aá]|neiva|macizo|alcald[ií]a|secop)\b', 40, 'alcaldia_huila'),
         ('estudiantes / tareas', r'\b(estudiantes?|universitari\w*|tareas?|sena|unad|usco|maquetas?|entregas?|taller|grado)\b', 36, 'estudiantes_tareas'),
         ('blender / 3d', r'\b(blender|3d|renders?|modelado|sketchup|stl|obj|animaci\w*|roblox|unity)\b', 35, 'planos_3d'),
-        ('planos / autocad', r'\b(planos?|autocad|dwg|cad|arquitect\w*|remodelaci\w*|interiores|layout|mobiliario|cocinas)\b', 34, 'planos_3d'),
+        ('planos / autocad', r'\b(planos?|autocad|dwg|cad|arquitect\w*|interiores|layout|mobiliario|cocinas)\b', 34, 'planos_3d'),
         ('whatsapp / bot', r'\b(whatsapp|bots?|chatbot|manychat|respuestas?\s+autom\w*|atenci[oó]n\s+al\s+cliente)\b', 34, 'automatizacion'),
         ('automatización', r'\b(automatizaci\w*|automatizar|automation|n8n|make|zapier|power\s+automate|flujos?|webhook)\b', 32, 'automatizacion'),
         ('web / catálogo', r'\b(p[aá]ginas?\s+web|landing\s+page|cat[aá]logos?|wordpress|elementor|wix|shopify|tienda|men[uú]|reservas?)\b', 28, 'web_diseno'),
@@ -94,6 +97,9 @@ class ScoringEngine:
         is_huila_or_guadua = (
             opp_type == 'san_agustin_huila_prioridad'
             or 'guadua_cabanas' in matched_cats
+            or 'metal_soldadura' in matched_cats
+            or 'informales_manualidades' in matched_cats
+            or 'grupos_redes' in matched_cats
             or 'alcaldia_huila' in matched_cats
             or 'estudiantes_tareas' in matched_cats
         )
@@ -159,6 +165,7 @@ class ScoringEngine:
             'estimated_difficulty': 'VIABLE / DIRECTO',
             'competition_level': est_comp,
             'is_colombia': is_colombia,
-            'is_huila_guadua': is_huila_or_guadua
+            'is_huila_guadua': is_huila_or_guadua,
+            'distance_km': opp.get('distance_km') if opp.get('distance_km') is not None else 999.0
         }
         return opp

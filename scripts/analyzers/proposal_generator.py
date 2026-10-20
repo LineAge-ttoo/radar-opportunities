@@ -1,8 +1,13 @@
 class TechnicalProposalGenerator:
     """
-    Genera mensajes directos (WhatsApp / Instagram DM / Facebook / Workana / Alcaldía / Estudiantes)
-    100% en español, prácticos, destacando el perfil de Maestro en Construcción en Guadua Certificado,
-    Diseño de Cabañas, Blender 3D, Planos AutoCAD y Automatizaciones en San Agustín Huila y Colombia.
+    Genera mensajes directos (WhatsApp / Instagram DM / Facebook / Grupos / Alcaldía / Estudiantes)
+    100% en español, prácticos, destacando el perfil completo del usuario en San Agustín Huila y Colombia:
+    - Maestro en Construcción en Guadua Certificado & Bioconstrucción innovadora
+    - Cabañas con estilo de muro tendinoso, incrustaciones de botellas y muros en vidrio
+    - Todo tipo de estructuras en metal y soldadura (cerchas, cubiertas, pérgolas mixtas, portones)
+    - Remodelación de estructuras tanto en guadua como en metal
+    - Trabajos varios de segundo tiempo, manualidades artísticas y mobiliario (guadua, vidrio y metal)
+    - Modelado en Blender 3D, Planos 2D/3D y Automatizaciones
     """
 
     @classmethod
@@ -18,20 +23,22 @@ class TechnicalProposalGenerator:
         p_max = opp.get('payment_max')
         curr = opp.get('currency') or 'COP'
 
-        # 1. Cabañas en Guadua / Maestro Certificado en Guadua / San Agustín Huila
-        if cat_hint == 'guadua_cabanas' or 'guadua' in skills_text or 'cabaña' in skills_text or 'bamb' in skills_text:
-            subject = f"Diseño 3D y Construcción en Guadua Certificada — {org}"
+        # 1. Cabañas, Bioconstrucción, Muro Tendinoso, Incrustaciones de Botellas, Vidrio, Guadua y Metal
+        if cat_hint in ('guadua_cabanas', 'bioconstruccion_guadua', 'metal_soldadura') or any(
+            k in skills_text for k in ['guadua', 'cabaña', 'bamb', 'bioconstrucci', 'tendinoso', 'botella', 'soldadura', 'estructuras en metal']
+        ):
+            subject = f"Bioconstrucción en Guadua, Muro Tendinoso, Vidrio y Estructuras en Metal — {org}"
             body = f"""¡Hola {org}! 👋 Un gusto saludarte desde San Agustín, Huila.
 
-Vi su proyecto relacionado con **{title}** y me pongo a su disposición: soy **Maestro en Construcción en Guadua Certificado** y además realizo el **modelado arquitectónico en Blender 3D y planos técnicos 2D/3D**.
+Vi su proyecto relacionado con **{title}** y me pongo a su entera disposición. Soy **Maestro Certificado en Guadua, Bioconstrucción y Estructuras Metálicas/Soldadura**:
 
-✅ Diseño de cabañas, glampings, malokas, kioscos y estructuras bioclimáticas en guadua inmunizada.
-✅ Entrega de renders realistas en Blender 3D + cortes y despiece para saber exactamente cuánta guadua y material se necesita antes de construir.
-✅ Disponibilidad inmediata en **San Agustín, Pitalito, Isnos y todo el Huila** (o envío de planos y modelos 3D a cualquier parte de Colombia).
+✅ **Cabañas y Bioconstrucción Innovadora**: Estilo de **muro tendinoso**, **incrustaciones artísticas de botellas**, **muros en vidrio** y acabados finos en **guadua inmunizada**.
+✅ **Estructuras en Metal y Soldadura**: Todo tipo de cubiertas, cerchas, plataformas para glamping, pérgolas mixtas (metal + guadua), barandas y portones.
+✅ **Remodelaciones en Guadua y Metal**: Mantenimiento estructural, reemplazo de piezas, ampliación de cabañas y **diseño previo en Blender 3D / Planos** para ver cómo quedará antes de construir.
 
-¿Agendamos una llamada o visita rápida por WhatsApp al **322 273 9034** para mostrarles diseños de cabañas y presupuestos?"""
-            pricing = f"COP ${int(p_min or 650000):,} — ${int(p_max or 3800000):,} (Diseño 3D / Obra a convenir)".replace(',', '.')
-            turnaround = "Boceto 3D en 24-48 horas · Visita en San Agustín / Huila"
+Estoy aquí mismo en la zona (**San Agustín / Sur del Huila**). ¿Agendamos una visita o llamada rápida por WhatsApp al **+57 322 273 9034** para mostrarles fotos de trabajos y cotizar sin compromiso?"""
+            pricing = f"COP ${int(p_min or 650000):,} — ${int(p_max or 4500000):,} (Obra, Remodelación o Diseño 3D a convenir)".replace(',', '.')
+            turnaround = "Visita inmediata en San Agustín / Huila · Boceto 3D en 24-48h"
             return {
                 'language': 'es',
                 'subject': subject,
@@ -41,17 +48,62 @@ Vi su proyecto relacionado con **{title}** y me pongo a su disposición: soy **M
                 'whatsapp_phone': wa_phone
             }
 
-        # 2. Alcaldía de San Agustín Huila / Alcaldías Cercanas / SECOP II
+        # 2. Trabajos Informales, Segundo Tiempo y Manualidades (Lámparas en Guadua, Vidrio, Soldadura rápida)
+        if cat_hint == 'informales_manualidades' or any(
+            k in skills_text for k in ['manualidad', '2do tiempo', 'segundo tiempo', 'informal', 'lámpara', 'lampara', 'artesanía', 'artesania']
+        ):
+            subject = f"Trabajos de 2do Tiempo, Manualidades en Guadua/Vidrio y Soldadura — {org}"
+            body = f"""¡Hola {org}! 👋 Te escribo desde San Agustín, Huila.
+
+Estoy disponible para **trabajos por encargo, de segundo tiempo o fin de semana** sin trámites complicados:
+🛠️ **Manualidades y Decoración Artística**: Lámparas en guadua, vitrales e incrustaciones con botellas de vidrio, letreros rústicos y muebles pequeños en metal soldado + guadua.
+🔩 **Soldadura y Reparaciones Locativas**: Arreglo de rejas, portones, techos metálicos, mantenimiento e inmunización de cabañas en guadua y pintura.
+
+Manejamos trato directo y precios justos por día o por trabajo entregado.
+📲 Mi WhatsApp directo en San Agustín es **+57 322 273 9034**. ¿Qué trabajo o diseño necesitan sacar adelante esta semana?"""
+            pricing = f"COP ${int(p_min or 80000):,} — ${int(p_max or 650000):,} (Pago por día o por encargo)".replace(',', '.')
+            turnaround = "Disponibilidad inmediata / Segundo tiempo y fines de semana"
+            return {
+                'language': 'es',
+                'subject': subject,
+                'body': body,
+                'pricing_recommendation': pricing,
+                'turnaround': turnaround,
+                'whatsapp_phone': wa_phone
+            }
+
+        # 3. Grupos de Redes y WhatsApp (Publicación lista para pegar o enviar al contratante del grupo)
+        if cat_hint == 'grupos_redes' or 'grupo' in skills_text:
+            subject = f"Oferta de Servicios en San Agustín y Huila: Guadua, Bioconstrucción, Metal y Soldadura"
+            body = f"""👋 ¡Hola! Estoy disponible en **San Agustín, Isnos, Pitalito y alrededores** para proyectos y trabajos de:
+
+🎋 **Bioconstrucción y Guadua Certificada**: Cabañas con **muro tendinoso**, **incrustaciones de botellas**, **muros en vidrio**, kioscos, miradores y pérgolas.
+🔩 **Estructuras en Metal y Soldadura**: Techos, cerchas, plataformas para glamping, portones y estructuras mixtas (guadua + metal).
+🛠️ **Remodelaciones y Trabajos de 2do Tiempo / Manualidades**: Mantenimiento de guadua y metal, lámparas artesanales, muebles y diseño previo en **Blender 3D / Planos**.
+
+📲 **Contacto directo / WhatsApp: +57 322 273 9034** (Trato directo y presupuesto sin compromiso)."""
+            pricing = f"COP ${int(p_min or 150000):,} — ${int(p_max or 4500000):,}".replace(',', '.')
+            turnaround = "Atención inmediata en San Agustín y Sur del Huila"
+            return {
+                'language': 'es',
+                'subject': subject,
+                'body': body,
+                'pricing_recommendation': pricing,
+                'turnaround': turnaround,
+                'whatsapp_phone': wa_phone
+            }
+
+        # 4. Alcaldía de San Agustín Huila / Alcaldías Cercanas / SECOP II
         if cat_hint == 'alcaldia_huila' or 'alcaldía' in skills_text or 'alcaldia' in skills_text or 'secop' in skills_text:
             subject = f"Propuesta Técnica Local (San Agustín / Huila): {title}"
             body = f"""Cordial saludo, equipo de **{org}**:
 
 Desde **San Agustín, Huila**, presento manifestación de interés y disponibilidad técnica inmediata para el proceso/proyecto **"{title}"**.
 
-Cuento con certificación como **Maestro en Construcción en Guadua**, experiencia en diseño y adecuación de infraestructura turística/cultural, elaboración de planos 2D/3D, modelado en Blender y apoyo técnico operativo en el Sur del Huila.
+Cuento con certificación como **Maestro en Construcción en Guadua**, experiencia en **bioconstrucción (muro tendinoso, vidrio y acabados ecológicos)**, **estructuras metálicas y soldadura**, remodelación de infraestructura turística/cultural, elaboración de planos 2D/3D y modelado en Blender.
 
 📞 Contacto directo en San Agustín Huila: **+57 322 273 9034**
-Quedo atento a los requisitos de mínima cuantía o apoyo técnico para radicar propuesta formal hoy mismo."""
+Quedo atento a los requisitos de mínima cuantía o apoyo técnico para radicar propuesta hoy mismo."""
             pricing = f"COP ${int(p_min or 1500000):,} — ${int(p_max or 15000000):,}".replace(',', '.')
             turnaround = "Radicación inmediata en San Agustín / Huila"
             return {
@@ -63,18 +115,17 @@ Quedo atento a los requisitos de mínima cuantía o apoyo técnico para radicar 
                 'whatsapp_phone': wa_phone
             }
 
-        # 3. Estudiantes y Universitarios (Tareas, Entregas de Arquitectura/Ingeniería, Blender 3D, AutoCAD)
+        # 5. Estudiantes y Universitarios (Tareas, Entregas de Arquitectura/Ingeniería, Blender 3D, AutoCAD, Maquetas)
         if cat_hint == 'estudiantes_tareas' or 'estudiante' in skills_text or 'universitari' in skills_text or 'sena' in skills_text or 'unad' in skills_text:
-            subject = f"Entrega Rápida de Planos, Blender 3D y Tareas Universitarias"
+            subject = f"Entrega Rápida de Planos, Blender 3D, Maquetas y Tareas Universitarias"
             body = f"""¡Hola! 👋 Vi que necesitas apoyo con **"{title}"**.
 
-Te ayudo a sacar tu entrega universitaria o proyecto práctico a tiempo y con excelente presentación:
-✅ **Modelado y Renders en Blender 3D** (arquitectura, cabañas en guadua, objetos, animación).
-✅ **Planos 2D/3D en AutoCAD (.DWG y PDF listos para plotear)**.
-✅ **Detalles constructivos en Guadua / Bambú**, maquetas digitales y tareas prácticas (SENA / UNAD / Universidad).
+Te ayudo a sacar tu entrega universitaria o proyecto práctico a tiempo:
+✅ **Modelado y Renders en Blender 3D** (arquitectura, cabañas en guadua, bioconstrucción, estructuras metálicas, animación).
+✅ **Planos 2D/3D en AutoCAD (.DWG y PDF listos para imprimir)** y maquetas / manualidades técnicas.
+✅ **Detalles constructivos en Guadua / Bambú y Metal** y tareas prácticas (SENA / UNAD / Universidad).
 
-Te muestro avances por WhatsApp en menos de 24 horas y manejamos precios accesibles para estudiantes por Nequi o Bancolombia.
-📲 Escríbeme directo a mi WhatsApp: **+57 322 273 9034** y lo revisamos ya mismo."""
+📲 Escríbeme directo a mi WhatsApp: **+57 322 273 9034** (Nequi / Bancolombia)."""
             pricing = f"COP ${int(p_min or 90000):,} — ${int(p_max or 380000):,} (Tarifa Estudiante · Nequi)".replace(',', '.')
             turnaround = "12 a 24 horas (Entregas urgentes)"
             return {
@@ -86,72 +137,27 @@ Te muestro avances por WhatsApp en menos de 24 horas y manejamos precios accesib
                 'whatsapp_phone': wa_phone
             }
 
-        # 4. Clientes directos en Instagram / Facebook Colombia
-        if opp.get('opportunity_type') == 'cliente_directo_colombia':
-            if offer_type == 'planos_3d' or 'planos' in skills_text or '3d' in skills_text:
-                subject = f"Planos 2D/3D, Blender Renders y Guadua para {org}"
-                body = f"""¡Hola equipo de {org}! 👋
-
-Vi sus proyectos en redes y me gustó mucho su trabajo. Elaboro **planos arquitectónicos 2D/3D, renders en Blender, diseños de cabañas en guadua certificada y despieces de mobiliario** en 24-48 horas por proyecto (sin contratos ni mensualidades, pago por Nequi / Bancolombia).
-
-¿Les envío un par de muestras de planos y renders 3D a su WhatsApp? (Mi línea directa: +57 322 273 9034)."""
-                pricing = f"COP ${int(p_min or 250000):,} — ${int(p_max or 850000):,}".replace(',', '.')
-                turnaround = "24 a 48 horas"
-            elif offer_type == 'whatsapp_bot' or 'whatsapp' in skills_text:
-                subject = f"Bot de WhatsApp y Citas 24/7 para {org}"
-                body = f"""¡Hola {org}! 👋
-
-Noté que atienden clientes por WhatsApp e Instagram. Implemento **asistentes automáticos 24/7** que responden precios, ubicación y agendan citas solos para no perder clientes fuera de horario.
-
-Lo entrego funcionando en 48 horas con pago único en Colombia (Nequi / Bancolombia). ¿Te envío una demostración rápida? (WhatsApp: +57 322 273 9034)."""
-                pricing = f"COP ${int(p_min or 300000):,} — ${int(p_max or 850000):,}".replace(',', '.')
-                turnaround = "48 horas"
-            else:
-                subject = f"Catálogo Digital con Pedidos a WhatsApp para {org}"
-                body = f"""¡Hola {org}! 👋
-
-Les armo un **Catálogo Digital / Web Interactiva** donde sus clientes eligen productos o reservan cabañas desde el celular y el pedido llega listo a su WhatsApp.
-
-Listo en 2 días, sin mensualidades ni comisiones (pago por Nequi / Bancolombia). ¿Te muestro un ejemplo en vivo? (WhatsApp: +57 322 273 9034)."""
-                pricing = f"COP ${int(p_min or 250000):,} — ${int(p_max or 750000):,}".replace(',', '.')
-                turnaround = "2 a 3 días"
-
-            return {
-                'language': 'es',
-                'subject': subject,
-                'body': body,
-                'pricing_recommendation': pricing,
-                'turnaround': turnaround,
-                'whatsapp_phone': wa_phone
-            }
-
-        # 5. Proyectos en Workana / Freelancer.co
-        if 'planos' in skills_text or '3d' in skills_text or 'blender' in skills_text or 'autocad' in skills_text:
-            hook = "Soy especialista en **modelado 3D en Blender, planos 2D/3D en AutoCAD y diseño estructural de cabañas/espacios (Maestro Certificado en Guadua)**."
-            turnaround = "24 horas para el primer avance 3D / plano"
-        elif 'whatsapp' in skills_text or 'automatizaci' in skills_text or 'bot' in skills_text:
-            hook = "Configuro **bots de WhatsApp y automatizaciones prácticas (n8n / IA)** listas en 24-48 horas."
-            turnaround = "24 a 48 horas"
-        else:
-            hook = "Me encargo de este proyecto de forma rápida, práctica y entregando archivos editables listos."
-            turnaround = "24 a 48 horas"
-
+        # 6. Clientes directos en Instagram / Facebook Colombia y Proyectos Freelance
+        hook = (
+            "Soy especialista en **diseño y construcción de cabañas (guadua certificada, muro tendinoso, incrustaciones de botellas y vidrio), "
+            "estructuras en metal y soldadura, remodelaciones, modelado 3D en Blender, planos AutoCAD y automatización**."
+        )
         pricing = f"{curr} {int(p_min):,} — {int(p_max):,}" if (p_min and p_max) else "Precio cerrado por entregable"
-        subject = f"Entrega en 24-48h: {title}"
-        body = f"""¡Hola! Revisé tu encargo **"{title}"** y puedo comenzar hoy mismo.
+        subject = f"Propuesta Directa: {title}"
+        body = f"""¡Hola {org}! 👋 Revisé tu requerimiento **"{title}"** y puedo comenzar hoy mismo.
 
 {hook}
 
-1. En **menos de 24 horas** te envío el primer avance real para validar cada detalle.
-2. Entrega rápida sin trámites complicados (Contacto directo en Colombia: +57 322 273 9034).
+1. En **menos de 24 horas** te envío el primer avance o cotización detallada.
+2. Trato directo sin contratos complicados (WhatsApp directo en Colombia: **+57 322 273 9034**).
 
-¿Me compartes los detalles por aquí para arrancar de inmediato?"""
+¿Me compartes los detalles por aquí o por WhatsApp para arrancar de inmediato?"""
 
         return {
             'language': 'es',
             'subject': subject,
             'body': body,
             'pricing_recommendation': pricing,
-            'turnaround': turnaround,
-            'whatsapp_phone': None
+            'turnaround': "24 a 48 horas",
+            'whatsapp_phone': wa_phone
         }

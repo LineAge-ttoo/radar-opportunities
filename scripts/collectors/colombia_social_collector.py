@@ -27,6 +27,36 @@ class ColombiaSocialCollector:
 
     SEARCH_CAMPAIGNS = [
         {
+            'niche': '🎋 Bioconstrucción, Guadua, Muro Tendinoso & Glampings (Redes Colombia)',
+            'query': 'site:instagram.com OR site:facebook.com colombia bioconstruccion guadua cabanas glamping whatsapp',
+            'platform': 'Grupos & Redes Colombia',
+            'offer_type': 'bioconstruccion_guadua',
+            'cop_min': 650000,
+            'cop_max': 4500000,
+            'skills': ['bioconstrucción', 'muro tendinoso', 'guadua', 'botellas & vidrio'],
+            'service_pitch': 'Construcción y remodelación de cabañas con muro tendinoso, incrustaciones de botellas, muros en vidrio, acabados en guadua certificada y renders 3D.'
+        },
+        {
+            'niche': '🔩 Estructuras Metálicas, Soldadura & Remodelaciones (Grupos & Redes Colombia)',
+            'query': 'site:facebook.com OR site:instagram.com colombia estructuras metalicas soldadura cubiertas remodelaciones whatsapp',
+            'platform': 'Facebook & Instagram Colombia',
+            'offer_type': 'metal_soldadura',
+            'cop_min': 350000,
+            'cop_max': 3200000,
+            'skills': ['estructuras en metal', 'soldadura', 'remodelación', 'guadua & metal'],
+            'service_pitch': 'Fabricación, soldadura y remodelación de estructuras metálicas, cubiertas mixtas en metal y guadua, pérgolas, portones y planos 3D.'
+        },
+        {
+            'niche': '🛠️ Manualidades, Artesanías en Guadua/Vidrio & 2do Tiempo (Redes Colombia)',
+            'query': 'site:instagram.com OR site:facebook.com colombia artesanias guadua bambu lamparas decoracion rustica whatsapp',
+            'platform': 'Redes & Grupos Colombia',
+            'offer_type': 'informales_manualidades',
+            'cop_min': 90000,
+            'cop_max': 650000,
+            'skills': ['manualidades', '2do tiempo', 'lámparas guadua', 'vidrio & metal'],
+            'service_pitch': 'Elaboración por encargo de lámparas en guadua, decoración con botellas de vidrio, muebles rústicos en metal/bambú y reparaciones locativas.'
+        },
+        {
             'niche': '📐 Planos, Renders 3D & Remodelaciones (Instagram Colombia)',
             'query': 'site:instagram.com colombia remodelaciones arquitectura diseno interior whatsapp',
             'platform': 'Instagram Colombia',
@@ -35,26 +65,6 @@ class ColombiaSocialCollector:
             'cop_max': 950000,
             'skills': ['planos', '3d / render', 'autocad', 'diseño interior'],
             'service_pitch': 'Elaboración de planos 2D/3D, distribución de espacios y renders fotorrealistas para que cierren más obras y remodelaciones con sus clientes.'
-        },
-        {
-            'niche': '📐 Planos, Obras y Remodelaciones en Facebook (Colombia)',
-            'query': 'site:facebook.com colombia remodelaciones arquitectura planos construccion whatsapp',
-            'platform': 'Facebook Colombia',
-            'offer_type': 'planos_3d',
-            'cop_min': 200000,
-            'cop_max': 850000,
-            'skills': ['planos', 'autocad', '3d / render'],
-            'service_pitch': 'Dibujo de planos arquitectónicos, levantamientos y visualización 3D rápida por proyecto sin contratos complicados.'
-        },
-        {
-            'niche': '🤖 Bot de WhatsApp & Citas para Clínicas y Estéticas (Instagram Colombia)',
-            'query': 'site:instagram.com colombia clinica odontologia estetica agenda cita whatsapp',
-            'platform': 'Instagram Colombia',
-            'offer_type': 'whatsapp_bot',
-            'cop_min': 300000,
-            'cop_max': 900000,
-            'skills': ['whatsapp / bot', 'automatización', 'n8n', 'ia práctica'],
-            'service_pitch': 'Automatización de WhatsApp e Instagram DM que responde precios 24/7, filtra pacientes y agenda citas automáticamente.'
         },
         {
             'niche': '🌐 Web Interactiva & Reservas para Glampings y Hoteles (Instagram Colombia)',

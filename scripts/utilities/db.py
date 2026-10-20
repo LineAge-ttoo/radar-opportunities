@@ -290,10 +290,16 @@ def get_all_opportunities(filter_decision=None, filter_status=None, limit=250, d
         d['blueprint'] = json.loads(d.get('blueprint_json') or '{}') if d.get('blueprint_json') else None
         raw = d['raw_data']
         obs = d['observed_data']
+        est = d['estimated_data']
         d['contact_phone'] = raw.get('contact_phone') or obs.get('contact_phone') or obs.get('whatsapp_phone') or raw.get('whatsapp_phone') or ''
         d['contact_whatsapp_url'] = raw.get('contact_whatsapp_url') or obs.get('contact_whatsapp_url') or ''
         d['circular_code'] = raw.get('circular_code') or obs.get('circular_code') or ''
         d['contact_email'] = raw.get('contact_email') or obs.get('contact_email') or ''
+        d['approx_place'] = raw.get('approx_place') or obs.get('approx_place') or d.get('location') or ''
+        d['contractor_info'] = raw.get('contractor_info') or obs.get('contractor_info') or ''
+        d['lat'] = raw.get('lat') or obs.get('lat')
+        d['lon'] = raw.get('lon') or obs.get('lon')
+        d['distance_km'] = raw.get('distance_km') if raw.get('distance_km') is not None else (obs.get('distance_km') if obs.get('distance_km') is not None else est.get('distance_km', 999.0))
         results.append(d)
 
     conn.close()

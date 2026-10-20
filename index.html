@@ -522,7 +522,84 @@
             font-weight: 700;
             color: #FFFFFF;
             line-height: 1.35;
-            margin-bottom: 14px;
+            margin-bottom: 10px;
+        }
+
+        .cz-card-actions-top {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .cz-mini-icon-btn {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: rgba(255, 255, 255, 0.82);
+            border-radius: 8px;
+            padding: 4px 8px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.74rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.18s ease;
+        }
+
+        .cz-mini-icon-btn:hover {
+            background: rgba(255, 255, 255, 0.18);
+            color: #FFFFFF;
+        }
+
+        .cz-mini-icon-btn.saved {
+            background: rgba(255, 184, 48, 0.25);
+            border-color: var(--amber-gold);
+            color: var(--amber-gold);
+            box-shadow: 0 0 12px rgba(255, 184, 48, 0.45);
+        }
+
+        .cz-mini-icon-btn.discard:hover {
+            background: rgba(255, 59, 78, 0.28);
+            border-color: var(--imperial-red);
+            color: #FF8A95;
+        }
+
+        .cz-proximity-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #4ADE80;
+            background: rgba(16, 185, 129, 0.14);
+            border: 1px solid rgba(74, 222, 128, 0.4);
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-bottom: 8px;
+        }
+
+        .cz-contractor-box {
+            background: rgba(14, 16, 22, 0.58);
+            border-left: 2.5px solid var(--amber-gold);
+            border-radius: 6px 10px 10px 6px;
+            padding: 8px 10px;
+            margin-bottom: 12px;
+            font-size: 0.77rem;
+            color: rgba(255, 255, 255, 0.84);
+            line-height: 1.38;
+        }
+
+        .cz-contractor-box strong {
+            color: var(--amber-gold);
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-size: 0.74rem;
+            display: block;
+            margin-bottom: 2px;
         }
 
         /* Technical Key-Value Rows inside Card (Matches Reference Image!) */
@@ -784,28 +861,37 @@
     </header>
 
     <!-- CENTERED CYBER-ZEN SEARCH BAR + SPECIALTY FILTER PILLS -->
-    <div class="search-stage">
-        <div class="cyber-search-box">
-            <input type="text" id="sInput" class="cyber-search-input" placeholder="SEARCH: GUADUA, SAN AGUSTÍN, ALCALDÍA, BLENDER, ESTUDIANTES, AUTOCAD..." oninput="applyFilters()">
+    <div class="search-stage" style="max-width:980px;">
+        <div class="cyber-search-box" style="max-width:660px;margin:0 auto;">
+            <input type="text" id="sInput" class="cyber-search-input" placeholder="BUSCAR: MURO TENDINOSO, BOTELLAS, VIDRIO, GUADUA, METAL, SOLDADURA, MANUALIDADES, SAN AGUSTÍN..." oninput="applyFilters()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
 
         <div class="cyber-pills-row">
-            <button class="cz-pill active" data-cat="" onclick="selectCat('', this)">⚡ MÁS RECIENTES (TODAS)</button>
-            <button class="cz-pill" data-cat="huila_guadua" onclick="selectCat('huila_guadua', this)">🎋 SAN AGUSTÍN · GUADUA & CABAÑAS</button>
-            <button class="cz-pill" data-cat="alcaldia" onclick="selectCat('alcaldia', this)">🏛️ ALCALDÍA SAN AGUSTÍN & HUILA</button>
-            <button class="cz-pill" data-cat="estudiantes" onclick="selectCat('estudiantes', this)">🎓 ESTUDIANTES & TAREAS</button>
-            <button class="cz-pill" data-cat="blender_cad" onclick="selectCat('blender_cad', this)">🧊 BLENDER 3D & AUTOCAD</button>
-            <button class="cz-pill" data-cat="whatsapp" onclick="selectCat('whatsapp', this)">💬 CON WHATSAPP +57</button>
+            <button class="cz-pill active" data-cat="" onclick="selectCat('', this)">⚡ MÁS RECIENTES</button>
+            <button class="cz-pill" data-cat="cerca_de_mi" onclick="selectCat('cerca_de_mi', this)">📍 CERCA DE MÍ (POR CERCANÍA)</button>
+            <button class="cz-pill" data-cat="huila_guadua" onclick="selectCat('huila_guadua', this)">🎋 BIOCONSTRUCCIÓN · GUADUA · BOTELLAS & VIDRIO</button>
+            <button class="cz-pill" data-cat="metal_soldadura" onclick="selectCat('metal_soldadura', this)">🔩 METAL · SOLDADURA & REMODELACIÓN</button>
+            <button class="cz-pill" data-cat="informales" onclick="selectCat('informales', this)">🛠️ INFORMALES · 2DO TIEMPO · MANUALIDADES</button>
+            <button class="cz-pill" data-cat="grupos_redes" onclick="selectCat('grupos_redes', this)">📲 GRUPOS REDES & WHATSAPP</button>
+            <button class="cz-pill" data-cat="alcaldia" onclick="selectCat('alcaldia', this)">🏛️ ALCALDÍA & SECOP</button>
+            <button class="cz-pill" data-cat="estudiantes" onclick="selectCat('estudiantes', this)">🎓 ESTUDIANTES & 3D</button>
+            <button class="cz-pill" data-cat="guardados" onclick="selectCat('guardados', this)" id="pillSavedBtn">⭐ GUARDADOS (0)</button>
         </div>
     </div>
 
     <!-- LEFT FLOATING FROSTED SIDEBAR DOCK -->
     <aside class="cyber-sidebar" aria-label="Navegación Principal">
-        <button class="side-btn active" data-view="home" onclick="switchCzView('home')" title="Oportunidades Recientes">
+        <button class="side-btn active" data-view="home" onclick="selectCat('', document.querySelector('[data-cat=\'\']'))" title="Oportunidades Recientes">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </button>
-        <button class="side-btn" data-view="local" onclick="switchCzView('local')" title="Radar San Agustín Huila, Guadua & Alcaldías">
+        <button class="side-btn" data-view="nearby" onclick="selectCat('cerca_de_mi', document.querySelector('[data-cat=\'cerca_de_mi\']'))" title="Trabajo Cerca de Mí (Ordenado por Cercanía en KM)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </button>
+        <button class="side-btn" data-view="saved" onclick="selectCat('guardados', document.getElementById('pillSavedBtn'))" title="Mis Trabajos Guardados (Interesantes)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </button>
+        <button class="side-btn" data-view="local" onclick="switchCzView('local')" title="Buscador en Grupos de Redes, WhatsApp & San Agustín">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </button>
         <button class="side-btn" data-view="whatsapp" onclick="switchCzView('whatsapp')" title="Envío Automático a mi WhatsApp 322 273 9034 & Cotizador">
@@ -821,41 +907,43 @@
 
         <!-- VIEW 1: CYBER-ZEN CARDS GRID -->
         <section id="cz-view-home" class="cz-view active">
+            <div id="czSectionBanner" style="display:none;margin-bottom:16px;" class="glass-panel"></div>
             <div id="czCardsGrid" class="cz-cards-grid"></div>
         </section>
 
-        <!-- VIEW 2: RADAR ZONA SAN AGUSTÍN HUILA, GUADUA, ALCALDÍAS & ESTUDIANTES -->
+        <!-- VIEW 2: RADAR DE GRUPOS DE REDES, WHATSAPP & ZONA SAN AGUSTÍN HUILA -->
         <section id="cz-view-local" class="cz-view">
             <div class="glass-panel">
                 <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
                     <div>
-                        <h2 style="font-family:'Rajdhani',sans-serif;font-size:1.5rem;letter-spacing:0.06em;text-transform:uppercase;">📍 RADAR LOCAL: SAN AGUSTÍN, SUR DEL HUILA & GUADUA</h2>
-                        <p style="color:var(--text-silver);font-size:0.88rem;">Búsqueda en vivo de proyectos de cabañas en guadua, convocatorias de Alcaldía de San Agustín / Pitalito / Isnos y tareas universitarias.</p>
+                        <h2 style="font-family:'Rajdhani',sans-serif;font-size:1.5rem;letter-spacing:0.06em;text-transform:uppercase;">📲 BUSCADOR EN GRUPOS DE REDES, WHATSAPP & CERCANÍA</h2>
+                        <p style="color:var(--text-silver);font-size:0.88rem;">Encuentra clientes y publicaciones en grupos de Facebook, WhatsApp e Instagram para Cabañas con Muro Tendinoso, Incrustaciones de Botellas, Muros en Vidrio, Guadua, Estructuras en Metal/Soldadura y Trabajos de 2do Tiempo.</p>
                     </div>
-                    <button class="cz-pill active" onclick="locateSanAgustin()">📍 AUTORIZAR MI UBICACIÓN GPS</button>
+                    <button class="cz-pill active" onclick="locateSanAgustin()">📍 ACTUALIZAR MI GPS (CERCANÍA)</button>
                 </div>
 
-                <div class="cyber-pills-row" style="justify-content:flex-start;margin-bottom:16px;" id="localZoneButtons">
+                <div class="cyber-pills-row" style="justify-content:flex-start;margin-bottom:14px;" id="localZoneButtons">
                     <button class="cz-pill active" onclick="setLocalZone('San Agustín Huila', this)">📍 San Agustín, Huila</button>
-                    <button class="cz-pill" onclick="setLocalZone('Pitalito Huila', this)">📍 Pitalito, Huila</button>
-                    <button class="cz-pill" onclick="setLocalZone('Isnos Huila', this)">📍 Isnos, Huila</button>
+                    <button class="cz-pill" onclick="setLocalZone('Isnos Huila', this)">📍 Isnos, Huila (16 km)</button>
+                    <button class="cz-pill" onclick="setLocalZone('Pitalito Huila', this)">📍 Pitalito, Huila (28 km)</button>
                     <button class="cz-pill" onclick="setLocalZone('Garzón y Neiva Huila', this)">📍 Garzón / Neiva</button>
-                    <button class="cz-pill" onclick="setLocalZone('Eje Cafetero y Colombia', this)">🇨🇴 Toda Colombia</button>
+                    <button class="cz-pill" onclick="setLocalZone('Colombia', this)">🇨🇴 Toda Colombia</button>
                 </div>
 
-                <div class="cyber-pills-row" style="justify-content:flex-start;margin-bottom:16px;">
-                    <button class="cz-pill active" id="locSrv-guadua" onclick="setLocalService('guadua')">🎋 Cabañas en Guadua (Maestro Certificado)</button>
+                <div class="cyber-pills-row" style="justify-content:flex-start;margin-bottom:14px;">
+                    <button class="cz-pill active" id="locSrv-guadua" onclick="setLocalService('guadua')">🎋 Bioconstrucción · Muro Tendinoso · Botellas · Guadua</button>
+                    <button class="cz-pill" id="locSrv-metal" onclick="setLocalService('metal')">🔩 Estructuras en Metal · Soldadura & Remodelación</button>
+                    <button class="cz-pill" id="locSrv-informales" onclick="setLocalService('informales')">🛠️ 2do Tiempo · Manualidades · Lámparas & Muebles</button>
                     <button class="cz-pill" id="locSrv-alcaldia" onclick="setLocalService('alcaldia')">🏛️ Alcaldía San Agustín & SECOP II</button>
                     <button class="cz-pill" id="locSrv-estudiantes" onclick="setLocalService('estudiantes')">🎓 Estudiantes, Tareas & Blender 3D</button>
-                    <button class="cz-pill" id="locSrv-bots" onclick="setLocalService('bots')">🤖 Bots WhatsApp & Catálogos</button>
                 </div>
 
                 <textarea id="localPitchText" class="cz-textarea"></textarea>
 
-                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;">
+                    <button class="cz-pill active" style="padding:12px;" onclick="launchLocalPortal('fb_groups')">📘 GRUPOS DE FACEBOOK (DIRECTO)</button>
+                    <button class="cz-pill active" style="padding:12px;background:rgba(37,211,102,0.24);border-color:#25D366;" onclick="launchLocalPortal('wa_groups')">💬 BUSCAR LINKS WHATSAPP EN REDES</button>
                     <button class="cz-pill active" style="padding:12px;" onclick="launchLocalPortal('instagram')">📸 BUSCAR EN INSTAGRAM</button>
-                    <button class="cz-pill active" style="padding:12px;" onclick="launchLocalPortal('facebook')">📘 BUSCAR EN FACEBOOK</button>
-                    <button class="cz-pill active" style="padding:12px;" onclick="launchLocalPortal('maps')">📍 GOOGLE MAPS (CON TELÉFONO)</button>
                     <button class="cz-pill active" style="padding:12px;" onclick="launchLocalPortal('secop')">🏛️ ALCALDÍA / SECOP HUILA</button>
                 </div>
             </div>
@@ -865,10 +953,10 @@
         <section id="cz-view-whatsapp" class="cz-view">
             <div class="glass-panel">
                 <h2 style="font-family:'Rajdhani',sans-serif;font-size:1.5rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:6px;">
-                    📲 CENTRAL DE ALERTAS A TU WHATSAPP: +57 322 273 9034
+                    📲 CENTRAL DE ALERTAS AUTOMÁTICAS A TU WHATSAPP: +57 322 273 9034
                 </h2>
                 <p style="color:var(--text-silver);font-size:0.88rem;margin-bottom:16px;">
-                    El sistema actualiza 6 veces al día y prepara automáticamente el resumen de las oportunidades de mayor potencial (Cabañas en Guadua, Alcaldía de San Agustín Huila, Estudiantes, Blender 3D y Clientes en Colombia) para enviártelas a tu WhatsApp <strong>322 273 9034</strong>.
+                    El motor envía automáticamente las nuevas oportunidades de alto potencial a tu WhatsApp <strong>+57 322 273 9034</strong> (Bioconstrucción, Muro Tendinoso, Incrustaciones de Botellas, Guadua, Estructuras en Metal/Soldadura, Trabajos de 2do Tiempo/Manualidades y Alcaldía de San Agustín).
                 </p>
 
                 <textarea id="myWaDigestBox" class="cz-textarea" style="min-height:190px;"></textarea>
@@ -880,6 +968,9 @@
                     <button class="cz-pill" style="padding:12px 22px;" onclick="copyBox('myWaDigestBox')">
                         📋 COPIAR RESUMEN
                     </button>
+                    <button class="cz-pill" style="padding:12px 22px;" onclick="restoreAllDiscarded()">
+                        ♻️ RESTAURAR DESCARTADAS
+                    </button>
                 </div>
             </div>
         </section>
@@ -889,21 +980,31 @@
     <!-- DETAIL & PROPOSAL MODAL -->
     <div id="czModal" class="cz-modal-backdrop" onclick="if(event.target===this)closeCzModal()">
         <div class="cz-modal-box">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px;">
                 <div>
                     <div id="mCategory" style="font-family:'Rajdhani',sans-serif;font-weight:700;color:var(--amber-gold);letter-spacing:0.08em;text-transform:uppercase;font-size:0.85rem;"></div>
-                    <h3 id="mTitle" style="font-size:1.2rem;color:#FFFFFF;margin-top:4px;"></h3>
+                    <h3 id="mTitle" style="font-size:1.18rem;color:#FFFFFF;margin-top:4px;"></h3>
                     <div id="mOrg" style="font-size:0.82rem;color:var(--text-silver);margin-top:3px;"></div>
                 </div>
-                <button class="icon-btn" onclick="closeCzModal()">✕</button>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <button id="mSaveBtn" class="cz-mini-icon-btn" onclick="if(currentModalOpp)toggleSaveOpp(currentModalOpp.opportunity_id, event)">⭐ GUARDAR</button>
+                    <button class="cz-mini-icon-btn discard" onclick="if(currentModalOpp){discardOpp(currentModalOpp.opportunity_id, event);closeCzModal();}">🗑️ DESCARTAR</button>
+                    <button class="icon-btn" onclick="closeCzModal()">✕</button>
+                </div>
             </div>
+
+            <!-- CERCANÍA Y LUGAR APROXIMADO -->
+            <div id="mPlaceBox" class="cz-proximity-badge" style="margin-bottom:10px;"></div>
+
+            <!-- INFORMACIÓN DETALLADA DEL CONTRATANTE -->
+            <div id="mContractorBox" class="cz-contractor-box" style="margin-bottom:12px;"></div>
 
             <p id="mDesc" style="font-size:0.85rem;color:var(--text-silver);line-height:1.5;margin-bottom:14px;"></p>
 
             <!-- CANAL DE CONTACTO DIRECTO VERIFICADO DEL SOLICITANTE -->
             <div id="mContactBanner" style="background:rgba(16,185,129,0.14);border:1.5px solid #25D366;border-radius:14px;padding:12px 16px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;">
                 <div>
-                    <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;color:#4ADE80;text-transform:uppercase;">📞 CANAL DIRECTO CON EL SOLICITANTE / ENTIDAD</div>
+                    <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;color:#4ADE80;text-transform:uppercase;">📞 CANAL DIRECTO CON EL CONTRATANTE / ENTIDAD</div>
                     <div id="mContactInfoText" style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;color:#FFFFFF;font-weight:700;margin-top:2px;"></div>
                 </div>
                 <a id="mDirectActionBtn" href="#" target="_blank" rel="noopener noreferrer" class="cz-pill active" style="background:#25D366;border-color:#25D366;color:#051B0E;text-decoration:none;padding:10px 18px;font-weight:800;">
@@ -912,16 +1013,16 @@
             </div>
 
             <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber-gold);">
-                PROPUESTA LISTA (SE ENVÍA DIRECTO AL SOLICITANTE)
+                PROPUESTA PERSONALIZADA (MURO TENDINOSO, BOTELLAS, VIDRIO, GUADUA, METAL & 3D)
             </div>
             <textarea id="mPitch" class="cz-textarea"></textarea>
 
             <div style="display:flex;gap:10px;flex-wrap:wrap;">
                 <a id="mClientWaBtn" href="#" target="_blank" rel="noopener noreferrer" class="cz-pill active" style="display:none;background:#25D366;border-color:#25D366;color:#051B0E;text-decoration:none;padding:11px 18px;">
-                    💬 WHATSAPP DEL SOLICITANTE ↗
+                    💬 WHATSAPP DEL CONTRATANTE ↗
                 </a>
                 <a id="mSourceUrl" href="#" target="_blank" rel="noopener noreferrer" class="cz-pill active" style="text-decoration:none;padding:11px 18px;">
-                    📄 ABRIR CIRCULAR / SOLICITUD REAL ↗
+                    📄 ABRIR CIRCULAR / ENLACE REAL ↗
                 </a>
                 <button class="cz-pill" style="padding:11px 18px;" onclick="copyBox('mPitch')">
                     📋 COPIAR PROPUESTA
@@ -930,11 +1031,17 @@
         </div>
     </div>
 
+    <!-- UNDO DISCARD FLOATING BAR -->
+    <div id="undoBar" style="display:none;position:fixed;bottom:max(24px, calc(var(--safe-bottom) + 18px));right:24px;z-index:260;background:rgba(20,22,28,0.96);border:1.5px solid var(--imperial-red);border-radius:999px;padding:10px 18px;box-shadow:0 12px 30px rgba(0,0,0,0.65);align-items:center;gap:12px;font-family:'Rajdhani',sans-serif;font-weight:700;">
+        <span style="color:#FFFFFF;font-size:0.85rem;">🗑️ OFERTA DESCARTADA</span>
+        <button class="cz-pill active" style="padding:4px 12px;font-size:0.76rem;" onclick="undoLastDiscard()">↩ DESHACER</button>
+    </div>
+
     <div id="czToast" class="cz-toast">LISTO</div>
 
     <script>
         const MY_WHATSAPP = '573222739034';
-        const SAN_AGUSTIN_COORDS = { lat: 1.8792, lon: -76.2719 };
+        let userCoords = { lat: 1.8792, lon: -76.2706 };
 
         let opps = [];
         let filtered = [];
@@ -942,6 +1049,111 @@
         let currentModalOpp = null;
         let localZone = 'San Agustín Huila';
         let localSrv = 'guadua';
+        let lastDiscardedId = null;
+
+        // Persistent Saved & Discarded Lists (localStorage + Backend sync)
+        let savedIds = new Set(JSON.parse(localStorage.getItem('qhp_saved_ids') || '[]'));
+        let discardedIds = new Set(JSON.parse(localStorage.getItem('qhp_discarded_ids') || '[]'));
+
+        function persistSavedAndDiscarded() {
+            localStorage.setItem('qhp_saved_ids', JSON.stringify(Array.from(savedIds)));
+            localStorage.setItem('qhp_discarded_ids', JSON.stringify(Array.from(discardedIds)));
+            const btn = document.getElementById('pillSavedBtn');
+            if (btn) btn.innerText = `⭐ GUARDADOS (${savedIds.size})`;
+        }
+
+        function toggleSaveOpp(id, ev) {
+            if (ev) ev.stopPropagation();
+            if (savedIds.has(id)) {
+                savedIds.delete(id);
+                toast('QUITADO DE GUARDADOS');
+            } else {
+                savedIds.add(id);
+                discardedIds.delete(id);
+                toast('⭐ TRABAJO GUARDADO EN TU LISTA');
+                fetch('/api/opportunities/status', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ opportunity_id: id, status: 'GUARDADA' })
+                }).catch(() => {});
+            }
+            persistSavedAndDiscarded();
+            applyFilters();
+            if (currentModalOpp && currentModalOpp.opportunity_id === id) {
+                const mSaveBtn = document.getElementById('mSaveBtn');
+                if (mSaveBtn) {
+                    mSaveBtn.classList.toggle('saved', savedIds.has(id));
+                    mSaveBtn.innerText = savedIds.has(id) ? '★ GUARDADO' : '⭐ GUARDAR';
+                }
+            }
+        }
+
+        function discardOpp(id, ev) {
+            if (ev) ev.stopPropagation();
+            lastDiscardedId = id;
+            discardedIds.add(id);
+            savedIds.delete(id);
+            persistSavedAndDiscarded();
+            applyFilters();
+            fetch('/api/opportunities/status', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ opportunity_id: id, status: 'DESCARTAR' })
+            }).catch(() => {});
+
+            const bar = document.getElementById('undoBar');
+            if (bar) {
+                bar.style.display = 'inline-flex';
+                clearTimeout(window.__undoTimer);
+                window.__undoTimer = setTimeout(() => { bar.style.display = 'none'; }, 6000);
+            }
+        }
+
+        function undoLastDiscard() {
+            if (!lastDiscardedId) return;
+            discardedIds.delete(lastDiscardedId);
+            lastDiscardedId = null;
+            persistSavedAndDiscarded();
+            applyFilters();
+            const bar = document.getElementById('undoBar');
+            if (bar) bar.style.display = 'none';
+            toast('↩ OFERTA RESTAURADA');
+        }
+
+        function restoreAllDiscarded() {
+            discardedIds.clear();
+            persistSavedAndDiscarded();
+            applyFilters();
+            toast('♻️ TODAS LAS OFERTAS RESTAURADAS');
+        }
+
+        // Calculate Haversine distance in km from user's GPS (or San Agustín Huila center)
+        function calcDistanceKm(o) {
+            const raw = o.raw_data || {};
+            const obs = o.observed_data || {};
+            const lat = Number(o.lat || raw.lat || obs.lat || 0);
+            const lon = Number(o.lon || raw.lon || obs.lon || 0);
+            if (lat && lon) {
+                const R = 6371;
+                const dLat = (lat - userCoords.lat) * Math.PI / 180;
+                const dLon = (lon - userCoords.lon) * Math.PI / 180;
+                const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                          Math.cos(userCoords.lat * Math.PI / 180) * Math.cos(lat * Math.PI / 180) *
+                          Math.sin(dLon / 2) * Math.sin(dLon / 2);
+                const d = R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                return Math.round(d * 10) / 10;
+            }
+            if (o.distance_km !== undefined && o.distance_km !== null && o.distance_km < 900) {
+                return Number(o.distance_km);
+            }
+            const locTxt = `${o.location || ''} ${o.title || ''}`.toLowerCase();
+            if (locTxt.includes('san agust')) return 1.2;
+            if (locTxt.includes('isnos')) return 16.4;
+            if (locTxt.includes('pitalito')) return 28.2;
+            if (locTxt.includes('huila')) return 65.0;
+            if (locTxt.includes('colombia')) return 250.0;
+            return 500.0;
+        }
 
         // =========================================================
         // 1. ORGANIC SUMI-E INK SMOKE CANVAS RENDERER (CYBER-ZEN)
@@ -970,7 +1182,6 @@
 
             function draw() {
                 t += 1;
-                // Silver-grey smoky paper backdrop matching the reference image
                 const bgGrad = ctx.createLinearGradient(0, 0, w, h);
                 bgGrad.addColorStop(0, '#B4B6BD');
                 bgGrad.addColorStop(0.5, '#9A9DA6');
@@ -978,7 +1189,6 @@
                 ctx.fillStyle = bgGrad;
                 ctx.fillRect(0, 0, w, h);
 
-                // Flowing organic black/charcoal Sumi-e ink smoke waves
                 ribbons.forEach((r, idx) => {
                     ctx.save();
                     ctx.beginPath();
@@ -1004,7 +1214,6 @@
             draw();
         })();
 
-        // Live Clock in Center Capsule
         function updateClock() {
             const now = new Date();
             const str = now.toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit', hour12: true }).toUpperCase();
@@ -1014,33 +1223,29 @@
         setInterval(updateClock, 10000);
         updateClock();
 
-        // Geolocation for San Agustín, Huila
         function locateSanAgustin() {
             if (!navigator.geolocation) {
-                toast('MODO LOCAL: SAN AGUSTÍN, HUILA ACTIVO');
+                selectCat('cerca_de_mi', document.querySelector('[data-cat="cerca_de_mi"]'));
+                toast('📍 ORDENADO POR CERCANÍA EN SAN AGUSTÍN, HUILA');
                 return;
             }
-            toast('UBICANDO TU ZONA EN SAN AGUSTÍN / HUILA...');
+            toast('CALCULANDO DISTANCIAS DESDE TU UBICACIÓN GPS...');
             navigator.geolocation.getCurrentPosition(
                 (pos) => {
-                    const lat = pos.coords.latitude;
-                    const lon = pos.coords.longitude;
-                    const distKm = Math.round(
-                        Math.sqrt(Math.pow((lat - SAN_AGUSTIN_COORDS.lat) * 111, 2) + Math.pow((lon - SAN_AGUSTIN_COORDS.lon) * 111, 2))
-                    );
+                    userCoords = { lat: pos.coords.latitude, lon: pos.coords.longitude };
                     document.getElementById('gpsStatusLabel').innerText =
-                        `📍 GPS ACTIVO (${lat.toFixed(3)}, ${lon.toFixed(3)}) · SAN AGUSTÍN HUILA`;
-                    document.getElementById('zoneShortText').innerText =
-                        distKm < 60 ? 'SAN AGUSTÍN GPS' : `HUILA (${distKm}KM)`;
-                    selectCat('huila_guadua', document.querySelector('[data-cat="huila_guadua"]'));
-                    toast('📍 UBICACIÓN CONFIRMADA · PRIORIZANDO SAN AGUSTÍN Y GUADUA');
+                        `📍 GPS ACTIVO (${userCoords.lat.toFixed(3)}, ${userCoords.lon.toFixed(3)}) · ORDENADO POR CERCANÍA`;
+                    document.getElementById('zoneShortText').innerText = 'CERCA DE MÍ';
+                    selectCat('cerca_de_mi', document.querySelector('[data-cat="cerca_de_mi"]'));
+                    toast('📍 TRABAJOS ORDENADOS POR CERCANÍA A TU UBICACIÓN');
                 },
                 () => {
-                    document.getElementById('gpsStatusLabel').innerText = '📍 ZONA FIJADA: SAN AGUSTÍN, HUILA (1.879°N, 76.271°W)';
-                    selectCat('huila_guadua', document.querySelector('[data-cat="huila_guadua"]'));
-                    toast('📍 ZONA SAN AGUSTÍN HUILA ACTIVADA');
+                    userCoords = { lat: 1.8792, lon: -76.2706 };
+                    document.getElementById('gpsStatusLabel').innerText = '📍 ZONA BASE: SAN AGUSTÍN, HUILA (ORDENADO POR KM)';
+                    selectCat('cerca_de_mi', document.querySelector('[data-cat="cerca_de_mi"]'));
+                    toast('📍 MOSTRANDO TRABAJOS MÁS CERCANOS EN SAN AGUSTÍN Y SUR DEL HUILA');
                 },
-                { enableHighAccuracy: true, timeout: 7000 }
+                { enableHighAccuracy: true, timeout: 6000 }
             );
         }
 
@@ -1063,37 +1268,55 @@
         }
 
         function isHuilaGuadua(o) {
+            const cat = o.category || o.observed_data?.category_hint || '';
             const txt = `${o.title} ${o.description} ${o.location} ${(o.skills || []).join(' ')}`.toLowerCase();
-            return /san agust|huila|pitalito|isnos|guadua|bamb|cabaña|cabana|glamping|maloka/.test(txt);
+            return cat === 'guadua_cabanas' || cat === 'bioconstruccion_guadua' || /guadua|bamb|cabaña|cabana|glamping|bioconstrucci|tendinoso|botella|vidrio/.test(txt);
+        }
+
+        function isMetalSoldadura(o) {
+            const cat = o.category || o.observed_data?.category_hint || '';
+            const txt = `${o.title} ${o.description} ${(o.skills || []).join(' ')}`.toLowerCase();
+            return cat === 'metal_soldadura' || /metal|soldadura|soldador|cercha|cubierta|port[oó]n|baranda|remodelaci|hierro|acero/.test(txt);
+        }
+
+        function isInformalesManualidades(o) {
+            const cat = o.category || o.observed_data?.category_hint || '';
+            const txt = `${o.title} ${o.description} ${(o.skills || []).join(' ')}`.toLowerCase();
+            return cat === 'informales_manualidades' || /manualidad|2do tiempo|segundo tiempo|informal|l[aá]mpara|artesan[ií]a|mueble|reparaci|trabajos varios/.test(txt);
+        }
+
+        function isGruposRedes(o) {
+            const cat = o.category || o.observed_data?.category_hint || '';
+            const txt = `${o.title} ${o.description} ${o.source} ${(o.skills || []).join(' ')}`.toLowerCase();
+            return cat === 'grupos_redes' || /grupo|facebook|instagram|comunidad|clasificados/.test(txt);
         }
 
         function isAlcaldia(o) {
+            const cat = o.category || o.observed_data?.category_hint || '';
             const txt = `${o.title} ${o.description} ${o.organization} ${(o.skills || []).join(' ')}`.toLowerCase();
-            return /alcald|secop|municipio|gobernaci|m[ií]nima cuant|contrataci/.test(txt);
+            return cat === 'alcaldia_huila' || /alcald|secop|municipio|gobernaci|m[ií]nima cuant|contrataci/.test(txt);
         }
 
         function isEstudiantes(o) {
+            const cat = o.category || o.observed_data?.category_hint || '';
             const txt = `${o.title} ${o.description} ${(o.skills || []).join(' ')}`.toLowerCase();
-            return /estudiant|universitari|tarea|sena|unad|usco|entrega|maqueta|taller|arquitectura/.test(txt);
-        }
-
-        function isBlenderCad(o) {
-            const txt = `${o.title} ${o.description} ${(o.skills || []).join(' ')}`.toLowerCase();
-            return /blender|3d|render|autocad|plano|dwg|stl|modelado/.test(txt);
+            return cat === 'estudiantes_tareas' || /estudiant|universitari|tarea|sena|unad|usco|entrega|maqueta|taller|arquitectura|blender|autocad|3d/.test(txt);
         }
 
         function hasWa(o) {
-            return Boolean(o.observed_data?.whatsapp_phone || o.proposal?.whatsapp_phone);
+            return Boolean(o.contact_phone || o.observed_data?.whatsapp_phone || o.proposal?.whatsapp_phone);
         }
 
         function getCategoryHeader(o) {
-            if (isHuilaGuadua(o)) return 'GUADUA & SAN AGUSTÍN';
-            if (isAlcaldia(o)) return 'ALCALDÍA & SECOP HUILA';
-            if (isEstudiantes(o)) return 'ESTUDIANTES & TAREAS';
-            if (isBlenderCad(o)) return 'BLENDER RENDERS & CAD';
+            if (isInformalesManualidades(o)) return '🛠️ 2DO TIEMPO & MANUALIDADES';
+            if (isMetalSoldadura(o)) return '🔩 ESTRUCTURAS METAL & SOLDADURA';
+            if (isGruposRedes(o)) return '📲 GRUPOS REDES & WHATSAPP';
+            if (isHuilaGuadua(o)) return '🎋 BIOCONSTRUCCIÓN & GUADUA';
+            if (isAlcaldia(o)) return '🏛️ ALCALDÍA & SECOP HUILA';
+            if (isEstudiantes(o)) return '🎓 ESTUDIANTES, BLENDER & CAD';
             const txt = `${o.title} ${o.description}`.toLowerCase();
-            if (/whatsapp|bot|automatiz/.test(txt)) return 'WHATSAPP AUTOMATION';
-            return 'WEB ARCHITECTURE & CO';
+            if (/whatsapp|bot|automatiz/.test(txt)) return '🤖 AUTOMATIZACIÓN WHATSAPP';
+            return '🌐 PROYECTO DIRECTO';
         }
 
         function getFormattedPrice(o) {
@@ -1105,11 +1328,29 @@
             return 'POR COTIZAR';
         }
 
+        function getApproxPlace(o) {
+            const raw = o.raw_data || {};
+            const obs = o.observed_data || {};
+            return o.approx_place || raw.approx_place || obs.approx_place || obs.stated_location || o.location || 'San Agustín / Colombia';
+        }
+
+        function getContractorInfo(o) {
+            const raw = o.raw_data || {};
+            const obs = o.observed_data || {};
+            if (o.contractor_info || raw.contractor_info || obs.contractor_info) {
+                return o.contractor_info || raw.contractor_info || obs.contractor_info;
+            }
+            const org = o.organization || 'Solicitante Directo';
+            const src = o.source || 'Plataforma';
+            return `Contratante: ${org} (${src}). Publicación activa para cotizar y entregar de forma directa sin contratos complicados.`;
+        }
+
         async function loadInitialData() {
+            persistSavedAndDiscarded();
             updateLocalPitch();
 
-            if (window.__RADAR_EMBEDDED_DATA__ && Array.isArray(window.__RADAR_EMBEDDED_DATA__)) {
-                opps = window.__RADAR_EMBEDDED_DATA__;
+            if (window.__RADAR_EMBEDDED_DATA__ && window.__RADAR_EMBEDDED_DATA__.opportunities) {
+                opps = window.__RADAR_EMBEDDED_DATA__.opportunities;
                 applyFilters();
                 buildMyWaDigest();
                 return;
@@ -1141,14 +1382,12 @@
 
         async function autoDispatchToUserWhatsApp(scanId) {
             try {
-                // 1. Trigger backend automatic Windows/Cloud WhatsApp sender if local server is active
                 fetch('/api/auto-whatsapp', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ force: false })
                 }).catch(() => {});
 
-                // 2. If a new scan batch arrived, automatically trigger WhatsApp protocol to +57 3222739034
                 const key = 'qhp_auto_wa_sent_' + (scanId || new Date().toISOString().slice(0, 13));
                 if (!localStorage.getItem(key) && opps.length > 0) {
                     localStorage.setItem(key, '1');
@@ -1174,42 +1413,79 @@
 
         function applyFilters() {
             const q = (document.getElementById('sInput')?.value || '').toLowerCase().trim();
-            let list = [...opps];
+            // Always hide discarded items unless looking specifically at saved items
+            let list = opps.filter(o => !discardedIds.has(o.opportunity_id));
 
-            if (curCat === 'huila_guadua') list = list.filter(isHuilaGuadua);
-            else if (curCat === 'alcaldia') list = list.filter(isAlcaldia);
-            else if (curCat === 'estudiantes') list = list.filter(isEstudiantes);
-            else if (curCat === 'blender_cad') list = list.filter(isBlenderCad);
-            else if (curCat === 'whatsapp') list = list.filter(hasWa);
+            const banner = document.getElementById('czSectionBanner');
+            if (banner) {
+                if (curCat === 'cerca_de_mi') {
+                    banner.style.display = 'block';
+                    banner.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+                        <div>
+                            <strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">📍 TRABAJO CERCA DE MÍ — ORDENADO POR CERCANÍA EN KILÓMETROS</strong>
+                            <div style="font-size:0.82rem;color:var(--text-silver);">Mostrando primero los contratantes más cercanos a tu ubicación en San Agustín, Isnos y Pitalito (Huila), con lugar aproximado e información detallada del contratante.</div>
+                        </div>
+                        <button class="cz-pill active" onclick="locateSanAgustin()">📍 CALIBRAR MI GPS</button>
+                    </div>`;
+                } else if (curCat === 'informales') {
+                    banner.style.display = 'block';
+                    banner.innerHTML = `<strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">🛠️ OFERTAS INFORMALES, TRABAJOS DE SEGUNDO TIEMPO Y MANUALIDADES</strong>
+                    <div style="font-size:0.82rem;color:var(--text-silver);">Trabajos rápidos por día o por encargo sin contratos: lámparas en guadua, decoración con botellas de vidrio, muebles en metal y bambú, soldadura a domicilio y reparaciones.</div>`;
+                } else if (curCat === 'guardados') {
+                    banner.style.display = 'block';
+                    banner.innerHTML = `<strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">⭐ MIS TRABAJOS GUARDADOS (${savedIds.size})</strong>
+                    <div style="font-size:0.82rem;color:var(--text-silver);">Aquí se conservan las ofertas interesantes que guardaste para contactar o revisar con calma.</div>`;
+                } else {
+                    banner.style.display = 'none';
+                }
+            }
+
+            if (curCat === 'guardados') {
+                list = opps.filter(o => savedIds.has(o.opportunity_id));
+            } else if (curCat === 'cerca_de_mi') {
+                list = list.filter(o => calcDistanceKm(o) <= 120);
+            } else if (curCat === 'huila_guadua') {
+                list = list.filter(isHuilaGuadua);
+            } else if (curCat === 'metal_soldadura') {
+                list = list.filter(isMetalSoldadura);
+            } else if (curCat === 'informales') {
+                list = list.filter(isInformalesManualidades);
+            } else if (curCat === 'grupos_redes') {
+                list = list.filter(isGruposRedes);
+            } else if (curCat === 'alcaldia') {
+                list = list.filter(isAlcaldia);
+            } else if (curCat === 'estudiantes') {
+                list = list.filter(isEstudiantes);
+            }
 
             if (q) {
                 list = list.filter(o =>
                     (o.title || '').toLowerCase().includes(q) ||
                     (o.organization || '').toLowerCase().includes(q) ||
                     (o.description || '').toLowerCase().includes(q) ||
-                    (o.location || '').toLowerCase().includes(q)
+                    (getApproxPlace(o) || '').toLowerCase().includes(q) ||
+                    (getContractorInfo(o) || '').toLowerCase().includes(q)
                 );
             }
 
-            // Sort strictly by: 1. San Agustín / Huila with direct WhatsApp, 2. San Agustín / Huila / Guadua / SECOP, 3. Direct WhatsApp, 4. Most Recent
-            list.sort((a, b) => {
-                const hgWaA = (isHuilaGuadua(a) || isAlcaldia(a)) && hasWa(a) ? 1 : 0;
-                const hgWaB = (isHuilaGuadua(b) || isAlcaldia(b)) && hasWa(b) ? 1 : 0;
-                if (hgWaA !== hgWaB) return hgWaB - hgWaA;
+            if (curCat === 'cerca_de_mi') {
+                list.sort((a, b) => calcDistanceKm(a) - calcDistanceKm(b));
+            } else {
+                list.sort((a, b) => {
+                    const hgWaA = (isHuilaGuadua(a) || isMetalSoldadura(a) || isInformalesManualidades(a) || isAlcaldia(a)) && hasWa(a) ? 1 : 0;
+                    const hgWaB = (isHuilaGuadua(b) || isMetalSoldadura(b) || isInformalesManualidades(b) || isAlcaldia(b)) && hasWa(b) ? 1 : 0;
+                    if (hgWaA !== hgWaB) return hgWaB - hgWaA;
 
-                const hgA = (isHuilaGuadua(a) || isAlcaldia(a) || isEstudiantes(a)) ? 1 : 0;
-                const hgB = (isHuilaGuadua(b) || isAlcaldia(b) || isEstudiantes(b)) ? 1 : 0;
-                if (hgA !== hgB) return hgB - hgA;
+                    const distA = calcDistanceKm(a);
+                    const distB = calcDistanceKm(b);
+                    if (distA < 50 && distB < 50 && distA !== distB) return distA - distB;
 
-                const waA = hasWa(a) ? 1 : 0;
-                const waB = hasWa(b) ? 1 : 0;
-                if (waA !== waB) return waB - waA;
-
-                const ageA = a.estimated_data?.age_hours ?? 1;
-                const ageB = b.estimated_data?.age_hours ?? 1;
-                if (ageA !== ageB) return ageA - ageB;
-                return (b.overall_score || 0) - (a.overall_score || 0);
-            });
+                    const ageA = a.estimated_data?.age_hours ?? 1;
+                    const ageB = b.estimated_data?.age_hours ?? 1;
+                    if (ageA !== ageB) return ageA - ageB;
+                    return (b.overall_score || 0) - (a.overall_score || 0);
+                });
+            }
 
             filtered = list;
             document.getElementById('liveCountText').innerText = `${filtered.length} ACTIVAS`;
@@ -1219,54 +1495,84 @@
         function renderCzCards() {
             const grid = document.getElementById('czCardsGrid');
             if (!filtered.length) {
-                grid.innerHTML = `<div class="glass-panel" style="grid-column:1/-1;text-align:center;">No hay resultados con ese filtro. Pulsa "⚡ MÁS RECIENTES (TODAS)".</div>`;
+                grid.innerHTML = `<div class="glass-panel" style="grid-column:1/-1;text-align:center;">
+                    No hay ofertas en esta vista ahora mismo.
+                    <div style="margin-top:12px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+                        <button class="cz-pill active" onclick="selectCat('', document.querySelector('[data-cat=\\'\\']'))">⚡ VER TODAS LAS OFERTAS</button>
+                        <button class="cz-pill" onclick="restoreAllDiscarded()">♻️ RESTAURAR DESCARTADAS</button>
+                    </div>
+                </div>`;
                 return;
             }
 
-            grid.innerHTML = filtered.slice(0, 36).map((o, idx) => {
+            grid.innerHTML = filtered.slice(0, 42).map((o, idx) => {
                 const neonClass = idx % 2 === 0 ? 'neon-red' : 'neon-gold';
                 const catHeader = getCategoryHeader(o);
                 const price = getFormattedPrice(o);
-                const loc = o.observed_data?.stated_location || o.location || '📍 San Agustín / Colombia';
+                const approxPlace = getApproxPlace(o);
+                const contractorInfo = getContractorInfo(o);
+                const distKm = calcDistanceKm(o);
+                const isSaved = savedIds.has(o.opportunity_id);
                 const org = o.organization || 'Solicitante Directo';
-                const waPhone = o.observed_data?.whatsapp_phone || o.proposal?.whatsapp_phone;
+                const rawPhone = String(o.contact_phone || o.observed_data?.whatsapp_phone || o.proposal?.whatsapp_phone || '').replace(/\D/g, '');
                 const sUrl = o.source_url || '#';
                 const isSecop = sUrl.includes('secop.gov.co');
 
-                let contactLabel = 'POSTULACIÓN DIRECTA';
-                let primaryBtnHtml = `<a href="${escapeHtml(sUrl)}" target="_blank" rel="noopener noreferrer" class="cz-neon-btn">CONTACTAR / VER ↗</a>`;
+                let contactLabel = 'PUBLICACIÓN DIRECTA';
+                let primaryBtnHtml = `<a href="${escapeHtml(sUrl)}" target="_blank" rel="noopener noreferrer" class="cz-neon-btn">ABRIR OFERTA ↗</a>`;
 
-                if (waPhone) {
-                    contactLabel = `WHATSAPP +${waPhone}`;
-                    const waHref = `https://wa.me/${escapeHtml(waPhone)}?text=${encodeURIComponent(o.proposal?.body || '')}`;
-                    primaryBtnHtml = `<a href="${waHref}" target="_blank" rel="noopener noreferrer" class="cz-neon-btn" style="background:rgba(37,211,102,0.22);border-color:#25D366;color:#4ADE80;">💬 WA +${escapeHtml(waPhone)} ↗</a>`;
+                if (rawPhone) {
+                    contactLabel = `WHATSAPP +${rawPhone}`;
+                    const waHref = `https://wa.me/${escapeHtml(rawPhone)}?text=${encodeURIComponent(o.proposal?.body || '')}`;
+                    primaryBtnHtml = `<a href="${waHref}" target="_blank" rel="noopener noreferrer" class="cz-neon-btn" style="background:rgba(37,211,102,0.22);border-color:#25D366;color:#4ADE80;">💬 WA +${escapeHtml(rawPhone)} ↗</a>`;
                 } else if (isSecop) {
                     contactLabel = 'CIRCULAR PÚBLICA SECOP II';
                     primaryBtnHtml = `<a href="${escapeHtml(sUrl)}" target="_blank" rel="noopener noreferrer" class="cz-neon-btn">📄 CIRCULAR REAL ↗</a>`;
+                } else if (sUrl.includes('facebook.com/search/groups')) {
+                    contactLabel = 'GRUPO ACTIVO EN REDES';
+                    primaryBtnHtml = `<a href="${escapeHtml(sUrl)}" target="_blank" rel="noopener noreferrer" class="cz-neon-btn">📲 ENTRAR AL GRUPO ↗</a>`;
                 }
+
+                const proxText = distKm < 150
+                    ? `📏 A ${distKm} KM DE TI · ${approxPlace.slice(0, 46)}`
+                    : `🌐 REMOTO / COLOMBIA · ${approxPlace.slice(0, 42)}`;
 
                 return `
                 <article class="cz-card ${neonClass}">
                     <div>
                         <div class="cz-card-head">
                             <div class="cz-card-category">${escapeHtml(catHeader)}</div>
-                            <div class="cz-dots"><span></span><span></span><span></span></div>
+                            <div class="cz-card-actions-top">
+                                <button class="cz-mini-icon-btn ${isSaved ? 'saved' : ''}" onclick="toggleSaveOpp('${escapeHtml(o.opportunity_id)}', event)" title="Guardar este trabajo">
+                                    ${isSaved ? '★ GUARDADO' : '⭐ GUARDAR'}
+                                </button>
+                                <button class="cz-mini-icon-btn discard" onclick="discardOpp('${escapeHtml(o.opportunity_id)}', event)" title="Descartar / Eliminar esta oferta">
+                                    🗑️
+                                </button>
+                            </div>
                         </div>
+
+                        <div class="cz-proximity-badge">${escapeHtml(proxText)}</div>
 
                         <div class="cz-title-main">${escapeHtml(o.title)}</div>
 
+                        <div class="cz-contractor-box">
+                            <strong>👤 INFO DEL CONTRATANTE & LUGAR</strong>
+                            ${escapeHtml(contractorInfo.slice(0, 165))}${contractorInfo.length > 165 ? '...' : ''}
+                        </div>
+
                         <div class="cz-metrics">
                             <div class="cz-metric-row">
-                                <span class="cz-m-key">SOLICITANTE:</span>
-                                <span class="cz-m-val">${escapeHtml(org.slice(0, 26))}</span>
+                                <span class="cz-m-key">CONTRATANTE:</span>
+                                <span class="cz-m-val">${escapeHtml(org.slice(0, 28))}</span>
                             </div>
                             <div class="cz-metric-row">
                                 <span class="cz-m-key">CONTACTO DIRECTO:</span>
-                                <span class="cz-m-val" style="color:${waPhone ? '#4ADE80' : '#FFB830'};">${escapeHtml(contactLabel)}</span>
+                                <span class="cz-m-val" style="color:${rawPhone ? '#4ADE80' : '#FFB830'};">${escapeHtml(contactLabel)}</span>
                             </div>
                             <div class="cz-metric-row">
-                                <span class="cz-m-key">UBICACIÓN:</span>
-                                <span class="cz-m-val">${escapeHtml(loc.slice(0, 26))}</span>
+                                <span class="cz-m-key">LUGAR APROX.:</span>
+                                <span class="cz-m-val">${escapeHtml(approxPlace.slice(0, 30))}</span>
                             </div>
                             <div class="cz-metric-row">
                                 <span class="cz-m-key">PRESUPUESTO:</span>
@@ -1278,7 +1584,7 @@
                     <div class="cz-card-btns">
                         ${primaryBtnHtml}
                         <button class="cz-neon-btn" onclick="openCzModal('${escapeHtml(o.opportunity_id)}')">
-                            PROPUESTA / FICHA
+                            INFO & PROPUESTA
                         </button>
                     </div>
                 </article>`;
@@ -1290,27 +1596,42 @@
             if (!o) return;
             currentModalOpp = o;
 
+            const distKm = calcDistanceKm(o);
+            const approxPlace = getApproxPlace(o);
+            const contractorInfo = getContractorInfo(o);
+            const isSaved = savedIds.has(id);
+
             document.getElementById('mCategory').innerText = getCategoryHeader(o) + ' · ' + getFormattedPrice(o);
             document.getElementById('mTitle').innerText = o.title || '';
-            document.getElementById('mOrg').innerText = `${o.organization || ''} — ${o.observed_data?.stated_location || 'Colombia'}`;
+            document.getElementById('mOrg').innerText = `${o.organization || ''}`;
+            document.getElementById('mPlaceBox').innerText = distKm < 150
+                ? `📍 A ${distKm} KM DE TU UBICACIÓN · LUGAR APROX: ${approxPlace}`
+                : `📍 LUGAR / MODALIDAD: ${approxPlace}`;
+            document.getElementById('mContractorBox').innerHTML = `<strong>👤 INFORMACIÓN DEL CONTRATANTE Y DEL PROYECTO</strong>${escapeHtml(contractorInfo)}`;
             document.getElementById('mDesc').innerText = o.description || '';
             document.getElementById('mPitch').value = o.proposal?.body || '';
             document.getElementById('mSourceUrl').href = o.source_url || '#';
 
-            const waPhone = o.observed_data?.whatsapp_phone || o.proposal?.whatsapp_phone;
+            const mSaveBtn = document.getElementById('mSaveBtn');
+            if (mSaveBtn) {
+                mSaveBtn.classList.toggle('saved', isSaved);
+                mSaveBtn.innerText = isSaved ? '★ GUARDADO' : '⭐ GUARDAR';
+            }
+
+            const rawPhone = String(o.contact_phone || o.observed_data?.whatsapp_phone || o.proposal?.whatsapp_phone || '').replace(/\D/g, '');
             const waBtn = document.getElementById('mClientWaBtn');
             const contactInfoText = document.getElementById('mContactInfoText');
             const directActionBtn = document.getElementById('mDirectActionBtn');
             const sUrl = o.source_url || '#';
 
-            if (waPhone) {
-                const waHref = `https://wa.me/${waPhone}?text=${encodeURIComponent(o.proposal?.body || '')}`;
+            if (rawPhone) {
+                const waHref = `https://wa.me/${rawPhone}?text=${encodeURIComponent(o.proposal?.body || '')}`;
                 waBtn.style.display = 'inline-flex';
                 waBtn.href = waHref;
-                waBtn.innerText = `💬 WHATSAPP SOLICITANTE (+${waPhone}) ↗`;
-                contactInfoText.innerText = `WhatsApp Directo Verificado: +${waPhone}`;
+                waBtn.innerText = `💬 WHATSAPP CONTRATANTE (+${rawPhone}) ↗`;
+                contactInfoText.innerText = `WhatsApp Directo Verificado: +${rawPhone}`;
                 directActionBtn.href = waHref;
-                directActionBtn.innerText = `💬 ESCRIBIR A +${waPhone} ↗`;
+                directActionBtn.innerText = `💬 ESCRIBIR A +${rawPhone} ↗`;
             } else if (sUrl.includes('secop.gov.co')) {
                 waBtn.style.display = 'none';
                 contactInfoText.innerText = `Circular Oficial SECOP II (Pliego Público Directo)`;
@@ -1318,9 +1639,9 @@
                 directActionBtn.innerText = `📄 ABRIR CIRCULAR OFICIAL ↗`;
             } else {
                 waBtn.style.display = 'none';
-                contactInfoText.innerText = `Publicación Directa del Solicitante (${o.source || 'Plataforma'})`;
+                contactInfoText.innerText = `Canal Directo del Contratante (${o.source || 'Plataforma'})`;
                 directActionBtn.href = sUrl;
-                directActionBtn.innerText = `💬 ABRIR SOLICITUD Y POSTULAR ↗`;
+                directActionBtn.innerText = `💬 ABRIR PUBLICACIÓN REAL ↗`;
             }
 
             document.getElementById('czModal').classList.add('open');
@@ -1330,35 +1651,30 @@
             document.getElementById('czModal').classList.remove('open');
         }
 
-        // Send specific card opportunity to user's WhatsApp 3222739034
         function forwardCardToMyWa(id) {
             const o = opps.find(x => x.opportunity_id === id);
             if (!o) return;
             const msg = `🔔 *OPORTUNIDAD DETECTADA EN QUE HAY PA´ HACER!*\n\n` +
                         `📌 *${o.title}*\n` +
-                        `🏢 Cliente/Entidad: ${o.organization || 'Directo'}\n` +
-                        `📍 Zona: ${o.observed_data?.stated_location || 'Colombia'}\n` +
+                        `🏢 Contratante: ${o.organization || 'Directo'}\n` +
+                        `📍 Lugar Aprox: ${getApproxPlace(o)}\n` +
                         `💰 Valor: ${getFormattedPrice(o)}\n` +
                         `🔗 Enlace: ${o.source_url}\n\n` +
                         `📝 *Propuesta sugerida:*\n${o.proposal?.body || ''}`;
             window.open(`https://wa.me/${MY_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        function sendSingleOppToMyWa() {
-            if (currentModalOpp) forwardCardToMyWa(currentModalOpp.opportunity_id);
-        }
-
-        // Build and send Top High-Potential Digest to +57 3222739034
         function buildMyWaDigest() {
-            const top = opps.filter(o => isHuilaGuadua(o) || isAlcaldia(o) || isEstudiantes(o) || (o.overall_score || 0) >= 90).slice(0, 8);
+            const top = opps.filter(o => !discardedIds.has(o.opportunity_id) && (isHuilaGuadua(o) || isMetalSoldadura(o) || isInformalesManualidades(o) || isAlcaldia(o))).slice(0, 9);
             const lines = [
-                "🔔 *QUE HAY PA´ HACER! — RESUMEN DE ALTO POTENCIAL*",
-                "📍 *Ubicación:* San Agustín, Huila & Colombia",
-                `🕒 *Fecha:* ${new Date().toLocaleString('es-CO')}`,
+                "🔔 *QUE HAY PA´ HACER! — CONTACTOS DIRECTOS Y CERCANÍA*",
+                "📍 *Base:* San Agustín, Isnos & Pitalito (Huila)",
+                `🕒 *Actualizado:* ${new Date().toLocaleString('es-CO')}`,
                 ""
             ];
             top.forEach((o, i) => {
-                lines.push(`*${i + 1}. ${o.title}*\n💰 ${getFormattedPrice(o)} | 📍 ${o.observed_data?.stated_location || 'Huila/CO'}\n🔗 ${o.source_url}\n`);
+                const ph = o.contact_phone || o.observed_data?.whatsapp_phone || 'Enlace directo';
+                lines.push(`*${i + 1}. ${o.title}*\n📞 Contacto: ${ph} | 📏 A ${calcDistanceKm(o)} km\n📍 ${getApproxPlace(o)}\n🔗 ${o.source_url}\n`);
             });
             const box = document.getElementById('myWaDigestBox');
             if (box) box.value = lines.join('\n');
@@ -1374,7 +1690,6 @@
             window.open(`https://wa.me/${MY_WHATSAPP}?text=${encodeURIComponent(txt)}`, '_blank');
         }
 
-        // Local San Agustín & Huila Radar Logic
         function setLocalZone(z, btn) {
             localZone = z;
             document.querySelectorAll('#localZoneButtons .cz-pill').forEach(b => b.classList.remove('active'));
@@ -1384,7 +1699,7 @@
 
         function setLocalService(s) {
             localSrv = s;
-            ['guadua', 'alcaldia', 'estudiantes', 'bots'].forEach(k => {
+            ['guadua', 'metal', 'informales', 'alcaldia', 'estudiantes'].forEach(k => {
                 document.getElementById('locSrv-' + k)?.classList.toggle('active', k === s);
             });
             updateLocalPitch();
@@ -1394,34 +1709,37 @@
             const box = document.getElementById('localPitchText');
             if (!box) return;
             if (localSrv === 'guadua') {
-                box.value = `¡Hola! Un saludo desde San Agustín, Huila. Soy Maestro en Construcción en Guadua Certificado y diseñador 3D en Blender/AutoCAD.\n\nRealizo el diseño arquitectónico 3D, planos estructurales y construcción de cabañas en guadua, glampings, malokas y miradores en ${localZone}.\n\n📲 Mi WhatsApp directo: +57 322 273 9034. ¿Les gustaría ver renders 3D de cabañas y presupuestos?`;
+                box.value = `¡Hola! Un saludo desde San Agustín, Huila. Soy Maestro Certificado en Guadua y Bioconstrucción.\n\nRealizo cabañas con estilo de muro tendinoso, incrustaciones artísticas de botellas, muros en vidrio, acabados en guadua inmunizada y diseño previo en Blender 3D en ${localZone}.\n\n📲 Mi WhatsApp directo: +57 322 273 9034.`;
+            } else if (localSrv === 'metal') {
+                box.value = `¡Hola! Estoy disponible en ${localZone} para todo tipo de estructuras en metal y soldadura: cubiertas, cerchas, plataformas para glamping, portones y remodelación de estructuras tanto en guadua como en metal.\n\n📲 Mi WhatsApp directo: +57 322 273 9034.`;
+            } else if (localSrv === 'informales') {
+                box.value = `¡Hola! Disponible en ${localZone} para trabajos varios de segundo tiempo y manualidades por encargo: lámparas artesanales en guadua y botellas de vidrio, muebles en metal y bambú, soldadura a domicilio y reparaciones locativas.\n\n📲 WhatsApp directo: +57 322 273 9034.`;
             } else if (localSrv === 'alcaldia') {
-                box.value = `Cordial saludo. Desde San Agustín, Huila, presento disponibilidad como Maestro en Construcción en Guadua Certificado, modelador 3D y apoyo técnico en infraestructura turística y cultural para proyectos en ${localZone}.\n\n📲 Contacto directo: +57 322 273 9034.`;
-            } else if (localSrv === 'estudiantes') {
-                box.value = `¡Hola! Apoyo a estudiantes universitarios, SENA y UNAD en ${localZone} con entregas urgentes de Planos en AutoCAD, Modelado y Renders en Blender 3D, maquetas estructurales en guadua y tareas prácticas en 24h.\n\n📲 Escríbeme a mi WhatsApp: +57 322 273 9034.`;
+                box.value = `Cordial saludo. Desde San Agustín, Huila, presento disponibilidad como Maestro en Construcción en Guadua Certificado, Bioconstrucción, Estructuras Metálicas/Soldadura y Modelado 3D para proyectos en ${localZone}.\n\n📲 Contacto directo: +57 322 273 9034.`;
             } else {
-                box.value = `¡Hola! Configuro asistentes automáticos de WhatsApp 24/7 y catálogos web con pedidos y reservas a WhatsApp para negocios y hoteles en ${localZone}.\n\n📲 Mi WhatsApp directo: +57 322 273 9034.`;
+                box.value = `¡Hola! Apoyo a estudiantes universitarios, SENA y UNAD en ${localZone} con entregas de Planos AutoCAD, Renders en Blender 3D, maquetas en guadua/metal y tareas prácticas.\n\n📲 Escríbeme a mi WhatsApp: +57 322 273 9034.`;
             }
         }
 
         function launchLocalPortal(p) {
             const pitch = document.getElementById('localPitchText').value;
             if (navigator.clipboard) navigator.clipboard.writeText(pitch).catch(() => {});
-            toast('PROPUESTA COPIADA · ABRIENDO BÚSQUEDA EN ' + localZone.toUpperCase());
+            toast('PROPUESTA COPIADA · ABRIENDO GRUPOS EN ' + localZone.toUpperCase());
 
             let q = '';
-            if (localSrv === 'guadua') q = `glamping OR cabañas OR guadua OR ecohotel ${localZone} whatsapp`;
+            if (localSrv === 'guadua') q = `bioconstruccion OR guadua OR cabañas OR glamping ${localZone}`;
+            else if (localSrv === 'metal') q = `soldadura OR estructuras metalicas OR remodelacion OR construccion ${localZone}`;
+            else if (localSrv === 'informales') q = `empleos OR clasificados OR artesanias OR trabajos ${localZone}`;
             else if (localSrv === 'alcaldia') q = `alcaldia contratacion OR convocatoria ${localZone}`;
-            else if (localSrv === 'estudiantes') q = `arquitectura OR ingenieria OR planos OR blender ${localZone}`;
-            else q = `hotel OR restaurante OR clinica ${localZone} whatsapp`;
+            else q = `arquitectura OR ingenieria OR planos OR blender ${localZone}`;
 
             let url = '';
-            if (p === 'instagram') url = 'https://www.google.com/search?q=' + encodeURIComponent(`site:instagram.com ${q}`);
-            else if (p === 'facebook') url = 'https://www.google.com/search?q=' + encodeURIComponent(`site:facebook.com ${q}`);
-            else if (p === 'maps') url = 'https://www.google.com/maps/search/' + encodeURIComponent(q);
-            else url = 'https://www.google.com/search?q=' + encodeURIComponent(`site:gov.co ${localZone} contratacion OR convocatoria`);
+            if (p === 'fb_groups') url = 'https://www.facebook.com/search/groups/?q=' + encodeURIComponent(q);
+            else if (p === 'wa_groups') url = 'https://www.google.com/search?q=' + encodeURIComponent(`("chat.whatsapp.com" OR "wa.me/57") ${q}`);
+            else if (p === 'instagram') url = 'https://www.google.com/search?q=' + encodeURIComponent(`site:instagram.com ${q} whatsapp`);
+            else url = 'https://community.secop.gov.co/Public/Tendering/ContractNoticeManagement/Index';
 
-            setTimeout(() => { window.open(url, '_blank'); }, 300);
+            setTimeout(() => { window.open(url, '_blank'); }, 250);
         }
 
         function copyBox(id) {
@@ -1433,7 +1751,7 @@
         }
 
         async function triggerLiveScan() {
-            toast('ACTUALIZANDO OFERTAS MÁS RECIENTES (SAN AGUSTÍN & COLOMBIA)...');
+            toast('BUSCANDO NUEVAS OFERTAS EN SAN AGUSTÍN, GRUPOS Y COLOMBIA...');
             try {
                 const r = await fetch('/api/scan', { method: 'POST' });
                 if (r.ok) {
@@ -1446,7 +1764,7 @@
         }
 
         function downloadOfflineApp() {
-            const embeddedScript = '<' + 'script>window.__RADAR_EMBEDDED_DATA__ = ' + JSON.stringify(opps) + ';<' + '/script>';
+            const embeddedScript = '<' + 'script>window.__RADAR_EMBEDDED_DATA__ = ' + JSON.stringify({ opportunities: opps }) + ';<' + '/script>';
             const fullHtml = document.documentElement.outerHTML.replace('</head>', embeddedScript + '\n</head>');
             const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8' });
             const a = document.createElement('a');
@@ -1464,7 +1782,6 @@
             window.__czTimer = setTimeout(() => { t.classList.remove('show'); }, 2800);
         }
 
-        // Auto-refresh every 15 minutes while open so it stays updated multiple times a day
         setInterval(loadInitialData, 15 * 60 * 1000);
         window.addEventListener('DOMContentLoaded', loadInitialData);
     </script>
