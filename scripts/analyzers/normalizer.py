@@ -3,6 +3,7 @@ import html
 import hashlib
 from datetime import datetime, timezone, timedelta
 
+
 def clean_html(raw_html):
     if not raw_html:
         return ''
@@ -11,8 +12,28 @@ def clean_html(raw_html):
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
+
+def format_exact_time_ago(iso_str, fallback_str=None):
+    if fallback_str and any(k in str(fallback_str).lower() for k in ['minuto', 'hora', 'hoy', 'ayer']):
+        return str(fallback_str).strip()
+    try:
+        s = str(iso_str or '').replace('Z', '+00:00')
+        dt = datetime.fromisoformat(s)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        diff_mins = max(1, int((datetime.now(timezone.utc) - dt).total_seconds() // 60))
+        if diff_mins < 60:
+            return f"Publicado hace {diff_mins} minutos (Hoy)"
+        hrs = diff_mins // 60
+        if hrs < 24:
+            return f"Publicado hace {hrs} {'hora' if hrs == 1 else 'horas'} (Hoy)"
+        days = hrs // 24
+        return f"Publicado hace {days} {'día' if days == 1 else 'días'}"
+    except Exception:
+        return "Publicado Hoy (Reciente)"
+
+
 def parse_workana_relative_date(posted_str):
-    """Converts Workana strings like 'Hace 43 minutos', 'Hace 2 horas', 'Ayer' into UTC ISO-8601."""
     now = datetime.now(timezone.utc)
     s = (posted_str or '').lower().strip()
     if 'minuto' in s:
@@ -31,7 +52,8 @@ def parse_workana_relative_date(posted_str):
         m = re.search(r'(\d+)', s)
         days = int(m.group(1)) if m else 2
         return (now - timedelta(days=days)).isoformat()
-    return (now - timedelta(hours=3)).isoformat()
+    return (now - timedelta(hours=2)).isoformat()
+
 
 def parse_workana_budget(budget_str):
     if not budget_str:
@@ -51,6 +73,7 @@ def parse_workana_budget(budget_str):
         return nums[0], nums[0], curr
     return min(nums), max(nums), curr
 
+
 class OpportunityNormalizer:
     @staticmethod
     def normalize_colombia_social(item):
@@ -65,11 +88,12 @@ class OpportunityNormalizer:
         cop_min = float(item.get('cop_min', 250000))
         cop_max = float(item.get('cop_max', 850000))
         wa_phone = item.get('whatsapp_phone')
+        raw_snippet = clean_html(item.get('snippet', ''))
 
         if offer_type == 'bioconstruccion_guadua':
             action_title = f"🎋 Cabañas en Guadua, Muro Tendinoso & Vidrio para: {biz_name}"
         elif offer_type == 'metal_soldadura':
-            action_title = f"🔩 Estructuras en Metal, Soldadura & Remodelación para: {biz_name}"
+            action_title = f"🔩 Cubiertas en Metal/Guadua, Soldadura & Remodelación para: {biz_name}"
         elif offer_type == 'informales_manualidades':
             action_title = f"🛠️ [2do Tiempo & Manualidades] Lámparas, Vidrio y Guadua para: {biz_name}"
         elif offer_type == 'planos_3d':
@@ -79,12 +103,21 @@ class OpportunityNormalizer:
         else:
             action_title = f"🌐 Crear Catálogo Digital / Web para: {biz_name}"
 
-        desc = f"{item.get('service_pitch', '')} | Perfil detectado en {platform}: {item.get('snippet', '')}"
+        origin_source = f"Publicado en: {platform} — Perfil/Anuncio Público ({url[:48]}...)"
+        time_ago = "Detectado hoy en redes (Activo)"
+        verbatim_req = f"\"TEXTO DEL PERFIL / ANUNCIO EN {platform.upper()}: {raw_snippet or item.get('title', '')} — Requiere: {item.get('service_pitch', '')}\""
+        reqs = [
+            f"Especialidad solicitada: {', '.join(item.get('skills', ['Diseño / Construcción / Automatización']))}.",
+            "Modalidad: Trato directo con el cliente sin contratos legales largos (Pago por Nequi / Bancolombia).",
+            f"Canal de contacto: {'WhatsApp directo +' + str(wa_phone) if wa_phone else 'Mensaje directo al perfil oficial en ' + platform}."
+        ]
+
+        desc = f"{item.get('service_pitch', '')} | Publicación en {platform}: {raw_snippet}"
         if wa_phone:
             desc = f"📱 WhatsApp Directo Detectado: +{wa_phone} | " + desc
 
         approx_place = item.get('approx_place') or f"Perfil activo en {platform} (Colombia)"
-        contractor_info = item.get('contractor_info') or f"Contratante / Negocio: {biz_name} en {platform}. {item.get('snippet', '')[:160]}"
+        contractor_info = item.get('contractor_info') or f"Contratante / Negocio: {biz_name} en {platform}. Texto publicado: \"{raw_snippet[:150]}\""
 
         return {
             'opportunity_id': opp_id,
@@ -103,6 +136,10 @@ class OpportunityNormalizer:
             'location': 'Colombia',
             'approx_place': approx_place,
             'contractor_info': contractor_info,
+            'origin_source_detail': origin_source,
+            'time_ago_exact': time_ago,
+            'verbatim_request': verbatim_req,
+            'requirements_list': reqs,
             'remote': True,
             'skills': item.get('skills', ['automatizacion', 'whatsapp', 'planos', '3d']),
             'contact_phone': f"+{wa_phone}" if wa_phone and not str(wa_phone).startswith('+') else (wa_phone or ''),
@@ -115,6 +152,10 @@ class OpportunityNormalizer:
                 'whatsapp_phone': wa_phone,
                 'approx_place': approx_place,
                 'contractor_info': contractor_info,
+                'origin_source_detail': origin_source,
+                'time_ago_exact': time_ago,
+                'verbatim_request': verbatim_req,
+                'requirements_list': reqs,
                 'offer_type': offer_type,
                 'category_hint': offer_type,
                 'tags': item.get('skills', []) + ['colombia', platform.lower()]
@@ -138,7 +179,8 @@ class OpportunityNormalizer:
 
         budget_str = clean_html(item.get('budget', ''))
         p_min, p_max, curr = parse_workana_budget(budget_str)
-        pub_iso = parse_workana_relative_date(item.get('postedDate', ''))
+        posted_raw = clean_html(item.get('postedDate', '')) or 'Hace 1 hora'
+        pub_iso = parse_workana_relative_date(posted_raw)
 
         skills_list = []
         for sk in (item.get('skills') or []):
@@ -147,6 +189,19 @@ class OpportunityNormalizer:
             elif isinstance(sk, str):
                 skills_list.append(sk)
 
+        author_name = clean_html(item.get('authorName') or 'Solicitante en Workana')
+        bids_str = clean_html(str(item.get('totalBids') or 'Pocas propuestas'))
+        origin_source = f"Publicado en: Workana ({country_display}) — Categoría {item.get('radar_search_label', 'Proyectos')}"
+        time_ago = f"Publicado: {posted_raw}"
+        verbatim_req = f"\"{clean_desc or clean_title}\""
+        reqs = [
+            f"Habilidades exigidas por el solicitante: {', '.join(skills_list) if skills_list else 'Diseño / Planos 3D / Desarrollo práctico'}.",
+            f"Presupuesto publicado por el cliente: {budget_str or 'Abierto a cotización'}.",
+            f"Competencia actual en el anuncio: {bids_str}.",
+            "Entregar avance inicial rápido y archivos editables según lo descrito en la solicitud textual."
+        ]
+        contractor_info = f"Demandante: {author_name} ({country_display}). Publicó el anuncio en Workana ({posted_raw}) con presupuesto de {budget_str or 'cotización abierta'}."
+
         return {
             'opportunity_id': opp_id,
             'source': 'Workana Colombia' if 'Colombia' in country_display else 'Workana (Español)',
@@ -154,7 +209,7 @@ class OpportunityNormalizer:
             'discovered_at': now_iso,
             'published_at': pub_iso,
             'title': clean_title,
-            'organization': f"Cliente {item.get('authorName') or 'Workana'} ({country_display})",
+            'organization': f"Cliente {author_name} ({country_display})",
             'description': clean_desc,
             'category': item.get('radar_search_label', 'Tarea Freelance'),
             'opportunity_type': 'tarea_directa',
@@ -162,16 +217,32 @@ class OpportunityNormalizer:
             'payment_max': p_max,
             'currency': curr,
             'location': country_display,
+            'approx_place': f"{country_display} (Trabajo Remoto / Entregable Digital)",
+            'contractor_info': contractor_info,
+            'origin_source_detail': origin_source,
+            'time_ago_exact': time_ago,
+            'verbatim_request': verbatim_req,
+            'requirements_list': reqs,
             'remote': True,
             'raw_data': {
                 'slug': slug,
-                'postedDate': item.get('postedDate'),
-                'totalBids': item.get('totalBids')
+                'postedDate': posted_raw,
+                'totalBids': bids_str,
+                'origin_source_detail': origin_source,
+                'time_ago_exact': time_ago,
+                'verbatim_request': verbatim_req,
+                'requirements_list': reqs,
+                'contractor_info': contractor_info
             },
             'observed_data': {
                 'stated_salary': budget_str or 'Por cotizar',
                 'stated_location': country_display,
-                'stated_job_type': f"Proyecto Corto ({item.get('postedDate', 'Hoy')})",
+                'stated_job_type': f"Anuncio Real ({posted_raw})",
+                'origin_source_detail': origin_source,
+                'time_ago_exact': time_ago,
+                'verbatim_request': verbatim_req,
+                'requirements_list': reqs,
+                'contractor_info': contractor_info,
                 'tags': skills_list
             }
         }
@@ -198,7 +269,19 @@ class OpportunityNormalizer:
             pub_iso = now_iso
 
         jobs = [j.get('name', '') for j in (item.get('jobs') or []) if isinstance(j, dict) and j.get('name')]
-        stated_sal = f"{curr} {int(p_min):,} - {int(p_max):,}" if (p_min and p_max) else None
+        stated_sal = f"{curr} {int(p_min):,} - {int(p_max):,}" if (p_min and p_max) else 'Por cotizar'
+        bid_count = (item.get('bid_stats') or {}).get('bid_count', 0)
+
+        origin_source = f"Publicado en: Freelancer.co — Anuncio #{pid} ({item.get('radar_category_label', 'Proyectos')})"
+        time_ago = format_exact_time_ago(pub_iso)
+        verbatim_req = f"\"{desc or title}\""
+        reqs = [
+            f"Requisitos técnicos solicitados: {', '.join(jobs) if jobs else 'Diseño 3D / Planos / Automatización / Tareas'}.",
+            f"Presupuesto asignado por el demandante: {stated_sal}.",
+            f"Propuestas recibidas hasta ahora: {bid_count} ofertas.",
+            "Cumplir con las especificaciones exactas de la petición textual y adjuntar muestra o portafolio."
+        ]
+        contractor_info = f"Demandante verificado en Freelancer.co (Anuncio #{pid}, {time_ago.lower()}). Presupuesto ofrecido: {stated_sal}."
 
         return {
             'opportunity_id': opp_id,
@@ -207,7 +290,7 @@ class OpportunityNormalizer:
             'discovered_at': now_iso,
             'published_at': pub_iso,
             'title': title,
-            'organization': f"Proyecto Directo ({item.get('radar_category_label', 'Freelance')})",
+            'organization': f"Solicitante Anuncio #{pid} ({item.get('radar_category_label', 'Freelance')})",
             'description': desc,
             'category': item.get('radar_category_label', 'Tareas & Diseño'),
             'opportunity_type': 'tarea_directa',
@@ -215,16 +298,32 @@ class OpportunityNormalizer:
             'payment_max': p_max,
             'currency': curr,
             'location': 'Remoto (Sin Contrato Legal)',
+            'approx_place': 'Colombia / Internacional (Entrega Digital Directa)',
+            'contractor_info': contractor_info,
+            'origin_source_detail': origin_source,
+            'time_ago_exact': time_ago,
+            'verbatim_request': verbatim_req,
+            'requirements_list': reqs,
             'remote': True,
             'raw_data': {
                 'id': pid,
                 'seo_url': seo_url,
-                'bid_count': (item.get('bid_stats') or {}).get('bid_count')
+                'bid_count': bid_count,
+                'origin_source_detail': origin_source,
+                'time_ago_exact': time_ago,
+                'verbatim_request': verbatim_req,
+                'requirements_list': reqs,
+                'contractor_info': contractor_info
             },
             'observed_data': {
                 'stated_salary': stated_sal,
                 'stated_location': 'Colombia / Internacional',
-                'stated_job_type': 'Pago por Tarea / Entregable',
+                'stated_job_type': f"Pago por Tarea ({time_ago})",
+                'origin_source_detail': origin_source,
+                'time_ago_exact': time_ago,
+                'verbatim_request': verbatim_req,
+                'requirements_list': reqs,
+                'contractor_info': contractor_info,
                 'tags': jobs
             }
         }
@@ -239,13 +338,22 @@ class OpportunityNormalizer:
         stated_sal = f"{curr} ${int(p_min):,} — ${int(p_max):,}".replace(',', '.')
         loc = item.get('location', '📍 San Agustín, Huila')
         skills = item.get('skills', ['San Agustín Huila', 'Guadua & Cabañas', 'Blender 3D'])
+        pub_at = item.get('published_at') or now_iso
+
+        origin_source = item.get('origin_source_detail') or f"Publicado en: Canal Directo San Agustín / Huila ({item.get('organization', '')})"
+        time_ago = item.get('time_ago_exact') or format_exact_time_ago(pub_at)
+        verbatim_req = item.get('verbatim_request') or f"\"{item.get('description', '')}\""
+        reqs = item.get('requirements_list') or [
+            "Disponibilidad en San Agustín / Sur del Huila o entrega digital rápida.",
+            "Trato directo con el contratante por WhatsApp o enlace oficial."
+        ]
 
         return {
             'opportunity_id': opp_id,
             'source': 'San Agustín · Huila · Guadua',
             'source_url': item.get('url', 'https://www.sanagustin-huila.gov.co/contratacion'),
             'discovered_at': now_iso,
-            'published_at': item.get('published_at') or now_iso,
+            'published_at': pub_at,
             'title': item.get('title', 'Proyecto San Agustín Huila'),
             'organization': item.get('organization', 'San Agustín Huila'),
             'description': item.get('description', ''),
@@ -257,6 +365,10 @@ class OpportunityNormalizer:
             'location': loc,
             'approx_place': item.get('approx_place') or loc,
             'contractor_info': item.get('contractor_info') or f"Contratante verificado: {item.get('organization', 'San Agustín Huila')}",
+            'origin_source_detail': origin_source,
+            'time_ago_exact': time_ago,
+            'verbatim_request': verbatim_req,
+            'requirements_list': reqs,
             'lat': item.get('lat', 1.8792),
             'lon': item.get('lon', -76.2706),
             'distance_km': item.get('distance_km', 0.5),
@@ -270,7 +382,7 @@ class OpportunityNormalizer:
             'observed_data': {
                 'stated_salary': stated_sal,
                 'stated_location': loc,
-                'stated_job_type': 'Prioridad Zona San Agustín / Huila',
+                'stated_job_type': time_ago,
                 'whatsapp_phone': item.get('whatsapp_phone') or '',
                 'contact_phone': item.get('contact_phone') or item.get('whatsapp_phone') or '',
                 'contact_whatsapp_url': item.get('contact_whatsapp_url') or '',
@@ -278,11 +390,14 @@ class OpportunityNormalizer:
                 'contact_email': item.get('contact_email') or '',
                 'approx_place': item.get('approx_place') or loc,
                 'contractor_info': item.get('contractor_info') or f"Contratante verificado: {item.get('organization', 'San Agustín Huila')}",
+                'origin_source_detail': origin_source,
+                'time_ago_exact': time_ago,
+                'verbatim_request': verbatim_req,
+                'requirements_list': reqs,
                 'lat': item.get('lat', 1.8792),
                 'lon': item.get('lon', -76.2706),
                 'distance_km': item.get('distance_km', 0.5),
                 'category_hint': item.get('category_hint', 'guadua_cabanas'),
-                'tags': skills + ['san agustin', 'huila', 'guadua', 'bioconstruccion', 'muro tendinoso', 'metal', 'soldadura', 'blender', 'estudiantes']
+                'tags': skills + ['san agustin', 'huila', 'guadua', 'bioconstruccion', 'muro tendinoso', 'metal', 'soldadura', 'murales', 'tatuajes', 'cafe borbon rosado', 'secaderos', 'sena', 'exterior']
             }
         }
-

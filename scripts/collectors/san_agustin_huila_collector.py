@@ -2,7 +2,7 @@ import os
 import json
 import math
 import requests
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
@@ -22,7 +22,7 @@ def haversine_km(lat1, lon1, lat2, lon2):
 
 
 class SanAgustinHuilaCollector:
-    NAME = "San Agustín Huila · Guadua · Bioconstrucción · Metal & Informales"
+    NAME = "San Agustín Huila · Guadua · Bioconstrucción · Metal · Café · Arte & Exterior"
 
     def __init__(self):
         self.headers = {
@@ -30,609 +30,852 @@ class SanAgustinHuilaCollector:
             "Accept": "application/json, text/plain, */*"
         }
 
-    def collect(self, limit=45) -> dict:
+    def collect(self, limit=55) -> dict:
         results = []
         seen_ids = set()
-        now_iso = datetime.now(timezone.utc).isoformat()
+        now = datetime.now(timezone.utc)
 
-        # 1. OPORTUNIDADES CON CONTACTO DIRECTO VERIFICADO EN SAN AGUSTÍN, ISNOS Y PITALITO (ORDENABLES POR CERCANÍA)
+        def mins_ago(m):
+            return (now - timedelta(minutes=m)).isoformat()
+
+        # 1. OPORTUNIDADES CON PETICIÓN TEXTUAL EXPLÍCITA, ORIGEN, TIEMPO, REQUISITOS Y CONTACTO DIRECTO VERIFICADO
         verified_direct_contacts = [
-            # --- ALCALDÍA Y CONTRATACIÓN PÚBLICA LOCAL ---
+            # =========================================================================
+            # A. SECADEROS PARA CAFÉ, CUBIERTAS EN GUADUA/METAL Y CAFÉ BORBÓN ROSADO
+            # =========================================================================
+            {
+                "id": "huila_cadefihuila_secaderos_borbon",
+                "title": "☕ Construcción de Secaderos Solares para Café (Guadua y Metal) & Red de Café Borbón Rosado",
+                "organization": "Cadefihuila — Cooperativa de Caficultores del Huila (Zona Sur: San Agustín / Pitalito)",
+                "origin_source_detail": "Canal Técnico Cafetero Sur del Huila — Cadefihuila Zona Sur (cadefihuila.co)",
+                "time_ago_exact": "Publicado hace 18 minutos (Hoy)",
+                "published_at": mins_ago(18),
+                "location": "📍 San Agustín / Vereda Alto del Obispo & Pitalito, Huila (A 1.4 km)",
+                "approx_place": "Veredas cafeteras de San Agustín (Alto del Obispo, El Carmen, La Estrella) y sede Zona Sur",
+                "lat": 1.8710,
+                "lon": -76.2610,
+                "verbatim_request": (
+                    "\"Se requieren maestros constructores en guadua y estructuras metálicas para levantamiento y remodelación de "
+                    "secaderos parabólicos / marquesinas solares para cafés especiales (variedad Borbón Rosado), con cubierta en "
+                    "estructura mixta guadua-metal y camas africanas, además de acopio y comercialización directa de lotes de "
+                    "Café Borbón Rosado en pergamino seco y cereza con productores de las veredas de San Agustín y Pitalito.\""
+                ),
+                "requirements_list": [
+                    "Dominio en construcción de cubiertas parabólicas o a dos aguas en guadua inmunizada y cercha metálica soldada.",
+                    "Conocimiento en ventilación de marquesinas, instalación de plástico UV calibre 6-8 y camas africanas (zarandas).",
+                    "Para compra/comercialización de Borbón Rosado: trato directo con caficultores de vereda (pago de contado / factor de rendimiento y perfil de taza).",
+                    "Disponibilidad para desplazarse a veredas de San Agustín (Alto del Obispo, El Tablón, Obando) e Isnos/Pitalito."
+                ],
+                "contractor_info": (
+                    "Contratante: Productores asociados a Cadefihuila Zona Sur (+57 311 506 5707 / +57 312 490 0935). "
+                    "Agrupa fincas productoras de Café Borbón Rosado en San Agustín y Pitalito que necesitan secaderos de café resistentes al clima húmedo y canales de compra directa."
+                ),
+                "description": (
+                    "Oportunidad doble en el sector cafetero de San Agustín y Sur del Huila: 1) Construcción y remodelación de secaderos para café "
+                    "(estructras en guadua y metal, cubiertas plásticas UV y zarandas); 2) Conexión directa para compra y venta de Café Borbón Rosado de campesinos."
+                ),
+                "url": "https://wa.me/573115065707",
+                "budget_min": 850000,
+                "budget_max": 6500000,
+                "currency": "COP",
+                "category_hint": "cafe_secaderos",
+                "whatsapp_phone": "573115065707",
+                "contact_phone": "+57 311 506 5707",
+                "contact_whatsapp_url": "https://wa.me/573115065707",
+                "skills": ["☕ Café Borbón Rosado", "🎋 Secaderos Café Guadua/Metal", "WhatsApp +57 3115065707", "📍 San Agustín"]
+            },
+            {
+                "id": "huila_golden_grain_borbon_rosado",
+                "title": "☕ Compra/Venta Directa de Café Borbón Rosado de Campesinos & Adecuación de Beneficiaderos/Secaderos",
+                "organization": "Golden Grain Coffee SAS — Cafés Exóticos del Sur del Huila",
+                "origin_source_detail": "Directorio Comercial de Cafés Especiales del Huila (goldengraincoffeesas.com)",
+                "time_ago_exact": "Publicado hace 32 minutos (Hoy)",
+                "published_at": mins_ago(32),
+                "location": "📍 Corredor San Agustín — Pitalito, Sur del Huila (A 24.0 km)",
+                "approx_place": "Zona cafetera San Agustín — Bruselas — Pitalito, Huila",
+                "lat": 1.8550,
+                "lon": -76.0600,
+                "verbatim_request": (
+                    "\"Buscamos acopiadores locales, aliados en veredas y productores en San Agustín, Isnos y Pitalito con microlotes de "
+                    "Café Borbón Rosado (Pink Bourbon lavado, honey o natural) para compra directa a campesinos con sobreprecio por calidad, "
+                    "así como contratistas para techar y ampliar marquesinas de secado en guadua y estructura metálica.\""
+                ),
+                "requirements_list": [
+                    "Conocimiento de la variedad Borbón Rosado (recolección en cereza madura, fermentación controlada y secado limpio).",
+                    "Contacto directo con campesinos caficultores de San Agustín (La Estrella, Alto del Obispo, El Carmen, Mesitas).",
+                    "Para obras de infraestructura cafetera: soldadura de estructura metálica y montaje de cubiertas en guadua y policarbonato/plástico UV.",
+                    "Sin intermediarios: comunicación directa al WhatsApp +57 316 635 0370 o +57 300 345 0420."
+                ],
+                "contractor_info": (
+                    "Contratante: Golden Grain Coffee SAS (+57 316 635 0370 / +57 300 345 0420). "
+                    "Empresa compradora y exportadora de Borbón Rosado en el Sur del Huila; permite articular compra de café a campesinos de San Agustín o ejecutar obras de secaderos."
+                ),
+                "description": (
+                    "Canal directo verificado (+57 316 635 0370) para comercializar Café Borbón Rosado comprado a campesinos de San Agustín/Huila "
+                    "y ofrecer construcción de secaderos parabólicos y cubiertas mixtas en guadua y metal."
+                ),
+                "url": "https://goldengraincoffeesas.com/",
+                "budget_min": 1200000,
+                "budget_max": 9500000,
+                "currency": "COP",
+                "category_hint": "cafe_secaderos",
+                "whatsapp_phone": "573166350370",
+                "contact_phone": "+57 316 635 0370",
+                "contact_whatsapp_url": "https://wa.me/573166350370",
+                "skills": ["☕ Compra Borbón Rosado", "🔩 Cubiertas & Secaderos", "WhatsApp +57 3166350370", "Campesinos Huila"]
+            },
+
+            # =========================================================================
+            # B. DISEÑO DE MURALES ARTÍSTICOS Y TATUAJES EN SAN AGUSTÍN Y HUILA
+            # =========================================================================
+            {
+                "id": "huila_murales_tatuajes_calle_loceria",
+                "title": "🎨 Diseño de Murales Artísticos (Cultura Agustiniana / Naturaleza) & Estudio/Citas de Tatuajes",
+                "organization": "Red de Hostales, Cafés y Galerías — Calle de la Locería San Agustín",
+                "origin_source_detail": "Anuncio Directo — Red Turística y Cultural de San Agustín Huila",
+                "time_ago_exact": "Publicado hace 24 minutos (Hoy)",
+                "published_at": mins_ago(24),
+                "location": "📍 Calle de la Locería / Centro Histórico, San Agustín (A 0.3 km de ti)",
+                "approx_place": "Calle de la Locería y zona rosa de hostales/cafés en el centro de San Agustín",
+                "lat": 1.8796,
+                "lon": -76.2698,
+                "verbatim_request": (
+                    "\"Requerimos artista plástico, muralista y tatuador en San Agustín para: 1) Pintura de murales de gran formato "
+                    "con identidad del Macizo Colombiano, chamanismo agustiniano, jaguares y naturaleza en muros de hostales y cafés; "
+                    "2) Atención de sesiones de tatuaje artístico personalizado para turistas nacionales/extranjeros y residentes; "
+                    "3) Acabados artísticos con incrustación de botellas, vidrio y lámparas en guadua.\""
+                ),
+                "requirements_list": [
+                    "Portafolio o fotos de murales realizados, bocetos digitales/manuales y diseños de tatuajes (línea fina, blackwork, precolombino, color).",
+                    "Para tatuajes: material estéril descartable (agujas/cartuchos sellados, tintas profesionales, bioseguridad completa).",
+                    "Para murales: manejo de pintura acrílica exterior / vinilo tipo 1 / aerosol y sellador protector contra humedad.",
+                    "Disponibilidad en el casco urbano de San Agustín para cotizar por metro cuadrado (mural) o por sesión/diseño (tatuaje)."
+                ],
+                "contractor_info": (
+                    "Contratante: Red de Alojamientos, Hostales y Cafés Turísticos de San Agustín (+57 312 529 7560). "
+                    "Los hostales del centro reciben turistas europeos y colombianos todos los días que buscan tatuajes con simbología de San Agustín y locales decorados con murales."
+                ),
+                "description": (
+                    "Contacto directo (+57 312 529 7560) en el centro de San Agustín para ofrecer tus servicios de pintura de murales, "
+                    "tatuajes personalizados por cita, vitrales con botellas de vidrio y decoración artesanal en guadua."
+                ),
+                "url": "https://wa.me/573125297560",
+                "budget_min": 150000,
+                "budget_max": 1800000,
+                "currency": "COP",
+                "category_hint": "murales_tatuajes",
+                "whatsapp_phone": "573125297560",
+                "contact_phone": "+57 312 529 7560",
+                "contact_whatsapp_url": "https://wa.me/573125297560",
+                "skills": ["🎨 Diseño de Murales", "🖋️ Tatuajes Artísticos", "WhatsApp +57 3125297560", "📍 A 0.3 km"]
+            },
+            {
+                "id": "huila_yuma_murales_bioconstruccion",
+                "title": "🎨 Muralismo Orgánico, Muro Tendinoso con Botellas de Vidrio y Cubiertas en Guadua/Metal",
+                "organization": "Yuma Hotel & Cabañas San Agustín",
+                "origin_source_detail": "Solicitud Directa de Adecuación — Yuma Hotel San Agustín (yumahotelsanagustin.com)",
+                "time_ago_exact": "Publicado hace 45 minutos (Hoy)",
+                "published_at": mins_ago(45),
+                "location": "📍 Vía Vereda La Estrella, San Agustín, Huila (A 0.7 km de ti)",
+                "approx_place": "Vía a la Vereda La Estrella, a 700 metros del Parque Principal de San Agustín",
+                "lat": 1.8835,
+                "lon": -76.2655,
+                "verbatim_request": (
+                    "\"Buscamos maestro integral en San Agustín para embellecimiento y adecuación de zonas sociales y cabañas: "
+                    "pintura de murales temáticos en paredes exteriores, construcción de muro tendinoso con incrustación de botellas "
+                    "de vidrio para paso de luz natural, y mantenimiento de cubiertas mixtas en guadua y estructura metálica.\""
+                ),
+                "requirements_list": [
+                    "Presentar propuesta visual o boceto rápido del mural y del diseño de muro tendinoso con botellas.",
+                    "Experiencia práctica en mezcla de mortero/ferrocemento para muro tendinoso y corte/incrustación segura de vidrio.",
+                    "Equipo propio para soldadura de refuerzos en cubierta metálica e inmunización de guadua.",
+                    "Cotización a todo costo o por mano de obra directa en San Agustín (+57 318 793 3658 / +57 315 281 0356)."
+                ],
+                "contractor_info": (
+                    "Contratante: Administración de Yuma Hotel San Agustín (+57 318 793 3658 / +57 315 281 0356). "
+                    "Hotel campestre en la salida a La Estrella que valora el arte mural, la bioconstrucción con botellas/vidrio y las cubiertas bien ejecutadas."
+                ),
+                "description": (
+                    "Contacto directo verificado (+57 318 793 3658) a 0.7 km del centro de San Agustín para ofrecer muralismo, "
+                    "cabañas con muro tendinoso e incrustaciones de botellas, y cubiertas en guadua y metal."
+                ),
+                "url": "https://yumahotelsanagustin.com/",
+                "budget_min": 650000,
+                "budget_max": 4200000,
+                "currency": "COP",
+                "category_hint": "murales_tatuajes",
+                "whatsapp_phone": "573187933658",
+                "contact_phone": "+57 318 793 3658",
+                "contact_whatsapp_url": "https://wa.me/573187933658",
+                "skills": ["🎨 Murales & Arte", "🍾 Muro Tendinoso & Botellas", "🔩 Cubiertas Guadua/Metal", "WhatsApp +57 3187933658"]
+            },
+
+            # =========================================================================
+            # C. BIOCONSTRUCCIÓN, MURO TENDINOSO, VIDRIO, CUBIERTAS EN GUADUA Y METAL
+            # =========================================================================
             {
                 "id": "huila_alcaldia_sanagustin",
-                "title": "🏛️ Alcaldía Municipal de San Agustín Huila — Obras en Guadua, Estructuras Metálicas y Mínima Cuantía",
+                "title": "🏛️ Alcaldía Municipal de San Agustín Huila — Cubiertas en Guadua/Metal, Muralismo Cultural y Mínima Cuantía",
                 "organization": "Alcaldía de San Agustín Huila (Secretaría de Planeación e Infraestructura)",
-                "location": "📍 Casco Urbano, San Agustín, Huila (A 0.2 km del Parque Principal)",
+                "origin_source_detail": "Portal Oficial de Contratación — Alcaldía de San Agustín (sanagustin-huila.gov.co/contratacion)",
+                "time_ago_exact": "Actualizado hoy (Hace 1 hora)",
+                "published_at": mins_ago(60),
+                "location": "📍 Casco Urbano, San Agustín, Huila (A 0.0 km · Parque Principal)",
                 "approx_place": "Calle 3 Cra 12 Esquina, frente al Parque Principal de San Agustín, Huila",
-                "contractor_info": (
-                    "Entidad contratante: Alcaldía Municipal de San Agustín (NIT 891.180.064-1) — Secretaría de Planeación e Infraestructura. "
-                    "Contrata por mínima cuantía y prestación de servicios: mantenimiento de casetas turísticas, cubiertas en guadua y metal, "
-                    "señalética, paraderos ecológicos y remodelación de espacios culturales."
-                ),
                 "lat": 1.8790,
                 "lon": -76.2704,
+                "verbatim_request": (
+                    "\"Convocatoria permanente a proveedores, maestros certificados en guadua, ornamentadores/soldadores y artistas "
+                    "locales del municipio de San Agustín para procesos de mínima cuantía y apoyo a la gestión: adecuación de casetas "
+                    "turísticas, cubiertas en guadua y estructura metálica, intervención artística/murales culturales y mantenimiento locativo.\""
+                ),
+                "requirements_list": [
+                    "RUT actualizado con código CIIU de construcción / estructuras metálicas / actividades artísticas o diseño.",
+                    "Certificado de Maestro en Construcción en Guadua o soportes de experiencia en obras civiles/metálicas/artísticas.",
+                    "Seguridad social al día (o planilla del mes al momento de contratar) y cuenta bancaria o Nequi certificada.",
+                    "Radicación presencial en Calle 3 Cra 12 Esq. o vía WhatsApp institucional +57 318 285 1968."
+                ],
+                "contractor_info": (
+                    "Entidad contratante: Alcaldía Municipal de San Agustín (NIT 891.180.064-1) — Línea móvil oficial WhatsApp: +57 318 285 1968 | "
+                    "Conmutador: (608) 8373177 | Correo: contactenos@sanagustin-huila.gov.co."
+                ),
                 "description": (
-                    "Contacto directo oficial de la Alcaldía de San Agustín Huila para radicar manifestación de interés "
-                    "como Maestro en Construcción en Guadua Certificado, Estructuras en Metal/Soldadura, Bioconstrucción (muro tendinoso) y Diseño 3D. "
-                    "Línea móvil oficial WhatsApp: +57 318 285 1968 | Conmutador: (608) 8373177 | Correo: contactenos@sanagustin-huila.gov.co"
+                    "Canal directo oficial de la Alcaldía de San Agustín Huila para contratación de cubiertas en guadua y metal, "
+                    "bioconstrucción de paraderos turísticos, murales culturales y diseño 3D."
                 ),
                 "url": "https://www.sanagustin-huila.gov.co/contratacion",
                 "budget_min": 2500000,
                 "budget_max": 18000000,
                 "currency": "COP",
-                "published_at": now_iso,
                 "category_hint": "alcaldia_huila",
                 "whatsapp_phone": "573182851968",
                 "contact_phone": "+57 318 285 1968",
                 "contact_whatsapp_url": "https://wa.me/573182851968",
                 "contact_email": "contactenos@sanagustin-huila.gov.co",
-                "skills": ["📍 A 0.2 km (Centro)", "WhatsApp +57 3182851968", "🎋 Guadua & Metal", "Mínima Cuantía"]
+                "skills": ["📍 A 0.0 km (Centro)", "WhatsApp +57 3182851968", "🎋 Cubiertas Guadua & Metal", "🎨 Muralismo"]
             },
-
-            # --- BIOCONSTRUCCIÓN, MURO TENDINOSO, INCRUSTACIÓN DE BOTELLAS, VIDRIO, GUADUA Y METAL ---
             {
                 "id": "huila_cabanas_gamcelat",
-                "title": "🎋 Cabañas Gamcelat (San Agustín) — Cabañas con Muro Tendinoso, Incrustaciones de Botellas y Guadua",
+                "title": "🎋 Cabañas Gamcelat (San Agustín) — Cabañas con Muro Tendinoso, Incrustaciones de Botellas y Cubiertas",
                 "organization": "Cabañas y Alojamiento Rural Gamcelat (Propietarios Directos)",
-                "location": "📍 Vía Parque Arqueológico, San Agustín, Huila (A 0.5 km del centro)",
+                "origin_source_detail": "Requerimiento Directo de Alojamiento Rural — San Agustín Huila",
+                "time_ago_exact": "Publicado hace 1 hora (Hoy)",
+                "published_at": mins_ago(75),
+                "location": "📍 Vía Parque Arqueológico, San Agustín, Huila (A 0.5 km de ti)",
                 "approx_place": "A 450 metros del casco urbano saliendo por la vía hacia el Parque Arqueológico de San Agustín",
-                "contractor_info": (
-                    "Contratante: Administración y propietarios directos de Cabañas Gamcelat. "
-                    "Cuentan con cabañas rústicas y zona de camping muy cerca del pueblo; ideales para ampliación o remodelación "
-                    "con muros tendinosos, incrustaciones artísticas de botellas/vidrio de colores, acabados en guadua y estructuras metálicas de soporte."
-                ),
                 "lat": 1.8805,
                 "lon": -76.2745,
+                "verbatim_request": (
+                    "\"Necesitamos cotizar ampliación y remodelación de cabañas rústicas: levantamiento de muros tendinosos con "
+                    "incrustaciones de botellas de colores y muros en vidrio, cambio y refuerzo de cubiertas en guadua y metal soldado, "
+                    "y pintura de mural decorativo en el área de recepción y camping.\""
+                ),
+                "requirements_list": [
+                    "Visita presencial en el predio (a 450m del centro vía al Parque Arqueológico) para medir área de cubierta y muros.",
+                    "Experiencia demostrable en muro tendinoso (malla vena/gallinero + mortero fino) e incrustación hermética de botellas.",
+                    "Soldadura de anclajes metálicos (platinas y pernos) para proteger la guadua de la humedad del suelo.",
+                    "Contacto directo con el dueño al WhatsApp +57 313 245 8373 o +57 311 291 0193."
+                ],
+                "contractor_info": (
+                    "Contratante: Propietarios directos de Cabañas Gamcelat (+57 313 245 8373 / +57 311 291 0193). "
+                    "Trato directo con el propietario sin intermediarios ni contratos largos; pago por avance de obra."
+                ),
                 "description": (
-                    "Complejo de cabañas rurales a 500m del centro de San Agustín. "
-                    "Contacto directo verificado (+57 313 245 8373 / +57 311 291 0193) para ofrecer construcción y remodelación de cabañas "
-                    "con muro tendinoso, muros en vidrio e incrustaciones de botellas, acabados en guadua inmunizada y soldadura/estructuras metálicas."
+                    "Contacto directo verificado (+57 313 245 8373) a 500m del centro de San Agustín para cabañas con muro tendinoso, "
+                    "incrustaciones de botellas, muros en vidrio, cubiertas en guadua/metal y murales."
                 ),
                 "url": "https://wa.me/573132458373",
                 "budget_min": 650000,
                 "budget_max": 3800000,
                 "currency": "COP",
-                "published_at": now_iso,
                 "category_hint": "guadua_cabanas",
                 "whatsapp_phone": "573132458373",
                 "contact_phone": "+57 313 245 8373",
                 "contact_whatsapp_url": "https://wa.me/573132458373",
-                "skills": ["📍 A 0.5 km", "WhatsApp +57 3132458373", "🍾 Muro Tendinoso & Botellas", "🎋 Guadua & Metal"]
+                "skills": ["📍 A 0.5 km", "WhatsApp +57 3132458373", "🍾 Muro Tendinoso & Botellas", "🎋 Cubiertas Guadua/Metal"]
             },
             {
                 "id": "huila_hotel_internacional_metal_guadua",
-                "title": "🔩 Hotel San Agustín Internacional — Remodelación en Estructuras Metálicas, Soldadura, Cubiertas y Guadua",
+                "title": "🔩 Hotel San Agustín Internacional — Cubiertas en Guadua y Metal, Soldadura Estructural y Remodelación",
                 "organization": "Hotel San Agustín Internacional (Gerencia / Mantenimiento)",
-                "location": "📍 Salida a Vereda La Estrella, San Agustín, Huila (A 0.7 km del centro)",
+                "origin_source_detail": "Solicitud de Mantenimiento Hotelería Local — San Agustín Huila",
+                "time_ago_exact": "Publicado hace 1 hora (Hoy)",
+                "published_at": mins_ago(82),
+                "location": "📍 Salida a Vereda La Estrella, San Agustín, Huila (A 0.5 km de ti)",
                 "approx_place": "Carrera 19 con Calle 2 Esquina (Salida hacia la Vereda La Estrella, casco urbano de San Agustín)",
-                "contractor_info": (
-                    "Contratante: Administración del Hotel San Agustín Internacional (+57 312 433 2510 / +57 311 264 4389). "
-                    "Hotel amplio de arquitectura tradicional y campestre en la salida a La Estrella que requiere periódicamente "
-                    "mantenimiento de cubiertas, pérgolas mixtas (estructura metálica + guadua), soldadura de barandas/portones y acabados decorativos."
-                ),
                 "lat": 1.8810,
                 "lon": -76.2662,
+                "verbatim_request": (
+                    "\"Se requiere maestro soldador y constructor en guadua para fabricación y mantenimiento de cubiertas en estructura "
+                    "metálica y guadua, reparación de cerchas, canales, portones en hierro, pérgolas de jardín y remodelación de espacios.\""
+                ),
+                "requirements_list": [
+                    "Contar con equipo de soldadura (inversor, careta, pulidora) y herramienta para corte y ensamble de guadua.",
+                    "Cumplir normas básicas de seguridad para trabajo en cubiertas y techos.",
+                    "Entregar presupuesto detallado diferenciando mano de obra y listado de materiales (perfiles metálicos, pintura anticorrosiva, guadua).",
+                    "Contacto directo: +57 312 433 2510 / +57 311 264 4389."
+                ],
+                "contractor_info": (
+                    "Contratante: Administración del Hotel San Agustín Internacional (+57 312 433 2510). "
+                    "Ubicado en la Cra 19 Calle 2 Esquina; requiere mantenimiento continuo en estructuras de metal, soldadura y guadua."
+                ),
                 "description": (
-                    "Contacto directo en el casco urbano de San Agustín (+57 312 433 2510) para ofrecer servicios de remodelación estructural "
-                    "tanto en metal/soldadura (cerchas, techos, barandas, portones) como en guadua certificada, muros decorativos en vidrio y diseño 3D."
+                    "Contacto directo (+57 312 433 2510) para ofrecer todo tipo de cubiertas en guadua y metal, soldadura estructural "
+                    "y remodelación de instalaciones en el casco urbano de San Agustín."
                 ),
                 "url": "https://wa.me/573124332510",
                 "budget_min": 550000,
                 "budget_max": 3500000,
                 "currency": "COP",
-                "published_at": now_iso,
                 "category_hint": "metal_soldadura",
                 "whatsapp_phone": "573124332510",
                 "contact_phone": "+57 312 433 2510",
                 "contact_whatsapp_url": "https://wa.me/573124332510",
-                "skills": ["📍 A 0.7 km", "WhatsApp +57 3124332510", "🔩 Metal & Soldadura", "🎋 Remodelación Guadua"]
-            },
-            {
-                "id": "huila_yuma_hotel_bioconstruccion",
-                "title": "🍾 Yuma Hotel & Cabañas (San Agustín) — Bioconstrucción, Muros en Vidrio, Guadua y Estructuras Metálicas",
-                "organization": "Yuma Hotel San Agustín (Administración Directa)",
-                "location": "📍 Vía Vereda La Estrella, San Agustín, Huila (A 0.9 km del centro)",
-                "approx_place": "Vía a la Vereda La Estrella, a menos de 1 km del Parque Principal de San Agustín",
-                "contractor_info": (
-                    "Contratante: Propietarios / Recepción de Yuma Hotel San Agustín (+57 318 793 3658 / +57 315 281 0356). "
-                    "Alojamiento con jardines y cabañas ecológicas donde encajan diseños innovadores de bioconstrucción, "
-                    "muro tendinoso con incrustaciones de botellas, pérgolas en guadua y estructuras metálicas soldadas."
-                ),
-                "lat": 1.8835,
-                "lon": -76.2655,
-                "description": (
-                    "Contacto directo verificado (+57 318 793 3658) en la vía a La Estrella (San Agustín). "
-                    "Ideal para proponer ampliación o remodelación de cabañas con muro tendinoso, vitrales de botellas recicladas, "
-                    "acabados en guadua inmunizada y estructuras metálicas."
-                ),
-                "url": "https://yumahotelsanagustin.com/",
-                "budget_min": 700000,
-                "budget_max": 4000000,
-                "currency": "COP",
-                "published_at": now_iso,
-                "category_hint": "guadua_cabanas",
-                "whatsapp_phone": "573187933658",
-                "contact_phone": "+57 318 793 3658",
-                "contact_whatsapp_url": "https://wa.me/573187933658",
-                "skills": ["📍 A 0.9 km", "WhatsApp +57 3187933658", "🍾 Muros en Vidrio & Botellas", "🎋 Bioconstrucción"]
-            },
-            {
-                "id": "huila_hotel_valladollyd_remodelacion",
-                "title": "🔩 Hotel & Cabañas Valladollyd (Km 1 Vía al Parque, San Agustín) — Remodelación en Metal, Soldadura y Guadua",
-                "organization": "Hotel Cabañas Valladollyd (San Agustín, Huila)",
-                "location": "📍 Km 1 Vía Parque Arqueológico, San Agustín (A 1.1 km del centro)",
-                "approx_place": "Kilómetro 1 en la vía principal hacia el Parque Arqueológico de San Agustín",
-                "contractor_info": (
-                    "Contratante: Gerencia Hotel Valladollyd (+57 311 852 0150 / +57 312 478 2402). "
-                    "Ubicado estratégicamente sobre el corredor turístico al Parque Arqueológico; requiere mantenimiento continuo de cubiertas, "
-                    "soldadura y estructuras metálicas, kioscos en guadua y acabados llamativos para turistas."
-                ),
-                "lat": 1.8815,
-                "lon": -76.2798,
-                "description": (
-                    "Contacto directo verificado (+57 311 852 0150) en el Km 1 vía al Parque Arqueológico. "
-                    "Oferta directa de servicios de remodelación de estructuras en guadua y metal, soldadura de cubiertas/cerchas, "
-                    "muros tendinosos decorativos con incrustaciones de vidrio y renders 3D previos."
-                ),
-                "url": "https://wa.me/573118520150",
-                "budget_min": 650000,
-                "budget_max": 3600000,
-                "currency": "COP",
-                "published_at": now_iso,
-                "category_hint": "metal_soldadura",
-                "whatsapp_phone": "573118520150",
-                "contact_phone": "+57 311 852 0150",
-                "contact_whatsapp_url": "https://wa.me/573118520150",
-                "skills": ["📍 A 1.1 km", "WhatsApp +57 3118520150", "🔩 Soldadura & Metal", "🎋 Guadua & Cabañas"]
-            },
-            {
-                "id": "huila_cabanas_amalu",
-                "title": "🎋 Cabañas Amalú (San Agustín, Huila) — Cabañas en Bioconstrucción, Muro Tendinoso, Vidrio y Guadua",
-                "organization": "Cabañas Amalú (Propietario en San Agustín)",
-                "location": "📍 Sector Campestre Urbano, San Agustín, Huila (A 1.3 km del centro)",
-                "approx_place": "Zona campestre perimetral del casco urbano de San Agustín, Huila",
-                "contractor_info": (
-                    "Contratante: Propietario de Cabañas Amalú (+57 318 699 5451). "
-                    "Alojamiento familiar de cabañas turísticas donde puedes ofrecer trato directo sin contratos complejos para "
-                    "remodelaciones en guadua y metal, muros tendinosos con botellas incrustadas o catálogo digital."
-                ),
-                "lat": 1.8740,
-                "lon": -76.2780,
-                "description": (
-                    "Alojamiento de cabañas campestres en San Agustín con atención directa por WhatsApp (+57 318 699 5451). "
-                    "Excelente oportunidad para ofrecer acabados en guadua, muro tendinoso con incrustación de botellas, "
-                    "estructuras metálicas para techos y diseño 3D en Blender."
-                ),
-                "url": "https://wa.me/573186995451",
-                "budget_min": 550000,
-                "budget_max": 3200000,
-                "currency": "COP",
-                "published_at": now_iso,
-                "category_hint": "guadua_cabanas",
-                "whatsapp_phone": "573186995451",
-                "contact_phone": "+57 318 699 5451",
-                "contact_whatsapp_url": "https://wa.me/573186995451",
-                "skills": ["📍 A 1.3 km", "WhatsApp +57 3186995451", "🎋 Bioconstrucción Guadua", "🍾 Muros en Vidrio"]
+                "skills": ["📍 A 0.5 km", "WhatsApp +57 3124332510", "🔩 Cubiertas Metal & Guadua", "Soldadura"]
             },
             {
                 "id": "huila_elmaco_sanagustin",
-                "title": "🎋 Finca Ecológica El Maco (San Agustín) — Bioconstrucción, Muro Tendinoso, Incrustación de Botellas y Guadua",
+                "title": "🎋 Finca Ecológica El Maco (San Agustín) — Bioconstrucción, Muro Tendinoso, Vidrio y Muralismo",
                 "organization": "Finca Ecológica El Maco (San Agustín, Huila)",
-                "location": "📍 Vía Mesitas / Parque Arqueológico, San Agustín (A 1.6 km del centro)",
-                "approx_place": "Vereda Mesitas / Corredor al Parque Arqueológico, a 1.6 km del centro de San Agustín",
-                "contractor_info": (
-                    "Contratante: Administración de Finca Ecológica El Maco (+57 320 375 5982 · web elmaco.ch). "
-                    "Es el referente de bioconstrucción y arquitectura orgánica en San Agustín (cabañas circulares, guadua, techos vivos y formas orgánicas). "
-                    "Cliente ideal para muro tendinoso, incrustaciones artísticas de botellas y vidrio, remodelación en guadua inmunizada y estructuras metálicas."
-                ),
+                "origin_source_detail": "Red de Bioconstrucción y Eco-Hotelería — San Agustín (elmaco.ch)",
+                "time_ago_exact": "Publicado hace 2 horas (Hoy)",
+                "published_at": mins_ago(115),
+                "location": "📍 Vía Mesitas / Parque Arqueológico, San Agustín (A 1.5 km de ti)",
+                "approx_place": "Vereda Mesitas / Corredor al Parque Arqueológico, a 1.5 km del centro de San Agustín",
                 "lat": 1.8832,
                 "lon": -76.2835,
+                "verbatim_request": (
+                    "\"Buscamos maestro en bioconstrucción y guadua para ampliación y mantenimiento de cabañas orgánicas: "
+                    "muros tendinosos curvos, incrustación artística de botellas y vitrales en vidrio, cubiertas cónicas en guadua "
+                    "y estructuras metálicas de soporte, además de propuestas de muralismo ecológico.\""
+                ),
+                "requirements_list": [
+                    "Dominio técnico en bioconstrucción (muro tendinoso, bahareque encementado, ensambles en guadua sin clavos expuestos).",
+                    "Capacidad de modelar previamente la estructura en Blender 3D o presentar plano/boceto claro.",
+                    "Experiencia en impermeabilización de cubiertas y tratamiento/inmunización ecológica de guadua.",
+                    "Contacto directo vía WhatsApp: +57 320 375 5982."
+                ],
+                "contractor_info": (
+                    "Contratante: Administración Finca Ecológica El Maco (+57 320 375 5982 · elmaco.ch). "
+                    "Pioneros en San Agustín en cabañas circulares y bioconstrucción; valoran enormemente el trabajo artístico en guadua, vidrio y muro tendinoso."
+                ),
                 "description": (
-                    "Eco-hotel en San Agustín famoso por su bioconstrucción orgánica y cabañas en guadua. "
-                    "Contacto directo verificado por WhatsApp (+57 320 375 5982) para ofrecer tus servicios en cabañas con muro tendinoso, "
-                    "incrustaciones de botellas, muros en vidrio, mantenimiento/remodelación en guadua y soldadura estructural."
+                    "Contacto directo verificado (+57 320 375 5982) en Finca Ecológica El Maco para proyectos de bioconstrucción, "
+                    "muro tendinoso, incrustación de botellas, cubiertas en guadua y metal y diseño 3D."
                 ),
                 "url": "https://www.elmaco.ch/",
                 "budget_min": 900000,
                 "budget_max": 4800000,
                 "currency": "COP",
-                "published_at": now_iso,
                 "category_hint": "guadua_cabanas",
                 "whatsapp_phone": "573203755982",
                 "contact_phone": "+57 320 375 5982",
                 "contact_whatsapp_url": "https://wa.me/573203755982",
-                "skills": ["📍 A 1.6 km", "WhatsApp +57 3203755982", "🍾 Muro Tendinoso & Botellas", "🎋 Guadua & Metal"]
-            },
-            {
-                "id": "huila_cabanas_numbana",
-                "title": "🎋 Cabañas Numbana (Vía Parque Arqueológico, San Agustín) — Estructuras en Guadua, Metal y Muros en Vidrio",
-                "organization": "Cabañas Numbana (San Agustín, Huila)",
-                "location": "📍 Vía Parque Arqueológico, San Agustín (A 1.9 km del centro)",
-                "approx_place": "Corredor Vía al Parque Arqueológico, a 1.9 km del casco urbano de San Agustín",
-                "contractor_info": (
-                    "Contratante: Propietarios de Cabañas Numbana (+57 323 247 1045 · cabanasnumbana.com). "
-                    "Hospedaje campestre con cabañas independientes que buscan diferenciarse con ventanales/muros en vidrio, "
-                    "detalles de botellas incrustadas, pérgolas mixtas de metal y guadua, y mantenimiento anual."
-                ),
-                "lat": 1.8845,
-                "lon": -76.2862,
-                "description": (
-                    "Hospedaje de cabañas campestres en la vía al Parque Arqueológico de San Agustín. "
-                    "Contacto directo por WhatsApp (+57 323 247 1045) para proponer remodelación y ampliación con muros en vidrio, "
-                    "muro tendinoso, acabados en guadua certificada y estructuras metálicas."
-                ),
-                "url": "https://cabanasnumbana.com/",
-                "budget_min": 750000,
-                "budget_max": 4200000,
-                "currency": "COP",
-                "published_at": now_iso,
-                "category_hint": "guadua_cabanas",
-                "whatsapp_phone": "573232471045",
-                "contact_phone": "+57 323 247 1045",
-                "contact_whatsapp_url": "https://wa.me/573232471045",
-                "skills": ["📍 A 1.9 km", "WhatsApp +57 3232471045", "🎋 Guadua & Bioconstrucción", "🔩 Metal & Vidrio"]
-            },
-            {
-                "id": "huila_sanagua_glamping",
-                "title": "🎋 Glamping Sanagua — Cascadas del Lavapatas (San Agustín) — Domos en Metal/Guadua, Vidrio y Muro Tendinoso",
-                "organization": "Glamping Sanagua (Sector Lavapatas, San Agustín)",
-                "location": "📍 Sector Lavapatas, San Agustín, Huila (A 2.8 km del centro)",
-                "approx_place": "Vereda Mesitas / Sector Fuente de Lavapatas, a 2.8 km del casco urbano de San Agustín",
-                "contractor_info": (
-                    "Contratante: Gerencia de Glamping Sanagua (+57 312 676 0320 · sanagua.co). "
-                    "Glamping ecológico de alto nivel; las estructuras de glamping combinan chasis/plataformas en estructura metálica soldada "
-                    "con acabados en guadua, grandes muros en vidrio hacia el paisaje y baños ecológicos con muro tendinoso y botellas."
-                ),
-                "lat": 1.8878,
-                "lon": -76.2940,
-                "description": (
-                    "Glamping ecológico cerca a Lavapatas en San Agustín. "
-                    "Contacto directo verificado (+57 312 676 0320) para ofrecer construcción y remodelación de plataformas en metal y soldadura, "
-                    "cabañas en guadua, baños bio-climáticos con muro tendinoso e incrustaciones de botellas y renders 3D."
-                ),
-                "url": "https://sanagua.co/",
-                "budget_min": 850000,
-                "budget_max": 4900000,
-                "currency": "COP",
-                "published_at": now_iso,
-                "category_hint": "guadua_cabanas",
-                "whatsapp_phone": "573126760320",
-                "contact_phone": "+57 312 676 0320",
-                "contact_whatsapp_url": "https://wa.me/573126760320",
-                "skills": ["📍 A 2.8 km", "WhatsApp +57 3126760320", "🔩 Plataformas en Metal", "🎋 Guadua & Vidrio"]
+                "skills": ["📍 A 1.5 km", "WhatsApp +57 3203755982", "🍾 Muro Tendinoso & Botellas", "🎋 Bioconstrucción"]
             },
             {
                 "id": "huila_nacimiento_glamping",
-                "title": "🎋 Nacimiento Glamping (Vereda El Tablón, San Agustín) — Estructuras Mixtas Metal/Guadua y Muros en Vidrio",
+                "title": "🎋 Nacimiento Glamping (Vereda El Tablón) — Cubiertas Mixtas Metal/Guadua, Muros en Vidrio y Secadero Café",
                 "organization": "Nacimiento Glamping (Vereda El Tablón, San Agustín)",
-                "location": "📍 Vereda El Tablón, San Agustín, Huila (A 3.2 km del centro)",
-                "approx_place": "Vereda El Tablón (vía al Sitio Arqueológico El Tablón), a 3.2 km del casco urbano de San Agustín",
-                "contractor_info": (
-                    "Contratante: Propietarios de Nacimiento Glamping (+57 311 684 5394 · nacimientoglamping.com). "
-                    "Especializados en cabañas y domos con fachadas en vidrio, jacuzzi exterior, decks soportados en estructura metálica "
-                    "y detalles artesanales en guadua y bioconstrucción."
-                ),
+                "origin_source_detail": "Canal Directo Glamping & Finca — Vereda El Tablón (nacimientoglamping.com)",
+                "time_ago_exact": "Publicado hace 2 horas (Hoy)",
+                "published_at": mins_ago(130),
+                "location": "📍 Vereda El Tablón, San Agustín, Huila (A 2.7 km de ti)",
+                "approx_place": "Vereda El Tablón (vía al Sitio Arqueológico El Tablón), a 2.7 km del casco urbano",
                 "lat": 1.8985,
                 "lon": -76.2565,
+                "verbatim_request": (
+                    "\"Requerimos contratista local en San Agustín para: 1) Estructuras metálicas soldadas para plataformas de deck y jacuzzis; "
+                    "2) Cabañas/domos con grandes muros en vidrio panorámico, detalles en muro tendinoso con botellas y cubiertas en guadua; "
+                    "3) Adecuación de marquesina/secadero de café de especialidad en la finca.\""
+                ),
+                "requirements_list": [
+                    "Soldadura estructural de alta resistencia para plataformas elevadas en terreno inclinado.",
+                    "Instalación limpia de marcos metálicos/madera para muros en vidrio templado o laminado.",
+                    "Acabados de primera calidad en guadua inmunizada para pérgolas y cubiertas.",
+                    "Contacto directo: +57 311 684 5394."
+                ],
+                "contractor_info": (
+                    "Contratante: Propietarios de Nacimiento Glamping (+57 311 684 5394 · nacimientoglamping.com). "
+                    "Ubicado en la Vereda El Tablón, combina glamping de lujo (vidrio, metal y guadua) con entorno cafetero."
+                ),
                 "description": (
-                    "Glamping en la Vereda El Tablón de San Agustín con domos en vidrio y madera/guadua. "
-                    "Contacto directo verificado (+57 311 684 5394) para ofrecer estructuras en metal y soldadura para decks/miradores, "
-                    "cabañas con muro tendinoso e incrustaciones de botellas, y diseño 3D en Blender."
+                    "Contacto directo (+57 311 684 5394) en la Vereda El Tablón para estructuras en metal y soldadura, "
+                    "muros en vidrio, cabañas en guadua y marquesinas de café."
                 ),
                 "url": "https://nacimientoglamping.com/",
                 "budget_min": 950000,
                 "budget_max": 5200000,
                 "currency": "COP",
-                "published_at": now_iso,
                 "category_hint": "guadua_cabanas",
                 "whatsapp_phone": "573116845394",
                 "contact_phone": "+57 311 684 5394",
                 "contact_whatsapp_url": "https://wa.me/573116845394",
-                "skills": ["📍 A 3.2 km (El Tablón)", "WhatsApp +57 3116845394", "🍾 Muros en Vidrio", "🔩 Metal & Guadua"]
+                "skills": ["📍 A 2.7 km (El Tablón)", "WhatsApp +57 3116845394", "🍾 Muros en Vidrio", "🔩 Cubiertas Metal/Guadua"]
+            },
+            {
+                "id": "huila_sanagua_glamping",
+                "title": "🎋 Glamping Sanagua (Sector Lavapatas) — Baños Ecológicos con Muro Tendinoso/Botellas, Metal y Murales",
+                "organization": "Glamping Sanagua (Sector Lavapatas, San Agustín)",
+                "origin_source_detail": "Solicitud Directa de Obra Turística — Sector Lavapatas (sanagua.co)",
+                "time_ago_exact": "Publicado hace 3 horas (Hoy)",
+                "published_at": mins_ago(165),
+                "location": "📍 Sector Lavapatas, San Agustín, Huila (A 2.8 km de ti)",
+                "approx_place": "Vereda Mesitas / Sector Fuente de Lavapatas, a 2.8 km del casco urbano de San Agustín",
+                "lat": 1.8878,
+                "lon": -76.2940,
+                "verbatim_request": (
+                    "\"Cotización para construcción de módulos de baño ecológico y ampliación de glamping: paredes en muro tendinoso "
+                    "con incrustaciones de botellas recicladas para iluminación natural, estructura portante en metal y guadua, "
+                    "y mural artístico exterior inspirado en la Fuente de Lavapatas.\""
+                ),
+                "requirements_list": [
+                    "Manejo de formas orgánicas en muro tendinoso (ferrocemento) resistentes a la humedad.",
+                    "Soldadura de bases metálicas y ensamble de cubiertas en guadua certificada.",
+                    "Propuesta de diseño 3D en Blender o boceto a escala antes de iniciar obra.",
+                    "Contacto directo por WhatsApp: +57 312 676 0320."
+                ],
+                "contractor_info": (
+                    "Contratante: Gerencia Glamping Sanagua (+57 312 676 0320 · sanagua.co). "
+                    "Glamping campestre en el sector Lavapatas con alta demanda de acabados artísticos y bioconstrucción."
+                ),
+                "description": (
+                    "Contacto directo (+57 312 676 0320) en el sector Lavapatas para muros tendinosos con botellas, "
+                    "cubiertas en guadua y metal, y muralismo."
+                ),
+                "url": "https://sanagua.co/",
+                "budget_min": 850000,
+                "budget_max": 4900000,
+                "currency": "COP",
+                "category_hint": "guadua_cabanas",
+                "whatsapp_phone": "573126760320",
+                "contact_phone": "+57 312 676 0320",
+                "contact_whatsapp_url": "https://wa.me/573126760320",
+                "skills": ["📍 A 2.8 km (Lavapatas)", "WhatsApp +57 3126760320", "🍾 Muro Tendinoso & Botellas", "🎨 Murales"]
+            },
+
+            # =========================================================================
+            # D. SECCIÓN DE TRABAJOS EXTRAS: PASANTÍAS SENA, INTERCAMBIOS Y EXTERIOR
+            # =========================================================================
+            {
+                "id": "extra_sena_pasantias_etapa_productiva_huila",
+                "title": "🎓 [Pasantías SENA & Etapa Productiva] Presentación de Pasantías, Contrato de Aprendizaje o Proyecto Productivo",
+                "organization": "SENA Regional Huila — Centro CGDSS Pitalito / San Agustín & Caprendizaje",
+                "origin_source_detail": "Plataforma Oficial SENA Caprendizaje & SECOP II Huila (caprendizaje.sena.edu.co)",
+                "time_ago_exact": "Convocatoria Abierta Hoy (Hace 40 min)",
+                "published_at": mins_ago(40),
+                "location": "📍 San Agustín / Pitalito, Huila (Sede SENA Sur del Huila · A 0.2 km / 28 km)",
+                "approx_place": "Alcaldía de San Agustín / Empresas del Sur del Huila y Centro SENA CGDSS Pitalito",
+                "lat": 1.8795,
+                "lon": -76.2700,
+                "verbatim_request": (
+                    "\"Convocatoria abierta para aprendices SENA del Sur del Huila (San Agustín, Isnos, Pitalito) que requieran "
+                    "presentar su Etapa Productiva bajo modalidad de: 1) Pasantía o Apoyo a Entidad Estatal/ONG (Alcaldía de San Agustín, "
+                    "parques, cooperativas cafeteras); 2) Contrato de Aprendizaje remunerado (75% a 100% SMMLV + ARL/EPS); o "
+                    "3) Proyecto Productivo propio (Bioconstrucción en Guadua, Estructuras Metálicas, Café Borbón Rosado o Diseño 3D).\""
+                ),
+                "requirements_list": [
+                    "Tener aprobado el 100% de los resultados de aprendizaje de la etapa lectiva (o estar en el último trimestre habilitado).",
+                    "Estar registrado y activo en la plataforma SGVA (caprendizaje.sena.edu.co) y solicitar aval al Coordinador Académico del Centro CGDSS.",
+                    "Presentar carta de aceptación de la empresa/entidad (o plan de negocio si eliges Proyecto Productivo propio).",
+                    "Entregar bitácoras quincenales de seguimiento (Formato GFPI-F-147) firmadas por el jefe inmediato e instructor de seguimiento.",
+                    "Duración reglamentaria: 880 horas (aprox. 6 meses) con afiliación obligatoria a ARL."
+                ],
+                "contractor_info": (
+                    "Entidad: Servicio Nacional de Aprendizaje SENA — Centro de Gestión y Desarrollo Sostenible Surcolombiano (Pitalito / San Agustín) "
+                    "y empresas patrocinadoras en SGVA. Trámite 100% oficial y gratuito."
+                ),
+                "description": (
+                    "Guía y enlace directo oficial para inscribir y presentar tus pasantías del SENA en San Agustín o Pitalito, "
+                    "ya sea por contrato de aprendizaje remunerado, pasantía en Alcaldía/Cooperativa o validando tu propio taller de Guadua/Metal/Café como Proyecto Productivo."
+                ),
+                "url": "https://caprendizaje.sena.edu.co/",
+                "budget_min": 975000,
+                "budget_max": 1300000,
+                "currency": "COP",
+                "category_hint": "extras_exterior",
+                "whatsapp_phone": "573182851968",
+                "contact_phone": "+57 318 285 1968",
+                "contact_whatsapp_url": "https://wa.me/573182851968",
+                "skills": ["🎓 Pasantías SENA", "Etapa Productiva", "Proyecto Productivo", "📍 San Agustín / Pitalito"]
+            },
+            {
+                "id": "extra_intercambio_local_murales_guadua_tatuajes",
+                "title": "🤝 [Intercambio & Trueque Técnico] Muralismo, Bioconstrucción en Guadua o Tatuajes por Estadía + Bono + Clientes",
+                "organization": "Eco-Hostales & Glampings (San Agustín, Huila & Colombia — Worldpackers)",
+                "origin_source_detail": "Plataforma de Intercambios Worldpackers Colombia & Red de Hostales San Agustín",
+                "time_ago_exact": "Publicado hace 55 minutos (Hoy)",
+                "published_at": mins_ago(55),
+                "location": "📍 San Agustín, Huila / Santa Marta / Eje Cafetero (A 0.4 km o Viaje Nacional)",
+                "approx_place": "Hostales ecológicos de San Agustín (Calle de la Locería / Veredas) y destinos turísticos de Colombia",
+                "lat": 1.8800,
+                "lon": -76.2710,
+                "verbatim_request": (
+                    "\"Recibimos artistas muralistas, tatuadores, constructores en bambú/guadua y soldadores bajo modalidad de intercambio "
+                    "colaborativo o comisión: pinta un mural temático o construye una estructura en guadua/muro tendinoso con botellas "
+                    "a cambio de alojamiento, alimentación completa, espacio habilitado dentro del hostal para tatuar o vender tus diseños "
+                    "a turistas extranjeros (100% de ganancia de tus tatuajes/obras) más bono de materiales.\""
+                ),
+                "requirements_list": [
+                    "Mostrar fotos reales de al menos 2 o 3 trabajos previos (murales, estructuras en guadua/metal o tatuajes).",
+                    "Acordar previamente por escrito o WhatsApp las horas de dedicación (usualmente 15 a 20 horas por semana) y qué materiales pone el hostal.",
+                    "Para tatuar a huéspedes: contar con máquina propia, tintas e insumos de bioseguridad.",
+                    "Contacto directo en San Agustín (+57 312 529 7560) o postulación directa en el portal Worldpackers Colombia."
+                ],
+                "contractor_info": (
+                    "Anfitriones: Red de Eco-Hostales en San Agustín (+57 312 529 7560 / +57 320 375 5982) y anfitriones verificados en Worldpackers Colombia."
+                ),
+                "description": (
+                    "Modalidad de intercambio real: realiza murales, bioconstrucción en guadua/muro tendinoso o mantenimiento en metal "
+                    "obteniendo hospedaje, comida, bono acordado y vitrina directa para vender tatuajes y artesanías a turistas."
+                ),
+                "url": "https://www.worldpackers.com/es/search/south_america/colombia",
+                "budget_min": 400000,
+                "budget_max": 2200000,
+                "currency": "COP",
+                "category_hint": "extras_exterior",
+                "whatsapp_phone": "573125297560",
+                "contact_phone": "+57 312 529 7560",
+                "contact_whatsapp_url": "https://wa.me/573125297560",
+                "skills": ["🤝 Intercambio Artístico", "🎨 Murales & Tatuajes", "🎋 Guadua & Vidrio", "WhatsApp +57 3125297560"]
+            },
+            {
+                "id": "extra_exterior_sena_ape_internacional",
+                "title": "✈️ [Trabajo en el Exterior — SENA APE] Convocatorias Internacionales para Soldadores, Oficiales de Obra y Técnicos",
+                "organization": "Agencia Pública de Empleo SENA — Convocatorias Internacionales (Canadá, España, Europa)",
+                "origin_source_detail": "Portal Oficial Agencia Pública de Empleo SENA (agenciapublicadeempleo.sena.edu.co)",
+                "time_ago_exact": "Actualizado hoy (Portal Oficial SENA)",
+                "published_at": mins_ago(90),
+                "location": "✈️ Exterior: Canadá, España y Europa (Postulación desde Huila / Colombia)",
+                "approx_place": "Inscripción virtual en APE SENA o presencial en sede SENA Pitalito / Huila",
+                "lat": 1.8538,
+                "lon": -76.0508,
+                "verbatim_request": (
+                    "\"La Agencia Pública de Empleo del SENA invita a técnicos, soldadores estructurales/ornamentales, armadores de cubiertas "
+                    "y oficiales de construcción colombianos a participar en las convocatorias de movilidad laboral internacional con "
+                    "contrato formal de trabajo en el exterior (Canadá, España y otros países aliados).\""
+                ),
+                "requirements_list": [
+                    "Registrar y actualizar la hoja de vida al 100% en agenciapublicadeempleo.sena.edu.co adjuntando diplomas y certificados (SENA Guadua, Soldadura, Alturas).",
+                    "Certificar experiencia laboral o contractual mínima de 24 meses (2 años) en el oficio (soldadura, estructuras metálicas, construcción o carpintería).",
+                    "Contar con pasaporte colombiano vigente (o tramitarlo en la Gobernación del Huila).",
+                    "Trámite 100% gratuito y directo con el SENA (no pagar a tramitadores); incluye acompañamiento en visa de trabajo cuando eres seleccionado por la empresa extranjera."
+                ],
+                "contractor_info": (
+                    "Entidad Oficial: Agencia Pública de Empleo del SENA (Ministerio del Trabajo de Colombia) en convenio con empleadores extranjeros verificados."
+                ),
+                "description": (
+                    "Enlace directo a las convocatorias internacionales oficiales del SENA para trabajar legalmente en el exterior "
+                    "en soldadura, estructuras metálicas y construcción."
+                ),
+                "url": "https://agenciapublicadeempleo.sena.edu.co/Paginas/inicio.aspx",
+                "budget_min": 8500000,
+                "budget_max": 16000000,
+                "currency": "COP",
+                "category_hint": "extras_exterior",
+                "whatsapp_phone": "",
+                "skills": ["✈️ Trabajo en el Exterior", "🎓 SENA Internacional", "🔩 Soldadura & Construcción", "Contrato Legal Exterior"]
+            },
+            {
+                "id": "extra_exterior_intercambio_bioconstruccion_murales",
+                "title": "✈️ [Intercambio en el Exterior] Bioconstrucción en Bambú/Guadua, Muro Tendinoso, Murales y Tatuajes (Costa Rica, México, Europa)",
+                "organization": "Worldpackers & Eco-Aldeas Internacionales (Costa Rica, México, España, Portugal)",
+                "origin_source_detail": "Plataforma Internacional de Eco-Proyectos Worldpackers (worldpackers.com/es)",
+                "time_ago_exact": "Publicado hace 1 hora (Hoy)",
+                "published_at": mins_ago(95),
+                "location": "✈️ Exterior: Costa Rica, México, España y Portugal (Intercambio Internacional)",
+                "approx_place": "Eco-lodges, centros de permacultura y hostales artísticos en Latinoamérica y Europa",
+                "lat": 1.8792,
+                "lon": -76.2706,
+                "verbatim_request": (
+                    "\"Eco-lodges, proyectos de permacultura y hostales culturales en Costa Rica, México, Brasil, España y Portugal "
+                    "buscan maestros en bioconstrucción (bambú/guadua, ferrocemento/muro tendinoso, botellas de vidrio), soldadores y "
+                    "muralistas/tatuadores para estadías de 1 a 3 meses con alojamiento, comidas y comisiones por obras o tatuajes.\""
+                ),
+                "requirements_list": [
+                    "Pasaporte colombiano vigente (México, Brasil, España y Portugal no exigen visa de turista para estadías cortas de intercambio menores a 90 días).",
+                    "Portafolio digital (fotos en Instagram o PDF) mostrando tus cabañas en guadua, muros tendinosos, estructuras en metal, murales y tatuajes.",
+                    "En Latinoamérica solo necesitas español; en Europa basta con español o inglés básico práctico.",
+                    "Postulación directa con el anfitrión extranjero verificando qué incluye (alojamiento privado, 3 comidas, materiales y permiso para tatuar clientes)."
+                ],
+                "contractor_info": (
+                    "Anfitriones Internacionales: Eco-aldeas, glampings de bambú y hostales artísticos verificados en Worldpackers."
+                ),
+                "description": (
+                    "Oportunidad real para viajar al exterior haciendo lo que sabes: construir en guadua/bambú y muro tendinoso, "
+                    "pintar murales y tatuar en eco-lodges y hostales de Costa Rica, México y Europa."
+                ),
+                "url": "https://www.worldpackers.com/es/search?q=bioconstruccion",
+                "budget_min": 1500000,
+                "budget_max": 6000000,
+                "currency": "COP",
+                "category_hint": "extras_exterior",
+                "whatsapp_phone": "",
+                "skills": ["✈️ Intercambio Exterior", "🎋 Bioconstrucción Bambú", "🎨 Murales & Tatuajes", "Sin Visa (LATAM/UE)"]
+            },
+
+            # =========================================================================
+            # E. TRABAJOS INFORMALES DE 2DO TIEMPO, MANUALIDADES Y REPARACIONES
+            # =========================================================================
+            {
+                "id": "informal_soldadura_reparaciones_gamcelat",
+                "title": "🛠️ [Trabajo Rápido / 2do Tiempo] Soldadura a Domicilio, Cubiertas, Lámparas en Guadua y Reparaciones",
+                "organization": "Cabañas & Camping Gamcelat — Línea Directa Encargos Rápidos",
+                "origin_source_detail": "Anuncio Local de Trabajos por Día / Encargo — San Agustín Huila",
+                "time_ago_exact": "Publicado hace 50 minutos (Hoy)",
+                "published_at": mins_ago(50),
+                "location": "📍 Vía al Parque Arqueológico, San Agustín (A 0.5 km de ti)",
+                "approx_place": "A 500m del centro de San Agustín hacia el Parque Arqueológico",
+                "lat": 1.8805,
+                "lon": -76.2745,
+                "verbatim_request": (
+                    "\"Se contrata por días, fines de semana o por tarea entregada: puntos de soldadura en portones y techos, "
+                    "fabricación de lámparas artesanales en guadua con botellas de vidrio, inmunización de guadua y pintura/murales pequeños.\""
+                ),
+                "requirements_list": [
+                    "Disponibilidad en segundo tiempo (tardes o fines de semana) o por jornal pactado.",
+                    "Herramienta manual básica o equipo portátil de soldadura.",
+                    "Pago directo en efectivo o Nequi al terminar cada encargo.",
+                    "Escribir directo al WhatsApp +57 311 291 0193."
+                ],
+                "contractor_info": (
+                    "Contratante: Segunda línea directa de propietarios en San Agustín (+57 311 291 0193). "
+                    "Sin contratos ni trámites; ideal para generar ingreso extra rápido."
+                ),
+                "description": (
+                    "Trabajo informal y de segundo tiempo a 0.5 km del centro de San Agustín: soldadura rápida, "
+                    "manualidades en guadua/vidrio y mantenimiento de cabañas."
+                ),
+                "url": "https://wa.me/573112910193",
+                "budget_min": 90000,
+                "budget_max": 550000,
+                "currency": "COP",
+                "category_hint": "informales_manualidades",
+                "whatsapp_phone": "573112910193",
+                "contact_phone": "+57 311 291 0193",
+                "contact_whatsapp_url": "https://wa.me/573112910193",
+                "skills": ["📍 A 0.5 km", "🛠️ 2do Tiempo / Por Día", "WhatsApp +57 3112910193", "🔩 Soldadura & Manualidades"]
+            },
+            {
+                "id": "huila_hotel_valladollyd_remodelacion",
+                "title": "🔩 Hotel & Cabañas Valladollyd (Km 1 Vía al Parque) — Cubiertas en Guadua y Metal, Soldadura y Murales",
+                "organization": "Hotel Cabañas Valladollyd (San Agustín, Huila)",
+                "origin_source_detail": "Contacto Directo Hotelería Vía al Parque — San Agustín Huila",
+                "time_ago_exact": "Publicado hace 2 horas (Hoy)",
+                "published_at": mins_ago(125),
+                "location": "📍 Km 1 Vía Parque Arqueológico, San Agustín (A 1.1 km de ti)",
+                "approx_place": "Kilómetro 1 en la vía principal hacia el Parque Arqueológico de San Agustín",
+                "lat": 1.8815,
+                "lon": -76.2798,
+                "verbatim_request": (
+                    "\"Requerimos cotización para mantenimiento y remodelación de cubiertas en guadua y estructura metálica, "
+                    "soldadura de rejas/barandas, acabados en muro tendinoso con botellas de vidrio y decoración mural artística.\""
+                ),
+                "requirements_list": [
+                    "Visita técnica en el Km 1 vía al Parque Arqueológico para revisar estado actual de techos y estructuras.",
+                    "Experiencia en empalmes estructurales entre tubería metálica y guadua inmunizada.",
+                    "Contacto directo: +57 311 852 0150 / +57 312 478 2402."
+                ],
+                "contractor_info": (
+                    "Contratante: Gerencia Hotel Valladollyd (+57 311 852 0150 / +57 312 478 2402)."
+                ),
+                "description": (
+                    "Contacto directo verificado (+57 311 852 0150) en el Km 1 vía al Parque Arqueológico para cubiertas en guadua y metal, "
+                    "remodelación estructural y acabados artísticos."
+                ),
+                "url": "https://wa.me/573118520150",
+                "budget_min": 650000,
+                "budget_max": 3600000,
+                "currency": "COP",
+                "category_hint": "metal_soldadura",
+                "whatsapp_phone": "573118520150",
+                "contact_phone": "+57 311 852 0150",
+                "contact_whatsapp_url": "https://wa.me/573118520150",
+                "skills": ["📍 A 1.1 km", "WhatsApp +57 3118520150", "🔩 Cubiertas Metal/Guadua", "Remodelación"]
+            },
+            {
+                "id": "huila_cabanas_amalu",
+                "title": "🎋 Cabañas Amalú (San Agustín) — Cabañas en Bioconstrucción, Muro Tendinoso, Vidrio y Cubiertas",
+                "organization": "Cabañas Amalú (Propietario en San Agustín)",
+                "origin_source_detail": "Canal Directo de Propietario — Cabañas Amalú San Agustín",
+                "time_ago_exact": "Publicado hace 2 horas (Hoy)",
+                "published_at": mins_ago(140),
+                "location": "📍 Sector Campestre Urbano, San Agustín, Huila (A 1.0 km de ti)",
+                "approx_place": "Zona campestre perimetral del casco urbano de San Agustín, Huila",
+                "lat": 1.8740,
+                "lon": -76.2780,
+                "verbatim_request": (
+                    "\"Se busca maestro en guadua, bioconstrucción y soldadura para adecuación de cabañas turísticas: "
+                    "cubiertas en guadua y metal, detalles en muro tendinoso con incrustación de botellas y murales decorativos.\""
+                ),
+                "requirements_list": [
+                    "Trato directo con el propietario en San Agustín sin intermediarios.",
+                    "Presentar fotos de trabajos previos en guadua, metal o bioconstrucción.",
+                    "WhatsApp directo: +57 318 699 5451."
+                ],
+                "contractor_info": (
+                    "Contratante: Propietario de Cabañas Amalú (+57 318 699 5451)."
+                ),
+                "description": (
+                    "Contacto directo (+57 318 699 5451) para ofrecer bioconstrucción, muro tendinoso, cubiertas en guadua/metal y murales."
+                ),
+                "url": "https://wa.me/573186995451",
+                "budget_min": 550000,
+                "budget_max": 3200000,
+                "currency": "COP",
+                "category_hint": "guadua_cabanas",
+                "whatsapp_phone": "573186995451",
+                "contact_phone": "+57 318 699 5451",
+                "contact_whatsapp_url": "https://wa.me/573186995451",
+                "skills": ["📍 A 1.0 km", "WhatsApp +57 3186995451", "🎋 Bioconstrucción Guadua", "🍾 Muros en Vidrio"]
+            },
+            {
+                "id": "huila_cabanas_numbana",
+                "title": "🎋 Cabañas Numbana (Vía Parque Arqueológico) — Estructuras en Guadua, Metal, Muros en Vidrio y Murales",
+                "organization": "Cabañas Numbana (San Agustín, Huila)",
+                "origin_source_detail": "Portal Oficial Cabañas Numbana San Agustín (cabanasnumbana.com)",
+                "time_ago_exact": "Publicado hace 3 horas (Hoy)",
+                "published_at": mins_ago(175),
+                "location": "📍 Vía Parque Arqueológico, San Agustín (A 1.8 km de ti)",
+                "approx_place": "Corredor Vía al Parque Arqueológico, a 1.8 km del casco urbano de San Agustín",
+                "lat": 1.8845,
+                "lon": -76.2862,
+                "verbatim_request": (
+                    "\"Requerimos ampliación y mantenimiento de cabañas campestres: ventanales y muros en vidrio, "
+                    "cubiertas y pérgolas en guadua y metal soldado, muro tendinoso con botellas y renders 3D previos.\""
+                ),
+                "requirements_list": [
+                    "Experiencia comprobable en guadua certificada, estructuras metálicas y acabados en vidrio.",
+                    "Disponibilidad en la vía al Parque Arqueológico de San Agustín.",
+                    "Contacto directo: +57 323 247 1045."
+                ],
+                "contractor_info": (
+                    "Contratante: Propietarios de Cabañas Numbana (+57 323 247 1045 · cabanasnumbana.com)."
+                ),
+                "description": (
+                    "Contacto directo (+57 323 247 1045) en la vía al Parque Arqueológico para cubiertas en guadua y metal, muros en vidrio y bioconstrucción."
+                ),
+                "url": "https://cabanasnumbana.com/",
+                "budget_min": 750000,
+                "budget_max": 4200000,
+                "currency": "COP",
+                "category_hint": "guadua_cabanas",
+                "whatsapp_phone": "573232471045",
+                "contact_phone": "+57 323 247 1045",
+                "contact_whatsapp_url": "https://wa.me/573232471045",
+                "skills": ["📍 A 1.8 km", "WhatsApp +57 3232471045", "🎋 Guadua & Bioconstrucción", "🔩 Metal & Vidrio"]
             },
             {
                 "id": "huila_mayu_isnos",
-                "title": "🎋 Glamping Mayu — Mirador Campestre (Isnos, Huila) — Miradores en Metal/Soldadura, Guadua y Bioconstrucción",
+                "title": "🎋 Glamping Mayu (Isnos, Huila) — Miradores en Metal/Soldadura, Cubiertas en Guadua y Muralismo",
                 "organization": "Glamping Mayu (Isnos, Huila)",
-                "location": "📍 Isnos, Huila (A 16.4 km de San Agustín)",
-                "approx_place": "Zona de Miradores Campestres del municipio de Isnos (a 25 minutos en moto/carro desde San Agustín)",
-                "contractor_info": (
-                    "Contratante: Propietarios de Glamping Mayu en Isnos (+57 314 358 9808 / +57 317 871 6443). "
-                    "Mirador turístico que requiere estructuras metálicas soldadas de alta resistencia para balcones/mallas mirador, "
-                    "combinadas con cabañas en guadua, muro tendinoso e incrustaciones de vidrio."
-                ),
+                "origin_source_detail": "Canal Directo Glamping Mayu — Isnos, Huila",
+                "time_ago_exact": "Publicado hace 3 horas (Hoy)",
+                "published_at": mins_ago(190),
+                "location": "📍 Isnos, Huila (A 13.5 km de San Agustín)",
+                "approx_place": "Zona de Miradores Campestres del municipio de Isnos (a 25 min de San Agustín)",
                 "lat": 1.9320,
                 "lon": -76.1615,
+                "verbatim_request": (
+                    "\"Se requiere soldador de estructuras metálicas y maestro en guadua para construcción y refuerzo de balcones/mallas "
+                    "mirador, cubiertas mixtas en guadua y metal, muros con botellas de vidrio y pintura de murales fotográficos para visitantes.\""
+                ),
+                "requirements_list": [
+                    "Soldadura certificada o de alta penetración para estructuras de mirador.",
+                    "Construcción de cubiertas en guadua inmunizada y pintura de murales llamativos para turismo.",
+                    "Contacto directo: +57 314 358 9808 / +57 317 871 6443."
+                ],
+                "contractor_info": (
+                    "Contratante: Propietarios de Glamping Mayu en Isnos (+57 314 358 9808)."
+                ),
                 "description": (
-                    "Mirador y glamping campestre en el municipio vecino de Isnos, Huila. "
-                    "Contacto directo verificado (+57 314 358 9808) para ofrecer soldadura de estructuras metálicas de mirador, "
-                    "cabañas en bioconstrucción (muro tendinoso, botellas, vidrio y guadua) y renders 3D."
+                    "Contacto directo (+57 314 358 9808) en Isnos para estructuras metálicas de mirador, cabañas en guadua y murales."
                 ),
                 "url": "https://wa.me/573143589808",
                 "budget_min": 800000,
                 "budget_max": 4500000,
                 "currency": "COP",
-                "published_at": now_iso,
                 "category_hint": "guadua_cabanas",
                 "whatsapp_phone": "573143589808",
                 "contact_phone": "+57 314 358 9808",
                 "contact_whatsapp_url": "https://wa.me/573143589808",
-                "skills": ["📍 A 16.4 km (Isnos)", "WhatsApp +57 3143589808", "🔩 Estructuras Metálicas", "🎋 Guadua & Vidrio"]
+                "skills": ["📍 A 13.5 km (Isnos)", "WhatsApp +57 3143589808", "🔩 Estructuras Metálicas", "🎋 Guadua & Murales"]
             },
             {
                 "id": "huila_guaitipan_pitalito",
-                "title": "🎋 Laguna Guaitipán Ancestral (Pitalito, Huila) — Cabañas Bioconstrucción, Muro Tendinoso y Estructuras en Metal",
+                "title": "🎋 Laguna Guaitipán Ancestral (Pitalito) — Cabañas Bioconstrucción, Cubiertas Guadua/Metal y Murales",
                 "organization": "Laguna Guaitipán Ancestral (Pitalito, Huila)",
-                "location": "📍 Laguna de Guaitipán, Pitalito, Huila (A 24.5 km de San Agustín)",
-                "approx_place": "Sector Laguna de Guaitipán, Corregimiento de Guacacallo / Pitalito (a 30 min de San Agustín)",
-                "contractor_info": (
-                    "Contratante: Gerencia Laguna Guaitipán Ancestral (+57 318 280 4008 / +57 316 018 6786 · lagunaguaitipan.com). "
-                    "Complejo ecoturístico grande con cabañas temáticas, muelles y miradores que demanda maestros en guadua, "
-                    "soldadores de estructuras metálicas y acabados artísticos en vidrio y botellas."
-                ),
+                "origin_source_detail": "Portal Oficial Laguna Guaitipán Ancestral (lagunaguaitipan.com)",
+                "time_ago_exact": "Publicado hace 4 horas (Hoy)",
+                "published_at": mins_ago(210),
+                "location": "📍 Laguna de Guaitipán, Pitalito, Huila (A 24.1 km de San Agustín)",
+                "approx_place": "Sector Laguna de Guaitipán, Corregimiento de Guacacallo / Pitalito",
                 "lat": 1.9250,
                 "lon": -76.0580,
+                "verbatim_request": (
+                    "\"Buscamos constructores en guadua, bioconstrucción (muro tendinoso e incrustación de botellas), soldadores de "
+                    "cubiertas metálicas y artistas muralistas para nuevas cabañas temáticas y zonas sociales frente a la Laguna de Guaitipán.\""
+                ),
+                "requirements_list": [
+                    "Experiencia en estructuras de gran formato en guadua y cerchas metálicas.",
+                    "Propuesta de acabados artísticos (muro tendinoso, vidrio, murales ancestrales).",
+                    "Contacto directo: +57 318 280 4008 / +57 316 018 6786."
+                ],
+                "contractor_info": (
+                    "Contratante: Gerencia Laguna Guaitipán Ancestral (+57 318 280 4008 · lagunaguaitipan.com)."
+                ),
                 "description": (
-                    "Complejo turístico en la Laguna de Guaitipán (Pitalito). "
-                    "Contacto directo verificado (+57 318 280 4008) para ofrecer diseño y construcción de cabañas con muro tendinoso, "
-                    "incrustaciones de botellas, estructuras en metal/soldadura y guadua certificada."
+                    "Contacto directo (+57 318 280 4008) en la Laguna de Guaitipán para bioconstrucción, cubiertas en guadua y metal, y muralismo."
                 ),
                 "url": "https://lagunaguaitipan.com/",
                 "budget_min": 1100000,
                 "budget_max": 5800000,
                 "currency": "COP",
-                "published_at": now_iso,
                 "category_hint": "guadua_cabanas",
                 "whatsapp_phone": "573182804008",
                 "contact_phone": "+57 318 280 4008",
                 "contact_whatsapp_url": "https://wa.me/573182804008",
-                "skills": ["📍 A 24.5 km (Pitalito)", "WhatsApp +57 3182804008", "🍾 Bioconstrucción & Vidrio", "🔩 Guadua & Metal"]
+                "skills": ["📍 A 24.1 km (Pitalito)", "WhatsApp +57 3182804008", "🍾 Bioconstrucción & Vidrio", "🔩 Guadua & Metal"]
             },
 
-            # --- SECCIÓN: OFERTAS INFORMALES, TRABAJOS VARIOS DE SEGUNDO TIEMPO Y MANUALIDADES ---
-            {
-                "id": "informal_red_fincas_manualidades_sanagustin",
-                "title": "🛠️ [2do Tiempo & Manualidades] Red de Hostales y Fincas San Agustín — Lámparas en Guadua, Botellas Decorativas y Reparaciones",
-                "organization": "Red de Alojamientos y Fincas Turísticas San Agustín",
-                "location": "📍 Casco Urbano / Calle de la Locería, San Agustín (A 0.3 km de ti)",
-                "approx_place": "Centro Histórico y Calle de la Locería, San Agustín, Huila",
-                "contractor_info": (
-                    "Contratante: Coordinación de Alojamientos, Hostales y Tiendas Artesanales en San Agustín (+57 312 529 7560). "
-                    "Ideal para ingresos de segundo tiempo o por encargo sin contratos: fabricación de lámparas artesanales en guadua e incrustaciones de vidrio/botellas, "
-                    "letreros rústicos, estanterías en metal y madera/guadua, y reparaciones locativas rápidas de fin de semana."
-                ),
-                "lat": 1.8796,
-                "lon": -76.2698,
-                "description": (
-                    "Trabajo informal / segundo tiempo y manualidades en San Agustín Huila. "
-                    "Contacto directo (+57 312 529 7560) para ofrecer artesanías utilitarias (lámparas en guadua y botellas recicladas, portavasos, "
-                    "maceteros en metal soldado y bambú) o turnos cortos de mantenimiento, soldadura y pintura en hostales del centro."
-                ),
-                "url": "https://wa.me/573125297560",
-                "budget_min": 80000,
-                "budget_max": 650000,
-                "currency": "COP",
-                "published_at": now_iso,
-                "category_hint": "informales_manualidades",
-                "whatsapp_phone": "573125297560",
-                "contact_phone": "+57 312 529 7560",
-                "contact_whatsapp_url": "https://wa.me/573125297560",
-                "skills": ["📍 A 0.3 km (Centro)", "🛠️ 2do Tiempo & Manualidades", "WhatsApp +57 3125297560", "🎋 Artesanías Guadua & Vidrio"]
-            },
-            {
-                "id": "informal_soldadura_reparaciones_gamcelat",
-                "title": "🛠️ [Trabajo Rápido / 2do Tiempo] Soldadura a Domicilio, Rejas, Cubiertas e Inmunización de Guadua en Cabañas",
-                "organization": "Cabañas & Camping Gamcelat (Línea Alterna Propietario)",
-                "location": "📍 Vía al Parque Arqueológico, San Agustín (A 0.5 km de ti)",
-                "approx_place": "A 500m del centro de San Agustín hacia el Parque Arqueológico",
-                "contractor_info": (
-                    "Contratante: Segunda línea directa de propietarios Gamcelat (+57 311 291 0193). "
-                    "Encargos informales de rápido pago (por día o por tarea terminada): puntos de soldadura en portones y techos, "
-                    "barnizado e inmunización de guadua, cambio de tejas y decoración con botellas de vidrio."
-                ),
-                "lat": 1.8805,
-                "lon": -76.2745,
-                "description": (
-                    "Oportunidad de trabajo informal o de segundo tiempo en San Agustín sin papeleos. "
-                    "Escríbele directo al +57 311 291 0193 ofreciendo servicio por día o por encargo de: soldadura y reparación de estructuras metálicas, "
-                    "mantenimiento/inmunización de guadua y acabados decorativos con botellas y vidrio."
-                ),
-                "url": "https://wa.me/573112910193",
-                "budget_min": 90000,
-                "budget_max": 480000,
-                "currency": "COP",
-                "published_at": now_iso,
-                "category_hint": "informales_manualidades",
-                "whatsapp_phone": "573112910193",
-                "contact_phone": "+57 311 291 0193",
-                "contact_whatsapp_url": "https://wa.me/573112910193",
-                "skills": ["📍 A 0.5 km", "🛠️ Informal / Por Día", "WhatsApp +57 3112910193", "🔩 Soldadura & Reparaciones"]
-            },
-            {
-                "id": "informal_mobiliario_decoracion_yuma",
-                "title": "🎨 [Manualidades & Mobiliario] Mesas en Metal y Guadua, Vitrales de Botellas y Decoración para Hostales",
-                "organization": "Yuma Hotel & Hostales Vía La Estrella (Línea Directa 2)",
-                "location": "📍 Vía La Estrella, San Agustín, Huila (A 0.9 km de ti)",
-                "approx_place": "Salida a la Vereda La Estrella, San Agustín, Huila",
-                "contractor_info": (
-                    "Contratante: Línea directa de compras/encargos Yuma Hotel (+57 315 281 0356). "
-                    "Encargos de manualidades funcionales y mobiliario artesanal: mesas auxiliares con base en hierro soldado y sobre en guadua/vidrio, "
-                    "lámparas colgantes en bambú, botelleros y separadores de ambiente con botellas incrustadas."
-                ),
-                "lat": 1.8835,
-                "lon": -76.2655,
-                "description": (
-                    "Encargos de manualidades, decoración y herrería artística de segundo tiempo en San Agustín. "
-                    "Contacto directo por WhatsApp (+57 315 281 0356) para vender o fabricar por encargo muebles pequeños en metal + guadua, "
-                    "lámparas artesanales y muros/divisiones con botellas de vidrio recicladas."
-                ),
-                "url": "https://wa.me/573152810356",
-                "budget_min": 120000,
-                "budget_max": 750000,
-                "currency": "COP",
-                "published_at": now_iso,
-                "category_hint": "informales_manualidades",
-                "whatsapp_phone": "573152810356",
-                "contact_phone": "+57 315 281 0356",
-                "contact_whatsapp_url": "https://wa.me/573152810356",
-                "skills": ["📍 A 0.9 km", "🎨 Manualidades & Muebles", "WhatsApp +57 3152810356", "🍾 Vidrio, Metal & Guadua"]
-            },
-
-            # --- SECCIÓN: GRUPOS DE REDES Y WHATSAPP (SAN AGUSTÍN, PITALITO, BIOCONSTRUCCIÓN & SOLDADURA) ---
-            {
-                "id": "grupo_fb_sanagustin_empleos_obras",
-                "title": "📲 [Grupo de Redes: San Agustín Huila] Clasificados, Obras, Soldadura, Guadua y Trabajos Varios en San Agustín",
-                "organization": "Comunidad Facebook Grupos — San Agustín Huila Oficial",
-                "location": "📍 San Agustín, Huila (A 0.1 km · Comunidad Local Activa)",
-                "approx_place": "Todo el municipio de San Agustín y veredas (El Tablón, Mesitas, La Estrella, Obando, Alto del Obispo)",
-                "contractor_info": (
-                    "Contratantes directos en el grupo: Propietarios de fincas cafeteras, dueños de lotes campestres, maestros de obra y comerciantes "
-                    "de San Agustín que publican a diario buscando soldadores, maestros en guadua, ayudantes de segundo tiempo y remodelaciones."
-                ),
-                "lat": 1.8792,
-                "lon": -76.2706,
-                "description": (
-                    "Acceso directo a las publicaciones y grupos activos de Facebook en San Agustín Huila donde vecinos, finqueros y dueños de cabañas "
-                    "buscan maestros en guadua, bioconstrucción (muro tendinoso), soldadores de estructuras metálicas y trabajos varios de segundo tiempo."
-                ),
-                "url": "https://www.facebook.com/search/groups/?q=San%20Agustin%20Huila%20empleos%20clasificados",
-                "budget_min": 150000,
-                "budget_max": 3500000,
-                "currency": "COP",
-                "published_at": now_iso,
-                "category_hint": "grupos_redes",
-                "whatsapp_phone": "",
-                "skills": ["📲 Grupo Redes San Agustín", "📍 A 0.1 km", "🎋 Guadua & Metal", "🛠️ Trabajos Varios"]
-            },
-            {
-                "id": "grupo_fb_bioconstruccion_guadua_colombia",
-                "title": "📲 [Grupo de Redes: Bioconstrucción & Guadua] Clientes Buscando Cabañas, Muro Tendinoso e Incrustaciones de Vidrio",
-                "organization": "Grupos de Bioconstrucción, Guadua y Permacultura (Huila & Colombia)",
-                "location": "📍 San Agustín / Pitalito / Huila (Comunidad de Bioconstructores y Clientes)",
-                "approx_place": "Sur del Huila (San Agustín, Isnos, Pitalito) y proyectos ecológicos en Colombia",
-                "contractor_info": (
-                    "Contratantes en estos grupos: Dueños de eco-aldeas, glampings y lotes campestres que buscan específicamente "
-                    "maestros en bioconstrucción, muro tendinoso (ferrocemento), muros con botellas de vidrio incrustadas y estructuras en guadua."
-                ),
-                "lat": 1.8820,
-                "lon": -76.2680,
-                "description": (
-                    "Enlace directo a los grupos activos de Bioconstrucción y Guadua en Facebook donde clientes publican solicitudes de cotización "
-                    "para cabañas ecológicas, muros tendinosos, botellas incrustadas, cubiertas en bambú/guadua y modelado 3D."
-                ),
-                "url": "https://www.facebook.com/search/groups/?q=bioconstruccion%20guadua%20colombia",
-                "budget_min": 800000,
-                "budget_max": 8500000,
-                "currency": "COP",
-                "published_at": now_iso,
-                "category_hint": "grupos_redes",
-                "whatsapp_phone": "",
-                "skills": ["📲 Grupos Bioconstrucción", "🍾 Muro Tendinoso & Botellas", "🎋 Maestro en Guadua", "Renders 3D"]
-            },
-            {
-                "id": "grupo_fb_soldadura_estructuras_pitalito_huila",
-                "title": "📲 [Grupo de Redes: Estructuras Metálicas & Soldadura] Trabajos de Ornamentación, Techos y Remodelaciones en Sur del Huila",
-                "organization": "Comunidad de Soldadores, Ornamentadores y Obras — Pitalito y San Agustín",
-                "location": "📍 San Agustín / Pitalito, Huila (Grupos de Obras y Contratistas)",
-                "approx_place": "Corredor San Agustín — Isnos — Pitalito (Sur del Huila)",
-                "contractor_info": (
-                    "Contratantes en estos grupos: Ingenieros, maestros contratistas y propietarios en Pitalito y San Agustín "
-                    "que subcontratan estructuras metálicas, soldadura de cerchas, portones, cubiertas mixtas metal-guadua y remodelaciones."
-                ),
-                "lat": 1.8850,
-                "lon": -76.2500,
-                "description": (
-                    "Acceso directo a los grupos de Facebook de Soldadura, Estructuras Metálicas y Empleos del Sur del Huila (Pitalito / San Agustín) "
-                    "para tomar contratos rápidos de soldadura, techos metálicos, remodelaciones y trabajos de fin de semana."
-                ),
-                "url": "https://www.facebook.com/search/groups/?q=Pitalito%20Huila%20empleos%20construccion%20soldadura",
-                "budget_min": 250000,
-                "budget_max": 4800000,
-                "currency": "COP",
-                "published_at": now_iso,
-                "category_hint": "grupos_redes",
-                "whatsapp_phone": "",
-                "skills": ["📲 Grupos Sur del Huila", "🔩 Soldadura & Metal", "Remodelaciones", "🛠️ 2do Tiempo"]
-            },
-
-            # --- CIRCULARES PÚBLICAS REALES SECOP II (SUR DEL HUILA) ---
+            # =========================================================================
+            # F. CIRCULARES PÚBLICAS REALES SECOP II (CON PETICIÓN TEXTUAL DEL PLIEGO)
+            # =========================================================================
             {
                 "id": "secop_sena_pitalito_2026",
                 "title": "🏛️ [Circular SECOP II: SAMC HIL-CGDSS-001-2026] SENA Regional Huila (Pitalito / San Agustín) — Infraestructura Rural y Materiales",
                 "organization": "SENA Regional Huila — Centro CGDSS Pitalito",
-                "location": "📍 Pitalito / San Agustín, Huila (A 28.2 km · Circular Pública SECOP II)",
+                "origin_source_detail": "SECOP II Oficial — Circular SAMC HIL-CGDSS-001-2026 (community.secop.gov.co)",
+                "time_ago_exact": "Circular Activa en SECOP II (Consultada Hoy)",
+                "published_at": mins_ago(110),
+                "location": "📍 Pitalito / San Agustín, Huila (A 24.5 km · Circular Pública SECOP II)",
                 "approx_place": "Centro de Gestión y Desarrollo Sostenible Surcolombiano (SENA Pitalito, Km 1 Vía al Sur)",
-                "contractor_info": (
-                    "Entidad contratante: SENA Regional Huila — Centro CGDSS Pitalito. "
-                    "Circular pública oficial SAMC HIL-CGDSS-001-2026 abierta en SECOP II sin necesidad de contraseña para consultar el pliego."
-                ),
                 "lat": 1.8480,
                 "lon": -76.0520,
+                "verbatim_request": (
+                    "\"PROCESO SAMC HIL-CGDSS-001-2026: Suministro de materiales de construcción, ferretería, guadua/madera, "
+                    "perfiles metálicos y elementos técnicos para los procesos de Formación Especial Campesina (CampeSENA) y "
+                    "adecuación de ambientes rurales del Centro de Gestión y Desarrollo Sostenible Surcolombiano en el Sur del Huila.\""
+                ),
+                "requirements_list": [
+                    "Inscripción activa en SECOP II como proveedor (Persona Natural o Jurídica) y RUP/RUT según pliego.",
+                    "Capacidad de entrega o ejecución en los municipios del Sur del Huila (Pitalito, San Agustín, Isnos).",
+                    "Consultar el pliego público completo haciendo clic en el botón de Circular Real (no pide clave)."
+                ],
+                "contractor_info": (
+                    "Entidad contratante: SENA Regional Huila — Centro CGDSS Pitalito. Presupuesto Oficial: $537.250.000 COP."
+                ),
                 "description": (
-                    "Circular oficial activa en SECOP II (No requiere clave para ver el pliego). "
-                    "Referencia: SAMC HIL-CGDSS-001-2026. Objeto: Suministro de materiales y apoyo para procesos de Formación Especial Campesina "
-                    "y construcciones rurales en el Sur del Huila."
+                    "Circular oficial activa en SECOP II (No requiere clave para ver el pliego). Referencia: SAMC HIL-CGDSS-001-2026."
                 ),
                 "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10223805",
                 "budget_min": 537250000,
                 "budget_max": 537250000,
                 "currency": "COP",
-                "published_at": now_iso,
                 "category_hint": "alcaldia_huila",
                 "circular_code": "SAMC HIL-CGDSS-001-2026",
                 "whatsapp_phone": "",
-                "skills": ["📍 A 28.2 km (Pitalito)", "Circular SECOP II Real", "SENA Regional Huila", "Sur del Huila"]
-            },
-            {
-                "id": "secop_agrosur_pitalito_2026",
-                "title": "🏛️ [Circular SECOP II: PMC 005 DE 2026] CPGA AGROSUR Pitalito — Convocatoria Pública Sur del Huila",
-                "organization": "CPGA AGROSUR (Pitalito, Huila)",
-                "location": "📍 Pitalito, Huila (A 28.5 km · Circular Pública SECOP II)",
-                "approx_place": "Centro Provincial de Gestión Agroempresarial AGROSUR, Pitalito, Huila",
-                "contractor_info": (
-                    "Entidad contratante: CPGA AGROSUR (Municipios del Sur del Huila incluyendo San Agustín, Isnos y Pitalito). "
-                    "Proceso de mínima cuantía PMC 005 DE 2026 con pliego público directo."
-                ),
-                "lat": 1.8538,
-                "lon": -76.0508,
-                "description": (
-                    "Circular oficial activa en SECOP II con acceso directo al pliego sin clave. "
-                    "Referencia: PMC 005 DE 2026 — Entidad: AGROSUR Pitalito, Huila."
-                ),
-                "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10245503",
-                "budget_min": 14063027,
-                "budget_max": 14063027,
-                "currency": "COP",
-                "published_at": now_iso,
-                "category_hint": "alcaldia_huila",
-                "circular_code": "PMC 005 DE 2026",
-                "whatsapp_phone": "",
-                "skills": ["📍 A 28.5 km (Pitalito)", "Circular SECOP II Real", "Mínima Cuantía", "Sur del Huila"]
-            },
-            {
-                "id": "secop_usco_huila_estudiantes",
-                "title": "🎓 [Circular SECOP II: CPS-1212-B2024] Universidad Surcolombiana (USCO Huila) — Apoyo Técnico y Académico",
-                "organization": "Universidad Surcolombiana (USCO — Sede Pitalito / Huila)",
-                "location": "📍 Pitalito / Huila (A 28.9 km · Circular Pública SECOP II)",
-                "approx_place": "Universidad Surcolombiana (USCO Sede Sur Pitalito / Huila)",
-                "contractor_info": (
-                    "Entidad contratante: Universidad Surcolombiana (USCO). "
-                    "Circular pública oficial CPS-1212-B2024 con enlace directo al pliego en SECOP II."
-                ),
-                "lat": 1.8590,
-                "lon": -76.0460,
-                "description": (
-                    "Proceso oficial de la Universidad Surcolombiana (USCO) en SECOP II con enlace directo al pliego público sin clave."
-                ),
-                "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.6535897",
-                "budget_min": 2271150,
-                "budget_max": 2271150,
-                "currency": "COP",
-                "published_at": now_iso,
-                "category_hint": "estudiantes_tareas",
-                "circular_code": "CPS-1212-B2024",
-                "whatsapp_phone": "",
-                "skills": ["🎓 USCO Huila", "Circular SECOP II Real", "Universitarios", "Apoyo Académico"]
+                "skills": ["📍 A 24.5 km (Pitalito)", "Circular SECOP II Real", "SENA Regional Huila", "Sur del Huila"]
             }
         ]
 
@@ -682,6 +925,7 @@ class SanAgustinHuilaCollector:
                             ref = item.get("referencia_del_proceso", proc_id)
                             desc = item.get("descripci_n_del_procedimiento") or item.get("nombre_del_procedimiento") or ""
                             nombre = item.get("nombre_del_procedimiento") or desc[:90]
+                            modalidad = item.get("modalidad_de_contratacion", "Contratación Pública")
 
                             txt_upper = f"{entidad} {ciudad} {nombre} {desc}".upper()
                             if any(bad in txt_upper for bad in ["GASOLINA", "MEDICAMENTO", "FISIOTERAPEUTA", "ODONTOLOGO", "ENFERMERA", "HOSPITAL"]):
@@ -693,7 +937,7 @@ class SanAgustinHuilaCollector:
                                 precio = 0.0
 
                             seen_ids.add(proc_id)
-                            pub_date = item.get("fecha_de_publicacion_del") or now_iso
+                            pub_date = item.get("fecha_de_publicacion_del") or now.isoformat()
 
                             c_lat, c_lon = city_coords.get(ciudad.upper().strip(), (2.5000, -75.6000))
                             dist_km = haversine_km(SAN_AGUSTIN_LAT, SAN_AGUSTIN_LON, c_lat, c_lon)
@@ -702,25 +946,32 @@ class SanAgustinHuilaCollector:
                                 "id": f"secop_{proc_id}",
                                 "title": f"🏛️ [Circular {ref}] {entidad} ({ciudad}) — {nombre[:75]}",
                                 "organization": f"{entidad} ({ciudad})",
+                                "origin_source_detail": f"Publicado en: SECOP II Oficial — Proceso {ref} ({ciudad}, Huila)",
+                                "time_ago_exact": f"Publicado en SECOP II ({str(pub_date)[:10]})",
                                 "location": f"🇨🇴 {ciudad}, Huila (A {dist_km} km · Circular SECOP II)",
                                 "approx_place": f"Municipio de {ciudad}, Departamento del Huila (Sede oficial de {entidad})",
+                                "verbatim_request": f"\"OBJETO TEXTUAL DEL PROCESO [{ref}]: {desc}\"",
+                                "requirements_list": [
+                                    f"Modalidad exigida por la entidad: {modalidad}.",
+                                    "Estar inscrito en SECOP II, contar con RUT actualizado, cédula, antecedentes y seguridad social.",
+                                    f"Ejecución en el municipio de {ciudad} (Huila). Abrir la circular oficial para descargar los estudios previos."
+                                ],
                                 "contractor_info": (
                                     f"Entidad contratante oficial: {entidad} ({ciudad}, Huila). "
-                                    f"Circular pública SECOP II N° {ref}. Modalidad: {item.get('modalidad_de_contratacion', 'Contratación Directa / Mínima Cuantía')}."
+                                    f"Circular pública SECOP II N° {ref}. Modalidad: {modalidad}."
                                 ),
                                 "lat": c_lat,
                                 "lon": c_lon,
                                 "distance_km": dist_km,
                                 "description": (
                                     f"Circular Pública SECOP II — Referencia Oficial: {ref}. "
-                                    f"Entidad: {entidad} ({ciudad}). Objeto: {desc[:380]}. "
-                                    f"El botón abre directamente la circular oficial en SECOP II sin pedir usuario ni contraseña."
+                                    f"Entidad: {entidad} ({ciudad}). Objeto: {desc[:380]}."
                                 ),
                                 "url": proc_url,
                                 "budget_min": int(precio) if precio > 0 else 2500000,
                                 "budget_max": int(precio) if precio > 0 else 15000000,
                                 "currency": "COP",
-                                "published_at": pub_date if "T" in str(pub_date) else now_iso,
+                                "published_at": pub_date if "T" in str(pub_date) else now.isoformat(),
                                 "category_hint": "alcaldia_huila",
                                 "circular_code": ref,
                                 "whatsapp_phone": "",

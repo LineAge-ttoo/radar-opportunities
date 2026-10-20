@@ -297,6 +297,10 @@ def get_all_opportunities(filter_decision=None, filter_status=None, limit=250, d
         d['contact_email'] = raw.get('contact_email') or obs.get('contact_email') or ''
         d['approx_place'] = raw.get('approx_place') or obs.get('approx_place') or d.get('location') or ''
         d['contractor_info'] = raw.get('contractor_info') or obs.get('contractor_info') or ''
+        d['origin_source_detail'] = raw.get('origin_source_detail') or obs.get('origin_source_detail') or f"Publicado en: {d.get('source', 'Plataforma Directa')}"
+        d['time_ago_exact'] = raw.get('time_ago_exact') or obs.get('time_ago_exact') or est.get('freshness_label') or 'Reciente'
+        d['verbatim_request'] = raw.get('verbatim_request') or obs.get('verbatim_request') or f"\"{d.get('description', '')}\""
+        d['requirements_list'] = raw.get('requirements_list') or obs.get('requirements_list') or []
         d['lat'] = raw.get('lat') or obs.get('lat')
         d['lon'] = raw.get('lon') or obs.get('lon')
         d['distance_km'] = raw.get('distance_km') if raw.get('distance_km') is not None else (obs.get('distance_km') if obs.get('distance_km') is not None else est.get('distance_km', 999.0))

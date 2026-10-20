@@ -4,8 +4,11 @@ from datetime import datetime, timezone
 
 class ScoringEngine:
     PRACTICAL_SKILLS = [
-        ('guadua / bioconstrucción', r'\b(guadua|bamb[uú]|caba[ñn]as?|glamping|eco-?lodge|maloka|mirador|kiosco|bioconstrucci\w*|tendinoso|botellas?|muros?\s+en\s+vidrio|vitral\w*)\b', 44, 'guadua_cabanas'),
+        ('guadua / bioconstrucción / cubiertas', r'\b(guadua|bamb[uú]|caba[ñn]as?|glamping|eco-?lodge|maloka|mirador|kiosco|bioconstrucci\w*|tendinoso|botellas?|muros?\s+en\s+vidrio|vitral\w*|cubiertas?)\b', 44, 'guadua_cabanas'),
+        ('café borbón rosado / secaderos', r'\b(borb[oó]n\s+rosado|pink\s+bourbon|secaderos?|marquesinas?|caf[eé]\s+especial|caficultor\w*|zarandas?|beneficiadero)\b', 44, 'cafe_secaderos'),
+        ('murales / tatuajes / arte', r'\b(mural\w*|tatuaj\w*|tattoo|arte\s+corporal|pintura\s+mural|grafitti|artista\s+pl[aá]stico)\b', 43, 'murales_tatuajes'),
         ('estructuras metal / soldadura', r'\b(estructuras?\s+met[aá]licas?|metal\w*|soldadura|soldador|cerchas?|cubiertas?|portones?|barandas?|ornamentaci\w*|hierro|acero|remodelaci\w*)\b', 42, 'metal_soldadura'),
+        ('pasantías sena / intercambios / exterior', r'\b(pasant[ií]as?|etapa\s+productiva|contrato\s+de\s+aprendizaje|intercambio\w*|worldpackers|workaway|exterior|internacional)\b', 41, 'extras_exterior'),
         ('informales / 2do tiempo / manualidades', r'\b(manualidad\w*|artesan[ií]as?|2do\s+tiempo|segundo\s+tiempo|l[aá]mparas?|decoraci[oó]n\s+r[uú]stica|reparaciones?|informal\w*|trabajos?\s+varios?)\b', 38, 'informales_manualidades'),
         ('grupos redes / whatsapp', r'\b(grupos?\s+de\s+redes|facebook\s+groups?|comunidad|clasificados)\b', 36, 'grupos_redes'),
         ('san agustín / huila', r'\b(san\s+agust[ií]n|pitalito|isnos|huila|timan[aá]|neiva|macizo|alcald[ií]a|secop)\b', 40, 'alcaldia_huila'),
@@ -97,6 +100,9 @@ class ScoringEngine:
         is_huila_or_guadua = (
             opp_type == 'san_agustin_huila_prioridad'
             or 'guadua_cabanas' in matched_cats
+            or 'cafe_secaderos' in matched_cats
+            or 'murales_tatuajes' in matched_cats
+            or 'extras_exterior' in matched_cats
             or 'metal_soldadura' in matched_cats
             or 'informales_manualidades' in matched_cats
             or 'grupos_redes' in matched_cats

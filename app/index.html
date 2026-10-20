@@ -602,6 +602,79 @@
             margin-bottom: 2px;
         }
 
+        .cz-origin-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.69rem;
+            color: rgba(255, 255, 255, 0.78);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 8px;
+            padding: 5px 9px;
+            margin-bottom: 8px;
+        }
+
+        .cz-origin-bar .cz-time-tag {
+            color: var(--amber-gold);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .cz-verbatim-box {
+            background: rgba(255, 59, 78, 0.09);
+            border-left: 3px solid var(--imperial-red);
+            border-radius: 6px 10px 10px 6px;
+            padding: 9px 11px;
+            margin-bottom: 10px;
+            font-size: 0.79rem;
+            color: #FFFFFF;
+            line-height: 1.42;
+        }
+
+        .cz-verbatim-box strong {
+            color: #FF8A95;
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.73rem;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .cz-reqs-box {
+            background: rgba(16, 185, 129, 0.08);
+            border-left: 2.5px solid #34D399;
+            border-radius: 6px 10px 10px 6px;
+            padding: 8px 10px;
+            margin-bottom: 10px;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.88);
+            line-height: 1.38;
+        }
+
+        .cz-reqs-box strong {
+            color: #4ADE80;
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.73rem;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .cz-reqs-list {
+            margin: 0;
+            padding-left: 15px;
+        }
+
+        .cz-reqs-list li {
+            margin-bottom: 2px;
+        }
+
         /* Technical Key-Value Rows inside Card (Matches Reference Image!) */
         .cz-metrics {
             display: flex;
@@ -844,6 +917,9 @@
 
         <!-- Right Action Icons -->
         <div class="topbar-icons">
+            <button class="icon-btn" id="btnSoundToggle" onclick="toggleCyberSound()" title="Activar / Silenciar Efectos de Sonido en Botones">
+                <span id="soundIconLabel" style="font-size:0.95rem;">🔊</span>
+            </button>
             <button class="icon-btn" onclick="sendTopAlertToMyWhatsApp()" title="Enviar Oportunidades de Alto Potencial a mi WhatsApp 322 273 9034">
                 <span class="notif-dot"></span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
@@ -861,18 +937,21 @@
     </header>
 
     <!-- CENTERED CYBER-ZEN SEARCH BAR + SPECIALTY FILTER PILLS -->
-    <div class="search-stage" style="max-width:980px;">
-        <div class="cyber-search-box" style="max-width:660px;margin:0 auto;">
-            <input type="text" id="sInput" class="cyber-search-input" placeholder="BUSCAR: MURO TENDINOSO, BOTELLAS, VIDRIO, GUADUA, METAL, SOLDADURA, MANUALIDADES, SAN AGUSTÍN..." oninput="applyFilters()">
+    <div class="search-stage" style="max-width:1060px;">
+        <div class="cyber-search-box" style="max-width:720px;margin:0 auto;">
+            <input type="text" id="sInput" class="cyber-search-input" placeholder="BUSCAR: BORBÓN ROSADO, SECADEROS CAFÉ, MURALES, TATUAJES, CUBIERTAS GUADUA/METAL, SENA, EXTERIOR..." oninput="applyFilters()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
 
         <div class="cyber-pills-row">
             <button class="cz-pill active" data-cat="" onclick="selectCat('', this)">⚡ MÁS RECIENTES</button>
-            <button class="cz-pill" data-cat="cerca_de_mi" onclick="selectCat('cerca_de_mi', this)">📍 CERCA DE MÍ (POR CERCANÍA)</button>
-            <button class="cz-pill" data-cat="huila_guadua" onclick="selectCat('huila_guadua', this)">🎋 BIOCONSTRUCCIÓN · GUADUA · BOTELLAS & VIDRIO</button>
-            <button class="cz-pill" data-cat="metal_soldadura" onclick="selectCat('metal_soldadura', this)">🔩 METAL · SOLDADURA & REMODELACIÓN</button>
-            <button class="cz-pill" data-cat="informales" onclick="selectCat('informales', this)">🛠️ INFORMALES · 2DO TIEMPO · MANUALIDADES</button>
+            <button class="cz-pill" data-cat="cerca_de_mi" onclick="selectCat('cerca_de_mi', this)">📍 CERCA DE MÍ (POR KM)</button>
+            <button class="cz-pill" data-cat="cafe_secaderos" onclick="selectCat('cafe_secaderos', this)">☕ CAFÉ BORBÓN ROSADO & SECADEROS</button>
+            <button class="cz-pill" data-cat="murales_tatuajes" onclick="selectCat('murales_tatuajes', this)">🎨 MURALES & TATUAJES</button>
+            <button class="cz-pill" data-cat="huila_guadua" onclick="selectCat('huila_guadua', this)">🎋 CUBIERTAS GUADUA/METAL · BOTELLAS & VIDRIO</button>
+            <button class="cz-pill" data-cat="metal_soldadura" onclick="selectCat('metal_soldadura', this)">🔩 ESTRUCTURAS METAL & SOLDADURA</button>
+            <button class="cz-pill" data-cat="extras_exterior" onclick="selectCat('extras_exterior', this)">✈️ EXTRAS: PASANTÍAS SENA · INTERCAMBIOS & EXTERIOR</button>
+            <button class="cz-pill" data-cat="informales" onclick="selectCat('informales', this)">🛠️ 2DO TIEMPO & MANUALIDADES</button>
             <button class="cz-pill" data-cat="grupos_redes" onclick="selectCat('grupos_redes', this)">📲 GRUPOS REDES & WHATSAPP</button>
             <button class="cz-pill" data-cat="alcaldia" onclick="selectCat('alcaldia', this)">🏛️ ALCALDÍA & SECOP</button>
             <button class="cz-pill" data-cat="estudiantes" onclick="selectCat('estudiantes', this)">🎓 ESTUDIANTES & 3D</button>
@@ -887,6 +966,9 @@
         </button>
         <button class="side-btn" data-view="nearby" onclick="selectCat('cerca_de_mi', document.querySelector('[data-cat=\'cerca_de_mi\']'))" title="Trabajo Cerca de Mí (Ordenado por Cercanía en KM)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </button>
+        <button class="side-btn" data-view="extras" onclick="selectCat('extras_exterior', document.querySelector('[data-cat=\'extras_exterior\']'))" title="Trabajos Extras: Pasantías SENA, Intercambios & Exterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
         </button>
         <button class="side-btn" data-view="saved" onclick="selectCat('guardados', document.getElementById('pillSavedBtn'))" title="Mis Trabajos Guardados (Interesantes)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -917,7 +999,7 @@
                 <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
                     <div>
                         <h2 style="font-family:'Rajdhani',sans-serif;font-size:1.5rem;letter-spacing:0.06em;text-transform:uppercase;">📲 BUSCADOR EN GRUPOS DE REDES, WHATSAPP & CERCANÍA</h2>
-                        <p style="color:var(--text-silver);font-size:0.88rem;">Encuentra clientes y publicaciones en grupos de Facebook, WhatsApp e Instagram para Cabañas con Muro Tendinoso, Incrustaciones de Botellas, Muros en Vidrio, Guadua, Estructuras en Metal/Soldadura y Trabajos de 2do Tiempo.</p>
+                        <p style="color:var(--text-silver);font-size:0.88rem;">Encuentra clientes y publicaciones en grupos de Facebook, WhatsApp e Instagram para Café Borbón Rosado, Secaderos de Café, Murales, Tatuajes, Cubiertas en Guadua y Metal, Cabañas con Muro Tendinoso, Pasantías SENA e Intercambios en el Exterior.</p>
                     </div>
                     <button class="cz-pill active" onclick="locateSanAgustin()">📍 ACTUALIZAR MI GPS (CERCANÍA)</button>
                 </div>
@@ -927,12 +1009,15 @@
                     <button class="cz-pill" onclick="setLocalZone('Isnos Huila', this)">📍 Isnos, Huila (16 km)</button>
                     <button class="cz-pill" onclick="setLocalZone('Pitalito Huila', this)">📍 Pitalito, Huila (28 km)</button>
                     <button class="cz-pill" onclick="setLocalZone('Garzón y Neiva Huila', this)">📍 Garzón / Neiva</button>
-                    <button class="cz-pill" onclick="setLocalZone('Colombia', this)">🇨🇴 Toda Colombia</button>
+                    <button class="cz-pill" onclick="setLocalZone('Colombia e Internacional', this)">🌎 Colombia & Exterior</button>
                 </div>
 
                 <div class="cyber-pills-row" style="justify-content:flex-start;margin-bottom:14px;">
-                    <button class="cz-pill active" id="locSrv-guadua" onclick="setLocalService('guadua')">🎋 Bioconstrucción · Muro Tendinoso · Botellas · Guadua</button>
+                    <button class="cz-pill active" id="locSrv-guadua" onclick="setLocalService('guadua')">🎋 Cubiertas Guadua/Metal · Muro Tendinoso · Botellas</button>
+                    <button class="cz-pill" id="locSrv-cafe" onclick="setLocalService('cafe')">☕ Secaderos para Café & Compra Borbón Rosado</button>
+                    <button class="cz-pill" id="locSrv-murales" onclick="setLocalService('murales')">🎨 Diseños de Murales & Tatuajes</button>
                     <button class="cz-pill" id="locSrv-metal" onclick="setLocalService('metal')">🔩 Estructuras en Metal · Soldadura & Remodelación</button>
+                    <button class="cz-pill" id="locSrv-extras" onclick="setLocalService('extras')">✈️ Pasantías SENA · Intercambios & Exterior</button>
                     <button class="cz-pill" id="locSrv-informales" onclick="setLocalService('informales')">🛠️ 2do Tiempo · Manualidades · Lámparas & Muebles</button>
                     <button class="cz-pill" id="locSrv-alcaldia" onclick="setLocalService('alcaldia')">🏛️ Alcaldía San Agustín & SECOP II</button>
                     <button class="cz-pill" id="locSrv-estudiantes" onclick="setLocalService('estudiantes')">🎓 Estudiantes, Tareas & Blender 3D</button>
@@ -944,7 +1029,7 @@
                     <button class="cz-pill active" style="padding:12px;" onclick="launchLocalPortal('fb_groups')">📘 GRUPOS DE FACEBOOK (DIRECTO)</button>
                     <button class="cz-pill active" style="padding:12px;background:rgba(37,211,102,0.24);border-color:#25D366;" onclick="launchLocalPortal('wa_groups')">💬 BUSCAR LINKS WHATSAPP EN REDES</button>
                     <button class="cz-pill active" style="padding:12px;" onclick="launchLocalPortal('instagram')">📸 BUSCAR EN INSTAGRAM</button>
-                    <button class="cz-pill active" style="padding:12px;" onclick="launchLocalPortal('secop')">🏛️ ALCALDÍA / SECOP HUILA</button>
+                    <button class="cz-pill active" style="padding:12px;" onclick="launchLocalPortal('secop')">🏛️ ALCALDÍA / SECOP / SENA</button>
                 </div>
             </div>
         </section>
@@ -956,7 +1041,7 @@
                     📲 CENTRAL DE ALERTAS AUTOMÁTICAS A TU WHATSAPP: +57 322 273 9034
                 </h2>
                 <p style="color:var(--text-silver);font-size:0.88rem;margin-bottom:16px;">
-                    El motor envía automáticamente las nuevas oportunidades de alto potencial a tu WhatsApp <strong>+57 322 273 9034</strong> (Bioconstrucción, Muro Tendinoso, Incrustaciones de Botellas, Guadua, Estructuras en Metal/Soldadura, Trabajos de 2do Tiempo/Manualidades y Alcaldía de San Agustín).
+                    El motor envía automáticamente las nuevas oportunidades de alto potencial a tu WhatsApp <strong>+57 322 273 9034</strong> (Secaderos para Café, Compra de Café Borbón Rosado, Murales, Tatuajes, Cubiertas en Guadua y Metal, Cabañas con Muro Tendinoso, Pasantías SENA, Intercambios en el Exterior y Alcaldía de San Agustín).
                 </p>
 
                 <textarea id="myWaDigestBox" class="cz-textarea" style="min-height:190px;"></textarea>
@@ -993,8 +1078,17 @@
                 </div>
             </div>
 
+            <!-- ORIGEN EXACTO DEL ANUNCIO Y HACE CUÁNTO TIEMPO SALIÓ -->
+            <div id="mOriginBar" class="cz-origin-bar" style="margin-bottom:10px;"></div>
+
             <!-- CERCANÍA Y LUGAR APROXIMADO -->
             <div id="mPlaceBox" class="cz-proximity-badge" style="margin-bottom:10px;"></div>
+
+            <!-- SOLICITUD TEXTUAL DEL DEMANDANTE (QUÉ ESTÁ PIDIENDO LITERALMENTE) -->
+            <div id="mVerbatimBox" class="cz-verbatim-box" style="margin-bottom:12px;"></div>
+
+            <!-- QUÉ ESTÁ REQUIRIENDO ESPECÍFICAMENTE / REQUISITOS Y EXIGENCIAS -->
+            <div id="mReqsBox" class="cz-reqs-box" style="margin-bottom:12px;"></div>
 
             <!-- INFORMACIÓN DETALLADA DEL CONTRATANTE -->
             <div id="mContractorBox" class="cz-contractor-box" style="margin-bottom:12px;"></div>
@@ -1013,7 +1107,7 @@
             </div>
 
             <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber-gold);">
-                PROPUESTA PERSONALIZADA (MURO TENDINOSO, BOTELLAS, VIDRIO, GUADUA, METAL & 3D)
+                PROPUESTA PERSONALIZADA LISTA PARA ENVIAR AL SOLICITANTE
             </div>
             <textarea id="mPitch" class="cz-textarea"></textarea>
 
@@ -1051,6 +1145,97 @@
         let localSrv = 'guadua';
         let lastDiscardedId = null;
 
+        // =========================================================
+        // 0. BRIEF INTERACTIVE SOUND ENGINE (WEB AUDIO API)
+        // =========================================================
+        let soundEnabled = localStorage.getItem('qhp_sound_enabled') !== '0';
+        let audioCtx = null;
+
+        function getAudioCtx() {
+            if (!audioCtx) {
+                const Ctx = window.AudioContext || window.webkitAudioContext;
+                if (Ctx) audioCtx = new Ctx();
+            }
+            if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume().catch(() => {});
+            }
+            return audioCtx;
+        }
+
+        function playCyberSound(type = 'tap') {
+            if (!soundEnabled) return;
+            try {
+                const ctx = getAudioCtx();
+                if (!ctx) return;
+                const now = ctx.currentTime;
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+
+                if (type === 'save') {
+                    // Warm upward two-note chime
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(520, now);
+                    osc.frequency.exponentialRampToValueAtTime(780, now + 0.085);
+                    gain.gain.setValueAtTime(0.06, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.095);
+                    osc.start(now);
+                    osc.stop(now + 0.1);
+                } else if (type === 'discard') {
+                    // Subtle low soft drop
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(340, now);
+                    osc.frequency.exponentialRampToValueAtTime(190, now + 0.08);
+                    gain.gain.setValueAtTime(0.05, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.085);
+                    osc.start(now);
+                    osc.stop(now + 0.09);
+                } else if (type === 'modal') {
+                    // Crisp Cyber-Zen harmonic ping
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(640, now);
+                    osc.frequency.exponentialRampToValueAtTime(880, now + 0.07);
+                    gain.gain.setValueAtTime(0.055, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.075);
+                    osc.start(now);
+                    osc.stop(now + 0.08);
+                } else {
+                    // Brief tactile click ('tap') for main buttons & pills
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(580, now);
+                    osc.frequency.exponentialRampToValueAtTime(420, now + 0.045);
+                    gain.gain.setValueAtTime(0.048, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+                    osc.start(now);
+                    osc.stop(now + 0.055);
+                }
+            } catch (e) {}
+        }
+
+        function toggleCyberSound() {
+            soundEnabled = !soundEnabled;
+            localStorage.setItem('qhp_sound_enabled', soundEnabled ? '1' : '0');
+            const lbl = document.getElementById('soundIconLabel');
+            if (lbl) lbl.innerText = soundEnabled ? '🔊' : '🔇';
+            if (soundEnabled) playCyberSound('save');
+            toast(soundEnabled ? '🔊 SONIDO DE BOTONES ACTIVADO' : '🔇 SONIDO SILENCIADO');
+        }
+
+        // Global delegated listener so all primary interactive buttons play a brief tactile sound
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('.cz-pill, .cz-neon-btn, .side-btn, .icon-btn, .cz-mini-icon-btn');
+            if (!btn) return;
+            if (btn.id === 'btnSoundToggle') return;
+            if (btn.classList.contains('discard')) {
+                playCyberSound('discard');
+            } else if (btn.classList.contains('cz-neon-btn')) {
+                playCyberSound('modal');
+            } else {
+                playCyberSound('tap');
+            }
+        }, true);
+
         // Persistent Saved & Discarded Lists (localStorage + Backend sync)
         let savedIds = new Set(JSON.parse(localStorage.getItem('qhp_saved_ids') || '[]'));
         let discardedIds = new Set(JSON.parse(localStorage.getItem('qhp_discarded_ids') || '[]'));
@@ -1060,16 +1245,20 @@
             localStorage.setItem('qhp_discarded_ids', JSON.stringify(Array.from(discardedIds)));
             const btn = document.getElementById('pillSavedBtn');
             if (btn) btn.innerText = `⭐ GUARDADOS (${savedIds.size})`;
+            const lbl = document.getElementById('soundIconLabel');
+            if (lbl) lbl.innerText = soundEnabled ? '🔊' : '🔇';
         }
 
         function toggleSaveOpp(id, ev) {
             if (ev) ev.stopPropagation();
             if (savedIds.has(id)) {
                 savedIds.delete(id);
+                playCyberSound('tap');
                 toast('QUITADO DE GUARDADOS');
             } else {
                 savedIds.add(id);
                 discardedIds.delete(id);
+                playCyberSound('save');
                 toast('⭐ TRABAJO GUARDADO EN TU LISTA');
                 fetch('/api/opportunities/status', {
                     method: 'POST',
@@ -1090,6 +1279,7 @@
 
         function discardOpp(id, ev) {
             if (ev) ev.stopPropagation();
+            playCyberSound('discard');
             lastDiscardedId = id;
             discardedIds.add(id);
             savedIds.delete(id);
@@ -1117,6 +1307,7 @@
             applyFilters();
             const bar = document.getElementById('undoBar');
             if (bar) bar.style.display = 'none';
+            playCyberSound('save');
             toast('↩ OFERTA RESTAURADA');
         }
 
@@ -1124,6 +1315,7 @@
             discardedIds.clear();
             persistSavedAndDiscarded();
             applyFilters();
+            playCyberSound('save');
             toast('♻️ TODAS LAS OFERTAS RESTAURADAS');
         }
 
@@ -1267,10 +1459,28 @@
             if (v === 'whatsapp') buildMyWaDigest();
         }
 
+        function isCafeSecaderos(o) {
+            const cat = o.category || o.observed_data?.category_hint || '';
+            const txt = `${o.title} ${o.description} ${(o.skills || []).join(' ')}`.toLowerCase();
+            return cat === 'cafe_secaderos' || /secadero|borb[oó]n rosado|marquesina|cama africana|caf[eé] especial|beneficiadero/.test(txt);
+        }
+
+        function isMuralesTatuajes(o) {
+            const cat = o.category || o.observed_data?.category_hint || '';
+            const txt = `${o.title} ${o.description} ${(o.skills || []).join(' ')}`.toLowerCase();
+            return cat === 'murales_tatuajes' || /mural|muralismo|tatuaje|tattoo|pintura art/.test(txt);
+        }
+
+        function isExtrasExterior(o) {
+            const cat = o.category || o.observed_data?.category_hint || '';
+            const txt = `${o.title} ${o.description} ${(o.skills || []).join(' ')}`.toLowerCase();
+            return cat === 'extras_exterior' || /pasant[ií]a|etapa productiva|intercambio|worldpackers|exterior|internacional|canad[aá]|espa[nñ]a|costa rica|sgva/.test(txt);
+        }
+
         function isHuilaGuadua(o) {
             const cat = o.category || o.observed_data?.category_hint || '';
             const txt = `${o.title} ${o.description} ${o.location} ${(o.skills || []).join(' ')}`.toLowerCase();
-            return cat === 'guadua_cabanas' || cat === 'bioconstruccion_guadua' || /guadua|bamb|cabaña|cabana|glamping|bioconstrucci|tendinoso|botella|vidrio/.test(txt);
+            return cat === 'guadua_cabanas' || cat === 'bioconstruccion_guadua' || /guadua|bamb|cabaña|cabana|glamping|bioconstrucci|tendinoso|botella|vidrio|cubierta/.test(txt);
         }
 
         function isMetalSoldadura(o) {
@@ -1300,7 +1510,7 @@
         function isEstudiantes(o) {
             const cat = o.category || o.observed_data?.category_hint || '';
             const txt = `${o.title} ${o.description} ${(o.skills || []).join(' ')}`.toLowerCase();
-            return cat === 'estudiantes_tareas' || /estudiant|universitari|tarea|sena|unad|usco|entrega|maqueta|taller|arquitectura|blender|autocad|3d/.test(txt);
+            return cat === 'estudiantes_tareas' || /estudiant|universitari|tarea|unad|usco|entrega|maqueta|taller|arquitectura|blender|autocad|3d/.test(txt);
         }
 
         function hasWa(o) {
@@ -1308,10 +1518,13 @@
         }
 
         function getCategoryHeader(o) {
+            if (isCafeSecaderos(o)) return '☕ CAFÉ BORBÓN ROSADO & SECADEROS';
+            if (isMuralesTatuajes(o)) return '🎨 MURALES ARTÍSTICOS & TATUAJES';
+            if (isExtrasExterior(o)) return '✈️ PASANTÍAS SENA · INTERCAMBIOS & EXTERIOR';
             if (isInformalesManualidades(o)) return '🛠️ 2DO TIEMPO & MANUALIDADES';
-            if (isMetalSoldadura(o)) return '🔩 ESTRUCTURAS METAL & SOLDADURA';
+            if (isMetalSoldadura(o)) return '🔩 CUBIERTAS METAL & SOLDADURA';
             if (isGruposRedes(o)) return '📲 GRUPOS REDES & WHATSAPP';
-            if (isHuilaGuadua(o)) return '🎋 BIOCONSTRUCCIÓN & GUADUA';
+            if (isHuilaGuadua(o)) return '🎋 CUBIERTAS GUADUA · BOTELLAS & VIDRIO';
             if (isAlcaldia(o)) return '🏛️ ALCALDÍA & SECOP HUILA';
             if (isEstudiantes(o)) return '🎓 ESTUDIANTES, BLENDER & CAD';
             const txt = `${o.title} ${o.description}`.toLowerCase();
@@ -1343,6 +1556,48 @@
             const org = o.organization || 'Solicitante Directo';
             const src = o.source || 'Plataforma';
             return `Contratante: ${org} (${src}). Publicación activa para cotizar y entregar de forma directa sin contratos complicados.`;
+        }
+
+        function getOriginSourceDetail(o) {
+            const raw = o.raw_data || {};
+            const obs = o.observed_data || {};
+            if (o.origin_source_detail || raw.origin_source_detail || obs.origin_source_detail) {
+                return o.origin_source_detail || raw.origin_source_detail || obs.origin_source_detail;
+            }
+            return `Publicado en ${o.source || 'Portal Directo'} · ${o.organization || 'Solicitante Directo'}`;
+        }
+
+        function getTimeAgoExact(o) {
+            const raw = o.raw_data || {};
+            const obs = o.observed_data || {};
+            if (o.time_ago_exact || raw.time_ago_exact || obs.time_ago_exact) {
+                return o.time_ago_exact || raw.time_ago_exact || obs.time_ago_exact;
+            }
+            const hrs = Number(o.estimated_data?.age_hours ?? 1);
+            if (hrs <= 0.5) return 'Hace 20 minutos';
+            if (hrs <= 1.2) return 'Hace 1 hora';
+            return `Hace ${Math.round(hrs)} horas`;
+        }
+
+        function getVerbatimRequest(o) {
+            const raw = o.raw_data || {};
+            const obs = o.observed_data || {};
+            if (o.verbatim_request || raw.verbatim_request || obs.verbatim_request) {
+                return o.verbatim_request || raw.verbatim_request || obs.verbatim_request;
+            }
+            return `"${(o.description || o.title || '').slice(0, 260)}"`;
+        }
+
+        function getRequirementsList(o) {
+            const raw = o.raw_data || {};
+            const obs = o.observed_data || {};
+            const list = o.requirements_list || raw.requirements_list || obs.requirements_list;
+            if (Array.isArray(list) && list.length > 0) return list;
+            return [
+                'Disponibilidad inmediata para cotizar o iniciar labores.',
+                'Comunicación directa por WhatsApp o enlace oficial de la convocatoria.',
+                'Acuerdo directo de pago por avance o contra entrega.'
+            ];
         }
 
         async function loadInitialData() {
@@ -1413,7 +1668,6 @@
 
         function applyFilters() {
             const q = (document.getElementById('sInput')?.value || '').toLowerCase().trim();
-            // Always hide discarded items unless looking specifically at saved items
             let list = opps.filter(o => !discardedIds.has(o.opportunity_id));
 
             const banner = document.getElementById('czSectionBanner');
@@ -1423,10 +1677,22 @@
                     banner.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
                         <div>
                             <strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">📍 TRABAJO CERCA DE MÍ — ORDENADO POR CERCANÍA EN KILÓMETROS</strong>
-                            <div style="font-size:0.82rem;color:var(--text-silver);">Mostrando primero los contratantes más cercanos a tu ubicación en San Agustín, Isnos y Pitalito (Huila), con lugar aproximado e información detallada del contratante.</div>
+                            <div style="font-size:0.82rem;color:var(--text-silver);">Mostrando primero los contratantes más cercanos a tu ubicación en San Agustín, Isnos y Pitalito (Huila), con origen del anuncio, solicitud textual y requisitos específicos.</div>
                         </div>
                         <button class="cz-pill active" onclick="locateSanAgustin()">📍 CALIBRAR MI GPS</button>
                     </div>`;
+                } else if (curCat === 'cafe_secaderos') {
+                    banner.style.display = 'block';
+                    banner.innerHTML = `<strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">☕ SECADEROS PARA CAFÉ & COMPRA DE CAFÉ BORBÓN ROSADO DE CAMPESINOS</strong>
+                    <div style="font-size:0.82rem;color:var(--text-silver);">Construcción y remodelación de secaderos solares/parabólicos y camas africanas en guadua y metal + compra/comercialización directa de lotes de Café Borbón Rosado con campesinos y exportadoras en San Agustín, Isnos y Pitalito.</div>`;
+                } else if (curCat === 'murales_tatuajes') {
+                    banner.style.display = 'block';
+                    banner.innerHTML = `<strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">🎨 DISEÑOS DE MURALES ARTÍSTICOS & SESIONES DE TATUAJES</strong>
+                    <div style="font-size:0.82rem;color:var(--text-silver);">Encargos de muralismo para hostales, cafés y cabañas ecológicas + agenda de tatuajes personalizados para turistas y residentes en el corredor turístico de San Agustín.</div>`;
+                } else if (curCat === 'extras_exterior') {
+                    banner.style.display = 'block';
+                    banner.innerHTML = `<strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">✈️ TRABAJOS EXTRAS: PASANTÍAS SENA · INTERCAMBIOS LOCALES & TRABAJOS EN EL EXTERIOR</strong>
+                    <div style="font-size:0.82rem;color:var(--text-silver);">Presentación de etapa productiva/pasantías del SENA (Centro CGDSS Pitalito/San Agustín), intercambios por hospedaje + bono en hostales y convocatorias internacionales reales (SENA APE Exterior & Worldpackers) con todos sus requisitos y exigencias detallados.</div>`;
                 } else if (curCat === 'informales') {
                     banner.style.display = 'block';
                     banner.innerHTML = `<strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">🛠️ OFERTAS INFORMALES, TRABAJOS DE SEGUNDO TIEMPO Y MANUALIDADES</strong>
@@ -1444,6 +1710,12 @@
                 list = opps.filter(o => savedIds.has(o.opportunity_id));
             } else if (curCat === 'cerca_de_mi') {
                 list = list.filter(o => calcDistanceKm(o) <= 120);
+            } else if (curCat === 'cafe_secaderos') {
+                list = list.filter(isCafeSecaderos);
+            } else if (curCat === 'murales_tatuajes') {
+                list = list.filter(isMuralesTatuajes);
+            } else if (curCat === 'extras_exterior') {
+                list = list.filter(isExtrasExterior);
             } else if (curCat === 'huila_guadua') {
                 list = list.filter(isHuilaGuadua);
             } else if (curCat === 'metal_soldadura') {
@@ -1463,6 +1735,8 @@
                     (o.title || '').toLowerCase().includes(q) ||
                     (o.organization || '').toLowerCase().includes(q) ||
                     (o.description || '').toLowerCase().includes(q) ||
+                    (getVerbatimRequest(o) || '').toLowerCase().includes(q) ||
+                    (getOriginSourceDetail(o) || '').toLowerCase().includes(q) ||
                     (getApproxPlace(o) || '').toLowerCase().includes(q) ||
                     (getContractorInfo(o) || '').toLowerCase().includes(q)
                 );
@@ -1472,13 +1746,9 @@
                 list.sort((a, b) => calcDistanceKm(a) - calcDistanceKm(b));
             } else {
                 list.sort((a, b) => {
-                    const hgWaA = (isHuilaGuadua(a) || isMetalSoldadura(a) || isInformalesManualidades(a) || isAlcaldia(a)) && hasWa(a) ? 1 : 0;
-                    const hgWaB = (isHuilaGuadua(b) || isMetalSoldadura(b) || isInformalesManualidades(b) || isAlcaldia(b)) && hasWa(b) ? 1 : 0;
-                    if (hgWaA !== hgWaB) return hgWaB - hgWaA;
-
-                    const distA = calcDistanceKm(a);
-                    const distB = calcDistanceKm(b);
-                    if (distA < 50 && distB < 50 && distA !== distB) return distA - distB;
+                    const prioA = (isCafeSecaderos(a) || isMuralesTatuajes(a) || isExtrasExterior(a) || isHuilaGuadua(a) || isMetalSoldadura(a) || isInformalesManualidades(a) || isAlcaldia(a)) ? 1 : 0;
+                    const prioB = (isCafeSecaderos(b) || isMuralesTatuajes(b) || isExtrasExterior(b) || isHuilaGuadua(b) || isMetalSoldadura(b) || isInformalesManualidades(b) || isAlcaldia(b)) ? 1 : 0;
+                    if (prioA !== prioB) return prioB - prioA;
 
                     const ageA = a.estimated_data?.age_hours ?? 1;
                     const ageB = b.estimated_data?.age_hours ?? 1;
@@ -1505,12 +1775,15 @@
                 return;
             }
 
-            grid.innerHTML = filtered.slice(0, 42).map((o, idx) => {
+            grid.innerHTML = filtered.slice(0, 48).map((o, idx) => {
                 const neonClass = idx % 2 === 0 ? 'neon-red' : 'neon-gold';
                 const catHeader = getCategoryHeader(o);
                 const price = getFormattedPrice(o);
                 const approxPlace = getApproxPlace(o);
-                const contractorInfo = getContractorInfo(o);
+                const originDetail = getOriginSourceDetail(o);
+                const timeAgo = getTimeAgoExact(o);
+                const verbatimReq = getVerbatimRequest(o);
+                const reqsList = getRequirementsList(o);
                 const distKm = calcDistanceKm(o);
                 const isSaved = savedIds.has(o.opportunity_id);
                 const org = o.organization || 'Solicitante Directo';
@@ -1518,8 +1791,8 @@
                 const sUrl = o.source_url || '#';
                 const isSecop = sUrl.includes('secop.gov.co');
 
-                let contactLabel = 'PUBLICACIÓN DIRECTA';
-                let primaryBtnHtml = `<a href="${escapeHtml(sUrl)}" target="_blank" rel="noopener noreferrer" class="cz-neon-btn">ABRIR OFERTA ↗</a>`;
+                let contactLabel = 'PUBLICACIÓN OFICIAL / DIRECTA';
+                let primaryBtnHtml = `<a href="${escapeHtml(sUrl)}" target="_blank" rel="noopener noreferrer" class="cz-neon-btn">ABRIR CONVOCATORIA ↗</a>`;
 
                 if (rawPhone) {
                     contactLabel = `WHATSAPP +${rawPhone}`;
@@ -1531,11 +1804,16 @@
                 } else if (sUrl.includes('facebook.com/search/groups')) {
                     contactLabel = 'GRUPO ACTIVO EN REDES';
                     primaryBtnHtml = `<a href="${escapeHtml(sUrl)}" target="_blank" rel="noopener noreferrer" class="cz-neon-btn">📲 ENTRAR AL GRUPO ↗</a>`;
+                } else if (sUrl.includes('sena.edu.co')) {
+                    contactLabel = 'PORTAL OFICIAL SENA';
+                    primaryBtnHtml = `<a href="${escapeHtml(sUrl)}" target="_blank" rel="noopener noreferrer" class="cz-neon-btn">🎓 PORTAL SENA ↗</a>`;
                 }
 
                 const proxText = distKm < 150
                     ? `📏 A ${distKm} KM DE TI · ${approxPlace.slice(0, 46)}`
-                    : `🌐 REMOTO / COLOMBIA · ${approxPlace.slice(0, 42)}`;
+                    : `🌎 UBICACIÓN / MODALIDAD · ${approxPlace.slice(0, 44)}`;
+
+                const reqsHtml = reqsList.slice(0, 3).map(r => `<li>${escapeHtml(r)}</li>`).join('');
 
                 return `
                 <article class="cz-card ${neonClass}">
@@ -1552,30 +1830,39 @@
                             </div>
                         </div>
 
+                        <!-- DE DÓNDE SALIÓ EL ANUNCIO Y HACE CUÁNTO TIEMPO -->
+                        <div class="cz-origin-bar">
+                            <span>📡 <strong>ORIGEN:</strong> ${escapeHtml(originDetail.slice(0, 56))}</span>
+                            <span class="cz-time-tag">🕒 ${escapeHtml(timeAgo)}</span>
+                        </div>
+
                         <div class="cz-proximity-badge">${escapeHtml(proxText)}</div>
 
                         <div class="cz-title-main">${escapeHtml(o.title)}</div>
 
-                        <div class="cz-contractor-box">
-                            <strong>👤 INFO DEL CONTRATANTE & LUGAR</strong>
-                            ${escapeHtml(contractorInfo.slice(0, 165))}${contractorInfo.length > 165 ? '...' : ''}
+                        <!-- SOLICITUD TEXTUAL DEL DEMANDANTE -->
+                        <div class="cz-verbatim-box">
+                            <strong>💬 SOLICITUD TEXTUAL DEL DEMANDANTE:</strong>
+                            ${escapeHtml(verbatimReq)}
+                        </div>
+
+                        <!-- REQUISITOS Y EXIGENCIAS ESPECÍFICAS -->
+                        <div class="cz-reqs-box">
+                            <strong>✅ QUÉ REQUIERE ESPECÍFICAMENTE (REQUISITOS Y EXIGENCIAS):</strong>
+                            <ul class="cz-reqs-list">${reqsHtml}</ul>
                         </div>
 
                         <div class="cz-metrics">
                             <div class="cz-metric-row">
-                                <span class="cz-m-key">CONTRATANTE:</span>
+                                <span class="cz-m-key">SOLICITANTE:</span>
                                 <span class="cz-m-val">${escapeHtml(org.slice(0, 28))}</span>
                             </div>
                             <div class="cz-metric-row">
-                                <span class="cz-m-key">CONTACTO DIRECTO:</span>
+                                <span class="cz-m-key">CANAL DIRECTO:</span>
                                 <span class="cz-m-val" style="color:${rawPhone ? '#4ADE80' : '#FFB830'};">${escapeHtml(contactLabel)}</span>
                             </div>
                             <div class="cz-metric-row">
-                                <span class="cz-m-key">LUGAR APROX.:</span>
-                                <span class="cz-m-val">${escapeHtml(approxPlace.slice(0, 30))}</span>
-                            </div>
-                            <div class="cz-metric-row">
-                                <span class="cz-m-key">PRESUPUESTO:</span>
+                                <span class="cz-m-key">VALOR / APOYO:</span>
                                 <span class="cz-m-val">${escapeHtml(price)}</span>
                             </div>
                         </div>
@@ -1584,7 +1871,7 @@
                     <div class="cz-card-btns">
                         ${primaryBtnHtml}
                         <button class="cz-neon-btn" onclick="openCzModal('${escapeHtml(o.opportunity_id)}')">
-                            INFO & PROPUESTA
+                            REQUISITOS & PROPUESTA
                         </button>
                     </div>
                 </article>`;
@@ -1595,18 +1882,26 @@
             const o = opps.find(x => x.opportunity_id === id);
             if (!o) return;
             currentModalOpp = o;
+            playCyberSound('modal');
 
             const distKm = calcDistanceKm(o);
             const approxPlace = getApproxPlace(o);
             const contractorInfo = getContractorInfo(o);
+            const originDetail = getOriginSourceDetail(o);
+            const timeAgo = getTimeAgoExact(o);
+            const verbatimReq = getVerbatimRequest(o);
+            const reqsList = getRequirementsList(o);
             const isSaved = savedIds.has(id);
 
             document.getElementById('mCategory').innerText = getCategoryHeader(o) + ' · ' + getFormattedPrice(o);
             document.getElementById('mTitle').innerText = o.title || '';
             document.getElementById('mOrg').innerText = `${o.organization || ''}`;
+            document.getElementById('mOriginBar').innerHTML = `<span>📡 <strong>DE DÓNDE SALIÓ:</strong> ${escapeHtml(originDetail)}</span><span class="cz-time-tag">🕒 PUBLICADO: ${escapeHtml(timeAgo)}</span>`;
             document.getElementById('mPlaceBox').innerText = distKm < 150
                 ? `📍 A ${distKm} KM DE TU UBICACIÓN · LUGAR APROX: ${approxPlace}`
                 : `📍 LUGAR / MODALIDAD: ${approxPlace}`;
+            document.getElementById('mVerbatimBox').innerHTML = `<strong>💬 SOLICITUD TEXTUAL DEL DEMANDANTE (PETICIÓN LITERAL):</strong>${escapeHtml(verbatimReq)}`;
+            document.getElementById('mReqsBox').innerHTML = `<strong>✅ QUÉ ESTÁ REQUIRIENDO ESPECÍFICAMENTE (REQUISITOS Y EXIGENCIAS):</strong><ul class="cz-reqs-list">${reqsList.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>`;
             document.getElementById('mContractorBox').innerHTML = `<strong>👤 INFORMACIÓN DEL CONTRATANTE Y DEL PROYECTO</strong>${escapeHtml(contractorInfo)}`;
             document.getElementById('mDesc').innerText = o.description || '';
             document.getElementById('mPitch').value = o.proposal?.body || '';
@@ -1637,9 +1932,14 @@
                 contactInfoText.innerText = `Circular Oficial SECOP II (Pliego Público Directo)`;
                 directActionBtn.href = sUrl;
                 directActionBtn.innerText = `📄 ABRIR CIRCULAR OFICIAL ↗`;
+            } else if (sUrl.includes('sena.edu.co')) {
+                waBtn.style.display = 'none';
+                contactInfoText.innerText = `Portal Oficial SENA (Pasantías SGVA / APE Internacional)`;
+                directActionBtn.href = sUrl;
+                directActionBtn.innerText = `🎓 ABRIR PORTAL SENA ↗`;
             } else {
                 waBtn.style.display = 'none';
-                contactInfoText.innerText = `Canal Directo del Contratante (${o.source || 'Plataforma'})`;
+                contactInfoText.innerText = `Canal Directo del Solicitante (${o.source || 'Plataforma'})`;
                 directActionBtn.href = sUrl;
                 directActionBtn.innerText = `💬 ABRIR PUBLICACIÓN REAL ↗`;
             }
@@ -1648,6 +1948,7 @@
         }
 
         function closeCzModal() {
+            playCyberSound('tap');
             document.getElementById('czModal').classList.remove('open');
         }
 
@@ -1656,6 +1957,8 @@
             if (!o) return;
             const msg = `🔔 *OPORTUNIDAD DETECTADA EN QUE HAY PA´ HACER!*\n\n` +
                         `📌 *${o.title}*\n` +
+                        `📡 Origen: ${getOriginSourceDetail(o)} (${getTimeAgoExact(o)})\n` +
+                        `💬 Solicitud textual: ${getVerbatimRequest(o)}\n` +
                         `🏢 Contratante: ${o.organization || 'Directo'}\n` +
                         `📍 Lugar Aprox: ${getApproxPlace(o)}\n` +
                         `💰 Valor: ${getFormattedPrice(o)}\n` +
@@ -1665,16 +1968,16 @@
         }
 
         function buildMyWaDigest() {
-            const top = opps.filter(o => !discardedIds.has(o.opportunity_id) && (isHuilaGuadua(o) || isMetalSoldadura(o) || isInformalesManualidades(o) || isAlcaldia(o))).slice(0, 9);
+            const top = opps.filter(o => !discardedIds.has(o.opportunity_id)).slice(0, 10);
             const lines = [
-                "🔔 *QUE HAY PA´ HACER! — CONTACTOS DIRECTOS Y CERCANÍA*",
-                "📍 *Base:* San Agustín, Isnos & Pitalito (Huila)",
+                "🔔 *QUE HAY PA´ HACER! — SOLICITUDES TEXTUALES Y CONTACTOS DIRECTOS*",
+                "📍 *Base:* San Agustín, Isnos & Pitalito (Huila) + Colombia & Exterior",
                 `🕒 *Actualizado:* ${new Date().toLocaleString('es-CO')}`,
                 ""
             ];
             top.forEach((o, i) => {
                 const ph = o.contact_phone || o.observed_data?.whatsapp_phone || 'Enlace directo';
-                lines.push(`*${i + 1}. ${o.title}*\n📞 Contacto: ${ph} | 📏 A ${calcDistanceKm(o)} km\n📍 ${getApproxPlace(o)}\n🔗 ${o.source_url}\n`);
+                lines.push(`*${i + 1}. ${o.title}*\n📡 ${getOriginSourceDetail(o)} (${getTimeAgoExact(o)})\n💬 ${getVerbatimRequest(o).slice(0, 140)}...\n📞 Contacto: ${ph} | 📍 ${getApproxPlace(o)}\n🔗 ${o.source_url}\n`);
             });
             const box = document.getElementById('myWaDigestBox');
             if (box) box.value = lines.join('\n');
@@ -1699,7 +2002,7 @@
 
         function setLocalService(s) {
             localSrv = s;
-            ['guadua', 'metal', 'informales', 'alcaldia', 'estudiantes'].forEach(k => {
+            ['guadua', 'cafe', 'murales', 'metal', 'extras', 'informales', 'alcaldia', 'estudiantes'].forEach(k => {
                 document.getElementById('locSrv-' + k)?.classList.toggle('active', k === s);
             });
             updateLocalPitch();
@@ -1709,13 +2012,19 @@
             const box = document.getElementById('localPitchText');
             if (!box) return;
             if (localSrv === 'guadua') {
-                box.value = `¡Hola! Un saludo desde San Agustín, Huila. Soy Maestro Certificado en Guadua y Bioconstrucción.\n\nRealizo cabañas con estilo de muro tendinoso, incrustaciones artísticas de botellas, muros en vidrio, acabados en guadua inmunizada y diseño previo en Blender 3D en ${localZone}.\n\n📲 Mi WhatsApp directo: +57 322 273 9034.`;
+                box.value = `¡Hola! Un saludo desde San Agustín, Huila. Soy Maestro Certificado en Guadua y Bioconstrucción.\n\nRealizo todo tipo de cubiertas en guadua y metal, cabañas con estilo de muro tendinoso, incrustaciones artísticas de botellas, muros en vidrio y diseño previo en Blender 3D en ${localZone}.\n\n📲 Mi WhatsApp directo: +57 322 273 9034.`;
+            } else if (localSrv === 'cafe') {
+                box.value = `¡Hola! Desde San Agustín y el Sur del Huila:\n1) Construyo y remodelo secaderos para café (marquesinas solares, secaderos parabólicos, camas africanas y todo tipo de cubiertas en guadua y metal).\n2) Compro y gestiono lotes de Café Borbón Rosado directamente de campesinos y caficultores en ${localZone} con pago directo.\n\n📲 Mi WhatsApp directo: +57 322 273 9034.`;
+            } else if (localSrv === 'murales') {
+                box.value = `¡Hola! Soy artista visual, muralista y tatuador en ${localZone}.\n\nRealizo diseños de murales artísticos personalizados (identidad agustiniana, naturaleza, café y cultura) para hostales, cafés y cabañas, además de sesiones de tatuaje con diseño exclusivo.\n\n📲 Agenda y portafolio por WhatsApp: +57 322 273 9034.`;
             } else if (localSrv === 'metal') {
-                box.value = `¡Hola! Estoy disponible en ${localZone} para todo tipo de estructuras en metal y soldadura: cubiertas, cerchas, plataformas para glamping, portones y remodelación de estructuras tanto en guadua como en metal.\n\n📲 Mi WhatsApp directo: +57 322 273 9034.`;
+                box.value = `¡Hola! Estoy disponible en ${localZone} para todo tipo de cubiertas en guadua y metal, estructuras metálicas y soldadura: cerchas, plataformas para glamping, secaderos de café, portones y remodelación estructural.\n\n📲 Mi WhatsApp directo: +57 322 273 9034.`;
+            } else if (localSrv === 'extras') {
+                box.value = `¡Hola! Cuento con perfil integral como Maestro Certificado en Guadua, Estructuras en Metal/Soldadura, Muralismo, Tatuajes y Modelado 3D en Blender/AutoCAD.\n\nDisponible para Pasantías / Proyectos Productivos SENA, intercambios creativos y convocatorias internacionales.\n\n📲 Contacto directo: +57 322 273 9034.`;
             } else if (localSrv === 'informales') {
                 box.value = `¡Hola! Disponible en ${localZone} para trabajos varios de segundo tiempo y manualidades por encargo: lámparas artesanales en guadua y botellas de vidrio, muebles en metal y bambú, soldadura a domicilio y reparaciones locativas.\n\n📲 WhatsApp directo: +57 322 273 9034.`;
             } else if (localSrv === 'alcaldia') {
-                box.value = `Cordial saludo. Desde San Agustín, Huila, presento disponibilidad como Maestro en Construcción en Guadua Certificado, Bioconstrucción, Estructuras Metálicas/Soldadura y Modelado 3D para proyectos en ${localZone}.\n\n📲 Contacto directo: +57 322 273 9034.`;
+                box.value = `Cordial saludo. Desde San Agustín, Huila, presento disponibilidad como Maestro en Construcción en Guadua Certificado, Cubiertas en Guadua y Metal, Secaderos Comunitarios de Café y Modelado 3D para proyectos en ${localZone}.\n\n📲 Contacto directo: +57 322 273 9034.`;
             } else {
                 box.value = `¡Hola! Apoyo a estudiantes universitarios, SENA y UNAD en ${localZone} con entregas de Planos AutoCAD, Renders en Blender 3D, maquetas en guadua/metal y tareas prácticas.\n\n📲 Escríbeme a mi WhatsApp: +57 322 273 9034.`;
             }
@@ -1724,11 +2033,14 @@
         function launchLocalPortal(p) {
             const pitch = document.getElementById('localPitchText').value;
             if (navigator.clipboard) navigator.clipboard.writeText(pitch).catch(() => {});
-            toast('PROPUESTA COPIADA · ABRIENDO GRUPOS EN ' + localZone.toUpperCase());
+            toast('PROPUESTA COPIADA · ABRIENDO BÚSQUEDA EN ' + localZone.toUpperCase());
 
             let q = '';
-            if (localSrv === 'guadua') q = `bioconstruccion OR guadua OR cabañas OR glamping ${localZone}`;
-            else if (localSrv === 'metal') q = `soldadura OR estructuras metalicas OR remodelacion OR construccion ${localZone}`;
+            if (localSrv === 'guadua') q = `bioconstruccion OR guadua OR cubiertas OR cabañas ${localZone}`;
+            else if (localSrv === 'cafe') q = `"borbon rosado" OR "secadero de cafe" OR caficultores ${localZone}`;
+            else if (localSrv === 'murales') q = `muralista OR murales OR tatuajes OR hostales ${localZone}`;
+            else if (localSrv === 'metal') q = `soldadura OR estructuras metalicas OR cubiertas OR remodelacion ${localZone}`;
+            else if (localSrv === 'extras') q = `pasantias sena OR voluntariado bioconstruccion OR intercambio ${localZone}`;
             else if (localSrv === 'informales') q = `empleos OR clasificados OR artesanias OR trabajos ${localZone}`;
             else if (localSrv === 'alcaldia') q = `alcaldia contratacion OR convocatoria ${localZone}`;
             else q = `arquitectura OR ingenieria OR planos OR blender ${localZone}`;
@@ -1737,6 +2049,7 @@
             if (p === 'fb_groups') url = 'https://www.facebook.com/search/groups/?q=' + encodeURIComponent(q);
             else if (p === 'wa_groups') url = 'https://www.google.com/search?q=' + encodeURIComponent(`("chat.whatsapp.com" OR "wa.me/57") ${q}`);
             else if (p === 'instagram') url = 'https://www.google.com/search?q=' + encodeURIComponent(`site:instagram.com ${q} whatsapp`);
+            else if (localSrv === 'extras') url = 'https://agenciapublicadeempleo.sena.edu.co/Paginas/inicio.aspx';
             else url = 'https://community.secop.gov.co/Public/Tendering/ContractNoticeManagement/Index';
 
             setTimeout(() => { window.open(url, '_blank'); }, 250);
@@ -1747,11 +2060,12 @@
             if (!el) return;
             const txt = el.value || el.innerText;
             if (navigator.clipboard) navigator.clipboard.writeText(txt).catch(() => {});
+            playCyberSound('save');
             toast('COPIADO AL PORTAPAPELES');
         }
 
         async function triggerLiveScan() {
-            toast('BUSCANDO NUEVAS OFERTAS EN SAN AGUSTÍN, GRUPOS Y COLOMBIA...');
+            toast('BUSCANDO NUEVAS OFERTAS EN SAN AGUSTÍN, CAFÉ, MURALES, SENA Y EXTERIOR...');
             try {
                 const r = await fetch('/api/scan', { method: 'POST' });
                 if (r.ok) {

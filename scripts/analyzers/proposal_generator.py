@@ -1,13 +1,12 @@
 class TechnicalProposalGenerator:
     """
-    Genera mensajes directos (WhatsApp / Instagram DM / Facebook / Grupos / Alcaldía / Estudiantes)
-    100% en español, prácticos, destacando el perfil completo del usuario en San Agustín Huila y Colombia:
-    - Maestro en Construcción en Guadua Certificado & Bioconstrucción innovadora
-    - Cabañas con estilo de muro tendinoso, incrustaciones de botellas y muros en vidrio
-    - Todo tipo de estructuras en metal y soldadura (cerchas, cubiertas, pérgolas mixtas, portones)
-    - Remodelación de estructuras tanto en guadua como en metal
-    - Trabajos varios de segundo tiempo, manualidades artísticas y mobiliario (guadua, vidrio y metal)
-    - Modelado en Blender 3D, Planos 2D/3D y Automatizaciones
+    Genera mensajes directos (WhatsApp / Redes / SENA / Exterior / Caficultores / Alcaldía)
+    100% en español, prácticos y alineados con todas las habilidades del usuario:
+    - Cabañas con muro tendinoso, incrustaciones de botellas, muros en vidrio y acabados en guadua
+    - Todo tipo de cubiertas y estructuras en guadua y metal (soldadura y remodelación)
+    - Secaderos solares/parabólicos para café y compra/comercialización de Café Borbón Rosado de campesinos
+    - Diseños de murales artísticos y tatuajes personalizados
+    - Pasantías del SENA, intercambios técnicos/artísticos y oportunidades en el exterior
     """
 
     @classmethod
@@ -16,143 +15,133 @@ class TechnicalProposalGenerator:
         org = opp.get('organization', 'Cliente').replace('(🇨🇴 Colombia)', '').strip()
         skills_text = f"{title} {opp.get('description', '')} {' '.join(opp.get('skills', []))}".lower()
         obs = opp.get('observed_data', {})
-        offer_type = obs.get('offer_type', '')
         cat_hint = obs.get('category_hint', '')
         wa_phone = obs.get('whatsapp_phone')
         p_min = opp.get('payment_min')
         p_max = opp.get('payment_max')
         curr = opp.get('currency') or 'COP'
 
-        # 1. Cabañas, Bioconstrucción, Muro Tendinoso, Incrustaciones de Botellas, Vidrio, Guadua y Metal
-        if cat_hint in ('guadua_cabanas', 'bioconstruccion_guadua', 'metal_soldadura') or any(
-            k in skills_text for k in ['guadua', 'cabaña', 'bamb', 'bioconstrucci', 'tendinoso', 'botella', 'soldadura', 'estructuras en metal']
-        ):
-            subject = f"Bioconstrucción en Guadua, Muro Tendinoso, Vidrio y Estructuras en Metal — {org}"
+        # 1. Café Borbón Rosado de Campesinos & Construcción de Secaderos para Café (Guadua y Metal)
+        if cat_hint == 'cafe_secaderos' or any(k in skills_text for k in ['borbón rosado', 'borbon rosado', 'secadero', 'marquesina', 'caficultor']):
+            subject = f"Secaderos de Café (Guadua/Metal) y Café Borbón Rosado en San Agustín — {org}"
+            body = f"""¡Hola {org}! 👋 Te saludo desde San Agustín, Huila.
+
+Me comunico respecto a **{title}** para ponernos en contacto directo en dos frentes de trabajo:
+
+☕ **1. Compra y Comercialización de Café Borbón Rosado**: Trabajo directamente con campesinos y fincas productoras de San Agustín y veredas (Alto del Obispo, La Estrella, El Tablón, Mesitas) para acopio y negociación directa de microlotes de **Borbón Rosado** (pergamino seco / cereza).
+🎋🔩 **2. Construcción y Remodelación de Secaderos para Café**: Construyo y techo todo tipo de **secaderos parabólicos, marquesinas solares y camas africanas** combinando estructura en **guadua inmunizada y cerchas en metal soldado** con cubierta UV de alta durabilidad.
+
+📲 Mi WhatsApp directo en San Agustín es **+57 322 273 9034**. ¿Hablamos hoy mismo para coordinar lotes de Borbón Rosado o cotizar secaderos?"""
+            pricing = f"COP ${int(p_min or 850000):,} — ${int(p_max or 7500000):,}".replace(',', '.')
+            return {
+                'language': 'es',
+                'subject': subject,
+                'body': body,
+                'pricing_recommendation': pricing,
+                'turnaround': "Atención inmediata en veredas de San Agustín y Sur del Huila",
+                'whatsapp_phone': wa_phone
+            }
+
+        # 2. Diseño de Murales Artísticos y Tatuajes Personalizados
+        if cat_hint == 'murales_tatuajes' or any(k in skills_text for k in ['mural', 'tatuaje', 'tattoo']):
+            subject = f"Diseño de Murales Artísticos, Tatuajes y Acabados en San Agustín — {org}"
             body = f"""¡Hola {org}! 👋 Un gusto saludarte desde San Agustín, Huila.
 
-Vi su proyecto relacionado con **{title}** y me pongo a su entera disposición. Soy **Maestro Certificado en Guadua, Bioconstrucción y Estructuras Metálicas/Soldadura**:
+Vi su requerimiento de **{title}** y estoy disponible para trabajar de inmediato:
 
-✅ **Cabañas y Bioconstrucción Innovadora**: Estilo de **muro tendinoso**, **incrustaciones artísticas de botellas**, **muros en vidrio** y acabados finos en **guadua inmunizada**.
-✅ **Estructuras en Metal y Soldadura**: Todo tipo de cubiertas, cerchas, plataformas para glamping, pérgolas mixtas (metal + guadua), barandas y portones.
-✅ **Remodelaciones en Guadua y Metal**: Mantenimiento estructural, reemplazo de piezas, ampliación de cabañas y **diseño previo en Blender 3D / Planos** para ver cómo quedará antes de construir.
+🎨 **Diseño y Pintura de Murales Artísticos**: Murales de interior y exterior con identidad del Macizo Colombiano, cultura agustiniana, naturaleza y arte orgánico para hostales, cafés, cabañas y negocios.
+🖋️ **Tatuajes Personalizados**: Diseño de autor (precolombino, línea fina, blackwork, neotradicional) con bioseguridad total para clientes locales y turistas.
+🍾 **Arte Constructivo Integrado**: Además integro murales con **muro tendinoso, incrustaciones de botellas de vidrio y lámparas/acabados en guadua**.
 
-Estoy aquí mismo en la zona (**San Agustín / Sur del Huila**). ¿Agendamos una visita o llamada rápida por WhatsApp al **+57 322 273 9034** para mostrarles fotos de trabajos y cotizar sin compromiso?"""
-            pricing = f"COP ${int(p_min or 650000):,} — ${int(p_max or 4500000):,} (Obra, Remodelación o Diseño 3D a convenir)".replace(',', '.')
-            turnaround = "Visita inmediata en San Agustín / Huila · Boceto 3D en 24-48h"
+📲 Escríbeme directo a mi WhatsApp **+57 322 273 9034** para enviarte fotos de mis diseños, murales y tatuajes."""
+            pricing = f"COP ${int(p_min or 150000):,} — ${int(p_max or 1800000):,} (Por m² de mural o por sesión de tatuaje)".replace(',', '.')
             return {
                 'language': 'es',
                 'subject': subject,
                 'body': body,
                 'pricing_recommendation': pricing,
-                'turnaround': turnaround,
+                'turnaround': "Boceto en 24h · Disponibilidad inmediata en San Agustín",
                 'whatsapp_phone': wa_phone
             }
 
-        # 2. Trabajos Informales, Segundo Tiempo y Manualidades (Lámparas en Guadua, Vidrio, Soldadura rápida)
-        if cat_hint == 'informales_manualidades' or any(
-            k in skills_text for k in ['manualidad', '2do tiempo', 'segundo tiempo', 'informal', 'lámpara', 'lampara', 'artesanía', 'artesania']
+        # 3. Pasantías del SENA, Intercambios y Oportunidades en el Exterior
+        if cat_hint == 'extras_exterior' or any(k in skills_text for k in ['pasantía', 'pasantia', 'etapa productiva', 'intercambio', 'exterior', 'worldpackers']):
+            subject = f"Postulación a Pasantía SENA / Intercambio Técnico y Artístico — {title}"
+            body = f"""¡Hola equipo de {org}! 👋
+
+Les escribo desde San Agustín, Huila (Colombia) para postularme formalmente a **"{title}"**.
+
+Cuento con un perfil práctico integral y versátil:
+✅ **Bioconstrucción y Guadua Certificada**: Cabañas con **muro tendinoso**, **incrustaciones de botellas**, **muros en vidrio** y todo tipo de **cubiertas en guadua y metal**.
+✅ **Estructuras en Metal y Soldadura**: Fabricación, montaje y remodelación de estructuras metálicas, cubiertas y secaderos de café.
+✅ **Arte Mural, Tatuaje y Diseño 3D (Blender / Planos)**: Pintura de murales temáticos, tatuaje artístico y modelado arquitectónico 3D.
+
+Cumplo con los requisitos solicitados y tengo disponibilidad inmediata.
+📲 Contacto directo / WhatsApp (Colombia): **+57 322 273 9034**."""
+            pricing = f"COP ${int(p_min or 975000):,} — ${int(p_max or 12000000):,} / Intercambio Acordado".replace(',', '.')
+            return {
+                'language': 'es',
+                'subject': subject,
+                'body': body,
+                'pricing_recommendation': pricing,
+                'turnaround': "Disponibilidad inmediata (Local, SENA o Exterior)",
+                'whatsapp_phone': wa_phone
+            }
+
+        # 4. Cabañas, Bioconstrucción, Muro Tendinoso, Incrustaciones de Botellas, Vidrio, Cubiertas en Guadua y Metal
+        if cat_hint in ('guadua_cabanas', 'bioconstruccion_guadua', 'metal_soldadura') or any(
+            k in skills_text for k in ['guadua', 'cabaña', 'bamb', 'bioconstrucci', 'tendinoso', 'botella', 'soldadura', 'cubierta', 'metal']
         ):
-            subject = f"Trabajos de 2do Tiempo, Manualidades en Guadua/Vidrio y Soldadura — {org}"
+            subject = f"Cabañas (Muro Tendinoso, Vidrio, Guadua), Cubiertas y Soldadura — {org}"
+            body = f"""¡Hola {org}! 👋 Un gusto saludarte desde San Agustín, Huila.
+
+Vi su requerimiento relacionado con **{title}** y me pongo a su disposición:
+
+✅ **Cabañas y Bioconstrucción Innovadora**: Construcción y remodelación con **muro tendinoso**, **incrustaciones de botellas**, **muros en vidrio** y acabados en **guadua certificada**.
+✅ **Todo Tipo de Cubiertas en Guadua y Metal + Soldadura**: Cerchas metálicas, techos mixtos (guadua + acero), plataformas para glamping, secaderos de café, portones y remodelaciones.
+✅ **Arte Mural y Diseño 3D**: Pintura de murales artísticos y modelado previo en **Blender 3D / Planos** para ver cómo quedará la obra antes de construir.
+
+📲 Estoy en San Agustín (**WhatsApp directo: +57 322 273 9034**). ¿Agendamos una visita o llamada hoy mismo para cotizar sin compromiso?"""
+            pricing = f"COP ${int(p_min or 650000):,} — ${int(p_max or 4800000):,}".replace(',', '.')
+            return {
+                'language': 'es',
+                'subject': subject,
+                'body': body,
+                'pricing_recommendation': pricing,
+                'turnaround': "Visita inmediata en San Agustín / Huila · Boceto 3D en 24-48h",
+                'whatsapp_phone': wa_phone
+            }
+
+        # 5. Trabajos Informales, Segundo Tiempo y Manualidades
+        if cat_hint == 'informales_manualidades' or any(
+            k in skills_text for k in ['manualidad', '2do tiempo', 'segundo tiempo', 'informal', 'lámpara', 'lampara', 'artesanía']
+        ):
+            subject = f"Trabajos de 2do Tiempo, Manualidades, Murales y Soldadura — {org}"
             body = f"""¡Hola {org}! 👋 Te escribo desde San Agustín, Huila.
 
-Estoy disponible para **trabajos por encargo, de segundo tiempo o fin de semana** sin trámites complicados:
-🛠️ **Manualidades y Decoración Artística**: Lámparas en guadua, vitrales e incrustaciones con botellas de vidrio, letreros rústicos y muebles pequeños en metal soldado + guadua.
-🔩 **Soldadura y Reparaciones Locativas**: Arreglo de rejas, portones, techos metálicos, mantenimiento e inmunización de cabañas en guadua y pintura.
+Estoy disponible para **trabajos por encargo, de segundo tiempo o fin de semana**:
+🛠️ **Manualidades y Arte**: Lámparas en guadua, vitrales con botellas de vidrio, muebles en metal + guadua, pintura de murales y tatuajes.
+🔩 **Soldadura, Cubiertas y Reparaciones**: Arreglo de techos/cubiertas en guadua y metal, rejas, portones y mantenimiento general.
 
-Manejamos trato directo y precios justos por día o por trabajo entregado.
-📲 Mi WhatsApp directo en San Agustín es **+57 322 273 9034**. ¿Qué trabajo o diseño necesitan sacar adelante esta semana?"""
-            pricing = f"COP ${int(p_min or 80000):,} — ${int(p_max or 650000):,} (Pago por día o por encargo)".replace(',', '.')
-            turnaround = "Disponibilidad inmediata / Segundo tiempo y fines de semana"
+📲 Mi WhatsApp directo en San Agustín es **+57 322 273 9034**."""
+            pricing = f"COP ${int(p_min or 90000):,} — ${int(p_max or 650000):,}".replace(',', '.')
             return {
                 'language': 'es',
                 'subject': subject,
                 'body': body,
                 'pricing_recommendation': pricing,
-                'turnaround': turnaround,
+                'turnaround': "Disponibilidad inmediata / Segundo tiempo",
                 'whatsapp_phone': wa_phone
             }
 
-        # 3. Grupos de Redes y WhatsApp (Publicación lista para pegar o enviar al contratante del grupo)
-        if cat_hint == 'grupos_redes' or 'grupo' in skills_text:
-            subject = f"Oferta de Servicios en San Agustín y Huila: Guadua, Bioconstrucción, Metal y Soldadura"
-            body = f"""👋 ¡Hola! Estoy disponible en **San Agustín, Isnos, Pitalito y alrededores** para proyectos y trabajos de:
-
-🎋 **Bioconstrucción y Guadua Certificada**: Cabañas con **muro tendinoso**, **incrustaciones de botellas**, **muros en vidrio**, kioscos, miradores y pérgolas.
-🔩 **Estructuras en Metal y Soldadura**: Techos, cerchas, plataformas para glamping, portones y estructuras mixtas (guadua + metal).
-🛠️ **Remodelaciones y Trabajos de 2do Tiempo / Manualidades**: Mantenimiento de guadua y metal, lámparas artesanales, muebles y diseño previo en **Blender 3D / Planos**.
-
-📲 **Contacto directo / WhatsApp: +57 322 273 9034** (Trato directo y presupuesto sin compromiso)."""
-            pricing = f"COP ${int(p_min or 150000):,} — ${int(p_max or 4500000):,}".replace(',', '.')
-            turnaround = "Atención inmediata en San Agustín y Sur del Huila"
-            return {
-                'language': 'es',
-                'subject': subject,
-                'body': body,
-                'pricing_recommendation': pricing,
-                'turnaround': turnaround,
-                'whatsapp_phone': wa_phone
-            }
-
-        # 4. Alcaldía de San Agustín Huila / Alcaldías Cercanas / SECOP II
-        if cat_hint == 'alcaldia_huila' or 'alcaldía' in skills_text or 'alcaldia' in skills_text or 'secop' in skills_text:
-            subject = f"Propuesta Técnica Local (San Agustín / Huila): {title}"
-            body = f"""Cordial saludo, equipo de **{org}**:
-
-Desde **San Agustín, Huila**, presento manifestación de interés y disponibilidad técnica inmediata para el proceso/proyecto **"{title}"**.
-
-Cuento con certificación como **Maestro en Construcción en Guadua**, experiencia en **bioconstrucción (muro tendinoso, vidrio y acabados ecológicos)**, **estructuras metálicas y soldadura**, remodelación de infraestructura turística/cultural, elaboración de planos 2D/3D y modelado en Blender.
-
-📞 Contacto directo en San Agustín Huila: **+57 322 273 9034**
-Quedo atento a los requisitos de mínima cuantía o apoyo técnico para radicar propuesta hoy mismo."""
-            pricing = f"COP ${int(p_min or 1500000):,} — ${int(p_max or 15000000):,}".replace(',', '.')
-            turnaround = "Radicación inmediata en San Agustín / Huila"
-            return {
-                'language': 'es',
-                'subject': subject,
-                'body': body,
-                'pricing_recommendation': pricing,
-                'turnaround': turnaround,
-                'whatsapp_phone': wa_phone
-            }
-
-        # 5. Estudiantes y Universitarios (Tareas, Entregas de Arquitectura/Ingeniería, Blender 3D, AutoCAD, Maquetas)
-        if cat_hint == 'estudiantes_tareas' or 'estudiante' in skills_text or 'universitari' in skills_text or 'sena' in skills_text or 'unad' in skills_text:
-            subject = f"Entrega Rápida de Planos, Blender 3D, Maquetas y Tareas Universitarias"
-            body = f"""¡Hola! 👋 Vi que necesitas apoyo con **"{title}"**.
-
-Te ayudo a sacar tu entrega universitaria o proyecto práctico a tiempo:
-✅ **Modelado y Renders en Blender 3D** (arquitectura, cabañas en guadua, bioconstrucción, estructuras metálicas, animación).
-✅ **Planos 2D/3D en AutoCAD (.DWG y PDF listos para imprimir)** y maquetas / manualidades técnicas.
-✅ **Detalles constructivos en Guadua / Bambú y Metal** y tareas prácticas (SENA / UNAD / Universidad).
-
-📲 Escríbeme directo a mi WhatsApp: **+57 322 273 9034** (Nequi / Bancolombia)."""
-            pricing = f"COP ${int(p_min or 90000):,} — ${int(p_max or 380000):,} (Tarifa Estudiante · Nequi)".replace(',', '.')
-            turnaround = "12 a 24 horas (Entregas urgentes)"
-            return {
-                'language': 'es',
-                'subject': subject,
-                'body': body,
-                'pricing_recommendation': pricing,
-                'turnaround': turnaround,
-                'whatsapp_phone': wa_phone
-            }
-
-        # 6. Clientes directos en Instagram / Facebook Colombia y Proyectos Freelance
-        hook = (
-            "Soy especialista en **diseño y construcción de cabañas (guadua certificada, muro tendinoso, incrustaciones de botellas y vidrio), "
-            "estructuras en metal y soldadura, remodelaciones, modelado 3D en Blender, planos AutoCAD y automatización**."
-        )
-        pricing = f"{curr} {int(p_min):,} — {int(p_max):,}" if (p_min and p_max) else "Precio cerrado por entregable"
+        # 6. General / Alcaldía / Estudiantes / Freelance
         subject = f"Propuesta Directa: {title}"
-        body = f"""¡Hola {org}! 👋 Revisé tu requerimiento **"{title}"** y puedo comenzar hoy mismo.
+        body = f"""¡Hola {org}! 👋 Revisé la solicitud exacta de **"{title}"** y cumplo con los requisitos para iniciar de inmediato.
 
-{hook}
+Realizo **bioconstrucción en guadua, muro tendinoso con botellas y vidrio, todo tipo de cubiertas y estructuras en metal/soldadura, secaderos de café, murales artísticos, modelado 3D en Blender y planos**.
 
-1. En **menos de 24 horas** te envío el primer avance o cotización detallada.
-2. Trato directo sin contratos complicados (WhatsApp directo en Colombia: **+57 322 273 9034**).
-
-¿Me compartes los detalles por aquí o por WhatsApp para arrancar de inmediato?"""
-
+📲 Contacto directo en San Agustín, Huila (Colombia): **+57 322 273 9034**."""
+        pricing = f"{curr} {int(p_min):,} — {int(p_max):,}" if (p_min and p_max) else "Precio a convenir"
         return {
             'language': 'es',
             'subject': subject,
