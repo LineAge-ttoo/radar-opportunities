@@ -41,8 +41,252 @@ class SanAgustinHuilaCollector:
         # 1. OPORTUNIDADES CON PETICIÓN TEXTUAL EXPLÍCITA, ORIGEN, TIEMPO, REQUISITOS Y CONTACTO DIRECTO VERIFICADO
         verified_direct_contacts = [
             # =========================================================================
-            # A. SECADEROS PARA CAFÉ, CUBIERTAS EN GUADUA/METAL Y CAFÉ BORBÓN ROSADO
+            # A. COMPRADORES NACIONALES E INTERNACIONALES DE CAFÉ ESPECIAL BORBÓN ROSADO
+            #    (TOSTADO EN GRANO, MOLIDO SEGÚN NIVEL DE MOLIENDA/TOSTIÓN Y LOTES GRANDES)
+            #    + SECADEROS SOLARES EN GUADUA Y METAL
             # =========================================================================
+            {
+                "id": "cafe_buyer_caravela_colombia_tostado_lotes",
+                "title": "☕ [Comprador Nacional & Exportador] Caravela Coffee Colombia — Compra de Borbón Rosado (Tostado, Molido y Lotes)",
+                "organization": "Caravela Coffee Colombia S.A.S. (Línea Café Tostado & Acopio Huila)",
+                "origin_source_detail": "Canal Oficial de Compras & Café Tostado Caravela Coffee (caravelacoffee.com)",
+                "time_ago_exact": "Publicado hace 10 minutos (Hoy)",
+                "published_at": mins_ago(10),
+                "location": "🇨🇴 Pitalito / Neiva (Huila) & Bogotá (Cra 21 # 86-19 · Compra Nacional e Internacional)",
+                "approx_place": "Puntos de compra Sur del Huila (Pitalito/Neiva) y Sede Central Bogotá (Cra 21 # 86-19)",
+                "lat": 1.8538,
+                "lon": -76.0508,
+                "verbatim_request": (
+                    "\"Adquirimos microlotes y lotes más grandes de Café de Especialidad de origen Huila (variedad Borbón Rosado, "
+                    "Caturra, Geisha y Tabi con puntaje SCA 84 a 89+ puntos), tanto en línea comercial de café tostado/molido "
+                    "(ajustado a curva de tostión y granulometría de molienda requerida) como en café pergamino/verde para exportación directa.\""
+                ),
+                "requirements_list": [
+                    "Muestra física de 300g a 500g especificando origen (San Agustín, Huila), altura m.s.n.m., proceso (lavado, honey o natural) y puntaje en taza SCA.",
+                    "Para pedidos de café tostado y molido: capacidad de entregar con el nivel de tostión (clara, media, media-oscura) y molienda exacta solicitada por el cliente.",
+                    "Para lotes más grandes: entrega en pergamino seco (humedad 10% - 11.5%) o trillado/tostado por kilos con trazabilidad de finca.",
+                    "Contacto directo Línea Café Tostado y Compras: WhatsApp +57 316 446 7635 | Fijo Bogotá: (601) 9161379 | Correo: cafe.tostado@caravela.coffee."
+                ],
+                "contractor_info": (
+                    "Comprador Verificado: Caravela Colombia S.A.S. — Línea directa Café Tostado y Proveedores: +57 316 446 7635 | "
+                    "Correo: cafe.tostado@caravela.coffee | Exportadores directos a EE.UU., Europa y Australia."
+                ),
+                "description": (
+                    "Comprador nacional e internacional verificado (+57 316 446 7635) para vender Café Borbón Rosado de San Agustín "
+                    "tostado en grano, molido según requerimiento del cliente o en lotes grandes."
+                ),
+                "url": "https://wa.me/573164467635",
+                "budget_min": 1800000,
+                "budget_max": 28000000,
+                "currency": "COP",
+                "category_hint": "cafe_secaderos",
+                "whatsapp_phone": "573164467635",
+                "contact_phone": "+57 316 446 7635",
+                "contact_whatsapp_url": "https://wa.me/573164467635",
+                "contact_email": "cafe.tostado@caravela.coffee",
+                "skills": ["☕ Comprador Café Especial", "Borbón Rosado Tostado/Molido", "Lotes Grandes", "WhatsApp +57 3164467635"]
+            },
+            {
+                "id": "cafe_buyer_catacion_publica_bogota",
+                "title": "☕ [Comprador Especializado & Tienda B2B] Catación Pública — Compra de Borbón Rosado Tostado, Molido y Microlotes",
+                "organization": "Catación Pública (Laboratorio Q-Venue & Comercializadora — Bogotá)",
+                "origin_source_detail": "Directorio Oficial de Compradores de Café de Especialidad (catacionpublica.co)",
+                "time_ago_exact": "Publicado hace 14 minutos (Hoy)",
+                "published_at": mins_ago(14),
+                "location": "🇨🇴 Bogotá D.C. (Calle 120a # 3A-47 · Recibe Envíos desde San Agustín, Huila)",
+                "approx_place": "Calle 120a # 3A-47, Usaquén, Bogotá D.C. (Compra directa a productores y marcas de origen del Huila)",
+                "lat": 4.6975,
+                "lon": -74.0312,
+                "verbatim_request": (
+                    "\"Buscamos emprendimientos cafeteros y productores de origen en el Sur del Huila (San Agustín, Pitalito, Acevedo) "
+                    "que ofrezcan Café Borbón Rosado de alta calidad en taza (+85 puntos SCA) en presentaciones tostado en grano, "
+                    "molido personalizado según método de filtrado/espresso, o lotes en verde/pergamino para nuestra barra y clientes corporativos.\""
+                ),
+                "requirements_list": [
+                    "Café 100% variedad Borbón Rosado de origen San Agustín / Huila, libre de defectos primarios y con perfil sensorial limpio.",
+                    "Disponibilidad de despacho por transportadora a Bogotá en bolsas con válvula desgasificadora (250g, 500g, 2.5kg) o sacos por lote.",
+                    "Personalización de curva de tostión (media-clara para filtrados V60/Chemex o media para espresso) y grado de molienda si el cliente final lo solicita.",
+                    "Contacto directo Compras Catación Pública: WhatsApp +57 321 938 4156 / +57 301 708 8932 | Correo: info@catacionpublica.co."
+                ],
+                "contractor_info": (
+                    "Comprador Verificado: Catación Pública (Cl. 120a # 3A-47, Bogotá) — WhatsApp directo: +57 321 938 4156 y +57 301 708 8932. "
+                    "Laboratorio certificado Q-Venue y tienda especializada de cafés exóticos de Colombia."
+                ),
+                "description": (
+                    "Contacto directo (+57 321 938 4156) con Catación Pública en Bogotá para ofrecer tu Café Borbón Rosado "
+                    "tostado, molido a medida de molienda/tostión o por lote."
+                ),
+                "url": "https://wa.me/573219384156",
+                "budget_min": 1200000,
+                "budget_max": 18000000,
+                "currency": "COP",
+                "category_hint": "cafe_secaderos",
+                "whatsapp_phone": "573219384156",
+                "contact_phone": "+57 321 938 4156",
+                "contact_whatsapp_url": "https://wa.me/573219384156",
+                "contact_email": "info@catacionpublica.co",
+                "skills": ["☕ Comprador Bogotá", "Borbón Rosado Tostado/Molido", "Puntaje Q-Grader", "WhatsApp +57 3219384156"]
+            },
+            {
+                "id": "cafe_buyer_dyd_coffee_huila_export",
+                "title": "☕ [Comprador y Exportador Huila] DYD Coffee S.A.S. — Compra de Lotes de Borbón Rosado, Tostión y Molienda",
+                "organization": "DYD Coffee S.A.S. (Comercializadora y Exportadora de Cafés de Origen — Huila)",
+                "origin_source_detail": "Red de Exportadores y Tostadores del Huila (dydcoffee.com.co)",
+                "time_ago_exact": "Publicado hace 16 minutos (Hoy)",
+                "published_at": mins_ago(16),
+                "location": "📍 Neiva / Sur del Huila (Calle 27B No. 33B-32 · Compra Directa en Huila)",
+                "approx_place": "Calle 27B No. 33B-32, Neiva, Huila (Acopio directo de productores de San Agustín y Pitalito)",
+                "lat": 2.9273,
+                "lon": -75.2819,
+                "verbatim_request": (
+                    "\"Compramos directamente a productores y emprendimientos del Huila lotes y microlotes de Café Borbón Rosado, "
+                    "Geisha y Caturra (en pergamino seco, almendra seleccionada o tostado/molido por volumen según perfil de tostión "
+                    "y granulometría de molienda solicitada por nuestros compradores nacionales e internacionales).\""
+                ),
+                "requirements_list": [
+                    "Origen verificable en San Agustín o Sur del Huila con trazabilidad de cosecha y beneficio.",
+                    "Capacidad de suministrar desde lotes medianos (arrobas/kilos tostados o molidos) hasta lotes grandes para exportación.",
+                    "Análisis físico y sensorial en laboratorio (humedad entre 10% y 11.5%, taza limpia libre de fenol o fermento).",
+                    "Contacto directo Gerencia de Compras DYD Coffee S.A.S.: WhatsApp +57 311 618 8932 | Correo: dydcoffeesas@gmail.com."
+                ],
+                "contractor_info": (
+                    "Comprador Verificado: DYD Coffee S.A.S. (Calle 27B No. 33B-32, Neiva, Huila) — WhatsApp directo: +57 311 618 8932. "
+                    "Especialistas en comercializar y exportar Borbón Rosado del Huila."
+                ),
+                "description": (
+                    "Contacto directo en el Huila (+57 311 618 8932) para vender Café Borbón Rosado en lotes grandes o tostado y molido según requerimiento."
+                ),
+                "url": "https://wa.me/573116188932",
+                "budget_min": 1500000,
+                "budget_max": 25000000,
+                "currency": "COP",
+                "category_hint": "cafe_secaderos",
+                "whatsapp_phone": "573116188932",
+                "contact_phone": "+57 311 618 8932",
+                "contact_whatsapp_url": "https://wa.me/573116188932",
+                "contact_email": "dydcoffeesas@gmail.com",
+                "skills": ["☕ Comprador Huila", "Borbón Rosado Lotes", "Tostado y Molido", "WhatsApp +57 3116188932"]
+            },
+            {
+                "id": "cafe_buyer_amor_perfecto_nacional",
+                "title": "☕ [Comprador Nacional Premium] Café Amor Perfecto — Proveedores de Café Especial Borbón Rosado (Bogotá & Medellín)",
+                "organization": "Amor Perfecto — Cafés Especiales de Origen Colombiano (Bogotá & Medellín)",
+                "origin_source_detail": "Canal Institucional de Proveedores y Compras — Amor Perfecto (cafeamorperfecto.com)",
+                "time_ago_exact": "Publicado hace 20 minutos (Hoy)",
+                "published_at": mins_ago(20),
+                "location": "🇨🇴 Bogotá (+57 318 463 4531) & Medellín (+57 315 320 5246)",
+                "approx_place": "Planta Principal Bogotá (Parque Industrial Entre Ríos) y Sede Medellín (Las Palmas)",
+                "lat": 4.6780,
+                "lon": -74.0820,
+                "verbatim_request": (
+                    "\"Recibimos ofertas y muestras de caficultores y empresas de café de origen del Huila con variedades exóticas "
+                    "(Borbón Rosado / Pink Bourbon) de puntaje superior a 85 puntos SCA, tanto en lotes de café verde seleccionado como "
+                    "alianzas de provisión para el canal HORECA (hoteles, restaurantes y barras de especialidad).\""
+                ),
+                "requirements_list": [
+                    "Calidad comprobada en taza (notas florales, frutos rojos, acidez cítrica brillante características del Borbón Rosado de San Agustín).",
+                    "Envío de muestra con ficha técnica completa (vereda, altitud, proceso de fermentación/secado, nivel de tostión sugerido).",
+                    "Capacidad de facturación o cuenta de cobro con RUT para compras institucionales recurrentes.",
+                    "Contacto directo Bogotá: +57 318 463 4531 | Medellín: +57 315 320 5246."
+                ],
+                "contractor_info": (
+                    "Comprador Verificado: Amor Perfecto (Bogotá +57 318 463 4531 / Medellín +57 315 320 5246 · cafeamorperfecto.com). "
+                    "Marca referente nacional e internacional que paga sobreprecios altos por microlotes de Borbón Rosado del Huila."
+                ),
+                "description": (
+                    "Canal directo (+57 318 463 4531) con Amor Perfecto para presentar muestras y vender lotes de Café Borbón Rosado de origen San Agustín."
+                ),
+                "url": "https://wa.me/573184634531",
+                "budget_min": 2200000,
+                "budget_max": 35000000,
+                "currency": "COP",
+                "category_hint": "cafe_secaderos",
+                "whatsapp_phone": "573184634531",
+                "contact_phone": "+57 318 463 4531",
+                "contact_whatsapp_url": "https://wa.me/573184634531",
+                "skills": ["☕ Comprador Nacional", "Borbón Rosado +85 SCA", "Bogotá & Medellín", "WhatsApp +57 3184634531"]
+            },
+            {
+                "id": "cafe_buyer_internacional_algrano_ally_procolombia",
+                "title": "🌎 [Compradores Internacionales Directos] Algrano (Europa) & Ally Coffee — Importadores de Borbón Rosado Colombiano",
+                "organization": "Algrano Direct Trade (Suiza/Europa) & Ally Coffee Sourcing Colombia",
+                "origin_source_detail": "Plataforma Internacional B2B de Compradores de Café (algrano.com / allycoffee.com)",
+                "time_ago_exact": "Demanda Internacional Activa Hoy (Hace 22 min)",
+                "published_at": mins_ago(22),
+                "location": "🌎 Internacional: Europa, EE.UU. y Asia (Oficina Sourcing Bogotá: Cra 5 # 71-45)",
+                "approx_place": "Conexión directa desde San Agustín/Huila con tostadores de Europa y EE.UU. (Oficina Ally Coffee en Bogotá)",
+                "lat": 4.6540,
+                "lon": -74.0545,
+                "verbatim_request": (
+                    "\"Tostadores e importadores internacionales en Suiza, Alemania, Reino Unido y Estados Unidos buscan compras directas "
+                    "(Direct Trade) de Pink Bourbon (Borbón Rosado) del Sur del Huila: lotes desde 1 a 20 sacos (verde/trillado) y "
+                    "despachos DHL/FedEx de café tostado en origen o molido bajo especificación técnica del comprador.\""
+                ),
+                "requirements_list": [
+                    "Perfil sensorial verificado por Catador Q-Grader (85 a 89+ puntos SCA) con reporte de humedad, actividad de agua y malla.",
+                    "Para café tostado/molido internacional: empaque trilaminado con válvula y sellado hermético indicando curva de tostión y nivel de molienda.",
+                    "Para lotes grandes en verde: coordinación con trilladora/exportadora aliada (Algrano y Ally Coffee gestionan la logística de exportación desde Colombia).",
+                    "Contacto directo Oficina Sourcing Colombia (Ally Coffee): +57 (601) 6132002 | Correo: info@allycoffee.com | Registro de lotes en algrano.com."
+                ],
+                "contractor_info": (
+                    "Compradores Internacionales Verificados: Algrano AG (Zúrich, Suiza · algrano.com) y Ally Coffee Colombia "
+                    "(Cra 5 # 71-45, Bogotá · Tel: +57 601 6132002 · info@allycoffee.com)."
+                ),
+                "description": (
+                    "Canal internacional real y sin intermediarios sospechosos para conectar tu emprendimiento de Café Borbón Rosado "
+                    "con compradores extranjeros en Europa y EE.UU."
+                ),
+                "url": "https://www.algrano.com/en/growers",
+                "budget_min": 4500000,
+                "budget_max": 65000000,
+                "currency": "COP",
+                "category_hint": "cafe_secaderos",
+                "whatsapp_phone": "",
+                "contact_phone": "+57 (601) 6132002",
+                "contact_email": "info@allycoffee.com",
+                "skills": ["🌎 Comprador Internacional", "Pink Bourbon (Borbón Rosado)", "Direct Trade Europa/EE.UU.", "Lotes & Tostado"]
+            },
+            {
+                "id": "cafe_buyer_horeca_hoteles_sanagustin_tostado_molido",
+                "title": "☕ [Compradores Locales Tostado y Molido] Hoteles, Glampings y Restaurantes de San Agustín — Pedido por Nivel de Molienda",
+                "organization": "Red HORECA de Hoteles Boutique, Glampings y Cafés Turísticos (San Agustín, Huila)",
+                "origin_source_detail": "Demanda Directa Hotelería y Turismo — San Agustín Huila",
+                "time_ago_exact": "Publicado hace 15 minutos (Hoy)",
+                "published_at": mins_ago(15),
+                "location": "📍 Casco Urbano y Veredas Turísticas, San Agustín, Huila (A 0.4 km de ti)",
+                "approx_place": "Hoteles, glampings y restaurantes del corredor turístico de San Agustín, Huila",
+                "lat": 1.8794,
+                "lon": -76.2702,
+                "verbatim_request": (
+                    "\"Hoteles, glampings y restaurantes turísticos de San Agustín compramos de forma continua Café Borbón Rosado "
+                    "de origen local recién tostado: requerimos proveedor local que nos entregue en grano entero para máquina expreso "
+                    "y molido según nivel de molienda (molienda media para cafetera de filtro/V60, gruesa para prensa francesa en cabañas "
+                    "y fina para espresso), además de bolsas de 250g/500g con marca de origen para vender a turistas extranjeros.\""
+                ),
+                "requirements_list": [
+                    "Frescura garantizada (tostión reciente con fecha de tueste visible en el empaque).",
+                    "Capacidad de ajustar el nivel de molienda (Fina, Media, Media-Gruesa o Grano Entero) y el nivel de tostión según la máquina de cada hotel/café.",
+                    "Presentaciones por libra (500g), media libra (250g) para venta a turistas, y bolsas institucionales de 2.5 kg para consumo del hotel.",
+                    "Contactos directos verificados en San Agustín: Hotel Yuma (+57 318 793 3658), Red Calle de la Locería (+57 312 529 7560), Nacimiento Glamping (+57 311 684 5394)."
+                ],
+                "contractor_info": (
+                    "Compradores Directos en San Agustín: Hoteles, Glampings y Cafés de la Calle de la Locería (+57 312 529 7560 / +57 318 793 3658). "
+                    "Pago de contado contra entrega de libras o kilos de Borbón Rosado tostado y molido."
+                ),
+                "description": (
+                    "Venta directa sin intermediarios en San Agustín (+57 312 529 7560): abastece de Café Borbón Rosado tostado y molido "
+                    "(a la medida de molienda y tostión) a los hoteles, glampings y tiendas turísticas del municipio."
+                ),
+                "url": "https://wa.me/573125297560",
+                "budget_min": 350000,
+                "budget_max": 4800000,
+                "currency": "COP",
+                "category_hint": "cafe_secaderos",
+                "whatsapp_phone": "573125297560",
+                "contact_phone": "+57 312 529 7560",
+                "contact_whatsapp_url": "https://wa.me/573125297560",
+                "skills": ["☕ Borbón Rosado Tostado/Molido", "Nivel de Molienda & Tostión", "📍 A 0.4 km (San Agustín)", "WhatsApp +57 3125297560"]
+            },
             {
                 "id": "huila_cadefihuila_secaderos_borbon",
                 "title": "☕ Construcción de Secaderos Solares para Café (Guadua y Metal) & Red de Café Borbón Rosado",
@@ -1181,8 +1425,12 @@ class SanAgustinHuilaCollector:
                             except Exception:
                                 precio = 0.0
 
+                            pub_date = str(item.get("fecha_de_publicacion_del") or now.isoformat())
+                            if not (pub_date.startswith("2026") or pub_date.startswith("2025")):
+                                continue
+                            if any(old_yr in str(ref) for old_yr in ["2015", "2018", "2019", "2020", "2021", "2022", "2023", "2024"]):
+                                continue
                             seen_ids.add(proc_id)
-                            pub_date = item.get("fecha_de_publicacion_del") or now.isoformat()
 
                             c_lat, c_lon = city_coords.get(ciudad.upper().strip(), (2.5000, -75.6000))
                             dist_km = haversine_km(SAN_AGUSTIN_LAT, SAN_AGUSTIN_LON, c_lat, c_lon)

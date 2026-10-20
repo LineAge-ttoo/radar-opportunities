@@ -792,6 +792,51 @@
             margin: 12px 0 16px 0;
         }
 
+        .cz-select, .cz-input {
+            width: 100%;
+            background: rgba(14, 16, 20, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 12px;
+            color: #FFFFFF;
+            padding: 11px 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .cz-select:focus, .cz-input:focus {
+            border-color: var(--amber-gold);
+            box-shadow: 0 0 12px rgba(255, 184, 48, 0.3);
+        }
+
+        .cz-select option {
+            background: #14161C;
+            color: #FFFFFF;
+        }
+
+        .cz-form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .cz-form-group {
+            margin-bottom: 12px;
+        }
+
+        .cz-form-label {
+            display: block;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--amber-gold);
+            margin-bottom: 6px;
+        }
+
         /* =========================================================
            SLIDE-UP FROSTED DRAWER MODAL
            ========================================================= */
@@ -857,22 +902,30 @@
                 bottom: max(12px, var(--safe-bottom));
                 left: 50%;
                 transform: translateX(-50%);
-                width: calc(100% - 32px);
-                max-width: 420px;
-                height: 58px;
+                width: calc(100% - 24px);
+                max-width: 480px;
+                height: 56px;
                 flex-direction: row;
-                padding: 0 12px;
+                padding: 0 6px;
+                gap: 2px;
+            }
+            .side-btn {
+                height: 40px;
+            }
+            .side-btn svg {
+                width: 19px;
+                height: 19px;
             }
             .side-btn.active::before {
-                left: 25%;
-                right: 25%;
+                left: 20%;
+                right: 20%;
                 top: auto;
                 bottom: 0;
-                width: 50%;
+                width: 60%;
                 height: 3px;
             }
             .workspace {
-                padding: 10px 16px calc(95px + var(--safe-bottom)) 16px;
+                padding: 10px 14px calc(95px + var(--safe-bottom)) 14px;
             }
             .status-capsule {
                 width: 100%;
@@ -939,15 +992,15 @@
     <!-- CENTERED CYBER-ZEN SEARCH BAR + SPECIALTY FILTER PILLS -->
     <div class="search-stage" style="max-width:1060px;">
         <div class="cyber-search-box" style="max-width:720px;margin:0 auto;">
-            <input type="text" id="sInput" class="cyber-search-input" placeholder="BUSCAR: BORBÓN ROSADO, SECADEROS CAFÉ, MURALES, TATUAJES, CUBIERTAS GUADUA/METAL, SENA, EXTERIOR..." oninput="applyFilters()">
+            <input type="text" id="sInput" class="cyber-search-input" placeholder="BUSCAR: COMPRADORES CAFÉ, BORBÓN ROSADO, MOLIENDA, TOSTIÓN, MURALES, TATUAJES, GUADUA, METAL, SENA..." oninput="applyFilters()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
 
         <div class="cyber-pills-row">
             <button class="cz-pill active" data-cat="" onclick="selectCat('', this)">⚡ MÁS RECIENTES</button>
             <button class="cz-pill" data-cat="cerca_de_mi" onclick="selectCat('cerca_de_mi', this)">📍 CERCA DE MÍ (POR KM)</button>
+            <button class="cz-pill" data-cat="cafe_secaderos" onclick="selectCat('cafe_secaderos', this)">☕ COMPRADORES CAFÉ BORBÓN ROSADO & SECADEROS</button>
             <button class="cz-pill" data-cat="barismo_qgrader" onclick="selectCat('barismo_qgrader', this)">☕🏅 BARISMO COLEGIOS · VEREDAS & Q-GRADER</button>
-            <button class="cz-pill" data-cat="cafe_secaderos" onclick="selectCat('cafe_secaderos', this)">☕ CAFÉ BORBÓN ROSADO & SECADEROS</button>
             <button class="cz-pill" data-cat="murales_tatuajes" onclick="selectCat('murales_tatuajes', this)">🎨 MURALES & TATUAJES</button>
             <button class="cz-pill" data-cat="huila_guadua" onclick="selectCat('huila_guadua', this)">🎋 CUBIERTAS GUADUA/METAL · BOTELLAS & VIDRIO</button>
             <button class="cz-pill" data-cat="metal_soldadura" onclick="selectCat('metal_soldadura', this)">🔩 ESTRUCTURAS METAL & SOLDADURA</button>
@@ -962,23 +1015,26 @@
 
     <!-- LEFT FLOATING FROSTED SIDEBAR DOCK -->
     <aside class="cyber-sidebar" aria-label="Navegación Principal">
-        <button class="side-btn active" data-view="home" onclick="selectCat('', document.querySelector('[data-cat=\'\']'))" title="Oportunidades Recientes">
+        <button class="side-btn active" data-view="home" onclick="switchCzView('home')" title="Oportunidades & Compradores">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </button>
-        <button class="side-btn" data-view="nearby" onclick="selectCat('cerca_de_mi', document.querySelector('[data-cat=\'cerca_de_mi\']'))" title="Trabajo Cerca de Mí (Ordenado por Cercanía en KM)">
+        <button class="side-btn" data-view="nearby" onclick="selectCat('cerca_de_mi')" title="Cerca de Mí (Por KM)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </button>
-        <button class="side-btn" data-view="extras" onclick="selectCat('extras_exterior', document.querySelector('[data-cat=\'extras_exterior\']'))" title="Trabajos Extras: Pasantías SENA, Intercambios & Exterior">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <button class="side-btn" data-view="cafe" onclick="selectCat('cafe_secaderos')" title="Compradores Borbón Rosado">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
         </button>
-        <button class="side-btn" data-view="saved" onclick="selectCat('guardados', document.getElementById('pillSavedBtn'))" title="Mis Trabajos Guardados (Interesantes)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <button class="side-btn" data-view="cotizador" onclick="switchCzView('cotizador')" title="Cotizador Café Borbón Rosado">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </button>
-        <button class="side-btn" data-view="local" onclick="switchCzView('local')" title="Buscador en Grupos de Redes, WhatsApp & San Agustín">
+        <button class="side-btn" data-view="local" onclick="switchCzView('local')" title="Portales de Compradores & Redes">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </button>
-        <button class="side-btn" data-view="whatsapp" onclick="switchCzView('whatsapp')" title="Envío Automático a mi WhatsApp 322 273 9034 & Cotizador">
+        <button class="side-btn" data-view="whatsapp" onclick="switchCzView('whatsapp')" title="Despacho WhatsApp 322 273 9034">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </button>
+        <button class="side-btn" data-view="saved" onclick="selectCat('guardados')" title="Trabajos Guardados">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </button>
         <button class="side-btn" onclick="downloadOfflineApp()" title="Descargar App Portátil">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -994,18 +1050,137 @@
             <div id="czCardsGrid" class="cz-cards-grid"></div>
         </section>
 
-        <!-- VIEW 2: RADAR DE GRUPOS DE REDES, WHATSAPP & ZONA SAN AGUSTÍN HUILA -->
-        <section id="cz-view-local" class="cz-view">
+        <!-- VIEW 2: COTIZADOR & GENERADOR COMERCIAL CAFÉ BORBÓN ROSADO -->
+        <section id="cz-view-cotizador" class="cz-view">
             <div class="glass-panel">
-                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:14px;">
                     <div>
-                        <h2 style="font-family:'Rajdhani',sans-serif;font-size:1.5rem;letter-spacing:0.06em;text-transform:uppercase;">📲 BUSCADOR EN GRUPOS DE REDES, WHATSAPP & CERCANÍA</h2>
-                        <p style="color:var(--text-silver);font-size:0.88rem;">Encuentra clientes y publicaciones en grupos de Facebook, WhatsApp e Instagram para Café Borbón Rosado, Secaderos de Café, Murales, Tatuajes, Cubiertas en Guadua y Metal, Cabañas con Muro Tendinoso, Pasantías SENA e Intercambios en el Exterior.</p>
+                        <h2 style="font-family:'Rajdhani',sans-serif;font-size:1.5rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber-gold);">
+                            ☕ COTIZADOR & GENERADOR COMERCIAL — CAFÉ BORBÓN ROSADO
+                        </h2>
                     </div>
-                    <button class="cz-pill active" onclick="locateSanAgustin()">📍 ACTUALIZAR MI GPS (CERCANÍA)</button>
+                    <button class="cz-pill active" onclick="dispatchCotizacionWhatsApp()">📲 DESPACHAR A WHATSAPP ↗</button>
                 </div>
 
-                <div class="cyber-pills-row" style="justify-content:flex-start;margin-bottom:14px;" id="localZoneButtons">
+                <div class="cz-form-grid">
+                    <div class="cz-form-group">
+                        <label class="cz-form-label">Tipo de Presentación / Producto:</label>
+                        <select id="cotTipo" class="cz-select" onchange="updateCotizadorText()">
+                            <option value="tostado_molido" selected>☕ Café Borbón Rosado Tostado y Molido (Bolsas con válvula)</option>
+                            <option value="grano_entero">☕ Café Borbón Rosado Tostado en Grano Entero</option>
+                            <option value="microlote">✨ Microlote Exótico (Pergamino Seco / Verde Exportación)</option>
+                            <option value="lote_grande">📦 Lote Grande (+500 kg / Sacos Institucionales 30kg - 70kg)</option>
+                        </select>
+                    </div>
+
+                    <div class="cz-form-group">
+                        <label class="cz-form-label">Nivel de Molienda Requerido por el Cliente:</label>
+                        <select id="cotMolienda" class="cz-select" onchange="updateCotizadorText()">
+                            <option value="Grano Entero (Empaque hermético con válvula desgasificadora)">Grano Entero (Para conservar aromas o moler en barra)</option>
+                            <option value="Molienda Fina (Máquinas de Espresso y Cafetera Moka)">Molienda Fina (Espresso / Moka Italiana)</option>
+                            <option value="Molienda Media (V60 / Chemex / Cafetera de Filtro y Goteo)" selected>Molienda Media (V60, Chemex, Cafetera de Filtro y Goteo)</option>
+                            <option value="Molienda Gruesa (Prensa Francesa y Cold Brew en frío)">Molienda Gruesa (Prensa Francesa y Cold Brew)</option>
+                            <option value="A la medida del cliente según especificación técnica">A la medida del cliente según calibración de su máquina</option>
+                        </select>
+                    </div>
+
+                    <div class="cz-form-group">
+                        <label class="cz-form-label">Nivel de Tostión Solicitado:</label>
+                        <select id="cotTostion" class="cz-select" onchange="updateCotizadorText()">
+                            <option value="Tostión Clara / Canela (Acidez cítrica brillante, jazmín, flor de café, miel y frutos rojos)">Tostión Clara / Light (Acidez brillante, jazmín, miel y frutos rojos)</option>
+                            <option value="Tostión Media (Balance perfecto, notas dulces a panela, melocotón y caramelo)" selected>Tostión Media / Medium (Balance notas dulces a panela, melocotón y caramelo)</option>
+                            <option value="Tostión Media-Oscura (Cuerpo denso y sedoso, notas chocolate amargo y nuez tostada)">Tostión Media-Oscura (Cuerpo denso y sedoso, notas chocolate oscuro y nueces)</option>
+                        </select>
+                    </div>
+
+                    <div class="cz-form-group">
+                        <label class="cz-form-label">Certificación Sensorial Q-Grader (Protocolo SCA):</label>
+                        <select id="cotQgrader" class="cz-select" onchange="updateCotizadorText()">
+                            <option value="+86 Puntos SCA (Especialidad Destacada — Taza limpia, notas florales)">+86 Puntos SCA (Especialidad Destacada — Taza limpia y dulce)</option>
+                            <option value="+87.5 Puntos SCA (Microlote Exótico — Complejidad alta, miel, jazmín y frutos amarillos)" selected>+87.5 Puntos SCA (Microlote Exótico — Complejidad alta, miel y melocotón)</option>
+                            <option value="+88.5 a 89 Puntos SCA (Taza Presidencial / Lote de Competencia y Subasta)">+88.5 a 89 Puntos SCA (Taza Presidencial / Lote de Competencia)</option>
+                        </select>
+                    </div>
+
+                    <div class="cz-form-group">
+                        <label class="cz-form-label">Cantidad y Unidad de Despacho:</label>
+                        <div style="display:flex;gap:8px;">
+                            <input type="number" id="cotCantidad" value="10" min="1" class="cz-input" style="width:90px;" oninput="updateCotizadorText()">
+                            <select id="cotUnidad" class="cz-select" onchange="updateCotizadorText()">
+                                <option value="Libras (500g)" selected>Libras (500g)</option>
+                                <option value="Medias Libras (250g)">Medias Libras (250g)</option>
+                                <option value="Kilos (1000g)">Kilos (1000g)</option>
+                                <option value="Sacos de 30 kg">Sacos de 30 kg</option>
+                                <option value="Sacos de 70 kg (Verde Exportación)">Sacos de 70 kg (Verde Exportación)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="cz-form-group">
+                        <label class="cz-form-label">Precio Unitario Ofertado (COP):</label>
+                        <input type="text" id="cotPrecioUnitario" value="28.000" class="cz-input" placeholder="Ej: 28.000" oninput="updateCotizadorText()">
+                    </div>
+
+                    <div class="cz-form-group" style="grid-column:1/-1;">
+                        <label class="cz-form-label">Comprador Destinatario (Contacto Verificado):</label>
+                        <select id="cotDestinatario" class="cz-select" onchange="updateCotizadorText()">
+                            <option value="573164467635|Caravela Coffee Colombia">☕ Caravela Coffee Colombia (+57 316 446 7635 · Exportación y Tostado)</option>
+                            <option value="573219384156|Catación Pública Bogotá">☕ Catación Pública Bogotá (+57 321 938 4156 · Tiendas B2B y Cafeterías)</option>
+                            <option value="573184634531|Café Amor Perfecto">☕ Café Amor Perfecto (+57 318 463 4531 · Bogotá & Medellín)</option>
+                            <option value="573116188932|DYD Coffee Huila">☕ DYD Coffee S.A.S. (+57 311 618 8932 · Neiva & Sur del Huila)</option>
+                            <option value="573125297560|Hoteles & Cafés San Agustín">☕ Hoteles, Glampings y Cafés San Agustín (+57 312 529 7560 · Entrega Local)</option>
+                            <option value="573166350370|Golden Grain Coffee Pitalito">☕ Golden Grain Coffee (+57 316 635 0370 · Pitalito)</option>
+                            <option value="573216431475|Pergamino Café Medellín">☕ Pergamino Café (+57 321 643 1475 · Medellín & Exportación)</option>
+                            <option value="573102481025|Azahar Coffee Bogotá">☕ Azahar Coffee (+57 310 248 1025 · Bogotá / Exportación)</option>
+                            <option value="573102127363|Banexport Colombia">🌎 Banexport Colombia (+57 310 212 7363 · Lotes y Microlotes)</option>
+                            <option value="573176589120|Cofinet Colombia">🌎 Cofinet Colombia (+57 317 658 9120 · Cafés Exóticos)</option>
+                            <option value="573222739034|Mi Propio WhatsApp">📲 Mi Propio WhatsApp (+57 322 273 9034 · Guardar en mi Chat)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="cz-form-label" style="margin-top:10px;">Propuesta y Ficha Comercial Lista para Despachar:</div>
+                <textarea id="cotOutputText" class="cz-textarea" style="min-height:220px;font-family:monospace;font-size:0.86rem;line-height:1.5;"></textarea>
+
+                <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                    <button class="cz-pill active" style="padding:12px 24px;font-size:0.9rem;" onclick="dispatchCotizacionWhatsApp()">
+                        📲 DESPACHAR COTIZACIÓN REAL A WHATSAPP ↗
+                    </button>
+                    <button class="cz-pill" style="padding:12px 24px;" onclick="copyBox('cotOutputText')">
+                        📋 COPIAR FICHA Y COTIZACIÓN
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 3: PORTALES DE COMPRADORES & BUSCADOR EN VIVO DE REDES -->
+        <section id="cz-view-local" class="cz-view">
+            <div class="glass-panel">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:14px;">
+                    <div>
+                        <h2 style="font-family:'Rajdhani',sans-serif;font-size:1.5rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber-gold);">
+                            🌐 PORTALES DIRECTOS DE COMPRADORES & CONEXIONES
+                        </h2>
+                    </div>
+                    <button class="cz-pill active" onclick="locateSanAgustin()">📍 ACTUALIZAR GPS (CERCANÍA)</button>
+                </div>
+
+                <div style="margin-bottom:18px;">
+                    <div class="cz-form-label" style="margin-bottom:8px;">☕ PLATAFORMAS DIRECTAS DE COMPRADORES DE CAFÉ (NACIONAL & EXPORTACIÓN):</div>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;">
+                        <a href="https://caravela.coffee/es/productores/" target="_blank" rel="noopener" class="cz-pill active" style="text-decoration:none;display:flex;align-items:center;justify-content:center;padding:12px;">☕ Caravela Coffee (Productores) ↗</a>
+                        <a href="https://www.algrano.com/es" target="_blank" rel="noopener" class="cz-pill active" style="text-decoration:none;display:flex;align-items:center;justify-content:center;padding:12px;">🌎 Algrano (Venta Directa Europa) ↗</a>
+                        <a href="https://www.allycoffee.com/contact/" target="_blank" rel="noopener" class="cz-pill active" style="text-decoration:none;display:flex;align-items:center;justify-content:center;padding:12px;">🌎 Ally Coffee (EE.UU. & Europa) ↗</a>
+                        <a href="https://wa.me/573219384156" target="_blank" rel="noopener" class="cz-pill active" style="text-decoration:none;display:flex;align-items:center;justify-content:center;padding:12px;background:rgba(37,211,102,0.22);border-color:#25D366;color:#4ADE80;">💬 Catación Pública Bogotá WA ↗</a>
+                        <a href="https://co.pergamino.co/" target="_blank" rel="noopener" class="cz-pill active" style="text-decoration:none;display:flex;align-items:center;justify-content:center;padding:12px;">☕ Pergamino Café Medellín ↗</a>
+                        <a href="https://banexport.com/" target="_blank" rel="noopener" class="cz-pill active" style="text-decoration:none;display:flex;align-items:center;justify-content:center;padding:12px;">🌎 Banexport Colombia (Huila) ↗</a>
+                        <a href="https://azaharcoffee.com/" target="_blank" rel="noopener" class="cz-pill active" style="text-decoration:none;display:flex;align-items:center;justify-content:center;padding:12px;">☕ Azahar Coffee (Exportación) ↗</a>
+                        <a href="https://cofinet.com.co/" target="_blank" rel="noopener" class="cz-pill active" style="text-decoration:none;display:flex;align-items:center;justify-content:center;padding:12px;">🌎 Cofinet (Cafés Exóticos) ↗</a>
+                    </div>
+                </div>
+
+                <div class="cz-form-label" style="margin-bottom:8px;">📍 BÚSQUEDA EN VIVO EN GRUPOS Y REDES SOCIALES POR ZONA:</div>
+                <div class="cyber-pills-row" style="justify-content:flex-start;margin-bottom:12px;" id="localZoneButtons">
                     <button class="cz-pill active" onclick="setLocalZone('San Agustín Huila', this)">📍 San Agustín, Huila</button>
                     <button class="cz-pill" onclick="setLocalZone('Isnos Huila', this)">📍 Isnos, Huila (16 km)</button>
                     <button class="cz-pill" onclick="setLocalZone('Pitalito Huila', this)">📍 Pitalito, Huila (28 km)</button>
@@ -1013,16 +1188,16 @@
                     <button class="cz-pill" onclick="setLocalZone('Colombia e Internacional', this)">🌎 Colombia & Exterior</button>
                 </div>
 
-                <div class="cyber-pills-row" style="justify-content:flex-start;margin-bottom:14px;">
-                    <button class="cz-pill active" id="locSrv-guadua" onclick="setLocalService('guadua')">🎋 Cubiertas Guadua/Metal · Muro Tendinoso · Botellas</button>
-                    <button class="cz-pill" id="locSrv-barismo" onclick="setLocalService('barismo')">☕🏅 Clases de Barismo en Colegios/Veredas & Catador Q-Grader</button>
-                    <button class="cz-pill" id="locSrv-cafe" onclick="setLocalService('cafe')">☕ Secaderos para Café & Compra Borbón Rosado</button>
-                    <button class="cz-pill" id="locSrv-murales" onclick="setLocalService('murales')">🎨 Diseños de Murales & Tatuajes</button>
-                    <button class="cz-pill" id="locSrv-metal" onclick="setLocalService('metal')">🔩 Estructuras en Metal · Soldadura & Remodelación</button>
-                    <button class="cz-pill" id="locSrv-extras" onclick="setLocalService('extras')">✈️ Pasantías SENA · Intercambios & Exterior</button>
-                    <button class="cz-pill" id="locSrv-informales" onclick="setLocalService('informales')">🛠️ 2do Tiempo · Manualidades · Lámparas & Muebles</button>
+                <div class="cyber-pills-row" style="justify-content:flex-start;margin-bottom:12px;">
+                    <button class="cz-pill active" id="locSrv-cafe" onclick="setLocalService('cafe')">☕ Compradores Borbón Rosado & Secaderos</button>
+                    <button class="cz-pill" id="locSrv-barismo" onclick="setLocalService('barismo')">☕🏅 Barismo Colegios/Veredas & Q-Grader</button>
+                    <button class="cz-pill" id="locSrv-guadua" onclick="setLocalService('guadua')">🎋 Cubiertas Guadua/Metal · Muro Tendinoso</button>
+                    <button class="cz-pill" id="locSrv-murales" onclick="setLocalService('murales')">🎨 Diseños Murales & Tatuajes</button>
+                    <button class="cz-pill" id="locSrv-metal" onclick="setLocalService('metal')">🔩 Estructuras Metal & Soldadura</button>
+                    <button class="cz-pill" id="locSrv-extras" onclick="setLocalService('extras')">✈️ Pasantías SENA & Exterior</button>
+                    <button class="cz-pill" id="locSrv-informales" onclick="setLocalService('informales')">🛠️ 2do Tiempo & Manualidades</button>
                     <button class="cz-pill" id="locSrv-alcaldia" onclick="setLocalService('alcaldia')">🏛️ Alcaldía San Agustín & SECOP II</button>
-                    <button class="cz-pill" id="locSrv-estudiantes" onclick="setLocalService('estudiantes')">🎓 Estudiantes, Tareas & Blender 3D</button>
+                    <button class="cz-pill" id="locSrv-estudiantes" onclick="setLocalService('estudiantes')">🎓 Estudiantes & Blender 3D</button>
                 </div>
 
                 <textarea id="localPitchText" class="cz-textarea"></textarea>
@@ -1036,21 +1211,25 @@
             </div>
         </section>
 
-        <!-- VIEW 3: ALERTAS A MI WHATSAPP 3222739034 & COTIZADOR -->
+        <!-- VIEW 4: CENTRAL DE DESPACHO INMEDIATO A WHATSAPP: +57 322 273 9034 -->
         <section id="cz-view-whatsapp" class="cz-view">
             <div class="glass-panel">
-                <h2 style="font-family:'Rajdhani',sans-serif;font-size:1.5rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:6px;">
-                    📲 CENTRAL DE ALERTAS AUTOMÁTICAS A TU WHATSAPP: +57 322 273 9034
+                <h2 style="font-family:'Rajdhani',sans-serif;font-size:1.5rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:14px;">
+                    📲 CENTRAL DE DESPACHO INMEDIATO A WHATSAPP: +57 322 273 9034
                 </h2>
-                <p style="color:var(--text-silver);font-size:0.88rem;margin-bottom:16px;">
-                    El motor envía automáticamente las nuevas oportunidades de alto potencial a tu WhatsApp <strong>+57 322 273 9034</strong> (Secaderos para Café, Compra de Café Borbón Rosado, Murales, Tatuajes, Cubiertas en Guadua y Metal, Cabañas con Muro Tendinoso, Pasantías SENA, Intercambios en el Exterior y Alcaldía de San Agustín).
-                </p>
 
-                <textarea id="myWaDigestBox" class="cz-textarea" style="min-height:190px;"></textarea>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;">
+                    <button class="cz-pill active" style="padding:10px 18px;" onclick="sendCafeDigestToWa()">☕ DESPACHAR COMPRADORES BORBÓN ROSADO A MI WHATSAPP</button>
+                    <button class="cz-pill active" style="padding:10px 18px;background:rgba(217,119,6,0.25);border-color:var(--amber-gold);" onclick="sendBarismoDigestToCousin()">👩‍🏫 ENVIAR OFERTAS BARISMO & Q-GRADER A MI PRIMA</button>
+                    <button class="cz-pill active" style="padding:10px 18px;" onclick="sendGuaduaDigestToWa()">🎋 DESPACHAR CABAÑAS GUADUA & METAL</button>
+                    <button class="cz-pill" style="padding:10px 18px;" onclick="sendDigestTo3222739034()">⚡ ENVIAR TODAS LAS ALERTAS</button>
+                </div>
+
+                <textarea id="myWaDigestBox" class="cz-textarea" style="min-height:200px;font-family:monospace;font-size:0.86rem;line-height:1.5;"></textarea>
 
                 <div style="display:flex;gap:12px;flex-wrap:wrap;">
                     <button class="cz-pill active" style="padding:12px 22px;font-size:0.9rem;" onclick="sendDigestTo3222739034()">
-                        📲 ENVIAR AHORA A MI WHATSAPP (+57 322 273 9034) ↗
+                        📲 ENVIAR TEXTO ACTUAL A MI WHATSAPP (+57 322 273 9034) ↗
                     </button>
                     <button class="cz-pill" style="padding:12px 22px;" onclick="copyBox('myWaDigestBox')">
                         📋 COPIAR RESUMEN
@@ -1459,6 +1638,7 @@
             });
             if (v === 'local') updateLocalPitch();
             if (v === 'whatsapp') buildMyWaDigest();
+            if (v === 'cotizador') updateCotizadorText();
         }
 
         function isBarismoQgrader(o) {
@@ -1470,7 +1650,7 @@
         function isCafeSecaderos(o) {
             const cat = o.category || o.observed_data?.category_hint || '';
             const txt = `${o.title} ${o.description} ${(o.skills || []).join(' ')}`.toLowerCase();
-            return cat === 'cafe_secaderos' || /secadero|borb[oó]n rosado|marquesina|cama africana|caf[eé] especial|beneficiadero/.test(txt);
+            return cat === 'cafe_secaderos' || /secadero|borb[oó]n rosado|marquesina|cama africana|caf[eé] especial|beneficiadero|comprador|tostad|molienda|lotes/.test(txt);
         }
 
         function isMuralesTatuajes(o) {
@@ -1527,7 +1707,7 @@
 
         function getCategoryHeader(o) {
             if (isBarismoQgrader(o)) return '☕🏅 BARISMO COLEGIOS · VEREDAS & Q-GRADER';
-            if (isCafeSecaderos(o)) return '☕ CAFÉ BORBÓN ROSADO & SECADEROS';
+            if (isCafeSecaderos(o)) return '☕ COMPRADORES BORBÓN ROSADO & SECADEROS';
             if (isMuralesTatuajes(o)) return '🎨 MURALES ARTÍSTICOS & TATUAJES';
             if (isExtrasExterior(o)) return '✈️ PASANTÍAS SENA · INTERCAMBIOS & EXTERIOR';
             if (isInformalesManualidades(o)) return '🛠️ 2DO TIEMPO & MANUALIDADES';
@@ -1612,6 +1792,7 @@
         async function loadInitialData() {
             persistSavedAndDiscarded();
             updateLocalPitch();
+            updateCotizadorText();
 
             if (window.__RADAR_EMBEDDED_DATA__ && window.__RADAR_EMBEDDED_DATA__.opportunities) {
                 opps = window.__RADAR_EMBEDDED_DATA__.opportunities;
@@ -1670,9 +1851,19 @@
         function selectCat(cat, btn) {
             curCat = cat;
             document.querySelectorAll('.cyber-pills-row .cz-pill').forEach(p => p.classList.remove('active'));
-            if (btn) btn.classList.add('active');
+            const targetPill = btn || document.querySelector(`.cyber-pills-row .cz-pill[data-cat='${cat}']`);
+            if (targetPill) targetPill.classList.add('active');
             switchCzView('home');
             applyFilters();
+            if (cat === 'cerca_de_mi') {
+                document.querySelectorAll('.side-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-view') === 'nearby'));
+            } else if (cat === 'cafe_secaderos') {
+                document.querySelectorAll('.side-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-view') === 'cafe'));
+            } else if (cat === 'guardados') {
+                document.querySelectorAll('.side-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-view') === 'saved'));
+            } else {
+                document.querySelectorAll('.side-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-view') === 'home'));
+            }
         }
 
         function applyFilters() {
@@ -1684,36 +1875,27 @@
                 if (curCat === 'cerca_de_mi') {
                     banner.style.display = 'block';
                     banner.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-                        <div>
-                            <strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">📍 TRABAJO CERCA DE MÍ — ORDENADO POR CERCANÍA EN KILÓMETROS</strong>
-                            <div style="font-size:0.82rem;color:var(--text-silver);">Mostrando primero los contratantes más cercanos a tu ubicación en San Agustín, Isnos y Pitalito (Huila), con origen del anuncio, solicitud textual y requisitos específicos.</div>
-                        </div>
-                        <button class="cz-pill active" onclick="locateSanAgustin()">📍 CALIBRAR MI GPS</button>
+                        <strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;letter-spacing:0.06em;">📍 TRABAJOS CERCA DE MÍ (ORDENADOS POR PROXIMIDAD EN KM)</strong>
+                        <button class="cz-pill active" onclick="locateSanAgustin()">📍 RE-CALIBRAR GPS</button>
+                    </div>`;
+                } else if (curCat === 'cafe_secaderos') {
+                    banner.style.display = 'block';
+                    banner.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+                        <strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;letter-spacing:0.06em;">☕ COMPRADORES DE CAFÉ BORBÓN ROSADO (TOSTADO / MOLIDO / LOTES) & SECADEROS</strong>
+                        <button class="cz-pill active" onclick="switchCzView('cotizador')">⚡ ABRIR COTIZADOR BORBÓN ROSADO</button>
                     </div>`;
                 } else if (curCat === 'barismo_qgrader') {
                     banner.style.display = 'block';
-                    banner.innerHTML = `<strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">☕🏅 CLASES DE BARISMO EN COLEGIOS / VEREDAS & CATADOR Q-GRADER (CAFÉ DE ESPECIALIDAD)</strong>
-                    <div style="font-size:0.82rem;color:var(--text-silver);">Oportunidades directas para dictar clases y talleres de Barismo, Métodos de Filtrado (V60, Chemex, Espresso, Arte Latte) y Catación Sensorial Q-Grader (protocolo SCA / CQI) en colegios urbanos y rurales, veredas cafeteras, cooperativas y asociaciones de San Agustín, Isnos y Pitalito.</div>`;
-                } else if (curCat === 'cafe_secaderos') {
-                    banner.style.display = 'block';
-                    banner.innerHTML = `<strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">☕ SECADEROS PARA CAFÉ & COMPRA DE CAFÉ BORBÓN ROSADO DE CAMPESINOS</strong>
-                    <div style="font-size:0.82rem;color:var(--text-silver);">Construcción y remodelación de secaderos solares/parabólicos y camas africanas en guadua y metal + compra/comercialización directa de lotes de Café Borbón Rosado con campesinos y exportadoras en San Agustín, Isnos y Pitalito.</div>`;
-                } else if (curCat === 'murales_tatuajes') {
-                    banner.style.display = 'block';
-                    banner.innerHTML = `<strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">🎨 DISEÑOS DE MURALES ARTÍSTICOS & SESIONES DE TATUAJES</strong>
-                    <div style="font-size:0.82rem;color:var(--text-silver);">Encargos de muralismo para hostales, cafés y cabañas ecológicas + agenda de tatuajes personalizados para turistas y residentes en el corredor turístico de San Agustín.</div>`;
-                } else if (curCat === 'extras_exterior') {
-                    banner.style.display = 'block';
-                    banner.innerHTML = `<strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">✈️ TRABAJOS EXTRAS: PASANTÍAS SENA · INTERCAMBIOS LOCALES & TRABAJOS EN EL EXTERIOR</strong>
-                    <div style="font-size:0.82rem;color:var(--text-silver);">Presentación de etapa productiva/pasantías del SENA (Centro CGDSS Pitalito/San Agustín), intercambios por hospedaje + bono en hostales y convocatorias internacionales reales (SENA APE Exterior & Worldpackers) con todos sus requisitos y exigencias detallados.</div>`;
-                } else if (curCat === 'informales') {
-                    banner.style.display = 'block';
-                    banner.innerHTML = `<strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">🛠️ OFERTAS INFORMALES, TRABAJOS DE SEGUNDO TIEMPO Y MANUALIDADES</strong>
-                    <div style="font-size:0.82rem;color:var(--text-silver);">Trabajos rápidos por día o por encargo sin contratos: lámparas en guadua, decoración con botellas de vidrio, muebles en metal y bambú, soldadura a domicilio y reparaciones.</div>`;
+                    banner.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+                        <strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;letter-spacing:0.06em;">☕🏅 CLASES DE BARISMO EN COLEGIOS / VEREDAS & CATADOR Q-GRADER</strong>
+                        <button class="cz-pill active" onclick="sendBarismoDigestToCousin()">👩‍🏫 ENVIAR OFERTAS A MI PRIMA</button>
+                    </div>`;
                 } else if (curCat === 'guardados') {
                     banner.style.display = 'block';
-                    banner.innerHTML = `<strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">⭐ MIS TRABAJOS GUARDADOS (${savedIds.size})</strong>
-                    <div style="font-size:0.82rem;color:var(--text-silver);">Aquí se conservan las ofertas interesantes que guardaste para contactar o revisar con calma.</div>`;
+                    banner.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+                        <strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;letter-spacing:0.06em;">⭐ TRABAJOS GUARDADOS (${savedIds.size})</strong>
+                        <button class="cz-pill" onclick="restoreAllDiscarded()">♻️ RESTAURAR DESCARTADAS</button>
+                    </div>`;
                 } else {
                     banner.style.display = 'none';
                 }
@@ -1998,6 +2180,108 @@
             if (box) box.value = lines.join('\n');
         }
 
+        function updateCotizadorText() {
+            const tipo = document.getElementById('cotTipo')?.value || 'tostado_molido';
+            const molienda = document.getElementById('cotMolienda')?.value || 'Molienda Media (V60 / Chemex / Filtro)';
+            const tostion = document.getElementById('cotTostion')?.value || 'Tostión Media';
+            const qgrader = document.getElementById('cotQgrader')?.value || '+87.5 Puntos SCA';
+            const cant = document.getElementById('cotCantidad')?.value || '10';
+            const unidad = document.getElementById('cotUnidad')?.value || 'Libras (500g)';
+            const precio = document.getElementById('cotPrecioUnitario')?.value || '28.000';
+            const destVal = document.getElementById('cotDestinatario')?.value || '573164467635|Caravela Coffee Colombia';
+            const [destPhone, destName] = destVal.split('|');
+
+            let prodLabel = 'Café Especial Borbón Rosado Tostado y Molido (Bolsas con válvula)';
+            if (tipo === 'grano_entero') prodLabel = 'Café Especial Borbón Rosado Tostado en Grano Entero';
+            else if (tipo === 'microlote') prodLabel = 'Microlote Exótico Borbón Rosado (Pergamino Seco Seleccionado / Verde Exportación)';
+            else if (tipo === 'lote_grande') prodLabel = 'Lote Grande de Café Borbón Rosado (+500 kg / Sacos Institucionales)';
+
+            const txt = `¡Hola ${destName || 'amigos'}! Un cordial saludo desde San Agustín, Huila.\n\n` +
+                `Somos emprendimiento y productores directos de CAFÉ BORBÓN ROSADO de altura (1.750 m.s.n.m.). ` +
+                `Presentamos nuestra oferta comercial a la medida de sus requerimientos técnicos:\n\n` +
+                `☕ PRODUCTO: ${prodLabel}\n` +
+                `📦 CANTIDAD DISPONIBLE / OFERTADA: ${cant} ${unidad}\n` +
+                `⚙️ NIVEL DE MOLIENDA: ${molienda}\n` +
+                `🔥 NIVEL DE TOSTIÓN: ${tostion}\n` +
+                `🏅 CERTIFICACIÓN Q-GRADER: Perfil de taza ${qgrader} (Acidez brillante, notas florales a jazmín, miel, panela y melocotón)\n` +
+                `💰 VALOR OFRECIDO: COP $${precio} por ${unidad}\n` +
+                `📍 ORIGEN & TRAZABILIDAD: San Agustín, Huila (Finca cafetera de altura, recolección selectiva y secado controlado en marquesina)\n` +
+                `🚚 LOGÍSTICA & DESPACHO: Entrega inmediata de muestras para catación y pedidos directos a nivel nacional o consolidación para exportación.\n\n` +
+                `Quedamos atentos para remitir muestras físicas o ficha técnica de catación formal.\n` +
+                `📲 Contacto directo por WhatsApp: +57 322 273 9034.`;
+
+            const out = document.getElementById('cotOutputText');
+            if (out) out.value = txt;
+        }
+
+        function dispatchCotizacionWhatsApp() {
+            playCyberSound('save');
+            const destVal = document.getElementById('cotDestinatario')?.value || '573222739034|Comprador';
+            const [destPhone] = destVal.split('|');
+            const txt = document.getElementById('cotOutputText')?.value || '';
+            const phone = destPhone || '573222739034';
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(txt)}`, '_blank');
+        }
+
+        function sendCafeDigestToWa() {
+            playCyberSound('save');
+            const coffeeOpps = opps.filter(o => isCafeSecaderos(o) && !discardedIds.has(o.opportunity_id));
+            const lines = [
+                "☕ *QUE HAY PA´ HACER! — COMPRADORES DE CAFÉ BORBÓN ROSADO & SECADEROS*",
+                "📍 *Base:* San Agustín, Huila · Compradores Nacionales e Internacionales",
+                `🕒 *Actualizado:* ${new Date().toLocaleString('es-CO')}`,
+                ""
+            ];
+            coffeeOpps.forEach((o, i) => {
+                const ph = o.contact_phone || o.observed_data?.whatsapp_phone || 'Enlace directo';
+                lines.push(`*${i + 1}. ${o.title}*\n📡 ${getOriginSourceDetail(o)}\n💬 ${getVerbatimRequest(o).slice(0, 150)}...\n📞 Contacto: ${ph} | 📍 ${getApproxPlace(o)}\n🔗 ${o.source_url}\n`);
+            });
+            const msg = lines.join('\n');
+            const box = document.getElementById('myWaDigestBox');
+            if (box) box.value = msg;
+            window.open(`https://wa.me/${MY_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function sendBarismoDigestToCousin() {
+            playCyberSound('save');
+            const barismoOpps = opps.filter(o => isBarismoQgrader(o) && !discardedIds.has(o.opportunity_id));
+            const lines = [
+                "☕🏅 *OPORTUNIDADES DE BARISMO & CATACIÓN Q-GRADER (PARA MI PRIMA)*",
+                "📍 *Colegios, Veredas y Grupos en San Agustín & Sur del Huila*",
+                `🕒 *Fecha:* ${new Date().toLocaleDateString('es-CO')}`,
+                "",
+                "¡Hola prima! Te comparto estas convocatorias y solicitudes directas de clases y talleres de Barismo y Catación Q-Grader que acaban de salir:",
+                ""
+            ];
+            barismoOpps.forEach((o, i) => {
+                const ph = o.contact_phone || o.observed_data?.whatsapp_phone || 'Enlace oficial';
+                lines.push(`*${i + 1}. ${o.title}*\n💬 Solicitud: ${getVerbatimRequest(o).slice(0, 160)}...\n📞 Contacto directo: ${ph} | 📍 ${getApproxPlace(o)}\n🔗 ${o.source_url}\n`);
+            });
+            const msg = lines.join('\n');
+            const box = document.getElementById('myWaDigestBox');
+            if (box) box.value = msg;
+            window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function sendGuaduaDigestToWa() {
+            playCyberSound('save');
+            const guaduaOpps = opps.filter(o => (isHuilaGuadua(o) || isMetalSoldadura(o)) && !discardedIds.has(o.opportunity_id));
+            const lines = [
+                "🎋🔩 *QUE HAY PA´ HACER! — CABAÑAS EN GUADUA, METAL & BIOCONSTRUCCIÓN*",
+                "📍 *San Agustín, Isnos & Pitalito (Huila)*",
+                `🕒 *Actualizado:* ${new Date().toLocaleString('es-CO')}`,
+                ""
+            ];
+            guaduaOpps.forEach((o, i) => {
+                const ph = o.contact_phone || o.observed_data?.whatsapp_phone || 'Enlace oficial';
+                lines.push(`*${i + 1}. ${o.title}*\n💬 Solicitud: ${getVerbatimRequest(o).slice(0, 150)}...\n📞 Contacto: ${ph} | 📍 ${getApproxPlace(o)}\n🔗 ${o.source_url}\n`);
+            });
+            const msg = lines.join('\n');
+            const box = document.getElementById('myWaDigestBox');
+            if (box) box.value = msg;
+            window.open(`https://wa.me/${MY_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
         function sendTopAlertToMyWhatsApp() {
             buildMyWaDigest();
             sendDigestTo3222739034();
@@ -2013,6 +2297,7 @@
             document.querySelectorAll('#localZoneButtons .cz-pill').forEach(b => b.classList.remove('active'));
             if (btn) btn.classList.add('active');
             updateLocalPitch();
+            updateCotizadorText();
         }
 
         function setLocalService(s) {
@@ -2021,6 +2306,7 @@
                 document.getElementById('locSrv-' + k)?.classList.toggle('active', k === s);
             });
             updateLocalPitch();
+            updateCotizadorText();
         }
 
         function updateLocalPitch() {

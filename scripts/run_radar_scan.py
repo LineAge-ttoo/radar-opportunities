@@ -35,6 +35,8 @@ def purge_old_and_invalid_links():
                OR opportunity_id LIKE 'wwr_%'
                OR opportunity_id LIKE 'hn_%'
                OR opportunity_id LIKE 'github_%'
+               OR opportunity_id LIKE 'co_social_%'
+               OR (opportunity_id LIKE 'secop_%' AND opportunity_id != 'secop_sena_pitalito_2026')
                OR opportunity_id IN ('huila_guadua_01','huila_guadua_02','huila_alcaldia_01','huila_alcaldia_02','estudiantes_01','estudiantes_02','blender_guadua_03')
                OR source_url LIKE '%google.com/maps/search%'
                OR source_url LIKE '%google.com/search%'
@@ -72,7 +74,7 @@ def run_scan():
         for item in items:
             if 'San Agustín' in source_name or 'Huila' in source_name:
                 norm = OpportunityNormalizer.normalize_san_agustin_huila(item)
-            elif 'Clientes Colombia' in source_name:
+            elif 'Compradores Café' in source_name or 'Clientes Colombia' in source_name:
                 norm = OpportunityNormalizer.normalize_colombia_social(item)
             elif 'Workana' in source_name:
                 norm = OpportunityNormalizer.normalize_workana(item)

@@ -79,61 +79,49 @@ class OpportunityNormalizer:
     def normalize_colombia_social(item):
         now_iso = datetime.now(timezone.utc).isoformat()
         url = item.get('url', '')
-        opp_id = f"co_social_{hashlib.md5(url.encode()).hexdigest()[:12]}"
+        opp_id = item.get('id') or f"co_social_{hashlib.md5(url.encode()).hexdigest()[:12]}"
 
-        platform = item.get('platform', 'Instagram Colombia')
-        biz_name = item.get('business_name', 'Negocio en Colombia')
-        offer_type = item.get('offer_type', 'whatsapp_bot')
-        niche = item.get('niche', 'Cliente Potencial Colombia')
-        cop_min = float(item.get('cop_min', 250000))
-        cop_max = float(item.get('cop_max', 850000))
+        platform = item.get('platform', 'Comprador Verificado Colombia')
+        biz_name = item.get('business_name', 'Comprador / Cliente Colombia')
+        offer_type = item.get('offer_type', 'cafe_secaderos')
+        niche = item.get('niche', '☕ Compradores Café Especial & Borbón Rosado')
+        cop_min = float(item.get('cop_min', 600000))
+        cop_max = float(item.get('cop_max', 18000000))
         wa_phone = item.get('whatsapp_phone')
         raw_snippet = clean_html(item.get('snippet', ''))
 
-        if offer_type == 'bioconstruccion_guadua':
-            action_title = f"🎋 Cabañas en Guadua, Muro Tendinoso & Vidrio para: {biz_name}"
-        elif offer_type == 'metal_soldadura':
-            action_title = f"🔩 Cubiertas en Metal/Guadua, Soldadura & Remodelación para: {biz_name}"
-        elif offer_type == 'informales_manualidades':
-            action_title = f"🛠️ [2do Tiempo & Manualidades] Lámparas, Vidrio y Guadua para: {biz_name}"
-        elif offer_type == 'planos_3d':
-            action_title = f"📐 Hacer Planos / Render 3D y Remodelación para: {biz_name}"
-        elif offer_type == 'whatsapp_bot':
-            action_title = f"🤖 Automatizar WhatsApp / Citas para: {biz_name}"
-        else:
-            action_title = f"🌐 Crear Catálogo Digital / Web para: {biz_name}"
-
-        origin_source = f"Publicado en: {platform} — Perfil/Anuncio Público ({url[:48]}...)"
-        time_ago = "Detectado hoy en redes (Activo)"
-        verbatim_req = f"\"TEXTO DEL PERFIL / ANUNCIO EN {platform.upper()}: {raw_snippet or item.get('title', '')} — Requiere: {item.get('service_pitch', '')}\""
-        reqs = [
-            f"Especialidad solicitada: {', '.join(item.get('skills', ['Diseño / Construcción / Automatización']))}.",
-            "Modalidad: Trato directo con el cliente sin contratos legales largos (Pago por Nequi / Bancolombia).",
-            f"Canal de contacto: {'WhatsApp directo +' + str(wa_phone) if wa_phone else 'Mensaje directo al perfil oficial en ' + platform}."
+        action_title = item.get('title') or f"☕ Comprador de Café Especial: {biz_name}"
+        origin_source = item.get('origin_source_detail') or f"Publicado en: {platform} ({url})"
+        time_ago = item.get('time_ago_exact') or "Activo hoy"
+        verbatim_req = item.get('verbatim_request') or f"\"{raw_snippet or action_title}\""
+        reqs = item.get('requirements_list') or [
+            f"Especialidad solicitada: {', '.join(item.get('skills', ['Café Borbón Rosado / Especialidad']))}.",
+            "Modalidad: Negociación directa con el comprador sin intermediarios."
         ]
 
-        desc = f"{item.get('service_pitch', '')} | Publicación en {platform}: {raw_snippet}"
+        desc = raw_snippet or item.get('service_pitch', '')
         if wa_phone:
-            desc = f"📱 WhatsApp Directo Detectado: +{wa_phone} | " + desc
+            desc = f"📱 WhatsApp Directo Verificado: +{wa_phone} | " + desc
 
-        approx_place = item.get('approx_place') or f"Perfil activo en {platform} (Colombia)"
-        contractor_info = item.get('contractor_info') or f"Contratante / Negocio: {biz_name} en {platform}. Texto publicado: \"{raw_snippet[:150]}\""
+        approx_place = item.get('approx_place') or f"{platform} (Colombia)"
+        contractor_info = item.get('contractor_info') or f"Comprador / Entidad: {biz_name}."
+        pub_at = item.get('published_at') or now_iso
 
         return {
             'opportunity_id': opp_id,
             'source': platform,
             'source_url': url,
             'discovered_at': now_iso,
-            'published_at': now_iso,
+            'published_at': pub_at,
             'title': action_title,
-            'organization': f"{biz_name} (🇨🇴 Colombia)",
+            'organization': biz_name,
             'description': desc,
-            'category': niche,
-            'opportunity_type': 'cliente_directo_colombia',
+            'category': offer_type,
+            'opportunity_type': 'san_agustin_huila_prioridad' if offer_type == 'cafe_secaderos' else 'cliente_directo_colombia',
             'payment_min': cop_min,
             'payment_max': cop_max,
             'currency': 'COP',
-            'location': 'Colombia',
+            'location': approx_place,
             'approx_place': approx_place,
             'contractor_info': contractor_info,
             'origin_source_detail': origin_source,
@@ -141,14 +129,14 @@ class OpportunityNormalizer:
             'verbatim_request': verbatim_req,
             'requirements_list': reqs,
             'remote': True,
-            'skills': item.get('skills', ['automatizacion', 'whatsapp', 'planos', '3d']),
+            'skills': item.get('skills', ['☕ Comprador Café Especial', 'Borbón Rosado']),
             'contact_phone': f"+{wa_phone}" if wa_phone and not str(wa_phone).startswith('+') else (wa_phone or ''),
             'contact_whatsapp_url': f"https://wa.me/{str(wa_phone).replace('+','').replace(' ','')}" if wa_phone else '',
             'raw_data': item,
             'observed_data': {
                 'stated_salary': f"COP ${int(cop_min):,} - ${int(cop_max):,}".replace(',', '.'),
-                'stated_location': '🇨🇴 Colombia',
-                'stated_job_type': 'Cliente Directo (Sin Contrato Legal)',
+                'stated_location': approx_place,
+                'stated_job_type': 'Comprador Directo Verificado',
                 'whatsapp_phone': wa_phone,
                 'approx_place': approx_place,
                 'contractor_info': contractor_info,

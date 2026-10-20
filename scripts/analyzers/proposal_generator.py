@@ -42,24 +42,25 @@ Nos comunicamos respecto a **{title}** para poner a su disposición nuestros ser
                 'whatsapp_phone': wa_phone
             }
 
-        # 1. Café Borbón Rosado de Campesinos & Construcción de Secaderos para Café (Guadua y Metal)
-        if cat_hint == 'cafe_secaderos' or any(k in skills_text for k in ['borbón rosado', 'borbon rosado', 'secadero', 'marquesina', 'caficultor']):
-            subject = f"Secaderos de Café (Guadua/Metal) y Café Borbón Rosado en San Agustín — {org}"
-            body = f"""¡Hola {org}! 👋 Te saludo desde San Agustín, Huila.
+        # 1. Compradores de Café Especial Borbón Rosado (Tostado, Molido a medida y Lotes Grandes) & Secaderos
+        if cat_hint == 'cafe_secaderos' or any(k in skills_text for k in ['borbón rosado', 'borbon rosado', 'pink bourbon', 'secadero', 'marquesina', 'caficultor', 'comprador']):
+            subject = f"Suministro Directo de Café Especial Borbón Rosado (Tostado, Molido a Medida y Lotes) — Origen San Agustín, Huila"
+            body = f"""¡Hola {org}! 👋 Un cordial saludo desde San Agustín, Huila.
 
-Me comunico respecto a **{title}** para ponernos en contacto directo en dos frentes de trabajo:
+Somos un emprendimiento productor y comercializador de **Café Especial de Origen San Agustín / Sur del Huila** con control de calidad avalado por **Catador Q-Grader (+85 a 89 puntos SCA)** y nos comunicamos respecto a **{title}**:
 
-☕ **1. Compra y Comercialización de Café Borbón Rosado**: Trabajo directamente con campesinos y fincas productoras de San Agustín y veredas (Alto del Obispo, La Estrella, El Tablón, Mesitas) para acopio y negociación directa de microlotes de **Borbón Rosado** (pergamino seco / cereza).
-🎋🔩 **2. Construcción y Remodelación de Secaderos para Café**: Construyo y techo todo tipo de **secaderos parabólicos, marquesinas solares y camas africanas** combinando estructura en **guadua inmunizada y cerchas en metal soldado** con cubierta UV de alta durabilidad.
+☕ **1. Café Borbón Rosado Tostado y Molido a Medida**: Entregamos en grano entero o con el **nivel exacto de molienda** (fina espresso, media V60/Chemex/filtro, gruesa prensa francesa) y **curva de tostión** (clara, media o media-oscura) que requiera su empresa o cliente (presentaciones de 250g, 500g y bolsas institucionales por kilos).
+📦 **2. Lotes Más Grandes y Microlotes**: Disponibilidad de lotes mayores en pergamino seco seleccionado, café verde tipo exportación o tostado por volumen con trazabilidad directa de vereda en San Agustín (Alto del Obispo, La Estrella, El Tablón, Los Cauchos).
+🎋🔩 **3. Infraestructura Cafetera**: También construimos y remodelamos **secaderos solares/parabólicos y cubiertas en guadua y metal**.
 
-📲 Mi WhatsApp directo en San Agustín es **+57 322 273 9034**. ¿Hablamos hoy mismo para coordinar lotes de Borbón Rosado o cotizar secaderos?"""
-            pricing = f"COP ${int(p_min or 850000):,} — ${int(p_max or 7500000):,}".replace(',', '.')
+📲 Nuestro WhatsApp directo es **+57 322 273 9034**. ¿A qué dirección o laboratorio les enviamos muestra física y ficha técnica de nuestro Borbón Rosado?"""
+            pricing = f"COP ${int(p_min or 850000):,} — ${int(p_max or 35000000):,}".replace(',', '.')
             return {
                 'language': 'es',
                 'subject': subject,
                 'body': body,
                 'pricing_recommendation': pricing,
-                'turnaround': "Atención inmediata en veredas de San Agustín y Sur del Huila",
+                'turnaround': "Despacho inmediato de muestras y pedidos desde San Agustín, Huila",
                 'whatsapp_phone': wa_phone
             }
 
