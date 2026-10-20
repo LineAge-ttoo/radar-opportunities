@@ -94,6 +94,8 @@ class OpportunityNormalizer:
             'location': 'Colombia',
             'remote': True,
             'skills': item.get('skills', ['automatizacion', 'whatsapp', 'planos', '3d']),
+            'contact_phone': f"+{wa_phone}" if wa_phone and not str(wa_phone).startswith('+') else (wa_phone or ''),
+            'contact_whatsapp_url': f"https://wa.me/{str(wa_phone).replace('+','').replace(' ','')}" if wa_phone else '',
             'raw_data': item,
             'observed_data': {
                 'stated_salary': f"COP ${int(cop_min):,} - ${int(cop_max):,}".replace(',', '.'),
@@ -227,7 +229,7 @@ class OpportunityNormalizer:
         return {
             'opportunity_id': opp_id,
             'source': 'San Agustín · Huila · Guadua',
-            'source_url': item.get('url', 'https://www.sanagustin-huila.gov.co'),
+            'source_url': item.get('url', 'https://www.sanagustin-huila.gov.co/contratacion'),
             'discovered_at': now_iso,
             'published_at': item.get('published_at') or now_iso,
             'title': item.get('title', 'Proyecto San Agustín Huila'),
@@ -241,12 +243,20 @@ class OpportunityNormalizer:
             'location': loc,
             'remote': True,
             'skills': skills,
+            'contact_phone': item.get('contact_phone') or item.get('whatsapp_phone') or '',
+            'contact_whatsapp_url': item.get('contact_whatsapp_url') or '',
+            'circular_code': item.get('circular_code') or '',
+            'contact_email': item.get('contact_email') or '',
             'raw_data': item,
             'observed_data': {
                 'stated_salary': stated_sal,
                 'stated_location': loc,
                 'stated_job_type': 'Prioridad Zona San Agustín / Huila',
                 'whatsapp_phone': item.get('whatsapp_phone') or '',
+                'contact_phone': item.get('contact_phone') or item.get('whatsapp_phone') or '',
+                'contact_whatsapp_url': item.get('contact_whatsapp_url') or '',
+                'circular_code': item.get('circular_code') or '',
+                'contact_email': item.get('contact_email') or '',
                 'category_hint': item.get('category_hint', 'guadua_cabanas'),
                 'tags': skills + ['san agustin', 'huila', 'guadua', 'blender', 'estudiantes']
             }

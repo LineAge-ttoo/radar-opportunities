@@ -900,24 +900,32 @@
 
             <p id="mDesc" style="font-size:0.85rem;color:var(--text-silver);line-height:1.5;margin-bottom:14px;"></p>
 
+            <!-- CANAL DE CONTACTO DIRECTO VERIFICADO DEL SOLICITANTE -->
+            <div id="mContactBanner" style="background:rgba(16,185,129,0.14);border:1.5px solid #25D366;border-radius:14px;padding:12px 16px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+                <div>
+                    <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;color:#4ADE80;text-transform:uppercase;">📞 CANAL DIRECTO CON EL SOLICITANTE / ENTIDAD</div>
+                    <div id="mContactInfoText" style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;color:#FFFFFF;font-weight:700;margin-top:2px;"></div>
+                </div>
+                <a id="mDirectActionBtn" href="#" target="_blank" rel="noopener noreferrer" class="cz-pill active" style="background:#25D366;border-color:#25D366;color:#051B0E;text-decoration:none;padding:10px 18px;font-weight:800;">
+                    💬 CONTACTAR AHORA ↗
+                </a>
+            </div>
+
             <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber-gold);">
-                PROPUESTA LISTA (MAESTRO EN GUADUA CERTIFICADO · BLENDER 3D · SAN AGUSTÍN HUILA)
+                PROPUESTA LISTA (SE ENVÍA DIRECTO AL SOLICITANTE)
             </div>
             <textarea id="mPitch" class="cz-textarea"></textarea>
 
             <div style="display:flex;gap:10px;flex-wrap:wrap;">
-                <a id="mClientWaBtn" href="#" target="_blank" rel="noopener noreferrer" class="cz-pill active" style="display:none;text-decoration:none;padding:11px 18px;">
-                    💬 WHATSAPP DEL CLIENTE ↗
+                <a id="mClientWaBtn" href="#" target="_blank" rel="noopener noreferrer" class="cz-pill active" style="display:none;background:#25D366;border-color:#25D366;color:#051B0E;text-decoration:none;padding:11px 18px;">
+                    💬 WHATSAPP DEL SOLICITANTE ↗
                 </a>
-                <button class="cz-pill active" style="padding:11px 18px;" onclick="sendSingleOppToMyWa()">
-                    📲 MANDAR A MI WHATSAPP (322 273 9034)
-                </button>
+                <a id="mSourceUrl" href="#" target="_blank" rel="noopener noreferrer" class="cz-pill active" style="text-decoration:none;padding:11px 18px;">
+                    📄 ABRIR CIRCULAR / SOLICITUD REAL ↗
+                </a>
                 <button class="cz-pill" style="padding:11px 18px;" onclick="copyBox('mPitch')">
                     📋 COPIAR PROPUESTA
                 </button>
-                <a id="mSourceUrl" href="#" target="_blank" rel="noopener noreferrer" class="cz-pill" style="text-decoration:none;padding:11px 18px;">
-                    ↗ ABRIR ENLACE ORIGINAL
-                </a>
             </div>
         </div>
     </div>
@@ -1123,11 +1131,37 @@
                             opps = data.opportunities;
                             applyFilters();
                             buildMyWaDigest();
+                            autoDispatchToUserWhatsApp(data.meta?.scan_id);
                             return;
                         }
                     }
                 } catch (e) {}
             }
+        }
+
+        async function autoDispatchToUserWhatsApp(scanId) {
+            try {
+                // 1. Trigger backend automatic Windows/Cloud WhatsApp sender if local server is active
+                fetch('/api/auto-whatsapp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ force: false })
+                }).catch(() => {});
+
+                // 2. If a new scan batch arrived, automatically trigger WhatsApp protocol to +57 3222739034
+                const key = 'qhp_auto_wa_sent_' + (scanId || new Date().toISOString().slice(0, 13));
+                if (!localStorage.getItem(key) && opps.length > 0) {
+                    localStorage.setItem(key, '1');
+                    const txt = document.getElementById('myWaDigestBox')?.value || '';
+                    if (txt) {
+                        const iframe = document.createElement('iframe');
+                        iframe.style.display = 'none';
+                        iframe.src = `whatsapp://send?phone=${MY_WHATSAPP}&text=${encodeURIComponent(txt)}`;
+                        document.body.appendChild(iframe);
+                        setTimeout(() => { try { document.body.removeChild(iframe); } catch (e) {} }, 4000);
+                    }
+                }
+            } catch (e) {}
         }
 
         function selectCat(cat, btn) {
@@ -1157,11 +1191,20 @@
                 );
             }
 
-            // Sort strictly by: 1. San Agustín / Huila / Guadua / Estudiantes first, 2. Most Recent (age_hours ascending), 3. Score
+            // Sort strictly by: 1. San Agustín / Huila with direct WhatsApp, 2. San Agustín / Huila / Guadua / SECOP, 3. Direct WhatsApp, 4. Most Recent
             list.sort((a, b) => {
+                const hgWaA = (isHuilaGuadua(a) || isAlcaldia(a)) && hasWa(a) ? 1 : 0;
+                const hgWaB = (isHuilaGuadua(b) || isAlcaldia(b)) && hasWa(b) ? 1 : 0;
+                if (hgWaA !== hgWaB) return hgWaB - hgWaA;
+
                 const hgA = (isHuilaGuadua(a) || isAlcaldia(a) || isEstudiantes(a)) ? 1 : 0;
                 const hgB = (isHuilaGuadua(b) || isAlcaldia(b) || isEstudiantes(b)) ? 1 : 0;
                 if (hgA !== hgB) return hgB - hgA;
+
+                const waA = hasWa(a) ? 1 : 0;
+                const waB = hasWa(b) ? 1 : 0;
+                if (waA !== waB) return waB - waA;
+
                 const ageA = a.estimated_data?.age_hours ?? 1;
                 const ageB = b.estimated_data?.age_hours ?? 1;
                 if (ageA !== ageB) return ageA - ageB;
@@ -1185,9 +1228,22 @@
                 const catHeader = getCategoryHeader(o);
                 const price = getFormattedPrice(o);
                 const loc = o.observed_data?.stated_location || o.location || '📍 San Agustín / Colombia';
-                const fresh = o.estimated_data?.freshness_label || 'Hoy (Reciente)';
-                const score = `${o.overall_score || 96} PTS`;
-                const org = o.organization || 'Cliente Directo';
+                const org = o.organization || 'Solicitante Directo';
+                const waPhone = o.observed_data?.whatsapp_phone || o.proposal?.whatsapp_phone;
+                const sUrl = o.source_url || '#';
+                const isSecop = sUrl.includes('secop.gov.co');
+
+                let contactLabel = 'POSTULACIÓN DIRECTA';
+                let primaryBtnHtml = `<a href="${escapeHtml(sUrl)}" target="_blank" rel="noopener noreferrer" class="cz-neon-btn">CONTACTAR / VER ↗</a>`;
+
+                if (waPhone) {
+                    contactLabel = `WHATSAPP +${waPhone}`;
+                    const waHref = `https://wa.me/${escapeHtml(waPhone)}?text=${encodeURIComponent(o.proposal?.body || '')}`;
+                    primaryBtnHtml = `<a href="${waHref}" target="_blank" rel="noopener noreferrer" class="cz-neon-btn" style="background:rgba(37,211,102,0.22);border-color:#25D366;color:#4ADE80;">💬 WA +${escapeHtml(waPhone)} ↗</a>`;
+                } else if (isSecop) {
+                    contactLabel = 'CIRCULAR PÚBLICA SECOP II';
+                    primaryBtnHtml = `<a href="${escapeHtml(sUrl)}" target="_blank" rel="noopener noreferrer" class="cz-neon-btn">📄 CIRCULAR REAL ↗</a>`;
+                }
 
                 return `
                 <article class="cz-card ${neonClass}">
@@ -1201,8 +1257,12 @@
 
                         <div class="cz-metrics">
                             <div class="cz-metric-row">
-                                <span class="cz-m-key">CLIENTE / ENTIDAD:</span>
+                                <span class="cz-m-key">SOLICITANTE:</span>
                                 <span class="cz-m-val">${escapeHtml(org.slice(0, 26))}</span>
+                            </div>
+                            <div class="cz-metric-row">
+                                <span class="cz-m-key">CONTACTO DIRECTO:</span>
+                                <span class="cz-m-val" style="color:${waPhone ? '#4ADE80' : '#FFB830'};">${escapeHtml(contactLabel)}</span>
                             </div>
                             <div class="cz-metric-row">
                                 <span class="cz-m-key">UBICACIÓN:</span>
@@ -1212,23 +1272,13 @@
                                 <span class="cz-m-key">PRESUPUESTO:</span>
                                 <span class="cz-m-val">${escapeHtml(price)}</span>
                             </div>
-                            <div class="cz-metric-row">
-                                <span class="cz-m-key">ACTUALIZADO:</span>
-                                <span class="cz-m-val">${escapeHtml(fresh)}</span>
-                            </div>
-                            <div class="cz-metric-row">
-                                <span class="cz-m-key">POTENCIAL:</span>
-                                <span class="cz-m-val">${escapeHtml(score)}</span>
-                            </div>
                         </div>
                     </div>
 
                     <div class="cz-card-btns">
+                        ${primaryBtnHtml}
                         <button class="cz-neon-btn" onclick="openCzModal('${escapeHtml(o.opportunity_id)}')">
-                            PROPUESTA / VER
-                        </button>
-                        <button class="cz-neon-btn" onclick="forwardCardToMyWa('${escapeHtml(o.opportunity_id)}')">
-                            A MI WA 3222739034
+                            PROPUESTA / FICHA
                         </button>
                     </div>
                 </article>`;
@@ -1249,12 +1299,28 @@
 
             const waPhone = o.observed_data?.whatsapp_phone || o.proposal?.whatsapp_phone;
             const waBtn = document.getElementById('mClientWaBtn');
+            const contactInfoText = document.getElementById('mContactInfoText');
+            const directActionBtn = document.getElementById('mDirectActionBtn');
+            const sUrl = o.source_url || '#';
+
             if (waPhone) {
+                const waHref = `https://wa.me/${waPhone}?text=${encodeURIComponent(o.proposal?.body || '')}`;
                 waBtn.style.display = 'inline-flex';
-                waBtn.href = `https://wa.me/${waPhone}?text=${encodeURIComponent(o.proposal?.body || '')}`;
-                waBtn.innerText = `💬 WHATSAPP CLIENTE (+${waPhone}) ↗`;
+                waBtn.href = waHref;
+                waBtn.innerText = `💬 WHATSAPP SOLICITANTE (+${waPhone}) ↗`;
+                contactInfoText.innerText = `WhatsApp Directo Verificado: +${waPhone}`;
+                directActionBtn.href = waHref;
+                directActionBtn.innerText = `💬 ESCRIBIR A +${waPhone} ↗`;
+            } else if (sUrl.includes('secop.gov.co')) {
+                waBtn.style.display = 'none';
+                contactInfoText.innerText = `Circular Oficial SECOP II (Pliego Público Directo)`;
+                directActionBtn.href = sUrl;
+                directActionBtn.innerText = `📄 ABRIR CIRCULAR OFICIAL ↗`;
             } else {
                 waBtn.style.display = 'none';
+                contactInfoText.innerText = `Publicación Directa del Solicitante (${o.source || 'Plataforma'})`;
+                directActionBtn.href = sUrl;
+                directActionBtn.innerText = `💬 ABRIR SOLICITUD Y POSTULAR ↗`;
             }
 
             document.getElementById('czModal').classList.add('open');

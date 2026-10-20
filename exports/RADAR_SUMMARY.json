@@ -1,19 +1,20 @@
 {
-  "scan_id": "scan_20261019_225256_5ef4b7",
-  "started_at": "2026-10-19T22:52:56.411342+00:00",
-  "finished_at": "2026-10-19T22:53:19.648189+00:00",
+  "scan_id": "scan_20261019_235920_860e9c",
+  "started_at": "2026-10-19T23:59:20.466803+00:00",
+  "finished_at": "2026-10-19T23:59:39.302265+00:00",
   "sources_consulted": [
     "San Agustín Huila · Guadua · Alcaldía & Estudiantes",
     "Clientes Colombia (Instagram & Facebook)",
     "Workana Colombia & LATAM",
     "Freelancer.co (Tareas & Proyectos)"
   ],
-  "total_found": 127,
-  "prioridad_count": 81,
+  "total_found": 140,
+  "prioridad_count": 93,
   "construir_vender_count": 19,
-  "investigar_count": 27,
+  "investigar_count": 28,
   "observar_count": 0,
   "descartar_count": 4,
   "whatsapp_target": "573222739034",
-  "execution_notes": "Escaneo diario multi-horario enfocado en San Agustín Huila, Cabañas en Guadua, Alcaldías (SECOP II), Estudiantes/Universitarios, Blender 3D y Clientes en Colombia."
+  "whatsapp_auto_dispatched": true,
+  "execution_notes": "Contactos reales verificados (WhatsApp directo +57 de solicitantes en San Agustín/Pitalito/Isnos, Circulares Reales SECOP II sin clave y Proyectos Activos Workana/Freelancer) + Auto-envío a WhatsApp 3222739034."
 }

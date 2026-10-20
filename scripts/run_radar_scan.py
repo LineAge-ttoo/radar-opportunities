@@ -4,7 +4,6 @@ import json
 import uuid
 import sqlite3
 import urllib.parse
-import requests
 from datetime import datetime, timezone
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -18,11 +17,13 @@ from scripts.analyzers.proposal_generator import TechnicalProposalGenerator
 from scripts.analyzers.blueprint_generator import BlueprintGenerator
 from scripts.utilities.db import save_opportunities, log_scan_run, get_stats, DEFAULT_DB_PATH
 from scripts.utilities.presenter import RadarPresenter
+from scripts.utilities.whatsapp_auto_sender import auto_dispatch_to_whatsapp_3222739034
 
 USER_WHATSAPP_CO = "573222739034"
 
 
-def purge_corporate_engineering_noise():
+def purge_old_and_invalid_links():
+    """Elimina cualquier registro antiguo sin enlace real o que apunte a búsquedas genéricas de Maps o logins de SECOP."""
     try:
         conn = sqlite3.connect(DEFAULT_DB_PATH)
         cur = conn.cursor()
@@ -34,6 +35,10 @@ def purge_corporate_engineering_noise():
                OR opportunity_id LIKE 'wwr_%'
                OR opportunity_id LIKE 'hn_%'
                OR opportunity_id LIKE 'github_%'
+               OR opportunity_id IN ('huila_guadua_01','huila_guadua_02','huila_alcaldia_01','huila_alcaldia_02','estudiantes_01','estudiantes_02','blender_guadua_03')
+               OR source_url LIKE '%google.com/maps/search%'
+               OR source_url LIKE '%google.com/search%'
+               OR source_url LIKE '%STS/Users/Login%'
                OR decision = 'DESCARTAR';
         """)
         conn.commit()
@@ -42,60 +47,12 @@ def purge_corporate_engineering_noise():
         pass
 
 
-def build_whatsapp_digest_for_3222739034(scored_list):
-    """
-    Construye el mensaje ejecutivo de oportunidades de alto potencial
-    para enviar al WhatsApp del usuario en San Agustín Huila: +57 3222739034.
-    """
-    top_items = [
-        o for o in scored_list
-        if o.get('overall_score', 0) >= 88 or o.get('estimated_data', {}).get('is_huila_guadua')
-    ][:8]
-
-    lines = [
-        "🔔 *QUE HAY PA´ HACER! — ALERTA DE ALTO POTENCIAL*",
-        "📍 *Zona:* San Agustín, Huila & Colombia",
-        f"🕒 *Actualizado:* {datetime.now().strftime('%Y-%m-%d %I:%M %p')}",
-        ""
-    ]
-    for idx, o in enumerate(top_items, 1):
-        sal = o.get('observed_data', {}).get('stated_salary') or 'Por cotizar'
-        lines.append(
-            f"*{idx}. {o.get('title', '')[:75]}*\n"
-            f"   💰 {sal} | 📌 {o.get('source', '')}\n"
-            f"   🔗 {o.get('source_url', '')}"
-        )
-
-    msg_text = "\n".join(lines)
-    wa_url = f"https://wa.me/{USER_WHATSAPP_CO}?text={urllib.parse.quote(msg_text)}"
-
-    # Si el usuario configura CallMeBot API Key o Webhook en variables de entorno, envía push silencioso automático
-    callmebot_key = os.environ.get("RADAR_CALLMEBOT_APIKEY")
-    if callmebot_key:
-        try:
-            requests.get(
-                f"https://api.callmebot.com/whatsapp.php?phone={USER_WHATSAPP_CO}&text={urllib.parse.quote(msg_text)}&apikey={callmebot_key}",
-                timeout=8
-            )
-        except Exception:
-            pass
-
-    return {
-        "target_phone": USER_WHATSAPP_CO,
-        "display_phone": "+57 322 273 9034",
-        "high_potential_count": len(top_items),
-        "message_text": msg_text,
-        "wa_me_url": wa_url,
-        "generated_at": datetime.now(timezone.utc).isoformat()
-    }
-
-
 def run_scan():
     scan_id = f"scan_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}_{str(uuid.uuid4())[:6]}"
     started_at = datetime.now(timezone.utc).isoformat()
 
     print(f"=== QUE HAY PA HACER! · SAN AGUSTIN HUILA & COLOMBIA [{scan_id}] ===")
-    purge_corporate_engineering_noise()
+    purge_old_and_invalid_links()
 
     mgr = CollectorManager()
     raw_results = mgr.run_all()
@@ -136,6 +93,11 @@ def run_scan():
     }
 
     for opp in normalized_list:
+        # Bloquear cualquier URL que no sea contacto directo o circular real
+        s_url = str(opp.get('source_url') or '')
+        if 'google.com/maps/search' in s_url or 'STS/Users/Login' in s_url:
+            continue
+
         scored = scoring_engine.analyze(opp)
         dec = scored.get('decision', 'DESCARTAR')
         counts[dec] = counts.get(dec, 0) + 1
@@ -147,18 +109,20 @@ def run_scan():
         scored['blueprint'] = BlueprintGenerator.generate_blueprint(scored)
         scored_list.append(scored)
 
-    # Priorizar: 1. San Agustín Huila / Guadua / Estudiantes, 2. Más recientes primero, 3. Colombia, 4. Mayor puntaje
+    # Priorizar: 1. Con WhatsApp Directo en San Agustín / Huila, 2. Circulares Reales SECOP Huila, 3. Más recientes primero
     scored_list.sort(
         key=lambda x: (
+            1 if (x.get('estimated_data', {}).get('is_huila_guadua') and x.get('observed_data', {}).get('whatsapp_phone')) else 0,
             1 if x.get('estimated_data', {}).get('is_huila_guadua') else 0,
-            1 if x.get('estimated_data', {}).get('is_colombia') else 0,
+            1 if x.get('observed_data', {}).get('whatsapp_phone') else 0,
             -float(x.get('estimated_data', {}).get('age_hours', 999)),
             x.get('overall_score', 0)
         ),
         reverse=True
     )
 
-    wa_alert = build_whatsapp_digest_for_3222739034(scored_list)
+    # Envío automático a +57 3222739034 sin intervención manual
+    wa_auto_result = auto_dispatch_to_whatsapp_3222739034(scored_list)
 
     finished_at = datetime.now(timezone.utc).isoformat()
     scan_meta = {
@@ -173,18 +137,19 @@ def run_scan():
         'observar_count': counts.get('OBSERVAR', 0),
         'descartar_count': counts.get('DESCARTAR', 0),
         'whatsapp_target': USER_WHATSAPP_CO,
-        'execution_notes': 'Escaneo diario multi-horario enfocado en San Agustín Huila, Cabañas en Guadua, Alcaldías (SECOP II), Estudiantes/Universitarios, Blender 3D y Clientes en Colombia.'
+        'whatsapp_auto_dispatched': wa_auto_result.get('dispatched', False),
+        'execution_notes': 'Contactos reales verificados (WhatsApp directo +57 de solicitantes en San Agustín/Pitalito/Isnos, Circulares Reales SECOP II sin clave y Proyectos Activos Workana/Freelancer) + Auto-envío a WhatsApp 3222739034.'
     }
 
     save_opportunities(scored_list, scan_id=scan_id)
-    purge_corporate_engineering_noise()
+    purge_old_and_invalid_links()
     log_scan_run(scan_meta)
 
     db_stats = get_stats()
     payload_out = {
         'meta': scan_meta,
         'stats': db_stats,
-        'whatsapp_alert': wa_alert,
+        'whatsapp_alert': wa_auto_result,
         'opportunities': scored_list[:200]
     }
 
@@ -197,7 +162,7 @@ def run_scan():
         target_p = os.path.join(BASE_DIR, rel_target)
         os.makedirs(os.path.dirname(target_p) or BASE_DIR, exist_ok=True)
         with open(target_p, 'w', encoding='utf-8') as f:
-            json.dump(wa_alert if 'whatsapp_alert_' in rel_target else payload_out, f, ensure_ascii=False, indent=2)
+            json.dump(wa_auto_result if 'whatsapp_alert_' in rel_target else payload_out, f, ensure_ascii=False, indent=2)
 
     summary_path = os.path.join(BASE_DIR, 'exports', 'RADAR_SUMMARY.json')
     os.makedirs(os.path.dirname(summary_path), exist_ok=True)
@@ -209,11 +174,11 @@ def run_scan():
     presenter.generate_html(scan_meta, scored_list)
 
     print("\n" + "="*62)
-    print(" QUE HAY PA´ HACER! — SAN AGUSTÍN HUILA · GUADUA · ESTUDIANTES")
+    print(" QUE HAY PA´ HACER! — CONTACTOS REALES & AUTO-WHATSAPP")
     print("="*62)
     print(f"Fuentes Consultadas:    {', '.join(sources_consulted)}")
-    print(f"Trabajos Viables Hoy:   {len(scored_list)}")
-    print(f"WhatsApp Notificación:  +57 322 273 9034 ({wa_alert['high_potential_count']} de alto potencial)")
+    print(f"Trabajos Con Contacto:  {len(scored_list)}")
+    print(f"Auto-Envío WhatsApp:    +57 322 273 9034 -> {wa_auto_result.get('methods')}")
     print("="*62 + "\n")
 
     return scan_meta, scored_list

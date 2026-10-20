@@ -133,6 +133,7 @@ def save_opportunities(opportunities, scan_id=None, db_path=DEFAULT_DB_PATH, jso
                 decision, reasoning, next_action, first_seen_at, last_seen_at, status
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(opportunity_id) DO UPDATE SET
+                source_url = excluded.source_url,
                 title = excluded.title,
                 organization = excluded.organization,
                 description = excluded.description,
@@ -141,6 +142,7 @@ def save_opportunities(opportunities, scan_id=None, db_path=DEFAULT_DB_PATH, jso
                 payment_max = excluded.payment_max,
                 currency = excluded.currency,
                 skills_json = excluded.skills_json,
+                raw_data_json = excluded.raw_data_json,
                 observed_data_json = excluded.observed_data_json,
                 estimated_data_json = excluded.estimated_data_json,
                 proposal_json = excluded.proposal_json,
@@ -281,10 +283,17 @@ def get_all_opportunities(filter_decision=None, filter_status=None, limit=250, d
     for r in rows:
         d = dict(r)
         d['skills'] = json.loads(d.get('skills_json') or '[]')
+        d['raw_data'] = json.loads(d.get('raw_data_json') or '{}')
         d['observed_data'] = json.loads(d.get('observed_data_json') or '{}')
         d['estimated_data'] = json.loads(d.get('estimated_data_json') or '{}')
         d['proposal'] = json.loads(d.get('proposal_json') or '{}') if d.get('proposal_json') else None
         d['blueprint'] = json.loads(d.get('blueprint_json') or '{}') if d.get('blueprint_json') else None
+        raw = d['raw_data']
+        obs = d['observed_data']
+        d['contact_phone'] = raw.get('contact_phone') or obs.get('contact_phone') or obs.get('whatsapp_phone') or raw.get('whatsapp_phone') or ''
+        d['contact_whatsapp_url'] = raw.get('contact_whatsapp_url') or obs.get('contact_whatsapp_url') or ''
+        d['circular_code'] = raw.get('circular_code') or obs.get('circular_code') or ''
+        d['contact_email'] = raw.get('contact_email') or obs.get('contact_email') or ''
         results.append(d)
 
     conn.close()
