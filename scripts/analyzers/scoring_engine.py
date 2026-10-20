@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 class ScoringEngine:
     PRACTICAL_SKILLS = [
         ('guadua / bioconstrucción / cubiertas', r'\b(guadua|bamb[uú]|caba[ñn]as?|glamping|eco-?lodge|maloka|mirador|kiosco|bioconstrucci\w*|tendinoso|botellas?|muros?\s+en\s+vidrio|vitral\w*|cubiertas?)\b', 44, 'guadua_cabanas'),
+        ('barismo colegios / catador q-grader', r'\b(barism\w*|baristas?|q-?grader|cataci[oó]n|catador\w*|arte\s+latte|protocolo\s+sca|escuela\s+nacional\s+de\s+la\s+calidad\s+del\s+caf[eé])\b', 45, 'barismo_qgrader'),
         ('café borbón rosado / secaderos', r'\b(borb[oó]n\s+rosado|pink\s+bourbon|secaderos?|marquesinas?|caf[eé]\s+especial|caficultor\w*|zarandas?|beneficiadero)\b', 44, 'cafe_secaderos'),
         ('murales / tatuajes / arte', r'\b(mural\w*|tatuaj\w*|tattoo|arte\s+corporal|pintura\s+mural|grafitti|artista\s+pl[aá]stico)\b', 43, 'murales_tatuajes'),
         ('estructuras metal / soldadura', r'\b(estructuras?\s+met[aá]licas?|metal\w*|soldadura|soldador|cerchas?|cubiertas?|portones?|barandas?|ornamentaci\w*|hierro|acero|remodelaci\w*)\b', 42, 'metal_soldadura'),
@@ -100,6 +101,7 @@ class ScoringEngine:
         is_huila_or_guadua = (
             opp_type == 'san_agustin_huila_prioridad'
             or 'guadua_cabanas' in matched_cats
+            or 'barismo_qgrader' in matched_cats
             or 'cafe_secaderos' in matched_cats
             or 'murales_tatuajes' in matched_cats
             or 'extras_exterior' in matched_cats

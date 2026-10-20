@@ -21,6 +21,27 @@ class TechnicalProposalGenerator:
         p_max = opp.get('payment_max')
         curr = opp.get('currency') or 'COP'
 
+        # 0. Clases de Barismo en Colegios/Veredas y Catador Q-Grader (Café de Especialidad)
+        if cat_hint == 'barismo_qgrader' or any(k in skills_text for k in ['barismo', 'q-grader', 'q grader', 'catador', 'catación', 'catacion', 'arte latte']):
+            subject = f"Clases de Barismo, Catación Q-Grader y Café de Especialidad en Colegios y Veredas — {org}"
+            body = f"""¡Hola {org}! 👋 Un cordial saludo desde San Agustín, Huila.
+
+Nos comunicamos respecto a **{title}** para poner a su disposición nuestros servicios profesionales de formación y control de calidad en Café de Especialidad:
+
+☕ **1. Clases y Talleres de Barismo (Colegios, Veredas y Cafeterías)**: Formación práctica para estudiantes de colegios urbanos/rurales, jóvenes caficultores y grupos asociativos en métodos de filtrado (V60, Chemex, Aeropress, Prensa Francesa), calibración de molino, extracción de espresso y texturización / Arte Latte.
+🏅 **2. Catación Q-Grader y Análisis Sensorial (Protocolo SCA / CQI)**: Evaluación física y sensorial en mesa de catación de microlotes (Borbón Rosado, Caturra, Geisha, Tabi), identificación de defectos de beneficio/secado, perfilación de taza (84 a 90+ puntos SCA) y talleres para que los productores aprendan a catar su propio café en vereda.
+
+📲 Contacto directo por WhatsApp en San Agustín: **+57 322 273 9034**. ¿Coordinamos una sesión demostrativa o cronograma de clases para el colegio / vereda / asociación?"""
+            pricing = f"COP ${int(p_min or 400000):,} — ${int(p_max or 3200000):,} (Por taller, ciclo escolar o jornada de catación Q-Grader)".replace(',', '.')
+            return {
+                'language': 'es',
+                'subject': subject,
+                'body': body,
+                'pricing_recommendation': pricing,
+                'turnaround': "Disponibilidad inmediata en colegios y veredas de San Agustín, Isnos y Pitalito",
+                'whatsapp_phone': wa_phone
+            }
+
         # 1. Café Borbón Rosado de Campesinos & Construcción de Secaderos para Café (Guadua y Metal)
         if cat_hint == 'cafe_secaderos' or any(k in skills_text for k in ['borbón rosado', 'borbon rosado', 'secadero', 'marquesina', 'caficultor']):
             subject = f"Secaderos de Café (Guadua/Metal) y Café Borbón Rosado en San Agustín — {org}"

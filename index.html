@@ -946,6 +946,7 @@
         <div class="cyber-pills-row">
             <button class="cz-pill active" data-cat="" onclick="selectCat('', this)">⚡ MÁS RECIENTES</button>
             <button class="cz-pill" data-cat="cerca_de_mi" onclick="selectCat('cerca_de_mi', this)">📍 CERCA DE MÍ (POR KM)</button>
+            <button class="cz-pill" data-cat="barismo_qgrader" onclick="selectCat('barismo_qgrader', this)">☕🏅 BARISMO COLEGIOS · VEREDAS & Q-GRADER</button>
             <button class="cz-pill" data-cat="cafe_secaderos" onclick="selectCat('cafe_secaderos', this)">☕ CAFÉ BORBÓN ROSADO & SECADEROS</button>
             <button class="cz-pill" data-cat="murales_tatuajes" onclick="selectCat('murales_tatuajes', this)">🎨 MURALES & TATUAJES</button>
             <button class="cz-pill" data-cat="huila_guadua" onclick="selectCat('huila_guadua', this)">🎋 CUBIERTAS GUADUA/METAL · BOTELLAS & VIDRIO</button>
@@ -1014,6 +1015,7 @@
 
                 <div class="cyber-pills-row" style="justify-content:flex-start;margin-bottom:14px;">
                     <button class="cz-pill active" id="locSrv-guadua" onclick="setLocalService('guadua')">🎋 Cubiertas Guadua/Metal · Muro Tendinoso · Botellas</button>
+                    <button class="cz-pill" id="locSrv-barismo" onclick="setLocalService('barismo')">☕🏅 Clases de Barismo en Colegios/Veredas & Catador Q-Grader</button>
                     <button class="cz-pill" id="locSrv-cafe" onclick="setLocalService('cafe')">☕ Secaderos para Café & Compra Borbón Rosado</button>
                     <button class="cz-pill" id="locSrv-murales" onclick="setLocalService('murales')">🎨 Diseños de Murales & Tatuajes</button>
                     <button class="cz-pill" id="locSrv-metal" onclick="setLocalService('metal')">🔩 Estructuras en Metal · Soldadura & Remodelación</button>
@@ -1459,6 +1461,12 @@
             if (v === 'whatsapp') buildMyWaDigest();
         }
 
+        function isBarismoQgrader(o) {
+            const cat = o.category || o.observed_data?.category_hint || '';
+            const txt = `${o.title} ${o.description} ${(o.skills || []).join(' ')}`.toLowerCase();
+            return cat === 'barismo_qgrader' || /barism|barista|q-?grader|cataci[oó]n|catador|arte latte|protocolo sca|calidad del caf/.test(txt);
+        }
+
         function isCafeSecaderos(o) {
             const cat = o.category || o.observed_data?.category_hint || '';
             const txt = `${o.title} ${o.description} ${(o.skills || []).join(' ')}`.toLowerCase();
@@ -1518,6 +1526,7 @@
         }
 
         function getCategoryHeader(o) {
+            if (isBarismoQgrader(o)) return '☕🏅 BARISMO COLEGIOS · VEREDAS & Q-GRADER';
             if (isCafeSecaderos(o)) return '☕ CAFÉ BORBÓN ROSADO & SECADEROS';
             if (isMuralesTatuajes(o)) return '🎨 MURALES ARTÍSTICOS & TATUAJES';
             if (isExtrasExterior(o)) return '✈️ PASANTÍAS SENA · INTERCAMBIOS & EXTERIOR';
@@ -1681,6 +1690,10 @@
                         </div>
                         <button class="cz-pill active" onclick="locateSanAgustin()">📍 CALIBRAR MI GPS</button>
                     </div>`;
+                } else if (curCat === 'barismo_qgrader') {
+                    banner.style.display = 'block';
+                    banner.innerHTML = `<strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">☕🏅 CLASES DE BARISMO EN COLEGIOS / VEREDAS & CATADOR Q-GRADER (CAFÉ DE ESPECIALIDAD)</strong>
+                    <div style="font-size:0.82rem;color:var(--text-silver);">Oportunidades directas para dictar clases y talleres de Barismo, Métodos de Filtrado (V60, Chemex, Espresso, Arte Latte) y Catación Sensorial Q-Grader (protocolo SCA / CQI) en colegios urbanos y rurales, veredas cafeteras, cooperativas y asociaciones de San Agustín, Isnos y Pitalito.</div>`;
                 } else if (curCat === 'cafe_secaderos') {
                     banner.style.display = 'block';
                     banner.innerHTML = `<strong style="color:var(--amber-gold);font-family:'Rajdhani',sans-serif;font-size:1.1rem;">☕ SECADEROS PARA CAFÉ & COMPRA DE CAFÉ BORBÓN ROSADO DE CAMPESINOS</strong>
@@ -1710,6 +1723,8 @@
                 list = opps.filter(o => savedIds.has(o.opportunity_id));
             } else if (curCat === 'cerca_de_mi') {
                 list = list.filter(o => calcDistanceKm(o) <= 120);
+            } else if (curCat === 'barismo_qgrader') {
+                list = list.filter(isBarismoQgrader);
             } else if (curCat === 'cafe_secaderos') {
                 list = list.filter(isCafeSecaderos);
             } else if (curCat === 'murales_tatuajes') {
@@ -2002,7 +2017,7 @@
 
         function setLocalService(s) {
             localSrv = s;
-            ['guadua', 'cafe', 'murales', 'metal', 'extras', 'informales', 'alcaldia', 'estudiantes'].forEach(k => {
+            ['guadua', 'barismo', 'cafe', 'murales', 'metal', 'extras', 'informales', 'alcaldia', 'estudiantes'].forEach(k => {
                 document.getElementById('locSrv-' + k)?.classList.toggle('active', k === s);
             });
             updateLocalPitch();
@@ -2013,6 +2028,8 @@
             if (!box) return;
             if (localSrv === 'guadua') {
                 box.value = `¡Hola! Un saludo desde San Agustín, Huila. Soy Maestro Certificado en Guadua y Bioconstrucción.\n\nRealizo todo tipo de cubiertas en guadua y metal, cabañas con estilo de muro tendinoso, incrustaciones artísticas de botellas, muros en vidrio y diseño previo en Blender 3D en ${localZone}.\n\n📲 Mi WhatsApp directo: +57 322 273 9034.`;
+            } else if (localSrv === 'barismo') {
+                box.value = `¡Hola! Un cordial saludo desde San Agustín, Huila.\n\nOfrecemos clases y talleres prácticos de Barismo (métodos V60, Chemex, Prensa Francesa, Espresso, Arte Latte) y Catación Sensorial con perfil Catador Q-Grader (protocolo SCA / CQI) para colegios urbanos y rurales, veredas cafeteras, asociaciones de productores y cafeterías en ${localZone}.\n\n📲 Contacto directo por WhatsApp: +57 322 273 9034.`;
             } else if (localSrv === 'cafe') {
                 box.value = `¡Hola! Desde San Agustín y el Sur del Huila:\n1) Construyo y remodelo secaderos para café (marquesinas solares, secaderos parabólicos, camas africanas y todo tipo de cubiertas en guadua y metal).\n2) Compro y gestiono lotes de Café Borbón Rosado directamente de campesinos y caficultores en ${localZone} con pago directo.\n\n📲 Mi WhatsApp directo: +57 322 273 9034.`;
             } else if (localSrv === 'murales') {
@@ -2037,6 +2054,7 @@
 
             let q = '';
             if (localSrv === 'guadua') q = `bioconstruccion OR guadua OR cubiertas OR cabañas ${localZone}`;
+            else if (localSrv === 'barismo') q = `barismo OR catacion OR "cafe especial" OR colegios OR caficultores ${localZone}`;
             else if (localSrv === 'cafe') q = `"borbon rosado" OR "secadero de cafe" OR caficultores ${localZone}`;
             else if (localSrv === 'murales') q = `muralista OR murales OR tatuajes OR hostales ${localZone}`;
             else if (localSrv === 'metal') q = `soldadura OR estructuras metalicas OR cubiertas OR remodelacion ${localZone}`;

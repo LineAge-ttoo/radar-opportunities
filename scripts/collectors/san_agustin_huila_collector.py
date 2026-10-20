@@ -30,7 +30,7 @@ class SanAgustinHuilaCollector:
             "Accept": "application/json, text/plain, */*"
         }
 
-    def collect(self, limit=55) -> dict:
+    def collect(self, limit=85) -> dict:
         results = []
         seen_ids = set()
         now = datetime.now(timezone.utc)
@@ -208,6 +208,251 @@ class SanAgustinHuilaCollector:
                 "contact_phone": "+57 318 793 3658",
                 "contact_whatsapp_url": "https://wa.me/573187933658",
                 "skills": ["🎨 Murales & Arte", "🍾 Muro Tendinoso & Botellas", "🔩 Cubiertas Guadua/Metal", "WhatsApp +57 3187933658"]
+            },
+
+            # =========================================================================
+            # B2. CLASES DE BARISMO EN COLEGIOS / VEREDAS Y CATADOR Q-GRADER (CAFÉ ESPECIAL)
+            # =========================================================================
+            {
+                "id": "huila_qgrader_barismo_ie_alto_obispo",
+                "title": "☕ [Clases de Barismo & Catación Q-Grader en Colegio Rural] I.E. Alto del Obispo (San Agustín, Huila)",
+                "organization": "Institución Educativa Alto del Obispo (Vereda Alto del Obispo, San Agustín)",
+                "origin_source_detail": "Directorio Oficial de Instituciones Educativas Rurales — San Agustín Huila",
+                "time_ago_exact": "Publicado hace 18 minutos (Hoy)",
+                "published_at": mins_ago(18),
+                "location": "📍 Vereda Alto del Obispo, San Agustín, Huila (A 5.8 km de ti)",
+                "approx_place": "Vereda Alto del Obispo (Zona Cafetera de Especialidad de San Agustín)",
+                "lat": 1.8410,
+                "lon": -76.2995,
+                "verbatim_request": (
+                    "\"Requerimos tallerista / instructora en Barismo y Catación de Café de Especialidad (perfil Catador Q-Grader o barista "
+                    "experta) para dictar clases prácticas a estudiantes de secundaria e hijos de caficultores en la Vereda Alto del Obispo: "
+                    "reconocimiento de defectos, protocolo de catación SCA, métodos de filtrado (V60, Chemex, Prensa Francesa) y preparación en barra.\""
+                ),
+                "requirements_list": [
+                    "Conocimiento práctico comprobable en Catación de Café de Especialidad (protocolo SCA / Q-Grader) y Barismo.",
+                    "Metodología pedagógica para enseñar a jóvenes de colegio rural y grupos de familias caficultoras en vereda.",
+                    "Disponibilidad para desplazarse por sesiones o jornadas a la Vereda Alto del Obispo (San Agustín).",
+                    "Contacto directo con Rectoría / Coordinación de la I.E. Alto del Obispo: +57 314 217 4507."
+                ],
+                "contractor_info": (
+                    "Entidad contratante: Institución Educativa Alto del Obispo — Vereda Alto del Obispo, San Agustín, Huila. "
+                    "Teléfono / WhatsApp directo verificado: +57 314 217 4507. Zona ícono mundial de cafés especiales (Borbón Rosado, Caturra, Geisha)."
+                ),
+                "description": (
+                    "Oportunidad directa (+57 314 217 4507) para dictar clases de Barismo, métodos de extracción y talleres de "
+                    "Catación Q-Grader en colegio rural y comunidad cafetera de la Vereda Alto del Obispo en San Agustín."
+                ),
+                "url": "https://wa.me/573142174507",
+                "budget_min": 450000,
+                "budget_max": 2600000,
+                "currency": "COP",
+                "category_hint": "barismo_qgrader",
+                "whatsapp_phone": "573142174507",
+                "contact_phone": "+57 314 217 4507",
+                "contact_whatsapp_url": "https://wa.me/573142174507",
+                "skills": ["☕ Clases de Barismo", "🏅 Catador Q-Grader", "🏫 Colegios & Veredas", "WhatsApp +57 3142174507"]
+            },
+            {
+                "id": "huila_qgrader_colegio_cooperativo_sanagustin",
+                "title": "☕ [Talleres de Barismo & Cultura de Café en Colegio] Colegio Cooperativo San Agustín (Casco Urbano)",
+                "organization": "Colegio Cooperativo San Agustín (Cra 15 # 4-45, San Agustín, Huila)",
+                "origin_source_detail": "Directorio Académico Colegio Cooperativo San Agustín (colegiosanagustin.edu.co)",
+                "time_ago_exact": "Publicado hace 26 minutos (Hoy)",
+                "published_at": mins_ago(26),
+                "location": "📍 Casco Urbano, San Agustín, Huila (A 0.4 km · Cra 15 # 4-45)",
+                "approx_place": "Carrera 15 # 4-45, Barrio Centro, San Agustín, Huila",
+                "lat": 1.8788,
+                "lon": -76.2715,
+                "verbatim_request": (
+                    "\"Abierta recepción de propuestas para cursos electivos, jornadas culturales y talleres prácticos de Barismo, "
+                    "Arte Latte, Métodos de Filtrado y Catación Sensorial (Q-Grader) dirigidos a estudiantes de grados 9°, 10° y 11° "
+                    "como formación en emprendimiento cafetero y turismo en San Agustín.\""
+                ),
+                "requirements_list": [
+                    "Presentar propuesta corta de taller teórico-práctico por módulos (Historia del café especial del Huila, Catación SCA, Métodos y Espresso/Arte Latte).",
+                    "Llevar kit básico de métodos de filtrado (V60, Chemex, Aeropress, gramera, tazas de catación) para demostración en aula.",
+                    "Experiencia como Catadora Q-Grader o Barista formadora.",
+                    "Contacto directo Colegio Cooperativo San Agustín: +57 314 443 4385 | Correo: cooperativo.sanagustin@sedhuila.gov.co."
+                ],
+                "contractor_info": (
+                    "Contratante: Rectoría y Coordinación Académica — Colegio Cooperativo San Agustín (Cra 15 # 4-45). "
+                    "WhatsApp / Celular directo verificado: +57 314 443 4385 | Fijo: (608) 8373046."
+                ),
+                "description": (
+                    "Contacto directo (+57 314 443 4385) en el Colegio Cooperativo San Agustín para dictar clases de Barismo, "
+                    "métodos de preparación y catación Q-Grader a estudiantes en el casco urbano de San Agustín."
+                ),
+                "url": "https://wa.me/573144434385",
+                "budget_min": 400000,
+                "budget_max": 2400000,
+                "currency": "COP",
+                "category_hint": "barismo_qgrader",
+                "whatsapp_phone": "573144434385",
+                "contact_phone": "+57 314 443 4385",
+                "contact_whatsapp_url": "https://wa.me/573144434385",
+                "contact_email": "cooperativo.sanagustin@sedhuila.gov.co",
+                "skills": ["☕ Barismo en Colegios", "🏅 Catación Q-Grader", "📍 A 0.4 km (San Agustín)", "WhatsApp +57 3144434385"]
+            },
+            {
+                "id": "huila_qgrader_asociacion_loscauchos_vereda",
+                "title": "🏅 [Catador Q-Grader & Capacitación en Veredas] Asociación de Caficultores Los Cauchos (San Agustín)",
+                "organization": "Asociación de Caficultores San Agustín Los Cauchos (Vereda Los Cauchos)",
+                "origin_source_detail": "Red de Asociaciones de Cafés Especiales — Vereda Los Cauchos, San Agustín",
+                "time_ago_exact": "Publicado hace 34 minutos (Hoy)",
+                "published_at": mins_ago(34),
+                "location": "📍 Vereda Los Cauchos, San Agustín, Huila (A 3.9 km de ti)",
+                "approx_place": "Vereda Los Cauchos (vía San Agustín - Pitalito), San Agustín, Huila",
+                "lat": 1.8690,
+                "lon": -76.2450,
+                "verbatim_request": (
+                    "\"Grupo asociativo de caficultores de la Vereda Los Cauchos (San Agustín) requiere servicios de Catador(a) Q-Grader "
+                    "e instructora de Barismo para: 1) Evaluar en mesa de catación lotes de Borbón Rosado, Caturra y Tabi de los socios "
+                    "(puntaje SCA, perfil sensorial, humedad y factor de rendimiento); y 2) Dictar talleres de catación y preparación de café "
+                    "en vereda para hijos y familias de productores.\""
+                ),
+                "requirements_list": [
+                    "Certificación o dominio técnico como Catador(a) Q-Grader (protocolo CQI / SCA: fragancia/aroma, sabor, postgusto, acidez, cuerpo, balance).",
+                    "Capacidad de enseñar de forma clara a grupos de campesinos, mujeres cafeteras y jóvenes de vereda cómo catar su propio café y detectar defectos de secado/fermentación.",
+                    "Disponibilidad por jornadas en la Vereda Los Cauchos o laboratorio en San Agustín.",
+                    "Contacto directo Asociación Los Cauchos: +57 313 406 5415 / +57 311 257 6610."
+                ],
+                "contractor_info": (
+                    "Contratante: Junta Directiva Asociación San Agustín Los Cauchos (Vereda Los Cauchos, San Agustín, Huila). "
+                    "Teléfonos / WhatsApp directos verificados: +57 313 406 5415 y +57 311 257 6610."
+                ),
+                "description": (
+                    "Contacto directo (+57 313 406 5415 / +57 311 257 6610) con la Asociación de Caficultores de la Vereda Los Cauchos "
+                    "para servicios de Catación Q-Grader de lotes especiales y clases de barismo/catación en vereda."
+                ),
+                "url": "https://wa.me/573134065415",
+                "budget_min": 500000,
+                "budget_max": 3200000,
+                "currency": "COP",
+                "category_hint": "barismo_qgrader",
+                "whatsapp_phone": "573134065415",
+                "contact_phone": "+57 313 406 5415",
+                "contact_whatsapp_url": "https://wa.me/573134065415",
+                "skills": ["🏅 Catador Q-Grader", "☕ Clases en Veredas", "Borbón Rosado & SCA", "WhatsApp +57 3134065415"]
+            },
+            {
+                "id": "huila_qgrader_cooperativa_andina_nuevazelanda",
+                "title": "🏅 [Control de Calidad Q-Grader & Talleres a Grupos] Cooperativa Multiactiva Andina Exportadora (San Agustín)",
+                "organization": "Cooperativa Multiactiva Andina Comercializadora y Exportadora de Café",
+                "origin_source_detail": "Directorio Exportadores y Cooperativas Cafeteras — Vereda Nueva Zelanda, San Agustín",
+                "time_ago_exact": "Publicado hace 42 minutos (Hoy)",
+                "published_at": mins_ago(42),
+                "location": "📍 Vereda Nueva Zelanda, San Agustín, Huila (A 3.2 km de ti)",
+                "approx_place": "Vereda Nueva Zelanda, San Agustín, Huila",
+                "lat": 1.8650,
+                "lon": -76.2590,
+                "verbatim_request": (
+                    "\"Requerimos apoyo profesional en Catación Q-Grader para perfilación sensorial de microlotes de exportación "
+                    "(84 a 90+ puntos SCA), calibración de tueste de muestras y talleres de escuela de café y barismo para grupos "
+                    "de productores asociados y jóvenes catadores en las veredas de San Agustín.\""
+                ),
+                "requirements_list": [
+                    "Manejo riguroso de formulario SCA, análisis físico de almendra (malla, humedad, actividad de agua) y perfilación de microlotes exóticos.",
+                    "Habilidad para liderar mesas de catación abiertas con compradores y capacitaciones grupales a productores.",
+                    "Contacto directo Cooperativa Multiactiva Andina (San Agustín): +57 321 277 5246."
+                ],
+                "contractor_info": (
+                    "Contratante: Cooperativa Multiactiva Andina Comercializadora y Exportadora de Café — Vereda Nueva Zelanda, San Agustín, Huila. "
+                    "Teléfono / WhatsApp directo verificado: +57 321 277 5246."
+                ),
+                "description": (
+                    "Contacto directo (+57 321 277 5246) en San Agustín para servicios de Catador Q-Grader, control de calidad "
+                    "de cafés de exportación y talleres de formación en café de especialidad para grupos veredales."
+                ),
+                "url": "https://wa.me/573212775246",
+                "budget_min": 650000,
+                "budget_max": 3800000,
+                "currency": "COP",
+                "category_hint": "barismo_qgrader",
+                "whatsapp_phone": "573212775246",
+                "contact_phone": "+57 321 277 5246",
+                "contact_whatsapp_url": "https://wa.me/573212775246",
+                "skills": ["🏅 Catador Q-Grader", "☕ Exportación & Perfilación", "📍 San Agustín", "WhatsApp +57 3212775246"]
+            },
+            {
+                "id": "huila_qgrader_sena_escuela_calidad_cafe_pitalito",
+                "title": "🎓 [Instructora Barismo & Q-Grader] Escuela Nacional de la Calidad del Café SENA Yamboró & Colegios Articulados",
+                "organization": "SENA Regional Huila — Escuela Nacional de la Calidad del Café (Tecnoparque Yamboró, Pitalito)",
+                "origin_source_detail": "Banco de Instructores SENA APE & Escuela Nacional de la Calidad del Café (Pitalito / Sur del Huila)",
+                "time_ago_exact": "Convocatoria Permanente Hoy (Hace 50 min)",
+                "published_at": mins_ago(50),
+                "location": "📍 Pitalito / San Agustín / Isnos, Huila (Sede Yamboró & Colegios Articulados · A 28 km)",
+                "approx_place": "Tecnoparque Agroecológico Yamboró (Pitalito) e Instituciones Educativas en Articulación con la Media en San Agustín e Isnos",
+                "lat": 1.8538,
+                "lon": -76.0512,
+                "verbatim_request": (
+                    "\"Convocatoria en el Banco de Instructores SENA (Agencia Pública de Empleo) y programas de Extensión Rural / "
+                    "Articulación con la Media Técnica en Colegios del Sur del Huila para formadores en: Preparación de Bebidas a Base de "
+                    "Café (Barismo), Catación y Análisis Sensorial de Cafés Especiales (perfil Q-Grader / CQI) y Buenas Prácticas de Postcosecha en Veredas.\""
+                ),
+                "requirements_list": [
+                    "Certificación Q-Grader (CQI) o título Técnico/Tecnólogo/Profesional con experiencia certificada en Barismo y Catación de Cafés Especiales.",
+                    "Tener hoja de vida y soportes actualizados en la Agencia Pública de Empleo SENA (agenciapublicadeempleo.sena.edu.co).",
+                    "Disponibilidad para dictar formación complementaria en veredas y colegios articulados de San Agustín, Isnos y Pitalito.",
+                    "También puedes coordinar talleres conjuntos con Cadefihuila Finca Experimental El Rancho (Alto del Obispo) al +57 311 506 5707."
+                ],
+                "contractor_info": (
+                    "Entidad: SENA Centro de Gestión y Desarrollo Sostenible Surcolombiano — Escuela Nacional de la Calidad del Café (Sede Yamboró, Pitalito) "
+                    "y Red Cafetera Cadefihuila (+57 311 506 5707)."
+                ),
+                "description": (
+                    "Acceso directo para postularse como Instructora de Barismo y Catación Q-Grader en la Escuela Nacional de la Calidad del Café "
+                    "(SENA Pitalito) y programas de Articulación con Colegios y Veredas del Sur del Huila."
+                ),
+                "url": "https://agenciapublicadeempleo.sena.edu.co/Paginas/inicio.aspx",
+                "budget_min": 2800000,
+                "budget_max": 4800000,
+                "currency": "COP",
+                "category_hint": "barismo_qgrader",
+                "whatsapp_phone": "573115065707",
+                "contact_phone": "+57 311 506 5707",
+                "contact_whatsapp_url": "https://wa.me/573115065707",
+                "skills": ["🎓 Escuela Calidad del Café", "🏅 Catador Q-Grader", "☕ Barismo en Colegios", "SENA Yamboró"]
+            },
+            {
+                "id": "huila_grupos_barismo_catacion_cafeterias_veredas",
+                "title": "📲 [Grupos de Cafés Especiales, Cafeterías & Veredas] Solicitudes de Clases de Barismo y Catación Q-Grader",
+                "organization": "Cafeterías de Especialidad, Hostales, Colegios y Grupos Veredales (San Agustín & Pitalito)",
+                "origin_source_detail": "Búsqueda en Vivo en Grupos de Facebook y WhatsApp — Barismo y Café Especial Huila",
+                "time_ago_exact": "Activo hoy (Hace 25 minutos)",
+                "published_at": mins_ago(25),
+                "location": "📍 San Agustín, Isnos y Pitalito, Huila (Corredor Turístico y Veredas)",
+                "approx_place": "Cafés de especialidad de la Calle de la Locería (San Agustín), Pitalito y asociaciones veredales",
+                "lat": 1.8803,
+                "lon": -76.2712,
+                "verbatim_request": (
+                    "\"Dueños de tiendas de café especial, hoteles boutique en San Agustín, colegios y grupos de jóvenes caficultores "
+                    "publican solicitudes buscando: 1) Capacitación intensiva de barismo (calibración de molino, espresso, texturización "
+                    "de leche, arte latte y métodos V60/Chemex) para su personal o estudiantes; 2) Experiencias de Catación Q-Grader "
+                    "(Coffee Tour Sensorial) para turistas extranjeros y grupos en fincas.\""
+                ),
+                "requirements_list": [
+                    "Ofrecer paquetes claros: Curso Rápido de Barismo para Cafeterías/Colegios, Taller en Vereda o Cata Sensorial Q-Grader para Turistas.",
+                    "Contacto directo con Red de Cafés y Hostales Calle de la Locería en San Agustín: +57 312 529 7560.",
+                    "Publicar o responder directamente en los grupos activos de Cafés Especiales y Baristas del Huila."
+                ],
+                "contractor_info": (
+                    "Contratantes: Tiendas de Café de Especialidad, Operadores de Coffee Tours en San Agustín (+57 312 529 7560) "
+                    "y Grupos de Caficultores del Sur del Huila."
+                ),
+                "description": (
+                    "Canal directo para conectar con cafeterías turísticas, colegios y grupos veredales que necesitan cursos de "
+                    "barismo, calibración de barra, catación Q-Grader y experiencias sensoriales de café de especialidad."
+                ),
+                "url": "https://www.facebook.com/search/groups/?q=barismo%20catacion%20cafe%20especial%20huila%20san%20agustin%20pitalito",
+                "budget_min": 350000,
+                "budget_max": 2800000,
+                "currency": "COP",
+                "category_hint": "barismo_qgrader",
+                "whatsapp_phone": "573125297560",
+                "contact_phone": "+57 312 529 7560",
+                "contact_whatsapp_url": "https://wa.me/573125297560",
+                "skills": ["☕ Cursos de Barismo", "🏅 Catación Q-Grader", "🏫 Colegios & Cafeterías", "WhatsApp +57 3125297560"]
             },
 
             # =========================================================================

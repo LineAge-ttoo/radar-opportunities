@@ -1,17 +1,17 @@
 {
-  "scan_id": "scan_20261020_010929_8a89f6",
-  "started_at": "2026-10-20T01:09:29.109896+00:00",
-  "finished_at": "2026-10-20T01:09:44.193576+00:00",
+  "scan_id": "scan_20261020_015308_e4d346",
+  "started_at": "2026-10-20T01:53:08.298878+00:00",
+  "finished_at": "2026-10-20T01:53:21.387067+00:00",
   "sources_consulted": [
     "San Agustín Huila · Guadua · Bioconstrucción · Metal · Café · Arte & Exterior",
     "Clientes Colombia (Instagram & Facebook)",
     "Workana Colombia & LATAM",
     "Freelancer.co (Tareas & Proyectos)"
   ],
-  "total_found": 176,
-  "prioridad_count": 152,
+  "total_found": 192,
+  "prioridad_count": 169,
   "construir_vender_count": 0,
-  "investigar_count": 24,
+  "investigar_count": 23,
   "observar_count": 0,
   "descartar_count": 2,
   "whatsapp_target": "573222739034",
