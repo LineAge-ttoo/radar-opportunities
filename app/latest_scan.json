@@ -32,7 +32,7 @@
   "whatsapp_alert": {
     "dispatched": true,
     "methods": [
-      "Windows_WhatsApp_AutoSend"
+      "AutoQueue_Ready"
     ],
     "target_phone": "573222739034",
     "count": 6,
@@ -7043,8 +7043,8 @@
       "reasoning": "Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).",
       "next_action": "Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.",
       "estimated_data": {
-        "age_hours": 0.8,
-        "freshness_label": "Hace 48 min",
+        "age_hours": 0.5,
+        "freshness_label": "Hace 30 min",
         "estimated_hours": "24 a 72 horas",
         "estimated_difficulty": "VIABLE / DIRECTO",
         "competition_level": "MUY BAJA (Ventaja Local + Certificado Guadua)",
@@ -12313,21 +12313,22 @@
         ]
       },
       "skills": [
-        "whatsapp / bot"
+        "blender / 3d",
+        "planos / autocad"
       ],
-      "fit_score": 34.0,
+      "fit_score": 83.0,
       "money_score": 92.0,
       "reusability_score": 68.0,
-      "overall_score": 68.3,
-      "decision": "INVESTIGAR",
-      "reasoning": "[Hace 72 min] Encargo compatible (whatsapp / bot).",
-      "next_action": "Revisar alcance y cotizar.",
+      "overall_score": 93.8,
+      "decision": "PRIORIDAD",
+      "reasoning": "[Hace 78 min] Encargo práctico realizable (blender / 3d, planos / autocad).",
+      "next_action": "Enviar propuesta ofreciendo primer avance en 24h.",
       "estimated_data": {
-        "age_hours": 1.2,
-        "freshness_label": "Hace 72 min",
-        "estimated_hours": "2 a 4 días",
+        "age_hours": 1.3,
+        "freshness_label": "Hace 78 min",
+        "estimated_hours": "1 a 3 días",
         "estimated_difficulty": "VIABLE / DIRECTO",
-        "competition_level": "MEDIA",
+        "competition_level": "BAJA",
         "is_colombia": false,
         "is_huila_guadua": false,
         "distance_km": 999.0
@@ -15670,7 +15671,7 @@
       "reasoning": "[Hoy (6h)] Encargo práctico realizable (planos / autocad, whatsapp / bot, web / catálogo).",
       "next_action": "Enviar propuesta ofreciendo primer avance en 24h.",
       "estimated_data": {
-        "age_hours": 6.7,
+        "age_hours": 6.9,
         "freshness_label": "Hoy (6h)",
         "estimated_hours": "1 a 3 días",
         "estimated_difficulty": "VIABLE / DIRECTO",
@@ -16129,8 +16130,8 @@
       "description": "I have a finished promotional design saved as a high-resolution JPEG and I need it translated into clean, responsive HTML that Mailchimp accepts as a reusable template. The layout includes hero imagery, a few supporting graphics, and clearly defined call-to-action buttons. Those visual elements can stay fixed, but every line of copy must remain editable inside Mailchimp’s drag-and-drop editor so I can refresh wording for future sends without touching code. The build has to render flawlessly in Gmail and Apple Mail on both desktop and mobile. Please keep the code lightweight, comment your sections, and follow Mailchimp-friendly best practices (inline CSS, table structure, no external stylesheets). Deliverables • One HTML file ready for direct upload to Mailchimp • Any supporting assets (optimised images, if you slice them) in a tidy folder • Quick test screenshots or a short screencast proving it displays correctly in Gmail and Apple Mail Time is tight, so let me know how soon you can turn this around once I hand over the JPEG.",
       "category": "Planos, AutoCAD & 3D",
       "opportunity_type": "tarea_directa",
-      "payment_min": 15.0,
-      "payment_max": 25.0,
+      "payment_min": 30.0,
+      "payment_max": 250.0,
       "currency": "USD",
       "location": "Remoto (Sin Contrato Legal)",
       "approx_place": "Colombia / Internacional (Entrega Digital Directa)",
@@ -16161,7 +16162,7 @@
         "contractor_info": "Demandante verificado en Freelancer.co (Anuncio #40787455, publicado hace 8 horas (hoy)). Presupuesto ofrecido: USD 15 - 25."
       },
       "observed_data": {
-        "stated_salary": "USD 15 - 25",
+        "stated_salary": "USD 30 - 250",
         "stated_location": "Colombia / Internacional",
         "stated_job_type": "Pago por Tarea (Publicado hace 8 horas (Hoy))",
         "origin_source_detail": "Publicado en: Freelancer.co — Anuncio #40787455 (Planos, AutoCAD & 3D)",
@@ -16753,8 +16754,8 @@
       "description": "Necesito que Asterisk quede funcionando en un servidor Amazon Web Services y que Zoiper en Android se registre sin problemas. El escenario es sencillo pero debe quedar completamente operativo: • Tipo de llamadas: entrantes y salientes usando números telefónicos reales. • Extensiones simultáneas: entre 1 y 5 en Zoiper para Android. • Proveedor de telefonía: ya dispongo de los números, pero aún no cuento con los datos de conexión; por eso requiero tu ayuda para seleccionar o configurar correctamente el troncal (SIP o IAX) que garantice buena calidad y tarifas competitivas. Al finalizar espero: 1. Instancia AWS debidamente asegurada (puertos, firewall, NAT) con Asterisk actualizado y estable. 2. Dialplan configurado para llamadas entrantes y salientes, grabación opcional y buzón de voz básico. 3. Creación de las extensiones, credenciales y QR de aprovisionamiento para Zoiper en Android. 4. Configuración del troncal con el proveedor elegido, pruebas de llamada y registro de calidad. 5. Breve guía en español con los pasos esenciales por si necesito añadir más usuarios o cambiar números. Con todo listo, podremos marcar y recibir desde los móviles de inmediato.",
       "category": "Tareas en Español",
       "opportunity_type": "tarea_directa",
-      "payment_min": 30.0,
-      "payment_max": 250.0,
+      "payment_min": 50.0,
+      "payment_max": 50.0,
       "currency": "USD",
       "location": "Remoto (Sin Contrato Legal)",
       "approx_place": "Colombia / Internacional (Entrega Digital Directa)",

@@ -631,7 +631,7 @@
 - **Tiempo estimado:** 24 a 72 horas
 - **Compatibilidad (Skills):** estudiantes / tareas, whatsapp / bot, diseño / vector
 - **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 47 minutos (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 32 minutos), Ubicación=México, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://www.freelancer.co/projects/computer-vision/Rastreamento-Inteligente-Futebol-por-Vis](https://www.freelancer.co/projects/computer-vision/Rastreamento-Inteligente-Futebol-por-Vis)
@@ -1280,8 +1280,8 @@
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
 - **Compatibilidad (Skills):** blender / 3d, planos / autocad, diseño / vector
-- **Por qué apareció:** [Hoy (2h)] Encargo práctico realizable (blender / 3d, planos / autocad, diseño / vector).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 2 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hace 48 min] Encargo práctico realizable (blender / 3d, planos / autocad, diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 48 minutos (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
 - **Enlace original:** [https://www.freelancer.co/projects/3d-design/Rhino-Model-Drawing-Set](https://www.freelancer.co/projects/3d-design/Rhino-Model-Drawing-Set)
@@ -1659,7 +1659,20 @@
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 2 a 4 días
 - **Compatibilidad (Skills):** blender / 3d
-- **Por qué apareció:** [Hoy (3h)] Encargo compatible (blender / 3d).
+- **Por qué apareció:** [Hace 120 min] Encargo compatible (blender / 3d).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 hora (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
+- **Enlace original:** [https://www.freelancer.co/projects/2d-animation/Monthly-Kids-YouTube-Animation](https://www.freelancer.co/projects/2d-animation/Monthly-Kids-YouTube-Animation)
+
+### 7. Phone Caller (Telemarketing) - Philippines / Zimbabwe - Part-time, Remote | Solicitante Anuncio #40785980 (Bots, WhatsApp & Automatización) [64.3 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** GBP 2.0 - 5.0
+- **Score:** 64.3 / 100 (Fit: 34.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 2 a 4 días
+- **Compatibilidad (Skills):** whatsapp / bot
+- **Por qué apareció:** [Hoy (3h)] Encargo compatible (whatsapp / bot).
 - **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 3 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
@@ -1750,8 +1763,8 @@
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 2 a 4 días
 - **Compatibilidad (Skills):** blender / 3d
-- **Por qué apareció:** [Hoy (8h)] Encargo compatible (blender / 3d).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 8 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (6h)] Encargo compatible (blender / 3d).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 6 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
 - **Enlace original:** [https://www.freelancer.co/projects/3d-visualization/Interior-realistic-Render-with-Corona](https://www.freelancer.co/projects/3d-visualization/Interior-realistic-Render-with-Corona)

@@ -1,7 +1,7 @@
 {
   "dispatched": true,
   "methods": [
-    "Windows_WhatsApp_AutoSend"
+    "AutoQueue_Ready"
   ],
   "target_phone": "573222739034",
   "count": 6,
