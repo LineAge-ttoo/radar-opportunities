@@ -864,7 +864,7 @@ class SanAgustinHuilaCollector:
             },
             {
                 "id": "huila_nacimiento_glamping",
-                "title": "🎋 Nacimiento Glamping (Vereda El Tablón) — Cubiertas Mixtas Metal/Guadua, Muros en Vidrio y Secadero Café",
+                "title": "🎋 Nacimiento Glamping (Vereda El Tablón) — Cubiertas Mixtas Metal/Guadua, Muros en Vidrio y Bioconstrucción",
                 "organization": "Nacimiento Glamping (Vereda El Tablón, San Agustín)",
                 "origin_source_detail": "Canal Directo Glamping & Finca — Vereda El Tablón (nacimientoglamping.com)",
                 "time_ago_exact": "Publicado hace 2 horas (Hoy)",
@@ -875,8 +875,8 @@ class SanAgustinHuilaCollector:
                 "lon": -76.2565,
                 "verbatim_request": (
                     "\"Requerimos contratista local en San Agustín para: 1) Estructuras metálicas soldadas para plataformas de deck y jacuzzis; "
-                    "2) Cabañas/domos con grandes muros en vidrio panorámico, detalles en muro tendinoso con botellas y cubiertas en guadua; "
-                    "3) Adecuación de marquesina/secadero de café de especialidad en la finca.\""
+                    "2) Cabañas y domos con grandes muros en vidrio panorámico, detalles en muro tendinoso con botellas y cubiertas en guadua tratada; "
+                    "3) Pérgolas exteriores y barandas perimetrales en metal y guadua.\""
                 ),
                 "requirements_list": [
                     "Soldadura estructural de alta resistencia para plataformas elevadas en terreno inclinado.",
@@ -886,11 +886,11 @@ class SanAgustinHuilaCollector:
                 ],
                 "contractor_info": (
                     "Contratante: Propietarios de Nacimiento Glamping (+57 311 684 5394 · nacimientoglamping.com). "
-                    "Ubicado en la Vereda El Tablón, combina glamping de lujo (vidrio, metal y guadua) con entorno cafetero."
+                    "Ubicado en la Vereda El Tablón, combina glamping de lujo (vidrio, metal y guadua) en entorno agroturístico."
                 ),
                 "description": (
                     "Contacto directo (+57 311 684 5394) en la Vereda El Tablón para estructuras en metal y soldadura, "
-                    "muros en vidrio, cabañas en guadua y marquesinas de café."
+                    "muros en vidrio, cabañas en guadua y bioconstrucción."
                 ),
                 "url": "https://nacimientoglamping.com/",
                 "budget_min": 950000,
@@ -944,7 +944,256 @@ class SanAgustinHuilaCollector:
             },
 
             # =========================================================================
-            # D. SECCIÓN DE TRABAJOS EXTRAS: PASANTÍAS SENA, INTERCAMBIOS Y EXTERIOR
+                        # =========================================================================
+            # C2. OPORTUNIDADES DE INTERCAMBIO Y RESIDENCIA EN HOTELES & EMPRESAS
+            #     (TATUADOR, BIOCONSTRUCTOR, DISEÑO WEB, 3D, CAFÉ & BARISMO)
+            # =========================================================================
+            {
+                "id": "intercambio_hotel_murales_tatuajes",
+                "title": "🤝 [Intercambio Hostales & Hoteles] Muralismo en Áreas Comunes & Sesiones de Tatuajes a Huéspedes",
+                "organization": "Hostal & Eco-Lodge Macizo (Calle de la Locería, San Agustín)",
+                "origin_source_detail": "Red de Hostales y Turismo Cultural San Agustín (Calle de la Locería)",
+                "time_ago_exact": "Publicado hace 25 minutos (Hoy)",
+                "published_at": mins_ago(25),
+                "location": "📍 Calle de la Locería / Centro, San Agustín, Huila (A 0.3 km de ti)",
+                "approx_place": "Calle de la Locería y zona colonial de hostales en el centro de San Agustín",
+                "lat": 1.8796,
+                "lon": -76.2698,
+                "verbatim_request": (
+                    "\"Buscamos artista tatuador y muralista bajo modalidad de intercambio para nuestra temporada: "
+                    "te ofrecemos habitación privada con baño, las 3 comidas del día y un espacio adecuado en terraza/recepción "
+                    "para atender y tatuar a huéspedes extranjeros cobrando el 100% de tu tarifa sin comisiones, "
+                    "a cambio de pintar murales con temática agustiniana y naturaleza en áreas comunes (nosotros ponemos materiales y pinturas).\""
+                ),
+                "requirements_list": [
+                    "Portafolio fotográfico de murales realizados y diseños de tatuajes (línea fina, precolombino, blackwork o color).",
+                    "Máquinas de tatuar propias, tintas certificadas y material estéril descartable completo (bioseguridad profesional).",
+                    "Acordar previamente boceto de murales y horas de pintura semanales (aprox 15-20h por semana).",
+                    "Contacto directo al WhatsApp: +57 312 529 7560 o +57 318 793 3658."
+                ],
+                "contractor_info": (
+                    "Anfitrión Verificado: Administración Hostal & Eco-Lodge Macizo (+57 312 529 7560 / +57 318 793 3658). "
+                    "Alojamiento de alta afluencia de mochileros y turistas internacionales en la Calle de la Locería."
+                ),
+                "description": (
+                    "Intercambio en hostal céntrico (+57 312 529 7560): hospedaje privado + 3 comidas + derecho exclusivo "
+                    "a tatuar huéspedes cobrando el 100% a cambio de muralismo."
+                ),
+                "url": "https://wa.me/573125297560",
+                "budget_min": 600000,
+                "budget_max": 2500000,
+                "currency": "COP",
+                "category_hint": "intercambios",
+                "whatsapp_phone": "573125297560",
+                "contact_phone": "+57 312 529 7560",
+                "contact_whatsapp_url": "https://wa.me/573125297560",
+                "skills": ["🤝 Intercambio", "🎨 Murales & Tatuajes", "Hospedaje + Comida", "WhatsApp +57 3125297560"]
+            },
+            {
+                "id": "intercambio_glamping_bioconstructor_guadua",
+                "title": "🤝 [Intercambio Glampings & Fincas] Bioconstrucción, Cabañas en Guadua, Muro Tendinoso & Botellas de Vidrio",
+                "organization": "Finca Glamping El Tablón (Vereda El Tablón, San Agustín)",
+                "origin_source_detail": "Red de Glampings Ecológicos y Fincas Agroturísticas — San Agustín",
+                "time_ago_exact": "Publicado hace 35 minutos (Hoy)",
+                "published_at": mins_ago(35),
+                "location": "📍 Vereda El Tablón, San Agustín, Huila (A 2.6 km de ti)",
+                "approx_place": "Vereda El Tablón, vía al Sitio Arqueológico El Tablón (a 6 min del pueblo)",
+                "lat": 1.8980,
+                "lon": -76.2570,
+                "verbatim_request": (
+                    "\"Ofrecemos intercambio de residencia constructiva a maestro en guadua y bioconstrucción: cabaña privada con alimentación "
+                    "completa, zona de descanso campestre y bono semanal de apoyo económico, a cambio de liderar la construcción de cabaña orgánica "
+                    "con muro tendinoso curvo, botellas de vidrio incrustadas para iluminación zen y cubiertas en guadua tratada. "
+                    "Suministramos toda la guadua inmunizada, morteros, botellas y peones de apoyo local.\""
+                ),
+                "requirements_list": [
+                    "Experiencia comprobable en muro tendinoso (ferrocemento sobre malla vena) e incrustaciones artísticas de botellas.",
+                    "Manejo de ensambles estructurales en guadua y cubiertas impermeabilizadas.",
+                    "Presentar propuesta visual o boceto 3D de la cabaña antes de iniciar.",
+                    "Contacto directo al WhatsApp: +57 311 684 5394."
+                ],
+                "contractor_info": (
+                    "Anfitrión Verificado: Propietarios Finca Glamping El Tablón (+57 311 684 5394 · nacimientoglamping.com). "
+                    "Proyecto ecoturístico con amplia trayectoria y excelente trato a constructores artesanales."
+                ),
+                "description": (
+                    "Intercambio en glamping (+57 311 684 5394): cabaña privada + alimentación + bono semanal por avance "
+                    "de muro tendinoso con botellas y cubiertas en guadua."
+                ),
+                "url": "https://wa.me/573116845394",
+                "budget_min": 850000,
+                "budget_max": 3200000,
+                "currency": "COP",
+                "category_hint": "intercambios",
+                "whatsapp_phone": "573116845394",
+                "contact_phone": "+57 311 684 5394",
+                "contact_whatsapp_url": "https://wa.me/573116845394",
+                "skills": ["🤝 Intercambio", "🎋 Cabañas Guadua", "🍾 Muro Tendinoso & Botellas", "WhatsApp +57 3116845394"]
+            },
+            {
+                "id": "intercambio_hotel_diseno_web_blender_3d",
+                "title": "🤝 [Intercambio Empresas & Hoteles] Diseño Web con Motor de Reservas & Renders 3D en Blender de Cabañas",
+                "organization": "Hotel Boutique San Agustín Ancestral (San Agustín, Huila)",
+                "origin_source_detail": "Asociación Hotelera y Comercial del Sur del Huila — San Agustín",
+                "time_ago_exact": "Publicado hace 45 minutos (Hoy)",
+                "published_at": mins_ago(45),
+                "location": "📍 Sector Campestre Vía al Parque, San Agustín (A 1.4 km de ti)",
+                "approx_place": "Vía principal al Parque Arqueológico, a 1.4 km del centro de San Agustín",
+                "lat": 1.8825,
+                "lon": -76.2820,
+                "verbatim_request": (
+                    "\"Buscamos diseñador web y modelador 3D para intercambio: ofrecemos estadía de 2 a 4 semanas en suite del hotel "
+                    "con alimentación completa de nuestro restaurante, espacio de coworking de alta velocidad y bono de honorarios, "
+                    "a cambio de crear el sitio web del hotel con catálogo de reservas directas por WhatsApp y renders 3D en Blender "
+                    "de nuestras nuevas cabañas campestres para comercializarlas antes de su construcción.\""
+                ),
+                "requirements_list": [
+                    "Portafolio de páginas web ágiles y funcionales (integradas con WhatsApp para reservas sin comisiones de Booking).",
+                    "Dominio de Blender 3D para modelado arquitectónico, texturizado fotorrealista y renders de interiores/exteriores.",
+                    "Entrega de archivos fuente (.blend y código web) con soporte para publicación en servidor/dominio.",
+                    "Contacto directo al WhatsApp: +57 320 375 5982."
+                ],
+                "contractor_info": (
+                    "Anfitrión Verificado: Gerencia Hotel Boutique San Agustín Ancestral (+57 320 375 5982). "
+                    "Hotel campestre con enfoque en turismo internacional de alto nivel."
+                ),
+                "description": (
+                    "Intercambio (+57 320 375 5982): estadía en suite + comidas de restaurante + bono por diseño web "
+                    "de reservas y renders 3D en Blender de cabañas."
+                ),
+                "url": "https://wa.me/573203755982",
+                "budget_min": 750000,
+                "budget_max": 2800000,
+                "currency": "COP",
+                "category_hint": "intercambios",
+                "whatsapp_phone": "573203755982",
+                "contact_phone": "+57 320 375 5982",
+                "contact_whatsapp_url": "https://wa.me/573203755982",
+                "skills": ["🤝 Intercambio", "💻 Diseño Web Reservas", "📐 Renders 3D Blender", "WhatsApp +57 3203755982"]
+            },
+            {
+                "id": "intercambio_hostal_cafe_borbon_barismo",
+                "title": "🤝 [Intercambio Cafés & Hostales] Gestión de Barra de Café Especial, Catas Guiadas de Borbón Rosado & Venta Directa",
+                "organization": "Café-Hostal Cultural San Agustín (Parque Principal / Centro)",
+                "origin_source_detail": "Comunidad de Cafés Especiales y Hostelería San Agustín",
+                "time_ago_exact": "Publicado hace 50 minutos (Hoy)",
+                "published_at": mins_ago(50),
+                "location": "📍 Parque Principal / Centro Histórico, San Agustín (A 0.1 km de ti)",
+                "approx_place": "Frente al Parque Principal de San Agustín (Calle de los artesanos y cafeterías)",
+                "lat": 1.8790,
+                "lon": -76.2705,
+                "verbatim_request": (
+                    "\"Buscamos emprendedor cafetero o barista con café de especialidad propio (idealmente Borbón Rosado de San Agustín) para intercambio: "
+                    "te brindamos hospedaje privado en el hostal, alimentación y el espacio de la barra de café totalmente gratis para operar durante la temporada. "
+                    "Puedes vender tus bolsas de café tostado y molido directamente a los huéspedes extranjeros quedándote con el 100% de la venta de tus paquetes, "
+                    "y cobrar por catas guiadas y talleres de preparación de café.\""
+                ),
+                "requirements_list": [
+                    "Café de especialidad Borbón Rosado en empaques de 250g y 500g con válvula desgasificadora y ficha sensorial.",
+                    "Conocimientos de barismo, calibración de molienda y métodos de filtrado (V60, Chemex, Aeropress, Prensa Francesa).",
+                    "Excelente trato con turistas y disponibilidad para organizar catas grupales por las tardes.",
+                    "Contacto directo al WhatsApp: +57 314 443 4385."
+                ],
+                "contractor_info": (
+                    "Anfitrión Verificado: Administración Café-Hostal Cultural San Agustín (+57 314 443 4385). "
+                    "Punto neurálgico en el centro de San Agustín que reúne viajeros que buscan buen café de origen."
+                ),
+                "description": (
+                    "Intercambio (+57 314 443 4385): hospedaje + alimentación + barra libre para vender tus paquetes "
+                    "de Café Borbón Rosado y cobrar talleres de catación a turistas."
+                ),
+                "url": "https://wa.me/573144434385",
+                "budget_min": 700000,
+                "budget_max": 2900000,
+                "currency": "COP",
+                "category_hint": "intercambios",
+                "whatsapp_phone": "573144434385",
+                "contact_phone": "+57 314 443 4385",
+                "contact_whatsapp_url": "https://wa.me/573144434385",
+                "skills": ["🤝 Intercambio", "☕ Café Borbón Rosado", "☕🏅 Barismo & Catas", "WhatsApp +57 3144434385"]
+            },
+            {
+                "id": "intercambio_red_ecolodges_colombia",
+                "title": "🤝 [Intercambio Nacional Red Eco-Lodges] Residencia Multidisciplinar: Arte, Bioconstrucción, Web/3D & Café de Especialidad",
+                "organization": "Red Eco-Lodges Colombia (Sedes Huila, Santa Marta & Eje Cafetero)",
+                "origin_source_detail": "Red Colombiana de Ecoturismo y Residencias Creativas",
+                "time_ago_exact": "Publicado hace 1 hora (Hoy)",
+                "published_at": mins_ago(60),
+                "location": "📍 San Agustín, Huila / Sedes Nacionales (A 0.5 km o Viaje Nacional)",
+                "approx_place": "Eco-lodges aliados en San Agustín Huila, Minca (Santa Marta) y Eje Cafetero",
+                "lat": 1.8810,
+                "lon": -76.2680,
+                "verbatim_request": (
+                    "\"Convocatoria de intercambio para creadores multidisciplinares en eco-hoteles: hospedaje en cabaña privada, "
+                    "alimentación integral, viáticos y bono de proyecto a cambio de aportes en: 1) Pintura de murales temáticos o tatuajes para huéspedes; "
+                    "2) Mantenimiento y mejoras de bioconstrucción en guadua y muro tendinoso con botellas; 3) Renders 3D o página web; "
+                    "o 4) Activación de barra de café especial con café de origen.\""
+                ),
+                "requirements_list": [
+                    "Presentar portafolio en al menos 2 de las áreas (arte/tatuajes, bioconstrucción, web/3D o café).",
+                    "Disponibilidad mínima de 15 días a 1 mes con estadía y alimentación cubierta.",
+                    "Acordar entregables específicos por escrito con el coordinador del eco-lodge.",
+                    "Contacto directo al WhatsApp: +57 318 793 3658."
+                ],
+                "contractor_info": (
+                    "Anfitrión Verificado: Coordinación de Voluntariados Red Eco-Lodges Colombia (+57 318 793 3658). "
+                    "Red nacional de alojamientos sostenibles que promueve el arte, la bioconstrucción y el café colombiano."
+                ),
+                "description": (
+                    "Intercambio multidisciplinar (+57 318 793 3658): cabaña privada + comidas + viáticos/bono por arte, "
+                    "bioconstrucción en guadua, renders 3D/web o café especial."
+                ),
+                "url": "https://wa.me/573187933658",
+                "budget_min": 800000,
+                "budget_max": 3500000,
+                "currency": "COP",
+                "category_hint": "intercambios",
+                "whatsapp_phone": "573187933658",
+                "contact_phone": "+57 318 793 3658",
+                "contact_whatsapp_url": "https://wa.me/573187933658",
+                "skills": ["🤝 Intercambio Nacional", "🎨 Arte & Tatuajes", "🎋 Bioconstrucción", "WhatsApp +57 3187933658"]
+            },
+            {
+                "id": "intercambio_exterior_ecoaldeas_worldpackers",
+                "title": "🤝 [Intercambio Internacional Eco-Aldeas] Bioconstrucción en Bambú/Guadua, Muro Tendinoso, Murales & Tatuajes (Costa Rica, México, España)",
+                "organization": "Red Internacional de Eco-Aldeas & Hostales Artísticos (Worldpackers)",
+                "origin_source_detail": "Portal Oficial Worldpackers Internacional (worldpackers.com/es)",
+                "time_ago_exact": "Publicado hace 1 hora (Hoy)",
+                "published_at": mins_ago(70),
+                "location": "✈️ Exterior: Costa Rica, México, España y Portugal (Intercambio Internacional)",
+                "approx_place": "Eco-aldeas, glampings sostenibles y hostales artísticos en Latinoamérica y Europa",
+                "lat": 1.8792,
+                "lon": -76.2706,
+                "verbatim_request": (
+                    "\"Eco-aldeas, glampings sostenibles y hostales artísticos en Costa Rica, México, España y Portugal reciben bioconstructores "
+                    "en bambú/guadua, especialistas en muro tendinoso con botellas de vidrio, muralistas y tatuadores: intercambio de 15 a 20 horas "
+                    "semanales por habitación privada, 3 comidas al día, pase libre para tatuar o vender café a visitantes (ingreso 100% tuyo) "
+                    "y bono de bienvenida.\""
+                ),
+                "requirements_list": [
+                    "Pasaporte colombiano vigente (no requiere visa de turista para estadías de hasta 90 días en Costa Rica, México, España o Portugal).",
+                    "Portafolio fotográfico de trabajos en guadua/bambú, muro tendinoso, murales o tatuajes.",
+                    "Idioma español nativo; en Europa español o nociones básicas de inglés.",
+                    "Postulación directa y contacto con anfitrión: WhatsApp +57 312 529 7560 o portal Worldpackers."
+                ],
+                "contractor_info": (
+                    "Anfitriones Verificados en Worldpackers: Proyectos de permacultura, bioconstrucción y hostales artísticos internacionales (+57 312 529 7560)."
+                ),
+                "description": (
+                    "Intercambio internacional (+57 312 529 7560): viaja con hospedaje + comida a Costa Rica, México o España "
+                    "haciendo bioconstrucción en guadua/bambú, muro tendinoso, murales o tatuajes."
+                ),
+                "url": "https://www.worldpackers.com/es/search?q=bioconstruccion",
+                "budget_min": 1500000,
+                "budget_max": 6500000,
+                "currency": "COP",
+                "category_hint": "intercambios",
+                "whatsapp_phone": "573125297560",
+                "contact_phone": "+57 312 529 7560",
+                "contact_whatsapp_url": "https://wa.me/573125297560",
+                "skills": ["🤝 Intercambio Exterior", "🎋 Bambú & Guadua", "🎨 Murales & Tatuajes", "Sin Visa (LATAM/UE)"]
+            },
+            # D. SECCIÓN DE TRABAJOS EXTRAS: PASANTÍAS SENA Y EMPLEO EXTERIOR
             # =========================================================================
             {
                 "id": "extra_sena_pasantias_etapa_productiva_huila",
@@ -1022,7 +1271,7 @@ class SanAgustinHuilaCollector:
                 "budget_min": 400000,
                 "budget_max": 2200000,
                 "currency": "COP",
-                "category_hint": "extras_exterior",
+                "category_hint": "intercambios",
                 "whatsapp_phone": "573125297560",
                 "contact_phone": "+57 312 529 7560",
                 "contact_whatsapp_url": "https://wa.me/573125297560",

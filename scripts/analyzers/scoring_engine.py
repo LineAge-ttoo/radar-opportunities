@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 
 class ScoringEngine:
     PRACTICAL_SKILLS = [
+        ('intercambios hoteles / empresas', r'\b(intercambio\w*|trueque|residencia\s+art[ií]stica|voluntariado|hospedaje\s*\+\s*comida|estad[ií]a|worldpackers|workaway)\b', 46, 'intercambios'),
         ('guadua / bioconstrucción / cubiertas', r'\b(guadua|bamb[uú]|caba[ñn]as?|glamping|eco-?lodge|maloka|mirador|kiosco|bioconstrucci\w*|tendinoso|botellas?|muros?\s+en\s+vidrio|vitral\w*|cubiertas?)\b', 44, 'guadua_cabanas'),
         ('barismo colegios / catador q-grader', r'\b(barism\w*|baristas?|q-?grader|cataci[oó]n|catador\w*|arte\s+latte|protocolo\s+sca|escuela\s+nacional\s+de\s+la\s+calidad\s+del\s+caf[eé])\b', 45, 'barismo_qgrader'),
         ('café borbón rosado / secaderos', r'\b(borb[oó]n\s+rosado|pink\s+bourbon|secaderos?|marquesinas?|caf[eé]\s+especial|caficultor\w*|zarandas?|beneficiadero)\b', 44, 'cafe_secaderos'),
@@ -62,7 +63,7 @@ class ScoringEngine:
         loc = opp.get('location', '')
         opp_type = opp.get('opportunity_type', '')
         tags = ' '.join([str(t) for t in opp.get('observed_data', {}).get('tags', [])])
-        full_text = f"{title} {desc} {tags} {loc} {source}"
+        full_text = f"{title} {desc} {tags} {loc}"
 
         if self.BLOCKED_PATTERNS.search(title) or (
             self.BLOCKED_PATTERNS.search(desc[:300]) and opp_type not in ('cliente_directo_colombia', 'san_agustin_huila_prioridad')
@@ -100,6 +101,7 @@ class ScoringEngine:
 
         is_huila_or_guadua = (
             opp_type == 'san_agustin_huila_prioridad'
+            or 'intercambios' in matched_cats
             or 'guadua_cabanas' in matched_cats
             or 'barismo_qgrader' in matched_cats
             or 'cafe_secaderos' in matched_cats
