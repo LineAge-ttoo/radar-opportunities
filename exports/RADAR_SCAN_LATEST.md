@@ -1,16 +1,16 @@
 # RADAR SCAN REPORT
-**Fecha / Hora:** 2026-10-30T10:30:58.960155+00:00
+**Fecha / Hora:** 2026-10-30T17:22:53.931791+00:00
 **Fuentes Consultadas:** San Agustín Huila · Guadua · Bioconstrucción · Metal · Café · Arte & Exterior, Compradores Café Especial Nacional/Internacional & Clientes Colombia, Workana Colombia & LATAM, Freelancer.co (Tareas & Proyectos)
-**Hallazgos Totales:** 138
-- **PRIORIDAD:** 116
+**Hallazgos Totales:** 139
+- **PRIORIDAD:** 118
 - **CONSTRUIR Y VENDER:** 0
-- **INVESTIGAR:** 22
+- **INVESTIGAR:** 21
 - **OBSERVAR:** 0
-- **DESCARTAR:** 6
+- **DESCARTAR:** 4
 
 ---
 
-## SECCIÓN: PRIORIDAD (116 oportunidades)
+## SECCIÓN: PRIORIDAD (118 oportunidades)
 
 ### 1. ☕ [Comprador Nacional & Exportador] Caravela Coffee Colombia — Compra de Borbón Rosado (Tostado, Molido y Lotes) | Caravela Coffee Colombia S.A.S. (Línea Café Tostado & Acopio Huila) [99.0 pts]
 - **Fuente:** San Agustín · Huila · Guadua
@@ -545,33 +545,20 @@
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://lagunaguaitipan.com/](https://lagunaguaitipan.com/)
 
-### 42. Asistentes Virtuales para Soporte Administrativo Remoto en Latam | Cliente G. (España) [99.0 pts]
+### 42. Asistente Virtual para Gestión de Comunicaciones y Transcripción de... | Cliente J. O. R. (Chile) [99.0 pts]
 - **Fuente:** Workana (Español)
-- **Pago:** USD 50.0 - 50.0
+- **Pago:** USD 3000.0 - 3000.0
 - **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 24 a 72 horas
-- **Compatibilidad (Skills):** estudiantes / tareas, whatsapp / bot, tareas / datos
+- **Compatibilidad (Skills):** estudiantes / tareas, blender / 3d
 - **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 10 minutos), Ubicación=España, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 20 minutos), Ubicación=Chile, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
-- **Enlace original:** [https://www.workana.com/job/asistentes-virtuales-para-soporte-administrativo-remoto-en-latam](https://www.workana.com/job/asistentes-virtuales-para-soporte-administrativo-remoto-en-latam)
+- **Enlace original:** [https://www.workana.com/job/asistente-virtual-para-gestion-de-comunicaciones-y-transcripcion-de-audio](https://www.workana.com/job/asistente-virtual-para-gestion-de-comunicaciones-y-transcripcion-de-audio)
 
-### 43. Atención al Cliente para Marca de Suplementos Online (Ee. Uu. - Mer... | Cliente A. (Emiratos Árabes Unidos) [99.0 pts]
-- **Fuente:** Workana (Español)
-- **Pago:** USD 50.0 - 100.0
-- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 24 a 72 horas
-- **Compatibilidad (Skills):** estudiantes / tareas, whatsapp / bot, web / catálogo
-- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 16 minutos), Ubicación=Emiratos Árabes Unidos, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
-- **Enlace original:** [https://www.workana.com/job/atencion-al-cliente-para-marca-de-suplementos-online-ee-uu-mercado-hispano](https://www.workana.com/job/atencion-al-cliente-para-marca-de-suplementos-online-ee-uu-mercado-hispano)
-
-### 44. 🌎 [Compradores Internacionales Directos] Algrano (Europa) & Ally Coffee — Importadores de Borbón Rosado Colombiano | Algrano Direct Trade (Suiza/Europa) & Ally Coffee Sourcing Colombia [99.0 pts]
+### 43. 🌎 [Compradores Internacionales Directos] Algrano (Europa) & Ally Coffee — Importadores de Borbón Rosado Colombiano | Algrano Direct Trade (Suiza/Europa) & Ally Coffee Sourcing Colombia [99.0 pts]
 - **Fuente:** San Agustín · Huila · Guadua
 - **Pago:** COP 4500000.0 - 65000000.0
 - **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -584,20 +571,59 @@
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://www.algrano.com/en/growers](https://www.algrano.com/en/growers)
 
-### 45. Director de Contenido Instagram | Solicitante Anuncio #40794490 (Tareas en Español) [99.0 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** EUR 12.0 - 18.0
-- **Score:** 99.0 / 100 (Fit: 96.0, Reusabilidad: 95.0)
+### 44. Redacción Seo y Publicación de 6 Artículos en Inglés Británico para... | Cliente Mónica (España) [99.0 pts]
+- **Fuente:** Workana (Español)
+- **Pago:** USD 50.0 - 100.0
+- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 24 a 72 horas
-- **Compatibilidad (Skills):** grupos redes / whatsapp, tareas / datos
+- **Compatibilidad (Skills):** estudiantes / tareas, web / catálogo, diseño / vector, tareas / datos
 - **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 hora (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 27 minutos), Ubicación=España, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
-- **Enlace original:** [https://www.freelancer.co/projects/social-media-management/Director-Contenido-Instagram](https://www.freelancer.co/projects/social-media-management/Director-Contenido-Instagram)
+- **Enlace original:** [https://www.workana.com/job/redaccion-seo-y-publicacion-de-6-articulos-en-ingles-britanico-para-blog-de-moda](https://www.workana.com/job/redaccion-seo-y-publicacion-de-6-articulos-en-ingles-britanico-para-blog-de-moda)
 
-### 46. ✈️ [Trabajo en el Exterior — SENA APE] Convocatorias Internacionales para Soldadores, Oficiales de Obra y Técnicos | Agencia Pública de Empleo SENA — Convocatorias Internacionales (Canadá, España, Europa) [99.0 pts]
+### 45. Investigación Detallada sobre Ratios de Gestión y Rentabilidad es u... | Cliente Jimena G. F. V. (Perú) [99.0 pts]
+- **Fuente:** Workana (Español)
+- **Pago:** USD 50.0 - 50.0
+- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 24 a 72 horas
+- **Compatibilidad (Skills):** estudiantes / tareas, blender / 3d, tareas / datos
+- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 41 minutos), Ubicación=Perú, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
+- **Enlace original:** [https://www.workana.com/job/investigacion-detallada-sobre-ratios-de-gestion-y-rentabilidad-es-un-trabajo-de-la-universidad](https://www.workana.com/job/investigacion-detallada-sobre-ratios-de-gestion-y-rentabilidad-es-un-trabajo-de-la-universidad)
+
+### 46. Desarrollo de Sistema de Atención al Cliente con Ia para Whatsapp | Cliente Jacqueline B. P. (República Dominicana) [99.0 pts]
+- **Fuente:** Workana (Español)
+- **Pago:** USD 50.0 - 100.0
+- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 24 a 72 horas
+- **Compatibilidad (Skills):** estudiantes / tareas, blender / 3d, whatsapp / bot, automatización
+- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace casi una hora), Ubicación=República Dominicana, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
+- **Enlace original:** [https://www.workana.com/job/desarrollo-de-sistema-de-atencion-al-cliente-con-ia-para-whatsapp-1](https://www.workana.com/job/desarrollo-de-sistema-de-atencion-al-cliente-con-ia-para-whatsapp-1)
+
+### 47. Experto en Contabilidad y Finanzas para Optimización y Automatizaci... | Cliente E. L. E. (México) [99.0 pts]
+- **Fuente:** Workana (Español)
+- **Pago:** USD 250.0 - 500.0
+- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 24 a 72 horas
+- **Compatibilidad (Skills):** estudiantes / tareas, automatización, tareas / datos
+- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace casi una hora), Ubicación=México, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
+- **Enlace original:** [https://www.workana.com/job/experto-en-contabilidad-y-finanzas-para-optimizacion-y-automatizacion-de-e-commerce-mayorista](https://www.workana.com/job/experto-en-contabilidad-y-finanzas-para-optimizacion-y-automatizacion-de-e-commerce-mayorista)
+
+### 48. ✈️ [Trabajo en el Exterior — SENA APE] Convocatorias Internacionales para Soldadores, Oficiales de Obra y Técnicos | Agencia Pública de Empleo SENA — Convocatorias Internacionales (Canadá, España, Europa) [99.0 pts]
 - **Fuente:** San Agustín · Huila · Guadua
 - **Pago:** COP 8500000.0 - 16000000.0
 - **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -610,7 +636,20 @@
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://agenciapublicadeempleo.sena.edu.co/Paginas/inicio.aspx](https://agenciapublicadeempleo.sena.edu.co/Paginas/inicio.aspx)
 
-### 47. ✈️ [Intercambio en el Exterior] Bioconstrucción en Bambú/Guadua, Muro Tendinoso, Murales y Tatuajes (Costa Rica, México, Europa) | Worldpackers & Eco-Aldeas Internacionales (Costa Rica, México, España, Portugal) [99.0 pts]
+### 49. 3D Silah Modelleme Uzmanı Aranıyor – Mobil Battle Royale Oyunu (30–50 Silah) | Solicitante Anuncio #40794965 (Planos, AutoCAD & 3D) [99.0 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 10.0 - 100.0
+- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 24 a 72 horas
+- **Compatibilidad (Skills):** estructuras metal / soldadura, blender / 3d
+- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 hora (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
+- **Enlace original:** [https://www.freelancer.co/projects/3d-modelling/Silah-Modelleme-Uzman-Aran-yor](https://www.freelancer.co/projects/3d-modelling/Silah-Modelleme-Uzman-Aran-yor)
+
+### 50. ✈️ [Intercambio en el Exterior] Bioconstrucción en Bambú/Guadua, Muro Tendinoso, Murales y Tatuajes (Costa Rica, México, Europa) | Worldpackers & Eco-Aldeas Internacionales (Costa Rica, México, España, Portugal) [99.0 pts]
 - **Fuente:** San Agustín · Huila · Guadua
 - **Pago:** COP 1500000.0 - 6000000.0
 - **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -623,7 +662,7 @@
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://www.worldpackers.com/es/search?q=bioconstruccion](https://www.worldpackers.com/es/search?q=bioconstruccion)
 
-### 48. 🏛️ [Circular SECOP II: SAMC HIL-CGDSS-001-2026] SENA Regional Huila (Pitalito / San Agustín) — Infraestructura Rural y Materiales | SENA Regional Huila — Centro CGDSS Pitalito [99.0 pts]
+### 51. 🏛️ [Circular SECOP II: SAMC HIL-CGDSS-001-2026] SENA Regional Huila (Pitalito / San Agustín) — Infraestructura Rural y Materiales | SENA Regional Huila — Centro CGDSS Pitalito [99.0 pts]
 - **Fuente:** San Agustín · Huila · Guadua
 - **Pago:** COP 537250000.0 - 537250000.0
 - **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -636,7 +675,124 @@
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10223805](https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10223805)
 
-### 49. Video Explicativo de Producto Web | Solicitante Anuncio #40793768 (Tareas en Español) [99.0 pts]
+### 52. Tienda Online de Productos Físicos | Solicitante Anuncio #40791215 (Tareas en Español) [99.0 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 30.0 - 250.0
+- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 24 a 72 horas
+- **Compatibilidad (Skills):** estudiantes / tareas, web / catálogo, diseño / vector
+- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 hora (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
+- **Enlace original:** [https://www.freelancer.co/projects/shopify-site/Tienda-Online-Productos-sicos](https://www.freelancer.co/projects/shopify-site/Tienda-Online-Productos-sicos)
+
+### 53. Simulación FEM Ansys o SolidWorks | Solicitante Anuncio #40794831 (Tareas en Español) [99.0 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 30.0 - 250.0
+- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 24 a 72 horas
+- **Compatibilidad (Skills):** estudiantes / tareas, blender / 3d, planos / autocad
+- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 3 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
+- **Enlace original:** [https://www.freelancer.co/projects/ansys/Simulaci-FEM-Ansys-SolidWorks](https://www.freelancer.co/projects/ansys/Simulaci-FEM-Ansys-SolidWorks)
+
+### 54. Autocad Plan and SketchUp Residential 3D Model | Solicitante Anuncio #40794809 (Planos, AutoCAD & 3D) [99.0 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** INR 600.0 - 2500.0
+- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 24 a 72 horas
+- **Compatibilidad (Skills):** pasantías sena / intercambios / exterior, blender / 3d, planos / autocad, automatización
+- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 3 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
+- **Enlace original:** [https://www.freelancer.co/projects/google-sketchup/Autocad-Plan-SketchUp-Residential-Model](https://www.freelancer.co/projects/google-sketchup/Autocad-Plan-SketchUp-Residential-Model)
+
+### 55. Realistic Game-Ready 3D Character Creation | Solicitante Anuncio #40794791 (Planos, AutoCAD & 3D) [99.0 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 250.0 - 750.0
+- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 24 a 72 horas
+- **Compatibilidad (Skills):** estructuras metal / soldadura, blender / 3d
+- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 4 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
+- **Enlace original:** [https://www.freelancer.co/projects/3d-rigging/Realistic-Game-Ready-Character-Creation](https://www.freelancer.co/projects/3d-rigging/Realistic-Game-Ready-Character-Creation)
+
+### 56. Configuración ERP Grade para Empresa TI | Solicitante Anuncio #40794674 (Tareas en Español) [99.0 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 250.0 - 750.0
+- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 24 a 72 horas
+- **Compatibilidad (Skills):** estudiantes / tareas, automatización, tareas / datos
+- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 5 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
+- **Enlace original:** [https://www.freelancer.co/projects/erp/Configuraci-ERP-Grade-para-Empresa](https://www.freelancer.co/projects/erp/Configuraci-ERP-Grade-para-Empresa)
+
+### 57. Actualización Web y Estrategia Seo para Psicóloga Clínica con Blog ... | Cliente Patricia R. (🇨🇴 Colombia) [99.0 pts]
+- **Fuente:** Workana Colombia
+- **Pago:** USD 500.0 - 1000.0
+- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 24 a 72 horas
+- **Compatibilidad (Skills):** estudiantes / tareas, web / catálogo, diseño / vector
+- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 6 horas), Ubicación=🇨🇴 Colombia, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
+- **Enlace original:** [https://www.workana.com/job/actualizacion-web-y-estrategia-seo-para-psicologa-clinica-con-blog-profesional](https://www.workana.com/job/actualizacion-web-y-estrategia-seo-para-psicologa-clinica-con-blog-profesional)
+
+### 58. Ingenieros Eléctricos/Telecomunicaciones para Backoffice Técnico de... | Cliente Leads T. (España) [99.0 pts]
+- **Fuente:** Workana (Español)
+- **Pago:** USD 50.0 - 50.0
+- **Score:** 99.0 / 100 (Fit: 96.0, Reusabilidad: 95.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 24 a 72 horas
+- **Compatibilidad (Skills):** estudiantes / tareas, tareas / datos
+- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 6 horas), Ubicación=España, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
+- **Enlace original:** [https://www.workana.com/job/ingenieros-electricos-telecomunicaciones-para-backoffice-tecnico-de-obras](https://www.workana.com/job/ingenieros-electricos-telecomunicaciones-para-backoffice-tecnico-de-obras)
+
+### 59. Claw Machine Kiosk 3D Drawings | Solicitante Anuncio #40794600 (Planos, AutoCAD & 3D) [99.0 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 30.0 - 250.0
+- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 24 a 72 horas
+- **Compatibilidad (Skills):** pasantías sena / intercambios / exterior, blender / 3d, planos / autocad
+- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 6 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
+- **Enlace original:** [https://www.freelancer.co/projects/3d-design/Claw-Machine-Kiosk-Drawings](https://www.freelancer.co/projects/3d-design/Claw-Machine-Kiosk-Drawings)
+
+### 60. Director de Contenido Instagram | Solicitante Anuncio #40794490 (Tareas en Español) [99.0 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** EUR 12.0 - 18.0
+- **Score:** 99.0 / 100 (Fit: 96.0, Reusabilidad: 95.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 24 a 72 horas
+- **Compatibilidad (Skills):** grupos redes / whatsapp, tareas / datos
+- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 8 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
+- **Enlace original:** [https://www.freelancer.co/projects/social-media-management/Director-Contenido-Instagram](https://www.freelancer.co/projects/social-media-management/Director-Contenido-Instagram)
+
+### 61. Video Explicativo de Producto Web | Solicitante Anuncio #40793768 (Tareas en Español) [99.0 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** INR 600.0 - 1500.0
 - **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -644,12 +800,12 @@
 - **Tiempo estimado:** 24 a 72 horas
 - **Compatibilidad (Skills):** estudiantes / tareas, blender / 3d, tareas / datos
 - **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 2 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 9 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://www.freelancer.co/projects/2d-animation/Video-Explicativo-Producto-Web](https://www.freelancer.co/projects/2d-animation/Video-Explicativo-Producto-Web)
 
-### 50. App Radio y Video Streaming | Solicitante Anuncio #40794332 (Tareas en Español) [99.0 pts]
+### 62. App Radio y Video Streaming | Solicitante Anuncio #40794332 (Tareas en Español) [99.0 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** USD 250.0 - 750.0
 - **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -657,12 +813,12 @@
 - **Tiempo estimado:** 24 a 72 horas
 - **Compatibilidad (Skills):** estudiantes / tareas, whatsapp / bot
 - **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 3 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 10 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://www.freelancer.co/projects/ios/App-Radio-Video-Streaming](https://www.freelancer.co/projects/ios/App-Radio-Video-Streaming)
 
-### 51. Finalizar Automatización IA Zoho CloudTalk | Solicitante Anuncio #40794319 (Bots, WhatsApp & Automatización) [99.0 pts]
+### 63. Finalizar Automatización IA Zoho CloudTalk | Solicitante Anuncio #40794319 (Bots, WhatsApp & Automatización) [99.0 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** EUR 30.0 - 250.0
 - **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -670,12 +826,12 @@
 - **Tiempo estimado:** 24 a 72 horas
 - **Compatibilidad (Skills):** estudiantes / tareas, whatsapp / bot, automatización, tareas / datos
 - **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 3 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 10 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://www.freelancer.co/projects/zoho-crm/Finalizar-Automatizaci-Zoho-CloudTalk](https://www.freelancer.co/projects/zoho-crm/Finalizar-Automatizaci-Zoho-CloudTalk)
 
-### 52. Editor de Video para Vlogs Familiares | Solicitante Anuncio #40794119 (Tareas en Español) [99.0 pts]
+### 64. Editor de Video para Vlogs Familiares | Solicitante Anuncio #40794119 (Tareas en Español) [99.0 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** USD 10.0 - 30.0
 - **Score:** 99.0 / 100 (Fit: 96.0, Reusabilidad: 95.0)
@@ -683,38 +839,25 @@
 - **Tiempo estimado:** 24 a 72 horas
 - **Compatibilidad (Skills):** estudiantes / tareas, tareas / datos
 - **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 5 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 12 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://www.freelancer.co/projects/adobe-premiere-pro/Editor-Video-para-Vlogs-Familiares](https://www.freelancer.co/projects/adobe-premiere-pro/Editor-Video-para-Vlogs-Familiares)
 
-### 53. Experto Contable para Gestión Financiera con Siigo, World Office y ... | Cliente F. G. B. (🇨🇴 Colombia) [99.0 pts]
-- **Fuente:** Workana Colombia
-- **Pago:** USD 500.0 - 1000.0
+### 65. Máscara Star-Lord para Halloween | Solicitante Anuncio #40793760 (Tareas en Español) [99.0 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 30.0 - 250.0
 - **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 24 a 72 horas
-- **Compatibilidad (Skills):** estudiantes / tareas, automatización, tareas / datos
+- **Compatibilidad (Skills):** estudiantes / tareas, blender / 3d
 - **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 10 horas), Ubicación=🇨🇴 Colombia, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 19 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
-- **Enlace original:** [https://www.workana.com/job/experto-contable-para-gestion-financiera-con-siigo-world-office-y-excel-avanzado](https://www.workana.com/job/experto-contable-para-gestion-financiera-con-siigo-world-office-y-excel-avanzado)
+- **Enlace original:** [https://www.freelancer.co/projects/cosplay/scara-Star-Lord-para-Halloween](https://www.freelancer.co/projects/cosplay/scara-Star-Lord-para-Halloween)
 
-### 54. Experto en Inteligencia Artificial para Estrategia Digital y Desarr... | Cliente J. E. (🇨🇴 Colombia) [99.0 pts]
-- **Fuente:** Workana Colombia
-- **Pago:** USD 250.0 - 500.0
-- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 24 a 72 horas
-- **Compatibilidad (Skills):** estudiantes / tareas, web / catálogo
-- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 12 horas), Ubicación=🇨🇴 Colombia, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
-- **Enlace original:** [https://www.workana.com/job/experto-en-inteligencia-artificial-para-estrategia-digital-y-desarrollo-web-redes-sociales](https://www.workana.com/job/experto-en-inteligencia-artificial-para-estrategia-digital-y-desarrollo-web-redes-sociales)
-
-### 55. Cortometraje Explicativo para Producto Web | Solicitante Anuncio #40793618 (Tareas en Español) [99.0 pts]
+### 66. Cortometraje Explicativo para Producto Web | Solicitante Anuncio #40793618 (Tareas en Español) [99.0 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** USD 30.0 - 250.0
 - **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -722,12 +865,12 @@
 - **Tiempo estimado:** 24 a 72 horas
 - **Compatibilidad (Skills):** estudiantes / tareas, blender / 3d, web / catálogo, tareas / datos
 - **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 15 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 22 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://www.freelancer.co/projects/video-production/Cortometraje-Explicativo-para-Producto](https://www.freelancer.co/projects/video-production/Cortometraje-Explicativo-para-Producto)
 
-### 56. Guía Completa LLC para Amazon -- 2 | Solicitante Anuncio #40793517 (Tareas en Español) [99.0 pts]
+### 67. Guía Completa LLC para Amazon -- 2 | Solicitante Anuncio #40793517 (Tareas en Español) [99.0 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** EUR 30.0 - 250.0
 - **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -735,12 +878,12 @@
 - **Tiempo estimado:** 24 a 72 horas
 - **Compatibilidad (Skills):** guadua / bioconstrucción / cubiertas, estructuras metal / soldadura
 - **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 16 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 23 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://www.freelancer.co/projects/market-research/Completa-LLC-para-Amazon](https://www.freelancer.co/projects/market-research/Completa-LLC-para-Amazon)
 
-### 57. Landing Page y Google Ads Lima | Solicitante Anuncio #40793503 (Tareas en Español) [99.0 pts]
+### 68. Landing Page y Google Ads Lima | Solicitante Anuncio #40793503 (Tareas en Español) [99.0 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** USD 30.0 - 250.0
 - **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -748,90 +891,38 @@
 - **Tiempo estimado:** 24 a 72 horas
 - **Compatibilidad (Skills):** estudiantes / tareas, whatsapp / bot, web / catálogo
 - **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 16 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 23 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://www.freelancer.co/projects/google-ads/Landing-Page-Google-Ads-Lima](https://www.freelancer.co/projects/google-ads/Landing-Page-Google-Ads-Lima)
 
-### 58. Tutor online para Economía y ADE | Solicitante Anuncio #40793393 (Tareas en Español) [99.0 pts]
+### 69. Tutor online para Economía y ADE | Solicitante Anuncio #40793393 (Tareas en Español) [95.0 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** USD 8.0 - 15.0
-- **Score:** 99.0 / 100 (Fit: 96.0, Reusabilidad: 95.0)
+- **Score:** 95.0 / 100 (Fit: 96.0, Reusabilidad: 95.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 24 a 72 horas
 - **Compatibilidad (Skills):** estudiantes / tareas, tareas / datos
 - **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 17 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 día), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://www.freelancer.co/projects/economics/Tutor-online-para-Econom-ADE](https://www.freelancer.co/projects/economics/Tutor-online-para-Econom-ADE)
 
-### 59. Vendedor Internacional de Marketing Digital | Español | Solicitante Anuncio #40793368 (Tareas en Español) [99.0 pts]
+### 70. Vendedor Internacional de Marketing Digital | Español | Solicitante Anuncio #40793368 (Tareas en Español) [95.0 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** USD 10.0 - 1000.0
-- **Score:** 99.0 / 100 (Fit: 95.4, Reusabilidad: 95.0)
+- **Score:** 95.0 / 100 (Fit: 95.4, Reusabilidad: 95.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 24 a 72 horas
 - **Compatibilidad (Skills):** pasantías sena / intercambios / exterior
 - **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 18 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 día), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://www.freelancer.co/projects/telemarketing/Vendedor-Internacional-Marketing-Digital](https://www.freelancer.co/projects/telemarketing/Vendedor-Internacional-Marketing-Digital)
 
-### 60. Vendedor Internacional de Marketing Digital | Solicitante Anuncio #40791599 (Tareas en Español) [99.0 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 10.0 - 100.0
-- **Score:** 99.0 / 100 (Fit: 95.4, Reusabilidad: 95.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 24 a 72 horas
-- **Compatibilidad (Skills):** pasantías sena / intercambios / exterior
-- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 18 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
-- **Enlace original:** [https://www.freelancer.co/projects/telemarketing/Representante-Comercial-Internacional](https://www.freelancer.co/projects/telemarketing/Representante-Comercial-Internacional)
-
-### 61. Atención WhatsApp para Asesorías | Solicitante Anuncio #40793142 (Tareas en Español) [99.0 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 15.0 - 25.0
-- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 24 a 72 horas
-- **Compatibilidad (Skills):** informales / 2do tiempo / manualidades, whatsapp / bot, web / catálogo
-- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 20 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
-- **Enlace original:** [https://www.freelancer.co/projects/customer-experience/Atenci-WhatsApp-para-Asesor](https://www.freelancer.co/projects/customer-experience/Atenci-WhatsApp-para-Asesor)
-
-### 62. Búsqueda de Partners / Consultores de Social Media para gestión y captación de cuentas | Solicitante Anuncio #40792701 (Tareas en Español) [96.7 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** EUR 250.0 - 750.0
-- **Score:** 96.7 / 100 (Fit: 100.0, Reusabilidad: 95.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 24 a 72 horas
-- **Compatibilidad (Skills):** guadua / bioconstrucción / cubiertas, web / catálogo, diseño / vector
-- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 día), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
-- **Enlace original:** [https://www.freelancer.co/projects/graphic-design/squeda-Partners-Consultores-Social-Media](https://www.freelancer.co/projects/graphic-design/squeda-Partners-Consultores-Social-Media)
-
-### 63. MVP Web de App Educativa | Solicitante Anuncio #40792212 (Tareas en Español) [96.7 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 100000.0 -
-- **Score:** 96.7 / 100 (Fit: 100.0, Reusabilidad: 95.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 24 a 72 horas
-- **Compatibilidad (Skills):** grupos redes / whatsapp, estudiantes / tareas, automatización, diseño / vector
-- **Por qué apareció:** Oportunidad de altísimo potencial en tu zona (San Agustín / Huila / Guadua / Estudiantes / Blender).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 día), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MUY BAJA (Ventaja Local + Certificado Guadua), Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
-- **Enlace original:** [https://www.freelancer.co/projects/frontend-development/MVP-Web-App-Educativa](https://www.freelancer.co/projects/frontend-development/MVP-Web-App-Educativa)
-
-### 64. 🏛️ [Circular D-416-2026] MUNICIPIO DE PALERMO HUILA (Palermo) — D-416-2026 | MUNICIPIO DE PALERMO HUILA (Palermo) [95.0 pts]
+### 71. 🏛️ [Circular D-416-2026] MUNICIPIO DE PALERMO HUILA (Palermo) — D-416-2026 | MUNICIPIO DE PALERMO HUILA (Palermo) [95.0 pts]
 - **Fuente:** San Agustín · Huila · Guadua
 - **Pago:** COP 162270460.0 - 162270460.0
 - **Score:** 95.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -844,7 +935,7 @@
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10888653](https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10888653)
 
-### 65. 🏛️ [Circular CPSAG-361-2026] ALCALDIA MUNICIPAL DE GUADUAS (Guaduas) — PRESTAR LOS SERVICIOS DE APOYO A LA GESTIÓN EN LA DIRECCIÓN DE OBRAS E INFR | ALCALDIA MUNICIPAL DE GUADUAS (Guaduas) [95.0 pts]
+### 72. 🏛️ [Circular CPSAG-361-2026] ALCALDIA MUNICIPAL DE GUADUAS (Guaduas) — PRESTAR LOS SERVICIOS DE APOYO A LA GESTIÓN EN LA DIRECCIÓN DE OBRAS E INFR | ALCALDIA MUNICIPAL DE GUADUAS (Guaduas) [95.0 pts]
 - **Fuente:** San Agustín · Huila · Guadua
 - **Pago:** COP 14700000.0 - 14700000.0
 - **Score:** 95.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -857,7 +948,7 @@
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10809298](https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10809298)
 
-### 66. 🏛️ [Circular CTOPSA-160-2025] EMPUGIGANTE S.A. E.S.P. (Gigante) — PRESTACION DE SERVICIOS DE APOYO A LA GESTION; DE FORMA AUTONOMA E INDEPEND | EMPUGIGANTE S.A. E.S.P. (Gigante) [95.0 pts]
+### 73. 🏛️ [Circular CTOPSA-160-2025] EMPUGIGANTE S.A. E.S.P. (Gigante) — PRESTACION DE SERVICIOS DE APOYO A LA GESTION; DE FORMA AUTONOMA E INDEPEND | EMPUGIGANTE S.A. E.S.P. (Gigante) [95.0 pts]
 - **Fuente:** San Agustín · Huila · Guadua
 - **Pago:** COP 1700000.0 - 1700000.0
 - **Score:** 95.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -870,7 +961,7 @@
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.9288532](https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.9288532)
 
-### 67. 🏛️ [Circular CI-291-2025] ALCALDIA MUNICIPAL DE GUADUAS (Guaduas) — PRESTACIÓN DE SERVICIOS DE SALUD PARA LA CERTIFICACIÓN; REGISTRO DE LOCALIZ | ALCALDIA MUNICIPAL DE GUADUAS (Guaduas) [95.0 pts]
+### 74. 🏛️ [Circular CI-291-2025] ALCALDIA MUNICIPAL DE GUADUAS (Guaduas) — PRESTACIÓN DE SERVICIOS DE SALUD PARA LA CERTIFICACIÓN; REGISTRO DE LOCALIZ | ALCALDIA MUNICIPAL DE GUADUAS (Guaduas) [95.0 pts]
 - **Fuente:** San Agustín · Huila · Guadua
 - **Pago:** COP 25000000.0 - 25000000.0
 - **Score:** 95.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -883,7 +974,7 @@
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.8954326](https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.8954326)
 
-### 68. 🏛️ [Circular SASIE 02 DE 2025] ALCALDÍA EL PITAL (Pital) — MATERIALES ELECTRICOS | ALCALDÍA EL PITAL (Pital) [95.0 pts]
+### 75. 🏛️ [Circular SASIE 02 DE 2025] ALCALDÍA EL PITAL (Pital) — MATERIALES ELECTRICOS | ALCALDÍA EL PITAL (Pital) [95.0 pts]
 - **Fuente:** San Agustín · Huila · Guadua
 - **Pago:** COP 80000000.0 - 80000000.0
 - **Score:** 95.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -896,7 +987,7 @@
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.8749057](https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.8749057)
 
-### 69. 🏛️ [Circular MNSGCDPS-1487-2025] MUNICIPIO DE NEIVA (Neiva) — Contrato de Prestación de Servicios Profesionales | MUNICIPIO DE NEIVA (Neiva) [95.0 pts]
+### 76. 🏛️ [Circular MNSGCDPS-1487-2025] MUNICIPIO DE NEIVA (Neiva) — Contrato de Prestación de Servicios Profesionales | MUNICIPIO DE NEIVA (Neiva) [95.0 pts]
 - **Fuente:** San Agustín · Huila · Guadua
 - **Pago:** COP 14000000.0 - 14000000.0
 - **Score:** 95.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -909,7 +1000,7 @@
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.8624495](https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.8624495)
 
-### 70. 🏛️ [Circular SAMC-001-2025 (Manifestación de interés (Menor Cuantía))] ALCALDIA MUNICIPAL DE GUADUAS (Guaduas) — ADQUIRIR EL PROGRAMA DE SEGUROS DEL MUNICIPIO DE GUADUAS  (Manifestación de | ALCALDIA MUNICIPAL DE GUADUAS (Guaduas) [95.0 pts]
+### 77. 🏛️ [Circular SAMC-001-2025 (Manifestación de interés (Menor Cuantía))] ALCALDIA MUNICIPAL DE GUADUAS (Guaduas) — ADQUIRIR EL PROGRAMA DE SEGUROS DEL MUNICIPIO DE GUADUAS  (Manifestación de | ALCALDIA MUNICIPAL DE GUADUAS (Guaduas) [95.0 pts]
 - **Fuente:** San Agustín · Huila · Guadua
 - **Pago:** COP 150000000.0 - 150000000.0
 - **Score:** 95.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -922,7 +1013,7 @@
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.7482902](https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.7482902)
 
-### 71. 🏛️ [Circular CPSAG 025-2025] ALCALDIA MUNICIPAL DE EL AGRADO HUILA (Agrado) — CPSAG 025-2025 | ALCALDIA MUNICIPAL DE EL AGRADO HUILA (Agrado) [95.0 pts]
+### 78. 🏛️ [Circular CPSAG 025-2025] ALCALDIA MUNICIPAL DE EL AGRADO HUILA (Agrado) — CPSAG 025-2025 | ALCALDIA MUNICIPAL DE EL AGRADO HUILA (Agrado) [95.0 pts]
 - **Fuente:** San Agustín · Huila · Guadua
 - **Pago:** COP 11620000.0 - 11620000.0
 - **Score:** 95.0 / 100 (Fit: 100.0, Reusabilidad: 95.0)
@@ -935,126 +1026,178 @@
 - **Qué haríamos (Siguiente Acción):** Revisar y enviar mensaje directo o alerta a tu WhatsApp 3222739034.
 - **Enlace original:** [https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.7471656](https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.7471656)
 
-### 72. Experto en Growth Hacking y Generación de Leads B2b con Apollo.io | Cliente D. (España) [75.0 pts]
-- **Fuente:** Workana (Español)
-- **Pago:** USD 100.0 - 250.0
-- **Score:** 75.0 / 100 (Fit: 47.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** diseño / vector, tareas / datos
-- **Por qué apareció:** [Hace 12 min] Encargo práctico realizable (diseño / vector, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 13 minutos), Ubicación=España, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.workana.com/job/experto-en-growth-hacking-y-generacion-de-leads-b2b-con-apollo-io](https://www.workana.com/job/experto-en-growth-hacking-y-generacion-de-leads-b2b-con-apollo-io)
-
-### 73. Urgent AutoCAD Structural Tracing | Solicitante Anuncio #40794553 (Planos, AutoCAD & 3D) [93.6 pts]
+### 79. SLA Molds & Urethane Prototypes | Solicitante Anuncio #40795064 (Planos, AutoCAD & 3D) [86.5 pts]
 - **Fuente:** Freelancer.co
-- **Pago:** INR 600.0 - 1500.0
-- **Score:** 93.6 / 100 (Fit: 82.6, Reusabilidad: 68.0)
+- **Pago:** USD 250.0 - 750.0
+- **Score:** 86.5 / 100 (Fit: 69.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
 - **Compatibilidad (Skills):** blender / 3d, planos / autocad
-- **Por qué apareció:** [Hace 18 min] Encargo práctico realizable (blender / 3d, planos / autocad).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 18 minutos (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hace 6 min] Encargo práctico realizable (blender / 3d, planos / autocad).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 8 minutos (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/structural-engineering/Urgent-AutoCAD-Structural-Tracing](https://www.freelancer.co/projects/structural-engineering/Urgent-AutoCAD-Structural-Tracing)
+- **Enlace original:** [https://www.freelancer.co/projects/3d-printing/SLA-Molds-Urethane-Prototypes](https://www.freelancer.co/projects/3d-printing/SLA-Molds-Urethane-Prototypes)
 
-### 74. Diseño de Tarjeta Coleccionable de Tarot con Efecto 3d para Museo d... | Cliente L. S. G. -. M. D. T. (España) [94.3 pts]
+### 80. Creación de Tipografía Gótica Custom para Marca Exclusiva | Cliente R. L. (Argentina) [93.2 pts]
 - **Fuente:** Workana (Español)
-- **Pago:** USD 50.0 - 100.0
-- **Score:** 94.3 / 100 (Fit: 84.0, Reusabilidad: 68.0)
+- **Pago:** USD 50.0 - 50.0
+- **Score:** 93.2 / 100 (Fit: 82.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** blender / 3d, diseño / vector, tareas / datos
+- **Por qué apareció:** [Hace 12 min] Encargo práctico realizable (blender / 3d, diseño / vector, tareas / datos).
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 13 minutos), Ubicación=Argentina, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.workana.com/job/creacion-de-tipografia-gotica-custom-para-marca-exclusiva](https://www.workana.com/job/creacion-de-tipografia-gotica-custom-para-marca-exclusiva)
+
+### 81. Rediseño Profesional de Página Web para Consultoría Empresarial | Cliente Ricard. (🇨🇴 Colombia) [99.0 pts]
+- **Fuente:** Workana Colombia
+- **Pago:** USD 50.0 - 50.0
+- **Score:** 99.0 / 100 (Fit: 89.2, Reusabilidad: 88.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** web / catálogo, diseño / vector
+- **Por qué apareció:** [Hace 36 min] Encargo práctico realizable (web / catálogo, diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 35 minutos), Ubicación=🇨🇴 Colombia, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.workana.com/job/rediseno-profesional-de-pagina-web-para-consultoria-empresarial](https://www.workana.com/job/rediseno-profesional-de-pagina-web-para-consultoria-empresarial)
+
+### 82. Diseño de Packaging Ecológico y Reutilizable para Productos Artesan... | Cliente Arquidomos M. (🇨🇴 Colombia) [99.0 pts]
+- **Fuente:** Workana Colombia
+- **Pago:** USD 50.0 - 50.0
+- **Score:** 99.0 / 100 (Fit: 95.0, Reusabilidad: 88.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
 - **Compatibilidad (Skills):** blender / 3d, diseño / vector
-- **Por qué apareció:** [Hace 42 min] Encargo práctico realizable (blender / 3d, diseño / vector).
-- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 39 minutos), Ubicación=España, Remoto=Sí
+- **Por qué apareció:** [Hace 60 min] Encargo práctico realizable (blender / 3d, diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 1 hora), Ubicación=🇨🇴 Colombia, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.workana.com/job/diseno-de-tarjeta-coleccionable-de-tarot-con-efecto-3d-para-museo-del-tarot](https://www.workana.com/job/diseno-de-tarjeta-coleccionable-de-tarot-con-efecto-3d-para-museo-del-tarot)
+- **Enlace original:** [https://www.workana.com/job/diseno-de-packaging-ecologico-y-reutilizable-para-productos-artesanales-ecobox](https://www.workana.com/job/diseno-de-packaging-ecologico-y-reutilizable-para-productos-artesanales-ecobox)
 
-### 75. Meta API Approval Expert for SaaS -- 2 | Solicitante Anuncio #40794533 (Bots, WhatsApp & Automatización) [84.9 pts]
+### 83. WhatsApp Home Service Chatbot | Solicitante Anuncio #40794996 (Bots, WhatsApp & Automatización) [88.4 pts]
 - **Fuente:** Freelancer.co
-- **Pago:** USD 50.0 - 150.0
-- **Score:** 84.9 / 100 (Fit: 66.0, Reusabilidad: 68.0)
+- **Pago:** INR 750.0 - 1250.0
+- **Score:** 88.4 / 100 (Fit: 72.6, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** whatsapp / bot, automatización
-- **Por qué apareció:** [Hace 42 min] Encargo práctico realizable (whatsapp / bot, automatización).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 39 minutos (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/social-networking/Meta-API-Approval-Expert-for](https://www.freelancer.co/projects/social-networking/Meta-API-Approval-Expert-for)
-
-### 76. Redactor/a de Microcursos Educativos en Español para Plataforma de ... | Cliente D. A. (Países Bajos) [75.0 pts]
-- **Fuente:** Workana (Español)
-- **Pago:** USD 50.0 - 100.0
-- **Score:** 75.0 / 100 (Fit: 47.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** diseño / vector, tareas / datos
-- **Por qué apareció:** [Hace 60 min] Encargo práctico realizable (diseño / vector, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 1 hora), Ubicación=Países Bajos, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.workana.com/job/redactor-a-de-microcursos-educativos-en-espanol-para-plataforma-de-microaprendizaje](https://www.workana.com/job/redactor-a-de-microcursos-educativos-en-espanol-para-plataforma-de-microaprendizaje)
-
-### 77. Real Estate Virtual Staging | Solicitante Anuncio #40794479 (Planos, AutoCAD & 3D) [81.8 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 10.0 - 30.0
-- **Score:** 81.8 / 100 (Fit: 60.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, diseño / vector
-- **Por qué apareció:** [Hace 84 min] Encargo práctico realizable (blender / 3d, diseño / vector).
+- **Compatibilidad (Skills):** whatsapp / bot, diseño / vector
+- **Por qué apareció:** [Hace 72 min] Encargo práctico realizable (whatsapp / bot, diseño / vector).
 - **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 hora (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/rendering/Real-Estate-Virtual-Staging](https://www.freelancer.co/projects/rendering/Real-Estate-Virtual-Staging)
+- **Enlace original:** [https://www.freelancer.co/projects/chatbot-development/WhatsApp-Home-Service-Chatbot](https://www.freelancer.co/projects/chatbot-development/WhatsApp-Home-Service-Chatbot)
 
-### 78. Aumentar Vendas via Redes Sociais | Solicitante Anuncio #40794462 (Bots, WhatsApp & Automatización) [99.0 pts]
+### 84. Home Chef: Mild Paneer Feast | Solicitante Anuncio #40794966 (Planos, AutoCAD & 3D) [99.0 pts]
 - **Fuente:** Freelancer.co
-- **Pago:** USD 10.0 - 30.0
-- **Score:** 99.0 / 100 (Fit: 93.0, Reusabilidad: 68.0)
+- **Pago:** INR 12500.0 - 37500.0
+- **Score:** 99.0 / 100 (Fit: 95.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** planos / autocad, whatsapp / bot, diseño / vector
-- **Por qué apareció:** [Hace 90 min] Encargo práctico realizable (planos / autocad, whatsapp / bot, diseño / vector).
+- **Compatibilidad (Skills):** blender / 3d, automatización, web / catálogo
+- **Por qué apareció:** [Hace 78 min] Encargo práctico realizable (blender / 3d, automatización, web / catálogo).
 - **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 hora (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/social-media-marketing/Aumentar-Vendas-via-Redes-Sociais](https://www.freelancer.co/projects/social-media-marketing/Aumentar-Vendas-via-Redes-Sociais)
+- **Enlace original:** [https://www.freelancer.co/projects/eventplanning/Home-Chef-Mild-Paneer-Feast](https://www.freelancer.co/projects/eventplanning/Home-Chef-Mild-Paneer-Feast)
 
-### 79. Remote Business Development Assistant - US & Canada | Solicitante Anuncio #40794255 (Bots, WhatsApp & Automatización) [80.2 pts]
+### 85. Helical Auger Nastran Simulation | Solicitante Anuncio #40794976 (Planos, AutoCAD & 3D) [86.5 pts]
 - **Fuente:** Freelancer.co
-- **Pago:** AUD 250.0 - 750.0
+- **Pago:** USD 30.0 - 250.0
+- **Score:** 86.5 / 100 (Fit: 69.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** blender / 3d, planos / autocad
+- **Por qué apareció:** [Hace 78 min] Encargo práctico realizable (blender / 3d, planos / autocad).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 hora (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/mechanical-engineering/Helical-Auger-Nastran-Simulation](https://www.freelancer.co/projects/mechanical-engineering/Helical-Auger-Nastran-Simulation)
+
+### 86. Heavy-Duty Stacker & Pallet Truck Design | Solicitante Anuncio #40794972 (Planos, AutoCAD & 3D) [86.5 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 30.0 - 250.0
+- **Score:** 86.5 / 100 (Fit: 69.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** blender / 3d, planos / autocad
+- **Por qué apareció:** [Hace 84 min] Encargo práctico realizable (blender / 3d, planos / autocad).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 hora (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/3d-cad/Heavy-Duty-Stacker-Pallet-Truck](https://www.freelancer.co/projects/3d-cad/Heavy-Duty-Stacker-Pallet-Truck)
+
+### 87. AutoCAD Tracing Work | Solicitante Anuncio #40794670 (Planos, AutoCAD & 3D) [75.4 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** INR 600.0 - 1100.0
+- **Score:** 75.4 / 100 (Fit: 47.6, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** planos / autocad
+- **Por qué apareció:** [Hace 90 min] Encargo práctico realizable (planos / autocad).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 hora (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/autocad/AutoCAD-Tracing-Work](https://www.freelancer.co/projects/autocad/AutoCAD-Tracing-Work)
+
+### 88. Full Stack Software Engineer (React, Node.js, PostgreSQL & AI) | Solicitante Anuncio #40794859 (Bots, WhatsApp & Automatización) [80.2 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 15.0 - 25.0
 - **Score:** 80.2 / 100 (Fit: 57.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
 - **Compatibilidad (Skills):** automatización, diseño / vector
-- **Por qué apareció:** [Hace 90 min] Encargo práctico realizable (automatización, diseño / vector).
+- **Por qué apareció:** [Hace 102 min] Encargo práctico realizable (automatización, diseño / vector).
 - **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 hora (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/business-development/Remote-Business-Partnership](https://www.freelancer.co/projects/business-development/Remote-Business-Partnership)
+- **Enlace original:** [https://www.freelancer.co/projects/postgresql/Full-Stack-Software-Engineer-React](https://www.freelancer.co/projects/postgresql/Full-Stack-Software-Engineer-React)
 
-### 80. 15-Second Sea Moss Testimonial | Solicitante Anuncio #40794436 (Planos, AutoCAD & 3D) [80.2 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 10.0 - 30.0
-- **Score:** 80.2 / 100 (Fit: 57.0, Reusabilidad: 68.0)
+### 89. Desarrollo de Aplicación Web Multiempresa para Gestión de Remunerac... | Cliente A. T. (🇨🇴 Colombia) [99.0 pts]
+- **Fuente:** Workana Colombia
+- **Pago:** USD 1000.0 - 3000.0
+- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 88.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, tareas / datos
-- **Por qué apareció:** [Hace 114 min] Encargo práctico realizable (blender / 3d, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 hora (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Compatibilidad (Skills):** blender / 3d, web / catálogo, tareas / datos
+- **Por qué apareció:** [Hace 120 min] Encargo práctico realizable (blender / 3d, web / catálogo, tareas / datos).
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 2 horas), Ubicación=🇨🇴 Colombia, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/capcut/Second-Sea-Moss-Testimonial](https://www.freelancer.co/projects/capcut/Second-Sea-Moss-Testimonial)
+- **Enlace original:** [https://www.workana.com/job/desarrollo-de-aplicacion-web-multiempresa-para-gestion-de-remuneracion-flexible](https://www.workana.com/job/desarrollo-de-aplicacion-web-multiempresa-para-gestion-de-remuneracion-flexible)
 
-### 81. AI-First SEO & Lead Engine | Solicitante Anuncio #40794419 (Bots, WhatsApp & Automatización) [80.9 pts]
+### 90. Creative Video Editing and AI Visuals | Solicitante Anuncio #40794924 (Planos, AutoCAD & 3D) [93.2 pts]
 - **Fuente:** Freelancer.co
-- **Pago:** INR 1500.0 - 12500.0
+- **Pago:** INR 12500.0 - 37500.0
+- **Score:** 93.2 / 100 (Fit: 82.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** blender / 3d, diseño / vector, tareas / datos
+- **Por qué apareció:** [Hace 120 min] Encargo práctico realizable (blender / 3d, diseño / vector, tareas / datos).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 2 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/ai-video/Creative-Video-Editing-Visuals](https://www.freelancer.co/projects/ai-video/Creative-Video-Editing-Visuals)
+
+### 91. 3D Burger Trailer Model | Solicitante Anuncio #40794916 (Planos, AutoCAD & 3D) [89.8 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** GBP 20.0 - 250.0
+- **Score:** 89.8 / 100 (Fit: 83.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** blender / 3d, planos / autocad
+- **Por qué apareció:** [Hoy (2h)] Encargo práctico realizable (blender / 3d, planos / autocad).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 2 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/3d-printing/Burger-Trailer-Model](https://www.freelancer.co/projects/3d-printing/Burger-Trailer-Model)
+
+### 92. GST Software Assistant Needed | Solicitante Anuncio #40794900 (Bots, WhatsApp & Automatización) [80.9 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** INR 750.0 - 1250.0
 - **Score:** 80.9 / 100 (Fit: 66.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
@@ -1063,11 +1206,24 @@
 - **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 2 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/content-strategy/First-SEO-Lead-Engine](https://www.freelancer.co/projects/content-strategy/First-SEO-Lead-Engine)
+- **Enlace original:** [https://www.freelancer.co/projects/accounting/GST-Software-Assistant-Needed](https://www.freelancer.co/projects/accounting/GST-Software-Assistant-Needed)
 
-### 82. Complete Website Audit with Detailed Issues, Solutions & Implementation Guidelines | Solicitante Anuncio #40794401 (Planos, AutoCAD & 3D) [95.5 pts]
+### 93. Contenido TikTok Rehabilitación LCA Hogar | Solicitante Anuncio #40794894 (Tareas en Español) [88.7 pts]
 - **Fuente:** Freelancer.co
-- **Pago:** USD 50.0 - 100.0
+- **Pago:** USD 250.0 - 750.0
+- **Score:** 88.7 / 100 (Fit: 81.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** planos / autocad, diseño / vector, tareas / datos
+- **Por qué apareció:** [Hoy (2h)] Encargo práctico realizable (planos / autocad, diseño / vector, tareas / datos).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 2 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/content-writing/Contenido-TikTok-Rehabilitaci-LCA-Hogar](https://www.freelancer.co/projects/content-writing/Contenido-TikTok-Rehabilitaci-LCA-Hogar)
+
+### 94. Game-Ready Sci-Fi Spaceship Model | Solicitante Anuncio #40794890 (Planos, AutoCAD & 3D) [95.5 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** AUD 30.0 - 250.0
 - **Score:** 95.5 / 100 (Fit: 94.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
@@ -1076,559 +1232,416 @@
 - **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 2 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/seo/Complete-Website-Audit-with-Detailed](https://www.freelancer.co/projects/seo/Complete-Website-Audit-with-Detailed)
+- **Enlace original:** [https://www.freelancer.co/projects/3d-design/Game-Ready-Sci-Spaceship-Model](https://www.freelancer.co/projects/3d-design/Game-Ready-Sci-Spaceship-Model)
 
-### 83. Pulp Mill EO/PO Defoamer Design | Solicitante Anuncio #40794364 (Planos, AutoCAD & 3D) [82.5 pts]
+### 95. Selldone Store Setup & Automation | Solicitante Anuncio #40794874 (Bots, WhatsApp & Automatización) [82.9 pts]
 - **Fuente:** Freelancer.co
-- **Pago:** USD 15.0 - 25.0
+- **Pago:** USD 30.0 - 250.0
+- **Score:** 82.9 / 100 (Fit: 69.8, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** automatización, diseño / vector
+- **Por qué apareció:** [Hoy (2h)] Encargo práctico realizable (automatización, diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 2 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/automation/Selldone-Store-Setup-Automation](https://www.freelancer.co/projects/automation/Selldone-Store-Setup-Automation)
+
+### 96. Posture Trainer Device CAD Enclosure Design -- 2 | Solicitante Anuncio #40794716 (Planos, AutoCAD & 3D) [98.6 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** INR 600.0 - 1500.0
+- **Score:** 98.6 / 100 (Fit: 100.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** blender / 3d, planos / autocad, diseño / vector
+- **Por qué apareció:** [Hoy (5h)] Encargo práctico realizable (blender / 3d, planos / autocad, diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 4 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/3d-cad/Posture-Trainer-Device-CAD-Enclosure-40794716](https://www.freelancer.co/projects/3d-cad/Posture-Trainer-Device-CAD-Enclosure-40794716)
+
+### 97. Build Morning Fuel’s Premium Brand Identity | Solicitante Anuncio #40794709 (Planos, AutoCAD & 3D) [77.8 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** INR 600.0 - 1500.0
+- **Score:** 77.8 / 100 (Fit: 60.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** blender / 3d, diseño / vector
+- **Por qué apareció:** [Hoy (5h)] Encargo práctico realizable (blender / 3d, diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 5 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/logo-design/Build-Morning-Fuel-Premium-Brand](https://www.freelancer.co/projects/logo-design/Build-Morning-Fuel-Premium-Brand)
+
+### 98. CNC Milling Program for Steel Part | Solicitante Anuncio #40794695 (Planos, AutoCAD & 3D) [82.5 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** INR 750.0 - 1250.0
 - **Score:** 82.5 / 100 (Fit: 69.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
 - **Compatibilidad (Skills):** blender / 3d, planos / autocad
-- **Por qué apareció:** [Hoy (2h)] Encargo práctico realizable (blender / 3d, planos / autocad).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 2 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (5h)] Encargo práctico realizable (blender / 3d, planos / autocad).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 5 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/cad-cam/Pulp-Mill-Defoamer-Design](https://www.freelancer.co/projects/cad-cam/Pulp-Mill-Defoamer-Design)
+- **Enlace original:** [https://www.freelancer.co/projects/cnc/CNC-Milling-Program-for-Steel](https://www.freelancer.co/projects/cnc/CNC-Milling-Program-for-Steel)
 
-### 84. GlanceJobs: LinkedIn Outreach to International Job Seekers in the US (Long-Term) | Solicitante Anuncio #40794343 (Bots, WhatsApp & Automatización) [75.7 pts]
+### 99. Custom BeamNG Drive Map Design | Solicitante Anuncio #40794691 (Planos, AutoCAD & 3D) [77.8 pts]
 - **Fuente:** Freelancer.co
-- **Pago:** USD 30.0 - 250.0
-- **Score:** 75.7 / 100 (Fit: 56.0, Reusabilidad: 68.0)
+- **Pago:** NZD 30.0 - 250.0
+- **Score:** 77.8 / 100 (Fit: 60.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** whatsapp / bot, tareas / datos
-- **Por qué apareció:** [Hoy (2h)] Encargo práctico realizable (whatsapp / bot, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 2 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Compatibilidad (Skills):** blender / 3d, diseño / vector
+- **Por qué apareció:** [Hoy (5h)] Encargo práctico realizable (blender / 3d, diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 5 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/lead-generation/GlanceJobs-LinkedIn-Outreach](https://www.freelancer.co/projects/lead-generation/GlanceJobs-LinkedIn-Outreach)
+- **Enlace original:** [https://www.freelancer.co/projects/game-design/Custom-BeamNG-Drive-Map-Design](https://www.freelancer.co/projects/game-design/Custom-BeamNG-Drive-Map-Design)
 
-### 85. PDF Tables to Excel Sheets -2 | Solicitante Anuncio #40794195 (Bots, WhatsApp & Automatización) [96.9 pts]
+### 100. Offline ETT Workflow Automation Desktop App | Solicitante Anuncio #40794690 (Tareas en Español) [98.6 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** EUR 30.0 - 250.0
+- **Score:** 98.6 / 100 (Fit: 100.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** whatsapp / bot, automatización, diseño / vector
+- **Por qué apareció:** [Hoy (5h)] Encargo práctico realizable (whatsapp / bot, automatización, diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 5 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/optical-character-recognition/Offline-ETT-Workflow-Automation-Desktop](https://www.freelancer.co/projects/optical-character-recognition/Offline-ETT-Workflow-Automation-Desktop)
+
+### 101. Brand Identity, Logo Design & Product Packaging Design for "Morning Fuel" | Solicitante Anuncio #40794669 (Planos, AutoCAD & 3D) [83.0 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** INR 1500.0 - 12500.0
+- **Score:** 83.0 / 100 (Fit: 70.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** blender / 3d, diseño / vector
+- **Por qué apareció:** [Hoy (5h)] Encargo práctico realizable (blender / 3d, diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 5 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/branding/Premium-Fashion-Brand-Identity-Design](https://www.freelancer.co/projects/branding/Premium-Fashion-Brand-Identity-Design)
+
+### 102. Experto en Autodesk Revit para Proyecto Arquitectónico Académico | Cliente Camilo T. (🇨🇴 Colombia) [99.0 pts]
+- **Fuente:** Workana Colombia
+- **Pago:** USD 100.0 - 250.0
+- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 88.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** blender / 3d, planos / autocad, automatización, diseño / vector
+- **Por qué apareció:** [Hoy (6h)] Encargo práctico realizable (blender / 3d, planos / autocad, automatización).
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 6 horas), Ubicación=🇨🇴 Colombia, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.workana.com/job/experto-en-autodesk-revit-para-proyecto-arquitectonico-academico](https://www.workana.com/job/experto-en-autodesk-revit-para-proyecto-arquitectonico-academico)
+
+### 103. Update CAD House Design Drawings | Solicitante Anuncio #40792517 (Planos, AutoCAD & 3D) [89.6 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 5.0 - 50.0
+- **Score:** 89.6 / 100 (Fit: 82.6, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** blender / 3d, planos / autocad
+- **Por qué apareció:** [Hoy (6h)] Encargo práctico realizable (blender / 3d, planos / autocad).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 6 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/3d-model-maker/Update-CAD-House-Design-Drawings](https://www.freelancer.co/projects/3d-model-maker/Update-CAD-House-Design-Drawings)
+
+### 104. Mobile AI File Search & Share | Solicitante Anuncio #40794607 (Bots, WhatsApp & Automatización) [77.3 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** INR 75000.0 - 150000.0
+- **Score:** 77.3 / 100 (Fit: 59.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** whatsapp / bot, diseño / vector
+- **Por qué apareció:** [Hoy (6h)] Encargo práctico realizable (whatsapp / bot, diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 6 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/image-processing/Mobile-File-Search-Share](https://www.freelancer.co/projects/image-processing/Mobile-File-Search-Share)
+
+### 105. Meta API Approval Expert for SaaS -- 2 | Solicitante Anuncio #40794533 (Bots, WhatsApp & Automatización) [80.9 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 50.0 - 150.0
+- **Score:** 80.9 / 100 (Fit: 66.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** whatsapp / bot, automatización
+- **Por qué apareció:** [Hoy (7h)] Encargo práctico realizable (whatsapp / bot, automatización).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 7 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/social-networking/Meta-API-Approval-Expert-for](https://www.freelancer.co/projects/social-networking/Meta-API-Approval-Expert-for)
+
+### 106. Aumentar Vendas via Redes Sociais | Solicitante Anuncio #40794462 (Bots, WhatsApp & Automatización) [95.0 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 10.0 - 30.0
+- **Score:** 95.0 / 100 (Fit: 93.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** planos / autocad, whatsapp / bot, diseño / vector
+- **Por qué apareció:** [Hoy (8h)] Encargo práctico realizable (planos / autocad, whatsapp / bot, diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 8 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/social-media-marketing/Aumentar-Vendas-via-Redes-Sociais](https://www.freelancer.co/projects/social-media-marketing/Aumentar-Vendas-via-Redes-Sociais)
+
+### 107. 15-Second Sea Moss Testimonial | Solicitante Anuncio #40794436 (Planos, AutoCAD & 3D) [76.2 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 10.0 - 30.0
+- **Score:** 76.2 / 100 (Fit: 57.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** blender / 3d, tareas / datos
+- **Por qué apareció:** [Hoy (8h)] Encargo práctico realizable (blender / 3d, tareas / datos).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 8 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/capcut/Second-Sea-Moss-Testimonial](https://www.freelancer.co/projects/capcut/Second-Sea-Moss-Testimonial)
+
+### 108. AI-First SEO & Lead Engine | Solicitante Anuncio #40794419 (Bots, WhatsApp & Automatización) [80.9 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** INR 1500.0 - 12500.0
+- **Score:** 80.9 / 100 (Fit: 66.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 1 a 3 días
+- **Compatibilidad (Skills):** whatsapp / bot, automatización
+- **Por qué apareció:** [Hoy (9h)] Encargo práctico realizable (whatsapp / bot, automatización).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 9 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
+- **Enlace original:** [https://www.freelancer.co/projects/content-strategy/First-SEO-Lead-Engine](https://www.freelancer.co/projects/content-strategy/First-SEO-Lead-Engine)
+
+### 109. PDF Tables to Excel Sheets -2 | Solicitante Anuncio #40794195 (Bots, WhatsApp & Automatización) [96.9 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** INR 12500.0 - 37500.0
 - **Score:** 96.9 / 100 (Fit: 96.8, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
 - **Compatibilidad (Skills):** planos / autocad, automatización, tareas / datos
-- **Por qué apareció:** [Hoy (3h)] Encargo práctico realizable (planos / autocad, automatización, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 3 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (10h)] Encargo práctico realizable (planos / autocad, automatización, tareas / datos).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 10 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
 - **Enlace original:** [https://www.freelancer.co/projects/data-extraction/PDF-Tables-Excel-Sheets](https://www.freelancer.co/projects/data-extraction/PDF-Tables-Excel-Sheets)
 
-### 86. AI Mentor for Setting up Top AI Models | Solicitante Anuncio #40790705 (Bots, WhatsApp & Automatización) [76.2 pts]
+### 110. AI Mentor for Setting up Top AI Models | Solicitante Anuncio #40790705 (Bots, WhatsApp & Automatización) [76.2 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** INR 1000000.0 - 2500000.0
 - **Score:** 76.2 / 100 (Fit: 57.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
 - **Compatibilidad (Skills):** automatización, diseño / vector
-- **Por qué apareció:** [Hoy (3h)] Encargo práctico realizable (automatización, diseño / vector).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 3 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (10h)] Encargo práctico realizable (automatización, diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 10 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
 - **Enlace original:** [https://www.freelancer.co/projects/ai-development/Mentor-for-Automation-Agency](https://www.freelancer.co/projects/ai-development/Mentor-for-Automation-Agency)
 
-### 87. Immersive Three.js Interactive Portfolio -- 2 | Solicitante Anuncio #40794259 (Planos, AutoCAD & 3D) [77.8 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** INR 1250.0 - 2500.0
-- **Score:** 77.8 / 100 (Fit: 60.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, diseño / vector
-- **Por qué apareció:** [Hoy (4h)] Encargo práctico realizable (blender / 3d, diseño / vector).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 4 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/three-js/Immersive-Three-Interactive-Portfolio](https://www.freelancer.co/projects/three-js/Immersive-Three-Interactive-Portfolio)
-
-### 88. Edición de Reels en CapCut | Solicitante Anuncio #40794206 (Tareas en Español) [98.5 pts]
+### 111. Edición de Reels en CapCut | Solicitante Anuncio #40794206 (Tareas en Español) [98.5 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** USD 2.0 - 8.0
 - **Score:** 98.5 / 100 (Fit: 99.8, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
 - **Compatibilidad (Skills):** blender / 3d, planos / autocad, tareas / datos
-- **Por qué apareció:** [Hoy (4h)] Encargo práctico realizable (blender / 3d, planos / autocad, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 4 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (11h)] Encargo práctico realizable (blender / 3d, planos / autocad, tareas / datos).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 11 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
 - **Enlace original:** [https://www.freelancer.co/projects/video-services/Edici-Reels-CapCut](https://www.freelancer.co/projects/video-services/Edici-Reels-CapCut)
 
-### 89. AutoCAD House Plan Update | Solicitante Anuncio #40794186 (Planos, AutoCAD & 3D) [89.6 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** INR 600.0 - 1500.0
-- **Score:** 89.6 / 100 (Fit: 82.6, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, planos / autocad
-- **Por qué apareció:** [Hoy (4h)] Encargo práctico realizable (blender / 3d, planos / autocad).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 4 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/building-designer/AutoCAD-House-Plan-Update](https://www.freelancer.co/projects/building-designer/AutoCAD-House-Plan-Update)
-
-### 90. Informational Business Website Development | Solicitante Anuncio #40794177 (Planos, AutoCAD & 3D) [98.6 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** INR 400.0 - 750.0
-- **Score:** 98.6 / 100 (Fit: 100.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, automatización, web / catálogo, diseño / vector
-- **Por qué apareció:** [Hoy (4h)] Encargo práctico realizable (blender / 3d, automatización, web / catálogo).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 4 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/web-development/Informational-Business-Website-40794177](https://www.freelancer.co/projects/web-development/Informational-Business-Website-40794177)
-
-### 91. Automatización de Respuestas y Agendamiento de Citas por Whatsapp p... | Cliente K. G. (🇨🇴 Colombia) [99.0 pts]
+### 112. Automatización de Respuestas y Agendamiento de Citas por Whatsapp p... | Cliente K. G. (🇨🇴 Colombia) [99.0 pts]
 - **Fuente:** Workana Colombia
 - **Pago:** USD 50.0 - 100.0
 - **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 88.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
 - **Compatibilidad (Skills):** whatsapp / bot, automatización
-- **Por qué apareció:** [Hoy (6h)] Encargo práctico realizable (whatsapp / bot, automatización).
-- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 6 horas), Ubicación=🇨🇴 Colombia, Remoto=Sí
+- **Por qué apareció:** [Hoy (13h)] Encargo práctico realizable (whatsapp / bot, automatización).
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 13 horas), Ubicación=🇨🇴 Colombia, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
 - **Enlace original:** [https://www.workana.com/job/automatizacion-de-respuestas-y-agendamiento-de-citas-por-whatsapp-para-manicurista](https://www.workana.com/job/automatizacion-de-respuestas-y-agendamiento-de-citas-por-whatsapp-para-manicurista)
 
-### 92. Tutor WhatsApp & Sosmed | Solicitante Anuncio #40794060 (Bots, WhatsApp & Automatización) [85.9 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 50.0 -
-- **Score:** 85.9 / 100 (Fit: 75.6, Reusabilidad: 68.0)
+### 113. Analista Deportivo con Expertise en Datos de Apuestas | Cliente Faber A. M. V. (🇨🇴 Colombia) [78.6 pts]
+- **Fuente:** Workana Colombia
+- **Pago:** USD 50.0 - 50.0
+- **Score:** 78.6 / 100 (Fit: 55.8, Reusabilidad: 88.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** whatsapp / bot, web / catálogo
-- **Por qué apareció:** [Hoy (6h)] Encargo práctico realizable (whatsapp / bot, web / catálogo).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 6 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Compatibilidad (Skills):** tareas / datos
+- **Por qué apareció:** [Hoy (13h)] Encargo práctico realizable (tareas / datos).
+- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 13 horas), Ubicación=🇨🇴 Colombia, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/android/Tutor-WhatsApp-Sosmed](https://www.freelancer.co/projects/android/Tutor-WhatsApp-Sosmed)
+- **Enlace original:** [https://www.workana.com/job/analista-deportivo-con-expertise-en-datos-de-apuestas](https://www.workana.com/job/analista-deportivo-con-expertise-en-datos-de-apuestas)
 
-### 93. AI-Powered Digital Marketing Specialist | Solicitante Anuncio #40794068 (Bots, WhatsApp & Automatización) [76.2 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** AUD 8.0 - 15.0
-- **Score:** 76.2 / 100 (Fit: 57.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** automatización, diseño / vector
-- **Por qué apareció:** [Hoy (6h)] Encargo práctico realizable (automatización, diseño / vector).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 6 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/digital-marketing/Powered-Digital-Marketing-Specialist](https://www.freelancer.co/projects/digital-marketing/Powered-Digital-Marketing-Specialist)
-
-### 94. 3D Model for Layered Art | Solicitante Anuncio #40793971 (Planos, AutoCAD & 3D) [89.8 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 30.0 - 50.0
-- **Score:** 89.8 / 100 (Fit: 83.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, planos / autocad
-- **Por qué apareció:** [Hoy (8h)] Encargo práctico realizable (blender / 3d, planos / autocad).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 8 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/3d-print-design/Model-for-Layered-Art](https://www.freelancer.co/projects/3d-print-design/Model-for-Layered-Art)
-
-### 95. Roxbury Collective Housing Design | Solicitante Anuncio #40793954 (Planos, AutoCAD & 3D) [82.5 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 30.0 - 250.0
-- **Score:** 82.5 / 100 (Fit: 69.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, planos / autocad
-- **Por qué apareció:** [Hoy (8h)] Encargo práctico realizable (blender / 3d, planos / autocad).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 8 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/3d-modelling/Roxbury-Collective-Housing-Design](https://www.freelancer.co/projects/3d-modelling/Roxbury-Collective-Housing-Design)
-
-### 96. Export MYOB Payslips to Excel | Solicitante Anuncio #40793934 (Bots, WhatsApp & Automatización) [92.3 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** INR 750.0 - 1250.0
-- **Score:** 92.3 / 100 (Fit: 87.8, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** automatización, diseño / vector, tareas / datos
-- **Por qué apareció:** [Hoy (8h)] Encargo práctico realizable (automatización, diseño / vector, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 8 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/myob/Export-MYOB-Payslips-Excel](https://www.freelancer.co/projects/myob/Export-MYOB-Payslips-Excel)
-
-### 97. Creación Recetas Pupusas Gourmet | Solicitante Anuncio #40793918 (Tareas en Español) [85.6 pts]
+### 114. Creación Recetas Pupusas Gourmet | Solicitante Anuncio #40793918 (Tareas en Español) [85.6 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** USD 15.0 - 25.0
 - **Score:** 85.6 / 100 (Fit: 75.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
 - **Compatibilidad (Skills):** web / catálogo, diseño / vector, tareas / datos
-- **Por qué apareció:** [Hoy (8h)] Encargo práctico realizable (web / catálogo, diseño / vector, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 8 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (15h)] Encargo práctico realizable (web / catálogo, diseño / vector, tareas / datos).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 15 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
 - **Enlace original:** [https://www.freelancer.co/projects/cooking-recipes/Creaci-Recetas-Pupusas-Gourmet](https://www.freelancer.co/projects/cooking-recipes/Creaci-Recetas-Pupusas-Gourmet)
 
-### 98. Editor de Video Profesional para Contenido Extenso de Youtube | Cliente Juan S. V. J. (🇨🇴 Colombia) [87.0 pts]
-- **Fuente:** Workana Colombia
-- **Pago:** USD 50.0 - 50.0
-- **Score:** 87.0 / 100 (Fit: 72.0, Reusabilidad: 88.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** diseño / vector, tareas / datos
-- **Por qué apareció:** [Hoy (9h)] Encargo práctico realizable (diseño / vector, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 9 horas), Ubicación=🇨🇴 Colombia, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.workana.com/job/editor-de-video-profesional-para-contenido-extenso-de-youtube-1](https://www.workana.com/job/editor-de-video-profesional-para-contenido-extenso-de-youtube-1)
-
-### 99. Fiberglass Car Spoiler 3D Model | Solicitante Anuncio #40793893 (Planos, AutoCAD & 3D) [89.8 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 250.0 - 750.0
-- **Score:** 89.8 / 100 (Fit: 83.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, planos / autocad
-- **Por qué apareció:** [Hoy (9h)] Encargo práctico realizable (blender / 3d, planos / autocad).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 9 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/3d-design/Fiberglass-Car-Spoiler-Model](https://www.freelancer.co/projects/3d-design/Fiberglass-Car-Spoiler-Model)
-
-### 100. Print-Ready Café Product 3D Models | Solicitante Anuncio #40793885 (Planos, AutoCAD & 3D) [98.6 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** GBP 250.0 - 750.0
-- **Score:** 98.6 / 100 (Fit: 100.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, planos / autocad, automatización, web / catálogo, diseño / vector
-- **Por qué apareció:** [Hoy (9h)] Encargo práctico realizable (blender / 3d, planos / autocad, automatización).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 9 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/3d-printing/Print-Ready-Caf-Product-Models](https://www.freelancer.co/projects/3d-printing/Print-Ready-Caf-Product-Models)
-
-### 101. Diseño de etiquetas elegantes | Solicitante Anuncio #40793878 (Tareas en Español) [93.9 pts]
+### 115. Diseño de etiquetas elegantes | Solicitante Anuncio #40793878 (Tareas en Español) [93.9 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** USD 30.0 - 250.0
 - **Score:** 93.9 / 100 (Fit: 91.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
 - **Compatibilidad (Skills):** planos / autocad, diseño / vector, tareas / datos
-- **Por qué apareció:** [Hoy (9h)] Encargo práctico realizable (planos / autocad, diseño / vector, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 9 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (16h)] Encargo práctico realizable (planos / autocad, diseño / vector, tareas / datos).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 16 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
 - **Enlace original:** [https://www.freelancer.co/projects/adobe-illustrator/Dise-etiquetas-elegantes](https://www.freelancer.co/projects/adobe-illustrator/Dise-etiquetas-elegantes)
 
-### 102. Finish Shopify Website | Solicitante Anuncio #40793884 (Planos, AutoCAD & 3D) [98.6 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 2.0 - 8.0
-- **Score:** 98.6 / 100 (Fit: 100.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, planos / autocad, automatización, web / catálogo
-- **Por qué apareció:** [Hoy (9h)] Encargo práctico realizable (blender / 3d, planos / autocad, automatización).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 9 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/shopify-development/Finish-Shopify-Website](https://www.freelancer.co/projects/shopify-development/Finish-Shopify-Website)
-
-### 103. Búsqueda de Diseñador 3d Cad Experto y Económico para Proyectos | Cliente J. M. (🇨🇴 Colombia) [99.0 pts]
-- **Fuente:** Workana Colombia
-- **Pago:** USD 50.0 - 50.0
-- **Score:** 99.0 / 100 (Fit: 100.0, Reusabilidad: 88.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, planos / autocad, diseño / vector
-- **Por qué apareció:** [Hoy (10h)] Encargo práctico realizable (blender / 3d, planos / autocad, diseño / vector).
-- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 10 horas), Ubicación=🇨🇴 Colombia, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.workana.com/job/busqueda-de-disenador-3d-cad-experto-y-economico-para-proyectos](https://www.workana.com/job/busqueda-de-disenador-3d-cad-experto-y-economico-para-proyectos)
-
-### 104. Set Up Claude for Business Automation | Solicitante Anuncio #40793859 (Bots, WhatsApp & Automatización) [98.6 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** AUD 25.0 - 50.0
-- **Score:** 98.6 / 100 (Fit: 100.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** whatsapp / bot, automatización, tareas / datos
-- **Por qué apareció:** [Hoy (10h)] Encargo práctico realizable (whatsapp / bot, automatización, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 10 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/ai-automation/Set-Claude-for-Business-Automation](https://www.freelancer.co/projects/ai-automation/Set-Claude-for-Business-Automation)
-
-### 105. Bordado 3D y Certificado de Lujo | Solicitante Anuncio #40793821 (Tareas en Español) [85.1 pts]
+### 116. Bordado 3D y Certificado de Lujo | Solicitante Anuncio #40793821 (Tareas en Español) [85.1 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** USD 30.0 - 250.0
 - **Score:** 85.1 / 100 (Fit: 74.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
 - **Compatibilidad (Skills):** blender / 3d, diseño / vector
-- **Por qué apareció:** [Hoy (11h)] Encargo práctico realizable (blender / 3d, diseño / vector).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 11 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (17h)] Encargo práctico realizable (blender / 3d, diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 17 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
 - **Enlace original:** [https://www.freelancer.co/projects/3d-design/Bordado-Certificado-Lujo](https://www.freelancer.co/projects/3d-design/Bordado-Certificado-Lujo)
 
-### 106. Next.js Migration SEO Recovery Audit | Solicitante Anuncio #40793773 (Planos, AutoCAD & 3D) [79.4 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** EUR 8.0 - 30.0
-- **Score:** 79.4 / 100 (Fit: 63.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, web / catálogo
-- **Por qué apareció:** [Hoy (12h)] Encargo práctico realizable (blender / 3d, web / catálogo).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 12 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/nextjs/Next-Migration-SEO-Recovery-Audit](https://www.freelancer.co/projects/nextjs/Next-Migration-SEO-Recovery-Audit)
-
-### 107. Rigged 3D Cartoon Dog | Solicitante Anuncio #40793750 (Planos, AutoCAD & 3D) [88.7 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** EUR 8.0 - 30.0
-- **Score:** 88.7 / 100 (Fit: 81.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, automatización
-- **Por qué apareció:** [Hoy (12h)] Encargo práctico realizable (blender / 3d, automatización).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 12 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/3d-rigging/Rigged-Cartoon-Dog](https://www.freelancer.co/projects/3d-rigging/Rigged-Cartoon-Dog)
-
-### 108. Vendedor Online de Perfumería | Solicitante Anuncio #40793686 (Tareas en Español) [78.8 pts]
+### 117. Vendedor Online de Perfumería | Solicitante Anuncio #40793686 (Tareas en Español) [78.8 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** USD 250.0 - 750.0
 - **Score:** 78.8 / 100 (Fit: 62.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
 - **Compatibilidad (Skills):** whatsapp / bot, web / catálogo
-- **Por qué apareció:** [Hoy (14h)] Encargo práctico realizable (whatsapp / bot, web / catálogo).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 13 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (20h)] Encargo práctico realizable (whatsapp / bot, web / catálogo).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 20 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
 - **Enlace original:** [https://www.freelancer.co/projects/sales/Vendedor-Online-Perfumer](https://www.freelancer.co/projects/sales/Vendedor-Online-Perfumer)
 
-### 109. CCTV Coverage Heatmap for Shop | Solicitante Anuncio #40793677 (Planos, AutoCAD & 3D) [82.5 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 10.0 - 30.0
-- **Score:** 82.5 / 100 (Fit: 69.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, planos / autocad
-- **Por qué apareció:** [Hoy (14h)] Encargo práctico realizable (blender / 3d, planos / autocad).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 14 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/cctv/CCTV-Coverage-Heatmap-for-Shop](https://www.freelancer.co/projects/cctv/CCTV-Coverage-Heatmap-for-Shop)
-
-### 110. 3D Printable Figurine Model | Solicitante Anuncio #40793672 (Planos, AutoCAD & 3D) [89.8 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 30.0 - 250.0
-- **Score:** 89.8 / 100 (Fit: 83.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, planos / autocad
-- **Por qué apareció:** [Hoy (14h)] Encargo práctico realizable (blender / 3d, planos / autocad).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 14 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/3d-print-design/Printable-Figurine-Model](https://www.freelancer.co/projects/3d-print-design/Printable-Figurine-Model)
-
-### 111. Prospección y Ventas vía WhatsApp | Solicitante Anuncio #40793603 (Tareas en Español) [98.6 pts]
+### 118. Prospección y Ventas vía WhatsApp | Solicitante Anuncio #40793603 (Tareas en Español) [98.6 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** USD 25.0 - 50.0
 - **Score:** 98.6 / 100 (Fit: 100.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 1 a 3 días
 - **Compatibilidad (Skills):** whatsapp / bot, automatización, tareas / datos
-- **Por qué apareció:** [Hoy (15h)] Encargo práctico realizable (whatsapp / bot, automatización, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 15 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (22h)] Encargo práctico realizable (whatsapp / bot, automatización, tareas / datos).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 22 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
 - **Enlace original:** [https://www.freelancer.co/projects/crm/Prospecci-Ventas-WhatsApp](https://www.freelancer.co/projects/crm/Prospecci-Ventas-WhatsApp)
 
-### 112. Full-Length Film Production Based on an Original Book- Produce Whimsical 3D Animated Feature Film | Solicitante Anuncio #40793572 (Planos, AutoCAD & 3D) [85.1 pts]
+## SECCIÓN: INVESTIGAR (21 oportunidades)
+
+### 1. High Volume Google Flow Video Production | Solicitante Anuncio #40794923 (Planos, AutoCAD & 3D) [68.8 pts]
 - **Fuente:** Freelancer.co
-- **Pago:** GBP 18.0 - 36.0
-- **Score:** 85.1 / 100 (Fit: 74.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, diseño / vector
-- **Por qué apareció:** [Hoy (15h)] Encargo práctico realizable (blender / 3d, diseño / vector).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 15 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/film-production/Full-Length-Film-Production-Based](https://www.freelancer.co/projects/film-production/Full-Length-Film-Production-Based)
-
-### 113. Junior Interior Designer for Site Coordination | Solicitante Anuncio #40793565 (Planos, AutoCAD & 3D) [82.5 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** INR 12500.0 - 37500.0
-- **Score:** 82.5 / 100 (Fit: 69.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, planos / autocad
-- **Por qué apareció:** [Hoy (16h)] Encargo práctico realizable (blender / 3d, planos / autocad).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 15 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/3d-design/Junior-Interior-Designer-for-Site](https://www.freelancer.co/projects/3d-design/Junior-Interior-Designer-for-Site)
-
-### 114. Comercial a comisión para vender devoluciones de Amazon a tiendas y mayoristas (España) | Solicitante Anuncio #40793068 (Tareas en Español) [90.3 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** EUR 750.0 - 1500.0
-- **Score:** 90.3 / 100 (Fit: 84.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** whatsapp / bot, web / catálogo, tareas / datos
-- **Por qué apareció:** [Hoy (21h)] Encargo práctico realizable (whatsapp / bot, web / catálogo, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 21 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/sales/Comercial-comisi-para-vender](https://www.freelancer.co/projects/sales/Comercial-comisi-para-vender)
-
-### 115. Editor de vídeo con Ia para anuncios de respuesta directa (marca de... | Cliente E. G. (España) [89.2 pts]
-- **Fuente:** Workana (Español)
-- **Pago:** USD 15.0 - 45.0
-- **Score:** 89.2 / 100 (Fit: 82.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** blender / 3d, diseño / vector, tareas / datos
-- **Por qué apareció:** [Hoy (24h)] Encargo práctico realizable (blender / 3d, diseño / vector, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Ayer), Ubicación=España, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.workana.com/job/editor-de-video-con-ia-para-anuncios-de-respuesta-directa-marca-de-6-cifras-al-mes](https://www.workana.com/job/editor-de-video-con-ia-para-anuncios-de-respuesta-directa-marca-de-6-cifras-al-mes)
-
-### 116. Configuración Respuestas Automáticas WhatsApp | Solicitante Anuncio #40792655 (Tareas en Español) [92.6 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 250.0 - 750.0
-- **Score:** 92.6 / 100 (Fit: 100.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 1 a 3 días
-- **Compatibilidad (Skills):** whatsapp / bot, automatización, diseño / vector
-- **Por qué apareció:** [Hace 1d] Encargo práctico realizable (whatsapp / bot, automatización, diseño / vector).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 día), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=BAJA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Enviar propuesta ofreciendo primer avance en 24h.
-- **Enlace original:** [https://www.freelancer.co/projects/chatbot/Configuraci-Respuestas-Autom-ticas](https://www.freelancer.co/projects/chatbot/Configuraci-Respuestas-Autom-ticas)
-
-## SECCIÓN: INVESTIGAR (22 oportunidades)
-
-### 1. Experto/a en Meta Ads para Escalar Ventas de Tienda Shopify en Ee. Uu. | Cliente javier (España) [71.0 pts]
-- **Fuente:** Workana (Español)
-- **Pago:** USD 50.0 - 100.0
-- **Score:** 71.0 / 100 (Fit: 39.2, Reusabilidad: 68.0)
+- **Pago:** INR 100.0 - 400.0
+- **Score:** 68.8 / 100 (Fit: 35.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** web / catálogo
-- **Por qué apareció:** [Hace 120 min] Encargo compatible (web / catálogo).
-- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace instantes), Ubicación=España, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.workana.com/job/experto-a-en-meta-ads-para-escalar-ventas-de-tienda-shopify-en-ee-uu](https://www.workana.com/job/experto-a-en-meta-ads-para-escalar-ventas-de-tienda-shopify-en-ee-uu)
-
-### 2. 24/7 Low-Risk Crypto Bot | Solicitante Anuncio #40794362 (Bots, WhatsApp & Automatización) [71.4 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** INR 12500.0 - 37500.0
-- **Score:** 71.4 / 100 (Fit: 47.6, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** whatsapp / bot
-- **Por qué apareció:** [Hoy (2h)] Encargo compatible (whatsapp / bot).
+- **Compatibilidad (Skills):** blender / 3d
+- **Por qué apareció:** [Hace 120 min] Encargo compatible (blender / 3d).
 - **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 2 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/cryptocurrency/Low-Risk-Crypto-Bot](https://www.freelancer.co/projects/cryptocurrency/Low-Risk-Crypto-Bot)
+- **Enlace original:** [https://www.freelancer.co/projects/video-production/High-Volume-Google-Flow-Video](https://www.freelancer.co/projects/video-production/High-Volume-Google-Flow-Video)
 
-### 3. Fix WhatsApp Template Error | Solicitante Anuncio #40794339 (Bots, WhatsApp & Automatización) [71.4 pts]
+### 2. Scale Christmas E-commerce Ad Campaigns | Solicitante Anuncio #40794895 (Planos, AutoCAD & 3D) [64.8 pts]
 - **Fuente:** Freelancer.co
-- **Pago:** USD 10.0 - 30.0
-- **Score:** 71.4 / 100 (Fit: 47.6, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** whatsapp / bot
-- **Por qué apareció:** [Hoy (3h)] Encargo compatible (whatsapp / bot).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 3 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/api/Fix-WhatsApp-Template-Error](https://www.freelancer.co/projects/api/Fix-WhatsApp-Template-Error)
-
-### 4. Dummy Flight Ticket Ads Campaign | Solicitante Anuncio #40794308 (Bots, WhatsApp & Automatización) [64.3 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** INR 12500.0 - 37500.0
-- **Score:** 64.3 / 100 (Fit: 34.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** whatsapp / bot
-- **Por qué apareció:** [Hoy (3h)] Encargo compatible (whatsapp / bot).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 3 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/google-ads/Dummy-Flight-Ticket-Ads-Campaign](https://www.freelancer.co/projects/google-ads/Dummy-Flight-Ticket-Ads-Campaign)
-
-### 5. Founding Business Development Manager Needed | Solicitante Anuncio #40789020 (Bots, WhatsApp & Automatización) [63.2 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 50.0 -
-- **Score:** 63.2 / 100 (Fit: 32.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** automatización
-- **Por qué apareció:** [Hoy (4h)] Encargo compatible (automatización).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 4 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/business-development/Founding-Business-Development-Manager](https://www.freelancer.co/projects/business-development/Founding-Business-Development-Manager)
-
-### 6. B2B Cold Email Automation Overhaul | Solicitante Anuncio #40794161 (Bots, WhatsApp & Automatización) [69.9 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** INR 1500.0 - 12500.0
-- **Score:** 69.9 / 100 (Fit: 44.8, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** automatización
-- **Por qué apareció:** [Hoy (5h)] Encargo compatible (automatización).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 5 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/automation/Cold-Email-Automation-Overhaul](https://www.freelancer.co/projects/automation/Cold-Email-Automation-Overhaul)
-
-### 7. Marketplace API Automation Integration Expert -- 2 | Solicitante Anuncio #40794153 (Bots, WhatsApp & Automatización) [69.9 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** INR 1500.0 - 12500.0
-- **Score:** 69.9 / 100 (Fit: 44.8, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** automatización
-- **Por qué apareció:** [Hoy (5h)] Encargo compatible (automatización).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 5 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/api/Marketplace-API-Automation-Integration-40794153](https://www.freelancer.co/projects/api/Marketplace-API-Automation-Integration-40794153)
-
-### 8. Animated Music Video Creation | Solicitante Anuncio #40794115 (Planos, AutoCAD & 3D) [64.8 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 250.0 - 750.0
+- **Pago:** USD 15.0 - 25.0
 - **Score:** 64.8 / 100 (Fit: 35.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 2 a 4 días
 - **Compatibilidad (Skills):** blender / 3d
-- **Por qué apareció:** [Hoy (5h)] Encargo compatible (blender / 3d).
+- **Por qué apareció:** [Hoy (2h)] Encargo compatible (blender / 3d).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 2 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
+- **Enlace original:** [https://www.freelancer.co/projects/advertising/Scale-Christmas-commerce-Campaigns](https://www.freelancer.co/projects/advertising/Scale-Christmas-commerce-Campaigns)
+
+### 3. Lanzamiento Amazon US: Visibilidad y Ventas | Solicitante Anuncio #40794760 (Tareas en Español) [59.6 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** EUR 30.0 - 250.0
+- **Score:** 59.6 / 100 (Fit: 25.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 2 a 4 días
+- **Compatibilidad (Skills):** diseño / vector
+- **Por qué apareció:** [Hoy (4h)] Encargo compatible (diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 4 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
+- **Enlace original:** [https://www.freelancer.co/projects/ecommerce/Lanzamiento-Amazon-Visibilidad-Ventas](https://www.freelancer.co/projects/ecommerce/Lanzamiento-Amazon-Visibilidad-Ventas)
+
+### 4. Highly Detailed Multi-Color 3D Figurine | Solicitante Anuncio #40794718 (Planos, AutoCAD & 3D) [72.1 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 30.0 - 250.0
+- **Score:** 72.1 / 100 (Fit: 49.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 2 a 4 días
+- **Compatibilidad (Skills):** blender / 3d
+- **Por qué apareció:** [Hoy (4h)] Encargo compatible (blender / 3d).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 4 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
+- **Enlace original:** [https://www.freelancer.co/projects/3d-printing/Highly-Detailed-Multi-Color-Figurine](https://www.freelancer.co/projects/3d-printing/Highly-Detailed-Multi-Color-Figurine)
+
+### 5. Comercial B2B Freelance para Automatización Industrial | Solicitante Anuncio #40794699 (Tareas en Español) [69.9 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** EUR 8.0 - 9.0
+- **Score:** 69.9 / 100 (Fit: 44.8, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 2 a 4 días
+- **Compatibilidad (Skills):** automatización
+- **Por qué apareció:** [Hoy (5h)] Encargo compatible (automatización).
 - **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 5 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/2d-animation/Animated-Music-Video-Creation-40794115](https://www.freelancer.co/projects/2d-animation/Animated-Music-Video-Creation-40794115)
+- **Enlace original:** [https://www.freelancer.co/projects/sales/Comercial-Freelance-para-Automatizaci](https://www.freelancer.co/projects/sales/Comercial-Freelance-para-Automatizaci)
 
-### 9. AI Business Automation & Process Optimization Specialist | Solicitante Anuncio #40794057 (Bots, WhatsApp & Automatización) [69.9 pts]
+### 6. WhatsApp Access Recovery Support -- 2 | Solicitante Anuncio #40794679 (Bots, WhatsApp & Automatización) [71.4 pts]
 - **Fuente:** Freelancer.co
-- **Pago:** USD 8.0 - 15.0
+- **Pago:** INR 600.0 - 1500.0
+- **Score:** 71.4 / 100 (Fit: 47.6, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 2 a 4 días
+- **Compatibilidad (Skills):** whatsapp / bot
+- **Por qué apareció:** [Hoy (5h)] Encargo compatible (whatsapp / bot).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 5 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
+- **Enlace original:** [https://www.freelancer.co/projects/security/WhatsApp-Access-Recovery-Support](https://www.freelancer.co/projects/security/WhatsApp-Access-Recovery-Support)
+
+### 7. AI Automation Lead Generation Partner | Solicitante Anuncio #40794668 (Bots, WhatsApp & Automatización) [69.9 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 30.0 - 250.0
+- **Score:** 69.9 / 100 (Fit: 44.8, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 2 a 4 días
+- **Compatibilidad (Skills):** automatización
+- **Por qué apareció:** [Hoy (5h)] Encargo compatible (automatización).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 5 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
+- **Enlace original:** [https://www.freelancer.co/projects/lead-generation/Automation-Lead-Generation-Partner](https://www.freelancer.co/projects/lead-generation/Automation-Lead-Generation-Partner)
+
+### 8. Finance Shorts Automation Setup | Solicitante Anuncio #40794635 (Bots, WhatsApp & Automatización) [69.9 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** INR 600.0 - 1500.0
 - **Score:** 69.9 / 100 (Fit: 44.8, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 2 a 4 días
@@ -1637,173 +1650,173 @@
 - **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 6 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/data-analysis/Business-Automation-Process-Optimization](https://www.freelancer.co/projects/data-analysis/Business-Automation-Process-Optimization)
+- **Enlace original:** [https://www.freelancer.co/projects/ai-video-editing/Finance-Shorts-Automation-Setup](https://www.freelancer.co/projects/ai-video-editing/Finance-Shorts-Automation-Setup)
 
-### 10. Build Multi-Agent Trading Intelligence Platform | Solicitante Anuncio #40794046 (Bots, WhatsApp & Automatización) [74.7 pts]
+### 9. Virtual Staging & Photo Editing | Solicitante Anuncio #40794625 (Planos, AutoCAD & 3D) [64.8 pts]
 - **Fuente:** Freelancer.co
-- **Pago:** USD 250.0 - 750.0
-- **Score:** 74.7 / 100 (Fit: 54.0, Reusabilidad: 68.0)
+- **Pago:** USD 10.0 - 30.0
+- **Score:** 64.8 / 100 (Fit: 35.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** automatización, tareas / datos
-- **Por qué apareció:** [Hoy (6h)] Encargo compatible (automatización, tareas / datos).
+- **Compatibilidad (Skills):** blender / 3d
+- **Por qué apareció:** [Hoy (6h)] Encargo compatible (blender / 3d).
 - **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 6 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/ai-agents/Build-Multi-Agent-Trading-Intelligence](https://www.freelancer.co/projects/ai-agents/Build-Multi-Agent-Trading-Intelligence)
+- **Enlace original:** [https://www.freelancer.co/projects/virtual-staging/Virtual-Staging-Photo-Editing](https://www.freelancer.co/projects/virtual-staging/Virtual-Staging-Photo-Editing)
 
-### 11. Marketplace API Automation Integration Expert | Solicitante Anuncio #40794011 (Bots, WhatsApp & Automatización) [69.9 pts]
+### 10. Promote Movie App on WhatsApp -- 2 | Solicitante Anuncio #40794582 (Bots, WhatsApp & Automatización) [71.4 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 30.0 - 250.0
+- **Score:** 71.4 / 100 (Fit: 47.6, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 2 a 4 días
+- **Compatibilidad (Skills):** whatsapp / bot
+- **Por qué apareció:** [Hoy (6h)] Encargo compatible (whatsapp / bot).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 6 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
+- **Enlace original:** [https://www.freelancer.co/projects/digital-marketing/Promote-Movie-App-WhatsApp](https://www.freelancer.co/projects/digital-marketing/Promote-Movie-App-WhatsApp)
+
+### 11. Edición Dinámica para Videos Gaming | Solicitante Anuncio #40794583 (Tareas en Español) [62.6 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** EUR 8.0 - 10.0
+- **Score:** 62.6 / 100 (Fit: 30.8, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 2 a 4 días
+- **Compatibilidad (Skills):** tareas / datos
+- **Por qué apareció:** [Hoy (6h)] Encargo compatible (tareas / datos).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 6 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
+- **Enlace original:** [https://www.freelancer.co/projects/video-editing/Edici-Din-mica-para-Videos](https://www.freelancer.co/projects/video-editing/Edici-Din-mica-para-Videos)
+
+### 12. 24/7 Low-Risk Crypto Bot | Solicitante Anuncio #40794362 (Bots, WhatsApp & Automatización) [71.4 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** INR 12500.0 - 37500.0
+- **Score:** 71.4 / 100 (Fit: 47.6, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 2 a 4 días
+- **Compatibilidad (Skills):** whatsapp / bot
+- **Por qué apareció:** [Hoy (9h)] Encargo compatible (whatsapp / bot).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 9 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
+- **Enlace original:** [https://www.freelancer.co/projects/cryptocurrency/Low-Risk-Crypto-Bot](https://www.freelancer.co/projects/cryptocurrency/Low-Risk-Crypto-Bot)
+
+### 13. Fix WhatsApp Template Error | Solicitante Anuncio #40794339 (Bots, WhatsApp & Automatización) [71.4 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 10.0 - 30.0
+- **Score:** 71.4 / 100 (Fit: 47.6, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 2 a 4 días
+- **Compatibilidad (Skills):** whatsapp / bot
+- **Por qué apareció:** [Hoy (10h)] Encargo compatible (whatsapp / bot).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 9 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
+- **Enlace original:** [https://www.freelancer.co/projects/api/Fix-WhatsApp-Template-Error](https://www.freelancer.co/projects/api/Fix-WhatsApp-Template-Error)
+
+### 14. Dummy Flight Ticket Ads Campaign | Solicitante Anuncio #40794308 (Bots, WhatsApp & Automatización) [64.3 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** INR 12500.0 - 37500.0
+- **Score:** 64.3 / 100 (Fit: 34.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 2 a 4 días
+- **Compatibilidad (Skills):** whatsapp / bot
+- **Por qué apareció:** [Hoy (10h)] Encargo compatible (whatsapp / bot).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 10 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
+- **Enlace original:** [https://www.freelancer.co/projects/google-ads/Dummy-Flight-Ticket-Ads-Campaign](https://www.freelancer.co/projects/google-ads/Dummy-Flight-Ticket-Ads-Campaign)
+
+### 15. Founding Business Development Manager Needed | Solicitante Anuncio #40789020 (Bots, WhatsApp & Automatización) [63.2 pts]
+- **Fuente:** Freelancer.co
+- **Pago:** USD 50.0 -
+- **Score:** 63.2 / 100 (Fit: 32.0, Reusabilidad: 68.0)
+- **Dificultad:** VIABLE / DIRECTO
+- **Tiempo estimado:** 2 a 4 días
+- **Compatibilidad (Skills):** automatización
+- **Por qué apareció:** [Hoy (11h)] Encargo compatible (automatización).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 10 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
+- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
+- **Enlace original:** [https://www.freelancer.co/projects/business-development/Founding-Business-Development-Manager](https://www.freelancer.co/projects/business-development/Founding-Business-Development-Manager)
+
+### 16. B2B Cold Email Automation Overhaul | Solicitante Anuncio #40794161 (Bots, WhatsApp & Automatización) [69.9 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** INR 1500.0 - 12500.0
 - **Score:** 69.9 / 100 (Fit: 44.8, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 2 a 4 días
 - **Compatibilidad (Skills):** automatización
-- **Por qué apareció:** [Hoy (7h)] Encargo compatible (automatización).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 7 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (12h)] Encargo compatible (automatización).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 12 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/api/Marketplace-API-Automation-Integration](https://www.freelancer.co/projects/api/Marketplace-API-Automation-Integration)
+- **Enlace original:** [https://www.freelancer.co/projects/automation/Cold-Email-Automation-Overhaul](https://www.freelancer.co/projects/automation/Cold-Email-Automation-Overhaul)
 
-### 12. Create Viral TikTok Organizer Ad | Solicitante Anuncio #40793994 (Planos, AutoCAD & 3D) [64.8 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 30.0 - 250.0
-- **Score:** 64.8 / 100 (Fit: 35.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** blender / 3d
-- **Por qué apareció:** [Hoy (7h)] Encargo compatible (blender / 3d).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 7 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/video-editing/Create-Viral-TikTok-Organizer](https://www.freelancer.co/projects/video-editing/Create-Viral-TikTok-Organizer)
-
-### 13. AI-Driven SEO & Lead Generation | Solicitante Anuncio #40793988 (Bots, WhatsApp & Automatización) [64.3 pts]
+### 17. Marketplace API Automation Integration Expert -- 2 | Solicitante Anuncio #40794153 (Bots, WhatsApp & Automatización) [69.9 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** INR 1500.0 - 12500.0
-- **Score:** 64.3 / 100 (Fit: 34.0, Reusabilidad: 68.0)
+- **Score:** 69.9 / 100 (Fit: 44.8, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** whatsapp / bot
-- **Por qué apareció:** [Hoy (7h)] Encargo compatible (whatsapp / bot).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 7 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Compatibilidad (Skills):** automatización
+- **Por qué apareció:** [Hoy (12h)] Encargo compatible (automatización).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 12 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/lead-generation/Driven-SEO-Lead-Generation](https://www.freelancer.co/projects/lead-generation/Driven-SEO-Lead-Generation)
+- **Enlace original:** [https://www.freelancer.co/projects/api/Marketplace-API-Automation-Integration-40794153](https://www.freelancer.co/projects/api/Marketplace-API-Automation-Integration-40794153)
 
-### 14. Creador Videos Tutoriales Tecnología en Español o latino | Solicitante Anuncio #40793892 (Tareas en Español) [74.7 pts]
+### 18. Creador Videos Tutoriales Tecnología en Español o latino | Solicitante Anuncio #40793892 (Tareas en Español) [74.7 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** EUR 2.0 - 6.0
 - **Score:** 74.7 / 100 (Fit: 54.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 2 a 4 días
 - **Compatibilidad (Skills):** automatización, tareas / datos
-- **Por qué apareció:** [Hoy (9h)] Encargo compatible (automatización, tareas / datos).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 9 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (16h)] Encargo compatible (automatización, tareas / datos).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 16 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
 - **Enlace original:** [https://www.freelancer.co/projects/video-editing/Creador-Videos-Tutoriales-Tecnolog](https://www.freelancer.co/projects/video-editing/Creador-Videos-Tutoriales-Tecnolog)
 
-### 15. Comercial B2B para SaaS Clínico | Solicitante Anuncio #40793842 (Tareas en Español) [59.6 pts]
+### 19. Comercial B2B para SaaS Clínico | Solicitante Anuncio #40793842 (Tareas en Español) [59.6 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** EUR 30.0 - 250.0
 - **Score:** 59.6 / 100 (Fit: 25.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 2 a 4 días
 - **Compatibilidad (Skills):** diseño / vector
-- **Por qué apareció:** [Hoy (10h)] Encargo compatible (diseño / vector).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 10 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (17h)] Encargo compatible (diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 17 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
 - **Enlace original:** [https://www.freelancer.co/projects/sales/Comercial-para-SaaS-nico](https://www.freelancer.co/projects/sales/Comercial-para-SaaS-nico)
 
-### 16. Mini Auditoría UX/UI | Solicitante Anuncio #40793776 (Tareas en Español) [74.2 pts]
+### 20. Mini Auditoría UX/UI | Solicitante Anuncio #40793776 (Tareas en Español) [74.2 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** EUR 250.0 - 750.0
 - **Score:** 74.2 / 100 (Fit: 53.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 2 a 4 días
 - **Compatibilidad (Skills):** web / catálogo, diseño / vector
-- **Por qué apareció:** [Hoy (12h)] Encargo compatible (web / catálogo, diseño / vector).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 12 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (19h)] Encargo compatible (web / catálogo, diseño / vector).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 18 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
 - **Enlace original:** [https://www.freelancer.co/projects/user-experience-design/Mini-Auditor](https://www.freelancer.co/projects/user-experience-design/Mini-Auditor)
 
-### 17. Convert Machine Drawing to AutoCAD | Solicitante Anuncio #40793762 (Planos, AutoCAD & 3D) [71.4 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** INR 600.0 - 1500.0
-- **Score:** 71.4 / 100 (Fit: 47.6, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** planos / autocad
-- **Por qué apareció:** [Hoy (12h)] Encargo compatible (planos / autocad).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 12 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/2d-drafting/Convert-Machine-Drawing-AutoCAD](https://www.freelancer.co/projects/2d-drafting/Convert-Machine-Drawing-AutoCAD)
-
-### 18. Need to attend a conference in Rome on my behalf | Solicitante Anuncio #40793670 (Bots, WhatsApp & Automatización) [64.3 pts]
+### 21. Need to attend a conference in Rome on my behalf | Solicitante Anuncio #40793670 (Bots, WhatsApp & Automatización) [64.3 pts]
 - **Fuente:** Freelancer.co
 - **Pago:** INR 1500.0 - 12500.0
 - **Score:** 64.3 / 100 (Fit: 34.0, Reusabilidad: 68.0)
 - **Dificultad:** VIABLE / DIRECTO
 - **Tiempo estimado:** 2 a 4 días
 - **Compatibilidad (Skills):** whatsapp / bot
-- **Por qué apareció:** [Hoy (14h)] Encargo compatible (whatsapp / bot).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 14 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
+- **Por qué apareció:** [Hoy (21h)] Encargo compatible (whatsapp / bot).
+- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 21 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
 - **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
 - **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
 - **Enlace original:** [https://www.freelancer.co/projects/lead-generation/Need-attend-conference-Rome-behalf](https://www.freelancer.co/projects/lead-generation/Need-attend-conference-Rome-behalf)
-
-### 19. Experienced Patent Application Specialist | Solicitante Anuncio #40793622 (Planos, AutoCAD & 3D) [64.3 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** INR 1500.0 - 12500.0
-- **Score:** 64.3 / 100 (Fit: 34.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** planos / autocad
-- **Por qué apareció:** [Hoy (15h)] Encargo compatible (planos / autocad).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 15 horas (Hoy)), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/patent-drafting/Experienced-Patent-Application](https://www.freelancer.co/projects/patent-drafting/Experienced-Patent-Application)
-
-### 20. Freelancer con Experiencia en Tienda Nube para Migración de Product... | Cliente N. G. (Argentina) [67.0 pts]
-- **Fuente:** Workana (Español)
-- **Pago:** USD 15.0 - 15.0
-- **Score:** 67.0 / 100 (Fit: 39.2, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** web / catálogo
-- **Por qué apareció:** [Hoy (16h)] Encargo compatible (web / catálogo).
-- **Qué sabemos (Datos Observados):** Tipo=Anuncio Real (Hace 16 horas), Ubicación=Argentina, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.workana.com/job/freelancer-con-experiencia-en-tienda-nube-para-migracion-de-productos-de-mercadolibre](https://www.workana.com/job/freelancer-con-experiencia-en-tienda-nube-para-migracion-de-productos-de-mercadolibre)
-
-### 21. Comercial con el español como lengua materna | Solicitante Anuncio #40792855 (Tareas en Español) [57.2 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 2.0 - 8.0
-- **Score:** 57.2 / 100 (Fit: 32.0, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** automatización
-- **Por qué apareció:** [Hace 1d] Encargo compatible (automatización).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 día), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/sales/Comercial-con-espa-como-lengua](https://www.freelancer.co/projects/sales/Comercial-con-espa-como-lengua)
-
-### 22. Desarrollo de tienda online | Solicitante Anuncio #40792208 (Tareas en Español) [74.0 pts]
-- **Fuente:** Freelancer.co
-- **Pago:** USD 30.0 - 250.0
-- **Score:** 74.0 / 100 (Fit: 64.2, Reusabilidad: 68.0)
-- **Dificultad:** VIABLE / DIRECTO
-- **Tiempo estimado:** 2 a 4 días
-- **Compatibilidad (Skills):** web / catálogo, diseño / vector
-- **Por qué apareció:** [Hace 1d] Encargo compatible (web / catálogo, diseño / vector).
-- **Qué sabemos (Datos Observados):** Tipo=Pago por Tarea (Publicado hace 1 día), Ubicación=Colombia / Internacional, Remoto=Sí
-- **Qué estamos estimando:** Competencia=MEDIA, Potencial Económico=N/A, Automatizable=N/A
-- **Qué haríamos (Siguiente Acción):** Revisar alcance y cotizar.
-- **Enlace original:** [https://www.freelancer.co/projects/ecommerce/Desarrollo-tienda-online-40792208](https://www.freelancer.co/projects/ecommerce/Desarrollo-tienda-online-40792208)
