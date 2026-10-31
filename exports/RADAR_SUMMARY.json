@@ -1,7 +1,7 @@
 {
-  "scan_id": "scan_20261031_162610_e7a323",
-  "started_at": "2026-10-31T16:26:10.402200+00:00",
-  "finished_at": "2026-10-31T16:26:14.268017+00:00",
+  "scan_id": "scan_20261031_225403_ee8632",
+  "started_at": "2026-10-31T22:54:03.257368+00:00",
+  "finished_at": "2026-10-31T22:54:06.015422+00:00",
   "sources_consulted": [
     "San Agustín Huila · Guadua · Bioconstrucción · Metal · Café · Arte & Exterior",
     "Compradores Café Especial Nacional/Internacional & Clientes Colombia",
@@ -9,11 +9,11 @@
     "Freelancer.co (Tareas & Proyectos)"
   ],
   "total_found": 141,
-  "prioridad_count": 113,
+  "prioridad_count": 108,
   "construir_vender_count": 0,
-  "investigar_count": 28,
+  "investigar_count": 33,
   "observar_count": 0,
-  "descartar_count": 8,
+  "descartar_count": 7,
   "whatsapp_target": "573222739034",
   "whatsapp_auto_dispatched": true,
   "execution_notes": "Contactos reales verificados (WhatsApp directo +57 de solicitantes en San Agustín/Pitalito/Isnos, Circulares Reales SECOP II sin clave y Proyectos Activos Workana/Freelancer) + Auto-envío a WhatsApp 3222739034."
